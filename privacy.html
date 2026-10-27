@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlow 개인정보 처리방침 및 로컬 PII 0-Leakage 보안 선언 (Privacy Policy)</title>
+  <meta name="description" content="AutoFlow 개인정보 처리방침: 사내 PC 로컬 PII 0-Leakage 가명화 방패(byok_privacy_sentinel.js)를 통해 고객 성명·연락처·주소·개인통관고유부호를 [CUSTOMER_1], [PHONE_1] 등으로 100% 살균 후 추론하여 외부 유출을 원천 차단합니다.">
+  <meta name="naver-site-verification" content="AUTOFLOW_NAVER_SEARCH_ADVISOR_VERIFICATION">
+  <meta name="google-site-verification" content="AUTOFLOW_GOOGLE_SEARCH_CONSOLE_VERIFICATION">
+  <link rel="canonical" href="https://autoflow.io/privacy.html">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AutoFlow Enterprise">
+  <meta property="og:title" content="AutoFlow 개인정보 처리방침 및 로컬 PII 0-Leakage 보안 선언 (Privacy Policy)">
+  <meta property="og:description" content="로컬 PII 0-Leakage 가명화 방패(byok_privacy_sentinel.js) 기반 고객 원본 개인정보 외부 전송 제로(0-Leakage) 아키텍처 및 개인정보 처리방침.">
+  <meta property="og:url" content="https://autoflow.io/privacy.html">
+  <meta property="og:image" content="https://autoflow.io/og_preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AutoFlow 개인정보 처리방침 및 로컬 PII 0-Leakage 보안 선언">
+  <meta name="twitter:description" content="로컬 PII 0-Leakage 가명화 방패(byok_privacy_sentinel.js) 기반 개인정보 제로 유출 원칙.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://autoflow.io/#organization",
+        "name": "디에이치랩스 (DH Labs)",
+        "url": "https://autoflow.io",
+        "email": "dhlabs_biz0@naver.com",
+        "telephone": "+82-10-8503-6232"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://autoflow.io/privacy.html#webpage",
+        "url": "https://autoflow.io/privacy.html",
+        "name": "AutoFlow 개인정보 처리방침 및 로컬 PII 0-Leakage 보안 선언 (Privacy Policy)",
+        "isPartOf": { "@id": "https://autoflow.io/#organization" }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #090d16;
+      --surface: #111827;
+      --card-bg: #1a2234;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --border: #26334d;
+      --primary: #3b82f6;
+      --primary-light: #60a5fa;
+      --accent: #10b981;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --card-bg: #f1f5f9;
+        --text: #0f172a;
+        --text-muted: #475569;
+        --text-dim: #94a3b8;
+        --border: #e2e8f0;
+        --primary: #2563eb;
+        --primary-light: #3b82f6;
+        --accent: #059669;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0;
+    }
+    header {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: color 0.2s, background-color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text);
+      background-color: var(--card-bg);
+      font-weight: 600;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .doc-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .doc-meta {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--primary-light);
+      border-left: 3px solid var(--primary);
+      padding-left: 10px;
+    }
+    p, ul, ol, table {
+      margin-bottom: 16px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    strong {
+      color: var(--text);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    th {
+      background-color: var(--card-bg);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .notice-box {
+      background-color: var(--card-bg);
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      border-radius: 6px;
+      margin: 20px 0;
+      font-size: 0.92rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-top: 60px;
+      background-color: var(--surface);
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .business-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      line-height: 1.6;
+    }
+    .business-info strong {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .business-info p {
+      margin: 0;
+    }
+    .business-info .copyright {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+    @media (max-width: 640px) {
+      footer {
+        padding: 30px 16px;
+      }
+      .business-info {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+  <link rel="describedby" type="text/plain" href="https://autoflow.io/llms.txt" title="AutoFlow AI / LLM Context Summary" />
+  <link rel="alternate" type="application/rss+xml" title="AutoFlow 공식 스토어 RSS 피드" href="https://autoflow.io/rss.xml" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/index.html" class="brand">
+        <span>⚡ AutoFlow Engine</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/index.html" class="nav-item">카탈로그 홈</a>
+        <a href="/terms.html" class="nav-item">이용약관</a>
+        <a href="/privacy.html" class="nav-item active">개인정보처리방침</a>
+        <a href="/refund.html" class="nav-item">청약철회 및 환불정책</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="doc-card">
+      <h1>AutoFlow 개인정보 처리방침 (Privacy Policy) — 로컬 PII 0-Leakage 보안 선언</h1>
+      <div class="doc-meta">
+        시행일자: 2026년 10월 04일 | 최종 개정일자: 2026년 10월 14일 | 개인정보 보호법 준수
+      </div>
+
+      <div class="notice-box">
+        <strong>🛡️ [로컬 PII 0-Leakage 가명화 방패 (<code>byok_privacy_sentinel.js</code>) 제로 유출 선언]</strong><br>
+        AutoFlow는 사내 PC 로컬 환경에서 구동되는 <strong>로컬 PII 0-Leakage 방패(<code>byok_privacy_sentinel.js</code>)</strong>를 전 플랜(<code>개발자 MCP 연동형 엔진</code> / <code>정합성 대사 엔진</code> / <code>듀얼 통합 엔진</code>)에 기본 탑재하고 있습니다. 주문·배송·CS 데이터 내 <strong>고객 성명, 연락처, 배송지 주소, 개인통관고유부호 등 모든 개인식별정보(PII)를 사내 PC 메모리 내에서 <code>[CUSTOMER_1]</code>, <code>[PHONE_1]</code>, <code>[ADDRESS_1]</code> 등으로 100% 가명화(토큰화) 살균 처리한 후에만 AI 추론을 수행</strong>하며, 고객 원본 개인정보는 외부 AI 클라우드나 당사 중앙 서버로 절대 전송·저장되지 않는 <strong>제로 유출(0-Leakage) 원칙</strong>을 엄수합니다.<br>
+        <span style="font-size: 0.88rem; color: var(--text-dim);">[EN] <strong>Local PII 0-Leakage Shield (<code>byok_privacy_sentinel.js</code>):</strong> All customer names, phone numbers, shipping addresses, and customs IDs are 100% pseudonymized locally on the customer's on-premise PC into tokens such as <code>[CUSTOMER_1]</code> and <code>[PHONE_1]</code> before any AI inference. Raw customer PII is never transmitted to or stored on external AI clouds or AutoFlow central servers (Strict Zero-Leakage Guarantee).</span>
+      </div>
+
+      <h2>제1조 (개인정보의 처리 목적)</h2>
+      <p>회사는 다음의 목적을 위하여 최소한의 정보만을 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 관련 법령에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 것입니다.</p>
+      <ol>
+        <li><strong>디지털 소프트웨어 주문 및 라이선스 발급:</strong> 구매자 식별, 결제 승인 확인, 다운로드 링크 및 라이선스 키 발급, 구매 내역 관리</li>
+        <li><strong>다운로드, 티어 승급 및 고객 지원:</strong> 구매 완료 후 다운로드 링크 발송, 파일 재다운로드 인증, 상위 티어 일할 차액 승급(<code>https://autoflow.io/upgrade</code>), 기술 및 공정 환불 정산 응대</li>
+        <li><strong>1:1 기기 귀속(HWID) 인증 및 부정 이용 방지:</strong> 라이선스 무단 복제 방지 및 기기 하드웨어 식별값(HWID) 대조 검증</li>
+      </ol>
+
+      <h2>제2조 (처리하는 개인정보의 항목 및 로컬 PII 가명화 원칙)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>수집·처리 항목</th>
+            <th>수집·처리 방법</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>주문 및 라이선스 결제</td>
+            <td>이메일 주소, 연락처, 결제 거래번호, 주문 플랜/티어 내역</td>
+            <td>결제 진행 시 구매자 직접 입력</td>
+          </tr>
+          <tr>
+            <td>결제 처리 (PG사 위탁)</td>
+            <td>카드사명, 결제 승인번호 등 결제 식별 정보 (카드번호 등 금융정보는 PG사 직접 처리)</td>
+            <td>토스페이먼츠(주) 결제 모듈 연동</td>
+          </tr>
+          <tr>
+            <td>1:1 기기 라이선스 인증</td>
+            <td>단말기 고유 식별 해시(HWID), 라이선스 상태 및 익명화된 헬스체크 핑</td>
+            <td>로컬 데몬 자동 생성 (비가역 SHA-256 해시)</td>
+          </tr>
+          <tr>
+            <td>사내 쇼핑몰 주문·고객 데이터 (수집 안 함)</td>
+            <td><strong>수집·전송 제로 (0-Leakage):</strong> 구매자 매장의 최종 소비자 성명·연락처·주소는 <code>byok_privacy_sentinel.js</code>가 사내 PC 로컬에서 <code>[CUSTOMER_1]</code>, <code>[PHONE_1]</code>으로 즉시 가명화 살균 후 복원하므로 당사 서버로 일체 수집되지 않음</td>
+            <td>사내 PC 로컬 인메모리 가명화 처리 후 즉시 파기</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>제3조 (개인정보의 보유 및 이용 기간)</h2>
+      <p>회사는 법령에 따른 개인정보 보유·이용기간 또는 정보주체로부터 수집 시에 동의받은 기간 내에서 개인정보를 처리·보유합니다. 각각의 개인정보 처리 및 보유 기간은 다음과 같습니다.</p>
+      <ul>
+        <li><strong>계약 또는 청약철회 등에 관한 기록:</strong> 5년 (전자상거래 등에서의 소비자보호에 관한 법률)</li>
+        <li><strong>대금결제 및 재화 등의 공급에 관한 기록:</strong> 5년 (전자상거래 등에서의 소비자보호에 관한 법률)</li>
+        <li><strong>소비자의 불만 또는 분쟁처리에 관한 기록:</strong> 3년 (전자상거래 등에서의 소비자보호에 관한 법률)</li>
+        <li><strong>웹사이트 접속 및 다운로드 로그:</strong> 3개월 (통신비밀보호법)</li>
+      </ul>
+
+      <h2>제4조 (개인정보의 제3자 제공 및 처리위탁)</h2>
+      <p>회사는 원칙적으로 이용자의 개인정보를 제3자에게 무단 제공하지 않습니다. 단, 원활한 결제 및 알림 서비스 제공을 위해 아래와 같이 전문 업체에 업무를 위탁하여 운영하고 있습니다.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>수탁자</th>
+            <th>위탁 업무 내용</th>
+            <th>보유 및 이용 기간</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>토스페이먼츠 (주)</strong></td>
+            <td>전자결제 대행(PG) 및 결제 승인/취소 처리</td>
+            <td>회원 탈퇴 시 또는 관련 법령에 따른 보존기간까지</td>
+          </tr>
+          <tr>
+            <td><strong>(주)솔라피</strong></td>
+            <td>주문 완료 및 다운로드 링크 발송용 카카오 알림톡/SMS 발송</td>
+            <td>목적 달성 후 즉시 파기</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>제5조 (정보주체의 권리·의무 및 1초 로컬 데이터 완전 파기 기능)</h2>
+      <ol>
+        <li>정보주체는 회사에 대해 언제든지 개인정보 열람·정정·삭제·처리정지 요구 등의 권리를 행사할 수 있습니다.</li>
+        <li>또한 사내 설정 마법사(<code>setup_wizard.html</code>)에 내장된 <strong>개인정보보호법 제21조 준수 1초 안심 데이터 완전 파기(Factory Reset)</strong> 기능을 통해 사내 PC에 저장된 API 키, 설정값 및 로컬 로그를 언제든지 즉시 영구 파기할 수 있습니다.</li>
+        <li>권리 행사는 회사의 고객지원 이메일(<strong>dhlabs_biz0@naver.com</strong>)을 통해 요청하실 수 있으며, 회사는 지체 없이 조치하겠습니다.</li>
+      </ol>
+
+      <h2>제6조 (개인정보의 안전성 확보 조치)</h2>
+      <p>회사는 개인정보의 안전성 확보를 위해 다음과 같은 기술적·관리적 조치를 취하고 있습니다.</p>
+      <ul>
+        <li><strong>로컬 PII 0-Leakage 살균 엔진 (<code>byok_privacy_sentinel.js</code>):</strong> 외부 AI 모델 또는 에러 리포팅 호출 전 사내 PC에서 개인식별정보를 <code>[CUSTOMER_1]</code>, <code>[PHONE_1]</code>으로 100% 마스킹·치환</li>
+        <li><strong>데이터 전송 및 보관 암호화:</strong> HTTPS/TLS 보안 통신 및 로컬 워크플로우 AES-256-GCM 암호화 적용</li>
+        <li><strong>금융정보 비저장:</strong> 신용카드 번호 등 민감 금융 정보는 일체 서버에 저장하지 않고 토스페이먼츠 보안망에 직접 위탁 처리</li>
+      </ul>
+
+      <h2>제7조 (개인정보 보호책임자)</h2>
+      <p>회사는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.</p>
+      <div class="notice-box">
+        <strong>개인정보 보호책임자</strong><br>
+        - 성명 / 직책: 김동형 / 대표<br>
+        - 부서: 개인정보보호 및 보안운영팀<br>
+        - 이메일: dhlabs_biz0@naver.com<br>
+        - 연락처: 010-8503-6232 (평일 09:00~18:00 (주말·공휴일 휴무))
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="business-info">
+        <p>상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 통신판매업신고: 면제 (부가가치세법 제8조 정식 등록 과세사업자 · 기업 간 B2B 소프트웨어 라이선스 직접 공급) | 고객센터: 010-8503-6232 (평일 09:00~18:00 (주말·공휴일 휴무)) | 이메일: dhlabs_biz0@naver.com</p>
+        <p><strong>업태 / 종목:</strong> 정보통신업, 도매 및 소매업 / 컴퓨터 프로그래밍 서비스업, 전자상거래 소매 중개업</p>
+        <p class="copyright">© 2026 디에이치랩스 (DH Labs). All rights reserved. 개인정보 보호법 및 전자상거래법 준수</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

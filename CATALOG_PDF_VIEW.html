@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoFlow Enterprise 2026 전체 150종 워크플로우 마스터 카탈로그 (인쇄·PDF 규격)</title>
+  <meta name="google-site-verification" content="AUTOFLOW_GOOGLE_SEARCH_CONSOLE_VERIFICATION" />
+  <meta name="naver-site-verification" content="AUTOFLOW_NAVER_SEARCH_ADVISOR_VERIFICATION" />
+  <meta name="keywords" content="AutoFlow 카탈로그 PDF, 워크플로우 명세서, 기업 자동화 도입 기안서, n8n 템플릿 목록, 정산 자동화 규격" />
+  <meta name="description" content="이커머스·물류·회계·마케팅·CS·보안 6대 분야 150종 워크플로우 단품(39,000~79,000원 영구 소장)과 상주형 무인 방어 엔진 사양을 한눈에 검토하는 기업 기안용 마스터 카탈로그." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 15mm 12mm 15mm 12mm;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    line-height: 1.5;
+    font-size: 9.5pt;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 100%;
+    min-height: 267mm;
+    max-height: 267mm;
+    height: 267mm;
+    page-break-after: always;
+    break-after: page;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .page:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Header & Footer Components */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1.5pt solid #0f172a;
+    padding-bottom: 3.5mm;
+    margin-bottom: 4mm;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-logo-badge {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 8.5pt;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .header-brand-title {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.2px;
+  }
+
+  .header-meta {
+    text-align: right;
+    font-size: 7.5pt;
+    color: #64748b;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+
+  .page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1pt solid #e2e8f0;
+    padding-top: 3mm;
+    margin-top: 3mm;
+    font-size: 7.5pt;
+    color: #64748b;
+  }
+
+  .footer-left {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .footer-right {
+    font-weight: 600;
+    color: #0f172a;
+  }
+
+  .page-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Typography & Titles */
+  h1, h2, h3, h4 {
+    color: #0f172a;
+    letter-spacing: -0.3px;
+  }
+
+  .section-title-wrap {
+    margin-bottom: 4mm;
+  }
+
+  .section-category {
+    display: inline-block;
+    font-size: 7.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #2563eb;
+    margin-bottom: 1.5mm;
+  }
+
+  .section-heading {
+    font-size: 15pt;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-desc {
+    font-size: 8.5pt;
+    color: #475569;
+    margin-top: 1mm;
+    line-height: 1.4;
+  }
+
+  /* Badge Components */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 7pt;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.2px;
+  }
+
+  .badge-primary { background: #eff6ff; color: #1d4ed8; border: 0.5pt solid #bfdbfe; }
+  .badge-navy { background: #0f172a; color: #ffffff; }
+  .badge-gold { background: #fef3c7; color: #b45309; border: 0.5pt solid #fde68a; }
+  .badge-emerald { background: #ecfdf5; color: #047857; border: 0.5pt solid #a7f3d0; }
+  .badge-purple { background: #faf5ff; color: #7e22ce; border: 0.5pt solid #e9d5ff; }
+
+  /* Cards & Containers */
+  .card-grid {
+    display: grid;
+    gap: 3mm;
+  }
+
+  .card-grid-2 { grid-template-columns: 1fr 1fr; }
+  .card-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+  .biz-card {
+    background: #ffffff;
+    border: 1pt solid #cbd5e1;
+    border-radius: 6px;
+    padding: 3.5mm 4mm;
+    position: relative;
+  }
+
+  .biz-card-navy {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #1e293b;
+  }
+
+  .biz-card-navy h3, .biz-card-navy h4 {
+    color: #ffffff;
+  }
+
+  .biz-card-navy .card-desc {
+    color: #94a3b8;
+  }
+
+  .biz-card-accent {
+    border-top: 3pt solid #2563eb;
+    background: #f8fafc;
+  }
+
+  .biz-card-gold {
+    border-top: 3pt solid #d97706;
+    background: #fffbeb;
+  }
+
+  /* Tables */
+  .table-container {
+    width: 100%;
+    margin-top: 2.5mm;
+    margin-bottom: 2.5mm;
+  }
+
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8pt;
+    text-align: left;
+  }
+
+  table.data-table th {
+    background: #0f172a;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 5px 8px;
+    border: 0.5pt solid #0f172a;
+    font-size: 7.8pt;
+    letter-spacing: -0.2px;
+  }
+
+  table.data-table td {
+    padding: 5px 8px;
+    border: 0.5pt solid #cbd5e1;
+    color: #1e293b;
+    vertical-align: middle;
+  }
+
+  table.data-table tr:nth-child(even) td {
+    background-color: #f8fafc;
+  }
+
+  table.data-table tr.highlight td {
+    background-color: #eff6ff;
+    font-weight: 600;
+  }
+
+  .price-cell {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: #0f172a;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .price-highlight {
+    color: #2563eb;
+    font-weight: 800;
+  }
+
+  /* Architecture Box */
+  .arch-diagram {
+    background: #090d16;
+    border: 1pt solid #1e293b;
+    border-radius: 6px;
+    padding: 3.5mm;
+    color: #e2e8f0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7pt;
+    line-height: 1.4;
+    white-space: pre;
+    overflow: hidden;
+    margin-bottom: 3.5mm;
+  }
+
+  /* Highlight Feature List */
+  .feature-list {
+    list-style: none;
+    margin-top: 2mm;
+  }
+
+  .feature-list li {
+    font-size: 8pt;
+    color: #334155;
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 1.5mm;
+    line-height: 1.35;
+  }
+
+  .feature-list li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-size: 6pt;
+    top: 1px;
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.8mm 0;
+    border-bottom: 0.5pt solid #e2e8f0;
+    font-size: 8pt;
+  }
+
+  .spec-label {
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  .spec-value {
+    color: #0f172a;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ==================================================== */
+  /* PAGE 1: COVER SPECIFIC STYLES                        */
+  /* ==================================================== */
+  .cover-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: radial-gradient(circle at 80% 20%, #1e293b 0%, #0a0f1d 70%, #030712 100%);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 14mm 12mm 12mm 12mm;
+    border: 1.5pt solid #1e293b;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  }
+
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .cover-badge-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .cover-official-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8pt;
+    font-weight: 700;
+    color: #60a5fa;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .cover-doc-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5pt;
+    color: #94a3b8;
+  }
+
+  .cover-center {
+    margin: auto 0;
+    padding: 6mm 0;
+  }
+
+  .cover-title-main {
+    font-size: 26pt;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    color: #ffffff;
+    margin-bottom: 4mm;
+  }
+
+  .cover-title-main span.gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cover-subtitle {
+    font-size: 11.5pt;
+    font-weight: 500;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 7mm;
+    max-width: 90%;
+  }
+
+  .cover-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3mm;
+    background: rgba(15, 23, 42, 0.75);
+    border: 1pt solid #334155;
+    border-radius: 8px;
+    padding: 4mm;
+    backdrop-filter: blur(8px);
+  }
+
+  .cover-stat-box {
+    text-align: center;
+    border-right: 1pt solid #334155;
+    padding: 0 2mm;
+  }
+
+  .cover-stat-box:last-child {
+    border-right: none;
+  }
+
+  .cover-stat-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15pt;
+    font-weight: 800;
+    color: #60a5fa;
+    line-height: 1.1;
+  }
+
+  .cover-stat-label {
+    font-size: 7pt;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-top: 1.5mm;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .cover-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-top: 1pt solid #334155;
+    padding-top: 5mm;
+  }
+
+  .cover-org {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+  }
+
+  .cover-org-sub {
+    font-size: 7.5pt;
+    color: #94a3b8;
+    font-weight: 400;
+  }
+
+  .cover-seal {
+    text-align: right;
+  }
+
+  .seal-badge {
+    border: 1.5pt solid #d97706;
+    background: rgba(217, 119, 6, 0.15);
+    color: #fbbf24;
+    font-size: 7.5pt;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    letter-spacing: 0.5px;
+  }
+
+  /* Callout alert box */
+  .alert-box {
+    background: #f1f5f9;
+    border-left: 3pt solid #0f172a;
+    padding: 3mm 4mm;
+    border-radius: 0 4px 4px 0;
+    margin-top: 2.5mm;
+    margin-bottom: 2.5mm;
+    font-size: 7.8pt;
+    color: #334155;
+    line-height: 1.4;
+  }
+
+  .alert-box strong {
+    color: #0f172a;
+  }
+</style>
+  <link rel="describedby" type="text/plain" href="https://autoflow.io/llms.txt" title="AutoFlow AI / LLM Context Summary" />
+  <link rel="alternate" type="application/rss+xml" title="AutoFlow 공식 스토어 RSS 피드" href="https://autoflow.io/rss.xml" />
+</head>
+<body>
+
+<!-- =================================================================== -->
+<!-- PAGE 1: COVER                                                       -->
+<!-- =================================================================== -->
+<div class="page">
+  <div class="cover-container">
+    <div class="cover-top">
+      <div class="cover-badge-group">
+        <div class="cover-official-tag">AutoFlow Enterprise Commercial Suite</div>
+        <div class="cover-doc-id">DOC: AF-COMMERCIAL-CATALOG-202610-SSOT</div>
+      </div>
+      <div class="brand-logo-badge" style="background:#2563eb; font-size:9pt; padding:4px 10px;">
+        AutoFlow Engine 2026
+      </div>
+    </div>
+
+    <div class="cover-center">
+      <div style="margin-bottom: 2mm;">
+        <span class="badge badge-gold" style="font-size:8pt; padding:3px 8px;">2026-10 SSOT 전사 제정판</span>
+        <span class="badge badge-primary" style="font-size:8pt; padding:3px 8px; margin-left:4px;">100% Zero-Python Native</span>
+      </div>
+      <h1 class="cover-title-main">
+        AutoFlow Enterprise<br>
+        <span class="gradient-text">공식 상용 마스터 카탈로그</span>
+      </h1>
+      <p class="cover-subtitle">
+        B2B 자동화 워크플로우 150종 기성 완제품 &bull; 2대 인프라 상시 소생 데몬 &bull; 4대 도메인 CS/세일즈 챗봇 위젯 &bull; 공식 3-Tier 엔터프라이즈 구독
+      </p>
+
+      <div class="cover-stats-grid">
+        <div class="cover-stat-box">
+          <div class="cover-stat-num">150종</div>
+          <div class="cover-stat-label">B2B 완제품 워크플로우</div>
+        </div>
+        <div class="cover-stat-box">
+          <div class="cover-stat-num">127ms</div>
+          <div class="cover-stat-label">무인 크래시 소생 가드</div>
+        </div>
+        <div class="cover-stat-box">
+          <div class="cover-stat-num">3중 교차</div>
+          <div class="cover-stat-label">장부 오차 1원 제로화 방패</div>
+        </div>
+        <div class="cover-stat-box">
+          <div class="cover-stat-num">1줄 위젯</div>
+          <div class="cover-stat-label">4대 도메인 대화형 봇</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-bottom">
+      <div class="cover-org">
+        디에이치랩스 (DH Labs)<br>
+        <span class="cover-org-sub">대표자 김동형 &bull; 사업자등록번호: 413-03-96950 &bull; 경상남도 김해시 번화1로 168, 1006동 402호 &bull; 2026년 10월 공식 발행</span>
+      </div>
+      <div class="cover-seal">
+        <div class="seal-badge">OFFICIAL MASTER CATALOG</div>
+        <div style="font-size:7pt; color:#94a3b8; margin-top:2px;">SSOT &amp; Strict Isolation Verified</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================================================================== -->
+<!-- PAGE 2: 3대 패밀리 완전 격리 아키텍처 개요                             -->
+<!-- =================================================================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="header-brand">
+      <span class="brand-logo-badge">AutoFlow</span>
+      <span class="header-brand-title">3대 패밀리 완전 물리적 격리 아키텍처</span>
+    </div>
+    <div class="header-meta">SEC 01 / ARCHITECTURE OVERVIEW</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-title-wrap">
+      <span class="section-category">Enterprise Architecture Standard</span>
+      <h2 class="section-heading">제품(Product) vs 엔진(Engine) vs 봇(Bot)의 본질적 분리</h2>
+      <p class="section-desc">
+        AutoFlow는 과거 발생했던 제품, 인프라 엔진, 챗봇 위젯 간의 개념 및 과금 혼선을 종식시키기 위해 3대 패밀리를 상호 배타적이고 독립적인 계층으로 완전 격리 확립하였습니다.
+      </p>
+    </div>
+
+    <div class="arch-diagram">
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        AutoFlow 전사 3대 패밀리 & 공식 3-Tier 체계                     │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│  [Family 1: Product Family (제품군)]                                                    │
+│  • 본질: B2B 업무 자동화 기성 완제품 파이프라인 (n8n JSON Blueprint)                      │
+│  • 규모: 150종 완제품 (이커머스, ERP, CRM, 결제/정산, HR/백오피스, DevOps)                │
+│  • 과금: 단품 카탈로그 기준가 (109,000원 ~ 79,000원) / 공식 3-Tier (월 9.9만~49만)    │
+│  ───────────────────────────────────────────────────────────────────────────────────  │
+│  [Family 2: Engine Family (엔진군)]                                                     │
+│  • 본질: 24/7 백그라운드 인프라 무인 상주 데몬 소프트웨어 (Rust Native & OS 데몬)        │
+│  • 제품: 자가치유 데몬 (127ms 소생) / 전사 정합성 대사 방패 (ReconFlow Pro)              │
+│  • 과금: 공식 3-Tier 구독 내장 및 전사 인프라 정기 구독 (무인 소생 SLA 보증)              │
+│  ───────────────────────────────────────────────────────────────────────────────────  │
+│  [Family 3: Bot Family (봇군)]                                                         │
+│  • 본질: 웹사이트 1줄 임베드(autoflow_bot.js) 대화형 CS/세일즈 위젯                      │
+│  • 도메인: 이커머스, 결제, SaaS, DevOps 4대 특화 (총 12 SKU)                            │
+│  • 과금: 공식 3-Tier 통합 구독 지원 (1:1 Device HWID 기기 귀속 라이선스)                 │
+│  ═══════════════════════════════════════════════════════════════════════════════════  │
+│  [Official 3-Tier Enterprise Subscription: 공식 3-Tier 구독 체계]                       │
+│  • 본질: 사내 PC 로컬 구동 기반 월간/연간 엔터프라이즈 정액 구독 (종량제 과금 0원)       │
+│  • 티어: 개발자 MCP 연동형 엔진 월 99,000원 / 정합성 대사 엔진 월 49,000원 / 듀얼 통합 엔진 월 69,000원│
+└────────────────────────────────────────────────────────────────────────────────────────┘</div>
+
+    <div class="card-grid card-grid-3" style="margin-bottom: 3.5mm;">
+      <div class="biz-card biz-card-accent">
+        <span class="badge badge-primary">Family 1</span>
+        <h3 style="font-size:9.5pt; margin-top:1.5mm; margin-bottom:1mm;">B2B 기성 완제품</h3>
+        <p style="font-size:7.5pt; color:#475569; line-height:1.35;">
+          사내 서버/PC에 즉시 투입되는 150종 n8n 워크플로우. 8대 분리 에어백과 V8 카오스 테스트를 통과한 영구 소장 자산.
+        </p>
+        <div style="margin-top:2mm; font-size:7.5pt; font-weight:700; color:#1d4ed8;">
+          개발자 MCP 연동형 엔진 월 99,000원 / 연 990,000원
+        </div>
+      </div>
+
+      <div class="biz-card" style="border-top: 3pt solid #0f172a; background:#f8fafc;">
+        <span class="badge badge-navy">Family 2</span>
+        <h3 style="font-size:9.5pt; margin-top:1.5mm; margin-bottom:1mm;">인프라 상시 데몬</h3>
+        <p style="font-size:7.5pt; color:#475569; line-height:1.35;">
+          워크플로우가 아닌 OS 백그라운드 상주 프로세스. 127ms 무인 크래시 소생 및 쿠팡/PG/통장 3중 1원 오차 대사 방패.
+        </p>
+        <div style="margin-top:2mm; font-size:7.5pt; font-weight:700; color:#0f172a;">
+          정합성 대사 엔진 월 49,000원 / 연 420,000원
+        </div>
+      </div>
+
+      <div class="biz-card" style="border-top: 3pt solid #7e22ce; background:#faf5ff;">
+        <span class="badge badge-purple">Family 3</span>
+        <h3 style="font-size:9.5pt; margin-top:1.5mm; margin-bottom:1mm;">대화형 CS/세일즈 봇</h3>
+        <p style="font-size:7.5pt; color:#475569; line-height:1.35;">
+          웹사이트 방문객 문의 응대 프론트엔드 위젯. 1줄 스크립트로 4대 전문 도메인(이커머스/결제/SaaS/DevOps) 즉시 응대.
+        </p>
+        <div style="margin-top:2mm; font-size:7.5pt; font-weight:700; color:#7e22ce;">
+          듀얼 통합 엔진 월 69,000원 / 연 590,000원
+        </div>
+      </div>
+    </div>
+
+    <div class="alert-box">
+      <strong>핵심 엔터프라이즈 기술 거버넌스 원칙:</strong><br>
+      ① <strong>Strict Zero-Python:</strong> 전체 파이프라인과 데몬은 Python 환경 의존성을 일체 배제하고 순수 Node.js V8 네이티브 엔진 및 Rust 네이티브 바이너리로 구동되어 종속성 충돌을 100% 방지합니다.<br>
+      ② <strong>127ms 무인 자가소생:</strong> 외부 인력 개입 없이 노드 타임아웃, 메모리 누수, 소켓 단절 발생 시 127ms 내 자가 소생합니다.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">AutoFlow Commercial Master Catalog 2026 &bull; AF-DOC-01</div>
+    <div class="footer-right">Page 2 / 7</div>
+  </div>
+</div>
+
+<!-- =================================================================== -->
+<!-- PAGE 3: Family 1: 150종 B2B 기성 완제품 (Product Family)               -->
+<!-- =================================================================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="header-brand">
+      <span class="brand-logo-badge">Family 1</span>
+      <span class="header-brand-title">Product Family: 150종 B2B 기성 완제품</span>
+    </div>
+    <div class="header-meta">SEC 02 / B2B WORKFLOW SUITE</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-title-wrap" style="margin-bottom: 2.5mm;">
+      <span class="section-category">Pre-Built Automation Pipelines &amp; Flagship Lineup</span>
+      <h2 class="section-heading" style="font-size: 13.5pt;">150종 B2B 완제품 &amp; 5대 이커머스 플래그십 라인업</h2>
+      <p class="section-desc" style="font-size: 8pt; margin-top: 0.5mm;">
+        이커머스, ERP 회계 마감, CRM, DevOps 업무를 즉각 무인화하는 n8n 표준 규격 완제품입니다. 3계층/8대 분리 에어백이 내장되어 외부 API 장애 시에도 안전 격리 및 무인 소생을 보장합니다.
+      </p>
+    </div>
+
+    <!-- 5대 이커머스 플래그십 테이블 -->
+    <h3 style="font-size:8.8pt; margin-top:0.5mm; margin-bottom:1mm; color:#0f172a; display:flex; justify-content:space-between; align-items:center;">
+      <span>■ ⚡ 5대 이커머스 무중단 에어백 플래그십 완제품 공식 라인업</span>
+      <span style="font-size:7.2pt; font-weight:600; color:#2563eb;">3계층 에어백 &amp; 카카오 알림톡 100% 탑재</span>
+    </h3>
+    <table class="data-table" style="font-size:7.5pt; margin-bottom: 2mm;">
+      <thead>
+        <tr>
+          <th style="width: 13%;">플랫폼</th>
+          <th style="width: 27%;">제품명 &amp; SKU</th>
+          <th style="width: 14%;">단품 정가</th>
+          <th style="width: 14%;">구독 한도(Cap)</th>
+          <th style="width: 32%;">내장 에어백 스펙 및 연동 규격</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-primary">쿠팡 윙</span></td>
+          <td><strong>쿠팡 윙 주문수집 &amp; 알림톡 3계층</strong><br><code style="font-family:'JetBrains Mono'; font-size:6.8pt; color:#2563eb;">AF-KR-COUPANG-ORDER-NOTIFICATION</code></td>
+          <td class="price-cell price-highlight">109,000원</td>
+          <td style="font-family:'JetBrains Mono'; font-size:7pt;">109,000원<br><span style="color:#64748b;">(월 9.9만 패스)</span></td>
+          <td>쿠팡 OpenAPI 주문수집 + 재시도/DLQ/솔라피 알림톡 3계층</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-emerald">네이버</span></td>
+          <td><strong>네이버 스마트스토어 주문 &amp; 알림톡 3계층</strong><br><code style="font-family:'JetBrains Mono'; font-size:6.8pt; color:#2563eb;">AF-KR-NAVER-ORDER-NOTIFICATION</code></td>
+          <td class="price-cell price-highlight">129,000원</td>
+          <td style="font-family:'JetBrains Mono'; font-size:7pt;">129,000원<br><span style="color:#64748b;">(월 9.9만 패스)</span></td>
+          <td>커머스 API bcrypt 전자서명 + 토큰 자동갱신 + 솔라피 알림톡</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-navy">카페24</span></td>
+          <td><strong>카페24 D2C 자사몰 주문수집 &amp; 알림톡 3계층</strong><br><code style="font-family:'JetBrains Mono'; font-size:6.8pt; color:#2563eb;">AF-KR-CAFE24-ORDER-NOTIFICATION</code></td>
+          <td class="price-cell price-highlight">139,000원</td>
+          <td style="font-family:'JetBrains Mono'; font-size:7pt;">139,000원<br><span style="color:#64748b;">(월 9.9만 패스)</span></td>
+          <td>쇼핑몰 REST OAuth2 토큰 갱신 + 배송지 대사 + 구매자 안심톡</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-purple">아임웹</span></td>
+          <td><strong>아임웹 D2C 자사몰 주문수집 &amp; 알림톡 3계층</strong><br><code style="font-family:'JetBrains Mono'; font-size:6.8pt; color:#2563eb;">AF-KR-IMWEB-ORDER-NOTIFICATION</code></td>
+          <td class="price-cell price-highlight">129,000원</td>
+          <td style="font-family:'JetBrains Mono'; font-size:7pt;">129,000원<br><span style="color:#64748b;">(월 9.9만 패스)</span></td>
+          <td>OpenAPI 토큰 갱신 + 중복 주문 멱등성 방어 + 카카오 알림톡</td>
+        </tr>
+        <tr class="highlight">
+          <td><span class="badge badge-gold">쇼피파이</span></td>
+          <td><strong>쇼피파이 글로벌 멀티통화 주문 &amp; 알림톡 3계층</strong><br><code style="font-family:'JetBrains Mono'; font-size:6.8pt; color:#b45309;">AF-GL-SHOPIFY-ORDER-NOTIFICATION</code></td>
+          <td class="price-cell price-highlight">169,000원</td>
+          <td style="font-family:'JetBrains Mono'; font-size:7pt;">169,000원<br><span style="color:#b45309;">(월 18.9만 패스)</span></td>
+          <td>웹훅 HMAC-SHA256 검증 + 다중통화 실시간 환율 대사 + 알림톡</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 150종 완제품 5대 공식 가격 티어 분포표 -->
+    <h3 style="font-size:8.8pt; margin-top:1.5mm; margin-bottom:1mm; color:#0f172a;">■ 150종 완제품 5대 공식 가격 티어 분포표</h3>
+    <table class="data-table" style="font-size:7.5pt; margin-bottom: 2mm;">
+      <thead>
+        <tr>
+          <th style="width: 18%;">등급 (Tier)</th>
+          <th style="width: 22%;">가격 범위 (KRW)</th>
+          <th style="width: 10%; text-align:center;">품목 수</th>
+          <th style="width: 18%;">대표 SKU</th>
+          <th style="width: 32%;">주요 업무 영역 및 특징</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-primary">Tier 1 (Entry)</span></td>
+          <td class="price-cell">109,000원 ~ 149,000원</td>
+          <td style="text-align:center; font-weight:700;">47종</td>
+          <td style="font-family:'JetBrains Mono'; font-size:7pt;">AF-KR-COUPANG, NAVER</td>
+          <td>5대 이커머스 주문수집, 슬랙 알림, 기본 데이터 동기화</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-primary">Tier 2 (Standard)</span></td>
+          <td class="price-cell">150,000원 ~ 249,000원</td>
+          <td style="text-align:center; font-weight:700;">45종</td>
+          <td style="font-family:'JetBrains Mono'; font-size:7pt;">AF-GL-SHOPIFY, AF-CRM-08</td>
+          <td>쇼피파이 글로벌, 다채널 주문 수집, CRM 고객 태깅</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-primary">Tier 3 (Advanced)</span></td>
+          <td class="price-cell">250,000원 ~ 399,000원</td>
+          <td style="text-align:center; font-weight:700;">33종</td>
+          <td style="font-family:'JetBrains Mono'; font-size:7pt;">AF-PAY-04, AF-ERP-12</td>
+          <td>PG 결제 자동 대사, 세금계산서 역발행, 멀티 창고 재고 동기화</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-primary">Tier 4 (Professional)</span></td>
+          <td class="price-cell">400,000원 ~ 799,000원</td>
+          <td style="text-align:center; font-weight:700;">17종</td>
+          <td style="font-family:'JetBrains Mono'; font-size:7pt;">AF-DEV-03, AF-LOG-09</td>
+          <td>멀티 클라우드 배포 모니터링, 풀필먼트(WMS) 통합 자동화</td>
+        </tr>
+        <tr class="highlight">
+          <td><span class="badge badge-gold">Tier 5 (Enterprise)</span></td>
+          <td class="price-cell price-highlight">800,000원 ~ 79,000원</td>
+          <td style="text-align:center; font-weight:700; color:#b45309;">8종</td>
+          <td style="font-family:'JetBrains Mono'; font-size:7pt;">AF-ENT-GLOBAL-01</td>
+          <td>전사 ERP 통합 회계 마감, 글로벌 환율 실시간 자동 헤지</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 1:1 자유변경 정기 패스 -->
+    <div style="margin-top: 1.5mm;">
+      <h3 style="font-size:8.8pt; margin-bottom:1mm; color:#0f172a;">■ 한도(Cap) 연동 1:1 자유변경 정기 패스 (AutoFlow Pass Clean Swap)</h3>
+      <table class="data-table" style="font-size:7.5pt; margin-bottom: 2mm;">
+        <thead>
+          <tr>
+            <th style="width: 20%;">패스 명칭</th>
+            <th style="width: 20%;">월 구독료 (KRW)</th>
+            <th style="width: 22%;">단품 허용 상한(Cap)</th>
+            <th style="width: 14%; text-align:center;">이용 가능 완제품</th>
+            <th style="width: 24%;">추천 대상 기업</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Starter Pass</strong></td>
+            <td class="price-cell price-highlight">
+              연 ₩990,000 / 연<br>
+              <span style="font-size:6.3pt; color:#059669; font-weight:700;">(월 82,500원 상당 · 2개월 무료 혜택)</span><br>
+              <span style="font-size:6pt; color:#64748b; font-weight:normal;">[월간 옵션: 월 99,000원]</span>
+            </td>
+            <td style="font-family:'JetBrains Mono'; font-size:7pt;">단품 정가 150,000원 이하</td>
+            <td style="text-align:center; font-weight:700;">47종 (쿠팡/네이버/카페24/아임웹 포함)</td>
+            <td>1인 기업, 국내 이커머스 셀러</td>
+          </tr>
+          <tr class="highlight">
+            <td><strong>Pro Pass</strong></td>
+            <td class="price-cell price-highlight">
+              월 49,000원 (₩49,000) / 월<br>
+              <span style="font-size:5.8pt; color:#0284c7; font-weight:800; background:#e0f2fe; border:1px solid #bae6fd; padding:1px 3px; border-radius:3px; display:inline-block; margin-top:1px;">[연간 결제 시 2개월 무료 혜택 적용 가능]</span>
+            </td>
+            <td style="font-family:'JetBrains Mono'; font-size:7pt;">단품 정가 250,000원 이하</td>
+            <td style="text-align:center; font-weight:700; color:#2563eb;">92종 (쇼피파이 글로벌 포함)</td>
+            <td>글로벌 크로스보더, 성장기 이커머스</td>
+          </tr>
+          <tr>
+            <td><strong>Enterprise Pass</strong></td>
+            <td class="price-cell price-highlight">
+              월 69,000원 (₩69,000) / 월<br>
+              <span style="font-size:5.8pt; color:#059669; font-weight:800; background:#ecfdf5; border:1px solid #a7f3d0; padding:1px 3px; border-radius:3px; display:inline-block; margin-top:1px;">[연간 결제 시 2개월 무료 혜택 적용 가능]</span>
+            </td>
+            <td style="font-family:'JetBrains Mono'; font-size:7pt; color:#d97706; font-weight:700;">단품 정가 79,000원 이하</td>
+            <td style="text-align:center; font-weight:800; color:#b45309;">150종 전 라인업</td>
+            <td>중견/엔터프라이즈 전사 무제한 교체</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert-box" style="padding: 2.5mm 3.5mm; font-size:7.5pt;">
+      <strong>단품 영구 소장권 혜택:</strong> 1회 구매 시 기업 사내 서버/PC 영구 소장 라이선스가 부여되며 추가 과금 없이 무제한 실행됩니다. 5대 이커머스 전 품목에 3계층 무중단 에어백 및 V8 물리 카오스 시뮬레이터 검증 보증서가 동봉됩니다.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">AutoFlow Commercial Master Catalog 2026 &bull; AF-DOC-02</div>
+    <div class="footer-right">Page 3 / 7</div>
+  </div>
+</div>
+
+<!-- =================================================================== -->
+<!-- PAGE 4: Family 2: 2대 인프라 데몬 (Engine Family)                      -->
+<!-- =================================================================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="header-brand">
+      <span class="brand-logo-badge">Family 2</span>
+      <span class="header-brand-title">Engine Family: 2대 인프라 상시 데몬</span>
+    </div>
+    <div class="header-meta">SEC 03 / INFRASTRUCTURE DAEMONS</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-title-wrap">
+      <span class="section-category">24/7 Always-On Infrastructure Engines</span>
+      <h2 class="section-heading">"워크플로우가 아니라 24시간 무인 상주 인프라 데몬이다"</h2>
+      <p class="section-desc">
+        엔진군은 다운로드받는 JSON 워크플로우가 아닙니다. 사내 서버 및 PC 백그라운드에 24시간 상주하며 프로세스 크래시를 127ms 내에 소생시키고, 쿠팡/네이버/PG/통장의 1원 오차를 대사하는 순수 인프라 시스템 데몬입니다.
+      </p>
+    </div>
+
+    <div class="card-grid card-grid-2" style="margin-top:2mm; margin-bottom:3.5mm;">
+      <!-- ENGINE 1 -->
+      <div class="biz-card" style="border-top:3.5pt solid #0f172a; background:#f8fafc;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="badge badge-navy">엔진 01</span>
+          <span style="font-family:'JetBrains Mono'; font-size:7.5pt; color:#64748b;">auto_flow_defender</span>
+        </div>
+        <h3 style="font-size:11pt; font-weight:800; margin-top:2mm; margin-bottom:1.5mm; color:#0f172a;">
+          자가치유 가드 데몬<br><span style="font-size:8.5pt; font-weight:600; color:#475569;">(Self-Healing Daemon)</span>
+        </h3>
+        <p style="font-size:7.8pt; color:#475569; line-height:1.4; margin-bottom:2.5mm;">
+          24/7 프로세스 무인 생존 수호, 메모리 누수 방어, 좀비 프로세스 자동 격리 및 127ms 무인 크래시 소생.
+        </p>
+
+        <div class="spec-row">
+          <span class="spec-label">크래시 감지 및 소생</span>
+          <span class="spec-value" style="color:#2563eb;">127ms 무인 자가소생</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">생존 에어백</span>
+          <span class="spec-value">5대 핵심 생존 방어막</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">하트비트 감시</span>
+          <span class="spec-value">90초 데드맨 스위치</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">월간 정규 구독료</span>
+          <span class="spec-value price-highlight">49,000원 / 월 (정합성 대사 엔진)</span>
+        </div>
+        <div class="spec-row" style="border-bottom:none;">
+          <span class="spec-label">연간 할인 정기 구독</span>
+          <span class="spec-value" style="color:#059669;">420,000원 / 연 (2개월 무료)</span>
+        </div>
+        <div style="margin-top:2mm; padding:2mm; background:#ffffff; border:0.5pt solid #cbd5e1; border-radius:4px; font-size:7.2pt; color:#64748b;">
+          <strong>권장 고객:</strong> 주문 수집이 1분만 중단되어도 막대한 손실이 발생하는 24/7 무중단 이커머스 및 물류 기업
+        </div>
+      </div>
+
+      <!-- ENGINE 2 -->
+      <div class="biz-card" style="border-top:3.5pt solid #2563eb; background:#eff6ff;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span class="badge badge-primary">엔진 02</span>
+          <span style="font-family:'JetBrains Mono'; font-size:7.5pt; color:#1d4ed8;">recon_flow_pro</span>
+        </div>
+        <h3 style="font-size:11pt; font-weight:800; margin-top:2mm; margin-bottom:1.5mm; color:#0f172a;">
+          전사 정합성 대사 엔진<br><span style="font-size:8.5pt; font-weight:600; color:#1d4ed8;">(ReconFlow Enterprise Pro)</span>
+        </h3>
+        <p style="font-size:7.8pt; color:#475569; line-height:1.4; margin-bottom:2.5mm;">
+          쿠팡+네이버+자사몰+PG+통장 3중 교차 검증을 통해 유령 주문, 누락 정산, 장부 불일치 1원 오차를 완전 차단.
+        </p>
+
+        <div class="spec-row">
+          <span class="spec-label">정합성 검증 방식</span>
+          <span class="spec-value" style="color:#2563eb;">3중 교차 대사 방패</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">오발송 방어 장치</span>
+          <span class="spec-value">사내 안전 보정 대기열 (SQQ)</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">대사 정밀도</span>
+          <span class="spec-value">1원 오차 불일치 즉시 적발</span>
+        </div>
+        <div class="spec-row">
+          <span class="spec-label">월간 정규 구독료</span>
+          <span class="spec-value price-highlight">69,000원 / 월 (듀얼 통합 엔진)</span>
+        </div>
+        <div class="spec-row" style="border-bottom:none;">
+          <span class="spec-label">연간 할인 정기 구독</span>
+          <span class="spec-value" style="color:#059669;">590,000원 / 연 (2개월 무료)</span>
+        </div>
+        <div style="margin-top:2mm; padding:2mm; background:#ffffff; border:0.5pt solid #bfdbfe; border-radius:4px; font-size:7.2pt; color:#1e40af;">
+          <strong>권장 고객:</strong> 월 매출 3,000만 원 이상, 복수 마켓플레이스 정산과 통장 잔고의 불일치를 방어하려는 중견 셀러
+        </div>
+      </div>
+    </div>
+
+    <div class="alert-box">
+      <strong>인프라 데몬 SLA (서비스 수준 협약):</strong><br>
+      엔진 구독 고객사에게는 99.99% 프로세스 무인 생존 보장 SLA가 적용되며, 당사 귀책의 치명적 기능 결함 발생 시 엔지니어링 실사 후 공정위 표준약관 기반 3단계 공정 환불 규정 및 무인 원격 자동 패치 배포를 보장합니다.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">AutoFlow Commercial Master Catalog 2026 &bull; AF-DOC-03</div>
+    <div class="footer-right">Page 4 / 7</div>
+  </div>
+</div>
+
+<!-- =================================================================== -->
+<!-- PAGE 5: Family 3: 4대 도메인 챗봇 (Bot Family)                         -->
+<!-- =================================================================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="header-brand">
+      <span class="brand-logo-badge">Family 3</span>
+      <span class="header-brand-title">Bot Family: 4대 도메인 CS/세일즈 챗봇</span>
+    </div>
+    <div class="header-meta">SEC 04 / INTERACTIVE BOT WIDGETS</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-title-wrap">
+      <span class="section-category">Conversational AI Widgets</span>
+      <h2 class="section-heading">웹사이트 1줄 임베드(autoflow_bot.js) 대화형 챗봇 위젯</h2>
+      <p class="section-desc">
+        엔진군이 백그라운드 인프라라면, 봇군은 고객의 자사몰, 웹사이트, 결제창에 1줄 스크립트로 삽입되어 방문자와 24시간 실시간 소통하는 프론트엔드 CS 및 세일즈 응대 위젯입니다.
+      </p>
+    </div>
+
+    <h3 style="font-size:9.5pt; margin-bottom:1.5mm; color:#0f172a;">■ 4대 도메인 특화 챗봇 라인업 (총 12 SKU)</h3>
+    <div class="card-grid card-grid-2" style="margin-bottom:3.5mm;">
+      <div class="biz-card">
+        <span class="badge badge-primary">COMMERCE</span>
+        <h4 style="font-size:9pt; margin-top:1.5mm; margin-bottom:1mm;">이커머스 CS &amp; 주문조회 봇</h4>
+        <p style="font-size:7.5pt; color:#475569; line-height:1.35;">
+          배송 현황 실시간 조회, 반품/교환 접수, 가상계좌 입금 안내 5대 분기망 완비. 상담원 업무의 85% 자동 해결.
+        </p>
+      </div>
+      <div class="biz-card">
+        <span class="badge badge-emerald">PAYMENT</span>
+        <h4 style="font-size:9pt; margin-top:1.5mm; margin-bottom:1mm;">결제 실패 복구 &amp; 결제 안내 봇</h4>
+        <p style="font-size:7.5pt; color:#475569; line-height:1.35;">
+          카드 한도 초과/PG 장애 시 대체 결제 수단 자동 제안, 할부 혜택 안내, 장바구니 이탈 고객 1:1 회수 상담.
+        </p>
+      </div>
+      <div class="biz-card">
+        <span class="badge badge-purple">SAAS</span>
+        <h4 style="font-size:9pt; margin-top:1.5mm; margin-bottom:1mm;">B2B 솔루션 온보딩 &amp; 세일즈 봇</h4>
+        <p style="font-size:7.5pt; color:#475569; line-height:1.35;">
+          방문 기업 요구사항 자동 분석, 최적 요금제 추천, 기업 데모 신청 캘린더 연동 및 담당 세일즈맨 핫라인 연결.
+        </p>
+      </div>
+      <div class="biz-card">
+        <span class="badge badge-navy">DEVOPS</span>
+        <h4 style="font-size:9pt; margin-top:1.5mm; margin-bottom:1mm;">장애 긴급 제보 &amp; 온콜 알림 봇</h4>
+        <p style="font-size:7.5pt; color:#475569; line-height:1.35;">
+          사내 시스템 이상 징후 사용자 제보 접수, 슬랙/디스코드 온콜 엔지니어 핫라인 알림 및 긴급 에스컬레이션.
+        </p>
+      </div>
+    </div>
+
+    <h3 style="font-size:9.5pt; margin-bottom:1.5mm; color:#0f172a;">■ 봇군 공식 3-Tier 과금 모델 명세표</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width: 22%;">구독 티어 유형</th>
+          <th style="width: 38%;">상품명 및 제공 스펙</th>
+          <th style="width: 18%;">정규 가격 (KRW)</th>
+          <th style="width: 22%;">권장 대상 고객</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-navy">개발자 MCP 연동형 엔진</span></td>
+          <td>
+            <strong>단일 도메인 챗봇 블루프린트 &amp; 로컬 구동</strong><br>
+            <span style="font-size:7.2pt; color:#64748b;">• n8n 챗봇 워크플로우 JSON 및 로컬 가드<br>• 1:1 Device HWID 지정 PC 1대 귀속</span>
+          </td>
+          <td class="price-cell price-highlight">월 99,000원<br><span style="font-size:7pt; color:#64748b; font-weight:normal;">(연 990,000원)</span></td>
+          <td>자체 로컬 서버를 운영하는 1인 셀러/기업</td>
+        </tr>
+        <tr class="highlight">
+          <td><span class="badge badge-primary">정합성 대사 엔진</span></td>
+          <td>
+            <strong>멀티 도메인 챗봇 &amp; 무인 자가치유 구독</strong><br>
+            <span style="font-size:7.2pt; color:#64748b;">• 챗봇 위젯/응답 오류 자동 복구 및 우선 패치<br>• 연간 결제 시 2개월 무료 혜택 (연 420,000원)</span>
+          </td>
+          <td class="price-cell price-highlight">월 49,000원</td>
+          <td>멀티채널 CS 자동화를 원하는 성장기 법인</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-purple">듀얼 통합 엔진</span></td>
+          <td>
+            <strong>전사 4대 도메인 챗봇 + 전담 SLA 풀케어</strong><br>
+            <span style="font-size:7.2pt; color:#64748b;">• 전 도메인 무제한 스왑 및 커스텀 룰셋 연동<br>• 연간 결제 시 2개월 무료 혜택 (연 590,000원)</span>
+          </td>
+          <td class="price-cell price-highlight">월 69,000원</td>
+          <td>전사 CS 및 내부 온콜 통합을 원하는 중견/대기업</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="alert-box" style="margin-top:3mm;">
+      <strong>통합 아키텍처 안내:</strong> 챗봇 위젯은 웹 프론트엔드 레이어에서 동작하며, 백그라운드 인프라 크래시를 127ms 내에 복구하는 엔진군과 유기적으로 연동되어 무중단 고객 응대를 실현합니다.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">AutoFlow Commercial Master Catalog 2026 &bull; AF-DOC-04</div>
+    <div class="footer-right">Page 5 / 7</div>
+  </div>
+</div>
+
+<!-- =================================================================== -->
+<!-- PAGE 6: 공식 3-Tier 구독 & 전사 가격 SSOT 대조표                     -->
+<!-- =================================================================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="header-brand">
+      <span class="brand-logo-badge">SSOT MATRIX</span>
+      <span class="header-brand-title">공식 3-Tier 구독 &amp; 전사 가격 대조표</span>
+    </div>
+    <div class="header-meta">SEC 05 / PRICE GOVERNANCE</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-title-wrap">
+      <span class="section-category">Unified Enterprise Pricing Governance</span>
+      <h2 class="section-heading">공식 3-Tier 엔터프라이즈 요금 위계 &amp; 전사 SSOT</h2>
+      <p class="section-desc">
+        AutoFlow의 모든 상용 라인업은 자가치유 상주형 엔진 (30일 ₩39,000 · MCP 특가 ₩29,000), 정합성 대사 상주형 엔진 (30일 ₩49,000 · MCP 특가 ₩39,000), 듀얼 통합 상주형 엔진 (30일 ₩69,000 · MCP 특가 ₩49,000)의 공식 3-Tier 단일 기준(SSOT)으로 투명하게 운영됩니다.
+      </p>
+    </div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width: 22%;">비교 항목</th>
+          <th style="width: 38%;">개발자 MCP 연동형 엔진 (스타터 엔트리 티어)</th>
+          <th style="width: 40%;">정합성 대사 엔진 &amp; Enterprise (비즈니스/전사 티어)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>제품 제공 범위</strong></td>
+          <td>표준 이커머스 주문수집 및 알림톡 핵심 파이프라인</td>
+          <td><strong>150종 B2B 전 라인업</strong> (ERP, CRM, 회계, 정산 대사, DevOps)</td>
+        </tr>
+        <tr>
+          <td><strong>공식 가격 정책</strong></td>
+          <td style="font-family:'JetBrains Mono'; font-weight:700; color:#2563eb;">개발자 MCP 연동형 엔진 월 99,000원 (연 990,000원)</td>
+          <td style="font-family:'JetBrains Mono'; font-weight:700; color:#0f172a;">정합성 대사 엔진 월 49,000원 / 듀얼 통합 엔진 월 69,000원</td>
+        </tr>
+        <tr>
+          <td><strong>엔진 및 기술지원</strong></td>
+          <td>로컬 3계층 에어백 및 DLQ 격리 기본 내장</td>
+          <td>127ms 무인 자가치유 데몬 + 3중 정합성 대사 + 원격 우선 패치 SLA</td>
+        </tr>
+        <tr>
+          <td><strong>라이선스 귀속 원칙</strong></td>
+          <td>1:1 Device HWID 지정 PC 1대 귀속</td>
+          <td>1:1 Device HWID 지정 서버/PC 귀속 및 전담 엔지니어링 케어</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 3mm;">
+      <h3 style="font-size:9pt; margin-bottom:1.5mm; color:#0f172a;">■ 전사 가격 혼선 방지 종합 SSOT 기준표 (Master Price Matrix)</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width: 20%;">대분류 (Family)</th>
+            <th style="width: 32%;">세부 상품명 / 구독 티어명</th>
+            <th style="width: 16%;">과금 형태</th>
+            <th style="width: 18%;">공식 정규 가격</th>
+            <th style="width: 14%; text-align:center;">비고</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Product Family</strong></td>
+            <td>Entry Tier 완제품 스펙 (47종)</td>
+            <td>카탈로그 기준가</td>
+            <td class="price-cell">109,000원~149,000원</td>
+            <td style="text-align:center; font-size:7pt;">개발자 MCP 연동형 엔진 대응</td>
+          </tr>
+          <tr>
+            <td><strong>Product Family</strong></td>
+            <td>Standard / Advanced 완제품 스펙 (78종)</td>
+            <td>카탈로그 기준가</td>
+            <td class="price-cell">150,000원~399,000원</td>
+            <td style="text-align:center; font-size:7pt;">정합성 대사 엔진 대응</td>
+          </tr>
+          <tr>
+            <td><strong>Product Family</strong></td>
+            <td>Professional / Enterprise 스펙 (25종)</td>
+            <td>카탈로그 기준가</td>
+            <td class="price-cell">400,000원~79,000원</td>
+            <td style="text-align:center; font-size:7pt;">Enterprise 대응</td>
+          </tr>
+          <tr class="highlight">
+            <td><strong>Official 3-Tier</strong></td>
+            <td>개발자 MCP 연동형 엔진 / 정합성 대사 엔진 / 듀얼 통합 엔진</td>
+            <td>월 정기구독</td>
+            <td class="price-cell price-highlight">월 99,000원 / 월 49,000원 / 월 69,000원</td>
+            <td style="text-align:center; font-size:7pt; color:#2563eb; font-weight:700;">공식 3-Tier</td>
+          </tr>
+          <tr>
+            <td><strong>Official 3-Tier (연간)</strong></td>
+            <td>연간 정기 결제 (2개월 무료 혜택 적용)</td>
+            <td>연 정기구독</td>
+            <td class="price-cell">연 99만 / 189만 / 490만 원</td>
+            <td style="text-align:center; font-size:7pt;">약 17% 절감</td>
+          </tr>
+          <tr>
+            <td><strong>Engine Family</strong></td>
+            <td>자가치유 가드 데몬 &amp; 3중 정합성 대사 엔진</td>
+            <td>구독 기본 탑재</td>
+            <td class="price-cell">3-Tier 라이선스 포함</td>
+            <td style="text-align:center; font-size:7pt;">127ms 무인 소생</td>
+          </tr>
+          <tr>
+            <td><strong>Bot Family</strong></td>
+            <td>4대 도메인 대화형 CS/세일즈 챗봇 위젯</td>
+            <td>구독 통합 제공</td>
+            <td class="price-cell">월 99,000원 ~ 69,000원</td>
+            <td style="text-align:center; font-size:7pt;">4대 도메인</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 해외 클라우드 종량제 대비 경제성 안내 박스 -->
+    <div style="margin-top: 1.5mm; background: #faf5ff; border: 1px solid #d8b4fe; border-radius: 4px; padding: 1.5mm 3mm; font-size: 6.5pt; color: #581c87; line-height: 1.35;">
+      <strong>💡 [해외 클라우드 SaaS 종량제 대비 경제성 및 공식 3-Tier 안내]</strong><br>
+      일반 해외 클라우드 자동화 툴은 무료 한도 초과 시 매월 오퍼레이션 건수마다 종량제 요금이 누적 청구됩니다. 반면 AutoFlow 공식 3-Tier(<strong>개발자 MCP 연동형 엔진 월 99,000원 / 정합성 대사 엔진 월 49,000원 / 듀얼 통합 엔진 월 69,000원</strong>)는 사내 PC 및 로컬 환경에서 직접 구동되어 실행 건수 제한이나 클라우드 서버비 부담 없이 무제한 가동됩니다.
+    </div>
+
+    <div class="alert-box" style="margin-top: 1.5mm;">
+      <strong>전사 가격 거버넌스 엄수:</strong> 본 카탈로그에 기재된 가격은 AutoFlow 전사의 단일 진실 공급원(SSOT)이며, 모든 세일즈 제안서, 견적서, 웹 결제 시스템은 위 기준과 1원의 오차도 없이 엄격히 동기화됩니다.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">AutoFlow Commercial Master Catalog 2026 &bull; AF-DOC-05</div>
+    <div class="footer-right">Page 6 / 7</div>
+  </div>
+</div>
+
+<!-- =================================================================== -->
+<!-- PAGE 7: 라이선스 EULA 및 회사/고객지원 정보                            -->
+<!-- =================================================================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="header-brand">
+      <span class="brand-logo-badge">GOVERNANCE</span>
+      <span class="header-brand-title">상용 소프트웨어 라이선스 &amp; 기업 정보</span>
+    </div>
+    <div class="header-meta">SEC 06 / EULA &amp; COMPANY INFO</div>
+  </div>
+
+  <div class="page-content">
+    <div class="section-title-wrap">
+      <span class="section-category">Enterprise Compliance &amp; Support</span>
+      <h2 class="section-heading">라이선스 사용권 규정 (EULA) 및 기술 지원 체계</h2>
+      <p class="section-desc">
+        AutoFlow의 모든 상용 자산은 법적 보호를 받으며, 정규 구매 고객사에게는 지정된 사내 서버/PC 내 사용 권한과 강력한 기술 지원 보증이 함께 제공됩니다.
+      </p>
+    </div>
+
+    <div class="card-grid card-grid-2" style="margin-bottom:3mm;">
+      <div class="biz-card">
+        <h4 style="font-size:9pt; margin-bottom:1.5mm; color:#0f172a;">■ 소프트웨어 라이선스 범위 (EULA)</h4>
+        <ul class="feature-list">
+          <li><strong>1:1 Device HWID 기기 귀속:</strong> 발급된 라이선스는 지정된 사내 서버 또는 PC 1대(HWID)에 귀속되며 실행 건수 제한 없이 가동할 수 있습니다.</li>
+          <li><strong>지적재산권 보호:</strong> 워크플로우의 소스 로직 및 에어백 아키텍처는 디에이치랩스 (DH Labs)의 독점 자산이며, 제3자 무단 전매/재배포는 엄격히 금지됩니다.</li>
+          <li><strong>3단계 공정 일할 환불:</strong> 미활성화 7일 이내 100% 환불, 치명적 결함 실사 후 100% 환불, 7일 경과 또는 활성화 후 중도 해지 시 실사용 일수 일할 계산분 및 위약금 10% 공제 후 환불됩니다.</li>
+        </ul>
+      </div>
+
+      <div class="biz-card">
+        <h4 style="font-size:9pt; margin-bottom:1.5mm; color:#0f172a;">■ 기업 기술 지원 및 엔터프라이즈 SLA</h4>
+        <ul class="feature-list">
+          <li><strong>온라인 기술 지원:</strong> 공식 고객지원 데스크 및 기술 문서를 통한 엔지니어링 지원 (평일 09:00~18:00 (주말·공휴일 휴무)).</li>
+          <li><strong>24/7 자가치유 데몬:</strong> 공식 3-Tier 구독 고객사 대상 127ms 무인 자가치유 데몬 자동 복구 &amp; 원격 패치 제공.</li>
+          <li><strong>지속적 업데이트:</strong> n8n 상위 버전 및 연동 플랫폼(쿠팡, 네이버, 슬랙) API 변경 시 호환성 패치 제공.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="biz-card biz-card-navy" style="margin-bottom:3mm; padding:4mm 5mm;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2mm;">
+        <h3 style="font-size:11pt; font-weight:800; color:#ffffff;">디에이치랩스 (DH Labs)</h3>
+        <span class="badge badge-gold" style="font-size:7.5pt;">사업자 등록 및 공식 본사 인증</span>
+      </div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:2mm; font-size:7.8pt; color:#cbd5e1;">
+        <div>&bull; <strong>상호:</strong> 디에이치랩스 (DH Labs) | <strong>대표자:</strong> 김동형</div>
+        <div>&bull; <strong>사업자등록번호:</strong> 413-03-96950</div>
+        <div>&bull; <strong>소재지:</strong> 경상남도 김해시 번화1로 168, 1006동 402호</div>
+        <div>&bull; <strong>통신판매업신고:</strong> 면제 (부가가치세법 제8조 정식 등록 과세사업자 · 기업 간 B2B 소프트웨어 라이선스 직접 공급)</div>
+        <div>&bull; <strong>고객센터:</strong> 010-8503-6232 (평일 09:00~18:00 (주말·공휴일 휴무))</div>
+        <div>&bull; <strong>고객지원 이메일:</strong> dhlabs_biz0@naver.com</div>
+      </div>
+    </div>
+
+    <div class="alert-box" style="margin-top:0;">
+      <strong>발행 승인 선언:</strong> 본 카탈로그는 AutoFlow 이사회 및 총괄 아키텍트의 엄격한 상용 품질 검증을 통과하여 2026년 10월 6일 공식 제정되었으며, 고객사와 파트너사에 전달되는 최종 상용 브로슈어로서 법적 공신력을 갖습니다.
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-left">AutoFlow Commercial Master Catalog 2026 &bull; AF-DOC-06</div>
+    <div class="footer-right">Page 7 / 7 (Final)</div>
+  </div>
+</div>
+
+<!-- [2026 Modular Pick Lineup & 7-Day Trial Scorecard] WF_ENTRY (₩9,900) | WF_STANDARD (₩19,000) | WF_COMPLEX (₩29,000) | TRIAL_7D_ALL_MODULES (7-Day Free Trial + Perpetual Workflow Guarantee) | MODULE_A1_MCP 연동 (₩29,000/30d) | MODULE_A2_MANAGED_AI (₩49,000/30d) | MODULE_B_BRANCH_RECON (₩29,000/30d) | Pick A1+B (₩58,000/30d) | Pick A2+B (₩78,000/30d) -->
+</body>
+</html>

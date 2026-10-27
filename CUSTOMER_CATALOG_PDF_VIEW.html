@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoFlow 이커머스 셀러 전용 자동화 가이드북 | 주문·송장·정산·품절 무인화 브로슈어</title>
+  <meta name="google-site-verification" content="AUTOFLOW_GOOGLE_SEARCH_CONSOLE_VERIFICATION" />
+  <meta name="naver-site-verification" content="AUTOFLOW_NAVER_SEARCH_ADVISOR_VERIFICATION" />
+  <meta name="keywords" content="셀러 자동화 브로슈어, 쿠팡 윙 자동화 가이드, 스마트스토어 송장 자동화, 쇼핑몰 정산 대사, 역마진 방지" />
+  <meta name="description" content="스마트스토어·쿠팡 윙·카페24 셀러를 위한 신규 주문 알림톡, 24개 택배사 송장 변환, 실시간 역마진 브레이크, 1원 정산 대사 완제품 도입 브로슈어." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap');
+
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 10mm 12mm;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #0f172a;
+    background-color: #ffffff;
+    line-height: 1.45;
+    font-size: 9.5pt;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 100%;
+    min-height: 277mm;
+    max-height: 277mm;
+    height: 277mm;
+    page-break-after: always;
+    break-after: page;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 2mm 0;
+  }
+
+  .page:last-child {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Header & Footer */
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 2.5mm;
+    margin-bottom: 4mm;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-logo-badge {
+    background: linear-gradient(135deg, #1e3a8a, #0284c7);
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 8.5pt;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .header-brand-title {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.2px;
+  }
+
+  .header-meta {
+    text-align: right;
+    font-size: 7.5pt;
+    color: #64748b;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+  }
+
+  .page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 2.5mm;
+    margin-top: 3mm;
+    font-size: 7.5pt;
+    color: #64748b;
+  }
+
+  .footer-center {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  /* Utility & Cards */
+  .hero-container {
+    background: linear-gradient(145deg, #091e3a 0%, #0f172a 60%, #0369a1 100%);
+    border-radius: 12px;
+    padding: 22px 24px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(56, 189, 248, 0.2);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    color: #38bdf8;
+    font-size: 8pt;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-title {
+    font-size: 20pt;
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+
+  .hero-title span {
+    color: #38bdf8;
+  }
+
+  .hero-subtitle {
+    font-size: 10.5pt;
+    font-weight: 500;
+    color: #cbd5e1;
+    line-height: 1.5;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .stat-card {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .stat-card.blue {
+    background: #f0f9ff;
+    border-color: #7dd3fc;
+  }
+
+  .stat-card.amber {
+    background: #fffbeb;
+    border-color: #fde68a;
+  }
+
+  .stat-card.purple {
+    background: #faf5ff;
+    border-color: #d8b4fe;
+  }
+
+  .stat-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15pt;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.1;
+  }
+
+  .stat-label {
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #475569;
+    margin-top: 3px;
+  }
+
+  .stat-desc {
+    font-size: 6.8pt;
+    color: #64748b;
+    margin-top: 2px;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+  }
+
+  .section-heading-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: #0284c7;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9pt;
+    font-weight: 900;
+  }
+
+  /* Pain & Solution Table */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    font-size: 8.5pt;
+  }
+
+  .comparison-table th {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 8pt;
+  }
+
+  .comparison-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+
+  .comparison-table tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+
+  .pain-box {
+    background: #fef2f2;
+    border-left: 3px solid #ef4444;
+    padding: 6px 8px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .solution-box {
+    background: #f0fdf4;
+    border-left: 3px solid #10b981;
+    padding: 6px 8px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  /* Pricing Cards */
+  .pricing-card {
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .pricing-card.featured {
+    border-color: #0284c7;
+    box-shadow: 0 4px 15px rgba(2, 132, 199, 0.15);
+  }
+
+  .pricing-badge {
+    position: absolute;
+    top: -10px;
+    right: 14px;
+    background: #0284c7;
+    color: #ffffff;
+    font-size: 7pt;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .price-tier-title {
+    font-size: 11pt;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 2px;
+  }
+
+  .price-tier-sub {
+    font-size: 7.5pt;
+    color: #64748b;
+    margin-bottom: 8px;
+  }
+
+  .price-amount {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16pt;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 4px;
+  }
+
+  .price-amount span {
+    font-size: 8.5pt;
+    font-weight: 600;
+    color: #64748b;
+  }
+
+  .feature-list {
+    list-style: none;
+    margin-top: 8px;
+    font-size: 8pt;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    color: #334155;
+  }
+
+  .feature-list li strong {
+    color: #0f172a;
+  }
+
+  .check-icon {
+    color: #10b981;
+    font-weight: 900;
+  }
+
+  /* FAQ Accordion Item */
+  .faq-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 9px 12px;
+    margin-bottom: 6px;
+  }
+
+  .faq-q {
+    font-weight: 800;
+    font-size: 8.5pt;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+
+  .faq-a {
+    font-size: 8pt;
+    color: #475569;
+    line-height: 1.4;
+    padding-left: 18px;
+  }
+
+  .step-badge {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #0284c7;
+    color: #ffffff;
+    font-weight: 900;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8.5pt;
+  }
+</style>
+  <link rel="describedby" type="text/plain" href="https://autoflow.io/llms.txt" title="AutoFlow AI / LLM Context Summary" />
+  <link rel="alternate" type="application/rss+xml" title="AutoFlow 공식 스토어 RSS 피드" href="https://autoflow.io/rss.xml" />
+</head>
+<body>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 1 : [표지 & 비전] 24시간 자는 동안에도 주문을 놓치지 않는 파트너 -->
+  <!-- ========================================================================= -->
+  <div class="page" id="page-1">
+    <div class="page-header">
+      <div class="header-brand">
+        <span class="brand-logo-badge">AutoFlow</span>
+        <span class="header-brand-title">Commerce Suite 2026</span>
+      </div>
+      <div class="header-meta">
+        DOCUMENT: AF-SALES-BROCHURE-2026<br>
+        TARGET: E-Commerce Sellers & Small Business
+      </div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-around;">
+      <!-- Hero Banner -->
+      <div class="hero-container">
+        <div class="hero-badge">⚡ 5대 마켓 무인 주문수집 & 무중단 에어백 솔루션</div>
+        <div class="hero-title">
+          24시간 자는 동안에도<br>
+          주문을 놓치지 않는 <span>무인 자동화 파트너</span>
+        </div>
+        <div class="hero-subtitle">
+          직원 1명 몫을 똑똑하게 해내는 스마트 스토어 & 쿠팡 주문 알림 시스템.<br>
+          새벽에 들어온 주문도 1초 만에 스마트폰 카톡으로 직행하고, 서버비는 평생 0원입니다.
+        </div>
+      </div>
+
+      <!-- 4대 핵심 가치 지표 -->
+      <div>
+        <div class="section-heading">
+          <div class="section-heading-icon">★</div>
+          <div>이커머스 셀러가 AutoFlow를 선택하는 4가지 압도적 이유</div>
+        </div>
+        <div class="grid-4">
+          <div class="stat-card blue">
+            <div class="stat-val">1.0초</div>
+            <div class="stat-label">카톡 즉시 알림</div>
+            <div class="stat-desc">고객 결제 즉시 사장님/포장팀 카카오톡으로 상세 내역 전송</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val">127ms</div>
+            <div class="stat-label">무인 크래시 소생</div>
+            <div class="stat-desc">API 점검·인터넷 단선 시에도 12대 룰 기반 자동 복구 에어백</div>
+          </div>
+          <div class="stat-card amber">
+            <div class="stat-val">₩0 원</div>
+            <div class="stat-label">서버 유지비 0원</div>
+            <div class="stat-desc">사내 PC/노트북에서 직접 구동하는 영구소장형 완제품</div>
+          </div>
+          <div class="stat-card purple">
+            <div class="stat-val">월 250만</div>
+            <div class="stat-label">인건비 절감 효과</div>
+            <div class="stat-desc">단순 엑셀 취합, 수동 송장 입력 업무 완전 무인화 실현</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 지원 5대 마켓 생태계 -->
+      <div class="card" style="margin-top: 4px;">
+        <div style="font-weight: 800; font-size: 9pt; color: #0f172a; margin-bottom: 6px;">
+          🌐 대한민국 대표 5대 마켓 & 글로벌 이커머스 즉시 호환 연동
+        </div>
+        <div class="grid-3" style="font-size: 8pt; gap: 8px;">
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px;">
+            <strong style="color: #dc2626;">[쿠팡 윙 Coupang]</strong><br>
+            발주서 자동 수집 & 미출고 패널티 방어
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px;">
+            <strong style="color: #16a34a;">[스마트스토어 Naver]</strong><br>
+            커머스 API 실시간 주문 수집 & 알림톡
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px;">
+            <strong style="color: #2563eb;">[카페24 Cafe24]</strong><br>
+            D2C 자사몰 Rest API 완제품 파이프라인
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px;">
+            <strong style="color: #ea580c;">[11번가 11st]</strong><br>
+            오픈마켓 Open API 연동 및 일괄 송장 등록
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px;">
+            <strong style="color: #7c3aed;">[아임웹 & 쇼피파이]</strong><br>
+            글로벌 멀티 통화 환산 및 크로스보더 대사
+          </div>
+          <div style="background: #f1f5f9; border: 1px dashed #94a3b8; border-radius: 6px; padding: 6px 10px;">
+            <strong style="color: #0f172a;">[Make & n8n 듀얼]</strong><br>
+            초간편 클라우드 or 사내 영구소장 자유 선택
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>AutoFlow Sales Brochure v2.0 | Confidential for Prospective Clients</span>
+      <span class="footer-center">PAGE 1 / 4</span>
+      <span>디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 경상남도 김해시 번화1로 168, 1006동 402호</span>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 2 : [고객의 고통 & 솔루션] 셀러의 3대 고통 vs AutoFlow 3대 해결책 -->
+  <!-- ========================================================================= -->
+  <div class="page" id="page-2">
+    <div class="page-header">
+      <div class="header-brand">
+        <span class="brand-logo-badge">AutoFlow</span>
+        <span class="header-brand-title">Pain &amp; Solution Analysis</span>
+      </div>
+      <div class="header-meta">
+        FOCUS: ROI &amp; Risk Mitigation<br>
+        CATEGORY: Business Architecture
+      </div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-around;">
+      <div>
+        <div style="font-size: 15pt; font-weight: 900; color: #0f172a; margin-bottom: 4px;">
+          "새벽 주문 놓쳐서 배송 지연 패널티 맞은 적 있으시죠?"
+        </div>
+        <div style="font-size: 9pt; color: #64748b; margin-bottom: 12px;">
+          매달 빠져나가는 수십만 원의 클라우드 툴 요금, 복잡한 개발 외주에 지치셨다면 이제 무인 자동화로 전환하세요.
+        </div>
+      </div>
+
+      <!-- 3대 Pain Point vs 3대 Solution -->
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div class="card" style="border-left: 4px solid #ef4444; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div style="font-weight: 800; font-size: 9pt; color: #b91c1c;">
+              🚨 [Pain 1] 수동 5대 마켓 로그인과 새벽 주문 누락 ➔ 배송 지연 및 점수 감점
+            </div>
+            <span style="font-size: 7.5pt; font-weight: 700; color: #ef4444;">위험도: 극심</span>
+          </div>
+          <div style="font-size: 8pt; color: #475569; margin-bottom: 6px;">
+            아침마다 쿠팡, 네이버, 11번가 일일이 로그인해서 엑셀 다운로드받고 취합하느라 오전 2시간을 날립니다. 주말이나 휴일 새벽에 들어온 급한 발주를 제때 확인 못해 발송 기한을 넘기고 마켓 정지 위기까지 겪습니다.
+          </div>
+          <div class="solution-box" style="font-size: 8pt;">
+            <strong style="color: #065f46;">✨ [AutoFlow 해결책 1: 카톡 1초 실시간 알림]</strong><br>
+            어떤 마켓에서 주문이 발생하든 즉시 감지하여 <strong>1초 만에 대표님 스마트폰 카카오톡/텔레그램으로 주문 상품, 수량, 주소지를 완벽 정리해 팝업</strong>으로 띄워드립니다.
+          </div>
+        </div>
+
+        <div class="card" style="border-left: 4px solid #f59e0b; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div style="font-weight: 800; font-size: 9pt; color: #b45309;">
+              ⚠️ [Pain 2] 마켓 점검시간 때 프로그램 크래시 ➔ 시스템 먹통으로 주문 누락 발생
+            </div>
+            <span style="font-size: 7.5pt; font-weight: 700; color: #f59e0b;">위험도: 상시 발생</span>
+          </div>
+          <div style="font-size: 8pt; color: #475569; margin-bottom: 6px;">
+            오픈마켓은 새벽 2시~5시에 빈번하게 정기 점검을 진행합니다. 일반 외주 프로그램이나 스크립트는 이때 에러를 뿜으며 사망(Crash)하고, 그 뒤로 주문 수집이 완전히 멈춰버립니다.
+          </div>
+          <div class="solution-box" style="font-size: 8pt;">
+            <strong style="color: #065f46;">🛡️ [AutoFlow 해결책 2: 3단계 무중단 엔터프라이즈 에어백 노드]</strong><br>
+            API 429 차단이나 점검(502/503) 감지 시 <strong>지터 백오프로 자동 재시도</strong>하며, 치명적 오류는 DLQ 샌드박스로 격리하여 파이프라인 전체를 무중단 수호합니다. (시스템 크래시 시 프로세스 소생은 별도 자가치유 데몬 연동)
+          </div>
+        </div>
+
+        <div class="card" style="border-left: 4px solid #6366f1; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <div style="font-weight: 800; font-size: 9pt; color: #4338ca;">
+              💸 [Pain 3] 매월 청구되는 비싼 SaaS 요금과 서버비 ➔ 배보다 배꼽이 큰 고정비
+            </div>
+            <span style="font-size: 7.5pt; font-weight: 700; color: #6366f1;">비용 누수</span>
+          </div>
+          <div style="font-size: 8pt; color: #475569; margin-bottom: 6px;">
+            주문이 늘어날수록 Zapier, Make 등 해외 SaaS 실행 횟수가 폭증하여 월 10~30만 원 청구서가 날아옵니다. AWS 등 클라우드 가상 서버를 두자니 관리자도 없고 서버비만 계속 나갑니다.
+          </div>
+          <div class="solution-box" style="font-size: 8pt;">
+            <strong style="color: #065f46;">💰 [AutoFlow 해결책 3: 사내 PC 로컬 구동 & 클라우드 종량제 0원]</strong><br>
+            사내 PC 또는 미니PC에 AutoFlow 엔진을 로컬 구동 방식으로 탑재하므로 <strong>별도 클라우드 서버 비용이 0원</strong>입니다. 주문이 1만 건이든 10만 건이든 실행 건수 추가 요금이 일절 없습니다.
+          </div>
+        </div>
+      </div>
+
+      <!-- Before vs After 비교 표 -->
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">비교 항목</th>
+            <th style="width: 37%;">기존 방식 (수작업 &amp; 일반 외주)</th>
+            <th style="width: 38%; background: #0284c7;">AutoFlow 도입 후</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>주문 수집 소요시간</strong></td>
+            <td>매일 아침 1~2시간 수동 다운로드</td>
+            <td><strong>0분 (주문 발생 즉시 1초 무인 수집)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>주말/새벽 발주 대응</strong></td>
+            <td>출근 후 확인하여 배송 지연 빈번</td>
+            <td><strong>스마트폰 카톡으로 1초 즉시 확인</strong></td>
+          </tr>
+          <tr>
+            <td><strong>월 구독 및 서버 비용</strong></td>
+            <td>클라우드 SaaS 월 15~40만 원 누적 과금</td>
+            <td><strong>공식 3-Tier 정액 구독 (로컬 구동 서버비 0원)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>장애 발생 시 조치</strong></td>
+            <td>개발자 찾느라 반나절 업무 마비</td>
+            <td><strong>127ms 무인 자가치유 데몬 자동 소생</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="page-footer">
+      <span>AutoFlow Sales Brochure v2.0 | Confidential for Prospective Clients</span>
+      <span class="footer-center">PAGE 2 / 4</span>
+      <span>디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 경상남도 김해시 번화1로 168, 1006동 402호</span>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 3 : [공식 투명 요금 매트릭스] 공식 3-Tier 구독 및 주요 파이프라인 안내 -->
+  <!-- ========================================================================= -->
+  <div class="page" id="page-3">
+    <div class="page-header">
+      <div class="header-brand">
+        <span class="brand-logo-badge">AutoFlow</span>
+        <span class="header-brand-title">Product Lineup &amp; Transparent Pricing Matrix</span>
+      </div>
+      <div class="header-meta">
+        PRICING: Official Commercial SSOT (No Mixing)<br>
+        DELIVERY: Instant Download &amp; License
+      </div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
+      
+      <!-- 상단 안내 타이틀 -->
+      <div style="text-align: center; margin-bottom: 2px;">
+        <div style="font-size: 14pt; font-weight: 900; color: #0f172a; letter-spacing: -0.3px;">
+          공식 3-Tier 엔터프라이즈 구독 및 카탈로그 라인업 투명 요금표
+        </div>
+        <div style="font-size: 8pt; color: #64748b;">
+          개발자 MCP 연동형 엔진 월 99,000원 / 정합성 대사 엔진 월 49,000원 / 듀얼 통합 엔진 월 69,000원 공식 단일 기준을 정직하게 공개합니다.
+        </div>
+      </div>
+
+      <!-- 영역 1: [카탈로그 주요 파이프라인 기준 단가 안내] -->
+      <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 8px 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <div style="font-size: 9pt; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 6px;">
+            <span>📦</span> <span>[주요 마켓별 파이프라인 카탈로그 스펙 기준가]</span>
+            <span style="font-size: 7pt; font-weight: 600; color: #0284c7; background: #e0f2fe; padding: 1px 6px; border-radius: 4px;">로컬 PC 구동 · 건당 종량제 0원</span>
+          </div>
+          <div style="font-size: 7pt; color: #64748b;">결제 완료 즉시 다운로드 + 더블클릭 런처 동봉</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px;">
+          <!-- 1. 쿠팡 윙 -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 8px; text-align: center;">
+            <div style="font-size: 7.5pt; font-weight: 700; color: #334155;">쿠팡 윙 (Wing)</div>
+            <div style="font-size: 6.8pt; color: #64748b; margin-bottom: 3px;">실시간 발주/재고</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; font-weight: 900; color: #0f172a;">개발자 MCP 연동형 엔진</div>
+            <div style="font-size: 6.5pt; color: #059669; font-weight: 700;">월 99,000원</div>
+          </div>
+          <!-- 2. 네이버 커머스 -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 8px; text-align: center;">
+            <div style="font-size: 7.5pt; font-weight: 700; color: #334155;">네이버 커머스</div>
+            <div style="font-size: 6.8pt; color: #64748b; margin-bottom: 3px;">스마트스토어 송장</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; font-weight: 900; color: #0f172a;">개발자 MCP 연동형 엔진</div>
+            <div style="font-size: 6.5pt; color: #059669; font-weight: 700;">월 99,000원</div>
+          </div>
+          <!-- 3. 카페24 D2C -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 8px; text-align: center;">
+            <div style="font-size: 7.5pt; font-weight: 700; color: #334155;">카페24 D2C</div>
+            <div style="font-size: 6.8pt; color: #64748b; margin-bottom: 3px;">REST/웹훅 풀연동</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; font-weight: 900; color: #0f172a;">개발자 MCP 연동형 엔진</div>
+            <div style="font-size: 6.5pt; color: #059669; font-weight: 700;">월 99,000원</div>
+          </div>
+          <!-- 4. 아임웹 D2C -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 8px; text-align: center;">
+            <div style="font-size: 7.5pt; font-weight: 700; color: #334155;">아임웹 D2C</div>
+            <div style="font-size: 6.8pt; color: #64748b; margin-bottom: 3px;">결제폼/알림톡 연동</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; font-weight: 900; color: #0f172a;">정합성 대사 엔진</div>
+            <div style="font-size: 6.5pt; color: #059669; font-weight: 700;">월 49,000원</div>
+          </div>
+          <!-- 5. 쇼피파이 글로벌 -->
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 8px; text-align: center;">
+            <div style="font-size: 7.5pt; font-weight: 700; color: #334155;">쇼피파이 글로벌</div>
+            <div style="font-size: 6.8pt; color: #64748b; margin-bottom: 3px;">해외주문/통관검증</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; font-weight: 900; color: #0f172a;">정합성 대사 엔진</div>
+            <div style="font-size: 6.5pt; color: #059669; font-weight: 700;">월 49,000원</div>
+          </div>
+          <!-- 6. ★ 엔터프라이즈 ERP 전사 연동 -->
+          <div style="background: linear-gradient(135deg, #1e1b4b, #312e81); border: 1.5px solid #a855f7; border-radius: 6px; padding: 6px 8px; text-align: center; color: #ffffff; position: relative;">
+            <div style="position: absolute; top: -7px; right: 4px; background: #eab308; color: #000; font-size: 5.5pt; font-weight: 900; padding: 1px 4px; border-radius: 3px;">ENTERPRISE TIER</div>
+            <div style="font-size: 7.2pt; font-weight: 800; color: #e9d5ff;">엔터프라이즈 ERP</div>
+            <div style="font-size: 6.5pt; color: #c4b5fd; margin-bottom: 3px;">SAP·ERP 전사연동</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; font-weight: 900; color: #fde047;">₩69,000</div>
+            <div style="font-size: 6.2pt; color: #cbd5e1;">듀얼 통합 엔진 / 월</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 영역 2: [공식 3-Tier 구독 (개발자 MCP 연동형 엔진 / 정합성 대사 엔진 / 듀얼 통합 엔진)] -->
+      <div style="background: #ffffff; border: 1.5px solid #0284c7; border-radius: 8px; padding: 8px 10px; position: relative;">
+        <div style="position: absolute; top: -8px; left: 14px; background: #0284c7; color: #ffffff; font-size: 6.8pt; font-weight: 800; padding: 1px 8px; border-radius: 4px;">
+          OFFICIAL 3-TIER SUBSCRIPTION
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2px; margin-bottom: 6px;">
+          <div style="font-size: 9pt; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 6px;">
+            <span>🔄</span> <span>[공식 3-Tier 라이선스 구독 (1:1 Device HWID 기기 귀속)]</span>
+            <span style="font-size: 7pt; font-weight: 600; color: #059669; background: #dcfce7; padding: 1px 6px; border-radius: 4px;">월 중 필요 완제품 자유 스왑 가동</span>
+          </div>
+          <div style="font-size: 7pt; color: #0284c7; font-weight: 700;">공정위 표준약관 3단계 공정 일할 환불 보장</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+          <!-- 개발자 MCP 연동형 엔진 -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 8.5pt; font-weight: 800; color: #0f172a;">⚡ 개발자 MCP 연동형 엔진</span>
+              <span style="font-size: 6.5pt; color: #059669; font-weight: 800; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 1px 4px; border-radius: 3px;">연간 2개월 무료</span>
+            </div>
+            <div style="font-size: 7pt; color: #64748b; margin-top: 1px;">단일 마켓 집중 1인 셀러 추천</div>
+            <div style="margin: 4px 0;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11pt; font-weight: 900; color: #0f172a;">월 ₩99,000</span>
+              <span style="font-size: 6.8pt; color: #64748b;"> / 월</span>
+              <div style="font-size: 6.8pt; color: #059669; font-weight: 700; margin-top: 1px;">(연간 결제 시 연 ₩990,000 · 월 82,500원 상당)</div>
+            </div>
+            <ul style="font-size: 6.8pt; color: #334155; line-height: 1.45; list-style: none;">
+              <li>✓ <strong>스왑 한도:</strong> 표준 카탈로그 SKU 1:1 자유 스왑</li>
+              <li>✓ <strong>라이선스:</strong> 1:1 Device HWID 지정 PC 1대 귀속</li>
+              <li>✓ <strong>자가치유:</strong> 로컬 에어백 및 DLQ 격리 엔진 내장</li>
+            </ul>
+          </div>
+
+          <!-- 정합성 대사 엔진 (BEST SELLER) -->
+          <div style="background: #eff6ff; border: 1.5px solid #0284c7; border-radius: 6px; padding: 8px; position: relative;">
+            <div style="position: absolute; top: -6px; right: 8px; background: #0284c7; color: #ffffff; font-size: 6pt; font-weight: 900; padding: 1px 5px; border-radius: 3px;">BEST CHOICE ★</div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 8.5pt; font-weight: 800; color: #0284c7;">📦 정합성 대사 엔진</span>
+              <span style="font-size: 6.8pt; color: #0284c7; font-weight: 700; background: #ffffff; padding: 1px 4px; border-radius: 3px;">하루 6,300원</span>
+            </div>
+            <div style="font-size: 7pt; color: #64748b; margin-top: 1px;">멀티채널 이커머스 법인 추천</div>
+            <div style="margin: 4px 0;">
+              <div style="display: flex; align-items: baseline; gap: 3px; flex-wrap: wrap;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11pt; font-weight: 900; color: #0284c7;">월 ₩49,000</span>
+                <span style="font-size: 6.8pt; color: #64748b;">/ 월</span>
+              </div>
+              <div style="margin-top: 1px;">
+                <span style="font-size: 5.8pt; color: #0284c7; font-weight: 800; background: #e0f2fe; border: 1px solid #bae6fd; padding: 1px 4px; border-radius: 3px;">[연간 결제 시 연 ₩420,000 · 2개월 무료 혜택]</span>
+              </div>
+            </div>
+            <ul style="font-size: 6.8pt; color: #1e3a8a; line-height: 1.45; list-style: none;">
+              <li>✓ <strong>스왑 한도:</strong> 멀티마켓 및 정산 대사 SKU 1:1 자유 스왑</li>
+              <li>✓ <strong>라이선스:</strong> 1:1 Device HWID 지정 PC 1대 귀속</li>
+              <li>✓ <strong>우대 혜택:</strong> 마켓 API 변경 시 원격 우선 패치 지원</li>
+            </ul>
+          </div>
+
+          <!-- 듀얼 통합 엔진 -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 8.5pt; font-weight: 800; color: #0f172a;">🏢 듀얼 통합 엔진</span>
+              <span style="font-size: 6.8pt; color: #64748b; font-weight: 700; background: #e2e8f0; padding: 1px 4px; border-radius: 3px;">하루 16,300원</span>
+            </div>
+            <div style="font-size: 7pt; color: #64748b; margin-top: 1px;">대형 유통사 및 전사 ERP 통합 법인</div>
+            <div style="margin: 4px 0;">
+              <div style="display: flex; align-items: baseline; gap: 3px; flex-wrap: wrap;">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11pt; font-weight: 900; color: #0f172a;">월 ₩69,000</span>
+                <span style="font-size: 6.8pt; color: #64748b;">/ 월</span>
+              </div>
+              <div style="margin-top: 1px;">
+                <span style="font-size: 5.8pt; color: #059669; font-weight: 800; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 1px 4px; border-radius: 3px;">[연간 결제 시 연 ₩590,000 · 2개월 무료 혜택]</span>
+              </div>
+            </div>
+            <ul style="font-size: 6.8pt; color: #334155; line-height: 1.45; list-style: none;">
+              <li>✓ <strong>스왑 한도:</strong> 전 카탈로그 SKU 1:1 무제한 자유 교체</li>
+              <li>✓ <strong>라이선스:</strong> 1:1 Device HWID 지정 서버/PC 귀속</li>
+              <li>✓ <strong>기술지원:</strong> 전담 엔지니어링 SLA 및 커스텀 룰셋 패치</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 🎁 연간 결제 리텐션 프로모션 배너 -->
+        <div style="margin-top: 6px; padding: 4px 8px; background: linear-gradient(90deg, #ecfdf5, #f0fdf4); border: 1px dashed #059669; border-radius: 5px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-size: 7.2pt; color: #065f46; font-weight: 700;">
+            🎁 <strong>[연간 정기 결제 리텐션 혜택]</strong> 1년 일괄 결제 시 <strong>2개월 무료 (약 17% 절감)</strong>
+          </div>
+          <div style="font-size: 7pt; font-family: 'JetBrains Mono', monospace; font-weight: 800; color: #047857;">
+            개발자 MCP 연동형 엔진 연 ₩990,000 / 정합성 대사 엔진 연 ₩420,000 / 듀얼 통합 엔진 연 ₩590,000
+          </div>
+        </div>
+      </div>
+
+      <!-- 영역 3 & 4: [기본 내장 엔터프라이즈 코어 기술] & [구독 티어 선택 가이드] -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 8px;">
+        
+        <!-- 영역 3: 기본 내장 엔터프라이즈 코어 기술 -->
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 10px;">
+          <div style="font-size: 8.5pt; font-weight: 800; color: #0f172a; margin-bottom: 5px; display: flex; align-items: center; justify-content: space-between;">
+            <span>🛡️ [전 구독 티어 기본 탑재 2대 무인 방어 코어 기술]</span>
+            <span style="font-size: 6.8pt; color: #0284c7; font-weight: 700;">추가 비용 없이 기본 포함</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+            <!-- 코어 1 -->
+            <div style="background: #fffbeb; border: 1px solid #fef3c7; border-radius: 6px; padding: 6px 8px;">
+              <div style="font-size: 7.5pt; font-weight: 800; color: #92400e;">127ms 무인 자가치유 가드</div>
+              <div style="font-size: 6.5pt; color: #b45309; margin-bottom: 2px;">
+                <strong>자가치유 상주형 엔진 (30일 ₩39,000 · MCP 특가 ₩29,000) 이상 기본 탑재</strong>
+              </div>
+              <div style="font-size: 6.5pt; color: #78350f; line-height: 1.35;">
+                • 127ms 무인 크래시 감지 및 프로세스 즉각 소생<br>
+                • 5대 분리 에어백 + 90초 데드맨 스위치<br>
+                • 새벽 서버 다운 및 계정 정지 원천 방어
+              </div>
+            </div>
+            <!-- 코어 2 -->
+            <div style="background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 6px; padding: 6px 8px;">
+              <div style="font-size: 7.5pt; font-weight: 800; color: #115e59;">3중 교차 정합성 대사 엔진</div>
+              <div style="font-size: 6.5pt; color: #0f766e; margin-bottom: 2px;">
+                <strong>정합성 대사 상주형 엔진 (30일 ₩49,000 · MCP 특가 ₩39,000) 이상 완벽 지원</strong>
+              </div>
+              <div style="font-size: 6.5pt; color: #134e4a; line-height: 1.35;">
+                • ReconFlow Enterprise 정합성 검증 방패<br>
+                • 오픈마켓+자사몰+PG사+은행통장 3중 교차 대사<br>
+                • 정산 누락 및 결제 1원 오차 100% 색출
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 영역 4: 공식 3-Tier 전환 안내 -->
+        <div style="background: #faf5ff; border: 1.5px solid #d8b4fe; border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <span style="font-size: 8.5pt; font-weight: 800; color: #6b21a8;">⚡ 공식 3-Tier 도입 안내</span>
+              <span style="font-size: 6.2pt; background: #e9d5ff; color: #581c87; font-weight: 800; padding: 1px 4px; border-radius: 3px;">OFFICIAL TIER</span>
+            </div>
+            <div style="font-size: 6.8pt; color: #7e22ce; margin-bottom: 4px;">클라우드 종량제 대비 압도적 비용 절감</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 9.5pt; font-weight: 900; color: #6b21a8;">
+              월 99,000원 ~ 69,000원
+            </div>
+          </div>
+
+          <div style="background: #ffffff; border: 1px solid #e9d5ff; border-radius: 4px; padding: 4px 6px; font-size: 5.7pt; color: #581c87; line-height: 1.35; margin-top: 3px;">
+            💡 <strong>[해외 클라우드 SaaS 종량제 대비 경제성 안내]</strong><br>
+            일반 클라우드 자동화 툴은 무료 한도 초과 시 실행 건수(Operation)마다 과금이 누적됩니다. AutoFlow 공식 3-Tier(<strong>개발자 MCP 연동형 엔진 월 99,000원 / 정합성 대사 엔진 월 49,000원 / 듀얼 통합 엔진 월 69,000원</strong>)는 사내 PC에서 로컬 구동되어 건당 추가 과금 없이 안정적인 무인 운영을 보장합니다.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 하단 안심 보장 규정 요약 바 -->
+      <div class="card" style="background: #0f172a; color: #ffffff; font-size: 7.3pt; padding: 6px 12px; margin-top: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            ⚖️ <strong>토스페이먼츠 100% 전자세금계산서</strong> 자동 발행 | ⚡ 결제 완료 즉시 ZIP 다운로드 &amp; 1:1 Device HWID 발급
+          </div>
+          <div style="color: #38bdf8;">
+            🔒 망 분리 사내 PC 암호화 가동 (개인정보 외부 유출 원천 차단)
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>AutoFlow Sales Brochure v2.0 | Confidential for Prospective Clients</span>
+      <span class="footer-center">PAGE 3 / 4</span>
+      <span>디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 경상남도 김해시 번화1로 168, 1006동 402호</span>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- PAGE 4 : [3분 시작 가이드 & FAQ & 고객센터] 초간편 도입과 안심 지원 -->
+  <!-- ========================================================================= -->
+  <div class="page" id="page-4">
+    <div class="page-header">
+      <div class="header-brand">
+        <span class="brand-logo-badge">AutoFlow</span>
+        <span class="header-brand-title">Customer Guide &amp; Support</span>
+      </div>
+      <div class="header-meta">
+        SLA: 24/7 Automated Guardian<br>
+        SUPPORT: Dedicated Enterprise Desk
+      </div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-around;">
+      <!-- 3분 시작 가이드 3단계 -->
+      <div>
+        <div class="section-heading">
+          <div class="section-heading-icon">🚀</div>
+          <div>개발 지식 0%도 3분 만에 끝내는 초간편 도입 3단계</div>
+        </div>
+        <div class="grid-3">
+          <div class="card" style="background: #ffffff; text-align: center; padding: 12px 10px;">
+            <div class="step-badge">1</div>
+            <div style="font-weight: 800; font-size: 9pt; color: #0f172a; margin-top: 6px;">즉시 패키지 수령</div>
+            <div style="font-size: 7.5pt; color: #64748b; margin-top: 4px;">
+              결제 완료 즉시 이메일과 화면에서 완제품 ZIP 파일과 정품 인증키 수령
+            </div>
+          </div>
+          <div class="card" style="background: #ffffff; text-align: center; padding: 12px 10px;">
+            <div class="step-badge">2</div>
+            <div style="font-weight: 800; font-size: 9pt; color: #0f172a; margin-top: 6px;">더블클릭 실행</div>
+            <div style="font-size: 7.5pt; color: #64748b; margin-top: 4px;">
+              동봉된 무인 런처(<code style="background: #f1f5f9; padding: 1px 4px; border-radius: 3px;">AutoFlow_Launcher</code>)를 마우스로 더블클릭
+            </div>
+          </div>
+          <div class="card" style="background: #ffffff; text-align: center; padding: 12px 10px;">
+            <div class="step-badge">3</div>
+            <div style="font-weight: 800; font-size: 9pt; color: #0f172a; margin-top: 6px;">API 키 입력 후 가동</div>
+            <div style="font-size: 7.5pt; color: #64748b; margin-top: 4px;">
+              마켓 API 키와 알림 받을 카톡 번호만 넣으면 24시간 무인 자동화 시작!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 자주 묻는 질문 5선 (FAQ) -->
+      <div>
+        <div class="section-heading">
+          <div class="section-heading-icon">?</div>
+          <div>이커머스 셀러가 가장 자주 묻는 질문 BEST 5</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div class="faq-item">
+            <div class="faq-q"><span>Q1.</span> 컴퓨터를 전혀 모르는 초보인데 혼자 다룰 수 있나요?</div>
+            <div class="faq-a">A. 네! 복잡한 코딩이나 까다로운 서버 세팅은 완전히 제거되었습니다. 마우스 더블클릭으로 구동되는 전용 런처와 화면 캡처 가이드북이 함께 제공되므로 초보자도 3분 안에 작동시킬 수 있습니다.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q"><span>Q2.</span> 사내 PC를 끄면 시스템이 멈추나요?</div>
+            <div class="faq-a">A. 사내 남는 사무실 PC나 저전력 미니PC에 켜두시면 클라우드 서버비 0원으로 24시간 무제한 가동됩니다. 1:1 Device HWID 기기 귀속 라이선스로 지정된 PC 1대에서 안전하게 운영됩니다.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q"><span>Q3.</span> 주문 건수가 많아지면 추가 요금이 발생하나요?</div>
+            <div class="faq-a">A. 발생하지 않습니다. 공식 3-Tier 구독(개발자 MCP 연동형 엔진 월 99,000원 / 정합성 대사 엔진 월 49,000원 / 듀얼 통합 엔진 월 69,000원)은 사내 로컬 환경에서 구동되므로 주문 처리 건수에 따른 종량제 추가 수수료가 일절 청구되지 않습니다.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q"><span>Q4.</span> 오픈마켓 정책이 바뀌거나 API가 에러를 뿜으면 어떻게 되나요?</div>
+            <div class="faq-a">A. AutoFlow에는 5대 엣지케이스 방어 노드가 내장되어 있어 일시적인 네트워크 장애를 스스로 복구합니다. 정합성 대사 엔진 및 듀얼 통합 엔진 구독 고객께는 마켓 API 변경 시 원격 패치와 127ms 무인 자가치유 데몬이 지속 지원됩니다.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q"><span>Q5.</span> 회사 비용 처리를 위한 세금계산서 발행 및 환불 규정은 어떻게 되나요?</div>
+            <div class="faq-a">A. 토스페이먼츠를 통해 국세청 표준 전자세금계산서가 즉시 발행되며, 공정위 표준약관 기반 3단계 공정 일할 환불 규정(미활성화 7일 내 100% 환불 / 결함 실사 후 100% 환불 / 7일 경과 시 실사용 일할 및 위약금 10% 공제 환불)을 투명하게 준수합니다.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 고객지원센터 및 사업자 공식 신원 정보 -->
+      <div class="card" style="background: #0f172a; color: #ffffff; padding: 12px 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; padding-bottom: 6px; margin-bottom: 6px;">
+          <div style="font-weight: 800; font-size: 9.5pt; color: #38bdf8;">
+            AutoFlow 공식 고객지원센터 &amp; B2B 도입 상담
+          </div>
+          <div style="font-size: 8pt; color: #94a3b8; font-family: 'JetBrains Mono', monospace;">
+            평일 09:00~18:00 (주말·공휴일 휴무)
+          </div>
+        </div>
+        <div class="grid-2" style="font-size: 7.8pt; color: #cbd5e1; line-height: 1.6;">
+          <div>
+            • <strong>상호명:</strong> 디에이치랩스 (DH Labs) | <strong>대표자:</strong> 김동형<br>
+            • <strong>사업자등록번호:</strong> 413-03-96950 | <strong>통신판매업신고:</strong> 면제 (부가가치세법 제8조 정식 등록 과세사업자 · 기업 간 B2B 소프트웨어 라이선스 직접 공급)<br>
+            • <strong>사업장 소재지:</strong> 경상남도 김해시 번화1로 168, 1006동 402호
+          </div>
+          <div>
+            • <strong>고객센터 전화:</strong> 010-8503-6232<br>
+            • <strong>고객지원 이메일:</strong> dhlabs_biz0@naver.com<br>
+            • <strong>법적 고지:</strong> <a href="/terms.html" style="color: #38bdf8; text-decoration: none;">이용약관</a> | <a href="/privacy.html" style="color: #38bdf8; text-decoration: none;">개인정보처리방침</a> | <a href="/refund.html" style="color: #38bdf8; text-decoration: none;">환불규정</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>AutoFlow Sales Brochure v2.0 | Confidential for Prospective Clients</span>
+      <span class="footer-center">PAGE 4 / 4</span>
+      <span>디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 경상남도 김해시 번화1로 168, 1006동 402호</span>
+    </div>
+  </div>
+
+<!-- [2026 Modular Pick Lineup & 7-Day Trial Scorecard] WF_ENTRY (₩9,900) | WF_STANDARD (₩19,000) | WF_COMPLEX (₩29,000) | TRIAL_7D_ALL_MODULES (7-Day Free Trial + Perpetual Workflow Guarantee) | MODULE_A1_MCP 연동 (₩29,000/30d) | MODULE_A2_MANAGED_AI (₩49,000/30d) | MODULE_B_BRANCH_RECON (₩29,000/30d) | Pick A1+B (₩58,000/30d) | Pick A2+B (₩78,000/30d) -->
+</body>
+</html>

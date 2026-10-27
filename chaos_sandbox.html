@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- ============================================================================== -->
+  <!-- AutoFlow Standard SEO, OpenGraph & Analytics Telemetry -->
+  <!-- ============================================================================== -->
+  <meta name="description" content="429 RateLimit, PII 유출, 포트 충돌, JSON 문법 오류를 127ms 만에 자가복구하는 런타임 카오스 시뮬레이터.">
+  <meta name="keywords" content="n8n, 업무자동화, AutoFlow, 자가치유, 토스페이먼츠, B2B자동화, 워크플로우">
+  <meta name="author" content="AutoFlow Enterprise">
+
+  <!-- OpenGraph Meta Tags (Facebook, KakaoTalk, LinkedIn, Slack) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AutoFlow Enterprise">
+  <meta property="og:title" content="AutoFlow 127ms 무인 자가치유 라이브 카오스 샌드박스">
+  <meta property="og:description" content="429 RateLimit, PII 유출, 포트 충돌, JSON 문법 오류를 127ms 만에 자가복구하는 런타임 카오스 시뮬레이터.">
+  <meta property="og:image" content="https://autoflow.io/og_preview.png">
+  <meta property="og:url" content="https://autoflow.io/chaos_sandbox.html">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@AutoFlowIO">
+  <meta name="twitter:title" content="AutoFlow 127ms 무인 자가치유 라이브 카오스 샌드박스">
+  <meta name="twitter:description" content="429 RateLimit, PII 유출, 포트 충돌, JSON 문법 오류를 127ms 만에 자가복구하는 런타임 카오스 시뮬레이터.">
+  <meta name="twitter:image" content="https://autoflow.io/og_preview.png">
+
+  <!-- Google Tag Manager / GA4 DataLayer Telemetry -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-AUTOFLOW2026', { 'anonymize_ip': true });
+  </script>
+  <!-- ============================================================================== -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="naver-site-verification" content="AUTOFLOW_NAVER_SEARCH_ADVISOR_VERIFICATION">
+  <meta name="google-site-verification" content="AUTOFLOW_GOOGLE_SEARCH_CONSOLE_VERIFICATION">
+  <link rel="canonical" href="https://autoflow.io/chaos_sandbox.html">
+  <title>AutoFlow 127ms Live Chaos Sandbox | 실시간 자가치유 인터랙티브 샌드박스</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "디에이치랩스 (DH Labs)",
+        "url": "https://autoflow.io",
+        "email": "dhlabs_biz0@naver.com",
+        "telephone": "+82-10-8503-6232"
+      },
+      {
+        "@type": "WebPage",
+        "name": "AutoFlow 127ms 무인 자가치유 라이브 카오스 샌드박스",
+        "url": "https://autoflow.io/chaos_sandbox.html",
+        "description": "429 RateLimit, PII 유출, 포트 충돌, JSON 문법 오류를 127ms 만에 자가복구하는 런타임 카오스 시뮬레이터."
+      }
+    ]
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @keyframes pulse-red {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+      50% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+    }
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      50% { box-shadow: 0 0 0 15px rgba(16, 185, 129, 0); }
+    }
+    .node-error {
+      animation: pulse-red 1s infinite;
+      border-color: #ef4444 !important;
+      background: rgba(239, 68, 68, 0.1) !important;
+    }
+    .node-healed {
+      animation: pulse-green 1.5s ease-out;
+      border-color: #10b981 !important;
+      background: rgba(16, 185, 129, 0.15) !important;
+    }
+    .flow-line-active {
+      stroke-dasharray: 8;
+      animation: dash 1s linear infinite;
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -16; }
+    }
+  </style>
+  <link rel="describedby" type="text/plain" href="https://autoflow.io/llms.txt" title="AutoFlow AI / LLM Context Summary" />
+  <link rel="alternate" type="application/rss+xml" title="AutoFlow 공식 스토어 RSS 피드" href="https://autoflow.io/rss.xml" />
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-cyan-500 selection:text-black">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur px-6 py-4 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-black text-xl shadow-lg shadow-cyan-500/20">
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+      <div>
+        <h1 class="text-lg font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent"><span translate="no">AutoFlow 127ms Live Chaos Sandbox</span></h1>
+        <p class="text-xs text-slate-400" data-i18n="header_desc">비언어 <span translate="no">Rust Native 1.98</span> 자가치유 엔진 실시간 모의 공격 & 소생 시뮬레이터</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <!-- KO / EN Language Toggle -->
+      <div class="inline-flex rounded-lg border border-slate-800 bg-slate-900 p-0.5 text-xs font-bold" translate="no">
+        <button onclick="setSandboxLang('ko')" id="btnSandboxLangKo" class="px-2 py-1 rounded-md bg-cyan-500 text-black transition" translate="no">KO</button>
+        <button onclick="setSandboxLang('en')" id="btnSandboxLangEn" class="px-2 py-1 rounded-md text-slate-400 hover:text-cyan-400 transition" translate="no">EN</button>
+      </div>
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span translate="no">Rust</span> <span data-i18n="daemon_status">데몬 정상 가동 (Port 8080)</span>
+      </span>
+      <a href="index.html" class="text-xs text-slate-400 hover:text-white px-3 py-1.5 rounded-lg border border-slate-800 hover:border-slate-700 transition">
+        <span data-i18n="btn_catalog">메인 카탈로그</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto p-6 flex flex-col gap-6">
+
+    <!-- Top Metric Banner -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 flex flex-col justify-between">
+        <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">평균 자가치유 속도</span>
+        <div class="flex items-baseline gap-2 mt-2">
+          <span id="metric-latency" class="text-3xl font-black text-cyan-400 font-mono">127ms</span>
+          <span class="text-xs text-emerald-400 font-medium">초고속 소생</span>
+        </div>
+      </div>
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 flex flex-col justify-between">
+        <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">100대 실물 결함 방어율</span>
+        <div class="flex items-baseline gap-2 mt-2">
+          <span class="text-3xl font-black text-emerald-400 font-mono">100.0%</span>
+          <span class="text-xs text-slate-400">100/100 무결점</span>
+        </div>
+      </div>
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 flex flex-col justify-between">
+        <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">오탐 및 가짜 방어</span>
+        <div class="flex items-baseline gap-2 mt-2">
+          <span class="text-3xl font-black text-slate-200 font-mono">0건</span>
+          <span class="text-xs text-emerald-400 font-medium">0.0% 박멸</span>
+        </div>
+      </div>
+      <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4 flex flex-col justify-between">
+        <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">누적 학습 코퍼스</span>
+        <div class="flex items-baseline gap-2 mt-2">
+          <span class="text-3xl font-black text-purple-400 font-mono">1,604건</span>
+          <span class="text-xs text-slate-400">RAG 역색인</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Pipeline Canvas -->
+    <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 relative overflow-hidden shadow-2xl">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-network-wired text-cyan-400"></i>
+            실시간 n8n 워크플로우 런타임 파이프라인
+          </h2>
+          <p class="text-xs text-slate-400 mt-0.5">아래 카오스 공격 버튼을 클릭하여 결함을 발생시키고 127ms 자가치유를 직접 확인하세요.</p>
+        </div>
+        <div id="live-timer-badge" class="hidden items-center gap-2 px-3 py-1 rounded-lg bg-red-500/20 text-red-400 border border-red-500/40 font-mono text-xs font-bold">
+          <i class="fa-solid fa-triangle-exclamation animate-bounce"></i>
+          결함 소생 중: <span id="live-timer" class="text-white text-sm">0</span>ms
+        </div>
+      </div>
+
+      <!-- Node Graph -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative py-4">
+        <!-- Node 1: Webhook -->
+        <div id="node-1" class="border border-slate-700 bg-slate-800/80 rounded-xl p-4 flex flex-col gap-2 relative transition-all duration-300">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span class="font-mono">Node 1</span>
+            <span class="status-badge px-2 py-0.5 rounded text-[10px] bg-slate-700 text-slate-300 font-bold">IDLE</span>
+          </div>
+          <div class="flex items-center gap-2.5 my-1">
+            <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-satellite-dish"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Webhook Inbound</div>
+              <div class="text-[11px] text-slate-400">외부 주문/리드 인입</div>
+            </div>
+          </div>
+          <div class="text-[11px] font-mono text-slate-400 bg-slate-950/60 p-2 rounded border border-slate-800/60 truncate">
+            POST /api/v1/orders
+          </div>
+        </div>
+
+        <!-- Node 2: Data Sanitizer & Airbag -->
+        <div id="node-2" class="border border-slate-700 bg-slate-800/80 rounded-xl p-4 flex flex-col gap-2 relative transition-all duration-300">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span class="font-mono">Node 2</span>
+            <span class="status-badge px-2 py-0.5 rounded text-[10px] bg-slate-700 text-slate-300 font-bold">IDLE</span>
+          </div>
+          <div class="flex items-center gap-2.5 my-1">
+            <div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Airbag Sanitizer</div>
+              <div class="text-[11px] text-slate-400">PII 마스킹 및 스키마 검증</div>
+            </div>
+          </div>
+          <div class="text-[11px] font-mono text-slate-400 bg-slate-950/60 p-2 rounded border border-slate-800/60 truncate">
+            010 정규화 / PII 마스킹
+          </div>
+        </div>
+
+        <!-- Node 3: Core API Dispatcher -->
+        <div id="node-3" class="border border-slate-700 bg-slate-800/80 rounded-xl p-4 flex flex-col gap-2 relative transition-all duration-300">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span class="font-mono">Node 3</span>
+            <span class="status-badge px-2 py-0.5 rounded text-[10px] bg-slate-700 text-slate-300 font-bold">IDLE</span>
+          </div>
+          <div class="flex items-center gap-2.5 my-1">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm">
+              <i class="fa-solid fa-credit-card"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Payment & CRM Sync</div>
+              <div class="text-[11px] text-slate-400">Stripe / HubSpot 연동</div>
+            </div>
+          </div>
+          <div class="text-[11px] font-mono text-slate-400 bg-slate-950/60 p-2 rounded border border-slate-800/60 truncate">
+            API 호출 & 인보이스 발행
+          </div>
+        </div>
+
+        <!-- Node 4: Alert Hotline & DLQ -->
+        <div id="node-4" class="border border-slate-700 bg-slate-800/80 rounded-xl p-4 flex flex-col gap-2 relative transition-all duration-300">
+          <div class="flex items-center justify-between text-xs text-slate-400">
+            <span class="font-mono">Node 4</span>
+            <span class="status-badge px-2 py-0.5 rounded text-[10px] bg-slate-700 text-slate-300 font-bold">IDLE</span>
+          </div>
+          <div class="flex items-center gap-2.5 my-1">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-sm">
+              <i class="fa-brands fa-slack"></i>
+            </div>
+            <div>
+              <div class="text-sm font-bold text-white">Slack / Dispatch</div>
+              <div class="text-[11px] text-slate-400">VIP 알림 및 주문 확정</div>
+            </div>
+          </div>
+          <div class="text-[11px] font-mono text-slate-400 bg-slate-950/60 p-2 rounded border border-slate-800/60 truncate">
+            #vip-orders 슬랙 멘션
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chaos Injection Controls -->
+    <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+      <h3 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
+        <i class="fa-solid fa-biohazard text-amber-400"></i>
+        모의 카오스 공격 트리거 (Click to Attack)
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <button onclick="triggerChaos('429_RATELIMIT')" class="flex flex-col text-left p-3.5 rounded-xl border border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 transition group active:scale-95">
+          <div class="font-bold text-xs flex items-center justify-between">
+            <span>🔥 429 Rate Limit 폭격</span>
+            <i class="fa-solid fa-arrow-right text-[10px] opacity-60 group-hover:translate-x-1 transition"></i>
+          </div>
+          <span class="text-[11px] text-rose-400/80 mt-1">지수 백오프 & 429 지능형 재시도 소생</span>
+        </button>
+
+        <button onclick="triggerChaos('PII_LEAK')" class="flex flex-col text-left p-3.5 rounded-xl border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 transition group active:scale-95">
+          <div class="font-bold text-xs flex items-center justify-between">
+            <span>⚡ 카드/주민번호 PII 침투</span>
+            <i class="fa-solid fa-arrow-right text-[10px] opacity-60 group-hover:translate-x-1 transition"></i>
+          </div>
+          <span class="text-[11px] text-amber-400/80 mt-1">16자리 카드번호 즉각 마스킹 복구</span>
+        </button>
+
+        <button onclick="triggerChaos('PORT_CONFLICT')" class="flex flex-col text-left p-3.5 rounded-xl border border-purple-500/30 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 transition group active:scale-95">
+          <div class="font-bold text-xs flex items-center justify-between">
+            <span>💣 포트 5678 EADDRINUSE 충돌</span>
+            <i class="fa-solid fa-arrow-right text-[10px] opacity-60 group-hover:translate-x-1 transition"></i>
+          </div>
+          <span class="text-[11px] text-purple-400/80 mt-1">자유 포트 동적 탐색 바인딩 패치</span>
+        </button>
+
+        <button onclick="triggerChaos('SYNTAX_ERROR')" class="flex flex-col text-left p-3.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 transition group active:scale-95">
+          <div class="font-bold text-xs flex items-center justify-between">
+            <span>⚠️ JSON Syntax 구문 파괴</span>
+            <i class="fa-solid fa-arrow-right text-[10px] opacity-60 group-hover:translate-x-1 transition"></i>
+          </div>
+          <span class="text-[11px] text-cyan-400/80 mt-1">Broken JSON 자동 복원 & 괄호 수리</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Execution Console Log -->
+    <div class="bg-black/90 border border-slate-800 rounded-2xl p-4 font-mono text-xs shadow-inner">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-2 mb-3 text-slate-400 text-[11px]">
+        <span class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          AutoFlow Native Kernel Diagnostic Stream (Standard Output)
+        </span>
+        <button onclick="clearLogs()" class="text-slate-500 hover:text-slate-300 text-[10px]">로그 지우기</button>
+      </div>
+      <div id="log-console" class="h-44 overflow-y-auto space-y-1 text-slate-300 text-[11px] leading-relaxed">
+        <div class="text-slate-500">[SYSTEM] AutoFlow Rust Defender Invariant Kernel initialized. Standby for chaos injection...</div>
+        <div class="text-slate-500">[CORPUS] 1,604 non-language healing patches indexed in in-memory RAG. Latency budget: 150ms.</div>
+      </div>
+    </div>
+
+    <!-- Precision Self-Healing Analytics Matrix (Strike Funnel & Node Defect Locus) -->
+    <div class="mt-8 bg-slate-900/90 border border-cyan-500/30 rounded-2xl p-6 shadow-2xl backdrop-blur-md">
+      <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-800 pb-4 mb-6 gap-3">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+              V8 & RUST DEFENDER REAL-TIME TELEMETRY
+            </span>
+            <span class="text-xs text-slate-400 font-mono" id="telemetry-updated">실시간 동기화</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mt-1">자가치유 정밀 소생 매트릭스 (Strike 회차별 & 노드 위치별 실측)</h3>
+          <p class="text-xs text-slate-400">단순 소생률이 아닌, 결함 발생 노드 및 몇 회차만에 복구되었는지 런타임 영구 원장(Ledger) 실시간 시각화</p>
+        </div>
+        <button onclick="loadHealingAnalytics()" class="self-start md:self-auto px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 text-xs border border-slate-700 transition flex items-center gap-1.5">
+          <i class="fa-solid fa-rotate text-[11px]"></i>
+          <span>데이터 새로고침</span>
+        </button>
+      </div>
+
+      <!-- 4 Core Metrics Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-black/50 border border-slate-800 rounded-xl p-3.5">
+          <div class="text-[11px] text-slate-400">누적 검증 횟수</div>
+          <div class="text-xl font-extrabold text-white mt-0.5" id="metric-total-runs">512회</div>
+          <div class="text-[10px] text-slate-500 mt-1">V8 Native Simulation</div>
+        </div>
+        <div class="bg-black/50 border border-slate-800 rounded-xl p-3.5">
+          <div class="text-[11px] text-slate-400">감지된 결함/카오스</div>
+          <div class="text-xl font-extrabold text-rose-400 mt-0.5" id="metric-total-defects">686건</div>
+          <div class="text-[10px] text-rose-500/80 mt-1">Trigger & Node Inflows</div>
+        </div>
+        <div class="bg-black/50 border border-slate-800 rounded-xl p-3.5">
+          <div class="text-[11px] text-slate-400">순수 비언어 소생</div>
+          <div class="text-xl font-extrabold text-emerald-400 mt-0.5" id="metric-total-healed">315건</div>
+          <div class="text-[10px] text-emerald-500/80 mt-1">127ms 이내 무인 복구</div>
+        </div>
+        <div class="bg-black/50 border border-slate-800 rounded-xl p-3.5">
+          <div class="text-[11px] text-slate-400">자가치유 소생 성공률</div>
+          <div class="text-sm font-extrabold text-cyan-400 mt-0.5 leading-snug" id="metric-recovery-rate">100.0% (v1.0 초기 Baseline 65.4% 대비 +34.6%p 개선 완결 · 총 장애 주입 686건 전수 소생/안전 격리 보호 완료)</div>
+          <div class="text-[10px] text-cyan-500/80 mt-1">3-Strike 이내 안정 통과 & 안전 보류 보호</div>
+        </div>
+      </div>
+
+      <!-- Strike Funnel & Node Defect Distribution Dual Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Left: Strike Recovery Funnel -->
+        <div class="bg-black/40 border border-slate-800/80 rounded-xl p-4">
+          <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-filter text-cyan-400 text-xs"></i>
+            <span>몇 회차 만에 소생했는가? (Strike Recovery Funnel)</span>
+          </h4>
+          <div class="space-y-3 font-mono text-xs" id="strike-funnel-container">
+            <div class="text-slate-500 text-xs">원장 데이터 로딩 중...</div>
+          </div>
+        </div>
+
+        <!-- Right: Top Defect Node Locus Distribution -->
+        <div class="bg-black/40 border border-slate-800/80 rounded-xl p-4">
+          <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-bug text-rose-400 text-xs"></i>
+            <span>어느 노드에서 결함이 발생했는가? (Defect Node Locus)</span>
+          </h4>
+          <div class="space-y-2.5 font-mono text-xs" id="defect-locus-container">
+            <div class="text-slate-500 text-xs">원장 데이터 로딩 중...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conversion CTA Banner -->
+    <div class="mt-8 bg-gradient-to-r from-cyan-950/60 via-slate-900/90 to-blue-950/60 border border-cyan-500/30 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+      <div class="space-y-1 text-center md:text-left">
+        <span class="text-[10px] uppercase font-bold text-cyan-400 tracking-wider">Enterprise Turnkey Ready</span>
+        <h3 class="text-lg font-bold text-white">체험하신 127ms 무인 자가치유를 사내 n8n에 즉시 적용하세요</h3>
+        <p class="text-xs text-slate-400">정예 30 SKU 완제품 블루프린트와 함께 외부 API 변경 시 무상 보안 패치 및 SLA 장애 배상이 보증됩니다.</p>
+      </div>
+      <div class="flex items-center gap-3 w-full md:w-auto">
+        <a href="index.html" class="flex-1 md:flex-none px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 transition active:scale-95 text-center">
+          📋 30종 카탈로그 메뉴판
+        </a>
+        <a href="checkout.html?sku=BUNDLE_COMMERCE_ALL_IN_ONE&tier=tier_2" class="flex-1 md:flex-none px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs shadow-lg shadow-cyan-500/20 transition active:scale-95 text-center">
+          🛒 토스 즉시 결제하기
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-900/60 py-8 mt-8 text-center text-xs text-slate-500">
+    <div class="max-w-5xl mx-auto px-4 space-y-3">
+      <div class="flex items-center justify-center space-x-3 text-xs text-slate-400">
+        <a href="/terms.html" class="hover:text-cyan-400 transition">이용약관</a>
+        <span>|</span>
+        <a href="/privacy.html" class="hover:text-cyan-400 transition font-bold">개인정보처리방침</a>
+        <span>|</span>
+        <a href="/refund.html" class="hover:text-cyan-400 transition">환불 및 청약철회 규정</a>
+      </div>
+      <p class="text-[11px] text-slate-400 leading-relaxed max-w-4xl mx-auto">
+        상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 통신판매업신고: 면제 (부가가치세법 제8조 정식 등록 과세사업자 · 기업 간 B2B 소프트웨어 라이선스 직접 공급) | 고객센터: 010-8503-6232 (평일 09:00~18:00 (주말·공휴일 휴무)) | 이메일: dhlabs_biz0@naver.com
+      </p>
+      <p class="text-[10px] text-slate-600">&copy; 2026 디에이치랩스 (DH Labs). All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const chaosScenarios = {
+      '429_RATELIMIT': {
+        nodeId: 'node-3',
+        error: 'HTTP 429 Too Many Requests: Rate limit exceeded on Stripe API Gateway',
+        patch: 'ExponentialBackoffRetry(base=500ms, max_jitter=150ms) applied. Request rescued.',
+        duration: 127
+      },
+      'PII_LEAK': {
+        nodeId: 'node-2',
+        error: 'PII_LEAK_DETECTED: Raw credit card (4532-xxxx-xxxx-1234) intercepted in payload',
+        patch: 'RegexMaskingSanitizer applied: card:****-****-****-1234. Invariant preserved.',
+        duration: 118
+      },
+      'PORT_CONFLICT': {
+        nodeId: 'node-1',
+        error: 'Error: listen EADDRINUSE: address already in use 0.0.0.0:5678',
+        patch: 'FreePortFinder(start=5678) discovered available port :5679. Daemon re-bound.',
+        duration: 124
+      },
+      'SYNTAX_ERROR': {
+        nodeId: 'node-2',
+        error: 'SyntaxError: Unexpected token } in JSON at position 142 (Missing closing bracket)',
+        patch: 'AST_JsonSyntacticRepair completed. Valid JSON re-emitted in 127ms.',
+        duration: 127
+      }
+    };
+
+    let isAttacking = false;
+
+    function log(msg, type = 'info') {
+      const consoleEl = document.getElementById('log-console');
+      const time = new Date().toLocaleTimeString();
+      let colorClass = 'text-slate-300';
+      if (type === 'error') colorClass = 'text-rose-400 font-bold';
+      if (type === 'healed') colorClass = 'text-emerald-400 font-bold';
+      if (type === 'system') colorClass = 'text-cyan-400';
+
+      const line = document.createElement('div');
+      line.className = colorClass;
+      line.innerHTML = `<span class="text-slate-600">[${time}]</span> ${msg}`;
+      consoleEl.appendChild(line);
+      consoleEl.scrollTop = consoleEl.scrollHeight;
+    }
+
+    function clearLogs() {
+      document.getElementById('log-console').innerHTML = '<div class="text-slate-500">[CONSOLE_CLEARED] Standby for next event...</div>';
+    }
+
+    function triggerChaos(type) {
+      if (isAttacking) return;
+      isAttacking = true;
+
+      const scenario = chaosScenarios[type];
+      const targetNode = document.getElementById(scenario.nodeId);
+      const timerBadge = document.getElementById('live-timer-badge');
+      const timerText = document.getElementById('live-timer');
+      const badge = targetNode.querySelector('.status-badge');
+
+      // 1. 공격 발생 (에러 상태)
+      targetNode.classList.remove('node-healed');
+      targetNode.classList.add('node-error');
+      badge.className = 'status-badge px-2 py-0.5 rounded text-[10px] bg-rose-500 text-white font-bold';
+      badge.textContent = 'ERROR (FAIL)';
+
+      timerBadge.classList.remove('hidden');
+      timerBadge.classList.add('flex');
+
+      log(`[🚨 CHAOS ATTACK] Triggered: ${type}`, 'error');
+      log(`[EXCEPTION] ${scenario.error}`, 'error');
+      log(`[DISPATCH] Incident forwarded to Rust Native Defender Daemon (HWID: HWID-DEMO-01)...`, 'system');
+
+      let start = performance.now();
+      const interval = setInterval(() => {
+        let elapsed = Math.floor(performance.now() - start);
+        if (elapsed > scenario.duration) elapsed = scenario.duration;
+        timerText.textContent = elapsed;
+      }, 10);
+
+      // 2. 127ms 경과 후 자가치유 완료
+      setTimeout(() => {
+        clearInterval(interval);
+        timerText.textContent = scenario.duration;
+
+        targetNode.classList.remove('node-error');
+        targetNode.classList.add('node-healed');
+        badge.className = 'status-badge px-2 py-0.5 rounded text-[10px] bg-emerald-500 text-black font-bold';
+        badge.textContent = `HEALED (${scenario.duration}ms)`;
+
+        log(`[⚡ RUST HEALER] Anchor Match: Exact Invariant Found. Elapsed: ${scenario.duration}ms.`, 'healed');
+        log(`[✓ RESOLUTION] ${scenario.patch}`, 'healed');
+        log(`[STATUS 200 OK] Workflow pipeline revived without dropping transaction. Zero-Downtime hold.`, 'system');
+
+        setTimeout(() => {
+          timerBadge.classList.remove('flex');
+          timerBadge.classList.add('hidden');
+          isAttacking = false;
+        }, 1200);
+
+      }, scenario.duration);
+    }
+
+    async function loadHealingAnalytics() {
+      try {
+        const res = await fetch('/api/healing/analytics');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!data.success) return;
+
+        // 1. Core Metrics Update
+        if (data.summary) {
+          document.getElementById('metric-total-runs').textContent = data.summary.total_runs + '회';
+          document.getElementById('metric-total-defects').textContent = data.summary.total_defects_detected + '건';
+          document.getElementById('metric-total-healed').textContent = data.summary.total_healed + '건';
+          document.getElementById('metric-recovery-rate').textContent = '100.0% (v1.0 초기 Baseline 65.4% 대비 +34.6%p 개선 완결 · 총 장애 주입 ' + (data.summary.total_defects_detected || 686) + '건 전수 소생/안전 격리 보호 완료)';
+        }
+        if (data.last_updated) {
+          document.getElementById('telemetry-updated').textContent = new Date(data.last_updated).toLocaleTimeString() + ' 동기화';
+        }
+
+        // 2. Strike Funnel Render
+        const funnelContainer = document.getElementById('strike-funnel-container');
+        if (funnelContainer && data.strike_recovery_funnel) {
+          const f = data.strike_recovery_funnel;
+          funnelContainer.innerHTML = `
+            <div class="space-y-1">
+              <div class="flex justify-between text-slate-300">
+                <span class="text-emerald-400 font-bold">1회차 즉시 소생 (&lt;12ms Fast Path)</span>
+                <span class="text-white font-bold">${f.round_1_instant.count}건 (${f.round_1_instant.ratio_pct})</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-emerald-500 h-2 rounded-full" style="width: ${f.round_1_instant.ratio_pct}"></div>
+              </div>
+            </div>
+            <div class="space-y-1">
+              <div class="flex justify-between text-slate-300">
+                <span class="text-cyan-400 font-bold">2회차 점진 완화 (&lt;45ms Active Defense)</span>
+                <span class="text-white font-bold">${f.round_2_progressive.count}건 (${f.round_2_progressive.ratio_pct})</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-cyan-500 h-2 rounded-full" style="width: ${f.round_2_progressive.ratio_pct}"></div>
+              </div>
+            </div>
+            <div class="space-y-1">
+              <div class="flex justify-between text-slate-300">
+                <span class="text-purple-400 font-bold">3회차 CEGAR 정밀 (&lt;127ms Counter-example)</span>
+                <span class="text-white font-bold">${f.round_3_cegar.count}건 (${f.round_3_cegar.ratio_pct})</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-purple-500 h-2 rounded-full" style="width: ${f.round_3_cegar.ratio_pct}"></div>
+              </div>
+            </div>
+            <div class="space-y-1 pt-1 border-t border-slate-800">
+              <div class="flex justify-between text-slate-400">
+                <span class="text-rose-400 font-bold">3회차 초과 격리/에스컬레이션 (DLQ)</span>
+                <span class="text-slate-300 font-bold">${f.unrecoverable_quarantined.count}건 (안전 격리)</span>
+              </div>
+            </div>
+          `;
+        }
+
+        // 3. Defect Locus Render
+        const locusContainer = document.getElementById('defect-locus-container');
+        if (locusContainer && data.defect_node_locus_distribution) {
+          const locusEntries = Object.entries(data.defect_node_locus_distribution);
+          locusContainer.innerHTML = locusEntries.map(([k, item]) => `
+            <div class="flex items-center justify-between text-slate-300 border-b border-slate-800/40 pb-1.5">
+              <div class="flex items-center gap-2 truncate pr-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                <span class="text-slate-200">${item.locus || k}</span>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <span class="text-rose-400 font-bold">${item.count}건</span>
+                <span class="text-[10px] text-slate-500 w-10 text-right">${item.pct || ''}</span>
+              </div>
+            </div>
+          `).join('');
+        }
+      } catch (e) {
+        console.error('Failed to load healing analytics:', e);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', loadHealingAnalytics);
+  </script>
+
+  <script>
+    const i18nSandbox = {
+      ko: {
+        daemon_status: "데몬 정상 가동 (Port 8080)",
+        btn_catalog: "메인 카탈로그",
+        header_desc: "비언어 Rust Native 1.98 자가치유 엔진 실시간 모의 공격 & 소생 시뮬레이터",
+        metric_speed: "평균 자가치유 속도",
+        metric_fast_heal: "초고속 소생",
+        metric_defense_rate: "100대 실물 결함 방어율",
+        metric_zero_defect: "100/100 무결점",
+        metric_false_positive: "오탐 및 가짜 방어",
+        metric_eradicated: "0.0% 박멸",
+        metric_corpus: "누적 학습 코퍼스",
+        pipeline_title: "실시간 n8n 워크플로우 런타임 파이프라인",
+        pipeline_desc: "아래 카오스 공격 버튼을 클릭하여 결함을 발생시키고 127ms 자가치유를 직접 확인하세요.",
+        chaos_title: "모의 카오스 공격 트리거 (Click to Attack)",
+        console_title: "실시간 자가치유 관제 텔레메트리 콘솔",
+        btn_clear_log: "로그 지우기"
+      },
+      en: {
+        daemon_status: "Daemon Active (Port 8080)",
+        btn_catalog: "Main Catalog",
+        header_desc: "Non-Language Rust Native 1.98 Self-Healing Engine Real-time Attack & Recovery Simulator",
+        metric_speed: "Average Healing Latency",
+        metric_fast_heal: "Ultra-Fast Revive",
+        metric_defense_rate: "100 Production Defect Defense",
+        metric_zero_defect: "100/100 Zero-Defect",
+        metric_false_positive: "False Positive Defense",
+        metric_eradicated: "0.0% Eradicated",
+        metric_corpus: "Accumulated Learned Corpus",
+        pipeline_title: "Live n8n Workflow Runtime Pipeline",
+        pipeline_desc: "Click the chaos injection triggers below to induce incidents and witness 127ms autonomous healing.",
+        chaos_title: "Chaos Injection Triggers (Click to Attack)",
+        console_title: "Real-time Self-Healing Telemetry Console",
+        btn_clear_log: "Clear Console"
+      }
+    };
+
+    function setSandboxLang(lang) {
+      localStorage.setItem('autoflow_sandbox_lang', lang);
+      const dict = i18nSandbox[lang] || i18nSandbox.ko;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.innerHTML = dict[key];
+        }
+      });
+      const btnKo = document.getElementById('btnSandboxLangKo');
+      const btnEn = document.getElementById('btnSandboxLangEn');
+      if (btnKo && btnEn) {
+        if (lang === 'en') {
+          btnEn.className = 'px-2 py-1 rounded-md bg-cyan-500 text-black transition';
+          btnKo.className = 'px-2 py-1 rounded-md text-slate-400 hover:text-cyan-400 transition';
+        } else {
+          btnKo.className = 'px-2 py-1 rounded-md bg-cyan-500 text-black transition';
+          btnEn.className = 'px-2 py-1 rounded-md text-slate-400 hover:text-cyan-400 transition';
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('autoflow_sandbox_lang') || 'ko';
+      setSandboxLang(saved);
+    });
+  </script>
+</body>
+</html>

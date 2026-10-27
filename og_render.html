@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>AutoFlow 공식 스토어 | 1제품 1사이트 워크플로우 완제품 & 상주형 무인 엔진</title>
+  <meta name="description" content="워크플로우 단품 영구 소장(3.9만~7.9만 원) 및 24/7 상주형 무인 엔진(자가치유·정합성 대사) 공식 오픈그래프 프리뷰." />
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800;900&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at 20% 20%, #0c2340 0%, #070d18 50%, #030712 100%);
+      color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 80px;
+      position: relative;
+    }
+
+    /* Ambient Glow */
+    .glow-1 {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: rgba(14, 165, 233, 0.18);
+      filter: blur(100px);
+      top: -100px;
+      left: 100px;
+      pointer-events: none;
+    }
+    .glow-2 {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.14);
+      filter: blur(120px);
+      bottom: -150px;
+      right: 50px;
+      pointer-events: none;
+    }
+
+    /* Grid overlay */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Outer Border */
+    .border-frame {
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.5);
+    }
+    .brand-text {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+    }
+    .brand-text span {
+      color: #38bdf8;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      font-size: 13px;
+      font-weight: 700;
+      color: #38bdf8;
+      letter-spacing: 0.5px;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+    }
+
+    /* Hero Center */
+    .hero {
+      position: relative;
+      z-index: 10;
+      margin-top: 10px;
+    }
+    .hero-h1 {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+      background: linear-gradient(to right, #ffffff, #e2e8f0 70%, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 21px;
+      color: #94a3b8;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .hero-highlight {
+      color: #38bdf8;
+      font-weight: 700;
+    }
+
+    /* Cards */
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .spec-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .spec-val {
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .val-cyan { color: #38bdf8; }
+    .val-emerald { color: #10b981; }
+    .val-indigo { color: #818cf8; }
+    .spec-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-bottom: 4px;
+    }
+    .spec-sub {
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 18px;
+      font-size: 13px;
+      color: #64748b;
+    }
+    .footer-left strong {
+      color: #94a3b8;
+    }
+    .footer-right {
+      color: #38bdf8;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+  <div class="grid-bg"></div>
+  <div class="border-frame"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">
+      <div class="logo-box">⚡</div>
+      <div class="brand-text">AutoFlow <span>Engine</span></div>
+    </div>
+    <div class="badge-pill">
+      <span class="status-dot"></span>
+      12-FACTOR ENTERPRISE ARCHITECTURE
+    </div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero">
+    <h1 class="hero-h1">무인 완제품 B2B 업무 자동화 솔루션</h1>
+    <p class="hero-desc">
+      쿠팡 윙 • 네이버 스마트스토어 • 쇼피파이 • 카페24 주문 수집 &amp; 대사 자동화<br>
+      <span class="hero-highlight">3단계 무중단 엔터프라이즈 에어백 노드</span> 및 <span class="hero-highlight">DLQ 데이터 유실 0%</span> 완벽 탑재
+    </p>
+  </div>
+
+  <!-- Spec Metrics Cards -->
+  <div class="cards-row">
+    <div class="spec-card">
+      <div class="spec-val val-cyan">127ms</div>
+      <div class="spec-title">3단계 무중단 에어백</div>
+      <div class="spec-sub">오픈마켓 API 오류 자동 복구</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-val val-emerald">0%</div>
+      <div class="spec-title">DLQ 데이터 유실 방어</div>
+      <div class="spec-sub">주문 누락 0건 보장 원장 격리</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-val val-indigo">100%</div>
+      <div class="spec-title">즉시 구동 완제품 라이선스</div>
+      <div class="spec-sub">토스페이먼츠 256-bit SSL 안전 결제</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-left">
+      <strong>디에이치랩스 (DH Labs)</strong> | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호
+    </div>
+    <div class="footer-right">
+      https://autoflow.io
+    </div>
+  </div>
+</body>
+</html>

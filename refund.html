@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlow 청약철회 및 공정 환불·정산 정책 (Cancellation &amp; Fair Prorated Refund Policy)</title>
+  <meta name="description" content="AutoFlow 3단계 공정 환불 및 일할 정산 규정: 미활성화 7일 이내 100% 전액 환불(FULL_REFUND_UNACTIVATED), 활성화 7일 이내 엔진 결함 실사 승인 시 100% 환불(FULL_REFUND_DEFECT), 중도 해지 시 실사용 일수 일할 차감 및 10% 위약금 공제 정산(PRORATED_FAIR_REFUND).">
+  <meta name="naver-site-verification" content="AUTOFLOW_NAVER_SEARCH_ADVISOR_VERIFICATION">
+  <meta name="google-site-verification" content="AUTOFLOW_GOOGLE_SEARCH_CONSOLE_VERIFICATION">
+  <link rel="canonical" href="https://autoflow.io/refund.html">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AutoFlow Enterprise">
+  <meta property="og:title" content="AutoFlow 청약철회 및 공정 환불·정산 정책 (Cancellation &amp; Fair Prorated Refund Policy)">
+  <meta property="og:description" content="AutoFlow 3단계 공정 환불 및 일할 정산 규정(FULL_REFUND_UNACTIVATED / FULL_REFUND_DEFECT / PRORATED_FAIR_REFUND) 및 상위 티어 일할 차액 승급 안내.">
+  <meta property="og:url" content="https://autoflow.io/refund.html">
+  <meta property="og:image" content="https://autoflow.io/og_preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AutoFlow 청약철회 및 공정 환불·정산 정책">
+  <meta name="twitter:description" content="AutoFlow 3단계 공정 환불 및 일할 정산 규정 및 상위 티어 일할 차액 승급 안내.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://autoflow.io/#organization",
+        "name": "디에이치랩스 (DH Labs)",
+        "url": "https://autoflow.io",
+        "email": "dhlabs_biz0@naver.com",
+        "telephone": "+82-10-8503-6232"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://autoflow.io/refund.html#webpage",
+        "url": "https://autoflow.io/refund.html",
+        "name": "AutoFlow 청약철회 및 공정 환불·정산 정책 (Cancellation & Fair Prorated Refund Policy)",
+        "isPartOf": { "@id": "https://autoflow.io/#organization" }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #090d16;
+      --surface: #111827;
+      --card-bg: #1a2234;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --border: #26334d;
+      --primary: #3b82f6;
+      --primary-light: #60a5fa;
+      --accent: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --card-bg: #f1f5f9;
+        --text: #0f172a;
+        --text-muted: #475569;
+        --text-dim: #94a3b8;
+        --border: #e2e8f0;
+        --primary: #2563eb;
+        --primary-light: #3b82f6;
+        --accent: #059669;
+        --warning: #d97706;
+        --danger: #dc2626;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 0;
+    }
+    header {
+      background-color: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: color 0.2s, background-color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text);
+      background-color: var(--card-bg);
+      font-weight: 600;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .doc-card {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .doc-meta {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--primary-light);
+      border-left: 3px solid var(--primary);
+      padding-left: 10px;
+    }
+    p, ul, ol, table {
+      margin-bottom: 16px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    strong {
+      color: var(--text);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+    th {
+      background-color: var(--card-bg);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .alert-box {
+      background-color: var(--card-bg);
+      border-left: 4px solid var(--warning);
+      padding: 16px;
+      border-radius: 6px;
+      margin: 20px 0;
+      font-size: 0.92rem;
+    }
+    .success-box {
+      background-color: var(--card-bg);
+      border-left: 4px solid var(--accent);
+      padding: 16px;
+      border-radius: 6px;
+      margin: 20px 0;
+      font-size: 0.92rem;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-top: 60px;
+      background-color: var(--surface);
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .business-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      line-height: 1.6;
+    }
+    .business-info strong {
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .business-info p {
+      margin: 0;
+    }
+    .business-info .copyright {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border);
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+    @media (max-width: 640px) {
+      footer {
+        padding: 30px 16px;
+      }
+      .business-info {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+  <link rel="describedby" type="text/plain" href="https://autoflow.io/llms.txt" title="AutoFlow AI / LLM Context Summary" />
+  <link rel="alternate" type="application/rss+xml" title="AutoFlow 공식 스토어 RSS 피드" href="https://autoflow.io/rss.xml" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/index.html" class="brand">
+        <span>⚡ AutoFlow Engine</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/index.html" class="nav-item">카탈로그 홈</a>
+        <a href="/terms.html" class="nav-item">이용약관</a>
+        <a href="/privacy.html" class="nav-item">개인정보처리방침</a>
+        <a href="/refund.html" class="nav-item active">청약철회 및 환불정책</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="doc-card">
+      <h1>청약철회 및 공정 환불·정산 정책 (Cancellation &amp; Fair Prorated Refund Policy)</h1>
+      <div class="doc-meta">
+        시행일자: 2026년 10월 04일 | 최종 개정일자: 2026년 10월 14일 | 전자상거래 등에서의 소비자보호에 관한 법률 및 공정거래위원회 계속거래 표준약관 준수
+      </div>
+
+      <div class="alert-box">
+        <strong>⚖️ [전자상거래법 제17조 및 전자상거래법 제17조 제2항 제5호 · 공정거래위원회 디지털콘텐츠·계속거래 표준약관 준수 고지]</strong><br>
+        AutoFlow는 고객의 권익 보호와 투명한 정산을 위해 <strong>3단계 공정 환불 및 일할 정산 규정(3-Stage Fair Prorated Refund Policy)</strong>을 운영합니다. 미활성화 7일 이내 100% 무조건 전액 환불, 활성화 후 7일 이내 상품 하자 및 결함에 따른 교환·환불 보장(엔진 치명적 결함 실사 승인 시 100% 전액 환불), 활성화 후 7일 경과 또는 중도 해지 시 접수 타임스탬프 기준 실사용 일수 일할 차감 및 10% 위약수수료 공제 후 잔여 금액을 투명하게 정산 환불합니다.
+      </div>
+
+      <h2>제1조 (결제 후 7일 이내 &amp; 미활성화 7일 이내 100% 무조건 전액 환불 — <code>FULL_REFUND_UNACTIVATED</code>)</h2>
+      <div class="success-box">
+        <strong>✅ 미활성화 상태 결제 후 7일 이내 100% 무조건 전액 환불 보장 (<code>FULL_REFUND_UNACTIVATED</code>):</strong><br>
+        라이선스 키가 고객 기기(1:1 Device HWID)에 단 한 번도 활성화(바인딩)되지 않은 미활성화 상태에서 결제일로부터 <strong>7일 이내</strong>에 환불을 요청하는 경우, 위약금이나 수수료 공제 없이 <strong>결제 금액의 100% 전액 무상 환불(<code>FULL_REFUND_UNACTIVATED</code>)</strong>을 즉시 보장합니다.<br>
+        <span style="font-size: 0.88rem; color: var(--text-dim);">[EN] <strong>Article 1 (Within 7 Days of Payment &amp; Unactivated — <code>FULL_REFUND_UNACTIVATED</code>):</strong> If the license key has never been activated or bound to a device HWID and a refund is requested within 7 days of payment, a 100% full refund (<code>FULL_REFUND_UNACTIVATED</code>) is guaranteed without any penalty.</span>
+      </div>
+
+      <h2>제2조 (활성화 후 7일 이내 상품 하자 및 결함에 따른 교환·환불 보장 — <code>REFUND_PENDING_DEFECT_VERIFICATION</code> ➔ <code>FULL_REFUND_DEFECT</code>)</h2>
+      <p>
+        기기(HWID)에 라이선스를 활성화한 후 <strong>7일 이내</strong>에 당사 기술지원팀 실사 결과 수리 불가능한 엔진 자체의 치명적 결함 또는 명시된 표준 운영체제 호환성 불가 판정이 확인된 경우, <strong>관리자 결함 실사 승인 절차(<code>REFUND_PENDING_DEFECT_VERIFICATION</code> ➔ <code>FULL_REFUND_DEFECT</code>)</strong>를 거쳐 위약금 없이 <strong>결제 금액의 100% 전액 환불</strong>을 보장합니다.
+      </p>
+      <ul>
+        <li><strong>결함 실사 보류 가드 (<code>REFUND_PENDING_DEFECT_VERIFICATION</code>):</strong> 결함 사유로 환불 신청 접수 시 기술지원팀의 로그·환경 실사 확인 전까지 <code>REFUND_PENDING_DEFECT_VERIFICATION</code> 상태로 안전하게 보호되며, 실사 승인 즉시 <code>FULL_REFUND_DEFECT</code>(100% 전액 환불)로 집행됩니다.</li>
+        <li><strong>[EN] Article 2 (Within 7 Days of Activation &amp; Critical Engine Defect — <code>REFUND_PENDING_DEFECT_VERIFICATION</code> ➔ <code>FULL_REFUND_DEFECT</code>):</strong> If an unrepairable critical engine defect or verified platform incompatibility is confirmed by our engineering support team within 7 days of device activation, a 100% full refund is issued upon administrator defect verification approval (<code>REFUND_PENDING_DEFECT_VERIFICATION</code> ➔ <code>FULL_REFUND_DEFECT</code>).</li>
+      </ul>
+
+      <h2>제3조 (활성화 후 7일 경과 또는 중도 해지 시 공정 일할 정산 환불 — <code>PRORATED_FAIR_REFUND</code>)</h2>
+      <div class="alert-box">
+        <strong>🛡️ [공정거래위원회 디지털콘텐츠·계속거래 표준약관 준수 일할 정산 공식]</strong><br>
+        기기에 라이선스를 활성화하여 사용한 후 7일이 경과하였거나 고객의 사정으로 중도 해지를 요청하는 경우, 공정거래위원회 표준약관에 의거하여 <strong>환불 접수 타임스탬프 기준 실사용 일수 일할 차감 금액 및 위약수수료(총 결제금액의 10%)를 공제한 잔여 금액</strong>을 투명하게 정산하여 환불합니다 (<code>PRORATED_FAIR_REFUND</code>).
+      </div>
+      <p>
+        <strong>1. 공정 일할 정산 산식 (Fair Prorated Refund Formula):</strong><br>
+        <code>환불 정산액 = 총 결제금액 - 실사용 일수 일할 차감액[(총 결제금액 ÷ 전체 계약일수) × 실사용일수] - 위약수수료(총 결제금액 × 10%)</code>
+      </p>
+      <ul>
+        <li><strong>실사용 일수 산정 기준:</strong> 최초 라이선스 활성화 일시로부터 고객이 환불을 접수한 타임스탬프까지의 경과 일수를 일단위로 정밀 산정합니다.</li>
+        <li><strong>위약수수료 (10%):</strong> 공정거래위원회 계속거래 표준약관 고시 기준에 따라 총 결제금액의 10%를 중도 해지 위약수수료 및 결제망 비용으로 공제합니다.</li>
+        <li><strong>[EN] Article 3 (Fair Prorated Refund After 7 Days or Mid-Term Cancellation — <code>PRORATED_FAIR_REFUND</code>):</strong> In accordance with the KFTC Fair Trade Commission Standard Terms, mid-term cancellations after activation are settled transparently by deducting the prorated daily usage amount up to the refund request timestamp <code>((Total Paid ÷ Total Contract Days) × Used Days)</code> and a 10% early termination fee from the total paid amount (<code>PRORATED_FAIR_REFUND</code>).</li>
+      </ul>
+
+      <h2>제4조 (HWID 기기 대조 및 라이선스 즉시 회수 — <code>REVOKED</code>)</h2>
+      <p>
+        모든 환불 신청 및 정산 처리 시에는 부정 수급 및 무단 복제를 방지하기 위해 최초 활성화된 <strong>1:1 기기 고유 식별자(HWID / CPU / MAC 하드웨어 스냅샷)</strong> 대조 검증을 수행합니다.
+      </p>
+      <ul>
+        <li><strong>라이선스 즉시 영구 회수 (<code>REVOKED</code>):</strong> 환불 승인 및 정산 처리와 동시에 해당 라이선스 키와 기기 HWID는 중앙 서버 및 로컬 데몬에서 즉시 <code>REVOKED</code>(영구 회수) 상태로 전환되며, 로컬 자가치유 데몬 및 엔진 가동이 즉시 차단(HTTP 403)됩니다.</li>
+        <li><strong>[EN] Article 4 (HWID Device Verification &amp; Immediate License Revocation — <code>REVOKED</code>):</strong> Upon refund request and settlement, the bound 1:1 Device HWID (CPU/MAC hardware snapshot) is verified and the license is immediately transitioned to <code>REVOKED</code> status, permanently disabling local daemon and self-healing execution.</li>
+      </ul>
+
+      <h2>제5조 (상위 티어 일할 차액 정산 업그레이드 — Prorated Tier Upgrade)</h2>
+      <div class="success-box">
+        <strong>🚀 자사 공식 포털(<code>https://autoflow.io/upgrade</code>) 100% 잔여 가치 인정 일할 차액 업그레이드:</strong><br>
+        <code>자가치유 상주형 엔진 (30일 ₩39,000 · MCP 특가 ₩29,000)</code> 이용 고객이 <code>정합성 대사 상주형 엔진 (30일 ₩49,000 · MCP 특가 ₩39,000)</code> 또는 <code>듀얼 통합 상주형 엔진 (30일 ₩69,000 · MCP 특가 ₩49,000)</code> 상위 티어로 승급하고자 하는 경우, <strong>AutoFlow 자사 공식 결제 포털(<a href="https://autoflow.io/upgrade" style="color: var(--primary-light); text-decoration: underline;">https://autoflow.io/upgrade</a>)</strong>에서 기존 플랜의 잔여 일수 가치를 100% 일할 계산하여 차감받은 후 <strong>차액만 결제하여 즉시 업그레이드</strong>할 수 있습니다.<br>
+        ※ 외부 마켓플레이스를 통한 단건 구매 건은 외부 마켓 결제 시스템 특성상 부분 차액 결제가 지원되지 않으므로, 고객지원 이메일(<code>dhlabs_biz0@naver.com</code>)로 신청 시 기존 잔여 가치를 반영한 <strong>자사 공식 포털 전용 전환 할인 쿠폰</strong>을 발급해 드립니다.<br>
+        <span style="font-size: 0.88rem; color: var(--text-dim);">[EN] <strong>Article 5 (Prorated Tier Upgrade via Official Portal):</strong> Customers upgrading from <code>개발자 MCP 연동형 엔진 (₩99,000/mo)</code> to <code>정합성 대사 엔진 (₩49,000/mo)</code> or <code>듀얼 통합 엔진 (₩69,000/mo)</code> at <a href="https://autoflow.io/upgrade" style="color: var(--primary-light);">https://autoflow.io/upgrade</a> receive 100% prorated credit for their remaining days and pay only the net difference.</span>
+      </div>
+
+      <h2>제6조 (환불 신청 절차 및 소비자 분쟁 해결)</h2>
+      <ol>
+        <li><strong>환불 신청 접수:</strong> 사내 설정 마법사(<code>setup_wizard.html</code>) 내 공정 환불 정산 모달 또는 공식 고객지원 이메일(<strong>dhlabs_biz0@naver.com</strong>)을 통해 주문번호(Order ID), 등록 이메일, 기기 HWID 및 환불 사유를 기재하여 접수합니다.</li>
+        <li><strong>HWID 및 사용일수 실측 정산:</strong> 당사 정산 엔진이 활성화 여부, 사용 일수 및 결함 실사 여부를 자동 대조하여 정산 명세를 산출합니다.</li>
+        <li><strong>승인 및 환불 집행:</strong> 요건 확인 후 <strong>영업일 기준 3일 이내</strong>에 토스페이먼츠(Toss Payments) 결제망을 통해 카드 승인 취소 또는 계좌 환불을 완료합니다.</li>
+      </ol>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="business-info">
+        <p>상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 통신판매업신고: 면제 (부가가치세법 제8조 정식 등록 과세사업자 · 기업 간 B2B 소프트웨어 라이선스 직접 공급) | 고객센터: 010-8503-6232 (평일 09:00~18:00 (주말·공휴일 휴무)) | 이메일: dhlabs_biz0@naver.com</p>
+        <p><strong>업태 / 종목:</strong> 정보통신업, 도매 및 소매업 / 컴퓨터 프로그래밍 서비스업, 전자상거래 소매 중개업</p>
+        <p class="copyright">© 2026 디에이치랩스 (DH Labs). All rights reserved. 전자상거래 등에서의 소비자보호에 관한 법률 및 공정거래위원회 표준약관 준수</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

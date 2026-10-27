@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AutoFlow 공식 스토어 | 150종 워크플로우 완제품 &amp; 127ms 상주형 무인 방어 엔진</title>
+    <link>https://autoflow.io/</link>
+    <description>외주 인건비 거품 없이 순수 기술가로 제공하는 150종 비즈니스 워크플로우 단일 완제품(39,000~79,000원 영구 소장) 및 24/7 상주형 무인 방어 엔진(자가치유·데이터 정합성 대사·듀얼 통합 기간권) 공식 스토어</description>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 22 Oct 2026 12:30:00 +0900</lastBuildDate>
+    <atom:link href="https://autoflow.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AutoFlow 공식 스토어 — 1제품 1사이트 워크플로우 완제품(3.9만~7.9만 원 영구 소장)</title>
+      <link>https://autoflow.io/</link>
+      <guid isPermaLink="true">https://autoflow.io/</guid>
+      <pubDate>Thu, 22 Oct 2026 09:00:00 +0900</pubDate>
+      <description>스마트스토어, 쿠팡 윙, 카페24, 홈택스, 더존 ERP 등 150종 비즈니스 워크플로우 단품을 번들 강매 없이 39,000원~79,000원 순수 기술가로 영구 소장하세요.</description>
+    </item>
+    <item>
+      <title>24/7 상주형 무인 방어 엔진 — 127ms 실시간 자가치유 &amp; N분기 1원 정합성 대사 기간권</title>
+      <link>https://autoflow.io/checkout.html</link>
+      <guid isPermaLink="true">https://autoflow.io/checkout.html</guid>
+      <pubDate>Thu, 22 Oct 2026 09:30:00 +0900</pubDate>
+      <description>외부 API 장애 및 스키마 변경 시 에러코드 1:1 매칭으로 127ms 만에 수리하는 자가치유 엔진(3.9만)과 주문·정산·송장 누락을 잡는 정합성 대사 엔진(4.9만), 듀얼 통합 엔진(6.9만, MCP 연동 시 2.9만/3.9만/4.9만).</description>
+    </item>
+    <item>
+      <title>AutoFlow 150종 전체 워크플로우 인터랙티브 카탈로그</title>
+      <link>https://autoflow.io/WORKFLOW_MENU_BOARD.html</link>
+      <guid isPermaLink="true">https://autoflow.io/WORKFLOW_MENU_BOARD.html</guid>
+      <pubDate>Thu, 22 Oct 2026 10:00:00 +0900</pubDate>
+      <description>이커머스, 물류/3PL, 재무/회계, 마케팅/CRM, CS/리뷰, 보안/인프라 6대 분야 150종 완제품 블루프린트 상세 스펙 및 즉시 도입 안내.</description>
+    </item>
+    <item>
+      <title>AutoFlow 자가치유 엔진(Self-Healing) &amp; ReconFlow 정합성 대사 아키텍처</title>
+      <link>https://autoflow.io/autoflow.html</link>
+      <guid isPermaLink="true">https://autoflow.io/autoflow.html</guid>
+      <pubDate>Thu, 22 Oct 2026 10:30:00 +0900</pubDate>
+      <description>사내 PC(127.0.0.1) 개인정보 100% 마스킹 기본 내장 및 비파괴 스키마 격리(Zero Silent Mutation) 기술 상세 문서.</description>
+    </item>
+  </channel>
+</rss>

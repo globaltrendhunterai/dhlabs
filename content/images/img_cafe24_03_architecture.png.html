@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", sans-serif; }
+  body {
+    width: 1200px;
+    height: 675px;
+    background: #0B0F19;
+    color: #F8FAFC;
+    padding: 48px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #1E293B;
+  }
+  .header-wrap {
+    text-align: center;
+    width: 100%;
+  }
+  .badge {
+    display: inline-block;
+    background: #0078FF;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 6px 18px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .watermark {
+    position: absolute;
+    bottom: 24px;
+    right: 48px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+  <div class="header-wrap">
+    <div class="badge">SYSTEM ARCHITECTURE</div>
+    <h2>카페24 자사몰 127ms 무인 자가치유 데몬 아키텍처</h2>
+  </div>
+  
+      <div style="display:flex; justify-content:space-between; align-items:center; width:100%; gap:24px; margin-top:30px;">
+        <div style="background:#1E293B; border:1.5px solid #334155; border-radius:14px; padding:24px; flex:1; text-align:left;">
+          <div style="font-size:13px; font-weight:800; color:#94A3B8;">MONITORING LAYER</div>
+          <div style="font-size:18px; font-weight:800; color:#F8FAFC; margin-top:4px;">카페24 API & 데몬 감시</div>
+          <p style="font-size:12px; color:#CBD5E1; margin-top:8px; line-height:1.5;">2시간 토큰 수명 주기, V8 힙 메모리 상태, 401/429 HTTP 에러 코드를 1초 단위 실시간 감시</p>
+        </div>
+        <div style="font-size:26px; color:#0078FF; font-weight:900;">➔</div>
+        <div style="background:#0F2942; border:2px solid #0078FF; border-radius:14px; padding:24px; flex:1.2; text-align:left; box-shadow:0 0 25px rgba(0,120,255,0.3);">
+          <div style="font-size:13px; font-weight:800; color:#93C5FD;">127ms HEALING ENGINE</div>
+          <div style="font-size:18px; font-weight:800; color:#60A5FA; margin-top:4px;">AutoFlow Guardian</div>
+          <p style="font-size:12px; color:#DBEAFE; margin-top:8px; line-height:1.5;">서버 장애 발생 즉시 127ms 만에 프로세스 클린 재기동 및 Refresh Token 즉시 재발급</p>
+        </div>
+        <div style="font-size:26px; color:#0078FF; font-weight:900;">➔</div>
+        <div style="background:#1E293B; border:1.5px solid #334155; border-radius:14px; padding:24px; flex:1; text-align:left;">
+          <div style="font-size:13px; font-weight:800; color:#94A3B8;">TRIPLE-SAFE SLA</div>
+          <div style="font-size:18px; font-weight:800; color:#F8FAFC; margin-top:4px;">안전 보정 3중 방패</div>
+          <p style="font-size:12px; color:#CBD5E1; margin-top:8px; line-height:1.5;">사내 PC DLQ 격리소 + 본사 핫스탠바이 DR + 고객 PC 영구 소장 3중 안전망 운영</p>
+        </div>
+      </div>
+    
+  <div class="watermark">AutoFlow Cafe24 D2C SRE Engine (autoflow.io)</div>
+</body>
+</html>

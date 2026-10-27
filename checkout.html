@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- ============================================================================== -->
+  <!-- AutoFlow Official Storefront Checkout SEO, OpenGraph & Schema.org SSOT         -->
+  <!-- ============================================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>AutoFlow 공식 보안 결제 | 워크플로우 단품(3.9만~7.9만) &amp; 상주형 무인 엔진 기간권</title>
+  <meta name="description" content="토스페이먼츠(KRW) &amp; Lemon Squeezy(USD) 공식 결제 연동. 1제품=1사이트 워크플로우 단일 완제품(39,000~79,000원 영구 소장) 및 24/7 상주형 무인 엔진 기간권(자가치유 3.9만 / 정합성 4.9만 / 듀얼 6.9만, 개발자 MCP 연동 시 2.9만/3.9만/4.9만) 즉시 라이선스 출고." />
+  <meta name="keywords" content="n8n, 스마트스토어 자동화, AutoFlow, 자가치유 엔진, 정합성 대사, 토스페이먼츠, Lemon Squeezy, 워크플로우 단품" />
+  <meta name="author" content="디에이치랩스 (DH Labs)" />
+  <meta name="naver-site-verification" content="AUTOFLOW_NAVER_SEARCH_ADVISOR_VERIFICATION" />
+  <meta name="google-site-verification" content="AUTOFLOW_GOOGLE_SEARCH_CONSOLE_VERIFICATION" />
+  <link rel="canonical" href="https://autoflow.io/checkout.html" />
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AutoFlow Official Store" />
+  <meta property="og:title" content="AutoFlow 공식 보안 결제 | 워크플로우 단품(3.9만~7.9만) &amp; 상주형 무인 엔진" />
+  <meta property="og:description" content="토스페이먼츠 &amp; Lemon Squeezy 보안 결제 즉시 사내 설치 패키지(ZIP) 및 정품 라이선스 자동 발급." />
+  <meta property="og:image" content="https://autoflow.io/og_preview.png" />
+  <meta property="og:url" content="https://autoflow.io/checkout.html" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@AutoFlowIO" />
+  <meta name="twitter:title" content="AutoFlow 공식 보안 결제 | 워크플로우 단품 &amp; 상주형 무인 엔진" />
+  <meta name="twitter:description" content="1제품=1사이트 단일 완제품 영구 소장(3.9만~7.9만 원) &amp; 상주형 무인 엔진 기간권(2.9만~6.9만 원) 즉시 발급." />
+  <meta name="twitter:image" content="https://autoflow.io/og_preview.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://autoflow.io/#organization",
+        "name": "디에이치랩스 (DH Labs)",
+        "url": "https://autoflow.io/",
+        "email": "dhlabs_biz0@naver.com",
+        "telephone": "+82-10-8503-6232"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://autoflow.io/checkout.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "AutoFlow 공식 스토어",
+            "item": "https://autoflow.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "보안 결제 및 즉시 라이선스 출고",
+            "item": "https://autoflow.io/checkout.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- GA4 Telemetry -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-AUTOFLOW2026', { 'anonymize_ip': true });
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 토스페이먼츠 공식 결제위젯 v2 SDK -->
+  <script src="https://js.tosspayments.com/v2/standard"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script>
+    window.tailwind = window.tailwind || {};
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap');
+
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+      touch-action: pan-y pinch-zoom;
+      overscroll-behavior-x: none;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    .container, section, div, pre, table {
+      max-width: 100%;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+
+  <script>
+    // Clean Light Mode Default (#912): Only activate dark mode if user explicitly selected 'dark'
+    function applyTheme() {
+      const saved = localStorage.getItem('autoflow_theme');
+      if (saved === 'dark') {
+        document.documentElement.classList.add('dark');
+        updateThemeIcon(true);
+      } else {
+        document.documentElement.classList.remove('dark');
+        updateThemeIcon(false);
+      }
+    }
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('autoflow_theme', isDark ? 'dark' : 'light');
+      updateThemeIcon(isDark);
+    }
+    function updateThemeIcon(isDark) {
+      const icon = document.getElementById('themeToggleIcon');
+      if (icon) {
+        icon.className = isDark ? 'fa-solid fa-sun text-amber-400 text-sm' : 'fa-solid fa-moon text-slate-600 text-sm';
+      }
+    }
+    (function() {
+      const saved = localStorage.getItem('autoflow_theme');
+      if (saved === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+  <link rel="describedby" type="text/plain" href="https://autoflow.io/llms.txt" title="AutoFlow AI / LLM Context Summary" />
+  <link rel="alternate" type="application/rss+xml" title="AutoFlow 공식 스토어 RSS 피드" href="https://autoflow.io/rss.xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "https://autoflow.io/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "워크플로우 단품(3.9만~7.9만 원)을 한 번 구매하면 매달 추가 비용이 발생하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아니요, 추가 비용이 전혀 발생하지 않습니다. AutoFlow의 150종 비즈니스 워크플로우 단품은 1제품=1사이트 완제품 구조로, 1회 구매 시 고객님 PC에 영구 소장되며 실행 건수 제한이나 월 구독료 없이 평생 무료로 가동됩니다. 구매 시 상주형 무인 방어 엔진 7일 무료 체험권도 함께 제공됩니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "상주형 무인 방어 엔진 기간권(자가치유 3.9만 / 정합성 4.9만 / 듀얼 6.9만)은 어떤 역할을 하나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "외부 쇼핑몰(스마트스토어·쿠팡·카페24), 택배사, 국세청 API가 예고 없이 변경되거나 일시 장애가 발생할 때 워크플로우가 멈추지 않도록 24시간 지키는 상주형 프로그램입니다. 자가치유 엔진은 에러코드 1:1 정밀 매칭으로 127ms 만에 무인 복구하며(미해결률 5% 미만), 정합성 대사 엔진은 앞단(주문·결제)과 뒷단(송장·정산·장부)의 1원 단위 오차 및 누락을 실시간 대조·격리합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "개발자 MCP 외부 AI 연동 특가(2.9만 / 3.9만 / 4.9만)는 기본형과 무엇이 다른가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "기본형은 본사가 파인튜닝한 전용 AI 모델 비용이 모두 포함되어 있어 별도 API 키 설정 없이 0초 만에 즉시 가동됩니다. 반면 개발자 MCP 연동 특가는 고객 본인의 외부 AI(OpenAI, Claude 등) API 키를 MCP로 직접 연결하고, 해결된 익명 오류 로그를 본사 엔진 고도화용으로 자동 공유하는 조건으로 매월 1~2만 원의 요금 할인을 제공하는 옵션입니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "사내 PC의 고객 주문 정보나 개인정보가 외부 서버나 AI로 유출되지 않나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "절대 유출되지 않습니다. AutoFlow는 별도의 유료 보안 옵션 없이 전 제품에 사내 PC(127.0.0.1) 로컬 개인정보 100% 자동 마스킹(살균) 기술을 기본 탑재하고 있습니다. 구매자 성명, 전화번호, 주소, 계좌번호, API 키는 로컬 PC 밖으로 단 1바이트도 나가지 않으며, 미해결 에러 패치를 위해서만 개인정보가 완전히 제거된 익명 에러코드 로그를 수집합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "홈페이지뿐만 아니라 설치된 프로그램 안에서도 바로 기간권 결제가 가능한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네, 가능합니다. 사내 PC에 설치된 AutoFlow 로컬 대시보드(setup_wizard.html) 안에 Lemon Squeezy 인앱 오버레이 결제(lemon.js)와 국내 토스페이먼츠 통합 결제창 호출 기능이 모두 내장되어 있어, 프로그램 안에서 바로 결제하고 복사·붙여넣기 없이 0초 만에 기간권을 자동 연장할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "구매 후 환불 규정은 어떻게 되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "공정거래위원회 표준약관 및 전자상거래법 제17조를 엄격히 준수합니다. 라이선스 미활성화 시 결제 후 7일 이내 100% 전액 환불되며, 활성화 후에도 7일 이내 본사 귀책 기술 결함 시 100% 전액 환불됩니다. 7일 경과 후 기간제 엔진 중도 해지 시에는 접수일 기준 실사용 일수 일할 차감 및 위약금(10%) 공제 후 잔여액을 투명하게 정산 환불해 드립니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col font-sans selection:bg-sky-500 selection:text-white transition-colors duration-200">
+
+  <!-- Header -->
+  <header class="border-b border-slate-200/80 dark:border-slate-800 bg-white/95 dark:bg-slate-950/90 backdrop-blur px-4 sm:px-6 py-3.5 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-600 to-indigo-600 flex items-center justify-center font-bold text-white text-base shadow-md shadow-sky-500/20">
+        <i class="fa-solid fa-lock"></i>
+      </a>
+      <div>
+        <h1 class="text-base sm:text-lg font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-2">
+          <span translate="no">AutoFlow</span> <span data-i18n="header_title">공식 스토어 보안 결제</span>
+          <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-500/20 dark:text-emerald-400 dark:border-emerald-500/30 font-mono font-bold" translate="no">TLS 256-bit SSL</span>
+        </h1>
+        <p class="text-xs sm:text-xs text-slate-500 dark:text-slate-400" data-i18n="header_desc">토스페이먼츠(KRW) &amp; Lemon Squeezy(USD) 공식 연동 · 결제 즉시 라이선스 자동 출고</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="테마 전환">
+        <i id="themeToggleIcon" class="fa-solid fa-moon text-slate-600 text-sm"></i>
+      </button>
+
+      <div class="inline-flex rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 p-0.5 text-xs font-bold">
+        <button onclick="setCheckoutLang('ko')" id="btnCheckoutLangKo" class="px-2 py-1 rounded-md bg-sky-600 text-white transition">KO</button>
+        <button onclick="setCheckoutLang('en')" id="btnCheckoutLangEn" class="px-2 py-1 rounded-md text-slate-600 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-400 transition">EN</button>
+      </div>
+      <a href="index.html" class="text-xs text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-slate-300 transition flex items-center gap-1.5 font-bold bg-white dark:bg-slate-900">
+        <i class="fa-solid fa-arrow-left text-sky-600"></i> <span data-i18n="btn_back_catalog">스토어 홈</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Visual Breadcrumb Bar -->
+  <nav aria-label="Breadcrumb" class="bg-white dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800 py-2 px-4 sm:px-6 text-xs">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <ol class="flex items-center space-x-1.5 text-slate-600 dark:text-slate-400 font-medium">
+        <li>
+          <a href="index.html" class="hover:text-sky-600 font-bold flex items-center gap-1">
+            <i class="fa-solid fa-house text-xs text-sky-600"></i>
+            <span>AutoFlow 공식 스토어</span>
+          </a>
+        </li>
+        <li class="text-slate-300 dark:text-slate-700">/</li>
+        <li>
+          <span id="checkoutBreadcrumbCurrent" class="font-bold text-slate-900 dark:text-white">보안 결제 및 즉시 라이선스 출고</span>
+        </li>
+      </ol>
+      <div class="text-xs text-emerald-700 dark:text-emerald-400 font-bold flex items-center gap-1">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>사내 PC 로컬 개인정보 100% 마스킹 기본 탑재</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Checkout Container -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-6 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+
+    <!-- Left Column: 2-Track Product Selector & Order Summary -->
+    <div class="lg:col-span-5 flex flex-col gap-5">
+      
+      <div class="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-sm font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-receipt text-sky-600 dark:text-sky-400"></i>
+            <span data-i18n="label_order_summary">주문 품목 선택 및 명세</span>
+          </h2>
+          <span id="order-tier-badge" class="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
+            📦 워크플로우 단품 영구소장
+          </span>
+        </div>
+
+        <!-- 2-Track Primary Switcher: Track 1 (Workflow Single) vs Track 2 (Resident Engine Pass) -->
+        <div class="mb-4">
+          <label class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-2" data-i18n="label_tier_select">구매 카테고리 선택 (단품 영구소장 vs 상주형 무인 엔진 기간권):</label>
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" id="btn-track-workflow" onclick="selectCheckoutTrack('workflow')" class="p-3 rounded-2xl border-2 border-sky-600 bg-sky-50/80 dark:bg-sky-950/50 text-left transition cursor-pointer">
+              <div class="text-xs font-black text-sky-800 dark:text-sky-300">📦 워크플로우 단품</div>
+              <div class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 mt-0.5">₩39,000 ~ ₩79,000 ($29~$59)</div>
+              <div class="text-xs text-emerald-700 dark:text-emerald-400 font-semibold mt-0.5">1회 구매 영구소장 (+7일 엔진 체험)</div>
+            </button>
+            <button type="button" id="btn-track-engine" onclick="selectCheckoutTrack('engine')" class="p-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/70 text-left transition hover:border-emerald-500 cursor-pointer">
+              <div class="text-xs font-black text-slate-800 dark:text-slate-200">🛡️ 상주형 무인 엔진</div>
+              <div class="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 mt-0.5">₩29,000 ~ ₩69,000 / 30일</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold mt-0.5">자가치유 · 정합성 · 듀얼 기간권</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- TRACK 1 PANEL: Single-Edition Workflow Selector (₩39,000 ~ ₩79,000) -->
+        <div id="panel-track-workflow" class="mb-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/80 border border-sky-200 dark:border-sky-900 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold text-sky-800 dark:text-sky-300 flex items-center gap-1.5">
+              <i class="fa-solid fa-boxes-stacked"></i>
+              <span>1제품 = 1사이트 단일 완제품 (인건비 0원 · 순수 기술가)</span>
+            </span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 font-bold">번들·등급 쪼개기 없음</span>
+          </div>
+
+          <!-- Quick Flagship Workflow Picker -->
+          <div>
+            <label for="workflowQuickSelect" class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">인기 단품 빠른 선택 (또는 스토어 카탈로그에서 선택한 품목 자동 연동):</label>
+            <select id="workflowQuickSelect" onchange="onWorkflowQuickSelect(this.value)" class="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-xs font-bold text-slate-800 dark:text-slate-100 focus:outline-none focus:border-sky-600">
+              <option value="CUSTOM">-- 선택한 카탈로그 품목 유지 --</option>
+              <option value="AF-NAVER-01|39000|[스마트스토어 전용] 신규 주문 실시간 수집 ➔ 카카오 알림톡(SMS 폴백) & 구글시트 원장">🟢 [AF-NAVER-01] 스마트스토어 신규 주문 알림톡 & 시트 원장 — ₩39,000 ($29)</option>
+              <option value="AF-NAVER-02|49000|[스마트스토어 전용] 주문 수수료·배송비·할인쿠폰 실시간 역마진 브레이크 & 출고 보류 가드">🟢 [AF-NAVER-02] 스마트스토어 실시간 역마진 브레이크 가드 — ₩49,000 ($39)</option>
+              <option value="AF-NAVER-03|49000|[스마트스토어 전용] 발주확인 주문 택배사(CJ·한진·롯데·우체국) 14컬럼 송장 엑셀 자동 변환기">🟢 [AF-NAVER-03] 스마트스토어 택배사 14컬럼 송장 엑셀 변환기 — ₩49,000 ($39)</option>
+              <option value="AF-NAVER-04|49000|[스마트스토어 전용] 택배사 출고 운송장 번호 일괄 역기입 & 발송처리 자동 완료기">🟢 [AF-NAVER-04] 스마트스토어 운송장 번호 일괄 역기입 & 발송처리 — ₩49,000 ($39)</option>
+              <option value="AF-NAVER-05|59000|[스마트스토어 전용] 일별 정산 내역 vs 실주문 원장 1원 단위 누락·수수료 과오납 대사기">🟢 [AF-NAVER-05] 스마트스토어 일별 정산 vs 주문 1원 대사기 — ₩59,000 ($45)</option>
+              <option value="AF-NAVER-06|39000|[스마트스토어 전용] 옵션별 재고 품절 임박 실시간 감지 ➔ 일시품절 자동 전환 & 긴급 발주서">🟢 [AF-NAVER-06] 스마트스토어 옵션 품절 임박 자동 전환 & 발주서 — ₩39,000 ($29)</option>
+              <option value="AF-NAVER-07|49000|[스마트스토어 전용] 취소·반품·교환 접수 실시간 감지 ➔ 택배 출고 중지 & 자동 수거지시">🟢 [AF-NAVER-07] 스마트스토어 취소·반품 출고 중지 & 수거지시 — ₩49,000 ($39)</option>
+              <option value="AF-NAVER-08|59000|[스마트스토어 전용] 해외구매대행 개인통관고유부호(PCCC) 관세청 실시간 유효성 검증 & 소명 알림톡">🟢 [AF-NAVER-08] 스마트스토어 관세청 개인통관고유부호 검증기 — ₩59,000 ($45)</option>
+              <option value="AF-NAVER-09|39000|[스마트스토어 전용] 배송완료 +3일 구매확정 & 포토리뷰 정중 독려 알림톡 자동 발송기">🟢 [AF-NAVER-09] 스마트스토어 구매확정 & 포토리뷰 독려 알림톡 — ₩39,000 ($29)</option>
+              <option value="AF-NAVER-10|59000|[스마트스토어 전용] 악성 리뷰·클레임 문의 실시간 포착 ➔ AI 사과문 초안 & 사장님 1-Click 승인">🟢 [AF-NAVER-10] 스마트스토어 악성 리뷰 AI 초안 & 1-Click 승인 — ₩59,000 ($45)</option>
+              <option value="AF-KR-01|39000|[단일 완제품] 쿠팡 윙(WING) 신규 주문 실시간 포착 ➔ 카카오 알림톡(실패 시 문자) & 구글시트 원장">🛍️ [AF-KR-01] 쿠팡 윙(WING) 신규 주문 알림톡 & 시트 원장 — ₩39,000 ($29)</option>
+              <option value="AF-KR-04|49000|[단일 완제품] 토스페이먼츠 실결제 승인 ➔ 홈택스 전자세금계산서 & 현금영수증 1초 자동 발행">🧾 [AF-KR-04] 토스페이먼츠 결제 ➔ 홈택스 전자세금계산서 자동 발행 — ₩49,000 ($39)</option>
+              <option value="AF-ENT-01|69000|[단일 완제품] 전사 매출·PG·택배·ERP 회계 전표 대사 & 재무 감사 봉인 오케스트레이터">🏢 [AF-ENT-01] 전사 매출·PG·ERP 회계 전표 대사 오케스트레이터 — ₩69,000 ($52)</option>
+              <option value="AF-COMPLEX-01|79000|[단일 완제품] 스마트 풀필먼트 WMS 5-Stage & 8대 방어 에어백 고밀도 오케스트레이터">🏭 [AF-COMPLEX-01] 고밀도 엔터프라이즈 65노드 오케스트레이터 — ₩79,000 ($59)</option>
+            </select>
+          </div>
+
+          <!-- Technical Complexity Price Band Buttons -->
+          <div>
+            <span class="block text-xs font-bold text-slate-500 mb-1.5">기능 노드 수 기반 순수 기술가 구간:</span>
+            <div class="grid grid-cols-5 gap-1.5">
+              <button type="button" onclick="setWorkflowPriceBand(39000)" id="btn-wf-price-39000" class="py-1.5 px-1 rounded-xl border border-sky-600 bg-sky-600 text-white text-xs font-extrabold text-center transition cursor-pointer">
+                ₩3.9만<br><span class="text-xs font-normal opacity-90">$29</span>
+              </button>
+              <button type="button" onclick="setWorkflowPriceBand(49000)" id="btn-wf-price-49000" class="py-1.5 px-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer">
+                ₩4.9만<br><span class="text-xs font-normal opacity-80">$39</span>
+              </button>
+              <button type="button" onclick="setWorkflowPriceBand(59000)" id="btn-wf-price-59000" class="py-1.5 px-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer">
+                ₩5.9만<br><span class="text-xs font-normal opacity-80">$45</span>
+              </button>
+              <button type="button" onclick="setWorkflowPriceBand(69000)" id="btn-wf-price-69000" class="py-1.5 px-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer">
+                ₩6.9만<br><span class="text-xs font-normal opacity-80">$52</span>
+              </button>
+              <button type="button" onclick="setWorkflowPriceBand(79000)" id="btn-wf-price-79000" class="py-1.5 px-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer">
+                ₩7.9만<br><span class="text-xs font-normal opacity-80">$59</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TRACK 2 PANEL: Resident Autonomous Engine Selector (ENGINE_HEAL / ENGINE_RECON / ENGINE_DUAL) -->
+        <div id="panel-track-engine" class="hidden mb-4 p-4 rounded-2xl bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-300 dark:border-emerald-800 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold text-emerald-900 dark:text-emerald-300 flex items-center gap-1.5">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>24/7 상주형 무인 엔진 기간권 선택</span>
+            </span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-300 font-bold">미해결률 5% 미만</span>
+          </div>
+
+          <!-- Engine Type Buttons -->
+          <div class="grid grid-cols-1 gap-2">
+            <button type="button" id="btn-engine-heal" onclick="selectEngineOption('ENGINE_HEAL')" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-left flex items-center justify-between transition cursor-pointer">
+              <div>
+                <div class="text-xs font-extrabold text-slate-900 dark:text-white">🛠️ 자가치유 엔진 단독 (ENGINE_HEAL)</div>
+                <div class="text-xs text-slate-500">127ms 크래시 감시 · 에러코드 1:1 정밀 매칭 무인 수리</div>
+              </div>
+              <span id="label-price-heal" class="text-xs font-black font-mono text-sky-600">₩39,000</span>
+            </button>
+            <button type="button" id="btn-engine-recon" onclick="selectEngineOption('ENGINE_RECON')" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-left flex items-center justify-between transition cursor-pointer">
+              <div>
+                <div class="text-xs font-extrabold text-slate-900 dark:text-white">⚖️ 정합성 대사 엔진 단독 (ENGINE_RECON)</div>
+                <div class="text-xs text-slate-500">앞뒤 노드 데이터·금액 오차 실시간 격리 &amp; 1-Click 비교 승인</div>
+              </div>
+              <span id="label-price-recon" class="text-xs font-black font-mono text-emerald-600">₩49,000</span>
+            </button>
+            <button type="button" id="btn-engine-dual" onclick="selectEngineOption('ENGINE_DUAL')" class="p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50/80 dark:bg-emerald-950/60 text-left flex items-center justify-between transition cursor-pointer">
+              <div>
+                <div class="text-xs font-extrabold text-emerald-900 dark:text-emerald-200">👑 듀얼 통합 엔진 (자가치유 + 정합성 · BEST)</div>
+                <div class="text-xs text-emerald-700 dark:text-emerald-400 font-semibold">무인 수리 + 1원 정합성 대사 전 기능 통합 가동</div>
+              </div>
+              <span id="label-price-dual" class="text-xs font-black font-mono text-emerald-700 dark:text-emerald-300">₩69,000</span>
+            </button>
+          </div>
+
+          <!-- AI Mode Switch: Managed (본사 파인튜닝 AI 포함) vs MCP (개발자 외부 AI 연동 + 해결로그 공유 특가) -->
+          <div class="pt-2 border-t border-emerald-200/70 dark:border-emerald-800/60">
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5">AI 연동 방식 선택:</label>
+            <div class="grid grid-cols-2 gap-2">
+              <button type="button" id="btn-mode-managed" onclick="selectEngineMode('managed')" class="p-2 rounded-xl border-2 border-sky-600 bg-sky-600 text-white text-center text-xs font-extrabold transition cursor-pointer">
+                ✨ 기본형 (본사 AI 포함)<br><span class="text-xs font-normal opacity-90">API 키 설정 없이 즉시 가동</span>
+              </button>
+              <button type="button" id="btn-mode-mcp" onclick="selectEngineMode('mcp')" class="p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-center text-xs font-bold transition cursor-pointer">
+                🔌 개발자 MCP 연동 특가<br><span class="text-xs font-normal text-indigo-600 dark:text-indigo-400">외부 AI 연동 + 해결로그 공유 할인</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Duration Selector: 30d / 90d / 365d -->
+          <div>
+            <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5">기간권 선택 (만료 시 자동결제 없음 · 워크플로우 단품은 평생 정상 작동):</label>
+            <div class="grid grid-cols-3 gap-2">
+              <button type="button" id="btn-days-30" onclick="selectEngineDays(30)" class="py-2 px-2 rounded-xl border-2 border-emerald-600 bg-emerald-600 text-white text-xs font-extrabold text-center transition cursor-pointer">
+                30일권 (1개월)
+              </button>
+              <button type="button" id="btn-days-90" onclick="selectEngineDays(90)" class="py-2 px-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer">
+                90일권 (분기 할인)
+              </button>
+              <button type="button" id="btn-days-365" onclick="selectEngineDays(365)" class="py-2 px-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer">
+                365일권 (연간 특가)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Selected Item Title & SKU -->
+        <div class="border-t border-b border-slate-200 dark:border-slate-800 py-3.5 mb-4">
+          <h3 id="order-sku-title" class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white leading-snug">
+            [스마트스토어 전용] 신규 주문 실시간 수집 ➔ 카카오 알림톡(SMS 폴백) &amp; 구글시트 원장
+          </h3>
+          <p id="order-sku-id" class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1" translate="no">
+            SKU: AF-NAVER-01
+          </p>
+        </div>
+
+        <!-- Inclusions List -->
+        <div class="space-y-2 mb-5 text-xs text-slate-700 dark:text-slate-300">
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-circle-check text-sky-600 mt-0.5"></i>
+            <span id="tier-feat-1">1제품 = 1사이트 단일 완제품 영구 소장 (실행 건수 평생 무제한)</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-circle-check text-sky-600 mt-0.5"></i>
+            <span id="tier-feat-2">전 구간 필수 방어 에어백 + 1초 원클릭 로컬 런처(Mac/Win) 기본 동봉</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-600 mt-0.5"></i>
+            <span id="tier-feat-3">사내 PC(127.0.0.1) 로컬 개인정보 100% 자동 마스킹 방패 기본 내장</span>
+          </div>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-circle-check text-emerald-600 mt-0.5"></i>
+            <span id="tier-feat-4">7일 상주형 무인 엔진(자가치유 + 정합성 대사) 무료 체험 기본 포함</span>
+          </div>
+        </div>
+
+        <!-- Price Breakdown Table -->
+        <div class="bg-slate-50 dark:bg-slate-950/60 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 space-y-2 text-xs">
+          <div class="flex justify-between text-slate-600 dark:text-slate-400">
+            <span data-i18n="label_subtotal">공급가액:</span>
+            <span id="order-subtotal" class="font-mono text-slate-800 dark:text-slate-200 font-bold" translate="no">₩35,455</span>
+          </div>
+          <div class="flex justify-between text-slate-600 dark:text-slate-400">
+            <span data-i18n="label_vat">부가가치세 (10%):</span>
+            <span id="order-vat" class="font-mono text-slate-800 dark:text-slate-200 font-bold" translate="no">₩3,545</span>
+          </div>
+          <div class="border-t border-slate-200 dark:border-slate-800 pt-2 flex justify-between items-baseline text-slate-900 dark:text-white">
+            <span class="font-bold text-sm" data-i18n="label_total">총 결제금액:</span>
+            <div class="text-right">
+              <span id="order-total" class="text-xl sm:text-2xl font-black text-sky-600 dark:text-sky-400 font-mono" translate="no">₩39,000</span>
+              <span id="order-usd-equiv" class="text-xs font-mono text-slate-400 block">($29.00 USD)</span>
+              <span id="order-billing-cycle" class="text-xs text-emerald-700 dark:text-emerald-400 font-bold block mt-0.5" data-i18n="label_vat_included">VAT 포함 · 1회 구매 영구 소장 (+7일 상주형 엔진 무료 체험)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Badge -->
+      <div class="bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 shadow-xs">
+        <div class="flex items-center gap-2.5">
+          <i class="fa-solid fa-shield-halved text-emerald-600 text-lg"></i>
+          <div>
+            <span class="font-bold text-slate-900 dark:text-slate-200 block" data-i18n="badge_guarantee">3단계 공정 일할 정산 환불 규정 (PRORATED_FAIR_REFUND) 보증</span>
+            <span class="text-xs text-slate-500 dark:text-slate-400" data-i18n="badge_desc">미활성화 7일 100% 환불 | 활성화 7일 내 중대 결함 100% 환불 | 중도 해지 시 일할 정산</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Customer Info, Dual Payment Gateway, & 4 Mandatory Consents -->
+    <div class="lg:col-span-7 flex flex-col gap-5">
+
+      <!-- Customer Info Form -->
+      <div class="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-6 shadow-sm">
+        <h2 class="text-sm font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-building text-sky-600 dark:text-sky-400"></i>
+          <span data-i18n="label_buyer_info">구매자 및 라이선스·전자세금계산서 수령 정보</span>
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div>
+            <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold" data-i18n="input_company">회사명 / 스토어 상호 (선택)</label>
+            <input type="text" id="input-company-name" placeholder="(주)오토플로우커머스" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-sky-600 font-medium" />
+          </div>
+          <div>
+            <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold" data-i18n="input_name">담당자 성함 <span class="text-rose-500">*</span></label>
+            <input type="text" id="input-customer-name" placeholder="홍길동 대표" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-sky-600 font-medium" required />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block text-slate-700 dark:text-slate-300 mb-1.5 font-bold" data-i18n="input_email">라이선스 및 설치 패키지(ZIP) 수령 이메일 <span class="text-rose-500">*</span></label>
+            <input type="email" id="input-customer-email" placeholder="ceo@company.com" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-sky-600 font-mono font-medium" required />
+            <span class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 block" data-i18n="input_email_desc">결제 완료 즉시 사내 원클릭 설치 패키지(ZIP), 정품 라이선스 키, 전자영수증이 자동 발송됩니다.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dual Payment Gateway Tabs (Toss Payments KRW + Lemon Squeezy USD) -->
+      <div class="bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-sm font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-credit-card text-sky-600 dark:text-sky-400"></i>
+            <span data-i18n="label_pay_method">결제 통화 및 게이트웨이 선택</span>
+          </h2>
+          <span class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200 dark:bg-sky-950 dark:text-sky-300 font-bold">KRW &amp; USD Dual Gateway</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-5">
+          <button type="button" id="tab-gateway-toss" onclick="switchGateway('toss')" class="py-3 px-3 rounded-2xl text-xs font-extrabold border-2 transition flex items-center justify-center gap-2 border-sky-600 bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 shadow-xs cursor-pointer">
+            <span>🇰🇷</span> <span>국내 원화 결제 (토스페이먼츠 · 카드/간편결제)</span>
+          </button>
+          <button type="button" id="tab-gateway-global" onclick="switchGateway('global')" class="py-3 px-3 rounded-2xl text-xs font-bold border transition flex items-center justify-center gap-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500 cursor-pointer">
+            <span>🌐</span> <span>Global USD Checkout (Lemon Squeezy)</span>
+          </button>
+        </div>
+
+        <!-- Toss Payments Container -->
+        <div id="container-gateway-toss" class="space-y-2">
+          <div id="payment-method" class="min-h-[260px]"></div>
+          <div id="agreement" class="mt-4"></div>
+        </div>
+
+        <!-- Global Lemon Squeezy Container -->
+        <div id="container-gateway-global" class="hidden space-y-4">
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="text-xl">🍋</span>
+                <div>
+                  <div class="font-bold text-slate-900 dark:text-white text-xs">Lemon Squeezy Global Merchant of Record</div>
+                  <div class="text-xs text-slate-500">Global Credit Cards / PayPal / Apple Pay / Google Pay Supported</div>
+                </div>
+              </div>
+              <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-mono font-bold">Instant License</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              해외 법인 및 글로벌 카드 결제를 위해 USD 정찰제 결제 및 글로벌 Tax Invoice 발행을 공식 지원합니다. 아래 4대 필수 약관 및 오류 로그 수집 동의 체크 시 글로벌 결제창이 활성화됩니다.
+            </p>
+            <div class="p-3 rounded-xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-xs flex justify-between items-center">
+              <span class="text-slate-800 dark:text-slate-200 font-bold">선택 품목 글로벌 정찰가:</span>
+              <span id="global-plan-usd-price" class="font-black text-amber-700 dark:text-amber-400 font-mono text-sm">$29.00 USD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Mandatory Pre-Purchase Consents (Including Mandatory Local PII 100% Masking & Error-Log Consent) -->
+      <div class="bg-amber-50/90 dark:bg-amber-950/20 border-2 border-amber-300 dark:border-amber-700/60 rounded-2xl p-4 sm:p-5 text-xs space-y-3">
+        <div class="flex items-center gap-2 text-amber-900 dark:text-amber-300 font-extrabold text-sm">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <span>[필수 동의] 구매 전 4대 라이선스·환불·로컬 개인정보 마스킹 및 오류 로그 수집 확인</span>
+        </div>
+
+        <div class="space-y-2.5 pt-1">
+          <!-- Checkbox 1: Fair Prorated Refund Policy -->
+          <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 cursor-pointer font-semibold select-none text-xs">
+            <input type="checkbox" id="chk-digital-refund-agree" class="mt-0.5 h-4 w-4 rounded border-slate-400 text-sky-600 focus:ring-0 mandatory-legal-chk" />
+            <span><strong>[필수 1 · 공정 환불 규정]</strong> 미다운로드·미활성화 7일 이내 또는 활성화 후 7일 이내 치명적 기술 결함 시 100% 전액 환불되며, 활성화 후 중도 해지 시 실사용 일수 일할 차감 및 위약금 10% 공제 후 잔여액이 환불(즉시 라이선스 회수)됨을 확인하고 동의합니다.</span>
+          </label>
+
+          <!-- Checkbox 2: External Marketplace API Disclaimer -->
+          <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 cursor-pointer font-semibold select-none text-xs">
+            <input type="checkbox" id="chk-api-disclaimer-agree" class="mt-0.5 h-4 w-4 rounded border-slate-400 text-sky-600 focus:ring-0 mandatory-legal-chk" />
+            <span><strong>[필수 2 · 외부 플랫폼 정책 면책]</strong> 네이버 스마트스토어, 쿠팡 등 외부 플랫폼 자체의 서버 점검, 계정 제재, 약관 변경으로 인한 간접 손해에 대해 소프트웨어 공급사는 법적 책임을 지지 않음에 동의합니다.</span>
+          </label>
+
+          <!-- Checkbox 3: 1 Product = 1 Site Single-Edition Principle -->
+          <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 cursor-pointer font-semibold select-none text-xs">
+            <input type="checkbox" id="chk-clean-swap-agree" class="mt-0.5 h-4 w-4 rounded border-slate-400 text-sky-600 focus:ring-0 mandatory-legal-chk" />
+            <span><strong>[필수 3 · 1제품=1사이트 독립 구동 원칙]</strong> 각 워크플로우 단품은 지정된 단일 사이트·단일 업무 전용 완제품(1:1 HWID 기기 귀속)이며, 복수 워크플로우 동시 가동 시 포트 분리 원칙을 준수함에 동의합니다.</span>
+          </label>
+
+          <!-- Checkbox 4: Mandatory Local PII 100% Masking & Anonymous Error-Log Collection Consent -->
+          <label class="flex items-start gap-2.5 p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border-2 border-emerald-400 dark:border-emerald-700 text-slate-900 dark:text-slate-100 cursor-pointer font-bold select-none text-xs">
+            <input type="checkbox" id="chk-error-log-masking-agree" class="mt-0.5 h-4 w-4 rounded border-emerald-600 text-emerald-600 focus:ring-0 mandatory-legal-chk" />
+            <span>
+              <strong class="text-emerald-800 dark:text-emerald-300">[필수 4 · 사내 PC 로컬 개인정보 100% 마스킹 및 익명 오류 로그 수집 동의]</strong><br />
+              고객사의 모든 주문 개인정보(이름·연락처·주소·계좌·API 키)는 <strong>사내 PC(127.0.0.1) 내부에서 100% 마스킹(살균) 처리되어 외부로 절대 전송되지 않으며</strong>, 외부 API 변경 대응 및 상주형 무인 엔진(자가치유·정합성) 원격 패치를 위해 <strong>개인정보가 제거된 익명 에러코드 및 해결 로그만 본사로 전송됨에 동의</strong>합니다. <span class="text-rose-600 dark:text-rose-400 font-extrabold">(※ 미동의 시 본사 원격 패치 및 미해결 에러 대응 지원이 불가합니다.)</span>
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Toss Payment Button -->
+      <button id="payment-button" class="w-full py-4 rounded-2xl bg-gradient-to-r from-sky-600 via-sky-500 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-sky-500/20 transition flex items-center justify-center gap-2 opacity-60 cursor-not-allowed" disabled>
+        <i class="fa-solid fa-lock"></i>
+        <span id="btn-pay-text" translate="no">₩39,000 결제하고 즉시 라이선스 발급받기</span>
+      </button>
+
+      <!-- Global Lemon Squeezy Button -->
+      <button id="global-payment-button" onclick="handleGlobalCheckout()" class="hidden w-full py-4 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-amber-500/20 transition items-center justify-center gap-2 opacity-60 cursor-not-allowed" disabled>
+        <i class="fa-solid fa-lemon"></i>
+        <span id="btn-global-pay-text" translate="no">Lemon Squeezy 글로벌 결제창 열기 ($29.00 USD)</span>
+      </button>
+
+      <!-- Direct B2B Tax Invoice & Instant Channel Fallback Bar -->
+      <div id="direct-order-fallback-box" class="p-3.5 rounded-2xl bg-slate-100/90 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs">
+        <div class="text-slate-700 dark:text-slate-300 font-medium">
+          <i class="fa-solid fa-file-invoice-dollar text-sky-600 mr-1"></i>
+          <strong>법인·개인사업자 전자세금계산서 무통장 발주</strong> 또는 <strong>외부 마켓 안전결제</strong>를 원하시나요?
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <button type="button" onclick="handleDirectInvoiceOrder()" class="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-600 hover:border-sky-600 text-slate-800 dark:text-slate-200 font-extrabold transition cursor-pointer">
+            세금계산서·무통장 즉시 발주
+          </button>
+          <button type="button" onclick="switchGateway('global')" class="px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/40 hover:bg-amber-500/25 text-amber-800 dark:text-amber-300 font-extrabold transition cursor-pointer">
+            글로벌 카드 즉시결제 (USD)
+          </button>
+        </div>
+      </div>
+
+      <div class="text-center text-xs text-slate-500 dark:text-slate-400" data-i18n="footer_terms">
+        위 4대 필수 동의 체크 완료 시 결제 버튼이 활성화되며, 결제 즉시 정품 라이선스 및 사내 설치 패키지가 발급됩니다.
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // ==============================================================================
+    // AutoFlow Official Checkout Controller (Single-Edition Workflows + Resident Engines)
+    // ==============================================================================
+    const urlParams = new URLSearchParams(window.location.search);
+    const rawSkuParam = urlParams.get('sku') || '';
+    const rawNameParam = urlParams.get('name') || '';
+    const rawPriceParam = parseInt(urlParams.get('price') || '0', 10);
+    const rawEngineParam = urlParams.get('engine') || '';
+    const rawModeParam = urlParams.get('mode') || 'managed';
+    const rawDaysParam = parseInt(urlParams.get('days') || '30', 10);
+    const targetHwid = urlParams.get('hwid') || urlParams.get('custom[hwid]') || '';
+
+    const ENGINE_PRICING_MATRIX = {
+      managed: {
+        30:  { ENGINE_HEAL: { krw: 39000,  usd: 29 },  ENGINE_RECON: { krw: 49000,  usd: 39 },  ENGINE_DUAL: { krw: 69000,  usd: 49 } },
+        90:  { ENGINE_HEAL: { krw: 99000,  usd: 75 },  ENGINE_RECON: { krw: 129000, usd: 99 },  ENGINE_DUAL: { krw: 179000, usd: 129 } },
+        365: { ENGINE_HEAL: { krw: 330000, usd: 249 }, ENGINE_RECON: { krw: 420000, usd: 319 }, ENGINE_DUAL: { krw: 590000, usd: 449 } }
+      },
+      mcp: {
+        30:  { ENGINE_HEAL: { krw: 29000,  usd: 22 },  ENGINE_RECON: { krw: 39000,  usd: 29 },  ENGINE_DUAL: { krw: 49000,  usd: 37 } },
+        90:  { ENGINE_HEAL: { krw: 75000,  usd: 55 },  ENGINE_RECON: { krw: 99000,  usd: 75 },  ENGINE_DUAL: { krw: 129000, usd: 95 } },
+        365: { ENGINE_HEAL: { krw: 249000, usd: 189 }, ENGINE_RECON: { krw: 330000, usd: 249 }, ENGINE_DUAL: { krw: 440000, usd: 329 } }
+      }
+    };
+
+    const ENGINE_NAME_MAP = {
+      ENGINE_HEAL: '[상주형 무인 엔진] 자가치유 엔진 단독 (127ms 크래시 감시 & 에러코드 1:1 정밀 매칭 무인 수리)',
+      ENGINE_RECON: '[상주형 무인 엔진] 정합성 대사 엔진 단독 (앞뒤 노드 데이터·금액 오차 실시간 격리 & 1-Click 비교 승인)',
+      ENGINE_DUAL: '[상주형 무인 엔진 · BEST] 듀얼 통합 엔진 (자가치유 무인 수리 + 노드 간 1원 정합성 대사 통합)'
+    };
+
+    function workflowKrwToUsd(krw) {
+      if (krw <= 39000) return 29;
+      if (krw <= 49000) return 39;
+      if (krw <= 59000) return 45;
+      if (krw <= 69000) return 52;
+      return 59;
+    }
+
+    function clampWorkflowPrice(p) {
+      const valid = [39000, 49000, 59000, 69000, 79000];
+      if (valid.includes(p)) return p;
+      if (p > 0 && p <= 39000) return 39000;
+      if (p > 39000 && p <= 49000) return 49000;
+      if (p > 49000 && p <= 59000) return 59000;
+      if (p > 59000 && p <= 69000) return 69000;
+      if (p > 69000) return 79000;
+      return 39000;
+    }
+
+    let currentTrack = rawEngineParam ? 'engine' : 'workflow';
+    let currentWorkflowSku = rawSkuParam || 'AF-NAVER-01';
+    let currentWorkflowName = rawNameParam || '[스마트스토어 전용] 신규 주문 실시간 수집 ➔ 카카오 알림톡(SMS 폴백) & 구글시트 원장';
+    let currentWorkflowPrice = clampWorkflowPrice(rawPriceParam || 39000);
+
+    let currentEngineCode = ['ENGINE_HEAL', 'ENGINE_RECON', 'ENGINE_DUAL'].includes(rawEngineParam) ? rawEngineParam : 'ENGINE_DUAL';
+    let currentEngineMode = rawModeParam === 'mcp' ? 'mcp' : 'managed';
+    let currentEngineDays = [30, 90, 365].includes(rawDaysParam) ? rawDaysParam : 30;
+
+    let currentGateway = 'toss'; // 'toss' | 'global'
+    let priceAmount = 39000;
+    let usdAmount = 29;
+    let activeSku = currentWorkflowSku;
+    let activeTitle = currentWorkflowName;
+    let paymentWidget = null;
+
+    function selectCheckoutTrack(track) {
+      currentTrack = track === 'engine' ? 'engine' : 'workflow';
+      const btnWf = document.getElementById('btn-track-workflow');
+      const btnEng = document.getElementById('btn-track-engine');
+      const panelWf = document.getElementById('panel-track-workflow');
+      const panelEng = document.getElementById('panel-track-engine');
+
+      if (currentTrack === 'workflow') {
+        btnWf.className = 'p-3 rounded-2xl border-2 border-sky-600 bg-sky-50/80 dark:bg-sky-950/50 text-left transition cursor-pointer';
+        btnEng.className = 'p-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/70 text-left transition hover:border-emerald-500 cursor-pointer';
+        panelWf.classList.remove('hidden');
+        panelEng.classList.add('hidden');
+      } else {
+        btnEng.className = 'p-3 rounded-2xl border-2 border-emerald-600 bg-emerald-50/80 dark:bg-emerald-950/50 text-left transition cursor-pointer';
+        btnWf.className = 'p-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/70 text-left transition hover:border-sky-500 cursor-pointer';
+        panelEng.classList.remove('hidden');
+        panelWf.classList.add('hidden');
+      }
+      refreshCheckoutSummary();
+    }
+
+    function onWorkflowQuickSelect(val) {
+      if (!val || val === 'CUSTOM') return;
+      const parts = val.split('|');
+      if (parts.length >= 3) {
+        currentWorkflowSku = parts[0];
+        currentWorkflowPrice = clampWorkflowPrice(parseInt(parts[1], 10));
+        currentWorkflowName = parts.slice(2).join('|');
+        selectCheckoutTrack('workflow');
+      }
+    }
+
+    function setWorkflowPriceBand(price) {
+      currentWorkflowPrice = clampWorkflowPrice(price);
+      selectCheckoutTrack('workflow');
+    }
+
+    function selectEngineOption(code) {
+      if (['ENGINE_HEAL', 'ENGINE_RECON', 'ENGINE_DUAL'].includes(code)) {
+        currentEngineCode = code;
+      }
+      selectCheckoutTrack('engine');
+    }
+
+    function selectEngineMode(mode) {
+      currentEngineMode = mode === 'mcp' ? 'mcp' : 'managed';
+      selectCheckoutTrack('engine');
+    }
+
+    function selectEngineDays(days) {
+      currentEngineDays = [30, 90, 365].includes(Number(days)) ? Number(days) : 30;
+      selectCheckoutTrack('engine');
+    }
+
+    function refreshCheckoutSummary() {
+      // Highlight workflow price band buttons
+      [39000, 49000, 59000, 69000, 79000].forEach(p => {
+        const b = document.getElementById('btn-wf-price-' + p);
+        if (!b) return;
+        const u = workflowKrwToUsd(p);
+        if (p === currentWorkflowPrice) {
+          b.className = 'py-1.5 px-1 rounded-xl border border-sky-600 bg-sky-600 text-white text-xs font-extrabold text-center transition cursor-pointer';
+        } else {
+          b.className = 'py-1.5 px-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer';
+        }
+        b.innerHTML = '₩' + (p / 10000).toFixed(1) + '만<br><span class="text-xs font-normal opacity-85">$' + u + '</span>';
+      });
+
+      // Update Engine Mode & Days UI
+      const row = ENGINE_PRICING_MATRIX[currentEngineMode][currentEngineDays];
+      const lblHeal = document.getElementById('label-price-heal');
+      const lblRecon = document.getElementById('label-price-recon');
+      const lblDual = document.getElementById('label-price-dual');
+      if (lblHeal) lblHeal.textContent = '₩' + row.ENGINE_HEAL.krw.toLocaleString() + ' ($' + row.ENGINE_HEAL.usd + ')';
+      if (lblRecon) lblRecon.textContent = '₩' + row.ENGINE_RECON.krw.toLocaleString() + ' ($' + row.ENGINE_RECON.usd + ')';
+      if (lblDual) lblDual.textContent = '₩' + row.ENGINE_DUAL.krw.toLocaleString() + ' ($' + row.ENGINE_DUAL.usd + ')';
+
+      const engMap = {
+        ENGINE_HEAL: 'btn-engine-heal',
+        ENGINE_RECON: 'btn-engine-recon',
+        ENGINE_DUAL: 'btn-engine-dual'
+      };
+      Object.entries(engMap).forEach(([code, id]) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (code === currentEngineCode) {
+          el.className = 'p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50/90 dark:bg-emerald-950/60 text-left flex items-center justify-between transition cursor-pointer';
+        } else {
+          el.className = 'p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-left flex items-center justify-between transition cursor-pointer';
+        }
+      });
+
+      const btnManaged = document.getElementById('btn-mode-managed');
+      const btnMcp = document.getElementById('btn-mode-mcp');
+      if (btnManaged && btnMcp) {
+        if (currentEngineMode === 'managed') {
+          btnManaged.className = 'p-2 rounded-xl border-2 border-sky-600 bg-sky-600 text-white text-center text-xs font-extrabold transition cursor-pointer';
+          btnMcp.className = 'p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-center text-xs font-bold transition cursor-pointer';
+        } else {
+          btnMcp.className = 'p-2 rounded-xl border-2 border-indigo-600 bg-indigo-600 text-white text-center text-xs font-extrabold transition cursor-pointer';
+          btnManaged.className = 'p-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-center text-xs font-bold transition cursor-pointer';
+        }
+      }
+
+      [30, 90, 365].forEach(d => {
+        const b = document.getElementById('btn-days-' + d);
+        if (!b) return;
+        if (d === currentEngineDays) {
+          b.className = 'py-2 px-2 rounded-xl border-2 border-emerald-600 bg-emerald-600 text-white text-xs font-extrabold text-center transition cursor-pointer';
+        } else {
+          b.className = 'py-2 px-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer';
+        }
+      });
+
+      const feat1 = document.getElementById('tier-feat-1');
+      const feat2 = document.getElementById('tier-feat-2');
+      const feat3 = document.getElementById('tier-feat-3');
+      const feat4 = document.getElementById('tier-feat-4');
+      const badge = document.getElementById('order-tier-badge');
+      const cycleEl = document.getElementById('order-billing-cycle');
+
+      if (currentTrack === 'workflow') {
+        priceAmount = currentWorkflowPrice;
+        usdAmount = workflowKrwToUsd(priceAmount);
+        activeSku = currentWorkflowSku;
+        activeTitle = currentWorkflowName;
+        if (badge) badge.textContent = '📦 워크플로우 단품 영구소장';
+        if (cycleEl) cycleEl.textContent = 'VAT 포함 · 1회 구매 영구 소장 (+7일 상주형 무인 엔진 무료 체험 포함)';
+        if (feat1) feat1.textContent = '1제품 = 1사이트 단일 완제품 영구 소장 (실행 건수 평생 무제한)';
+        if (feat2) feat2.textContent = '전 구간 필수 방어 에어백 + 1초 원클릭 로컬 런처(Mac/Win) 기본 동봉';
+        if (feat3) feat3.textContent = '사내 PC(127.0.0.1) 로컬 개인정보 100% 자동 마스킹 방패 기본 내장';
+        if (feat4) feat4.textContent = '7일 상주형 무인 엔진(자가치유 + 정합성 대사) 무료 체험 기본 포함';
+      } else {
+        const selectedPriceObj = row[currentEngineCode];
+        priceAmount = selectedPriceObj.krw;
+        usdAmount = selectedPriceObj.usd;
+        const modeTag = currentEngineMode === 'mcp' ? 'MCP' : 'MANAGED';
+        activeSku = currentEngineCode + '_' + currentEngineDays + 'D_' + modeTag;
+        const modeDesc = currentEngineMode === 'mcp'
+          ? '개발자 MCP 외부 AI 연동 + 익명 해결로그 본사 공유 특가'
+          : '기본형 · 본사 파인튜닝 AI 포함';
+        activeTitle = ENGINE_NAME_MAP[currentEngineCode] + ' [' + modeDesc + ' · ' + currentEngineDays + '일 기간권]';
+        if (badge) badge.textContent = '🛡️ 상주형 무인 엔진 (' + currentEngineDays + '일권)';
+        if (cycleEl) cycleEl.textContent = 'VAT 포함 · ' + currentEngineDays + '일 기간권 (' + modeDesc + ' · 자동결제 없음)';
+        if (feat1) feat1.textContent = '24/7 상주형 무인 엔진 ' + currentEngineDays + '일 가동 패스 (만료 후에도 워크플로우 단품은 영구 작동)';
+        if (feat2) feat2.textContent = currentEngineCode === 'ENGINE_RECON'
+          ? '앞단 노드(주문·결제) vs 뒷단 노드(송장·정산·장부) 데이터·금액 오차 실시간 격리 & 1-Click 비교표 승인'
+          : '127ms 프로세스 감시 & 에러코드·증상 1:1 정밀 매칭 무인 수리 (환각 없음 · 미해결률 5% 미만)';
+        if (feat3) feat3.textContent = currentEngineMode === 'mcp'
+          ? '고객 외부 AI(OpenAI/Claude/로컬 LLM) MCP 직접 연결 + 익명 해결로그 본사 자동 공유 조건부 할인가'
+          : '본사 도메인 파인튜닝 AI 모델 기본 포함 (별도 외부 AI API 키 설정 불필요)';
+        if (feat4) feat4.textContent = '사내 PC(127.0.0.1) 로컬 개인정보 100% 마스킹 후 익명 에러코드만 본사 패치 서버와 통신';
+      }
+
+      const subtotal = Math.round(priceAmount / 1.1);
+      const vat = priceAmount - subtotal;
+
+      const skuTitleEl = document.getElementById('order-sku-title');
+      const skuIdEl = document.getElementById('order-sku-id');
+      if (skuTitleEl) skuTitleEl.textContent = activeTitle;
+      if (skuIdEl) skuIdEl.textContent = 'SKU: ' + activeSku;
+
+      document.getElementById('order-subtotal').textContent = '₩' + subtotal.toLocaleString();
+      document.getElementById('order-vat').textContent = '₩' + vat.toLocaleString();
+      document.getElementById('order-total').textContent = currentGateway === 'global' ? ('$' + usdAmount + '.00 USD') : ('₩' + priceAmount.toLocaleString());
+      const usdEquivEl = document.getElementById('order-usd-equiv');
+      if (usdEquivEl) usdEquivEl.textContent = '($' + usdAmount + '.00 USD / ₩' + priceAmount.toLocaleString() + ')';
+
+      const globalUsdBadge = document.getElementById('global-plan-usd-price');
+      if (globalUsdBadge) globalUsdBadge.textContent = '$' + usdAmount + '.00 USD';
+
+      const payTextEl = document.getElementById('btn-pay-text');
+      if (payTextEl) {
+        const lang = localStorage.getItem('autoflow_checkout_lang') || 'ko';
+        payTextEl.textContent = lang === 'en'
+          ? ('Pay ₩' + priceAmount.toLocaleString() + ' & Instant License Delivery')
+          : ('₩' + priceAmount.toLocaleString() + ' 결제하고 즉시 라이선스 발급받기');
+      }
+      const globalPayTextEl = document.getElementById('btn-global-pay-text');
+      if (globalPayTextEl) {
+        globalPayTextEl.textContent = 'Lemon Squeezy 글로벌 결제창 열기 ($' + usdAmount + '.00 USD)';
+      }
+
+      if (paymentWidget) {
+        paymentWidget.setAmount({ currency: 'KRW', value: priceAmount }).catch(console.error);
+      }
+    }
+
+    function switchGateway(gateway) {
+      currentGateway = gateway === 'global' ? 'global' : 'toss';
+      const tabToss = document.getElementById('tab-gateway-toss');
+      const tabGlobal = document.getElementById('tab-gateway-global');
+      const boxToss = document.getElementById('container-gateway-toss');
+      const boxGlobal = document.getElementById('container-gateway-global');
+      const btnToss = document.getElementById('payment-button');
+      const btnGlobal = document.getElementById('global-payment-button');
+
+      if (currentGateway === 'global') {
+        tabGlobal.className = 'py-3 px-3 rounded-2xl text-xs font-extrabold border-2 transition flex items-center justify-center gap-2 border-amber-500 bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 shadow-xs cursor-pointer';
+        tabToss.className = 'py-3 px-3 rounded-2xl text-xs font-bold border transition flex items-center justify-center gap-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:border-sky-500 cursor-pointer';
+        boxToss.classList.add('hidden');
+        boxGlobal.classList.remove('hidden');
+        btnToss.classList.add('hidden');
+        btnGlobal.classList.remove('hidden');
+        btnGlobal.classList.add('flex');
+      } else {
+        tabToss.className = 'py-3 px-3 rounded-2xl text-xs font-extrabold border-2 transition flex items-center justify-center gap-2 border-sky-600 bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 shadow-xs cursor-pointer';
+        tabGlobal.className = 'py-3 px-3 rounded-2xl text-xs font-bold border transition flex items-center justify-center gap-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500 cursor-pointer';
+        boxGlobal.classList.add('hidden');
+        boxToss.classList.remove('hidden');
+        btnGlobal.classList.add('hidden');
+        btnGlobal.classList.remove('flex');
+        btnToss.classList.remove('hidden');
+        btnToss.classList.add('flex');
+      }
+      refreshCheckoutSummary();
+      updateLegalCheckboxesState();
+    }
+
+    // 4 Mandatory Legal & Error-Log Consent Checkboxes
+    const chkDigitalRefund = document.getElementById('chk-digital-refund-agree');
+    const chkApiDisclaimer = document.getElementById('chk-api-disclaimer-agree');
+    const chkCleanSwap = document.getElementById('chk-clean-swap-agree');
+    const chkErrorLogMasking = document.getElementById('chk-error-log-masking-agree');
+    const payBtn = document.getElementById('payment-button');
+    const globalPayBtn = document.getElementById('global-payment-button');
+
+    function isAllMandatoryConsentsChecked() {
+      return !!(
+        chkDigitalRefund && chkDigitalRefund.checked &&
+        chkApiDisclaimer && chkApiDisclaimer.checked &&
+        chkCleanSwap && chkCleanSwap.checked &&
+        chkErrorLogMasking && chkErrorLogMasking.checked
+      );
+    }
+
+    function updateLegalCheckboxesState() {
+      const ok = isAllMandatoryConsentsChecked();
+      [payBtn, globalPayBtn].forEach(btn => {
+        if (!btn) return;
+        btn.disabled = !ok;
+        if (ok) {
+          btn.classList.remove('opacity-60', 'cursor-not-allowed');
+          btn.classList.add('cursor-pointer');
+        } else {
+          btn.classList.add('opacity-60', 'cursor-not-allowed');
+          btn.classList.remove('cursor-pointer');
+        }
+      });
+    }
+
+    [chkDigitalRefund, chkApiDisclaimer, chkCleanSwap, chkErrorLogMasking].forEach(chk => {
+      if (chk) chk.addEventListener('change', updateLegalCheckboxesState);
+    });
+
+    function handleGlobalCheckout() {
+      if (!isAllMandatoryConsentsChecked()) {
+        alert('구매 전 4대 필수 약관 및 로컬 개인정보 마스킹·오류 로그 수집 동의 항목에 모두 체크해 주세요.');
+        return;
+      }
+      const companyName = document.getElementById('input-company-name').value.trim() || 'AutoFlow Customer';
+      const customerEmail = document.getElementById('input-customer-email').value.trim();
+      const customerName = document.getElementById('input-customer-name').value.trim() || 'Representative';
+
+      if (!customerEmail || !customerEmail.includes('@')) {
+        alert('라이선스키와 설치 패키지를 수령하실 유효한 이메일 주소를 입력해 주세요.');
+        document.getElementById('input-customer-email').focus();
+        return;
+      }
+
+      const engineShort = currentEngineCode.replace('ENGINE_', '').toLowerCase();
+      const defaultLsPath = currentTrack === 'engine'
+        ? ('https://autoflow.lemonsqueezy.com/checkout/buy/autoflow-engine-' + engineShort + '-' + currentEngineMode + '-' + currentEngineDays + 'd')
+        : ('https://autoflow.lemonsqueezy.com/checkout/buy/autoflow-workflow-' + priceAmount);
+      const customMatrix = window.AUTOFLOW_LEMON_VARIANT_MATRIX || null;
+      const resolvedBaseUrl = (
+        currentTrack === 'engine' &&
+        customMatrix &&
+        customMatrix[currentEngineMode] &&
+        customMatrix[currentEngineMode][currentEngineCode] &&
+        customMatrix[currentEngineMode][currentEngineCode][currentEngineDays]
+      )
+        ? customMatrix[currentEngineMode][currentEngineCode][currentEngineDays]
+        : defaultLsPath;
+
+      const lsUrl = new URL(resolvedBaseUrl);
+      lsUrl.searchParams.set('checkout[email]', customerEmail);
+      lsUrl.searchParams.set('checkout[name]', companyName + ' (' + customerName + ')');
+      lsUrl.searchParams.set('checkout[custom][sku]', activeSku);
+      lsUrl.searchParams.set('checkout[custom][engine]', currentTrack === 'engine' ? currentEngineCode : 'WORKFLOW_SINGLE');
+      lsUrl.searchParams.set('checkout[custom][mode]', currentTrack === 'engine' ? currentEngineMode : 'managed');
+      lsUrl.searchParams.set('checkout[custom][days]', String(currentTrack === 'engine' ? currentEngineDays : 7));
+      if (targetHwid) lsUrl.searchParams.set('checkout[custom][hwid]', targetHwid);
+      lsUrl.searchParams.set('checkout[custom][error_log_consent]', 'true');
+      lsUrl.searchParams.set('checkout[custom][refund_consent]', 'true');
+
+      const confirmMsg = '[Lemon Squeezy Global USD Checkout]\n\n수령 이메일: ' + customerEmail + '\n선택 품목: ' + activeTitle + '\n결제 금액: $' + usdAmount + '.00 USD\n\n확인을 누르시면 Lemon Squeezy 글로벌 결제창으로 이동합니다.';
+      if (confirm(confirmMsg)) {
+        window.open(lsUrl.toString(), '_blank');
+      }
+    }
+
+    const i18nCheckout = {
+      ko: {
+        header_title: "공식 스토어 보안 결제",
+        header_desc: "토스페이먼츠(KRW) & Lemon Squeezy(USD) 공식 연동 · 결제 즉시 라이선스 자동 출고",
+        btn_back_catalog: "스토어 홈",
+        label_order_summary: "주문 품목 선택 및 명세",
+        label_tier_select: "구매 카테고리 선택 (단품 영구소장 vs 상주형 무인 엔진 기간권):",
+        label_subtotal: "공급가액:",
+        label_vat: "부가가치세 (10%):",
+        label_total: "총 결제금액:",
+        badge_guarantee: "3단계 공정 일할 정산 환불 규정 (PRORATED_FAIR_REFUND) 보증",
+        badge_desc: "미활성화 7일 100% 환불 | 활성화 7일 내 중대 결함 100% 환불 | 중도 해지 시 일할 정산",
+        label_buyer_info: "구매자 및 라이선스·전자세금계산서 수령 정보",
+        input_company: "회사명 / 스토어 상호 (선택)",
+        input_name: "담당자 성함 *",
+        input_email: "라이선스 및 설치 패키지(ZIP) 수령 이메일 *",
+        input_email_desc: "결제 완료 즉시 사내 원클릭 설치 패키지(ZIP), 정품 라이선스 키, 전자영수증이 자동 발송됩니다.",
+        label_pay_method: "결제 통화 및 게이트웨이 선택",
+        footer_terms: "위 4대 필수 동의 체크 완료 시 결제 버튼이 활성화되며, 결제 즉시 정품 라이선스 및 사내 설치 패키지가 발급됩니다."
+      },
+      en: {
+        header_title: "Official Secure Checkout",
+        header_desc: "Toss Payments (KRW) & Lemon Squeezy (USD) · Instant License & Package Dispatch",
+        btn_back_catalog: "Store Home",
+        label_order_summary: "Product Selection & Order Summary",
+        label_tier_select: "Select Category (Single Perpetual Workflow vs Resident Engine Pass):",
+        label_subtotal: "Net Amount:",
+        label_vat: "VAT (10%):",
+        label_total: "Total Amount:",
+        badge_guarantee: "3-Stage Fair Prorated Refund Policy (PRORATED_FAIR_REFUND)",
+        badge_desc: "Unactivated 7d 100% refund | Defect 7d 100% refund | Prorated daily refund on cancellation",
+        label_buyer_info: "Buyer & License Recipient Information",
+        input_company: "Company / Store Name (Optional)",
+        input_name: "Contact Person Name *",
+        input_email: "License & ZIP Package Recipient Email *",
+        input_email_desc: "One-click local installer ZIP, license key, and tax receipt are dispatched immediately.",
+        label_pay_method: "Select Currency & Payment Gateway",
+        footer_terms: "Check all 4 mandatory consent boxes above to activate the secure payment button."
+      }
+    };
+
+    function setCheckoutLang(lang) {
+      localStorage.setItem('autoflow_checkout_lang', lang);
+      const dict = i18nCheckout[lang] || i18nCheckout.ko;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+      const btnKo = document.getElementById('btnCheckoutLangKo');
+      const btnEn = document.getElementById('btnCheckoutLangEn');
+      if (btnKo && btnEn) {
+        if (lang === 'en') {
+          btnEn.className = 'px-2 py-1 rounded-md bg-sky-600 text-white transition';
+          btnKo.className = 'px-2 py-1 rounded-md text-slate-600 dark:text-slate-400 transition';
+        } else {
+          btnKo.className = 'px-2 py-1 rounded-md bg-sky-600 text-white transition';
+          btnEn.className = 'px-2 py-1 rounded-md text-slate-600 dark:text-slate-400 transition';
+        }
+      }
+      refreshCheckoutSummary();
+    }
+
+    // Initialize Toss Payments Widget v2 (Supports runtime live key injection + static hosting fallback)
+    $1"test_gck_docs_Ovk5rk1Ewk5zmxlQrybWTrjq";
+    const customerKey = "CUST-" + Math.random().toString(36).substring(2, 10);
+
+    function handleDirectInvoiceOrder() {
+      if (!isAllMandatoryConsentsChecked()) {
+        alert('구매 전 4대 필수 약관 및 로컬 개인정보 마스킹·오류 로그 수집 동의 항목에 모두 체크해 주세요.');
+        return;
+      }
+      const companyName = document.getElementById('input-company-name').value.trim() || 'AutoFlow 고객사';
+      const customerEmail = document.getElementById('input-customer-email').value.trim();
+      const customerName = document.getElementById('input-customer-name').value.trim() || '담당자';
+
+      if (!customerEmail || !customerEmail.includes('@')) {
+        alert('라이선스키와 설치 패키지를 수령하실 유효한 이메일 주소를 입력해 주세요.');
+        document.getElementById('input-customer-email').focus();
+        return;
+      }
+
+      const orderRef = 'AF-ORD-' + Date.now();
+      const subject = encodeURIComponent('[AutoFlow 즉시발주/세금계산서] ' + activeSku + ' (' + companyName + ')');
+      const body = encodeURIComponent(
+        '■ 발주 번호: ' + orderRef + '\n' +
+        '■ 선택 품목: ' + activeTitle + ' (' + activeSku + ')\n' +
+        '■ 결제 금액: ₩' + priceAmount.toLocaleString() + ' (VAT 포함)\n' +
+        '■ 회사명/상호: ' + companyName + '\n' +
+        '■ 담당자 성함: ' + customerName + '\n' +
+        '■ 수령 이메일: ' + customerEmail + '\n' +
+        '■ 대상 PC HWID: ' + (targetHwid || '설치 후 등록') + '\n' +
+        '■ 4대 필수 동의(개인정보 로컬 마스킹·익명 오류로그 수집·환불규정): 동의 완료\n\n' +
+        '위 내역으로 무통장 입금 안내 및 전자세금계산서 발행을 요청합니다.'
+      );
+      const confirmMsg =
+        '🧾 [전자세금계산서·무통장 즉시 발주 접수]\n\n' +
+        '• 발주 번호: ' + orderRef + '\n' +
+        '• 품목: ' + activeTitle + '\n' +
+        '• 금액: ₩' + priceAmount.toLocaleString() + ' (VAT 포함)\n' +
+        '• 수령 이메일: ' + customerEmail + '\n\n' +
+        '[확인]을 누르시면 발주서 이메일이 자동 작성되며, 확인 즉시 설치 패키지(ZIP) 및 정품 티켓(AF-TKT-v1)이 발송됩니다.';
+      if (confirm(confirmMsg)) {
+        window.location.href = 'mailto:dhlabs_biz0@naver.com?subject=' + subject + '&body=' + body;
+      }
+    }
+
+    async function initTossPaymentsWidget() {
+      try {
+        const tossPayments = TossPayments(clientKey);
+        paymentWidget = tossPayments.widgets({ customerKey });
+        await paymentWidget.setAmount({ currency: "KRW", value: priceAmount });
+        await paymentWidget.renderPaymentMethods({ selector: "#payment-method", variantKey: "DEFAULT" });
+        await paymentWidget.renderAgreement({ selector: "#agreement", variantKey: "AGREEMENT" });
+      } catch (err) {
+        console.error("Toss Payments Widget Init Error:", err);
+      }
+    }
+
+    document.getElementById('payment-button').addEventListener('click', async () => {
+      if (!isAllMandatoryConsentsChecked()) {
+        alert('구매 전 4대 필수 약관 및 로컬 개인정보 마스킹·오류 로그 수집 동의 항목에 모두 체크해 주세요.');
+        return;
+      }
+      if (!paymentWidget) {
+        alert('결제 위젯을 준비 중입니다. 잠시 후 다시 시도해 주세요.');
+        return;
+      }
+      const companyName = document.getElementById('input-company-name').value.trim() || 'AutoFlow 고객사';
+      const customerEmail = document.getElementById('input-customer-email').value.trim();
+      const customerName = document.getElementById('input-customer-name').value.trim() || '담당자';
+
+      if (!customerEmail || !customerEmail.includes('@')) {
+        alert('라이선스키와 설치 패키지를 수령하실 유효한 이메일 주소를 입력해 주세요.');
+        document.getElementById('input-customer-email').focus();
+        return;
+      }
+
+      try {
+        const orderPayload = {
+          customerName: companyName + ' (' + customerName + ')',
+          customerEmail: customerEmail,
+          customerPhone: "010-0000-0000",
+          workflowId: activeSku,
+          tier: currentTrack === 'engine' ? currentEngineCode : 'SINGLE_WORKFLOW',
+          engine_mode: currentTrack === 'engine' ? currentEngineMode : 'TRIAL_7D_INCLUDED',
+          duration_days: currentTrack === 'engine' ? currentEngineDays : 7,
+          error_log_consent: true,
+          hwid: targetHwid || null
+        };
+
+        let serverOrderId = 'AF-WEB-' + Date.now();
+        try {
+          const createOrderRes = await fetch('/checkout/order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(orderPayload)
+          });
+          if (createOrderRes.ok) {
+            const createdOrder = await createOrderRes.json();
+            serverOrderId = createdOrder.order_id || createdOrder.orderId || serverOrderId;
+          }
+        } catch (_) {
+          // Static hosting fallback: continue with client-generated serverOrderId
+        }
+
+        const successUrl = new URL(window.location.origin + '/order_success.html');
+        successUrl.searchParams.set('sku', activeSku);
+        successUrl.searchParams.set('track', currentTrack);
+        if (targetHwid) successUrl.searchParams.set('hwid', targetHwid);
+
+        await paymentWidget.requestPayment({
+          orderId: serverOrderId,
+          orderName: activeTitle,
+          successUrl: successUrl.toString(),
+          failUrl: window.location.origin + '/order_fail.html?sku=' + encodeURIComponent(activeSku) + '&price=' + encodeURIComponent(priceAmount) + '&name=' + encodeURIComponent(activeTitle),
+          customerEmail: customerEmail,
+          customerName: companyName + ' (' + customerName + ')'
+        });
+      } catch (err) {
+        if (err.code !== "USER_CANCEL") {
+          console.error("Payment Request Error:", err);
+          alert("결제 요청 안내: " + (err.message || err));
+        }
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('autoflow_checkout_lang') || 'ko';
+      setCheckoutLang(savedLang);
+      selectCheckoutTrack(currentTrack);
+      initTossPaymentsWidget();
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8 text-center text-xs text-slate-500 mt-12">
+    <div class="max-w-5xl mx-auto px-4 space-y-3">
+      <div class="flex items-center justify-center space-x-6 text-xs text-slate-600 dark:text-slate-400 font-semibold">
+        <a href="terms.html" class="hover:text-sky-600 underline transition">이용약관 (EULA)</a>
+        <span>&bull;</span>
+        <a href="privacy.html" class="hover:text-sky-600 underline transition font-bold">개인정보처리방침</a>
+        <span>&bull;</span>
+        <a href="refund.html" class="hover:text-sky-600 underline transition">환불 및 교환정책</a>
+      </div>
+      <p class="max-w-4xl mx-auto leading-relaxed text-xs text-slate-500 dark:text-slate-400">
+        상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 고객센터: 010-8503-6232 | 이메일: dhlabs_biz0@naver.com
+      </p>
+      <p class="text-slate-400 text-xs">&copy; 2026 디에이치랩스 (DH Labs). All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

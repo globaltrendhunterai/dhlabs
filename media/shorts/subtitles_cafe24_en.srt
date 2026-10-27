@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:03,000
+Woke up at 3 AM: 50 Cafe24 orders vanished?! (OAuth Expired in 2 hrs)
+
+2
+00:00:03,000 --> 00:00:15,000
+Freelance fix costs $300... Ignoring it destroys fulfillment & trust!
+
+3
+00:00:15,000 --> 00:00:27,000
+AutoFlow 127ms Guardian: Auto-revives crashed Cafe24 API in 127ms!
+
+4
+00:00:27,000 --> 00:00:35,000
+Founding Pass: 50% OFF for 1 Year ($24/mo) 👉 autoflow.io

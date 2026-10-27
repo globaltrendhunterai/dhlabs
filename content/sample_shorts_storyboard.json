@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "generated_at": "2026-10-06T14:24:02.590Z",
+    "platform": [
+      "YouTube Shorts",
+      "Instagram Reels",
+      "TikTok"
+    ],
+    "aspect_ratio": "9:16 (1080x1920)",
+    "target_duration_sec": 35,
+    "fps": 30,
+    "target_audience": "쇼핑몰 대표, 1인 셀러, B2B 자동화 담당자"
+  },
+  "hook_titles": [
+    "새벽에 쿠팡 주문 50건 날렸습니다 (사장님들 필독)",
+    "월 500만 원 개발자 뽑지 마세요. 127ms면 끝납니다",
+    "n8n 서버 죽어도 대표님이 꿀잠 자는 비밀"
+  ],
+  "selected_title": "새벽에 쿠팡 주문 50건 날렸습니다 (사장님들 필독)",
+  "scenes": [
+    {
+      "scene_id": 1,
+      "time_range": "00:00 - 00:03 (3초)",
+      "phase": "HOOK (후킹 및 충격)",
+      "visual_direction": "빨간색 에러 팝업 화면 클로즈업 + 진동 효과, 스마트폰에서 카톡 알림음 폭주",
+      "on_screen_text": "🚨 자고 일어났더니 주문 50건 증발?!",
+      "voiceover_text": "자고 일어났더니 쿠팡 주문 수집 서버가 멈춰서 주문 50건이 날아갔다면?",
+      "sfx": "Alarm_Buzzer_High.mp3"
+    },
+    {
+      "scene_id": 2,
+      "time_range": "00:03 - 00:15 (12초)",
+      "phase": "AGITATE (고통 극대화)",
+      "visual_direction": "모니터 앞에서 머리를 쥐어뜯는 사장님 모습, 통장 잔고 마이너스 및 배송 지연 패널티 경고장 그래픽",
+      "on_screen_text": "외주 부르면 30만원... 방치하면 매출 증발!",
+      "voiceover_text": "외주 개발자 부르면 출장비만 30만 원. 방치하면 고객 클레임에 배송 지연 패널티까지 맞습니다. 자동화가 멈추면 사업도 멈춥니다.",
+      "sfx": "Tension_Sub_Bass.mp3"
+    },
+    {
+      "scene_id": 3,
+      "time_range": "00:15 - 00:27 (12초)",
+      "phase": "SOLUTION (AutoFlow 실물 시연)",
+      "visual_direction": "AutoFlow Control Desk 화면에서 빨간색 에러가 127ms 만에 초록색 [소생 완료] 체크로 바뀌는 실제 캔버스 영상 시연",
+      "on_screen_text": "⚡ 127ms 무인 자가치유 데몬 가동!",
+      "voiceover_text": "하지만 AutoFlow 상시 데몬은 다릅니다. 서버가 뻗거나 API가 막혀도 127ms 만에 스스로 감지하고 프로세스를 살려냅니다.",
+      "sfx": "Success_Ding.mp3"
+    },
+    {
+      "scene_id": 4,
+      "time_range": "00:27 - 00:35 (8초)",
+      "phase": "CTA (전환 유도)",
+      "visual_direction": "공식 자사몰(autoflow.io) 화면, [선착순 10개사 1년 50% 파운딩 멤버 특가] 골드 배너 클로즈업 + 프로필 링크 화살표",
+      "on_screen_text": "🔥 선착순 1년 50% 파운딩 멤버 특가!",
+      "voiceover_text": "프로필 링크에서 1년 50% 파운딩 멤버 특가 확인하세요. 지금 시작하면 1년 내내 서버 걱정 끝입니다.",
+      "sfx": "Whoosh_Transition.mp3"
+    }
+  ],
+  "production_specs": {
+    "tts_voice": "ko-KR-SunHiNeural or ko-KR-InJoonNeural",
+    "tts_rate": "+15%",
+    "subtitle_font": "Pretendard Bold, 72pt, Yellow (#FACC15) with 4px Black Stroke",
+    "bgm": "Upbeat_Corporate_Tech_Minimal_30s.mp3 (Volume 18%)",
+    "export_filename": "dist/media/shorts/AutoFlow_Guardian_35s_Shorts.mp4"
+  }
+}

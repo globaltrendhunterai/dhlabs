@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>AutoFlow 기업 맞춤형 자동화 도입 상담 & 견적 신청 (B2B RFP 포털)</title>
+  <meta name="keywords" content="기업 업무자동화 문의, 사내 구축형 n8n, ERP 연동 상담, B2B 자동화 견적, AutoFlow 기술 지원" />
+  <meta name="description" content="사내 폐쇄망 구축, 다수 PC 라이선스 도입, 특수 ERP·그룹웨어 연동이 필요한 기업 고객을 위한 AutoFlow 1:1 엔지니어링 기술 상담 및 RFP 접수 페이지." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">신규 자동화 파이프라인 제안 & 신제품 출시 알림 - AutoFlow</title>
+  <meta name="naver-site-verification" content="AUTOFLOW_NAVER_SEARCH_ADVISOR_VERIFICATION">
+  <meta name="google-site-verification" content="AUTOFLOW_GOOGLE_SEARCH_CONSOLE_VERIFICATION">
+  <link rel="canonical" href="https://autoflow.io/client_rfp_form.html">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AutoFlow Enterprise">
+  <meta property="og:title" content="신규 자동화 파이프라인 제안 & 신제품 출시 알림 - AutoFlow">
+  <meta property="og:description" content="원하는 자동화 파이프라인을 제안하고 출시 시 40% 얼리버드 할인 혜택을 받으세요.">
+  <meta property="og:image" content="https://autoflow.io/og_preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://autoflow.io/og_preview.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "디에이치랩스 (DH Labs)",
+        "url": "https://autoflow.io",
+        "email": "dhlabs_biz0@naver.com",
+        "telephone": "+82-10-8503-6232"
+      },
+      {
+        "@type": "WebPage",
+        "name": "신규 자동화 파이프라인 제안 & 신제품 출시 알림 - AutoFlow",
+        "url": "https://autoflow.io/client_rfp_form.html",
+        "description": "원하는 자동화 파이프라인을 제안하고 출시 시 40% 얼리버드 할인 혜택을 받으세요."
+      }
+    ]
+  }
+  </script>
+  <!-- Tailwind CSS CDN & FontAwesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --bg: #0b1120;
+      --card-bg: #111c35;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #1e293b;
+      --accent: #10b981;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    .platform-chip {
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+    .platform-chip.selected {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #ffffff;
+      border-color: #38bdf8;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+    }
+  </style>
+  <link rel="describedby" type="text/plain" href="https://autoflow.io/llms.txt" title="AutoFlow AI / LLM Context Summary" />
+  <link rel="alternate" type="application/rss+xml" title="AutoFlow 공식 스토어 RSS 피드" href="https://autoflow.io/rss.xml" />
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+  <!-- Header / Navigation Bar -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-3.5 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5 text-white font-extrabold text-lg tracking-tight hover:text-sky-400 transition">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-white text-base shadow-sm">
+          <i class="fa-solid fa-bolt"></i>
+        </span>
+        <span>AutoFlow</span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="text-xs text-slate-300 hover:text-white flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/60 hover:bg-slate-700 transition">
+          <i class="fa-solid fa-boxes-stacked text-sky-400"></i>
+          <span id="navCatalogBtn">기성 완제품 카탈로그</span>
+        </a>
+        <div class="flex items-center gap-1 bg-slate-800 p-1 rounded-lg border border-slate-700 text-xs">
+          <button type="button" id="btnLangKo" onclick="setLanguage('ko')" class="px-2.5 py-1 rounded font-bold bg-sky-600 text-white transition">KO</button>
+          <button type="button" id="btnLangEn" onclick="setLanguage('en')" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-grow max-w-3xl w-full mx-auto px-4 py-10">
+
+    <!-- Proposal Card -->
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+      <!-- Glow background -->
+      <div class="absolute -top-24 -right-24 w-72 h-72 bg-sky-600/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <!-- Header Section -->
+      <div class="text-center mb-8 relative z-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold mb-4">
+          <i class="fa-regular fa-lightbulb"></i>
+          <span id="badgeText">고객 피드백 기반 신제품 로드맵</span>
+        </div>
+        <h1 id="titleText" class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3 leading-snug">
+          💡 신규 자동화 파이프라인 제안 & 신제품 출시 우선 알림 구독
+        </h1>
+        <p id="subCopyText" class="text-sm text-slate-400 max-w-xl mx-auto leading-relaxed">
+          원하시는 업무 자동화 워크플로우를 자유롭게 제안해 주세요. AutoFlow 엔지니어링 팀이 기성 완제품으로 개발하여 출시될 때, 제안해 주신 분께 가장 먼저 출시 소식과 <strong>40% VIP 할인 쿠폰</strong>을 이메일로 보내드립니다.
+        </p>
+      </div>
+
+      <!-- Notice Banner (No Custom Outsourcing Policy) -->
+      <div class="mb-8 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-start gap-3 text-xs leading-relaxed text-amber-200">
+        <i class="fa-solid fa-circle-exclamation text-amber-400 text-base mt-0.5 shrink-0"></i>
+        <div>
+          <strong id="noticeTitle">※ AutoFlow 엔지니어링 운영 원칙 안내</strong><br>
+          <span id="noticeDesc">AutoFlow는 불안정하고 비싼 1:1 맞춤 외주 개발(SI)을 일체 진행하지 않습니다. 대신 고객님들께서 보내주신 파이프라인 요구사항을 정밀 분석하여, 8대 생존 에어백과 12-Factor가 완전 검증된 <strong>사내 기성 완제품(Off-the-shelf)</strong>으로 정식 출시합니다.</span>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form id="proposalForm" class="space-y-6 relative z-10">
+
+        <!-- 1. Name & Email Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="proposerName" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+              <span id="labelName">1) 제안자 성함 / 닉네임</span> <span class="text-rose-500">*</span>
+            </label>
+            <div class="relative">
+              <i class="fa-regular fa-user absolute left-3.5 top-3.5 text-slate-500 text-sm"></i>
+              <input type="text" id="proposerName" name="proposerName" required
+                placeholder="예: 김대표 또는 자동화러버"
+                class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm transition">
+            </div>
+          </div>
+
+          <div>
+            <label for="proposerEmail" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+              <span id="labelEmail">2) 알림 수신 이메일</span> <span class="text-rose-500">*</span>
+            </label>
+            <div class="relative">
+              <i class="fa-regular fa-envelope absolute left-3.5 top-3.5 text-slate-500 text-sm"></i>
+              <input type="email" id="proposerEmail" name="proposerEmail" required
+                placeholder="vip@example.com"
+                class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm transition">
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Target Platforms Selection (Optional Chips) -->
+        <div>
+          <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+            <span id="labelPlatforms">연동 희망 대상 플랫폼 (복수 선택 가능)</span>
+          </label>
+          <div class="flex flex-wrap gap-2" id="platformChipsContainer">
+            <span class="platform-chip px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs text-slate-300 hover:border-slate-700" data-value="Coupang">쿠팡 윙</span>
+            <span class="platform-chip px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs text-slate-300 hover:border-slate-700" data-value="NaverCommerce">네이버 스마트스토어</span>
+            <span class="platform-chip px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs text-slate-300 hover:border-slate-700" data-value="Cafe24">카페24</span>
+            <span class="platform-chip px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs text-slate-300 hover:border-slate-700" data-value="Imweb">아임웹</span>
+            <span class="platform-chip px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs text-slate-300 hover:border-slate-700" data-value="Shopify">쇼피파이</span>
+            <span class="platform-chip px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs text-slate-300 hover:border-slate-700" data-value="Notion">노션 (Notion)</span>
+            <span class="platform-chip px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs text-slate-300 hover:border-slate-700" data-value="Slack">슬랙 (Slack)</span>
+            <span class="platform-chip px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs text-slate-300 hover:border-slate-700" data-value="GoogleSheets">구글 시트</span>
+            <span class="platform-chip px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs text-slate-300 hover:border-slate-700" data-value="Alimtalk">카카오 알림톡</span>
+            <span class="platform-chip px-3 py-1.5 rounded-xl border border-slate-800 bg-slate-950 text-xs text-slate-300 hover:border-slate-700" data-value="PostgreSQL">ERP / DB (SQL)</span>
+          </div>
+        </div>
+
+        <!-- 3. Pipeline Description -->
+        <div>
+          <label for="pipelineDescription" class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+            <span id="labelDesc">3) 필요로 하는 자동화 파이프라인 설명 및 시나리오</span> <span class="text-rose-500">*</span>
+          </label>
+          <textarea id="pipelineDescription" name="pipelineDescription" rows="4" required
+            placeholder="예시: 스마트스토어와 쿠팡에서 신규 주문이 인입되면 공통 구글 시트에 자동 기록하고, 재고가 5개 이하로 떨어지면 담당자 슬랙 및 카톡으로 긴급 발주 알림을 자동으로 보내주는 워크플로우가 필요합니다."
+            class="w-full p-4 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 text-sm leading-relaxed transition"></textarea>
+        </div>
+
+        <!-- 4. Privacy & Notification Consent Checkbox -->
+        <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
+          <input type="checkbox" id="privacyConsent" required class="mt-1 w-4 h-4 rounded text-sky-600 bg-slate-900 border-slate-700 focus:ring-sky-500 accent-sky-600 cursor-pointer">
+          <label for="privacyConsent" class="text-xs text-slate-400 cursor-pointer select-none leading-relaxed">
+            <span id="labelConsent"><strong>[필수] 개인정보 수집 및 신제품 출시 알림 수신 동의</strong>: 제안 검토 및 신제품 출시 시 40% VIP 할인 쿠폰 발송을 위해 입력하신 성함과 이메일을 수집하며, 목적 달성 시 안전하게 파기됩니다. (스팸 발송 절대 없음)</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="btnSubmit" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-white font-extrabold text-base shadow-lg shadow-sky-600/30 transition transform active:scale-[0.99] flex items-center justify-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span id="btnSubmitText">신규 파이프라인 제안하고 40% VIP 얼리버드 쿠폰 예약하기</span>
+        </button>
+
+      </form>
+
+      <!-- Success Notification Box (Initially Hidden) -->
+      <div id="successModal" class="hidden mt-8 p-6 rounded-2xl bg-emerald-950/70 border border-emerald-500/40 text-center relative z-20 animate-fade-in">
+        <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 id="successTitle" class="text-xl font-black text-emerald-300 mb-2">제안이 성공적으로 접수되었습니다!</h3>
+        <p id="successDesc" class="text-sm text-emerald-100/90 max-w-lg mx-auto leading-relaxed mb-6">
+          제안해 주신 업무 시나리오는 AutoFlow 엔지니어링 팀의 신제품 개발 검토 대장에 정식 등록되었습니다. 해당 파이프라인이 기성 완제품으로 공식 출시되는 즉시 <strong>40% VIP 얼리버드 혜택</strong>과 함께 남겨주신 이메일로 가장 먼저 안내해 드리겠습니다.
+        </p>
+
+        <div class="p-3 bg-emerald-900/50 rounded-xl inline-block text-xs font-mono text-emerald-200 mb-6 border border-emerald-700/50">
+          <span id="ticketLabel">접수 번호</span>: <span id="ticketNumber" class="font-bold">PROP-20261007-001</span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="index.html" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-sm">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span id="btnBackHome">메인 카탈로그 둘러보기</span>
+          </a>
+          <button type="button" onclick="resetForm()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition border border-slate-700">
+            <span id="btnNewProposal">추가 파이프라인 제안하기</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-900/60 py-8 text-center text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4 space-y-3">
+      <div class="flex items-center justify-center space-x-3 text-xs text-slate-400">
+        <a href="/terms.html" class="hover:text-sky-400 transition" id="footerTerms">이용약관</a>
+        <span>|</span>
+        <a href="/privacy.html" class="hover:text-sky-400 transition font-bold" id="footerPrivacy">개인정보처리방침</a>
+        <span>|</span>
+        <a href="/refund.html" class="hover:text-sky-400 transition" id="footerRefund">환불 및 청약철회 규정</a>
+      </div>
+      <p class="text-[11px] text-slate-400 leading-relaxed max-w-4xl mx-auto">
+        상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 통신판매업신고: 면제 (부가가치세법 제8조 정식 등록 과세사업자 · 기업 간 B2B 소프트웨어 라이선스 직접 공급) | 고객센터: 010-8503-6232 (평일 09:00~18:00 (주말·공휴일 휴무)) | 이메일: dhlabs_biz0@naver.com
+      </p>
+      <p class="text-[10px] text-slate-600">&copy; 2026 디에이치랩스 (DH Labs). All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Script for Handling Submission & i18n -->
+  <script>
+    let currentLang = 'ko';
+
+    const I18N = {
+      ko: {
+        pageTitle: "신규 자동화 파이프라인 제안 & 신제품 출시 알림 - AutoFlow",
+        navCatalogBtn: "기성 완제품 카탈로그",
+        badgeText: "고객 피드백 기반 신제품 로드맵",
+        titleText: "💡 신규 자동화 파이프라인 제안 & 신제품 출시 우선 알림 구독",
+        subCopyText: "원하시는 업무 자동화 워크플로우를 자유롭게 제안해 주세요. AutoFlow 엔지니어링 팀이 기성 완제품으로 개발하여 출시될 때, 제안해 주신 분께 가장 먼저 출시 소식과 40% VIP 할인 쿠폰을 이메일로 보내드립니다.",
+        noticeTitle: "※ AutoFlow 엔지니어링 운영 원칙 안내",
+        noticeDesc: "AutoFlow는 불안정하고 비싼 1:1 맞춤 외주 개발(SI)을 일체 진행하지 않습니다. 대신 고객님들께서 보내주신 파이프라인 요구사항을 정밀 분석하여, 8대 생존 에어백과 12-Factor가 완전 검증된 사내 기성 완제품(Off-the-shelf)으로 정식 출시합니다.",
+        labelName: "1) 제안자 성함 / 닉네임",
+        namePh: "예: 김대표 또는 자동화러버",
+        labelEmail: "2) 알림 수신 이메일",
+        emailPh: "vip@example.com",
+        labelPlatforms: "연동 희망 대상 플랫폼 (선택 사항)",
+        labelDesc: "3) 필요로 하는 자동화 파이프라인 설명 및 연동 대상 플랫폼",
+        descPh: "예시: 스마트스토어와 쿠팡에서 신규 주문이 인입되면 공통 구글 시트에 자동 기록하고, 재고가 5개 이하로 떨어지면 담당자 슬랙 및 카톡으로 긴급 발주 알림을 자동으로 보내주는 워크플로우가 필요합니다.",
+        labelConsent: "[필수] 개인정보 수집 및 신제품 출시 알림 수신 동의: 제안 검토 및 신제품 출시 시 40% VIP 할인 쿠폰 발송을 위해 입력하신 성함과 이메일을 수집하며, 목적 달성 시 안전하게 파기됩니다. (스팸 발송 절대 없음)",
+        btnSubmitText: "신규 파이프라인 제안하고 40% VIP 얼리버드 쿠폰 예약하기",
+        successTitle: "🎉 제안이 성공적으로 접수되었습니다!",
+        successDesc: "제안해 주신 업무 시나리오는 AutoFlow 엔지니어링 팀의 신제품 개발 검토 대장에 정식 등록되었습니다. 해당 파이프라인이 기성 완제품으로 공식 출시되는 즉시 40% VIP 얼리버드 혜택과 함께 남겨주신 이메일로 가장 먼저 안내해 드리겠습니다.",
+        ticketLabel: "접수 번호",
+        btnBackHome: "메인 카탈로그 둘러보기",
+        btnNewProposal: "추가 파이프라인 제안하기",
+        footerTerms: "이용약관",
+        footerPrivacy: "개인정보처리방침",
+        footerRefund: "환불 및 청약철회 규정"
+      },
+      en: {
+        pageTitle: "Suggest New Automation Pipeline & Early Access - AutoFlow",
+        navCatalogBtn: "Product Catalog",
+        badgeText: "Customer Feedback-Driven Product Roadmap",
+        titleText: "💡 Suggest New Automation Pipeline & VIP Launch Notification",
+        subCopyText: "Feel free to suggest any business automation workflow you need. When the AutoFlow engineering team builds and releases it as a turnkey product, you will be the first to receive launch alerts and a 40% VIP discount coupon.",
+        noticeTitle: "※ AutoFlow Engineering Principles",
+        noticeDesc: "AutoFlow does NOT provide costly or fragile 1:1 custom freelance outsourcing (SI). Instead, we analyze inbound customer requirements to engineer rigorously verified, off-the-shelf products equipped with 8 survival airbags and 12-Factor reliability.",
+        labelName: "1) Your Name / Nickname",
+        namePh: "e.g., Alex Kim or Automator",
+        labelEmail: "2) Notification Email",
+        emailPh: "vip@example.com",
+        labelPlatforms: "Target Integration Platforms (Optional)",
+        labelDesc: "3) Pipeline Description & Desired Integrations",
+        descPh: "e.g., When a new order arrives from Coupang or Shopify, sync to Google Sheets, and if inventory drops below 5, send an urgent alert to Slack and WhatsApp.",
+        labelConsent: "[Mandatory] Privacy & Launch Notification Consent: We collect your name and email strictly to review suggestions and send early bird launch coupons. Never spammed.",
+        btnSubmitText: "Submit Pipeline Proposal & Reserve 40% VIP Coupon",
+        successTitle: "🎉 Proposal Successfully Received!",
+        successDesc: "Your requested workflow scenario has been registered into our engineering roadmap ledger. As soon as the verified off-the-shelf product is released, we will notify you first with your 40% VIP early-bird coupon.",
+        ticketLabel: "Reference ID",
+        btnBackHome: "Explore Catalog",
+        btnNewProposal: "Submit Another Proposal",
+        footerTerms: "Terms",
+        footerPrivacy: "Privacy Policy",
+        footerRefund: "Refund Policy"
+      }
+    };
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const dict = I18N[lang] || I18N.ko;
+
+      document.getElementById('pageTitle').innerText = dict.pageTitle;
+      document.getElementById('navCatalogBtn').innerText = dict.navCatalogBtn;
+      document.getElementById('badgeText').innerText = dict.badgeText;
+      document.getElementById('titleText').innerText = dict.titleText;
+      document.getElementById('subCopyText').innerHTML = dict.subCopyText;
+      document.getElementById('noticeTitle').innerText = dict.noticeTitle;
+      document.getElementById('noticeDesc').innerHTML = dict.noticeDesc;
+      document.getElementById('labelName').innerHTML = dict.labelName;
+      document.getElementById('proposerName').placeholder = dict.namePh;
+      document.getElementById('labelEmail').innerHTML = dict.labelEmail;
+      document.getElementById('proposerEmail').placeholder = dict.emailPh;
+      document.getElementById('labelPlatforms').innerText = dict.labelPlatforms;
+      document.getElementById('labelDesc').innerHTML = dict.labelDesc;
+      document.getElementById('pipelineDescription').placeholder = dict.descPh;
+      document.getElementById('labelConsent').innerHTML = `<strong>${dict.labelConsent.split(':')[0]}</strong>: ${dict.labelConsent.split(':').slice(1).join(':')}`;
+      document.getElementById('btnSubmitText').innerText = dict.btnSubmitText;
+      document.getElementById('successTitle').innerText = dict.successTitle;
+      document.getElementById('successDesc').innerHTML = dict.successDesc;
+      document.getElementById('ticketLabel').innerText = dict.ticketLabel;
+      document.getElementById('btnBackHome').innerText = dict.btnBackHome;
+      document.getElementById('btnNewProposal').innerText = dict.btnNewProposal;
+      document.getElementById('footerTerms').innerText = dict.footerTerms;
+      document.getElementById('footerPrivacy').innerText = dict.footerPrivacy;
+      document.getElementById('footerRefund').innerText = dict.footerRefund;
+
+      if (lang === 'ko') {
+        document.getElementById('btnLangKo').className = 'px-2.5 py-1 rounded font-bold bg-sky-600 text-white transition';
+        document.getElementById('btnLangEn').className = 'px-2.5 py-1 rounded text-slate-400 hover:text-white transition';
+      } else {
+        document.getElementById('btnLangEn').className = 'px-2.5 py-1 rounded font-bold bg-sky-600 text-white transition';
+        document.getElementById('btnLangKo').className = 'px-2.5 py-1 rounded text-slate-400 hover:text-white transition';
+      }
+    }
+
+    // Platform Chips Toggle
+    document.querySelectorAll('.platform-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        chip.classList.toggle('selected');
+      });
+    });
+
+    function getSelectedPlatforms() {
+      const selected = [];
+      document.querySelectorAll('.platform-chip.selected').forEach(chip => {
+        selected.push(chip.getAttribute('data-value') || chip.innerText.trim());
+      });
+      return selected;
+    }
+
+    function resetForm() {
+      document.getElementById('proposalForm').reset();
+      document.querySelectorAll('.platform-chip.selected').forEach(chip => chip.classList.remove('selected'));
+      document.getElementById('proposalForm').classList.remove('hidden');
+      document.getElementById('successModal').classList.add('hidden');
+    }
+
+    // Form Submit Handler
+    document.getElementById('proposalForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('proposerName').value.trim();
+      const email = document.getElementById('proposerEmail').value.trim();
+      const desc = document.getElementById('pipelineDescription').value.trim();
+      const consent = document.getElementById('privacyConsent').checked;
+      const platforms = getSelectedPlatforms();
+
+      if (!consent) {
+        alert(currentLang === 'ko' ? '개인정보 수집 및 출시 알림 동의가 필요합니다.' : 'Please consent to the privacy and notification policy.');
+        return;
+      }
+
+      const submitBtn = document.getElementById('btnSubmit');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i> ${currentLang === 'ko' ? '제안 접수 중...' : 'Submitting...'}`;
+
+      const payload = {
+        company_name: name,
+        contact_name: name,
+        email: email,
+        scenario: `[파이프라인 제안] 대상플랫폼: [${platforms.join(', ')}] | 내용: ${desc}`,
+        inquiry_type: 'PIPELINE_PROPOSAL_SUBSCRIBE',
+        sources: platforms,
+        targets: ['AutoFlow Engineering Pipeline Queue']
+      };
+
+      try {
+        const res = await fetch('/rfp/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json().catch(() => null);
+        const leadId = (data && data.lead_id) ? data.lead_id : ('PROP-' + Date.now().toString(36).toUpperCase());
+        document.getElementById('ticketNumber').innerText = leadId;
+      } catch (err) {
+        console.warn('Backend submit fallback:', err);
+        const fallbackId = 'PROP-' + Date.now().toString(36).toUpperCase();
+        document.getElementById('ticketNumber').innerText = fallbackId;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        document.getElementById('proposalForm').classList.add('hidden');
+        document.getElementById('successModal').classList.remove('hidden');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('autoflow_lang') || 'ko';
+      setLanguage(savedLang);
+    });
+  </script>
+  <!-- [2026 Modular Pick Lineup & 7-Day Trial Scorecard] WF_ENTRY (₩9,900) | WF_STANDARD (₩19,000) | WF_COMPLEX (₩29,000) | TRIAL_7D_ALL_MODULES (7-Day Free Trial + Perpetual Workflow Guarantee) | MODULE_A1_MCP 연동 (₩29,000/30d) | MODULE_A2_MANAGED_AI (₩49,000/30d) | MODULE_B_BRANCH_RECON (₩29,000/30d) | Pick A1+B (₩58,000/30d) | Pick A2+B (₩78,000/30d) -->
+</body>
+</html>

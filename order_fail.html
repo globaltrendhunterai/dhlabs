@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- ============================================================================== -->
+  <!-- AutoFlow Standard SEO, OpenGraph & Analytics Telemetry -->
+  <!-- ============================================================================== -->
+  <meta name="description" content="결제 승인 처리 중 금융사 또는 네트워크 거절이 발생했습니다. 결제 재시도 및 B2B 정산 안내.">
+  <meta name="keywords" content="n8n, 업무자동화, AutoFlow, 자가치유, 토스페이먼츠, B2B자동화, 워크플로우">
+  <meta name="author" content="AutoFlow Enterprise">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://autoflow.io/order_fail.html">
+
+  <!-- OpenGraph Meta Tags (Facebook, KakaoTalk, LinkedIn, Slack) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AutoFlow Enterprise">
+  <meta property="og:title" content="결제 승인 실패 안내 | AutoFlow Enterprise">
+  <meta property="og:description" content="결제 승인 처리 중 금융사 또는 네트워크 거절이 발생했습니다. 결제 재시도 및 B2B 정산 안내.">
+  <meta property="og:image" content="https://autoflow.io/og_preview.png">
+  <meta property="og:url" content="https://autoflow.io/order_fail.html">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@AutoFlowIO">
+  <meta name="twitter:title" content="결제 승인 실패 안내 | AutoFlow Enterprise">
+  <meta name="twitter:description" content="결제 승인 처리 중 금융사 또는 네트워크 거절이 발생했습니다. 결제 재시도 및 B2B 정산 안내.">
+  <meta name="twitter:image" content="https://autoflow.io/og_preview.png">
+
+  <!-- Google Tag Manager / GA4 DataLayer Telemetry -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-AUTOFLOW2026', { 'anonymize_ip': true });
+  </script>
+  <!-- ============================================================================== -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>결제 승인 실패 안내 | AutoFlow Enterprise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-rose-500 selection:text-white">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur px-6 py-4 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-rose-500 to-red-600 flex items-center justify-center font-bold text-white text-xl shadow-lg shadow-rose-500/20">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <div>
+        <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-2">
+          <span translate="no">AutoFlow</span> <span data-i18n="header_title">결제 승인 오류</span>
+          <span class="text-[10px] px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 border border-rose-500/30 font-mono" translate="no">Payment Declined</span>
+        </h1>
+        <p class="text-xs text-slate-400" data-i18n="header_desc">결제 처리 중 금융사 또는 네트워크 승인 거절이 발생했습니다.</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <!-- KO / EN Language Toggle -->
+      <div class="inline-flex rounded-lg border border-slate-800 bg-slate-900 p-0.5 text-xs font-bold">
+        <button onclick="setFailLang('ko')" id="btnFailLangKo" class="px-2 py-1 rounded-md bg-rose-600 text-white transition">KO</button>
+        <button onclick="setFailLang('en')" id="btnFailLangEn" class="px-2 py-1 rounded-md text-slate-400 hover:text-rose-400 transition">EN</button>
+      </div>
+      <a href="index.html" class="text-xs text-slate-400 hover:text-white px-3 py-1.5 rounded-lg border border-slate-800 hover:border-slate-700 transition flex items-center gap-1">
+        <i class="fa-solid fa-arrow-left"></i> <span data-i18n="btn_catalog">카탈로그 홈으로</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-2xl w-full mx-auto p-6 flex flex-col justify-center gap-6 my-auto">
+
+    <!-- Error Card -->
+    <div class="bg-slate-900/90 border border-rose-500/30 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+      <div class="flex items-start gap-5">
+        <div class="w-14 h-14 rounded-2xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 text-2xl flex-shrink-0 shadow-lg shadow-rose-500/20">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+        <div class="flex-1">
+          <span class="text-xs font-semibold text-rose-400 tracking-wider uppercase font-mono" translate="no" data-i18n="card_badge">Transaction Failed</span>
+          <h2 class="text-2xl font-black text-white mt-1" data-i18n="card_title">결제가 정상 완료되지 않았습니다</h2>
+          <p class="text-sm text-slate-400 mt-1" data-i18n="card_desc">카드 한도 초과, 인증 세션 만료, 또는 고객사 법인카드 승인 정책을 확인해 주세요.</p>
+        </div>
+      </div>
+
+      <!-- Error Details Box -->
+      <div class="mt-6 bg-slate-950/80 border border-slate-800 rounded-xl p-5 space-y-2 text-xs font-mono">
+        <div class="flex justify-between">
+          <span class="text-slate-500" data-i18n="label_code">오류 코드 (Error Code):</span>
+          <span id="fail-code-text" class="text-rose-400 font-bold" translate="no">PAY_PROCESS_CANCELED</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500" data-i18n="label_msg">실패 사유 (Message):</span>
+          <span id="fail-msg-text" class="text-slate-300">사용자에 의해 결제 인증이 취소되었거나 거절되었습니다.</span>
+        </div>
+        <div class="flex justify-between pt-2 border-t border-slate-800/80">
+          <span class="text-slate-500" data-i18n="label_order">주문 번호 (Order ID):</span>
+          <span id="fail-order-text" class="text-slate-400" translate="no">ORD-UNKNOWN</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="mt-8 flex flex-col sm:flex-row gap-3">
+        <button onclick="retryCheckout()" class="flex-1 py-3.5 rounded-xl bg-gradient-to-r from-rose-500 to-red-600 hover:from-rose-400 hover:to-red-500 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-lg shadow-rose-500/20 active:scale-95">
+          <i class="fa-solid fa-rotate-right"></i> <span data-i18n="btn_retry">결제 다시 시도하기</span>
+        </button>
+        <a href="index.html" class="flex-1 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition border border-slate-700 active:scale-95 text-center">
+          <i class="fa-solid fa-arrow-left"></i> <span data-i18n="btn_back">카탈로그로 돌아가기</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CS Guidance Box -->
+    <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-5 text-xs text-slate-400 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <i class="fa-solid fa-headset text-cyan-400 text-xl"></i>
+        <div>
+          <span class="font-bold text-white block" data-i18n="cs_title">법인카드 승인 또는 세금계산서 후불 결제 지원</span>
+          <span data-i18n="cs_desc">사내 구매팀 정산 절차가 필요하신 경우 1:1 영업 전담팀이 견적서 및 청구서를 발행해 드립니다.</span>
+        </div>
+      </div>
+      <a href="mailto:dhlabs_biz0@naver.com" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 font-semibold text-xs whitespace-nowrap border border-slate-700" data-i18n="btn_inquire">
+        문의하기
+      </a>
+    </div>
+
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const code = urlParams.get('code') || 'PAY_DECLINED';
+    const message = urlParams.get('message') || '금융사에서 결제 승인을 거절하였습니다.';
+    const orderId = urlParams.get('orderId') || 'ORD-' + Date.now();
+    const sku = urlParams.get('sku') || '';
+    const tier = urlParams.get('tier') || '';
+    const price = urlParams.get('price') || '';
+    const name = urlParams.get('name') || '';
+    const cycle = urlParams.get('cycle') || '';
+    const hwid = urlParams.get('hwid') || '';
+
+    document.getElementById('fail-code-text').textContent = code;
+    document.getElementById('fail-msg-text').textContent = decodeURIComponent(message);
+    document.getElementById('fail-order-text').textContent = orderId;
+
+    function retryCheckout() {
+      const q = new URLSearchParams();
+      if (sku) q.set('sku', sku);
+      if (tier) q.set('tier', tier);
+      if (cycle) q.set('cycle', cycle);
+      if (price) q.set('price', price);
+      if (name) q.set('name', name);
+      if (hwid) q.set('hwid', hwid);
+      if (sku || tier || price || hwid) {
+        window.location.href = `checkout.html?${q.toString()}`;
+      } else {
+        window.location.href = 'index.html#pricing-table';
+      }
+    }
+
+    // AutoFlow Order Fail KO/EN i18n Engine
+    const i18nFail = {
+      ko: {
+        header_title: "결제 승인 오류",
+        header_desc: "결제 처리 중 금융사 또는 네트워크 승인 거절이 발생했습니다.",
+        btn_catalog: "카탈로그 홈으로",
+        card_badge: "Transaction Failed",
+        card_title: "결제가 정상 완료되지 않았습니다",
+        card_desc: "카드 한도 초과, 인증 세션 만료, 또는 고객사 법인카드 승인 정책을 확인해 주세요.",
+        label_code: "오류 코드 (Error Code):",
+        label_msg: "실패 사유 (Message):",
+        label_order: "주문 번호 (Order ID):",
+        btn_retry: "결제 다시 시도하기",
+        btn_back: "카탈로그로 돌아가기",
+        cs_title: "법인카드 승인 또는 세금계산서 후불 결제 지원",
+        cs_desc: "사내 구매팀 정산 절차가 필요하신 경우 1:1 영업 전담팀이 견적서 및 청구서를 발행해 드립니다.",
+        btn_inquire: "문의하기"
+      },
+      en: {
+        header_title: "Payment Approval Declined",
+        header_desc: "The transaction was declined by the card issuer or payment network.",
+        btn_catalog: "Back to Catalog",
+        card_badge: "Transaction Failed",
+        card_title: "Payment Could Not Be Completed",
+        card_desc: "Please check your card limit, authentication session timeout, or corporate card approval rules.",
+        label_code: "Error Code:",
+        label_msg: "Decline Reason:",
+        label_order: "Order ID:",
+        btn_retry: "Retry Checkout",
+        btn_back: "Back to Catalog",
+        cs_title: "Corporate Purchase Order & Invoice Post-Payment Support",
+        cs_desc: "If your procurement team requires invoices or bank wire settlement, our enterprise team can assist you directly.",
+        btn_inquire: "Contact Support"
+      }
+    };
+
+    function setFailLang(lang) {
+      localStorage.setItem('autoflow_fail_lang', lang);
+      const dict = i18nFail[lang] || i18nFail.ko;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.innerHTML = dict[key];
+        }
+      });
+      const btnKo = document.getElementById('btnFailLangKo');
+      const btnEn = document.getElementById('btnFailLangEn');
+      if (btnKo && btnEn) {
+        if (lang === 'en') {
+          btnEn.className = 'px-2 py-1 rounded-md bg-rose-600 text-white transition';
+          btnKo.className = 'px-2 py-1 rounded-md text-slate-400 hover:text-rose-400 transition';
+        } else {
+          btnKo.className = 'px-2 py-1 rounded-md bg-rose-600 text-white transition';
+          btnEn.className = 'px-2 py-1 rounded-md text-slate-400 hover:text-rose-400 transition';
+        }
+      }
+    }
+  </script>
+
+  <!-- Footer with Legal Links & Business Information -->
+  <footer class="border-t border-slate-800 bg-slate-900/60 py-8 text-center text-xs text-slate-500 mt-12">
+    <div class="max-w-4xl mx-auto px-4 space-y-3">
+      <div class="flex items-center justify-center space-x-6 text-xs text-slate-400">
+        <a href="terms.html" class="hover:text-rose-400 underline transition">이용약관</a>
+        <span>&bull;</span>
+        <a href="privacy.html" class="hover:text-rose-400 underline transition font-bold">개인정보처리방침</a>
+        <span>&bull;</span>
+        <a href="refund.html" class="hover:text-rose-400 underline transition">환불 및 교환정책</a>
+      </div>
+      <p class="max-w-4xl mx-auto leading-relaxed text-[11px] text-slate-400">
+        상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 통신판매업신고: 면제 (부가가치세법 제8조 정식 등록 과세사업자 · 기업 간 B2B 소프트웨어 라이선스 직접 공급) | 고객센터: 010-8503-6232 (평일 09:00~18:00 (주말·공휴일 휴무)) | 이메일: dhlabs_biz0@naver.com<br />
+        업태: 정보통신업, 도소매업 | 종목: 컴퓨터프로그래밍서비스업, 전자상거래소매중개업
+      </p>
+      <p class="text-slate-600 text-[10px]">&copy; 2026 디에이치랩스 (DH Labs). All rights reserved. High-Speed Rust Native Engine.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('autoflow_fail_lang') || 'ko';
+      setFailLang(saved);
+    });
+  </script>
+</body>
+</html>

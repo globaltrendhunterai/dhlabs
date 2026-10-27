@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#021b36"/>
+    </linearGradient>
+    <linearGradient id="cyan-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="emerald-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-grad)"/>
+
+  <!-- Tech Grid Background -->
+  <g opacity="0.07" stroke="#38bdf8" stroke-width="1">
+    <line x1="0" y1="0" x2="0" y2="630"/><line x1="50" y1="0" x2="50" y2="630"/><line x1="100" y1="0" x2="100" y2="630"/><line x1="150" y1="0" x2="150" y2="630"/><line x1="200" y1="0" x2="200" y2="630"/><line x1="250" y1="0" x2="250" y2="630"/><line x1="300" y1="0" x2="300" y2="630"/><line x1="350" y1="0" x2="350" y2="630"/><line x1="400" y1="0" x2="400" y2="630"/><line x1="450" y1="0" x2="450" y2="630"/><line x1="500" y1="0" x2="500" y2="630"/><line x1="550" y1="0" x2="550" y2="630"/><line x1="600" y1="0" x2="600" y2="630"/><line x1="650" y1="0" x2="650" y2="630"/><line x1="700" y1="0" x2="700" y2="630"/><line x1="750" y1="0" x2="750" y2="630"/><line x1="800" y1="0" x2="800" y2="630"/><line x1="850" y1="0" x2="850" y2="630"/><line x1="900" y1="0" x2="900" y2="630"/><line x1="950" y1="0" x2="950" y2="630"/><line x1="1000" y1="0" x2="1000" y2="630"/><line x1="1050" y1="0" x2="1050" y2="630"/><line x1="1100" y1="0" x2="1100" y2="630"/><line x1="1150" y1="0" x2="1150" y2="630"/><line x1="1200" y1="0" x2="1200" y2="630"/>
+    <line x1="0" y1="0" x2="1200" y2="0"/><line x1="0" y1="50" x2="1200" y2="50"/><line x1="0" y1="100" x2="1200" y2="100"/><line x1="0" y1="150" x2="1200" y2="150"/><line x1="0" y1="200" x2="1200" y2="200"/><line x1="0" y1="250" x2="1200" y2="250"/><line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="350" x2="1200" y2="350"/><line x1="0" y1="400" x2="1200" y2="400"/><line x1="0" y1="450" x2="1200" y2="450"/><line x1="0" y1="500" x2="1200" y2="500"/><line x1="0" y1="550" x2="1200" y2="550"/><line x1="0" y1="600" x2="1200" y2="600"/><line x1="0" y1="650" x2="1200" y2="650"/>
+  </g>
+
+  <!-- Ambient Glow Spheres -->
+  <circle cx="200" cy="150" r="160" fill="#0284c7" opacity="0.22" filter="url(#glow)"/>
+  <circle cx="1000" cy="480" r="180" fill="#6366f1" opacity="0.20" filter="url(#glow)"/>
+  <circle cx="900" cy="150" r="120" fill="#10b981" opacity="0.15" filter="url(#glow)"/>
+
+  <!-- Outer Border Frame -->
+  <rect x="30" y="30" width="1140" height="570" rx="24" fill="none" stroke="rgba(56, 189, 248, 0.25)" stroke-width="2"/>
+  <rect x="34" y="34" width="1132" height="562" rx="20" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+
+  <!-- Top Badge Bar -->
+  <g transform="translate(80, 85)">
+    <rect width="280" height="36" rx="18" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.5"/>
+    <circle cx="20" cy="18" r="6" fill="#10b981"/>
+    <text x="36" y="23" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="14" font-weight="bold" letter-spacing="1">12-FACTOR ENTERPRISE</text>
+  </g>
+
+  <!-- Logo and Brand -->
+  <g transform="translate(80, 160)">
+    <!-- Icon Box -->
+    <rect width="76" height="76" rx="20" fill="url(#cyan-indigo)"/>
+    <path d="M42 16L24 44H38L34 60L52 32H38L42 16Z" fill="#ffffff"/>
+    
+    <!-- Title -->
+    <text x="96" y="54" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="56" font-weight="900" letter-spacing="-1">AutoFlow</text>
+    <text x="340" y="54" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="56" font-weight="900">Engine</text>
+  </g>
+
+  <!-- Subtitle / Value Prop -->
+  <text x="80" y="300" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="32" font-weight="800" letter-spacing="-0.5">
+    무인 완제품 B2B 업무 자동화 솔루션
+  </text>
+  <text x="80" y="345" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="20" font-weight="500">
+    쿠팡 윙 • 네이버 스마트스토어 • 쇼피파이 • 카페24 3단계 무중단 에어백 노드 탑재
+  </text>
+
+  <!-- 3 Feature Metric Cards -->
+  <g transform="translate(80, 395)">
+    <!-- Card 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="310" height="110" rx="16" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5"/>
+      <text x="24" y="42" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="26" font-weight="900">127ms</text>
+      <text x="24" y="72" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="15" font-weight="700">3단계 무중단 에어백</text>
+      <text x="24" y="92" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="12">API 502/504 장애 시 즉시 복구</text>
+    </g>
+
+    <!-- Card 2 -->
+    <g transform="translate(340, 0)">
+      <rect width="310" height="110" rx="16" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(16, 185, 129, 0.25)" stroke-width="1.5"/>
+      <text x="24" y="42" fill="#10b981" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="26" font-weight="900">0%</text>
+      <text x="24" y="72" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="15" font-weight="700">DLQ 데이터 유실 방어</text>
+      <text x="24" y="92" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="12">주문 데이터 완벽 정합성 보장</text>
+    </g>
+
+    <!-- Card 3 -->
+    <g transform="translate(680, 0)">
+      <rect width="310" height="110" rx="16" fill="rgba(15, 23, 42, 0.75)" stroke="rgba(99, 102, 241, 0.25)" stroke-width="1.5"/>
+      <text x="24" y="42" fill="#818cf8" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="26" font-weight="900">100%</text>
+      <text x="24" y="72" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="15" font-weight="700">즉시 구동 완제품 보증</text>
+      <text x="24" y="92" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="12">결제 즉시 라이선스 &amp; 다운로드</text>
+    </g>
+  </g>
+
+  <!-- Footer Info -->
+  <g transform="translate(80, 560)">
+    <text x="0" y="0" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="13">
+      디에이치랩스 (DH Labs) • Toss Payments 공식 파트너 • TLS 256-bit SSL 보안 결제
+    </text>
+    <text x="1040" y="0" text-anchor="end" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, Pretendard, sans-serif" font-size="13" font-weight="bold">
+      https://autoflow.io
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,102 @@
+# AutoFlow Official Store SEO & AI Search Crawler Policy (v5.0 - Naver/Google/AI GEO Ready)
+User-agent: Yeti
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /rss.xml
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /master_control_console.html
+Disallow: /audit_dashboard.html
+Disallow: /MARKETING_DISTRIBUTION_HUB.html
+Disallow: /recon_quarantine_viewer.html
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /rss.xml
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /master_control_console.html
+Disallow: /audit_dashboard.html
+Disallow: /MARKETING_DISTRIBUTION_HUB.html
+Disallow: /recon_quarantine_viewer.html
+Disallow: /api/
+
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /master_control_console.html
+Disallow: /audit_dashboard.html
+Disallow: /MARKETING_DISTRIBUTION_HUB.html
+Disallow: /recon_quarantine_viewer.html
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /master_control_console.html
+Disallow: /audit_dashboard.html
+Disallow: /MARKETING_DISTRIBUTION_HUB.html
+Disallow: /recon_quarantine_viewer.html
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /master_control_console.html
+Disallow: /audit_dashboard.html
+Disallow: /MARKETING_DISTRIBUTION_HUB.html
+Disallow: /recon_quarantine_viewer.html
+Disallow: /api/
+
+User-agent: *
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /rss.xml
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /master_control_console.html
+Disallow: /audit_dashboard.html
+Disallow: /MARKETING_DISTRIBUTION_HUB.html
+Disallow: /recon_quarantine_viewer.html
+Disallow: /api/
+
+Sitemap: https://autoflow.io/sitemap.xml
+# AI / LLM Context Map (llmstxt.org standard): https://autoflow.io/llms.txt

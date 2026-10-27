@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", sans-serif; }
+  body {
+    width: 1200px;
+    height: 675px;
+    background: #0B0F19;
+    color: #F8FAFC;
+    padding: 48px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #1E293B;
+  }
+  .header-wrap {
+    text-align: center;
+    width: 100%;
+  }
+  .badge {
+    display: inline-block;
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 6px 18px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+  }
+  .watermark {
+    position: absolute;
+    bottom: 24px;
+    right: 48px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #475569;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+  <div class="header-wrap">
+    <div class="badge">SYSTEM ARCHITECTURE</div>
+    <h2>AutoFlow 127ms 무인 자가치유 데몬 아키텍처</h2>
+  </div>
+  
+      <div style="display:flex; justify-content:space-between; align-items:center; width:100%; gap:24px; margin-top:30px;">
+        <div style="background:#1E293B; border:1.5px solid #334155; border-radius:14px; padding:24px; flex:1; text-align:left;">
+          <div style="font-size:13px; font-weight:800; color:#94A3B8;">MONITORING LAYER</div>
+          <div style="font-size:18px; font-weight:800; color:#F8FAFC; margin-top:4px;">사내 PC / 서버 감시</div>
+          <p style="font-size:12px; color:#CBD5E1; margin-top:8px; line-height:1.5;">포트(5678), V8 힙 메모리 누수(OOM), Docker 컨테이너 상태를 1초 단위 실시간 감시</p>
+        </div>
+        <div style="font-size:26px; color:#10B981; font-weight:900;">➔</div>
+        <div style="background:#064E3B; border:2px solid #10B981; border-radius:14px; padding:24px; flex:1.2; text-align:left; box-shadow:0 0 25px rgba(16,185,129,0.25);">
+          <div style="font-size:13px; font-weight:800; color:#A7F3D0;">127ms HEALING ENGINE</div>
+          <div style="font-size:18px; font-weight:800; color:#34D399; margin-top:4px;">AutoFlow Guardian</div>
+          <p style="font-size:12px; color:#D1FAE5; margin-top:8px; line-height:1.5;">크래시 감지 즉시 127ms 만에 프로세스 사살(Kill) 및 클린 재기동 + 백오프 룰 주입</p>
+        </div>
+        <div style="font-size:26px; color:#10B981; font-weight:900;">➔</div>
+        <div style="background:#1E293B; border:1.5px solid #334155; border-radius:14px; padding:24px; flex:1; text-align:left;">
+          <div style="font-size:13px; font-weight:800; color:#94A3B8;">TRIPLE-SAFE SLA</div>
+          <div style="font-size:18px; font-weight:800; color:#F8FAFC; margin-top:4px;">무중단 운영 보증</div>
+          <p style="font-size:12px; color:#CBD5E1; margin-top:8px; line-height:1.5;">오라클 24GB 인프라 + 본사 핫스탠바이 DR + 고객 PC 영구 소장 3중 안전망 가동</p>
+        </div>
+      </div>
+    
+  <div class="watermark">AutoFlow Enterprise Architecture (autoflow.io)</div>
+</body>
+</html>
