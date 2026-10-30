@@ -1317,6 +1317,66 @@
           </div>
         </div>
 
+        <!-- 3rd Core Pillar: 70% Safety Factor Limiter & Overflow Spool-Resume Dam -->
+        <div class="mt-8 rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 border-2 border-indigo-500/50 text-white shadow-xl">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-indigo-500/20 text-indigo-300 border border-indigo-400/40 font-mono">
+              70% SAFETY GOVERNOR &amp; OVERFLOW SPOOL DAM
+            </span>
+            <span class="text-xs font-mono text-emerald-400 font-bold">
+              ⚡ 상주형 방어 엔진 전용 하드웨어 라이선스 작동 기능 (JSON 단순 복제 시 미작동)
+            </span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-black text-white mb-2">
+            🛡️ 70% 안전율 리미터 &amp; 초과 물량 스풀 금고 자동 모아두기·이어하기 (Dam &amp; Auto-Resume)
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+            모든 산업용 장비와 마켓/구글 API에는 물리적 한계치(100%)가 존재합니다. 워크플로우 단품(또는 JSON 복제본)만 단독 실행하면 안전 브레이크(리미트)가 없어 대량 물량 유입 시 API 한계치(예: 구글시트 분당 60건)를 정면 돌파하여 <code class="text-rose-400 font-bold">HTTP 429 차단</code> 및 중간 멈춤이 발생합니다. <strong>상주형 무인 방어 엔진이 켜져 있으면 한계치의 70% 안전 수량만 통과시키고, 넘어간 초과 데이터는 로컬 스풀 금고에 안전하게 모아두었다가 쿨다운 후 끝까지 자동으로 이어서 완주</strong>합니다.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-xs">
+            <div class="p-4 rounded-2xl bg-rose-950/40 border border-rose-500/40">
+              <div class="font-extrabold text-rose-300 text-sm mb-2">❌ 워크플로우 단독 실행 / JSON 복제본 (리미트 없음 · 직결)</div>
+              <ul class="space-y-1.5 text-slate-300">
+                <li>• <strong>소량(30건 이하) 수동 실행:</strong> 한계치에 닿지 않아 정상 작동</li>
+                <li>• <strong>대량(예: 150건) 폭주 시:</strong> 리미트 없이 150건을 한꺼번에 직결 전송 ➔ <strong>61번째에서 API 한계(100%) 충돌로 <code class="text-rose-300">429 차단</code> 및 중간 멈춤 발생</strong></li>
+                <li>• <strong>초과 물량 대기열 없음:</strong> 멈춘 뒤 재실행 시 앞단 중복 발송 위험</li>
+              </ul>
+            </div>
+            <div class="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/40">
+              <div class="font-extrabold text-emerald-300 text-sm mb-2">🛡️ 상주형 방어 엔진 가동 시 (70% 안전 리미트 + 이어하기 댐)</div>
+              <ul class="space-y-1.5 text-slate-200">
+                <li>• <strong>1단계 [70% 안전 절단]:</strong> 한계치(60건)의 70%인 <strong>42건만 안전 통과 (과부하 0%)</strong></li>
+                <li>• <strong>2단계 [초과분 스풀 금고 적재]:</strong> 넘어간 나머지 <strong>108건(43~150번)을 로컬 스풀 금고(<code class="text-emerald-300">overflow_spool</code>)에 무손실 보관</strong> (정전 시 <code class="text-emerald-300">.bak</code> 자동 복구)</li>
+                <li>• <strong>3단계 [무중단 자동 이어하기]:</strong> 숨고르기 후 <strong>42건 ➔ 42건 ➔ 24건씩 자동 인출하여 150건 전량 누락·중복 0건 완주</strong></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-center text-xs font-mono">
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-slate-400 text-[11px]">구글 시트 API</div>
+              <div class="text-white font-bold mt-0.5">한계 60 ➔ <span class="text-emerald-400">70% 정격 42건</span></div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-slate-400 text-[11px]">네이버 스마트스토어</div>
+              <div class="text-white font-bold mt-0.5">한계 60 ➔ <span class="text-emerald-400">70% 정격 42건</span></div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-slate-400 text-[11px]">쿠팡 WING API</div>
+              <div class="text-white font-bold mt-0.5">한계 100 ➔ <span class="text-emerald-400">70% 정격 70건</span></div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800">
+              <div class="text-slate-400 text-[11px]">카카오 알림톡/SMS</div>
+              <div class="text-white font-bold mt-0.5">한계 100 ➔ <span class="text-emerald-400">70% 정격 70건</span></div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 col-span-2 sm:col-span-1">
+              <div class="text-slate-400 text-[11px]">4자 정산 대사 메모리</div>
+              <div class="text-white font-bold mt-0.5">한계 500 ➔ <span class="text-emerald-400">70% 정격 350건</span></div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -1410,8 +1470,8 @@
               </div>
               <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-2 mb-6">
                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-sky-600 mt-0.5"></i> <span><strong>에러코드 1:1 정밀 매칭</strong> 무인 복구 (미해결률 5% 미만)</span></li>
-                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-sky-600 mt-0.5"></i> <span>401 토큰 만료 갱신 &amp; 429 레이트리밋 지수 백오프</span></li>
-                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-sky-600 mt-0.5"></i> <span>5회 연속 실패 시 사내 안전 대기열(DLQ) 격리 &amp; 패치 수신</span></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-sky-600 mt-0.5"></i> <span><strong>70% 안전율 리미터 &amp; 초과분 스풀 금고 이어하기</strong> (과부하·429 원천 차단)</span></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-sky-600 mt-0.5"></i> <span>401 토큰 만료 갱신 &amp; 5회 연속 실패 시 안전 대기열(DLQ) 격리</span></li>
                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-sky-600 mt-0.5"></i> <span><strong>사내 PC(127.0.0.1) 개인정보 100% 마스킹 기본 내장</strong></span></li>
               </ul>
             </div>
@@ -1440,7 +1500,7 @@
               </div>
               <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-2 mb-6">
                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 mt-0.5"></i> <span><strong>앞뒤 노드 데이터·금액 Gap</strong> 실시간 대조 및 누락 적발</span></li>
-                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 mt-0.5"></i> <span>원본 임의 변조 제로(Zero Silent Mutation) 안전 보류함 격리</span></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 mt-0.5"></i> <span><strong>70% 정격 배치 리미터 &amp; 초과 물량 스풀 자동 이어하기</strong> (메모리 크래시 방어)</span></li>
                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 mt-0.5"></i> <span>사장님 <strong>1-Click 비교표 승인</strong> 시 누락 분기만 핀포인트 리셋</span></li>
                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 mt-0.5"></i> <span><strong>사내 PC(127.0.0.1) 개인정보 100% 마스킹 기본 내장</strong></span></li>
               </ul>
@@ -1474,7 +1534,7 @@
               <ul class="text-xs text-slate-600 dark:text-slate-300 space-y-2 mb-6">
                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-indigo-600 mt-0.5"></i> <span><strong>자가치유 엔진 전 기능</strong> (127ms 소생 &bull; 미해결률 5% 미만)</span></li>
                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-indigo-600 mt-0.5"></i> <span><strong>정합성 대사 엔진 전 기능</strong> (노드 간 Gap 격리 &bull; 1-Click 승인)</span></li>
-                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-indigo-600 mt-0.5"></i> <span>신규 변칙 에러 발생 시 본사 파인튜닝 수리 규칙 최우선 배포</span></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-indigo-600 mt-0.5"></i> <span><strong>70% 안전율 리미터 &amp; 초과 물량 스풀 금고 무중단 이어하기</strong> 완비</span></li>
                 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-indigo-600 mt-0.5"></i> <span><strong>사내 PC(127.0.0.1) 개인정보 100% 마스킹 기본 내장</strong></span></li>
               </ul>
             </div>
