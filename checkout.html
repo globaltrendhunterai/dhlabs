@@ -182,7 +182,7 @@
             "name": "상주형 무인 방어 엔진 기간권(자가치유 3.9만 / 정합성 4.9만 / 듀얼 6.9만)은 어떤 역할을 하나요?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "외부 쇼핑몰(스마트스토어·쿠팡·카페24), 택배사, 국세청 API가 예고 없이 변경되거나 일시 장애가 발생할 때 워크플로우가 멈추지 않도록 24시간 지키는 상주형 프로그램입니다. 자가치유 엔진은 에러코드 1:1 정밀 매칭으로 127ms 만에 무인 복구하며(미해결률 5% 미만), 정합성 대사 엔진은 앞단(주문·결제)과 뒷단(송장·정산·장부)의 1원 단위 오차 및 누락을 실시간 대조·격리합니다."
+              "text": "외부 쇼핑몰(스마트스토어·쿠팡·카페24), 택배사, 국세청 API가 예고 없이 변경되거나 대량 주문 폭주·일시 장애가 발생할 때 워크플로우가 멈추지 않도록 24시간 지키는 상주형 프로그램입니다. 자가치유 엔진은 에러코드 1:1 정밀 매칭으로 127ms 만에 무인 복구하며 물리적 API 한계치의 70% 안전 정격 수량(예: 분당 42건)만 통과시키고 초과 물량은 로컬 스풀 금고(overflow_spool)에 적재 후 잔여 0건까지 자동 이어하기로 완주합니다. 정합성 대사 엔진은 앞단(주문·결제)과 뒷단(송장·정산·장부)의 1원 단위 오차 및 누락을 실시간 대조·격리합니다."
             }
           },
           {
@@ -380,7 +380,7 @@
             <button type="button" id="btn-engine-heal" onclick="selectEngineOption('ENGINE_HEAL')" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-left flex items-center justify-between transition cursor-pointer">
               <div>
                 <div class="text-xs font-extrabold text-slate-900 dark:text-white">🛠️ 자가치유 엔진 단독 (ENGINE_HEAL)</div>
-                <div class="text-xs text-slate-500">127ms 크래시 감시 · 에러코드 1:1 정밀 매칭 무인 수리</div>
+                <div class="text-xs text-slate-500">127ms 크래시 감시 · 70% 안전율 리미터 &amp; 스풀 금고 이어하기</div>
               </div>
               <span id="label-price-heal" class="text-xs font-black font-mono text-sky-600">₩39,000</span>
             </button>
@@ -394,7 +394,7 @@
             <button type="button" id="btn-engine-dual" onclick="selectEngineOption('ENGINE_DUAL')" class="p-2.5 rounded-xl border-2 border-emerald-600 bg-emerald-50/80 dark:bg-emerald-950/60 text-left flex items-center justify-between transition cursor-pointer">
               <div>
                 <div class="text-xs font-extrabold text-emerald-900 dark:text-emerald-200">👑 듀얼 통합 엔진 (자가치유 + 정합성 · BEST)</div>
-                <div class="text-xs text-emerald-700 dark:text-emerald-400 font-semibold">무인 수리 + 1원 정합성 대사 전 기능 통합 가동</div>
+                <div class="text-xs text-emerald-700 dark:text-emerald-400 font-semibold">무인 수리 + 70% 안전율 리미터·스풀 이어하기 + 1원 정합성 대사</div>
               </div>
               <span id="label-price-dual" class="text-xs font-black font-mono text-emerald-700 dark:text-emerald-300">₩69,000</span>
             </button>
@@ -456,7 +456,7 @@
           </div>
           <div class="flex items-start gap-2">
             <i class="fa-solid fa-circle-check text-emerald-600 mt-0.5"></i>
-            <span id="tier-feat-4">7일 상주형 무인 엔진(자가치유 + 정합성 대사) 무료 체험 기본 포함</span>
+            <span id="tier-feat-4">7일 상주형 무인 엔진(자가치유 + 70% 안전율 리미터·스풀 이어하기 + 정합성 대사) 무료 체험 기본 포함</span>
           </div>
         </div>
 
@@ -668,9 +668,9 @@
     };
 
     const ENGINE_NAME_MAP = {
-      ENGINE_HEAL: '[상주형 무인 엔진] 자가치유 엔진 단독 (127ms 크래시 감시 & 에러코드 1:1 정밀 매칭 무인 수리)',
+      ENGINE_HEAL: '[상주형 무인 엔진] 자가치유 엔진 단독 (127ms 크래시 감시 · 70% 안전율 리미터 & 스풀 금고 자동 이어하기)',
       ENGINE_RECON: '[상주형 무인 엔진] 정합성 대사 엔진 단독 (앞뒤 노드 데이터·금액 오차 실시간 격리 & 1-Click 비교 승인)',
-      ENGINE_DUAL: '[상주형 무인 엔진 · BEST] 듀얼 통합 엔진 (자가치유 무인 수리 + 노드 간 1원 정합성 대사 통합)'
+      ENGINE_DUAL: '[상주형 무인 엔진 · BEST] 듀얼 통합 엔진 (자가치유 + 70% 안전율 리미터·스풀 이어하기 + 노드 간 1원 정합성 대사 통합)'
     };
 
     function workflowKrwToUsd(krw) {
@@ -839,7 +839,7 @@
         if (feat1) feat1.textContent = '1제품 = 1사이트 단일 완제품 영구 소장 (실행 건수 평생 무제한)';
         if (feat2) feat2.textContent = '전 구간 필수 방어 에어백 + 1초 원클릭 로컬 런처(Mac/Win) 기본 동봉';
         if (feat3) feat3.textContent = '사내 PC(127.0.0.1) 로컬 개인정보 100% 자동 마스킹 방패 기본 내장';
-        if (feat4) feat4.textContent = '7일 상주형 무인 엔진(자가치유 + 정합성 대사) 무료 체험 기본 포함';
+        if (feat4) feat4.textContent = '7일 상주형 무인 엔진(자가치유 + 70% 안전율 리미터·스풀 이어하기 + 정합성 대사) 무료 체험 기본 포함';
       } else {
         const selectedPriceObj = row[currentEngineCode];
         priceAmount = selectedPriceObj.krw;
@@ -855,7 +855,7 @@
         if (feat1) feat1.textContent = '24/7 상주형 무인 엔진 ' + currentEngineDays + '일 가동 패스 (만료 후에도 워크플로우 단품은 영구 작동)';
         if (feat2) feat2.textContent = currentEngineCode === 'ENGINE_RECON'
           ? '앞단 노드(주문·결제) vs 뒷단 노드(송장·정산·장부) 데이터·금액 오차 실시간 격리 & 1-Click 비교표 승인'
-          : '127ms 프로세스 감시 & 에러코드·증상 1:1 정밀 매칭 무인 수리 (환각 없음 · 미해결률 5% 미만)';
+          : '127ms 프로세스 감시 · 70% 안전율 리미터(스풀 금고 이어하기) & 에러코드 1:1 정밀 매칭 무인 수리';
         if (feat3) feat3.textContent = currentEngineMode === 'mcp'
           ? '고객 외부 AI(OpenAI/Claude/로컬 LLM) MCP 직접 연결 + 익명 해결로그 본사 자동 공유 조건부 할인가'
           : '본사 도메인 파인튜닝 AI 모델 기본 포함 (별도 외부 AI API 키 설정 불필요)';

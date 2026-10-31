@@ -1712,12 +1712,16 @@
             const data = await res.json();
             const badge = document.getElementById('govStatusBadge');
             if (badge) {
-              badge.textContent = data.governor_active ? '70% RATED GOVERNOR ACTIVE' : 'UNREGULATED (LICENSE INACTIVE)';
-              badge.style.background = data.governor_active ? '#16a34a' : '#dc2626';
+              badge.textContent = data.governor_active ? '70% RATED GOVERNOR ACTIVE' : 'UNREGULATED (만료/비활성)';
+              badge.style.background = data.governor_active ? '#16a34a' : '#d97706';
             }
             const spooledEl = document.getElementById('govMetricSpooled');
             const drainedEl = document.getElementById('govMetricDrained');
-            if (spooledEl) spooledEl.textContent = (data.total_pending_in_spool || 0) + '건 보관 중';
+            if (spooledEl) {
+              spooledEl.textContent = data.governor_active
+                ? (data.total_pending_in_spool || 0) + '건 대기'
+                : '0건 (스풀 비활성)';
+            }
             if (drainedEl) drainedEl.textContent = (data.total_drained_resumed || 0) + '건 완주';
           } catch (e) {}
         };
@@ -1727,7 +1731,10 @@
             order_id: 'ORD-' + String(idx + 1).padStart(4, '0'),
             amount: 39000
           }));
-          const logEl = document.getElementById('govLiveLogLine');
+          const badge = document.getElementById('govStatusBadge');
+          const appEl = document.getElementById('govMetricApproved');
+          const spEl = document.getElementById('govMetricSpooled');
+          const msgEl = document.getElementById('govLiveLogLine');
           try {
             const res = await fetch('/api/governor/regulate', {
               method: 'POST',
@@ -1740,50 +1747,99 @@
             });
             if (res.ok) {
               const d = await res.json();
-              document.getElementById('govMetricApproved').textContent = d.approved_count + '건 통과 (70%)';
-              document.getElementById('govMetricSpooled').textContent = d.remaining_spool_count + '건 보관 중';
-              if (logEl) logEl.textContent = d.message || d.overload_risk_warning || '[REGULATED] 완료';
+              if (d.governor_active) {
+                if (badge) {
+                  badge.textContent = '70% RATED GOVERNOR ACTIVE';
+                  badge.style.background = '#16a34a';
+                }
+                if (appEl) {
+                  appEl.textContent = `${d.approved_count}건 통과 (70%)`;
+                  appEl.style.color = '#4ade80';
+                }
+                if (spEl) {
+                  const qDepth = d.remaining_queue_depth !== undefined ? d.remaining_queue_depth : (d.remaining_spool_count || 0);
+                  spEl.textContent = `${qDepth}건 대기`;
+                }
+                if (msgEl) msgEl.textContent = d.message || '[REGULATED] 완료';
+              } else {
+                if (badge) {
+                  badge.textContent = 'UNREGULATED (만료/비활성)';
+                  badge.style.background = '#d97706';
+                }
+                if (appEl) {
+                  appEl.textContent = `${d.approved_count}건 무제한 직결 (위험)`;
+                  appEl.style.color = '#fbbf24';
+                }
+                if (spEl) spEl.textContent = '0건 (스풀 비활성)';
+                if (msgEl) msgEl.textContent = d.message || d.overload_risk_warning || '라이선스 비활성: 무제한 직결 통과';
+              }
               return;
             }
           } catch (e) {}
           // Client-side static demo fallback
           localFallbackQueue = items.slice(42);
-          document.getElementById('govMetricApproved').textContent = '42건 통과 (ORD-0001~0042)';
-          document.getElementById('govMetricSpooled').textContent = localFallbackQueue.length + '건 보관 중 (ORD-0043~0150)';
-          if (logEl) {
-            logEl.textContent = '🛡️ [70% 안전 리미터 작동] 물리 한계(60건)의 70%인 42건만 통과시키고, 초과 108건은 스풀 금고에 안전 적재했습니다.';
+          if (appEl) {
+            appEl.textContent = '42건 통과 (70%)';
+            appEl.style.color = '#4ade80';
+          }
+          if (spEl) spEl.textContent = localFallbackQueue.length + '건 대기';
+          if (msgEl) {
+            msgEl.textContent = '🛡️ [70% 안전 리미터 작동] 물리 한계(60건)의 70%인 42건만 통과시키고, 초과 108건은 스풀 금고에 안전 적재했습니다.';
           }
         };
 
         window.triggerGovernorDrainStep = async function() {
-          const logEl = document.getElementById('govLiveLogLine');
+          const badge = document.getElementById('govStatusBadge');
+          const appEl = document.getElementById('govMetricApproved');
+          const spEl = document.getElementById('govMetricSpooled');
+          const drEl = document.getElementById('govMetricDrained');
+          const msgEl = document.getElementById('govLiveLogLine');
           try {
             const res = await fetch('/api/governor/drain', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ workflow_id: 'WF_DASHBOARD_LIVE_TEST' })
             });
+            if (res.status === 403) {
+              const d = await res.json();
+              if (msgEl) msgEl.textContent = d.message || '라이선스 활성화가 필요합니다.';
+              if (badge) {
+                badge.textContent = 'UNREGULATED (만료/비활성)';
+                badge.style.background = '#d97706';
+              }
+              return;
+            }
             if (res.ok) {
               const d = await res.json();
-              document.getElementById('govMetricApproved').textContent = d.drained_count + '건 이어하기 통과';
-              document.getElementById('govMetricSpooled').textContent = d.remaining_spool_count + '건 보관 중';
-              document.getElementById('govMetricDrained').textContent = (d.total_drained_resumed || 0) + '건 완주';
-              if (logEl) logEl.textContent = d.message;
+              if (badge) {
+                badge.textContent = '70% RATED GOVERNOR ACTIVE';
+                badge.style.background = '#16a34a';
+              }
+              if (appEl) {
+                appEl.textContent = d.drained_count + '건 이어하기 통과';
+                appEl.style.color = '#4ade80';
+              }
+              if (spEl) {
+                const qDepth = d.remaining_queue_depth !== undefined ? d.remaining_queue_depth : (d.remaining_spool_count || 0);
+                spEl.textContent = `${qDepth}건 대기`;
+              }
+              if (drEl) drEl.textContent = (d.total_drained_resumed || 0) + '건 완주';
+              if (msgEl) msgEl.textContent = d.message;
               return;
             }
           } catch (e) {}
           // Client-side static demo fallback
           if (localFallbackQueue.length === 0) {
-            if (logEl) logEl.textContent = '✅ 스풀 금고에 대기 중이던 모든 초과 데이터 이어하기가 100% 완료되었습니다 (잔여 0건).';
+            if (msgEl) msgEl.textContent = '✅ 스풀 금고에 대기 중이던 모든 초과 데이터 이어하기가 100% 완료되었습니다 (잔여 0건).';
             return;
           }
           const drained = localFallbackQueue.splice(0, 42);
           localFallbackDrained += drained.length;
-          document.getElementById('govMetricApproved').textContent = drained.length + '건 이어하기 통과';
-          document.getElementById('govMetricSpooled').textContent = localFallbackQueue.length + '건 보관 중';
-          document.getElementById('govMetricDrained').textContent = localFallbackDrained + '건 완주';
-          if (logEl) {
-            logEl.textContent = localFallbackQueue.length > 0
+          if (appEl) appEl.textContent = drained.length + '건 이어하기 통과';
+          if (spEl) spEl.textContent = localFallbackQueue.length + '건 대기';
+          if (drEl) drEl.textContent = localFallbackDrained + '건 완주';
+          if (msgEl) {
+            msgEl.textContent = localFallbackQueue.length > 0
               ? '🔄 [자동 이어하기 진행 중] 스풀 금고에서 ' + drained.length + '건을 꺼내 이어서 처리했습니다. (남은 대기 물량: ' + localFallbackQueue.length + '건)'
               : '🎉 [전량 이어하기 완주] 마지막 ' + drained.length + '건까지 모두 꺼내어 총 150건 처리를 완료했습니다! (남은 대기 물량: 0건)';
           }
