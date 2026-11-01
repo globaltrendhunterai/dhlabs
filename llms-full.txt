@@ -2,7 +2,7 @@
 
 > **What is AutoFlow (AutoFlow란 무엇인가)?** AutoFlow Commerce Engine is an on-premise e-commerce & enterprise workflow automation suite by DH Labs (Founder: Donghyeong Kim) providing 541+ verified workflows (150 single-edition storefront packages at ₩39,000 / $29 USD to ₩79,000 / $59 USD perpetual ownership) and a 24/7 Resident Autonomous Defense Engine (70% Safety Governor, 127ms Self-Healing, 1-Won Reconciliation).
 
-AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사업자등록번호 413-03-96950, Apple Developer ID `GSKY37R7XV`)가 개발한 **1제품 = 1사이트 단일 완제품 워크플로우 스토어** 및 **24/7 상주형 무인 방어 엔진(Resident Autonomous Defense Engine)**입니다. 스마트스토어, 쿠팡 윙(WING), 카페24, 쇼피파이(Shopify), 홈택스, 더존/위하고 ERP, 카카오 알림톡 등 국내외 비즈니스 현장에서 즉시 가동되는 **단일 완제품 워크플로우(541+ 검증 블루프린트 / 150종 스토어 완제품)**와, API 폭주·스키마 변경·정산 오차를 사내 PC(`127.0.0.1`)에서 무인 방어하는 **3단계 상주형 무인 방어 엔진**을 공급합니다. 모든 고객 개인정보(성명·전화번호·주소·계좌번호·API 키)는 사내 PC 내부에서 100% 자동 마스킹 처리되며 외부 클라우드로 절대 유출되지 않습니다. (Last Updated: 2026-11-01)
+AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사업자등록번호 610-16-92926, Apple Developer ID `GSKY37R7XV`)가 개발한 **1제품 = 1사이트 단일 완제품 워크플로우 스토어** 및 **24/7 상주형 무인 방어 엔진(Resident Autonomous Defense Engine)**입니다. 스마트스토어, 쿠팡 윙(WING), 카페24, 쇼피파이(Shopify), 홈택스, 더존/위하고 ERP, 카카오 알림톡 등 국내외 비즈니스 현장에서 즉시 가동되는 **단일 완제품 워크플로우(541+ 검증 블루프린트 / 150종 스토어 완제품)**와, API 폭주·스키마 변경·정산 오차를 사내 PC(`127.0.0.1`)에서 무인 방어하는 **3단계 상주형 무인 방어 엔진**을 공급합니다. 모든 고객 개인정보(성명·전화번호·주소·계좌번호·API 키)는 사내 PC 내부에서 100% 자동 마스킹 처리되며 외부 클라우드로 절대 유출되지 않습니다. (Last Updated: 2026-11-01)
 
 ---
 
@@ -105,7 +105,7 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
 
 - **상호명 (Organization)**: 디에이치랩스 (DH Labs)
 - **대표자 및 수석 시스템 아키텍트 (Founder & Lead Systems Architect)**: 김동형 (Donghyeong Kim)
-- **사업자등록번호 (Business Registration No.)**: `413-03-96950`
+- **사업자등록번호 (Business Registration No.)**: `610-16-92926`
 - **통신판매업신고번호**: 제 2025-경남김해-0881 호
 - **Apple Developer ID**: `GSKY37R7XV`
 - **사업장 소재지**: 경상남도 김해시 번화1로 168, 1006동 402호 (Republic of Korea)

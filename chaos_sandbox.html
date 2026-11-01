@@ -39,142 +39,160 @@
   <link rel="canonical" href="https://autoflow.io/chaos_sandbox.html">
   <title>AutoFlow 127ms Live Chaos Sandbox | 실시간 자가치유 인터랙티브 샌드박스</title>
     <!-- Structured Data (JSON-LD): Organization + Person + SoftwareApplication + BreadcrumbList + FAQPage -->
+    <!-- Structured Data (JSON-LD): Organization + Person + SoftwareApplication + BreadcrumbList + FAQPage -->
+    <!-- Structured Data (JSON-LD): Organization + Person + SoftwareApplication + VideoObject + BreadcrumbList + FAQPage -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://autoflow.io/#organization",
-      "name": "디에이치랩스 (DH Labs)",
-      "legalName": "디에이치랩스 (DH Labs)",
-      "founder": {
-        "@id": "https://autoflow.io/#founder"
-      },
-      "taxID": "413-03-96950",
-      "identifier": "413-03-96950",
-      "url": "https://autoflow.io/",
-      "sameAs": [
-        "https://github.com/globaltrendhunterai",
-        "https://dhlabs.gumroad.com",
-        "https://globaltrendhunterai.github.io/dhlabs/"
-      ],
-      "email": "dhlabs_biz0@naver.com",
-      "telephone": "+82-10-8503-6232",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "번화1로 168, 1006동 402호",
-        "addressLocality": "김해시",
-        "addressRegion": "경상남도",
-        "addressCountry": "KR"
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://autoflow.io/#founder",
-      "name": "Donghyeong Kim",
-      "alternateName": "김동형",
-      "jobTitle": "Founder & Lead Systems Architect",
-      "identifier": "GSKY37R7XV",
-      "description": "Founder & Lead Systems Architect at DH Labs (Business Reg. No. 413-03-96950, Apple Developer ID GSKY37R7XV), creator of AutoFlow Commerce Engine.",
-      "worksFor": {
-        "@id": "https://autoflow.io/#organization"
-      },
-      "sameAs": [
-        "https://github.com/globaltrendhunterai",
-        "https://globaltrendhunterai.github.io/dhlabs/"
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://autoflow.io/chaos_sandbox.html#breadcrumb",
-      "itemListElement": [
+  {
+    "@context": "https://schema.org",
+    "@graph": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "AutoFlow 스토어 홈",
-          "item": "https://autoflow.io/"
+            "@type": "Organization",
+            "@id": "https://autoflow.io/#organization",
+            "name": "디에이치랩스 (DH Labs)",
+            "legalName": "디에이치랩스 (DH Labs)",
+            "founder": {
+                "@id": "https://autoflow.io/#founder"
+            },
+            "taxID": "610-16-92926",
+            "identifier": "610-16-92926",
+            "url": "https://autoflow.io/",
+            "sameAs": [
+                "https://github.com/globaltrendhunterai",
+                "https://dhlabs.gumroad.com",
+                "https://globaltrendhunterai.github.io/dhlabs/"
+            ],
+            "email": "dhlabs_biz0@naver.com",
+            "telephone": "+82-10-8503-6232",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "번화1로 168, 1006동 402호",
+                "addressLocality": "김해시",
+                "addressRegion": "경상남도",
+                "addressCountry": "KR"
+            }
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "AutoFlow 127ms Live Chaos Sandbox | 실시간 자가치유 인터랙티브 샌드박스",
-          "item": "https://autoflow.io/chaos_sandbox.html"
+            "@type": "Person",
+            "@id": "https://autoflow.io/#founder",
+            "name": "Donghyeong Kim",
+            "alternateName": "김동형",
+            "jobTitle": "Founder & Lead Systems Architect",
+            "identifier": "GSKY37R7XV",
+            "description": "Founder & Lead Systems Architect at DH Labs (Business Reg. No. 610-16-92926, Apple Developer ID GSKY37R7XV), creator of AutoFlow Commerce Engine.",
+            "worksFor": {
+                "@id": "https://autoflow.io/#organization"
+            },
+            "sameAs": [
+                "https://github.com/globaltrendhunterai",
+                "https://globaltrendhunterai.github.io/dhlabs/"
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://autoflow.io/chaos_sandbox.html#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "AutoFlow 스토어 홈",
+                    "item": "https://autoflow.io/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "AutoFlow 127ms Live Chaos Sandbox | 실시간 자가치유 인터랙티브 샌드박스",
+                    "item": "https://autoflow.io/chaos_sandbox.html"
+                }
+            ]
+        },
+        {
+            "@type": "SoftwareApplication",
+            "@id": "https://autoflow.io/chaos_sandbox.html#software",
+            "name": "AutoFlow 127ms Live Chaos Sandbox | 실시간 자가치유 인터랙티브 샌드박스",
+            "operatingSystem": "macOS, Windows, Linux",
+            "applicationCategory": "DeveloperApplication",
+            "softwareVersion": "3.5.0",
+            "datePublished": "2026-01-15",
+            "dateModified": "2026-11-01",
+            "description": "AutoFlow 127ms 카오스 샌드박스(AutoFlow 127ms Live Chaos Sandbox)는 이커머스 운영 현장에서 발생하는 HTTP 429 레이트리밋 폭주, OAuth 2.0 액세스 토큰 만료, 개인정보(PII) 유출 공격, JSON 스키마 변조 등 실제 장애 시나리오를 브라우저에서 인위적으로 발생시키고, Rust Native 엔진이 외부 AI 도움 없이 평균 127ms 만에 비언어 결정론적으로 무인 복구하는 과정을 실시간 검증하는 대화형 테스트베드입니다. 70% 안전율 스풀링 및 4단계 사이버 기만 방어막을 라이브로 실측할 수 있습니다.",
+            "url": "https://autoflow.io/chaos_sandbox.html",
+            "author": {
+                "@id": "https://autoflow.io/#founder"
+            },
+            "publisher": {
+                "@id": "https://autoflow.io/#organization"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "39000",
+                "priceCurrency": "KRW",
+                "url": "https://autoflow.io/chaos_sandbox.html"
+            }
+        },
+        {
+            "@type": "VideoObject",
+            "@id": "https://autoflow.io/chaos_sandbox.html#demo-video",
+            "name": "AutoFlow 127ms Live Chaos Sandbox | 실시간 자가치유 인터랙티브 샌드박스 — 70% Safety Spool-Resume, 127ms Self-Healing & 1-Won Reconciliation Architecture Demo",
+            "description": "Architecture demonstration of AutoFlow 127ms Live Chaos Sandbox | 실시간 자가치유 인터랙티브 샌드박스 operating with 70% safety governor, 127ms self-healing, 1-won reconciliation, and 4-stage cyber deception defense.",
+            "thumbnailUrl": [
+                "https://autoflow.io/og_preview.png",
+                "https://globaltrendhunterai.github.io/dhlabs/og_preview.png"
+            ],
+            "uploadDate": "2026-11-01",
+            "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/demo.mp4",
+            "embedUrl": "https://autoflow.io/demo.mp4",
+            "publisher": {
+                "@id": "https://autoflow.io/#organization"
+            }
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://autoflow.io/chaos_sandbox.html#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "AutoFlow 127ms 카오스 샌드박스란 무엇인가? / What is AutoFlow 127ms Chaos Sandbox?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "AutoFlow 127ms 카오스 샌드박스(AutoFlow 127ms Live Chaos Sandbox)는 이커머스 운영 현장에서 발생하는 HTTP 429 레이트리밋 폭주, OAuth 2.0 액세스 토큰 만료, 개인정보(PII) 유출 공격, JSON 스키마 변조 등 실제 장애 시나리오를 브라우저에서 인위적으로 발생시키고, Rust Native 엔진이 외부 AI 도움 없이 평균 127ms 만에 비언어 결정론적으로 무인 복구하는 과정을 실시간 검증하는 대화형 테스트베드입니다. 70% 안전율 스풀링 및 4단계 사이버 기만 방어막을 라이브로 실측할 수 있습니다."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "70% 안전율 리미터 및 초과 물량 스풀 금고 자동 이어하기는 어떻게 작동하나요?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고, 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "127ms 무인 자가치유와 1원 단위 4자 정산 대사는 어떻게 무결성을 보장하나요?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며, 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "4단계 사이버 기만 방어 체계 및 포렌식 비콘 원장은 어떻게 작동하나요?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "core/cyber_deception_tarpit_sentinel.js가 다형성 카나리 허니토큰(AF-TKT-CANARY), 정상 사용자 오탐률 0%(<0.1ms 검증), HTTP 200 Tarpit 12단계 지연 미궁, 정보통신망법 제48조 준수 합법 포렌식 비콘 원장(INFO_COMM_ACT_ART48_COMPLIANT)으로 라이선스와 시스템을 철저히 보호합니다."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "사내 PC의 고객 주문 정보나 개인정보가 외부 서버나 AI로 유출되지 않나요 (100% Local PII Masking)?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "절대 유출되지 않습니다. AutoFlow는 사내 PC(127.0.0.1) 로컬 개인정보 100% 자동 마스킹(살균) 기술을 기본 탑재하여 구매자 성명, 연락처, 주소, 통관부호, API 키가 외부 클라우드로 단 1바이트도 반출되지 않습니다."
+                    }
+                }
+            ]
         }
-      ]
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://autoflow.io/chaos_sandbox.html#software",
-      "name": "AutoFlow 127ms Live Chaos Sandbox | 실시간 자가치유 인터랙티브 샌드박스",
-      "operatingSystem": "macOS, Windows, Linux",
-      "applicationCategory": "DeveloperApplication",
-      "softwareVersion": "3.5.0",
-      "datePublished": "2026-01-15",
-      "dateModified": "2026-11-01",
-      "description": "AutoFlow 127ms 카오스 샌드박스(AutoFlow 127ms Live Chaos Sandbox)는 이커머스 운영 현장에서 발생하는 HTTP 429 레이트리밋 폭주, OAuth 2.0 액세스 토큰 만료, 개인정보(PII) 유출 공격, JSON 스키마 변조 등 실제 장애 시나리오를 브라우저에서 인위적으로 발생시키고, Rust Native 엔진이 외부 AI 도움 없이 평균 127ms 만에 비언어 결정론적으로 무인 복구하는 과정을 실시간 검증하는 대화형 테스트베드입니다. 70% 안전율 스풀링 및 4단계 사이버 기만 방어막을 라이브로 실측할 수 있습니다.",
-      "url": "https://autoflow.io/chaos_sandbox.html",
-      "author": {
-        "@id": "https://autoflow.io/#founder"
-      },
-      "publisher": {
-        "@id": "https://autoflow.io/#organization"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "39000",
-        "priceCurrency": "KRW",
-        "url": "https://autoflow.io/chaos_sandbox.html"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://autoflow.io/chaos_sandbox.html#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "AutoFlow 127ms 카오스 샌드박스란 무엇인가? / What is AutoFlow 127ms Chaos Sandbox?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AutoFlow 127ms 카오스 샌드박스(AutoFlow 127ms Live Chaos Sandbox)는 이커머스 운영 현장에서 발생하는 HTTP 429 레이트리밋 폭주, OAuth 2.0 액세스 토큰 만료, 개인정보(PII) 유출 공격, JSON 스키마 변조 등 실제 장애 시나리오를 브라우저에서 인위적으로 발생시키고, Rust Native 엔진이 외부 AI 도움 없이 평균 127ms 만에 비언어 결정론적으로 무인 복구하는 과정을 실시간 검증하는 대화형 테스트베드입니다. 70% 안전율 스풀링 및 4단계 사이버 기만 방어막을 라이브로 실측할 수 있습니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "70% 안전율 리미터 및 초과 물량 스풀 금고 자동 이어하기는 어떻게 작동하나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고, 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "127ms 무인 자가치유와 1원 단위 4자 정산 대사는 어떻게 무결성을 보장하나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며, 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "VideoObject",
-      "@id": "https://autoflow.io/#demo-video",
-      "name": "AutoFlow Commerce Engine — 70% Safety Factor Spool-Resume, 127ms Self-Healing & 1-Won Reconciliation Demo",
-      "description": "Official architecture demonstration of AutoFlow Commerce Engine regulating API bursts at 70% safety factor (42/60), auto-draining overflow spool items, healing 429/5xx errors in 127ms, and cross-checking 4-way settlements down to 1 KRW.",
-      "thumbnailUrl": [
-        "https://autoflow.io/og_preview.png",
-        "https://globaltrendhunterai.github.io/dhlabs/og_preview.png"
-      ],
-      "uploadDate": "2026-11-01",
-      "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/demo.mp4",
-      "embedUrl": "https://autoflow.io/demo.mp4",
-      "publisher": {
-        "@id": "https://autoflow.io/#organization"
-      }
-    }
-  ]
-}
+    ]
+  }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

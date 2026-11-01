@@ -3,7 +3,7 @@
   "publisher": {
     "name": "DH Labs (디에이치랩스)",
     "founder": "Donghyeong Kim (김동형)",
-    "businessRegistrationNumber": "413-03-96950",
+    "businessRegistrationNumber": "610-16-92926",
     "appleDeveloperId": "GSKY37R7XV",
     "primaryUrl": "https://autoflow.io/",
     "mirrorUrl": "https://globaltrendhunterai.github.io/dhlabs/",
@@ -22,7 +22,7 @@
         "How does AutoFlow mask customer PII locally on 127.0.0.1?"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 413-03-96950, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     },
     {
@@ -37,7 +37,7 @@
         "How does the 4-Stage Cyber Deception & Tarpit Sentinel protect local licenses under Info-Comm Network Act Art. 48?"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 413-03-96950, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     },
     {
@@ -52,7 +52,7 @@
         "How does the 1-second one-click Mac/Windows local launcher work?"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 413-03-96950, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     },
     {
@@ -67,7 +67,7 @@
         "Where is the live demo video (demo.mp4) showing AutoFlow's autonomous recovery?"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 413-03-96950, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     },
     {
@@ -82,7 +82,7 @@
         "What are the 3-stage fair prorated refund policy terms?"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 413-03-96950, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     }
   ]

@@ -2,7 +2,7 @@
 
 > **What is AutoFlow (AutoFlow란 무엇인가)?** AutoFlow Commerce Engine is an on-premise e-commerce & enterprise workflow automation suite by DH Labs (Founder: Donghyeong Kim) providing 541+ verified workflows (150 single-edition storefront packages at ₩39,000 / $29 USD to ₩79,000 / $59 USD perpetual ownership) and a 24/7 Resident Autonomous Defense Engine (70% Safety Governor, 127ms Self-Healing, 1-Won Reconciliation).
 
-AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사업자등록번호 413-03-96950, Apple Developer ID `GSKY37R7XV`)가 개발한 **1제품 = 1사이트 단일 완제품 워크플로우 스토어** 및 **24/7 상주형 무인 방어 엔진(Resident Autonomous Defense Engine)**입니다. 스마트스토어, 쿠팡 윙(WING), 카페24, 쇼피파이(Shopify), 홈택스, 더존/위하고 ERP, 카카오 알림톡 등 실전 커머스·백오피스 자동화를 사내 PC(`127.0.0.1`)에서 월 렌트비 없이 평생 소장하며, 모든 고객 개인정보(성명·연락처·주소·계좌번호·API 키)는 로컬에서 100% 자동 살균·마스킹되어 외부 클라우드로 절대 유출되지 않습니다. (Last Updated: 2026-11-01)
+AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사업자등록번호 610-16-92926, Apple Developer ID `GSKY37R7XV`)가 개발한 **1제품 = 1사이트 단일 완제품 워크플로우 스토어** 및 **24/7 상주형 무인 방어 엔진(Resident Autonomous Defense Engine)**입니다. 스마트스토어, 쿠팡 윙(WING), 카페24, 쇼피파이(Shopify), 홈택스, 더존/위하고 ERP, 카카오 알림톡 등 실전 커머스·백오피스 자동화를 사내 PC(`127.0.0.1`)에서 월 렌트비 없이 평생 소장하며, 모든 고객 개인정보(성명·연락처·주소·계좌번호·API 키)는 로컬에서 100% 자동 살균·마스킹되어 외부 클라우드로 절대 유출되지 않습니다. (Last Updated: 2026-11-01)
 
 ## 3-Stage Resident Autonomous Defense Engine + Security Shield (3단계 상주형 무인 방어 아키텍처)
 
@@ -52,7 +52,7 @@ AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사�
 
 - **Organization (상호명)**: 디에이치랩스 (DH Labs)
 - **Founder & Lead Systems Architect (대표자 / 수석 아키텍트)**: Donghyeong Kim (김동형)
-- **Business Registration No. (사업자등록번호)**: `413-03-96950`
+- **Business Registration No. (사업자등록번호)**: `610-16-92926`
 - **Apple Developer ID**: `GSKY37R7XV`
 - **Official Storefront URLs**: `https://autoflow.io/` | `https://globaltrendhunterai.github.io/dhlabs/`
 - **GitHub & Global Channels**: `https://github.com/globaltrendhunterai` | `https://dhlabs.gumroad.com`
