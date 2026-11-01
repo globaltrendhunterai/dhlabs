@@ -1669,6 +1669,7 @@
         <div>
           <span style="font-weight: 800; color: #166534; font-size: 12px;">🛡️ 상주형 방어 엔진 — 70% 안전율 리미터 &amp; 초과 물량 스풀 금고 이어하기 댐 (Safety Governor &amp; Spool Dam)</span>
           <span id="govStatusBadge" style="margin-left: 6px; background: #16a34a; color: #ffffff; padding: 2px 7px; border-radius: 999px; font-size: 10px; font-weight: 800;">70% RATED GOVERNOR ACTIVE</span>
+          <span id="cyberDeceptionStatusBadge" style="margin-left: 4px; background: #0f172a; color: #38bdf8; padding: 2px 7px; border-radius: 999px; font-size: 10px; font-weight: 800; border: 1px solid #0284c7;">🛡️ 4-STAGE CYBER DECEPTION GUARD ACTIVE</span>
         </div>
         <div style="display: flex; gap: 6px; flex-wrap: wrap;">
           <button type="button" onclick="simulateGovernorBurst150()" style="background: #166534; color: #ffffff; border: none; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer;">⚡ 150건 폭주 유입 (70% 절단·스풀 적재 테스트)</button>
@@ -1676,7 +1677,8 @@
         </div>
       </div>
       <div style="color: #15803d; font-size: 11px; margin-bottom: 8px;">
-        • <b>작동 원리 (불법 복제 JSON 미작동 · 상주형 엔진 전용)</b>: 워크플로우 단독 실행 시에는 리미터가 없어 대량 주문 유입 시 API 한계치(구글시트 분당 60건·쿠팡 초당 한계) 충돌로 <code style="color:#b91c1c;font-weight:700;">429 차단</code>이 발생합니다. 상주형 방어 엔진이 켜져 있으면 <b>물리 한계치의 70%(예: 42건)만 안전 통과</b>시키고, <b>넘어간 초과 물량은 로컬 스풀 금고(<code style="color:#166534;">overflow_spool</code>)에 모아두었다가 쿨다운 후 42건씩 자동으로 꺼내어 잔여 0건까지 무중단 이어하기</b>로 완주합니다.
+        • <b>작동 원리 (불법 복제 JSON 미작동 · 상주형 엔진 전용)</b>: 워크플로우 단독 실행 시에는 리미터가 없어 대량 주문 유입 시 API 한계치(구글시트 분당 60건·쿠팡 초당 한계) 충돌로 <code style="color:#b91c1c;font-weight:700;">429 차단</code>이 발생합니다. 상주형 방어 엔진이 켜져 있으면 <b>물리 한계치의 70%(예: 42건)만 안전 통과</b>시키고, <b>넘어간 초과 물량은 로컬 스풀 금고(<code style="color:#166534;">overflow_spool</code>)에 모아두었다가 쿨다운 후 42건씩 자동으로 꺼내어 잔여 0건까지 무중단 이어하기</b>로 완주합니다.<br/>
+        • <b>4단계 사이버 기만 방어 (Polymorphic Canary Honeytokens &amp; Tarpit Labyrinth)</b>: 다형성 허니토큰 미끼(<code style="color:#0369a1;">AF-TKT-CANARY</code>) 및 Tarpit 지연 미궁·합법 포렌식 비콘(정보통신망법 제48조 준수)으로 무단 역공학·크래킹 시도를 실시간 격리합니다.
       </div>
       <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; background: #ffffff; border: 1px solid #bbf7d0; border-radius: 8px; padding: 8px 10px; font-size: 11px; text-align: center;">
         <div>
@@ -1711,9 +1713,16 @@
             if (!res.ok) return;
             const data = await res.json();
             const badge = document.getElementById('govStatusBadge');
+            const decBadge = document.getElementById('cyberDeceptionStatusBadge');
+            const isTarpit = Boolean(data.tarpit_active || data.deception_trap_triggered || data.status === 'DECEPTION_TARPIT_QUARANTINE');
             if (badge) {
-              badge.textContent = data.governor_active ? '70% RATED GOVERNOR ACTIVE' : 'UNREGULATED (만료/비활성)';
-              badge.style.background = data.governor_active ? '#16a34a' : '#d97706';
+              badge.textContent = isTarpit ? 'DECEPTION_TARPIT_QUARANTINE' : (data.governor_active ? '70% RATED GOVERNOR ACTIVE' : 'UNREGULATED (만료/비활성)');
+              badge.style.background = isTarpit ? '#b91c1c' : (data.governor_active ? '#16a34a' : '#d97706');
+            }
+            if (decBadge) {
+              decBadge.textContent = isTarpit ? '🚨 DECEPTION_TARPIT_QUARANTINE' : '🛡️ 4-STAGE CYBER DECEPTION GUARD ACTIVE';
+              decBadge.style.background = isTarpit ? '#7f1d1d' : '#0f172a';
+              decBadge.style.color = isTarpit ? '#fecaca' : '#38bdf8';
             }
             const spooledEl = document.getElementById('govMetricSpooled');
             const drainedEl = document.getElementById('govMetricDrained');
@@ -1732,6 +1741,7 @@
             amount: 39000
           }));
           const badge = document.getElementById('govStatusBadge');
+          const decBadge = document.getElementById('cyberDeceptionStatusBadge');
           const appEl = document.getElementById('govMetricApproved');
           const spEl = document.getElementById('govMetricSpooled');
           const msgEl = document.getElementById('govLiveLogLine');
@@ -1747,6 +1757,12 @@
             });
             if (res.ok) {
               const d = await res.json();
+              const isTarpit = Boolean(d.tarpit_active || d.deception_trap_triggered || d.status === 'DECEPTION_TARPIT_QUARANTINE');
+              if (decBadge) {
+                decBadge.textContent = isTarpit ? '🚨 DECEPTION_TARPIT_QUARANTINE' : '🛡️ 4-STAGE CYBER DECEPTION GUARD ACTIVE';
+                decBadge.style.background = isTarpit ? '#7f1d1d' : '#0f172a';
+                decBadge.style.color = isTarpit ? '#fecaca' : '#38bdf8';
+              }
               if (d.governor_active) {
                 if (badge) {
                   badge.textContent = '70% RATED GOVERNOR ACTIVE';
@@ -1763,12 +1779,12 @@
                 if (msgEl) msgEl.textContent = d.message || '[REGULATED] 완료';
               } else {
                 if (badge) {
-                  badge.textContent = 'UNREGULATED (만료/비활성)';
-                  badge.style.background = '#d97706';
+                  badge.textContent = isTarpit ? 'DECEPTION_TARPIT_QUARANTINE' : 'UNREGULATED (만료/비활성)';
+                  badge.style.background = isTarpit ? '#b91c1c' : '#d97706';
                 }
                 if (appEl) {
-                  appEl.textContent = `${d.approved_count}건 무제한 직결 (위험)`;
-                  appEl.style.color = '#fbbf24';
+                  appEl.textContent = isTarpit ? '0건 차단 (Tarpit 격리)' : `${d.approved_count}건 무제한 직결 (위험)`;
+                  appEl.style.color = isTarpit ? '#f87171' : '#fbbf24';
                 }
                 if (spEl) spEl.textContent = '0건 (스풀 비활성)';
                 if (msgEl) msgEl.textContent = d.message || d.overload_risk_warning || '라이선스 비활성: 무제한 직결 통과';
