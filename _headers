@@ -4,6 +4,8 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(self "https://*.tosspayments.com" "https://*.lemonsqueezy.com"), usb=()
   Link: <https://autoflow.io/llms.txt>; rel="describedby"; type="text/plain"
+  Link: <https://autoflow.io/ai-catalog.json>; rel="ai-catalog"; type="application/ai-catalog+json"
+  Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8
@@ -11,6 +13,14 @@
 
 /llms-full.txt
   Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/ai-catalog.json
+  Content-Type: application/ai-catalog+json; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/.well-known/ai-catalog.json
+  Content-Type: application/ai-catalog+json; charset=utf-8
   Cache-Control: public, max-age=3600
 
 /rss.xml

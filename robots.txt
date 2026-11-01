@@ -1,22 +1,23 @@
-# AutoFlow Official Store SEO & AI Search Crawler Policy (v5.0 - Naver/Google/AI GEO Ready)
-User-agent: Yeti
-Allow: /
-Allow: /llms.txt
-Allow: /llms-full.txt
-Allow: /rss.xml
-Disallow: /setup_wizard.html
-Disallow: /order_success.html
-Disallow: /order_fail.html
-Disallow: /master_control_console.html
-Disallow: /audit_dashboard.html
-Disallow: /MARKETING_DISTRIBUTION_HUB.html
-Disallow: /recon_quarantine_viewer.html
-Disallow: /api/
+# AutoFlow Official Store SEO, GEO & Agentic Browsing Crawler Policy (v6.0 - 2026-11-01)
+# Reference: claude-seo (seo-geo & seo-agentic) RFC 9309 + Content-Signal + ARD 1.0
+# Note: Search Citability Crawlers (OAI-SearchBot, Claude-SearchBot, PerplexityBot, Googlebot, Applebot, Yeti, Bingbot)
+#       are explicitly separated from AI Model Training/Grounding Tokens (GPTBot, ClaudeBot, Google-Extended,
+#       Google-CloudVertexBot, Applebot-Extended). Every named group carries its own Content-Signal per RFC 9309.
 
+# ==============================================================================
+# 1. Traditional Search & AI Overviews / Search Citability Crawlers
+# ==============================================================================
 User-agent: Googlebot
+User-agent: Yeti
+User-agent: Bingbot
+User-agent: Applebot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
+Allow: /ai-catalog.json
+Allow: /.well-known/ai-catalog.json
+Allow: /sitemap.xml
 Allow: /rss.xml
 Disallow: /setup_wizard.html
 Disallow: /order_success.html
@@ -27,67 +28,19 @@ Disallow: /MARKETING_DISTRIBUTION_HUB.html
 Disallow: /recon_quarantine_viewer.html
 Disallow: /api/
 
-User-agent: GPTBot
-Allow: /
-Allow: /llms.txt
-Allow: /llms-full.txt
-Disallow: /setup_wizard.html
-Disallow: /order_success.html
-Disallow: /order_fail.html
-Disallow: /master_control_console.html
-Disallow: /audit_dashboard.html
-Disallow: /MARKETING_DISTRIBUTION_HUB.html
-Disallow: /recon_quarantine_viewer.html
-Disallow: /api/
-
+# ==============================================================================
+# 2. Dedicated AI Search Indexing & Citability Crawlers
+# ==============================================================================
 User-agent: OAI-SearchBot
-Allow: /
-Allow: /llms.txt
-Allow: /llms-full.txt
-Disallow: /setup_wizard.html
-Disallow: /order_success.html
-Disallow: /order_fail.html
-Disallow: /api/
-
-User-agent: ChatGPT-User
-Allow: /
-Allow: /llms.txt
-Allow: /llms-full.txt
-Disallow: /setup_wizard.html
-Disallow: /order_success.html
-Disallow: /order_fail.html
-Disallow: /api/
-
+User-agent: Claude-SearchBot
 User-agent: PerplexityBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 Allow: /llms.txt
 Allow: /llms-full.txt
-Disallow: /setup_wizard.html
-Disallow: /order_success.html
-Disallow: /order_fail.html
-Disallow: /master_control_console.html
-Disallow: /audit_dashboard.html
-Disallow: /MARKETING_DISTRIBUTION_HUB.html
-Disallow: /recon_quarantine_viewer.html
-Disallow: /api/
-
-User-agent: ClaudeBot
-Allow: /
-Allow: /llms.txt
-Allow: /llms-full.txt
-Disallow: /setup_wizard.html
-Disallow: /order_success.html
-Disallow: /order_fail.html
-Disallow: /master_control_console.html
-Disallow: /audit_dashboard.html
-Disallow: /MARKETING_DISTRIBUTION_HUB.html
-Disallow: /recon_quarantine_viewer.html
-Disallow: /api/
-
-User-agent: *
-Allow: /
-Allow: /llms.txt
-Allow: /llms-full.txt
+Allow: /ai-catalog.json
+Allow: /.well-known/ai-catalog.json
+Allow: /sitemap.xml
 Allow: /rss.xml
 Disallow: /setup_wizard.html
 Disallow: /order_success.html
@@ -98,5 +51,78 @@ Disallow: /MARKETING_DISTRIBUTION_HUB.html
 Disallow: /recon_quarantine_viewer.html
 Disallow: /api/
 
+# ==============================================================================
+# 3. User-Triggered AI Browsing & Agentic Fetchers
+# ==============================================================================
+User-agent: ChatGPT-User
+User-agent: Claude-User
+User-agent: Perplexity-User
+User-agent: Google-Agent
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai-catalog.json
+Allow: /.well-known/ai-catalog.json
+Allow: /sitemap.xml
+Allow: /rss.xml
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /master_control_console.html
+Disallow: /audit_dashboard.html
+Disallow: /MARKETING_DISTRIBUTION_HUB.html
+Disallow: /recon_quarantine_viewer.html
+Disallow: /api/
+
+# ==============================================================================
+# 4. AI Grounding & Foundation Model Training Crawlers / Control Tokens
+# ==============================================================================
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Google-CloudVertexBot
+User-agent: Applebot-Extended
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai-catalog.json
+Allow: /.well-known/ai-catalog.json
+Allow: /sitemap.xml
+Allow: /rss.xml
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /master_control_console.html
+Disallow: /audit_dashboard.html
+Disallow: /MARKETING_DISTRIBUTION_HUB.html
+Disallow: /recon_quarantine_viewer.html
+Disallow: /api/
+
+# ==============================================================================
+# 5. Default Fallback Group (RFC 9309)
+# ==============================================================================
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai-catalog.json
+Allow: /.well-known/ai-catalog.json
+Allow: /sitemap.xml
+Allow: /rss.xml
+Disallow: /setup_wizard.html
+Disallow: /order_success.html
+Disallow: /order_fail.html
+Disallow: /master_control_console.html
+Disallow: /audit_dashboard.html
+Disallow: /MARKETING_DISTRIBUTION_HUB.html
+Disallow: /recon_quarantine_viewer.html
+Disallow: /api/
+
+Agentmap: https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json
+Agentmap: https://autoflow.io/ai-catalog.json
+Sitemap: https://globaltrendhunterai.github.io/dhlabs/sitemap.xml
 Sitemap: https://autoflow.io/sitemap.xml
-# AI / LLM Context Map (llmstxt.org standard): https://autoflow.io/llms.txt
+# AI / LLM Context Map (llmstxt.org standard): https://autoflow.io/llms.txt | https://globaltrendhunterai.github.io/dhlabs/llms.txt

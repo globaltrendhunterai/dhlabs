@@ -1,0 +1,89 @@
+{
+  "specVersion": "1.0",
+  "publisher": {
+    "name": "DH Labs (디에이치랩스)",
+    "founder": "Donghyeong Kim (김동형)",
+    "businessRegistrationNumber": "413-03-96950",
+    "appleDeveloperId": "GSKY37R7XV",
+    "primaryUrl": "https://autoflow.io/",
+    "mirrorUrl": "https://globaltrendhunterai.github.io/dhlabs/",
+    "lastModified": "2026-11-01"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:autoflow.io:llms:summary",
+      "displayName": "AutoFlow AI Context Summary (llms.txt)",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://autoflow.io/llms.txt",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/llms.txt",
+      "representativeQueries": [
+        "What is AutoFlow Commerce Engine and how does its 3-stage Resident Autonomous Defense Engine work?",
+        "AutoFlow(오토플로우) 단품 워크플로우(₩39,000~₩79,000)와 상주형 무인 엔진 기간권 가격표는?",
+        "How does AutoFlow mask customer PII locally on 127.0.0.1?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 413-03-96950, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    },
+    {
+      "identifier": "urn:air:autoflow.io:llms:full-knowledge-base",
+      "displayName": "AutoFlow Full Bilingual Technical & Pricing Knowledge Base (llms-full.txt)",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://autoflow.io/llms-full.txt",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/llms-full.txt",
+      "representativeQueries": [
+        "How does the 70% Safety Factor Rate Governor & Local Disk Overflow Spool-Resume Dam prevent HTTP 429 bans?",
+        "How does the 127ms Non-LLM Deterministic Self-Healing Engine repair API schema drift?",
+        "How does the 4-Stage Cyber Deception & Tarpit Sentinel protect local licenses under Info-Comm Network Act Art. 48?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 413-03-96950, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    },
+    {
+      "identifier": "urn:air:autoflow.io:catalog:workflow-menu-board",
+      "displayName": "AutoFlow 150 Single-Edition Workflow Catalog (WORKFLOW_MENU_BOARD.html)",
+      "type": "application/ai-catalog+json",
+      "url": "https://autoflow.io/WORKFLOW_MENU_BOARD.html",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html",
+      "representativeQueries": [
+        "Which single-edition e-commerce workflows are available for Naver SmartStore, Coupang Wing, Cafe24, and Shopify?",
+        "What is the price of a single perpetual workflow package in KRW and USD?",
+        "How does the 1-second one-click Mac/Windows local launcher work?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 413-03-96950, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    },
+    {
+      "identifier": "urn:air:autoflow.io:simulator:chaos-sandbox",
+      "displayName": "AutoFlow 127ms Self-Healing & 70% Spool-Resume Chaos Sandbox (chaos_sandbox.html)",
+      "type": "application/agent-card+json",
+      "url": "https://autoflow.io/chaos_sandbox.html",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html",
+      "representativeQueries": [
+        "How can I test 127ms self-healing against HTTP 429 rate limits and 504 gateway timeouts?",
+        "How does the 1-Won 4-Way Settlement Reconciliation Engine isolate ledger discrepancies?",
+        "Where is the live demo video (demo.mp4) showing AutoFlow's autonomous recovery?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 413-03-96950, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    },
+    {
+      "identifier": "urn:air:autoflow.io:commerce:checkout-portal",
+      "displayName": "AutoFlow Official Dual-Gateway Checkout Portal (checkout.html)",
+      "type": "application/mcp-server-card+json",
+      "url": "https://autoflow.io/checkout.html",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/checkout.html",
+      "representativeQueries": [
+        "How do I purchase an AutoFlow single workflow or 30/90/365-day Resident Autonomous Defense Engine pass in KRW or USD?",
+        "What is the price difference between Managed Mode and Developer MCP Mode?",
+        "What are the 3-stage fair prorated refund policy terms?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 413-03-96950, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    }
+  ]
+}
