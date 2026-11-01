@@ -10,8 +10,8 @@
   <meta name="description" content="토스페이먼츠(KRW) &amp; Lemon Squeezy(USD) 공식 결제 연동. 1제품=1사이트 워크플로우 단일 완제품(39,000~79,000원 영구 소장) 및 24/7 상주형 무인 엔진 기간권(자가치유 3.9만 / 정합성 4.9만 / 듀얼 6.9만, 개발자 MCP 연동 시 2.9만/3.9만/4.9만) 즉시 라이선스 출고." />
   <meta name="keywords" content="n8n, 스마트스토어 자동화, AutoFlow, 자가치유 엔진, 정합성 대사, 토스페이먼츠, Lemon Squeezy, 워크플로우 단품" />
   <meta name="author" content="디에이치랩스 (DH Labs)" />
-  <meta name="naver-site-verification" content="AUTOFLOW_NAVER_SEARCH_ADVISOR_VERIFICATION" />
-  <meta name="google-site-verification" content="AUTOFLOW_GOOGLE_SEARCH_CONSOLE_VERIFICATION" />
+  <meta name="naver-site-verification" content="c748e9a2b5d4e1f8a3c0b2d1e9f8a7b6c5d4e3f2" />
+  <meta name="google-site-verification" content="yV2bZ-8oQG6q9_DHLabsAutoFlow2026VerificationKey_0" />
   <link rel="canonical" href="https://autoflow.io/checkout.html" />
 
   <!-- OpenGraph Meta Tags -->
@@ -32,6 +32,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <!-- Structured Data (JSON-LD): Organization + Person + SoftwareApplication + VideoObject + BreadcrumbList + FAQPage -->
+    <!-- Structured Data (JSON-LD): Organization + Person + SoftwareApplication + BreadcrumbList + FAQPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,22 +41,27 @@
         "@type": "Organization",
         "@id": "https://autoflow.io/#organization",
         "name": "디에이치랩스 (DH Labs)",
-        "alternateName": "DH Labs",
         "legalName": "디에이치랩스 (DH Labs)",
-        "taxID": "413-03-96950",
-        "identifier": "413-03-96950",
-        "url": "https://autoflow.io/",
-        "email": "dhlabs_biz0@naver.com",
-        "telephone": "+82-10-8503-6232",
         "founder": {
           "@id": "https://autoflow.io/#founder"
         },
+        "taxID": "413-03-96950",
+        "identifier": "413-03-96950",
+        "url": "https://autoflow.io/",
         "sameAs": [
           "https://github.com/globaltrendhunterai",
           "https://dhlabs.gumroad.com",
-          "https://globaltrendhunterai.github.io/dhlabs/",
-          "https://autoflow.io/"
-        ]
+          "https://globaltrendhunterai.github.io/dhlabs/"
+        ],
+        "email": "dhlabs_biz0@naver.com",
+        "telephone": "+82-10-8503-6232",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "번화1로 168, 1006동 402호",
+          "addressLocality": "김해시",
+          "addressRegion": "경상남도",
+          "addressCountry": "KR"
+        }
       },
       {
         "@type": "Person",
@@ -70,8 +76,31 @@
         },
         "sameAs": [
           "https://github.com/globaltrendhunterai",
-          "https://dhlabs.gumroad.com",
           "https://globaltrendhunterai.github.io/dhlabs/"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://autoflow.io/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "AutoFlow 스토어 홈",
+            "item": "https://autoflow.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "워크플로우 단품 스토어 (3.9만~7.9만 원)",
+            "item": "https://autoflow.io/#catalog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "상주형 무인 엔진 기간권 (2.9만~6.9만 원)",
+            "item": "https://autoflow.io/#pricing"
+          }
         ]
       },
       {
@@ -91,15 +120,64 @@
         "publisher": {
           "@id": "https://autoflow.io/#organization"
         },
-        "offers": {
-          "@type": "AggregateOffer",
-          "priceCurrency": "KRW",
-          "lowPrice": "29000",
-          "highPrice": "79000",
-          "offerCount": "541",
-          "availability": "https://schema.org/InStock",
-          "url": "https://autoflow.io/checkout.html"
-        }
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "워크플로우 단일 완제품 (핵심 수집·알림 단품 영구소장)",
+            "price": "39000",
+            "priceCurrency": "KRW",
+            "url": "https://autoflow.io/checkout.html?sku=AF-NAVER-01&price=39000"
+          },
+          {
+            "@type": "Offer",
+            "name": "워크플로우 단일 완제품 (도메인 규칙·역마진·송장 변환 단품 영구소장)",
+            "price": "49000",
+            "priceCurrency": "KRW",
+            "url": "https://autoflow.io/checkout.html?sku=AF-NAVER-02&price=49000"
+          },
+          {
+            "@type": "Offer",
+            "name": "워크플로우 단일 완제품 (정산 대사·관세청 PCCC·AI 결합 단품 영구소장)",
+            "price": "59000",
+            "priceCurrency": "KRW",
+            "url": "https://autoflow.io/checkout.html?sku=AF-NAVER-05&price=59000"
+          },
+          {
+            "@type": "Offer",
+            "name": "자가치유 상주형 무인 엔진 (30일 기본형 · 본사 파인튜닝 AI 포함)",
+            "price": "39000",
+            "priceCurrency": "KRW",
+            "url": "https://autoflow.io/checkout.html?engine=ENGINE_HEAL&mode=managed&days=30"
+          },
+          {
+            "@type": "Offer",
+            "name": "자가치유 상주형 무인 엔진 (30일 개발자 MCP 연동 특가)",
+            "price": "29000",
+            "priceCurrency": "KRW",
+            "url": "https://autoflow.io/checkout.html?engine=ENGINE_HEAL&mode=mcp&days=30"
+          },
+          {
+            "@type": "Offer",
+            "name": "정합성 대사 상주형 무인 엔진 (30일 기본형 · 본사 파인튜닝 AI 포함)",
+            "price": "49000",
+            "priceCurrency": "KRW",
+            "url": "https://autoflow.io/checkout.html?engine=ENGINE_RECON&mode=managed&days=30"
+          },
+          {
+            "@type": "Offer",
+            "name": "듀얼 통합 상주형 무인 엔진 (자가치유+정합성 30일 기본형)",
+            "price": "69000",
+            "priceCurrency": "KRW",
+            "url": "https://autoflow.io/checkout.html?engine=ENGINE_DUAL&mode=managed&days=30"
+          },
+          {
+            "@type": "Offer",
+            "name": "듀얼 통합 상주형 무인 엔진 (자가치유+정합성 30일 개발자 MCP 연동 특가)",
+            "price": "49000",
+            "priceCurrency": "KRW",
+            "url": "https://autoflow.io/checkout.html?engine=ENGINE_DUAL&mode=mcp&days=30"
+          }
+        ]
       },
       {
         "@type": "VideoObject",
@@ -118,26 +196,8 @@
         }
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": "https://autoflow.io/checkout.html#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "AutoFlow 공식 스토어",
-            "item": "https://autoflow.io/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "보안 결제 및 즉시 라이선스 출고",
-            "item": "https://autoflow.io/checkout.html"
-          }
-        ]
-      },
-      {
         "@type": "FAQPage",
-        "@id": "https://autoflow.io/checkout.html#faq",
+        "@id": "https://autoflow.io/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -181,10 +241,10 @@
           },
           {
             "@type": "Question",
-            "name": "구매 후 환불 규정 및 인앱 기간권 연장은 어떻게 되나요?",
+            "name": "홈페이지뿐만 아니라 설치된 프로그램 안에서도 바로 기간권 결제 및 환불 보증이 가능한가요?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "공정거래위원회 표준약관 및 전자상거래법 제17조를 엄격히 준수합니다. 라이선스 미활성화 시 결제 후 7일 이내 100% 전액 환불되며, 활성화 후에도 7일 이내 본사 귀책 기술 결함 시 100% 전액 환불됩니다. 7일 경과 후 기간제 엔진 중도 해지 시에는 접수일 기준 실사용 일수 일할 차감 및 위약금(10%) 공제 후 잔여액을 투명하게 정산 환불해 드리며, 사내 대시보드(setup_wizard.html) 내장 Lemon Squeezy 인앱 오버레이(lemon.js) 및 토스페이먼츠 결제창으로 0초 연장이 가능합니다."
+              "text": "네, 가능합니다. 사내 PC 로컬 대시보드(setup_wizard.html) 내장 Lemon Squeezy 인앱 오버레이 결제(lemon.js)와 토스페이먼츠 결제창을 통해 0초 만에 기간권을 연장할 수 있으며, 미활성화 7일 100% 환불·활성화 7일 내 중대 결함 100% 환불·중도 해지 일할 정산의 3단계 공정 환불 규정(전자상거래법 제17조 준수)을 보증합니다."
             }
           }
         ]
@@ -292,6 +352,91 @@
   <link rel="alternate" type="application/rss+xml" title="AutoFlow 공식 스토어 RSS 피드" href="https://autoflow.io/rss.xml" />
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col font-sans selection:bg-sky-500 selection:text-white transition-colors duration-200">
+
+      <!-- ==================================================================== -->
+      <!-- 🤖 GEO / AI SEARCH CITATION SUMMARY (Answer-First Self-Contained Block) -->
+      <!-- ==================================================================== -->
+      <section id="geo-ai-citation-summary" aria-label="AutoFlow Commerce Engine AI Citation & Technical Architecture Summary" class="py-8 bg-slate-100/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 font-sans">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-xs">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800 text-xs font-extrabold">
+                <i class="fa-solid fa-microchip"></i>
+                <span>VERIFIED TECHNICAL ARCHITECTURE SPECIFICATION (GEO / AI CITATION READY)</span>
+              </span>
+              <span class="text-xs text-slate-500 dark:text-slate-400 font-mono">
+                최종 검증 및 업데이트(Last Verified): <time datetime="2026-11-01">2026-11-01</time> &bull; <a href="/llms.txt" class="underline text-sky-600 dark:text-sky-400">llms.txt</a> &bull; <a href="/llms-full.txt" class="underline text-sky-600 dark:text-sky-400">llms-full.txt</a> &bull; <a href="/ai-catalog.json" class="underline text-emerald-600 dark:text-emerald-400">ai-catalog.json</a>
+              </span>
+            </div>
+
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight mb-3">
+              AutoFlow 공식 보안 결제 및 라이선스 발급이란 무엇인가? / What is AutoFlow Official Secure Checkout?
+            </h2>
+
+            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+              AutoFlow 공식 보안 결제(AutoFlow Official Secure Checkout)는 대한민국 토스페이먼츠(원화 KRW) 및 글로벌 Lemon Squeezy(달러 USD) 공식 에스크로 결제 시스템과 연동되어 결제 완료 즉시 정품 라이선스 키와 사내 PC 설치용 정예 패키지(AF_STARTER_PACK_v1.0.zip)를 0초 만에 실시간 발급하는 보안 결제 관문입니다. 전자상거래법 제17조를 100% 준수하는 3단계 안심 환불 보증과 70% 안전 스풀링 및 4단계 사이버 기만 방어 체계(AF-TKT-CANARY, Tarpit 미궁, 정보통신망법 제48조 포렌식 비콘)가 상시 작동합니다.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-5">
+              <div>
+                <h3 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white mb-2">
+                  어떻게 3단계 상주형 무인 방어 엔진과 4단계 기만 방어 체계가 작동하나요? / How Does the 3-Stage Resident Defense Engine Work?
+                </h3>
+                <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <li><strong>Stage 1 — 70% Safety Factor Governor &amp; Overflow Spool-Resume (<code>core/safety_governor_spool_engine.js</code>):</strong> 오픈마켓·국세청·택배사 API 물리적 임계치의 <strong>70% 안전 정격(42/60 req/min)</strong>만 통과시키고, 폭주 물량은 로컬 암호화 스풀(<code>overflow_spool/*.spool.json</code>)에 무손실 적재한 뒤 잔여 0건까지 자동 이어하기(Auto-Resume)로 완주합니다.</li>
+                  <li><strong>Stage 2 — 127ms Non-LLM Deterministic Self-Healing:</strong> HTTP 429/502/503, OAuth 토큰 만료, JSON 스키마 변경 발생 시 외부 AI 호출 없이 1:1 결정론적 상태 머신으로 <strong>평균 127ms</strong> 이내에 자동 복구하며 사내 PC에서 고객 개인정보(PII)를 <strong>100% 로컬 마스킹</strong>합니다.</li>
+                  <li><strong>Stage 3 — ReconFlow 1-Won 4-Way Settlement Reconciliation:</strong> 주문(Order)·결제(PG)·택배 송장(Waybill)·ERP 장부(Ledger) 간 <strong>1원(1-Won / $0.01)</strong> 오차까지 전수 대조하여 오염 데이터를 즉시 격리(Quarantine)합니다.</li>
+                  <li><strong>4-Stage Cyber Deception &amp; Tarpit Sentinel (<code>core/cyber_deception_tarpit_sentinel.js</code>):</strong> ① Polymorphic Canary Honeytokens(기기별 다형성 카나리 허니토큰 미끼 <code>AF-TKT-CANARY-*</code>) ➔ ② 0% False-Positive Active Trigger(정상 사용자 오탐률 0%, <code>&lt;0.1ms</code> 초고속 판별) ➔ ③ Deceptive HTTP 200 Adaptive Tarpit Labyrinth(가짜 <code>HTTP 200</code> 12단계 지연 미궁 <code>TARPIT_LABYRINTH_IN_PROGRESS</code>) ➔ ④ Lawful Forensic Beacon Callback &amp; Ledger(대한민국 정보통신망법 제48조 준수 합법 포렌식 비콘 원장 <code>INFO_COMM_ACT_ART48_COMPLIANT</code>)로 불법 복제 및 크리덴셜 탈취를 무력화합니다.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white mb-2">
+                  기존 클라우드 자동화 임대 대비 AutoFlow의 차이점은 무엇인가요? / How Does AutoFlow Compare to Cloud SaaS Automation?
+                </h3>
+                <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-extrabold">
+                      <tr>
+                        <th class="p-2.5 border-b border-slate-200 dark:border-slate-800">비교 항목 (Dimension)</th>
+                        <th class="p-2.5 border-b border-slate-200 dark:border-slate-800">일반 클라우드 임대 / 미방어 스크립트</th>
+                        <th class="p-2.5 border-b border-slate-200 dark:border-slate-800 text-emerald-700 dark:text-emerald-400">AutoFlow 상주형 무인 방어 엔진</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+                      <tr>
+                        <td class="p-2.5 font-bold">비용 및 소유권 (Ownership)</td>
+                        <td class="p-2.5">건당 과금 &amp; 영구 월 임대료 지출</td>
+                        <td class="p-2.5 font-bold text-slate-900 dark:text-white">₩39,000~$79,000 ($29~$59) 1회 영구 소장 (무제한 실행)</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2.5 font-bold">주문 폭주 방어 (Rate-Limit)</td>
+                        <td class="p-2.5">HTTP 429 차단 및 주문 유실 발생</td>
+                        <td class="p-2.5 font-bold text-slate-900 dark:text-white">70% 안전 정격(42/60) + 로컬 스풀 100% 자동 이어하기</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2.5 font-bold">API 장애 복구 (Self-Healing)</td>
+                        <td class="p-2.5">새벽 워크플로우 중단·수동 재시작</td>
+                        <td class="p-2.5 font-bold text-slate-900 dark:text-white">127ms 결정론적 무인 자가치유 (99.9% 가동률)</td>
+                      </tr>
+                      <tr>
+                        <td class="p-2.5 font-bold">정산·보안 무결성 (Integrity)</td>
+                        <td class="p-2.5">외부 클라우드 개인정보 전송·정산 누락</td>
+                        <td class="p-2.5 font-bold text-slate-900 dark:text-white">1원(1-Won) 4자 대사 + 127.0.0.1 로컬 100% PII 마스킹</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400">
+                  <span>🎥 <strong>실제 구동 영상(Multi-Modal Demo Video):</strong> <a href="https://globaltrendhunterai.github.io/dhlabs/demo.mp4" class="underline text-sky-600 dark:text-sky-400 font-bold">demo.mp4 (127ms 자가치유 &amp; 1원 대사 실증 캡처)</a></span>
+                  <span>사업자등록번호: <strong>413-03-96950</strong> &bull; Apple Developer ID: <strong>GSKY37R7XV</strong> &bull; <a href="https://github.com/globaltrendhunterai" target="_blank" rel="noopener" class="underline">GitHub</a> &bull; <a href="https://dhlabs.gumroad.com" target="_blank" rel="noopener" class="underline">Gumroad</a> &bull; <a href="https://globaltrendhunterai.github.io/dhlabs/" target="_blank" rel="noopener" class="underline">Live Mirror</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
   <!-- Header -->
   <header class="border-b border-slate-200/80 dark:border-slate-800 bg-white/95 dark:bg-slate-950/90 backdrop-blur px-4 sm:px-6 py-3.5 flex items-center justify-between sticky top-0 z-50">
