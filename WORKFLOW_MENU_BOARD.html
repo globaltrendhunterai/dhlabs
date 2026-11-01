@@ -660,125 +660,141 @@
   <link rel="alternate" type="application/rss+xml" title="AutoFlow 공식 스토어 RSS 피드" href="https://autoflow.io/rss.xml" />
   <!-- Structured Data (JSON-LD): Organization + Person + SoftwareApplication + BreadcrumbList + FAQPage -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://autoflow.io/#organization",
+      "name": "디에이치랩스 (DH Labs)",
+      "legalName": "디에이치랩스 (DH Labs)",
+      "founder": {
+        "@id": "https://autoflow.io/#founder"
+      },
+      "taxID": "413-03-96950",
+      "identifier": "413-03-96950",
+      "url": "https://autoflow.io/",
+      "sameAs": [
+        "https://github.com/globaltrendhunterai",
+        "https://dhlabs.gumroad.com",
+        "https://globaltrendhunterai.github.io/dhlabs/"
+      ],
+      "email": "dhlabs_biz0@naver.com",
+      "telephone": "+82-10-8503-6232",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "번화1로 168, 1006동 402호",
+        "addressLocality": "김해시",
+        "addressRegion": "경상남도",
+        "addressCountry": "KR"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://autoflow.io/#founder",
+      "name": "Donghyeong Kim",
+      "alternateName": "김동형",
+      "jobTitle": "Founder & Lead Systems Architect",
+      "identifier": "GSKY37R7XV",
+      "description": "Founder & Lead Systems Architect at DH Labs (Business Reg. No. 413-03-96950, Apple Developer ID GSKY37R7XV), creator of AutoFlow Commerce Engine.",
+      "worksFor": {
+        "@id": "https://autoflow.io/#organization"
+      },
+      "sameAs": [
+        "https://github.com/globaltrendhunterai",
+        "https://globaltrendhunterai.github.io/dhlabs/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://autoflow.io/WORKFLOW_MENU_BOARD.html#breadcrumb",
+      "itemListElement": [
         {
-            "@type": "Organization",
-            "@id": "https://autoflow.io/#organization",
-            "name": "디에이치랩스 (DH Labs)",
-            "legalName": "디에이치랩스 (DH Labs)",
-            "founder": {
-                "@id": "https://autoflow.io/#founder"
-            },
-            "taxID": "413-03-96950",
-            "identifier": "413-03-96950",
-            "url": "https://autoflow.io/",
-            "sameAs": [
-                "https://github.com/globaltrendhunterai",
-                "https://dhlabs.gumroad.com",
-                "https://globaltrendhunterai.github.io/dhlabs/"
-            ],
-            "email": "dhlabs_biz0@naver.com",
-            "telephone": "+82-10-8503-6232",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "번화1로 168, 1006동 402호",
-                "addressLocality": "김해시",
-                "addressRegion": "경상남도",
-                "addressCountry": "KR"
-            }
+          "@type": "ListItem",
+          "position": 1,
+          "name": "AutoFlow 스토어 홈",
+          "item": "https://autoflow.io/"
         },
         {
-            "@type": "Person",
-            "@id": "https://autoflow.io/#founder",
-            "name": "Donghyeong Kim",
-            "alternateName": "김동형",
-            "jobTitle": "Founder & Lead Systems Architect",
-            "identifier": "GSKY37R7XV",
-            "description": "Founder & Lead Systems Architect at DH Labs (Business Reg. No. 413-03-96950, Apple Developer ID GSKY37R7XV), creator of AutoFlow Commerce Engine.",
-            "worksFor": {
-                "@id": "https://autoflow.io/#organization"
-            },
-            "sameAs": [
-                "https://github.com/globaltrendhunterai",
-                "https://globaltrendhunterai.github.io/dhlabs/"
-            ]
-        },
-        {
-            "@type": "BreadcrumbList",
-            "@id": "https://autoflow.io/WORKFLOW_MENU_BOARD.html#breadcrumb",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "AutoFlow 스토어 홈",
-                    "item": "https://autoflow.io/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "AutoFlow 150종 워크플로우 정예 메뉴보드 | 1제품 1사이트 영구 소장 카탈로그",
-                    "item": "https://autoflow.io/WORKFLOW_MENU_BOARD.html"
-                }
-            ]
-        },
-        {
-            "@type": "SoftwareApplication",
-            "@id": "https://autoflow.io/WORKFLOW_MENU_BOARD.html#software",
-            "name": "AutoFlow 150종 워크플로우 정예 메뉴보드 | 1제품 1사이트 영구 소장 카탈로그",
-            "operatingSystem": "macOS, Windows, Linux",
-            "applicationCategory": "ProductCatalog",
-            "softwareVersion": "3.5.0",
-            "datePublished": "2026-01-15",
-            "dateModified": "2026-11-01",
-            "description": "AutoFlow 150종 워크플로우 메뉴보드(AutoFlow 150-SKU Official Catalog)는 외주 개발 인건비 100만~169만 원의 거품을 없애고 541+ 검증 n8n 블루프린트 중 국내외 이커머스 실무에 최적화된 정예 150개 단일 완제품을 ₩39,000/$29 ~ ₩79,000/$59 1회 구매 영구 소장가로 제공하는 직영 카탈로그입니다. 스마트스토어, 쿠팡 윙, 11번가, 카페24, 토스페이먼츠, 국세청 홈택스 연동을 지원하며, 70% 안전 정격 스풀(42/60)과 127ms 무인 자가치유 엔진 기간권과 즉시 결합됩니다.",
-            "url": "https://autoflow.io/WORKFLOW_MENU_BOARD.html",
-            "author": {
-                "@id": "https://autoflow.io/#founder"
-            },
-            "publisher": {
-                "@id": "https://autoflow.io/#organization"
-            },
-            "offers": {
-                "@type": "Offer",
-                "price": "39000",
-                "priceCurrency": "KRW",
-                "url": "https://autoflow.io/WORKFLOW_MENU_BOARD.html"
-            }
-        },
-        {
-            "@type": "FAQPage",
-            "@id": "https://autoflow.io/WORKFLOW_MENU_BOARD.html#faq",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "AutoFlow 150종 워크플로우 메뉴보드란 무엇인가? / What is AutoFlow 150-SKU Menu Board?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "AutoFlow 150종 워크플로우 메뉴보드(AutoFlow 150-SKU Official Catalog)는 외주 개발 인건비 100만~169만 원의 거품을 없애고 541+ 검증 n8n 블루프린트 중 국내외 이커머스 실무에 최적화된 정예 150개 단일 완제품을 ₩39,000/$29 ~ ₩79,000/$59 1회 구매 영구 소장가로 제공하는 직영 카탈로그입니다. 스마트스토어, 쿠팡 윙, 11번가, 카페24, 토스페이먼츠, 국세청 홈택스 연동을 지원하며, 70% 안전 정격 스풀(42/60)과 127ms 무인 자가치유 엔진 기간권과 즉시 결합됩니다."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "70% 안전율 리미터 및 초과 물량 스풀 금고 자동 이어하기는 어떻게 작동하나요?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고, 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "127ms 무인 자가치유와 1원 단위 4자 정산 대사는 어떻게 무결성을 보장하나요?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며, 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
-                    }
-                }
-            ]
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AutoFlow 150종 워크플로우 정예 메뉴보드 | 1제품 1사이트 영구 소장 카탈로그",
+          "item": "https://autoflow.io/WORKFLOW_MENU_BOARD.html"
         }
-    ]
-  }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://autoflow.io/WORKFLOW_MENU_BOARD.html#software",
+      "name": "AutoFlow 150종 워크플로우 정예 메뉴보드 | 1제품 1사이트 영구 소장 카탈로그",
+      "operatingSystem": "macOS, Windows, Linux",
+      "applicationCategory": "ProductCatalog",
+      "softwareVersion": "3.5.0",
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-11-01",
+      "description": "AutoFlow 150종 워크플로우 메뉴보드(AutoFlow 150-SKU Official Catalog)는 외주 개발 인건비 100만~169만 원의 거품을 없애고 541+ 검증 n8n 블루프린트 중 국내외 이커머스 실무에 최적화된 정예 150개 단일 완제품을 ₩39,000/$29 ~ ₩79,000/$59 1회 구매 영구 소장가로 제공하는 직영 카탈로그입니다. 스마트스토어, 쿠팡 윙, 11번가, 카페24, 토스페이먼츠, 국세청 홈택스 연동을 지원하며, 70% 안전 정격 스풀(42/60)과 127ms 무인 자가치유 엔진 기간권과 즉시 결합됩니다.",
+      "url": "https://autoflow.io/WORKFLOW_MENU_BOARD.html",
+      "author": {
+        "@id": "https://autoflow.io/#founder"
+      },
+      "publisher": {
+        "@id": "https://autoflow.io/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "39000",
+        "priceCurrency": "KRW",
+        "url": "https://autoflow.io/WORKFLOW_MENU_BOARD.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://autoflow.io/WORKFLOW_MENU_BOARD.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "AutoFlow 150종 워크플로우 메뉴보드란 무엇인가? / What is AutoFlow 150-SKU Menu Board?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AutoFlow 150종 워크플로우 메뉴보드(AutoFlow 150-SKU Official Catalog)는 외주 개발 인건비 100만~169만 원의 거품을 없애고 541+ 검증 n8n 블루프린트 중 국내외 이커머스 실무에 최적화된 정예 150개 단일 완제품을 ₩39,000/$29 ~ ₩79,000/$59 1회 구매 영구 소장가로 제공하는 직영 카탈로그입니다. 스마트스토어, 쿠팡 윙, 11번가, 카페24, 토스페이먼츠, 국세청 홈택스 연동을 지원하며, 70% 안전 정격 스풀(42/60)과 127ms 무인 자가치유 엔진 기간권과 즉시 결합됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "70% 안전율 리미터 및 초과 물량 스풀 금고 자동 이어하기는 어떻게 작동하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고, 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "127ms 무인 자가치유와 1원 단위 4자 정산 대사는 어떻게 무결성을 보장하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며, 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://autoflow.io/#demo-video",
+      "name": "AutoFlow Commerce Engine — 70% Safety Factor Spool-Resume, 127ms Self-Healing & 1-Won Reconciliation Demo",
+      "description": "Official architecture demonstration of AutoFlow Commerce Engine regulating API bursts at 70% safety factor (42/60), auto-draining overflow spool items, healing 429/5xx errors in 127ms, and cross-checking 4-way settlements down to 1 KRW.",
+      "thumbnailUrl": [
+        "https://autoflow.io/og_preview.png",
+        "https://globaltrendhunterai.github.io/dhlabs/og_preview.png"
+      ],
+      "uploadDate": "2026-11-01",
+      "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/demo.mp4",
+      "embedUrl": "https://autoflow.io/demo.mp4",
+      "publisher": {
+        "@id": "https://autoflow.io/#organization"
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>

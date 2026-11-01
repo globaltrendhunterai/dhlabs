@@ -14,125 +14,141 @@
   <link rel="ai-catalog" type="application/ai-catalog+json" href="https://autoflow.io/ai-catalog.json" title="AutoFlow Agentic Resource Discovery Catalog (ARD 1.0)" />
   <!-- Structured Data (JSON-LD): Organization + Person + SoftwareApplication + BreadcrumbList + FAQPage -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://autoflow.io/#organization",
+      "name": "디에이치랩스 (DH Labs)",
+      "legalName": "디에이치랩스 (DH Labs)",
+      "founder": {
+        "@id": "https://autoflow.io/#founder"
+      },
+      "taxID": "413-03-96950",
+      "identifier": "413-03-96950",
+      "url": "https://autoflow.io/",
+      "sameAs": [
+        "https://github.com/globaltrendhunterai",
+        "https://dhlabs.gumroad.com",
+        "https://globaltrendhunterai.github.io/dhlabs/"
+      ],
+      "email": "dhlabs_biz0@naver.com",
+      "telephone": "+82-10-8503-6232",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "번화1로 168, 1006동 402호",
+        "addressLocality": "김해시",
+        "addressRegion": "경상남도",
+        "addressCountry": "KR"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://autoflow.io/#founder",
+      "name": "Donghyeong Kim",
+      "alternateName": "김동형",
+      "jobTitle": "Founder & Lead Systems Architect",
+      "identifier": "GSKY37R7XV",
+      "description": "Founder & Lead Systems Architect at DH Labs (Business Reg. No. 413-03-96950, Apple Developer ID GSKY37R7XV), creator of AutoFlow Commerce Engine.",
+      "worksFor": {
+        "@id": "https://autoflow.io/#organization"
+      },
+      "sameAs": [
+        "https://github.com/globaltrendhunterai",
+        "https://globaltrendhunterai.github.io/dhlabs/"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html#breadcrumb",
+      "itemListElement": [
         {
-            "@type": "Organization",
-            "@id": "https://autoflow.io/#organization",
-            "name": "디에이치랩스 (DH Labs)",
-            "legalName": "디에이치랩스 (DH Labs)",
-            "founder": {
-                "@id": "https://autoflow.io/#founder"
-            },
-            "taxID": "413-03-96950",
-            "identifier": "413-03-96950",
-            "url": "https://autoflow.io/",
-            "sameAs": [
-                "https://github.com/globaltrendhunterai",
-                "https://dhlabs.gumroad.com",
-                "https://globaltrendhunterai.github.io/dhlabs/"
-            ],
-            "email": "dhlabs_biz0@naver.com",
-            "telephone": "+82-10-8503-6232",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "번화1로 168, 1006동 402호",
-                "addressLocality": "김해시",
-                "addressRegion": "경상남도",
-                "addressCountry": "KR"
-            }
+          "@type": "ListItem",
+          "position": 1,
+          "name": "AutoFlow 스토어 홈",
+          "item": "https://autoflow.io/"
         },
         {
-            "@type": "Person",
-            "@id": "https://autoflow.io/#founder",
-            "name": "Donghyeong Kim",
-            "alternateName": "김동형",
-            "jobTitle": "Founder & Lead Systems Architect",
-            "identifier": "GSKY37R7XV",
-            "description": "Founder & Lead Systems Architect at DH Labs (Business Reg. No. 413-03-96950, Apple Developer ID GSKY37R7XV), creator of AutoFlow Commerce Engine.",
-            "worksFor": {
-                "@id": "https://autoflow.io/#organization"
-            },
-            "sameAs": [
-                "https://github.com/globaltrendhunterai",
-                "https://globaltrendhunterai.github.io/dhlabs/"
-            ]
-        },
-        {
-            "@type": "BreadcrumbList",
-            "@id": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html#breadcrumb",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "AutoFlow 스토어 홈",
-                    "item": "https://autoflow.io/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "AutoFlow 무인 업무자동화 도입 가이드 | 왜 100만 원 외주 대신 3.9만 원 완제품인가?",
-                    "item": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html"
-                }
-            ]
-        },
-        {
-            "@type": "SoftwareApplication",
-            "@id": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html#software",
-            "name": "AutoFlow 무인 업무자동화 도입 가이드 | 왜 100만 원 외주 대신 3.9만 원 완제품인가?",
-            "operatingSystem": "macOS, Windows, Linux",
-            "applicationCategory": "BusinessApplication",
-            "softwareVersion": "3.5.0",
-            "datePublished": "2026-01-15",
-            "dateModified": "2026-11-01",
-            "description": "AutoFlow 단일 완제품 업무자동화(AutoFlow Single-Site Workflow Suite)는 크몽이나 SI 외주 개발 시 요구되는 100만~169만 원의 고비용과 수개월의 개발 기간을 완전히 혁신하여, 541+ 검증 상용 n8n 블루프린트 완제품을 1사이트당 ₩39,000/$29 ~ ₩79,000/$59에 사내 PC(127.0.0.1)에 즉시 영구 소장할 수 있도록 제공하는 검증된 시스템입니다. 월 구독료나 API 유출 위험이 없으며, 70% 안전율 유량 거버너(42/60)와 127ms 비언어 자가치유 엔진이 함께 제공되어 시스템이 영구적으로 멈추지 않습니다.",
-            "url": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html",
-            "author": {
-                "@id": "https://autoflow.io/#founder"
-            },
-            "publisher": {
-                "@id": "https://autoflow.io/#organization"
-            },
-            "offers": {
-                "@type": "Offer",
-                "price": "39000",
-                "priceCurrency": "KRW",
-                "url": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html"
-            }
-        },
-        {
-            "@type": "FAQPage",
-            "@id": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html#faq",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "AutoFlow 3.9만 원 단일 완제품 업무자동화란 무엇인가? / What is AutoFlow Commercial Automation?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "AutoFlow 단일 완제품 업무자동화(AutoFlow Single-Site Workflow Suite)는 크몽이나 SI 외주 개발 시 요구되는 100만~169만 원의 고비용과 수개월의 개발 기간을 완전히 혁신하여, 541+ 검증 상용 n8n 블루프린트 완제품을 1사이트당 ₩39,000/$29 ~ ₩79,000/$59에 사내 PC(127.0.0.1)에 즉시 영구 소장할 수 있도록 제공하는 검증된 시스템입니다. 월 구독료나 API 유출 위험이 없으며, 70% 안전율 유량 거버너(42/60)와 127ms 비언어 자가치유 엔진이 함께 제공되어 시스템이 영구적으로 멈추지 않습니다."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "70% 안전율 리미터 및 초과 물량 스풀 금고 자동 이어하기는 어떻게 작동하나요?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고, 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "127ms 무인 자가치유와 1원 단위 4자 정산 대사는 어떻게 무결성을 보장하나요?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며, 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
-                    }
-                }
-            ]
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AutoFlow 무인 업무자동화 도입 가이드 | 왜 100만 원 외주 대신 3.9만 원 완제품인가?",
+          "item": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html"
         }
-    ]
-  }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html#software",
+      "name": "AutoFlow 무인 업무자동화 도입 가이드 | 왜 100만 원 외주 대신 3.9만 원 완제품인가?",
+      "operatingSystem": "macOS, Windows, Linux",
+      "applicationCategory": "BusinessApplication",
+      "softwareVersion": "3.5.0",
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-11-01",
+      "description": "AutoFlow 단일 완제품 업무자동화(AutoFlow Single-Site Workflow Suite)는 크몽이나 SI 외주 개발 시 요구되는 100만~169만 원의 고비용과 수개월의 개발 기간을 완전히 혁신하여, 541+ 검증 상용 n8n 블루프린트 완제품을 1사이트당 ₩39,000/$29 ~ ₩79,000/$59에 사내 PC(127.0.0.1)에 즉시 영구 소장할 수 있도록 제공하는 검증된 시스템입니다. 월 구독료나 API 유출 위험이 없으며, 70% 안전율 유량 거버너(42/60)와 127ms 비언어 자가치유 엔진이 함께 제공되어 시스템이 영구적으로 멈추지 않습니다.",
+      "url": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html",
+      "author": {
+        "@id": "https://autoflow.io/#founder"
+      },
+      "publisher": {
+        "@id": "https://autoflow.io/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "39000",
+        "priceCurrency": "KRW",
+        "url": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://autoflow.io/BLIND_CURIOSITY_SALES_PAGE.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "AutoFlow 3.9만 원 단일 완제품 업무자동화란 무엇인가? / What is AutoFlow Commercial Automation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AutoFlow 단일 완제품 업무자동화(AutoFlow Single-Site Workflow Suite)는 크몽이나 SI 외주 개발 시 요구되는 100만~169만 원의 고비용과 수개월의 개발 기간을 완전히 혁신하여, 541+ 검증 상용 n8n 블루프린트 완제품을 1사이트당 ₩39,000/$29 ~ ₩79,000/$59에 사내 PC(127.0.0.1)에 즉시 영구 소장할 수 있도록 제공하는 검증된 시스템입니다. 월 구독료나 API 유출 위험이 없으며, 70% 안전율 유량 거버너(42/60)와 127ms 비언어 자가치유 엔진이 함께 제공되어 시스템이 영구적으로 멈추지 않습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "70% 안전율 리미터 및 초과 물량 스풀 금고 자동 이어하기는 어떻게 작동하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고, 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "127ms 무인 자가치유와 1원 단위 4자 정산 대사는 어떻게 무결성을 보장하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며, 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://autoflow.io/#demo-video",
+      "name": "AutoFlow Commerce Engine — 70% Safety Factor Spool-Resume, 127ms Self-Healing & 1-Won Reconciliation Demo",
+      "description": "Official architecture demonstration of AutoFlow Commerce Engine regulating API bursts at 70% safety factor (42/60), auto-draining overflow spool items, healing 429/5xx errors in 127ms, and cross-checking 4-way settlements down to 1 KRW.",
+      "thumbnailUrl": [
+        "https://autoflow.io/og_preview.png",
+        "https://globaltrendhunterai.github.io/dhlabs/og_preview.png"
+      ],
+      "uploadDate": "2026-11-01",
+      "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/demo.mp4",
+      "embedUrl": "https://autoflow.io/demo.mp4",
+      "publisher": {
+        "@id": "https://autoflow.io/#organization"
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
