@@ -1664,6 +1664,63 @@
     </div>
 
     <!-- ============================================================================== -->
+    <!-- 🔧 코뿔소 Open-Hood (볼트 2개 개방형 1초 자가진단 & 현장 수리) -->
+    <!-- ============================================================================== -->
+    <div id="ponytail-open-hood-panel" style="background: #ffffff; border: 2px solid #0f172a; border-radius: 12px; padding: 16px 18px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 16px;">🔧</span>
+          <span style="font-weight: 800; font-size: 13.5px; color: #0f172a; letter-spacing: -0.3px;">코뿔소 Open-Hood (볼트 2개 개방형 1초 자가진단 &amp; 현장 수리)</span>
+          <span id="openHoodOverallBadge" style="background: #16a34a; color: #ffffff; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 999px;">HEALTHY</span>
+        </div>
+        <div>
+          <button type="button" id="btnPonytailOpenHoodRepair" onclick="triggerPonytailOpenHoodRepair()" style="background: #0f172a; color: #ffffff; border: 1px solid #0f172a; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+            <span>🔧 현장 즉시 수리 (스풀 강제 배출 &amp; 토큰 동기화)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2대 핵심 구동축 (2-Shaft Drive) -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px;">
+        <!-- ① 펌프 (인입·인증·70% 거버너) -->
+        <div id="shaftPumpCard" style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-size: 12px; font-weight: 800; color: #1e293b;">① 펌프 (인입·70% 거버너)</span>
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span id="pumpLightDot" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #16a34a;"></span>
+              <span id="pumpLightText" style="font-size: 11px; font-weight: 800; color: #16a34a;">GREEN</span>
+            </div>
+          </div>
+          <div style="font-size: 11px; color: #475569; line-height: 1.4;">
+            <div>• 라이선스 상태: <b id="pumpLicenseStatus" style="color: #0f172a;">ACTIVE</b></div>
+            <div>• 안전 거버너: <b id="pumpSafetyFactor" style="color: #0f172a;">70% (0.70) 정격</b></div>
+            <div id="pumpSummaryKo" style="margin-top: 4px; font-size: 10.5px; color: #15803d; font-weight: 600;">70% 안전 거버너 정격 가동 중</div>
+          </div>
+        </div>
+
+        <!-- ② 유압 모터 (배출·스풀 금고·127ms 자가치유) -->
+        <div id="shaftMotorCard" style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <span style="font-size: 12px; font-weight: 800; color: #1e293b;">② 유압 모터 (배출·스풀 금고)</span>
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span id="motorLightDot" style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #16a34a;"></span>
+              <span id="motorLightText" style="font-size: 11px; font-weight: 800; color: #16a34a;">GREEN</span>
+            </div>
+          </div>
+          <div style="font-size: 11px; color: #475569; line-height: 1.4;">
+            <div>• 스풀 금고 대기: <b id="motorSpoolMetrics" style="color: #0f172a;">0개 배치 (0건)</b></div>
+            <div>• 자가치유 룰: <b id="motorHealingMetrics" style="color: #0f172a;">정상 가동 (룰 로드됨)</b></div>
+            <div id="motorSummaryKo" style="margin-top: 4px; font-size: 10.5px; color: #15803d; font-weight: 600;">스풀 대기 0건 정상</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="openHoodFeedbackLine" style="font-size: 11px; color: #64748b; font-family: monospace; background: #f1f5f9; padding: 6px 10px; border-radius: 6px;">
+        [OPEN-HOOD READY] 2개 구동축 실시간 동기화 상태: 양호
+      </div>
+    </div>
+
+    <!-- ============================================================================== -->
     <!-- 🛡️ 상주형 방어 엔진: 70% 안전율 리미터 & 초과 물량 스풀 금고 자동 이어하기 모니터 -->
     <!-- ============================================================================== -->
     <div id="governor-spool-monitor-bar" style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 10px; padding: 12px 14px; margin-bottom: 20px; font-size: 11.5px; color: #14532d; line-height: 1.5;">
@@ -1863,7 +1920,84 @@
           }
         };
 
-        setTimeout(() => { window.refreshGovernorStatusUI(); }, 400);
+        window.refreshPonytailOpenHood = async function() {
+          try {
+            const res = await fetch('/api/ponytail/open-hood');
+            if (!res.ok) return;
+            const data = await res.json();
+            updateOpenHoodUI(data);
+          } catch (_) {}
+        };
+
+        window.triggerPonytailOpenHoodRepair = async function() {
+          const btn = document.getElementById('btnPonytailOpenHoodRepair');
+          const fb = document.getElementById('openHoodFeedbackLine');
+          if (btn) btn.disabled = true;
+          if (fb) fb.textContent = '⏳ [현장 수리 중] 스풀 금고 배출 및 토큰 동기화 실행 중...';
+          try {
+            const res = await fetch('/api/ponytail/open-hood', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ action: 'repair' })
+            });
+            const data = await res.json();
+            updateOpenHoodUI(data);
+            if (fb) fb.textContent = data.message_ko || '✅ 현장 즉시 수리가 완료되었습니다.';
+            if (typeof window.refreshGovernorStatusUI === 'function') {
+              window.refreshGovernorStatusUI();
+            }
+          } catch (e) {
+            if (fb) fb.textContent = '❌ 현장 수리 실패: ' + e.message;
+          } finally {
+            if (btn) btn.disabled = false;
+          }
+        };
+
+        function updateOpenHoodUI(data) {
+          if (!data || !data.pump || !data.hydraulic_motor) return;
+          const pump = data.pump;
+          const motor = data.hydraulic_motor;
+          const overall = data.overall_status || 'HEALTHY';
+
+          const ovBadge = document.getElementById('openHoodOverallBadge');
+          if (ovBadge) {
+            ovBadge.textContent = overall;
+            ovBadge.style.background = overall === 'HEALTHY' ? '#16a34a' : (overall === 'QUARANTINED' ? '#b91c1c' : '#d97706');
+          }
+
+          // ① 펌프 (인입·70% 거버너)
+          const pumpDot = document.getElementById('pumpLightDot');
+          const pumpTxt = document.getElementById('pumpLightText');
+          const pumpLic = document.getElementById('pumpLicenseStatus');
+          const pumpSum = document.getElementById('pumpSummaryKo');
+          const pumpCard = document.getElementById('shaftPumpCard');
+          const pumpColor = pump.status === 'GREEN' ? '#16a34a' : (pump.status === 'RED' ? '#b91c1c' : '#d97706');
+          if (pumpDot) pumpDot.style.background = pumpColor;
+          if (pumpTxt) { pumpTxt.textContent = pump.status; pumpTxt.style.color = pumpColor; }
+          if (pumpLic) pumpLic.textContent = pump.license_status;
+          if (pumpSum) { pumpSum.textContent = pump.summary_ko; pumpSum.style.color = pumpColor; }
+          if (pumpCard) pumpCard.style.borderColor = pumpColor;
+
+          // ② 유압 모터 (배출·스풀 금고)
+          const motorDot = document.getElementById('motorLightDot');
+          const motorTxt = document.getElementById('motorLightText');
+          const motorSpool = document.getElementById('motorSpoolMetrics');
+          const motorHeal = document.getElementById('motorHealingMetrics');
+          const motorSum = document.getElementById('motorSummaryKo');
+          const motorCard = document.getElementById('shaftMotorCard');
+          const motorColor = motor.status === 'GREEN' ? '#16a34a' : (motor.status === 'RED' ? '#b91c1c' : '#d97706');
+          if (motorDot) motorDot.style.background = motorColor;
+          if (motorTxt) { motorTxt.textContent = motor.status; motorTxt.style.color = motorColor; }
+          if (motorSpool) motorSpool.textContent = `${motor.pending_spool_batches || 0}개 배치 (${motor.pending_spool_items || 0}건)`;
+          if (motorHeal) motorHeal.textContent = motor.self_healing_ready ? `가동 중 (${motor.healing_rules_loaded || 0}개 룰)` : '대기 모드';
+          if (motorSum) { motorSum.textContent = motor.summary_ko; motorSum.style.color = motorColor; }
+          if (motorCard) motorCard.style.borderColor = motorColor;
+        }
+
+        setTimeout(() => {
+          window.refreshGovernorStatusUI();
+          window.refreshPonytailOpenHood();
+        }, 400);
       })();
     </script>
 
@@ -14371,7 +14505,7 @@
   <!-- 전자상거래법 규정 준수 공식 법률 푸터 (Statutory Legal Footer) -->
   <footer style="width: 100%; max-width: 580px; margin-top: 40px; border-top: 1px solid var(--border); padding: 24px 0 30px 0; color: var(--text-dim); font-size: 0.78rem; line-height: 1.6; text-align: center;">
     <div style="font-weight: 700; color: #334155; margin-bottom: 6px;">⚡ AutoFlow Enterprise Automation Suite</div>
-    <div>상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 610-16-92926 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 통신판매업신고: 면제 (부가가치세법 제8조 정식 등록 과세사업자 · 기업 간 B2B 소프트웨어 라이선스 직접 공급) | 고객센터: 010-8503-6232 (평일 09:00~18:00 (주말·공휴일 휴무)) | 이메일: dhlabs_biz0@naver.com</div>
+    <div>상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 통신판매업신고: 면제 (부가가치세법 제8조 정식 등록 과세사업자 · 기업 간 B2B 소프트웨어 라이선스 직접 공급) | 고객센터: 010-8503-6232 (평일 09:00~18:00 (주말·공휴일 휴무)) | 이메일: dhlabs_biz0@naver.com</div>
     <div style="margin-top: 6px;">
       <a href="javascript:void(0)" onclick="openRefundModal()" style="color: #2563eb; text-decoration: none; font-size: 11.5px; font-weight: 600;">• AutoFlow 공정 환불 정산 신청 (Fair Prorated Refund)</a>
     </div>
