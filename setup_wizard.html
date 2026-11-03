@@ -1713,6 +1713,61 @@
             <div id="motorSummaryKo" style="margin-top: 4px; font-size: 10.5px; color: #15803d; font-weight: 600;">스풀 대기 0건 정상</div>
           </div>
         </div>
+      <!-- 상황별 6대 엔진 카트리지 슬롯 (Situation-Specific Engine Pack Cartridge Slots) -->
+      <div id="open-hood-engine-cartridges" style="margin-top: 12px; margin-bottom: 10px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span style="font-size: 13px; font-weight: 800; color: #0f172a;">🎛️ 상황별 6대 엔진 카트리지 슬롯 (Auto-Mount Engine Pack)</span>
+            <span id="openHoodArbKernelBadge" style="background: #0f172a; color: #38bdf8; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 999px; border: 1px solid #0284c7;">Universal Arbitration Kernel: ACTIVE (6대 도메인 중재 가동 중)</span>
+          </div>
+          <div style="font-size: 11px; color: #475569;">
+            도킹된 워크플로우 수: <b id="openHoodDockedWorkflowsCount" style="color: #0f172a; font-weight: 800;">0</b>개
+          </div>
+        </div>
+
+        <!-- 1) 장착된 상황별 엔진 카트리지 (Mounted Engine Packs) -->
+        <div style="margin-bottom: 8px;">
+          <div style="font-size: 11px; font-weight: 700; color: #15803d; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+            <span>🟢 장착된 상황별 엔진 카트리지 (Mounted Engine Packs)</span>
+            <span id="mountedPacksCountBadge" style="font-size: 10px; background: #dcfce7; color: #166534; padding: 1px 6px; border-radius: 999px; font-weight: 700;">1개 가동</span>
+          </div>
+          <div id="mountedEngineCartridgesList" style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="background: #f0fdf4; border: 1px solid #86efac; color: #166534; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+              <span><b>기본 무중단 베이스 커널</b> (PACK_CORE_BASE)</span>
+              <span style="background: #16a34a; color: #ffffff; font-size: 9.5px; padding: 1px 5px; border-radius: 4px; font-weight: 700;">🟢 장착 가동 중</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 2) 휴면 대기 카트리지 (Dormant Standby — 0MB) -->
+        <div>
+          <div style="font-size: 11px; font-weight: 700; color: #64748b; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+            <span>💤 휴면 대기 카트리지 (Dormant Standby — 0MB)</span>
+            <span id="dormantPacksCountBadge" style="font-size: 10px; background: #f1f5f9; color: #475569; padding: 1px 6px; border-radius: 999px; font-weight: 700;">5개 대기</span>
+          </div>
+          <div id="dormantEngineCartridgesList" style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
+              <span>커머스·물류·합배송 팩 (PACK_COMMERCE_LOGISTICS)</span>
+              <span style="background: #e2e8f0; color: #475569; font-size: 9.5px; padding: 1px 5px; border-radius: 4px; font-weight: 600;">💤 휴면 대기 (워크플로우 도킹 시 0초 자동 장착)</span>
+            </span>
+            <span style="background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
+              <span>재무·홈택스 세무·ERP 팩 (PACK_FINANCE_TAX_ERP)</span>
+              <span style="background: #e2e8f0; color: #475569; font-size: 9.5px; padding: 1px 5px; border-radius: 4px; font-weight: 600;">💤 휴면 대기 (워크플로우 도킹 시 0초 자동 장착)</span>
+            </span>
+            <span style="background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
+              <span>CS·분쟁방어·개인정보 팩 (PACK_CS_DISPUTE_PRIVACY)</span>
+              <span style="background: #e2e8f0; color: #475569; font-size: 9.5px; padding: 1px 5px; border-radius: 4px; font-weight: 600;">💤 휴면 대기 (워크플로우 도킹 시 0초 자동 장착)</span>
+            </span>
+            <span style="background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
+              <span>마케팅·CRM 파이프라인 팩 (PACK_MARKETING_CRM_PIPELINE)</span>
+              <span style="background: #e2e8f0; color: #475569; font-size: 9.5px; padding: 1px 5px; border-radius: 4px; font-weight: 600;">💤 휴면 대기 (워크플로우 도킹 시 0초 자동 장착)</span>
+            </span>
+            <span style="background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
+              <span>글로벌 역직구·통관·외환 팩 (PACK_GLOBAL_CUSTOMS_FX)</span>
+              <span style="background: #e2e8f0; color: #475569; font-size: 9.5px; padding: 1px 5px; border-radius: 4px; font-weight: 600;">💤 휴면 대기 (워크플로우 도킹 시 0초 자동 장착)</span>
+            </span>
+          </div>
+        </div>
       </div>
 
       <div id="openHoodFeedbackLine" style="font-size: 11px; color: #64748b; font-family: monospace; background: #f1f5f9; padding: 6px 10px; border-radius: 6px;">
@@ -1992,6 +2047,66 @@
           if (motorHeal) motorHeal.textContent = motor.self_healing_ready ? `가동 중 (${motor.healing_rules_loaded || 0}개 룰)` : '대기 모드';
           if (motorSum) { motorSum.textContent = motor.summary_ko; motorSum.style.color = motorColor; }
           if (motorCard) motorCard.style.borderColor = motorColor;
+
+          // ③ 6대 상황별 엔진 카트리지 슬롯 갱신
+          const ALL_ENGINE_PACKS_KO = [
+            { id: 'PACK_CORE_BASE', name: '기본 무중단 베이스 커널' },
+            { id: 'PACK_COMMERCE_LOGISTICS', name: '커머스·물류·합배송 팩' },
+            { id: 'PACK_FINANCE_TAX_ERP', name: '재무·홈택스 세무·ERP 팩' },
+            { id: 'PACK_CS_DISPUTE_PRIVACY', name: 'CS·분쟁방어·개인정보 팩' },
+            { id: 'PACK_MARKETING_CRM_PIPELINE', name: '마케팅·CRM 파이프라인 팩' },
+            { id: 'PACK_GLOBAL_CUSTOMS_FX', name: '글로벌 역직구·통관·외환 팩' }
+          ];
+
+          const mountedPacks = Array.isArray(data.mountedEngineCartridges) && data.mountedEngineCartridges.length > 0
+            ? data.mountedEngineCartridges
+            : ['PACK_CORE_BASE'];
+          const mountedSet = new Set(mountedPacks);
+
+          const dockedCountEl = document.getElementById('openHoodDockedWorkflowsCount');
+          if (dockedCountEl) {
+            dockedCountEl.textContent = data.totalDockedWorkflows !== undefined ? data.totalDockedWorkflows : '0';
+          }
+
+          const arbBadgeEl = document.getElementById('openHoodArbKernelBadge');
+          if (arbBadgeEl) {
+            const arbStatus = (data.universalArbitrationKernel && data.universalArbitrationKernel.status) || 'ACTIVE';
+            arbBadgeEl.textContent = `Universal Arbitration Kernel: ${arbStatus} (6대 도메인 중재 가동 중)`;
+          }
+
+          const mountedListEl = document.getElementById('mountedEngineCartridgesList');
+          const mountedCountBadge = document.getElementById('mountedPacksCountBadge');
+          if (mountedListEl) {
+            mountedListEl.innerHTML = ALL_ENGINE_PACKS_KO
+              .filter(p => mountedSet.has(p.id))
+              .map(p => `
+                <span style="background: #f0fdf4; border: 1px solid #86efac; color: #166534; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+                  <span><b>${p.name}</b> (${p.id})</span>
+                  <span style="background: #16a34a; color: #ffffff; font-size: 9.5px; padding: 1px 5px; border-radius: 4px; font-weight: 700;">🟢 장착 가동 중</span>
+                </span>
+              `).join('');
+          }
+          if (mountedCountBadge) {
+            const mCount = ALL_ENGINE_PACKS_KO.filter(p => mountedSet.has(p.id)).length;
+            mountedCountBadge.textContent = `${mCount}개 가동`;
+          }
+
+          const dormantListEl = document.getElementById('dormantEngineCartridgesList');
+          const dormantCountBadge = document.getElementById('dormantPacksCountBadge');
+          if (dormantListEl) {
+            dormantListEl.innerHTML = ALL_ENGINE_PACKS_KO
+              .filter(p => !mountedSet.has(p.id))
+              .map(p => `
+                <span style="background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
+                  <span>${p.name} (${p.id})</span>
+                  <span style="background: #e2e8f0; color: #475569; font-size: 9.5px; padding: 1px 5px; border-radius: 4px; font-weight: 600;">💤 휴면 대기 (워크플로우 도킹 시 0초 자동 장착)</span>
+                </span>
+              `).join('');
+          }
+          if (dormantCountBadge) {
+            const dCount = ALL_ENGINE_PACKS_KO.filter(p => !mountedSet.has(p.id)).length;
+            dormantCountBadge.textContent = `${dCount}개 대기`;
+          }
         }
 
         setTimeout(() => {
