@@ -1212,7 +1212,7 @@
       }
       const globalPayTextEl = document.getElementById('btn-global-pay-text');
       if (globalPayTextEl) {
-        globalPayTextEl.textContent = 'Lemon Squeezy 글로벌 결제창 열기 ($' + usdAmount + '.00 USD)';
+        globalPayTextEl.textContent = 'Gumroad 글로벌 공식 결제창 열기 ($' + usdAmount + '.00 USD)';
       }
 
       if (paymentWidget) {
@@ -1303,9 +1303,11 @@
       }
 
       const engineShort = currentEngineCode.replace('ENGINE_', '').toLowerCase();
-      const defaultLsPath = currentTrack === 'engine'
-        ? ('https://autoflow.lemonsqueezy.com/checkout/buy/autoflow-engine-' + engineShort + '-' + currentEngineMode + '-' + currentEngineDays + 'd')
-        : ('https://autoflow.lemonsqueezy.com/checkout/buy/autoflow-workflow-' + priceAmount);
+      const defaultGumroadPath = currentTrack === 'addon'
+        ? 'https://dhlabs.gumroad.com/l/autoflow-smartgrid-excel'
+        : ((currentTrack === 'engine' || currentTrack === 'modular_engine')
+          ? 'https://dhlabs.gumroad.com/l/autoflow-defense-engines'
+          : 'https://dhlabs.gumroad.com/l/fscptt');
       const customMatrix = window.AUTOFLOW_LEMON_VARIANT_MATRIX || null;
       const resolvedBaseUrl = (
         currentTrack === 'engine' &&
@@ -1315,29 +1317,36 @@
         customMatrix[currentEngineMode][currentEngineCode][currentEngineDays]
       )
         ? customMatrix[currentEngineMode][currentEngineCode][currentEngineDays]
-        : defaultLsPath;
+        : defaultGumroadPath;
 
-      const lsUrl = new URL(resolvedBaseUrl);
-      lsUrl.searchParams.set('checkout[email]', customerEmail);
-      lsUrl.searchParams.set('checkout[name]', companyName + ' (' + customerName + ')');
-      lsUrl.searchParams.set('checkout[custom][sku]', activeSku);
-      lsUrl.searchParams.set('checkout[custom][engine]', currentTrack === 'engine' ? currentEngineCode : 'WORKFLOW_SINGLE');
-      lsUrl.searchParams.set('checkout[custom][mode]', currentTrack === 'engine' ? currentEngineMode : 'managed');
-      lsUrl.searchParams.set('checkout[custom][days]', String(currentTrack === 'engine' ? currentEngineDays : 7));
-      if (targetHwid) lsUrl.searchParams.set('checkout[custom][hwid]', targetHwid);
-      lsUrl.searchParams.set('checkout[custom][error_log_consent]', 'true');
-      lsUrl.searchParams.set('checkout[custom][refund_consent]', 'true');
+      const checkoutUrl = new URL(resolvedBaseUrl);
+      if (resolvedBaseUrl.includes('gumroad.com')) {
+        checkoutUrl.searchParams.set('wanted', 'true');
+        checkoutUrl.searchParams.set('email', customerEmail);
+        checkoutUrl.searchParams.set('sku', activeSku);
+        if (targetHwid) checkoutUrl.searchParams.set('hwid', targetHwid);
+      } else {
+        checkoutUrl.searchParams.set('checkout[email]', customerEmail);
+        checkoutUrl.searchParams.set('checkout[name]', companyName + ' (' + customerName + ')');
+        checkoutUrl.searchParams.set('checkout[custom][sku]', activeSku);
+        checkoutUrl.searchParams.set('checkout[custom][engine]', currentTrack === 'engine' ? currentEngineCode : 'WORKFLOW_SINGLE');
+        checkoutUrl.searchParams.set('checkout[custom][mode]', currentTrack === 'engine' ? currentEngineMode : 'managed');
+        checkoutUrl.searchParams.set('checkout[custom][days]', String(currentTrack === 'engine' ? currentEngineDays : 7));
+        if (targetHwid) checkoutUrl.searchParams.set('checkout[custom][hwid]', targetHwid);
+        checkoutUrl.searchParams.set('checkout[custom][error_log_consent]', 'true');
+        checkoutUrl.searchParams.set('checkout[custom][refund_consent]', 'true');
+      }
 
-      const confirmMsg = '[Lemon Squeezy Global USD Checkout]\n\n수령 이메일: ' + customerEmail + '\n선택 품목: ' + activeTitle + '\n결제 금액: $' + usdAmount + '.00 USD\n\n확인을 누르시면 Lemon Squeezy 글로벌 결제창으로 이동합니다.';
+      const confirmMsg = '[Gumroad Global USD Official Checkout]\n\n수령 이메일: ' + customerEmail + '\n선택 품목: ' + activeTitle + '\n결제 금액: $' + usdAmount + '.00 USD\n\n확인을 누르시면 공식 Gumroad 글로벌 결제창(' + resolvedBaseUrl + ')으로 이동합니다.';
       if (confirm(confirmMsg)) {
-        window.open(lsUrl.toString(), '_blank');
+        window.open(checkoutUrl.toString(), '_blank');
       }
     }
 
     const i18nCheckout = {
       ko: {
         header_title: "공식 스토어 보안 결제",
-        header_desc: "토스페이먼츠(KRW) & Lemon Squeezy(USD) 공식 연동 · 결제 즉시 라이선스 자동 출고",
+        header_desc: "토스페이먼츠(KRW) & Gumroad / Lemon Squeezy(USD) 공식 연동 · 결제 즉시 라이선스 자동 출고",
         btn_back_catalog: "스토어 홈",
         label_order_summary: "주문 품목 선택 및 명세",
         label_tier_select: "구매 카테고리 선택 (단품 영구소장 vs 상주형 무인 엔진 기간권):",
@@ -1356,7 +1365,7 @@
       },
       en: {
         header_title: "Official Secure Checkout",
-        header_desc: "Toss Payments (KRW) & Lemon Squeezy (USD) · Instant License & Package Dispatch",
+        header_desc: "Toss Payments (KRW) & Gumroad / Lemon Squeezy (USD) · Instant License & Package Dispatch",
         btn_back_catalog: "Store Home",
         label_order_summary: "Product Selection & Order Summary",
         label_tier_select: "Select Category (Single Perpetual Workflow vs Resident Engine Pass):",
@@ -1397,7 +1406,7 @@
     }
 
     // Initialize Toss Payments Widget v2 (Supports runtime live key injection + static hosting fallback)
-    $1"test_gck_docs_Ovk5rk1Ewk5zmxlQrybWTrjq";
+    const clientKey = window.AUTOFLOW_TOSS_LIVE_CLIENT_KEY || "test_gck_docs_Ovk5rk1Ewk5zmxlQrybWTrjq";
     const customerKey = "CUST-" + Math.random().toString(36).substring(2, 10);
 
     function handleDirectInvoiceOrder() {
