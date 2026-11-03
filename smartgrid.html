@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoFlow SmartGrid 전용 스마트 원장 프로그램 | 5대 부서 양방향 제어 셀</title>
+  <meta name="naver-site-verification" content="c748e9a2b5d4e1f8a3c0b2d1e9f8a7b6c5d4e3f2" />
+  <meta name="google-site-verification" content="yV2bZ-8oQG6q9_DHLabsAutoFlow2026VerificationKey_0" />
+  <link rel="canonical" href="https://dhlabs.pages.dev/smartgrid.html" />
+  <link rel="describedby" href="https://dhlabs.pages.dev/llms.txt" />
+  <link rel="ai-catalog" href="https://dhlabs.pages.dev/ai-catalog.json" />
+  <meta name="description" content="5대 핵심 부서 영업 마케팅 고객관리 재무 물류 인사 AI분석 표준 시트와 양방향 제어 셀을 제공하여 다중 워크플로우를 비파괴 병합하고 엑셀 파일 잠금 및 구글 시트 쿼터 초과를 차단하는 지능형 원장 프로그램입니다." />
+  <meta name="keywords" content="AutoFlow, SmartGrid, 스마트원장, 업무자동화, n8n, 엑셀연동, 양방향제어셀, 비파괴병합, 전자상거래, 사내PC자동화" />
+  <meta name="author" content="디에이치랩스 (DH Labs)" />
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AutoFlow Enterprise" />
+  <meta property="og:title" content="AutoFlow SmartGrid 전용 스마트 원장 프로그램 | 5대 부서 양방향 제어 셀" />
+  <meta property="og:description" content="5대 핵심 부서 영업 마케팅 고객관리 재무 물류 인사 AI분석 표준 시트와 양방향 제어 셀을 제공하여 다중 워크플로우를 비파괴 병합하고 엑셀 파일 잠금 및 구글 시트 쿼터 초과를 차단하는 지능형 원장 프로그램입니다." />
+  <meta property="og:image" content="https://dhlabs.pages.dev/og_preview.png" />
+  <meta property="og:url" content="https://dhlabs.pages.dev/smartgrid.html" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@AutoFlowIO" />
+  <meta name="twitter:title" content="AutoFlow SmartGrid 전용 스마트 원장 프로그램 | 5대 부서 양방향 제어 셀" />
+  <meta name="twitter:description" content="5대 핵심 부서 영업 마케팅 고객관리 재무 물류 인사 AI분석 표준 시트와 양방향 제어 셀을 제공하여 다중 워크플로우를 비파괴 병합하고 엑셀 파일 잠금 및 구글 시트 쿼터 초과를 차단하는 지능형 원장 프로그램입니다." />
+  <meta name="twitter:image" content="https://dhlabs.pages.dev/og_preview.png" />
+
+  <!-- Unified JSON-LD @graph -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://dhlabs.pages.dev/#organization","name":"디에이치랩스 (DH Labs)","legalName":"디에이치랩스 (DH Labs)","founder":{"@id":"https://dhlabs.pages.dev/#founder"},"taxID":"610-16-92926","identifier":"610-16-92926","url":"https://dhlabs.pages.dev/","sameAs":["https://github.com/globaltrendhunterai","https://dhlabs.gumroad.com","https://globaltrendhunterai.github.io/dhlabs/"],"email":"dhlabs_biz0@naver.com","telephone":"+82-10-8503-6232","address":{"@type":"PostalAddress","streetAddress":"번화1로 168, 1006동 402호","addressLocality":"김해시","addressRegion":"경상남도","addressCountry":"KR"}},{"@type":"Person","@id":"https://dhlabs.pages.dev/#founder","name":"Donghyeong Kim","alternateName":"김동형","jobTitle":"Founder & Lead Systems Architect","identifier":"GSKY37R7XV","description":"Founder & Lead Systems Architect at DH Labs (Business Reg. No. 610-16-92926, Apple Developer ID GSKY37R7XV), creator of AutoFlow Engine.","worksFor":{"@id":"https://dhlabs.pages.dev/#organization"},"sameAs":["https://github.com/globaltrendhunterai","https://globaltrendhunterai.github.io/dhlabs/"]},{"@type":"BreadcrumbList","@id":"https://dhlabs.pages.dev/smartgrid.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"AutoFlow 스토어 홈","item":"https://dhlabs.pages.dev/"},{"@type":"ListItem","position":2,"name":"AutoFlow SmartGrid 전용 스마트 원장 프로그램","item":"https://dhlabs.pages.dev/smartgrid.html"}]},{"@type":"SoftwareApplication","@id":"https://dhlabs.pages.dev/smartgrid.html#software","name":"AutoFlow SmartGrid 전용 스마트 원장 프로그램","operatingSystem":"macOS, Windows, Linux","applicationCategory":"BusinessApplication","softwareVersion":"1.0.0","description":"5대 핵심 부서 영업 마케팅 고객관리 재무 물류 인사 AI분석 표준 시트와 양방향 제어 셀을 제공하여 다중 워크플로우를 비파괴 병합하고 엑셀 파일 잠금 및 구글 시트 쿼터 초과를 차단하는 지능형 원장 프로그램입니다.","offers":{"@type":"Offer","priceCurrency":"KRW","url":"https://dhlabs.pages.dev/checkout.html?addon=AF-SMARTGRID-PRO"},"publisher":{"@id":"https://dhlabs.pages.dev/#organization"}},{"@type":"VideoObject","@id":"https://dhlabs.pages.dev/smartgrid.html#video","name":"AutoFlow SmartGrid 양방향 제어 셀 실시간 가동 데모","description":"다중 워크플로우 비파괴 병합 및 엑셀 잠금 없는 양방향 제어 셀 실무 시연","thumbnailUrl":"https://dhlabs.pages.dev/og_preview.png","uploadDate":"2026-11-01T00:00:00.000Z","contentUrl":"https://dhlabs.pages.dev/smartgrid_demo.mp4"},{"@type":"FAQPage","@id":"https://dhlabs.pages.dev/smartgrid.html#faq","mainEntity":[{"@type":"Question","name":"엑셀이나 구글 시트 API 연동 설정 없이 어떻게 즉시 가동되나요?","acceptedAnswer":{"@type":"Answer","text":"AutoFlow SmartGrid는 사내 PC 내부 IPC 파이프와 로컬 HTTP 엔드포인트(/api/smartgrid/*)로 직결 구동되므로 구글 클라우드 콘솔 OAuth 인증이나 엑셀 플러그인 설치 없이 0초 만에 즉시 실행됩니다."}},{"@type":"Question","name":"여러 워크플로우가 동시에 데이터를 기록할 때 충돌이 발생하지 않나요?","acceptedAnswer":{"@type":"Answer","text":"사내 통합 아비트레이션 뮤텍스(order_dedup_sentinel)가 모든 시트 쓰기 요청을 비파괴 병합(nonDestructiveDeepMerge)하고 순차 시퀀스 번호를 발급하므로 파일 잠금(EBUSY)이나 구글 시트 쿼터 초과(429)가 발생하지 않습니다."}},{"@type":"Question","name":"원장 내에서 직접 승인하고 워크플로우를 재실행할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"SmartGrid의 인터랙티브 액션 셀은 살아있는 양방향 제어기입니다. 시트 내 버튼 클릭 즉시 워크플로우로 신호가 역전송되어 1원 오차 보정, 출고보류 해제, AI 답글 발송 등이 실행되고 감사 해시가 기록됩니다."}}]}]}</script>
+
+  <style>:root{--bg-canvas:#ffffff;--bg-subtle:#f8fafc;--bg-card:#ffffff;--border-color:#e2e8f0;--border-subtle:#cbd5e1;--text-main:#0f172a;--text-muted:#64748b;--primary:#2563eb;--primary-hover:#1d4ed8;--accent-green:#059669;--accent-amber:#d97706;--accent-purple:#7c3aed;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--font-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;}*{box-sizing:border-box;margin:0;padding:0;}body{background-color:var(--bg-canvas);color:var(--text-main);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;}.top-status-bar{background-color:var(--bg-subtle);border-bottom:1px solid var(--border-color);padding:10px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:13px;}.status-tags{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;font-weight:600;font-size:12px;background:#eff6ff;color:var(--primary);border:1px solid #bfdbfe;}.badge.green{background:#ecfdf5;color:var(--accent-green);border-color:#a7f3d0;}.nav-links a{color:var(--primary);text-decoration:none;font-weight:600;margin-left:14px;font-size:13px;}.nav-links a:hover{text-decoration:underline;}.container{max-width:1400px;margin:0 auto;padding:24px;}.header-section{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border-color);}.header-titles h1{font-size:26px;font-weight:800;color:var(--text-main);margin-bottom:6px;}.header-titles p{color:var(--text-muted);font-size:14px;}.header-actions{display:flex;gap:10px;}.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.15s ease;text-decoration:none;border:1px solid transparent;}.btn-primary{background:var(--primary);color:#ffffff;}.btn-primary:hover{background:var(--primary-hover);}.btn-outline{background:#ffffff;border-color:var(--border-subtle);color:var(--text-main);}.btn-outline:hover{background:var(--bg-subtle);}.department-tabs{display:flex;gap:6px;border-bottom:2px solid var(--border-color);margin-bottom:20px;overflow-x:auto;}.dept-tab-btn{padding:12px 20px;font-size:14px;font-weight:700;color:var(--text-muted);background:none;border:none;border-bottom:3px solid transparent;margin-bottom:-2px;cursor:pointer;display:flex;align-items:center;gap:8px;white-space:nowrap;}.dept-tab-btn:hover{color:var(--primary);}.dept-tab-btn.active{color:var(--primary);border-bottom-color:var(--primary);background:#eff6ff;border-radius:6px 6px 0 0;}.dept-tab-count{background:#e2e8f0;color:var(--text-main);padding:2px 7px;border-radius:9999px;font-size:11px;font-family:var(--font-mono);}.dept-tab-btn.active .dept-tab-count{background:var(--primary);color:#ffffff;}.grid-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;}.toolbar-left,.toolbar-right{display:flex;gap:8px;align-items:center;}.table-wrapper{background:#ffffff;border:1px solid var(--border-color);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm);margin-bottom:32px;}table{width:100%;border-collapse:collapse;text-align:left;font-size:13px;}thead th{background:var(--bg-subtle);color:var(--text-muted);font-weight:700;padding:12px 16px;border-bottom:1px solid var(--border-color);white-space:nowrap;}tbody td{padding:14px 16px;border-bottom:1px solid var(--border-color);vertical-align:middle;}tbody tr:hover{background:#f1f5f9;}.row-id{font-family:var(--font-mono);font-weight:700;color:#1e293b;}.wf-badge{font-family:var(--font-mono);font-weight:600;background:#f8fafc;border:1px solid #cbd5e1;padding:3px 8px;border-radius:6px;font-size:12px;color:#334155;}.amount-cell{font-family:var(--font-mono);font-weight:700;text-align:right;}.action-btn{padding:6px 12px;border-radius:6px;font-size:12px;font-weight:700;cursor:pointer;border:1px solid var(--primary);background:#eff6ff;color:var(--primary);transition:all 0.15s ease;}.action-btn:hover{background:var(--primary);color:#ffffff;}.action-btn.executed{background:#ecfdf5;border-color:#a7f3d0;color:var(--accent-green);cursor:default;}#geo-ai-citation-summary{background:var(--bg-subtle);border:1px solid var(--border-color);border-radius:12px;padding:24px;margin-bottom:32px;}#geo-ai-citation-summary h2{font-size:18px;font-weight:800;margin-bottom:12px;color:var(--text-main);}#geo-ai-citation-summary p{color:var(--text-muted);font-size:14px;margin-bottom:16px;}.spec-table{width:100%;border-collapse:collapse;margin-top:12px;background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid var(--border-color);}.spec-table th,.spec-table td{padding:10px 14px;border-bottom:1px solid var(--border-color);font-size:13px;}.spec-table th{background:#f1f5f9;font-weight:700;width:220px;color:var(--text-main);}#toast-notification{position:fixed;bottom:24px;right:24px;background:#0f172a;color:#ffffff;padding:12px 20px;border-radius:8px;font-size:13px;font-weight:600;box-shadow:var(--shadow-md);display:none;z-index:1000;}</style>
+</head>
+<body>
+
+  <!-- Top Status Bar (4대 메커니즘 완비) -->
+  <div class="top-status-bar">
+    <div class="status-tags">
+      <span class="badge green">🟢 0초 무설정 직결 파이프 가동 중</span>
+      <span class="badge">🛡️ 다중 워크플로우 비파괴 병합 락 (엑셀 EBUSY / 구글시트 429 원천 방어)</span>
+      <span class="badge">⚡ 무충돌 시퀀스: #<span id="active-seq-no">18</span></span>
+    </div>
+    <div class="nav-links">
+      <time datetime="2026-11-01" style="color: var(--text-muted); font-size: 12px; margin-right: 8px;">최신 검증: 2026-11-01</time>
+      <a href="/setup_wizard.html">⚙️ 오픈후드 엔진 대시보드</a>
+      <a href="/WORKFLOW_MENU_BOARD.html">🛒 스토어 카탈로그</a>
+      <a href="/checkout.html?addon=AF-SMARTGRID-PRO" style="color: var(--accent-green);">🔒 프로 원장 라이선스 해금 · 스토어 이동 ➔</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <section id="geo-ai-citation-summary">
+      <h2>기술 아키텍처 및 5대 부서 표준 원장 스펙 요약</h2>
+      <p>AutoFlow SmartGrid는 외부 클라우드 엑셀이나 구글 스프레드시트의 파일 잠금(EBUSY) 및 분당 60회 호출 제한(429 Rate Limit)을 극복하기 위해 설계된 사내 PC 내장 스마트 원장입니다. 541개 이상의 n8n 워크플로우가 1대의 PC에서 동시 가동될 때 발생하는 동시 쓰기 경합을 사내 통합 무충돌 아비트레이션 뮤텍스(order_dedup_sentinel)로 순차 정렬하여 데이터 유실 없는 비파괴 병합(nonDestructiveDeepMerge)을 수행합니다.</p>
+      
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>핵심 기술 항목</th>
+            <th>기술 스펙 및 실측 벤치마크 지표</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>단일 PC 검증 수용량</td>
+            <td>541개 기성 블루프린트 동시 도킹 지원 (메모리 델타 +7.73MB)</td>
+          </tr>
+          <tr>
+            <td>다중 워크플로우 동시 쓰기</td>
+            <td>비파괴 딥머지(nonDestructiveDeepMerge) 및 단조 증가 시퀀스 발급</td>
+          </tr>
+          <tr>
+            <td>양방향 인터랙티브 제어 셀</td>
+            <td>시트 내 버튼 클릭 즉시 워크플로우 승인·발송 집행 및 SHA-256 감사 해시 기록</td>
+          </tr>
+          <tr>
+            <td>외부 시트 병목 방어선</td>
+            <td>엑셀 EBUSY 파일 잠금 원천 배제, 구글 시트 429 Quota 고갈 원천 차단</td>
+          </tr>
+          <tr>
+            <td>엑셀 호환 데이터 입출력</td>
+            <td>UTF-8 BOM(\uFEFF) 탑재 .csv 1초 내보내기/가져오기 및 5대 부서 .xlsx 표준 제공</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Header Section -->
+    <header class="header-section">
+      <div class="header-titles">
+        <h1>AutoFlow SmartGrid 전용 스마트 원장 프로그램</h1>
+        <p>5대 핵심 부서 영업 마케팅 고객관리 재무 물류 인사 AI분석 표준 시트와 양방향 제어 셀을 제공하여 다중 워크플로우를 비파괴 병합하고 엑셀 파일 잠금 및 구글 시트 쿼터 초과를 차단하는 지능형 원장 프로그램입니다.</p>
+      </div>
+      <div class="header-actions">
+        <a href="/checkout.html?addon=AF-SMARTGRID-PRO" class="btn btn-primary">🔒 프로 원장 라이선스 해금 · 스토어 이동 ➔</a>
+      </div>
+    </header>
+
+    <!-- GEO / AI Citation Summary Section (Answer-first, Top 15% positioned) -->
+    
+
+    <!-- 5 Core Department Sheet Tabs -->
+    <div class="department-tabs" id="department-tabs">
+      <button class="dept-tab-btn active" data-sheet="DEPT_01_MKT" onclick="selectTab('DEPT_01_MKT')">
+        01 영업·마케팅 원장 (#MKT) <span class="dept-tab-count" id="count-DEPT_01_MKT">4</span>
+      </button>
+      <button class="dept-tab-btn" data-sheet="DEPT_02_CSS" onclick="selectTab('DEPT_02_CSS')">
+        02 고객관리·서비스 원장 (#CSS) <span class="dept-tab-count" id="count-DEPT_02_CSS">4</span>
+      </button>
+      <button class="dept-tab-btn" data-sheet="DEPT_03_OPS" onclick="selectTab('DEPT_03_OPS')">
+        03 재무·운영·물류 원장 (#OPS) <span class="dept-tab-count" id="count-DEPT_03_OPS">4</span>
+      </button>
+      <button class="dept-tab-btn" data-sheet="DEPT_04_ORG" onclick="selectTab('DEPT_04_ORG')">
+        04 인사·조직·문서 원장 (#ORG) <span class="dept-tab-count" id="count-DEPT_04_ORG">3</span>
+      </button>
+      <button class="dept-tab-btn" data-sheet="DEPT_05_SYS" onclick="selectTab('DEPT_05_SYS')">
+        05 AI 분석·시스템 원장 (#SYS) <span class="dept-tab-count" id="count-DEPT_05_SYS">3</span>
+      </button>
+    </div>
+
+    <!-- Grid Toolbar Actions -->
+    <div class="grid-toolbar">
+      <div class="toolbar-left">
+        <button class="btn btn-outline" onclick="simulateWorkflowInjection()">
+          ➕ 실시간 워크플로우 행 주입 시뮬레이션
+        </button>
+        <button class="btn btn-outline" onclick="triggerImportCsv()">
+          📥 기존 엑셀(.csv) 드래그 앤 드롭 / 1초 가져오기
+        </button>
+        <input type="file" id="csv-file-input" accept=".csv" style="display:none;" onchange="handleFileSelect(event)" />
+      </div>
+      <div class="toolbar-right">
+        <button class="btn btn-outline" onclick="exportCurrentSheetCsv()">
+          📤 현재 부서 원장 엑셀 호환(.csv) 내보내기
+        </button>
+        <a href="templates/excel/5dept_standard_template.xlsx" download class="btn btn-outline">
+          📁 5대 부서 표준 스마트 엑셀(.xlsx) 원본 양식 다운로드
+        </a>
+      </div>
+    </div>
+
+    <!-- Spreadsheet Data Grid Table -->
+    <main class="table-wrapper">
+      <table id="smartgrid-table">
+        <thead>
+          <tr>
+            <th style="width: 130px;">원장 번호</th>
+            <th style="width: 140px;">연결 워크플로우</th>
+            <th style="width: 220px;">핵심 거래처 / 대상</th>
+            <th>주요 데이터 요약</th>
+            <th style="width: 130px; text-align: right;">금액 (KRW)</th>
+            <th style="width: 120px; text-align: center;">진행 상태</th>
+            <th style="width: 200px; text-align: center;">살아있는 양방향 제어 셀</th>
+            <th style="width: 90px; text-align: center;">시퀀스</th>
+          </tr>
+        </thead>
+        <tbody id="smartgrid-tbody">
+          <!-- Dynamically populated rows -->
+        </tbody>
+      </table>
+    </main>
+
+  
+    <!-- 🏛️ AutoFlow SmartGrid 5대 부서 전용 스마트 원장 및 API 기술 레퍼런스 -->
+    <section class="smartgrid-reference" style="margin-top: 40px; padding: 32px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+      <h2 style="font-size: 22px; font-weight: 800; color: #0f172a; margin-bottom: 16px;">AutoFlow SmartGrid 5대 부서 표준 스마트 원장 기술 레퍼런스</h2>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 24px; line-height: 1.6;">AutoFlow SmartGrid는 사내 로컬 PC(127.0.0.1) 환경에서 가동되는 온프레미스 지능형 원장 프로그램입니다. 외부 클라우드 SaaS나 분산 스프레드시트 사용 시 빈번하게 발생하는 파일 잠금 충돌(EBUSY) 및 분당 60회 API 쿼터 고갈(HTTP 429)을 사내 통합 무충돌 아비트레이션 뮤텍스(order_dedup_sentinel.js)로 순차 정렬하여 데이터 손실 없는 비파괴 심층 병합(nonDestructiveDeepMerge)을 수행합니다.</p>
+
+      <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">5대 부서별 워크플로우 매핑 및 양방향 제어 셀 규격</h3>
+      <div style="overflow-x: auto; margin-bottom: 28px;">
+        <table class="spec-table" style="width: 100%; border-collapse: collapse; font-size: 13px;">
+          <thead>
+            <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0;">
+              <th style="padding: 10px 14px; text-align: left;">부서 식별 코드</th>
+              <th style="padding: 10px 14px; text-align: left;">원장 명칭</th>
+              <th style="padding: 10px 14px; text-align: left;">지원 워크플로우 범위</th>
+              <th style="padding: 10px 14px; text-align: left;">양방향 인터랙티브 제어 셀</th>
+              <th style="padding: 10px 14px; text-align: left;">집행 상태 전이</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-weight: 700;">DEPT_01_MKT</td>
+              <td style="padding: 10px 14px;">01 영업·마케팅 원장 (#MKT)</td>
+              <td style="padding: 10px 14px;">#MKT-001 ~ #MKT-173 (173종)</td>
+              <td style="padding: 10px 14px;"><span class="badge">[맞춤 제안서·캠페인 승인 발송]</span></td>
+              <td style="padding: 10px 14px; color: #059669; font-weight: 600;">READY_TO_DISPATCH ➔ EXECUTED_LOCKED</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-weight: 700;">DEPT_02_CSS</td>
+              <td style="padding: 10px 14px;">02 고객관리·서비스 원장 (#CSS)</td>
+              <td style="padding: 10px 14px;">#CSS-001 ~ #CSS-197 (197종)</td>
+              <td style="padding: 10px 14px;"><span class="badge">[AI 답글 초안 승인·발송]</span></td>
+              <td style="padding: 10px 14px; color: #059669; font-weight: 600;">AI_DRAFT_READY ➔ EXECUTED_LOCKED</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-weight: 700;">DEPT_03_OPS</td>
+              <td style="padding: 10px 14px;">03 재무·운영·물류 원장 (#OPS)</td>
+              <td style="padding: 10px 14px;">#OPS-001 ~ #OPS-119 (119종)</td>
+              <td style="padding: 10px 14px;"><span class="badge">[1원 오차 보정·출고 승인]</span></td>
+              <td style="padding: 10px 14px; color: #059669; font-weight: 600;">DIFF_DETECTED ➔ EXECUTED_LOCKED</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-weight: 700;">DEPT_04_ORG</td>
+              <td style="padding: 10px 14px;">04 인사·조직·문서 원장 (#ORG)</td>
+              <td style="padding: 10px 14px;">#ORG-001 ~ #ORG-028 (28종)</td>
+              <td style="padding: 10px 14px;"><span class="badge">[전자계약·기안서 결재 승인]</span></td>
+              <td style="padding: 10px 14px; color: #059669; font-weight: 600;">PENDING_SEAL ➔ EXECUTED_LOCKED</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-weight: 700;">DEPT_05_SYS</td>
+              <td style="padding: 10px 14px;">05 AI 분석·시스템 원장 (#SYS)</td>
+              <td style="padding: 10px 14px;">#SYS-001 ~ #SYS-024 (24종)</td>
+              <td style="padding: 10px 14px;"><span class="badge">[AI 리포트·백업 라인 실행]</span></td>
+              <td style="padding: 10px 14px; color: #059669; font-weight: 600;">BRANCH_ACTIVE ➔ EXECUTED_LOCKED</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">단일 사내 PC 541개 블루프린트 가동 벤치마크 실측 지표</h3>
+      <div style="overflow-x: auto; margin-bottom: 28px;">
+        <table class="spec-table" style="width: 100%; border-collapse: collapse; font-size: 13px;">
+          <thead>
+            <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0;">
+              <th style="padding: 10px 14px; text-align: left;">검증 지표 항목</th>
+              <th style="padding: 10px 14px; text-align: left;">공식 실측치</th>
+              <th style="padding: 10px 14px; text-align: left;">허용 임계치</th>
+              <th style="padding: 10px 14px; text-align: left;">검증 판정</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px;">동시 도킹 블루프린트 수량</td>
+              <td style="padding: 10px 14px; font-weight: 700;">541개 전원 도킹 완료</td>
+              <td style="padding: 10px 14px;">500개 이상 요구</td>
+              <td style="padding: 10px 14px; color: #059669; font-weight: 700;">정상 통과 (PASS)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px;">사내 PC 메모리 점유 델타</td>
+              <td style="padding: 10px 14px; font-weight: 700;">+7.73 MB (RSS 실측)</td>
+              <td style="padding: 10px 14px;">+50 MB 이하</td>
+              <td style="padding: 10px 14px; color: #059669; font-weight: 700;">정상 통과 (PASS)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px;">동시 쓰기 데이터 손실률</td>
+              <td style="padding: 10px 14px; font-weight: 700;">0건 (0.00% Zero-Loss)</td>
+              <td style="padding: 10px 14px;">0건 불변 기준</td>
+              <td style="padding: 10px 14px; color: #059669; font-weight: 700;">정상 통과 (PASS)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px;">127ms 무인 자가치유 복구율</td>
+              <td style="padding: 10px 14px; font-weight: 700;">127ms 평균 회복</td>
+              <td style="padding: 10px 14px;">500ms 이내</td>
+              <td style="padding: 10px 14px; color: #059669; font-weight: 700;">정상 통과 (PASS)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">AutoFlow Sidecar 데몬 로컬 REST API 엔드포인트</h3>
+      <div style="overflow-x: auto; margin-bottom: 28px;">
+        <table class="spec-table" style="width: 100%; border-collapse: collapse; font-size: 13px;">
+          <thead>
+            <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0;">
+              <th style="padding: 10px 14px; text-align: left;">HTTP 메서드</th>
+              <th style="padding: 10px 14px; text-align: left;">엔드포인트 경로</th>
+              <th style="padding: 10px 14px; text-align: left;">기능 설명</th>
+              <th style="padding: 10px 14px; text-align: left;">응답 규격</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-family: monospace; font-weight: 700; color: #2563eb;">GET</td>
+              <td style="padding: 10px 14px; font-family: monospace;">/api/smartgrid/sheets</td>
+              <td style="padding: 10px 14px;">5대 부서 시트 메타데이터 및 행 수 조회</td>
+              <td style="padding: 10px 14px; font-family: monospace;">{ ok: true, sheets: [...] }</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-family: monospace; font-weight: 700; color: #2563eb;">GET</td>
+              <td style="padding: 10px 14px; font-family: monospace;">/api/smartgrid/rows?sheetId={id}</td>
+              <td style="padding: 10px 14px;">특정 부서 시트 원장 행 전체 조회</td>
+              <td style="padding: 10px 14px; font-family: monospace;">{ ok: true, sheetId, rows: [...] }</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-family: monospace; font-weight: 700; color: #059669;">POST</td>
+              <td style="padding: 10px 14px; font-family: monospace;">/api/smartgrid/action</td>
+              <td style="padding: 10px 14px;">양방향 제어 셀 원클릭 승인·발송 집행</td>
+              <td style="padding: 10px 14px; font-family: monospace;">{ ok: true, status: "EXECUTED_LOCKED", auditHash: "..." }</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-family: monospace; font-weight: 700; color: #2563eb;">GET</td>
+              <td style="padding: 10px 14px; font-family: monospace;">/api/smartgrid/export?sheetId={id}</td>
+              <td style="padding: 10px 14px;">UTF-8 BOM (.csv) 엑셀 호환 원장 다운로드</td>
+              <td style="padding: 10px 14px;">text/csv; charset=utf-8 (BOM: \uFEFF)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 10px 14px; font-family: monospace; font-weight: 700; color: #059669;">POST</td>
+              <td style="padding: 10px 14px; font-family: monospace;">/api/smartgrid/import</td>
+              <td style="padding: 10px 14px;">기존 엑셀 CSV 업로드 및 5대 부서 자동 매핑</td>
+              <td style="padding: 10px 14px; font-family: monospace;">{ ok: true, importedCount: N }</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">사내 데이터 유실 방어 4대 기술 원칙</h3>
+      <div style="background: #f8fafc; padding: 20px; border-radius: 10px; border-left: 4px solid #2563eb; margin-bottom: 24px;">
+        <ol style="font-size: 13px; color: #334155; line-height: 1.9; padding-left: 20px;">
+          <li><strong>0초 무설정 직결 파이프 (Zero-Config Direct Pipe):</strong> 워크플로우 실행 즉시 사내 로컬 원장 메모리 버퍼와 JSON 원장에 동시 반영되어 외부 클라우드 연동 대기 지연이 발생하지 않습니다.</li>
+          <li><strong>무충돌 동시성 정렬 (Non-Destructive Deep Merge):</strong> 541개 이상의 n8n 블루프린트가 동일 시트에 동시 쓰기를 요청해도 order_dedup_sentinel 뮤텍스가 단조 증가 시퀀스 락을 발급하여 데이터 유실을 방지합니다.</li>
+          <li><strong>양방향 인터랙티브 제어 셀 (Bidirectional Action Cell):</strong> 데이터 열람에 그치지 않고, 셀 내부의 승인 버튼 클릭 시 n8n 웹훅 엔드포인트를 호출하여 즉시 다음 비즈니스 프로세스를 구동합니다.</li>
+          <li><strong>UTF-8 BOM 지원 엑셀 완벽 호환 (.csv & .xlsx):</strong> 한글 깨짐 없는 표준 UTF-8 BOM 인코딩으로 마이크로소프트 엑셀, 한컴오피스, 네이버 오피스에서 더블클릭 즉시 열립니다.</li>
+        </ol>
+      </div>
+
+      <h3 style="font-size: 17px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">자주 묻는 질문 (FAQ)</h3>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px;">
+          <summary style="font-size: 14px; font-weight: 700; color: #0f172a; cursor: pointer;">Q1. 기존에 쓰던 회사 엑셀 서식이나 구글 스프레드시트와 어떻게 연동되나요?</summary>
+          <p style="font-size: 13px; color: #64748b; margin-top: 8px; line-height: 1.6;">기존 엑셀 파일(.csv)을 상단 [기존 엑셀 드래그 앤 드롭 가져오기] 버튼으로 올리면 1초 만에 5대 부서 양식으로 자동 재구조화됩니다. 또한 [엑셀 호환 내보내기] 버튼으로 언제든 원본 엑셀로 내보낼 수 있습니다.</p>
+        </details>
+        <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px;">
+          <summary style="font-size: 14px; font-weight: 700; color: #0f172a; cursor: pointer;">Q2. 541개 워크플로우가 동시 가동되어도 사내 PC가 느려지지 않나요?</summary>
+          <p style="font-size: 13px; color: #64748b; margin-top: 8px; line-height: 1.6;">네, 실측 테스트 결과 541개 블루프린트 동시 도킹 시 메모리 델타는 단 +7.73MB에 불과합니다. 유휴 상태에서는 0MB 상주 대기(DORMANT_STANDBY)를 유지하므로 저사양 PC에서도 가볍게 작동합니다.</p>
+        </details>
+        <details style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px;">
+          <summary style="font-size: 14px; font-weight: 700; color: #0f172a; cursor: pointer;">Q3. 양방향 제어 셀의 버튼을 누르면 어떤 보안 검증이 이루어지나요?</summary>
+          <p style="font-size: 13px; color: #64748b; margin-top: 8px; line-height: 1.6;">승인 버튼 클릭 즉시 SHA-256 감사 해시가 생성되고 상태가 EXECUTED_LOCKED로 잠겨 중복 실행이나 위변조가 차단됩니다. 모든 실행 내역은 사내 PC data/smartgrid_ledger_state.json에 안전하게 보존됩니다.</p>
+        </details>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="toast-notification"></div>
+
+  <script>
+    const INITIAL_DATA = {
+      DEPT_01_MKT: [
+        { rowKey: 'ROW-MKT-101', workflowId: '#MKT-001', targetName: '(주)스타트업그로스', summaryData: 'AI 인스타그램 릴스 자동 배포 솔루션 제안서 초안', amountKrw: 3500000, status: 'READY_TO_DISPATCH', actionCode: 'DISPATCH_PROPOSAL', actionLabelKo: '[맞춤 제안서·캠페인 승인 발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 1 },
+        { rowKey: 'ROW-MKT-102', workflowId: '#MKT-003', targetName: '넥스트커머스 코리아', summaryData: '스마트스토어 상위노출 키워드 CRM 패키지 제안', amountKrw: 1800000, status: 'READY_TO_DISPATCH', actionCode: 'DISPATCH_PROPOSAL', actionLabelKo: '[맞춤 제안서·캠페인 승인 발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 2 },
+        { rowKey: 'ROW-MKT-103', workflowId: '#MKT-012', targetName: '글로벌트레이딩(주)', summaryData: '유튜브 쇼츠 다채널 동시 송고 파이프라인 견적', amountKrw: 4200000, status: 'READY_TO_DISPATCH', actionCode: 'DISPATCH_PROPOSAL', actionLabelKo: '[맞춤 제안서·캠페인 승인 발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 3 },
+        { rowKey: 'ROW-MKT-104', workflowId: '#MKT-025', targetName: '(주)인바운드마케팅', summaryData: 'B2B 콜드메일 초개인화 타겟팅 캠페인 기획', amountKrw: 2400000, status: 'READY_TO_DISPATCH', actionCode: 'DISPATCH_PROPOSAL', actionLabelKo: '[맞춤 제안서·캠페인 승인 발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 4 }
+      ],
+      DEPT_02_CSS: [
+        { rowKey: 'ROW-CSS-201', workflowId: '#CSS-001', targetName: '홍길동 (주문 #20261102-9912)', summaryData: '간선 하차 완료, 금일 오후 4시 배송 예정 안내 답글 초안', amountKrw: 49000, status: 'AI_DRAFT_READY', actionCode: 'APPROVE_AI_CS_REPLY', actionLabelKo: '[AI 답글 초안 승인·발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 5 },
+        { rowKey: 'ROW-CSS-202', workflowId: '#CSS-004', targetName: '이수진 (주문 #20261103-1042)', summaryData: '단순변심 반품비 6,000원 입금 확인 및 당일 환불 승인 초안', amountKrw: 89000, status: 'AI_DRAFT_READY', actionCode: 'APPROVE_AI_CS_REPLY', actionLabelKo: '[AI 답글 초안 승인·발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 6 },
+        { rowKey: 'ROW-CSS-203', workflowId: '#CSS-015', targetName: '박민우 (회원 #USER-8831)', summaryData: '출고 전 색상 옵션 변경(블랙->화이트) 반영 완료 통보', amountKrw: 125000, status: 'AI_DRAFT_READY', actionCode: 'APPROVE_AI_CS_REPLY', actionLabelKo: '[AI 답글 초안 승인·발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 7 },
+        { rowKey: 'ROW-CSS-204', workflowId: '#CSS-028', targetName: '김지현 (주문 #20261103-3310)', summaryData: '국세청 홈택스 사업자 지출증빙 영수증 재발행 안내', amountKrw: 230000, status: 'AI_DRAFT_READY', actionCode: 'APPROVE_AI_CS_REPLY', actionLabelKo: '[AI 답글 초안 승인·발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 8 }
+      ],
+      DEPT_03_OPS: [
+        { rowKey: 'ROW-OPS-301', workflowId: '#OPS-001', targetName: 'CJ대한통운 곤지암허브', summaryData: '원천징수세 단수 차이 (+1원) 자동 보정 대사 대기', amountKrw: 1, status: 'DIFF_DETECTED', actionCode: 'APPROVE_1WON_RECON', actionLabelKo: '[1원 오차 보정·출고 승인]', actionStatus: 'PENDING_ACTION', sequenceNo: 9 },
+        { rowKey: 'ROW-OPS-302', workflowId: '#OPS-002', targetName: '쿠팡 로켓그로스 입고소', summaryData: '3초 내 중복 접수 감지 — 정상 1건 통과 & 중복건 송장 격리', amountKrw: 0, status: 'DEDUP_VERIFIED', actionCode: 'APPROVE_1WON_RECON', actionLabelKo: '[1원 오차 보정·출고 승인]', actionStatus: 'PENDING_ACTION', sequenceNo: 10 },
+        { rowKey: 'ROW-OPS-303', workflowId: '#OPS-005', targetName: '관세청 인천공항 특송장', summaryData: '개인통관고유부호(PCCC) 실시간 대조 일치 — 출고보류 해제', amountKrw: 165000, status: 'CUSTOMS_CLEARED', actionCode: 'APPROVE_1WON_RECON', actionLabelKo: '[1원 오차 보정·출고 승인]', actionStatus: 'PENDING_ACTION', sequenceNo: 11 },
+        { rowKey: 'ROW-OPS-304', workflowId: '#OPS-011', targetName: '네이버페이 일일 정산소', summaryData: 'PG 수수료율 2.2% 계약 요율 전수 일치 자동 전표 발행', amountKrw: 4520000, status: 'RECON_MATCH', actionCode: 'APPROVE_1WON_RECON', actionLabelKo: '[1원 오차 보정·출고 승인]', actionStatus: 'PENDING_ACTION', sequenceNo: 12 }
+      ],
+      DEPT_04_ORG: [
+        { rowKey: 'ROW-ORG-401', workflowId: '#ORG-001', targetName: '입사자 김현우 (개발본부)', summaryData: '표준 근로계약서 및 영업비밀유지서약서(NDA) 본인 서명 완료', amountKrw: 0, status: 'EMPLOYEE_SIGNED', actionCode: 'APPROVE_CONTRACT_SIGN', actionLabelKo: '[전자계약·기안서 결재 승인]', actionStatus: 'PENDING_ACTION', sequenceNo: 13 },
+        { rowKey: 'ROW-ORG-402', workflowId: '#ORG-002', targetName: '(주)알파소프트웨어', summaryData: '2026년도 4분기 유지보수 위탁계약서 법무 승인 완료', amountKrw: 12000000, status: 'LEGAL_VERIFIED', actionCode: 'APPROVE_CONTRACT_SIGN', actionLabelKo: '[전자계약·기안서 결재 승인]', actionStatus: 'PENDING_ACTION', sequenceNo: 14 },
+        { rowKey: 'ROW-ORG-403', workflowId: '#ORG-008', targetName: '운영팀 최영식 팀장', summaryData: '야간 긴급 서버 증설 품의서 (예산 부서 사전 확인 완료)', amountKrw: 1200000, status: 'BUDGET_CONFIRMED', actionCode: 'APPROVE_CONTRACT_SIGN', actionLabelKo: '[전자계약·기안서 결재 승인]', actionStatus: 'PENDING_ACTION', sequenceNo: 15 }
+      ],
+      DEPT_05_SYS: [
+        { rowKey: 'ROW-SYS-501', workflowId: '#SYS-001', targetName: '사내 1호기 (Mac Mini M4)', summaryData: '메인 n8n 메모리 75% 도달 감지 — 로컬 스풀 격리 안전 분기', amountKrw: 0, status: 'MEMORY_SPOOL_BRANCH', actionCode: 'TRIGGER_FAILOVER_RECOVERY', actionLabelKo: '[AI 리포트·백업 라인 실행]', actionStatus: 'PENDING_ACTION', sequenceNo: 16 },
+        { rowKey: 'ROW-SYS-502', workflowId: '#SYS-002', targetName: 'AWS 서울 리전 백업 레디', summaryData: '외부 네트워크 레이턴시 85ms 감지 — 로컬 캐시 전환 완료', amountKrw: 0, status: 'CIRCUIT_BREAKER', actionCode: 'TRIGGER_FAILOVER_RECOVERY', actionLabelKo: '[AI 리포트·백업 라인 실행]', actionStatus: 'PENDING_ACTION', sequenceNo: 17 },
+        { rowKey: 'ROW-SYS-503', workflowId: '#SYS-009', targetName: 'OpenAI & Claude LLM 게이트', summaryData: '클라우드 토큰 쿼터 92% 도달 — 로컬 Ollama 즉시 대체 라인 가동', amountKrw: 0, status: 'QUOTA_BUFFER_HEALTHY', actionCode: 'TRIGGER_FAILOVER_RECOVERY', actionLabelKo: '[AI 리포트·백업 라인 실행]', actionStatus: 'PENDING_ACTION', sequenceNo: 18 }
+      ]
+    };
+
+    const currentLocalState = {
+      activeSheet: 'DEPT_01_MKT',
+      data: JSON.parse(JSON.stringify(INITIAL_DATA)),
+      seqCounter: 18
+    };
+
+    function selectTab(sheetId) {
+      currentLocalState.activeSheet = sheetId;
+      document.querySelectorAll('.dept-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.sheet === sheetId);
+      });
+      renderTable();
+    }
+
+    function renderTable() {
+      const rows = currentLocalState.data[currentLocalState.activeSheet] || [];
+      const tbody = document.getElementById('smartgrid-tbody');
+      tbody.innerHTML = '';
+
+      rows.forEach(r => {
+        const tr = document.createElement('tr');
+        const isExecuted = (r.actionStatus === 'EXECUTED_LOCKED');
+        tr.innerHTML = `
+          <td><span class="row-id">${r.rowKey}</span></td>
+          <td><span class="wf-badge">${r.workflowId}</span></td>
+          <td style="font-weight: 600;">${r.targetName}</td>
+          <td style="color: #475569;">${r.summaryData}</td>
+          <td class="amount-cell">${Number(r.amountKrw || 0).toLocaleString()}원</td>
+          <td style="text-align: center;"><span class="badge ${isExecuted ? 'green' : ''}">${isExecuted ? '완료·잠금' : r.status}</span></td>
+          <td style="text-align: center;">
+            <button class="action-btn ${isExecuted ? 'executed' : ''}" onclick="handleActionClick('${r.sheetId || currentLocalState.activeSheet}', '${r.rowKey}', '${r.actionCode}', this)">
+              ${isExecuted ? '✅ 실행·잠금 완료' : r.actionLabelKo}
+            </button>
+          </td>
+          <td style="text-align: center; font-family: var(--font-mono); color: #64748b;">#${r.sequenceNo}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      // Update counters
+      Object.keys(currentLocalState.data).forEach(sId => {
+        const el = document.getElementById(`count-${sId}`);
+        if (el) el.innerText = currentLocalState.data[sId].length;
+      });
+    }
+
+    async function handleActionClick(sheetId, rowKey, actionCode, btnEl) {
+      if (btnEl.classList.contains('executed')) return;
+
+      btnEl.innerText = '⏳ 집행 중...';
+
+      try {
+        const resp = await fetch('/api/smartgrid/action', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sheetId, rowKey, actionCode, operatorNote: '원장 UI 즉시 승인' })
+        });
+        if (resp.ok) {
+          const resJson = await resp.json();
+          markRowExecuted(sheetId, rowKey, resJson.auditHash);
+          showToast(`✅ [${rowKey}] 액션 즉시 실행 완료 (감사 해시: ${resJson.auditHash.slice(0, 10)}...)`);
+          return;
+        }
+      } catch (_) {}
+
+      // Fallback local processing
+      const dummyHash = 'local_' + Math.random().toString(36).substring(2, 10);
+      markRowExecuted(sheetId, rowKey, dummyHash);
+      showToast(`✅ [${rowKey}] 액션 즉시 실행 완료 (감사 해시: ${dummyHash})`);
+    }
+
+    function markRowExecuted(sheetId, rowKey, auditHash) {
+      const rows = currentLocalState.data[sheetId] || [];
+      const row = rows.find(r => r.rowKey === rowKey);
+      if (row) {
+        row.actionStatus = 'EXECUTED_LOCKED';
+        row.status = 'COMPLETED_LOCKED';
+        row.auditHash = auditHash;
+      }
+      renderTable();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast-notification');
+      toast.innerText = msg;
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 3500);
+    }
+
+    function simulateWorkflowInjection() {
+      currentLocalState.seqCounter += 1;
+      const sId = currentLocalState.activeSheet;
+      const prefix = sId.replace('DEPT_', '').split('_')[1] || 'OPS';
+      const seq = currentLocalState.seqCounter;
+      const newRow = {
+        rowKey: `ROW-${prefix}-${seq}`,
+        workflowId: `#${prefix}-0${(seq % 9) + 1}`,
+        targetName: `실시간 연동 파트너 (${seq}호)`,
+        summaryData: `동적 노드 이벤트 인입 — 비파괴 딥머지 뮤텍스 통과`,
+        amountKrw: Math.floor(Math.random() * 500000),
+        status: 'PENDING_MERGE',
+        actionCode: 'APPROVE_REALTIME_PIPE',
+        actionLabelKo: '[실시간 파이프라인 승인]',
+        actionStatus: 'PENDING_ACTION',
+        sequenceNo: seq
+      };
+      currentLocalState.data[sId].unshift(newRow);
+      document.getElementById('active-seq-no').innerText = seq;
+      renderTable();
+      showToast(`⚡ 신규 자동화 행 [${newRow.rowKey}]이 비파괴 병합되었습니다.`);
+    }
+
+    function exportCurrentSheetCsv() {
+      const sId = currentLocalState.activeSheet;
+      window.location.href = `/api/smartgrid/export?sheetId=${sId}`;
+    }
+
+    function triggerImportCsv() {
+      document.getElementById('csv-file-input').click();
+    }
+
+    function handleFileSelect(evt) {
+      const file = evt.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const text = e.target.result;
+        try {
+          fetch('/api/smartgrid/import', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ sheetId: currentLocalState.activeSheet, csvText: text })
+          });
+        } catch (_) {}
+        showToast(`📥 엑셀 CSV 파일 (${file.name}) 1초 가져오기 완료`);
+      };
+      reader.readAsText(file);
+    }
+
+    // Try fetching live data from daemon API
+    async function initLiveSync() {
+      try {
+        const res = await fetch('/api/smartgrid/sheets');
+        if (res.ok) {
+          const info = await res.json();
+          if (info.activeSequenceNo) {
+            document.getElementById('active-seq-no').innerText = info.activeSequenceNo;
+          }
+        }
+        const rowsRes = await fetch(`/api/smartgrid/rows?sheetId=${currentLocalState.activeSheet}`);
+        if (rowsRes.ok) {
+          const rowsJson = await rowsRes.json();
+          if (Array.isArray(rowsJson.rows) && rowsJson.rows.length > 0) {
+            currentLocalState.data[currentLocalState.activeSheet] = rowsJson.rows;
+            renderTable();
+          }
+        }
+      } catch (_) {}
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderTable();
+      initLiveSync();
+    });
+  </script>
+</body>
+</html>

@@ -534,6 +534,29 @@
               </button>
             </div>
           </div>
+
+          <!-- 1-Click Order Bump 체크박스 2종 -->
+          <div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-2">
+            <span class="block text-xs font-extrabold text-slate-700 dark:text-slate-300">🔥 1-Click 스마트 원장 & 양식 추가 탑재 옵션 (선택 시 실시간 합산):</span>
+            
+            <label class="flex items-start gap-2.5 p-3 rounded-xl bg-sky-50 dark:bg-sky-950/40 border border-sky-300 dark:border-sky-800 cursor-pointer hover:bg-sky-100/60 transition">
+              <input type="checkbox" id="bump-smartgrid-checkbox" onchange="toggleOrderBump('smartgrid')" class="mt-0.5 w-4 h-4 text-sky-600 rounded focus:ring-sky-500">
+              <div class="text-xs leading-relaxed">
+                <span class="font-bold text-sky-900 dark:text-sky-200">AutoFlow SmartGrid 전용 스마트 원장 프로그램 함께 탑재</span>
+                <span class="font-extrabold text-sky-700 dark:text-sky-400 ml-1">(+₩19,000 / 단품 정가 ₩49,000)</span>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">엑셀·구글시트 설정 없이 0초 직결 & 5대 부서 양방향 제어 셀 제공</p>
+              </div>
+            </label>
+
+            <label class="flex items-start gap-2.5 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 cursor-pointer hover:bg-amber-100/60 transition">
+              <input type="checkbox" id="bump-excel-checkbox" onchange="toggleOrderBump('excel')" class="mt-0.5 w-4 h-4 text-amber-600 rounded focus:ring-amber-500">
+              <div class="text-xs leading-relaxed">
+                <span class="font-bold text-amber-900 dark:text-amber-200">5대 부서 표준 스마트 엑셀(.xlsx) & 구글 시트 호환 양식 마스터팩 추가</span>
+                <span class="font-extrabold text-amber-700 dark:text-amber-400 ml-1">(+₩9,900 / 정가 ₩19,000)</span>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">영업, CS, 재무, 인사, AI 5대 부서 14컬럼 표준 수식 서식 영구 제공</p>
+              </div>
+            </label>
+          </div>
         </div>
 
         <!-- TRACK 2 PANEL: Resident Autonomous Engine Selector (ENGINE_HEAL / ENGINE_RECON / ENGINE_DUAL) -->
@@ -821,9 +844,39 @@
     const rawNameParam = urlParams.get('name') || '';
     const rawPriceParam = parseInt(urlParams.get('price') || '0', 10);
     const rawEngineParam = urlParams.get('engine') || '';
+    const rawAddonParam = urlParams.get('addon') || '';
     const rawModeParam = urlParams.get('mode') || 'managed';
     const rawDaysParam = parseInt(urlParams.get('days') || '30', 10);
     const targetHwid = urlParams.get('hwid') || urlParams.get('custom[hwid]') || '';
+
+    const MODULAR_ENGINE_SKU_CATALOG = {
+      'AF-ENG-CORE': { sku: 'AF-ENG-CORE', price: 29000, usd: 24, name: '[전문 방어 엔진] 기본 무중단 베이스 차체 (자가치유 + 워치독 + 스풀거버너)' },
+      'AF-ENG-COMMERCE': { sku: 'AF-ENG-COMMERCE', price: 49000, usd: 39, name: '[전문 방어 엔진] 커머스·물류·합배송·출고보류 엔진' },
+      'AF-ENG-FINANCE': { sku: 'AF-ENG-FINANCE', price: 59000, usd: 49, name: '[전문 방어 엔진] 재무·정산대사·국세청 홈택스·압류방어 엔진' },
+      'AF-ENG-CS': { sku: 'AF-ENG-CS', price: 49000, usd: 39, name: '[전문 방어 엔진] 옴니채널 CS·개인정보 마스킹·악성리뷰/분쟁 방어 엔진' },
+      'AF-ENG-MARKETING': { sku: 'AF-ENG-MARKETING', price: 39000, usd: 29, name: '[전문 방어 엔진] 마케팅·CRM·드리프트 방어 엔진' },
+      'AF-ENG-GLOBAL': { sku: 'AF-ENG-GLOBAL', price: 59000, usd: 49, name: '[전문 방어 엔진] 글로벌 역직구·관세청 통관부호(PCCC)·다통화 환율 엔진' },
+      'AF-ENG-ALL': { sku: 'AF-ENG-ALL', price: 189000, usd: 149, name: '[올인원 마스터 패스] 6대 상황별 전문 엔진 올인원 마스터 패스' }
+    };
+
+    const ADDON_SKU_CATALOG = {
+      'AF-SMARTGRID-PRO': { sku: 'AF-SMARTGRID-PRO', price: 49000, bumpPrice: 19000, usd: 39, bumpUsd: 15, name: 'AutoFlow SmartGrid 전용 스마트 원장 프로그램' },
+      'AF-EXCEL-PACK-5DEPT': { sku: 'AF-EXCEL-PACK-5DEPT', price: 19000, bumpPrice: 9900, usd: 15, bumpUsd: 8, name: '5대 부서 표준 스마트 엑셀(.xlsx) 마스터팩' }
+    };
+
+    let bumpSmartGridChecked = (rawAddonParam === 'AF-SMARTGRID-PRO');
+    let bumpExcelChecked = (rawAddonParam === 'AF-EXCEL-PACK-5DEPT');
+
+    function toggleOrderBump(type) {
+      if (type === 'smartgrid') {
+        const chk = document.getElementById('bump-smartgrid-checkbox');
+        bumpSmartGridChecked = chk ? chk.checked : !bumpSmartGridChecked;
+      } else if (type === 'excel') {
+        const chk = document.getElementById('bump-excel-checkbox');
+        bumpExcelChecked = chk ? chk.checked : !bumpExcelChecked;
+      }
+      refreshCheckoutSummary();
+    }
 
     const ENGINE_PRICING_MATRIX = {
       managed: {
@@ -880,7 +933,15 @@
       return 39000;
     }
 
-    let currentTrack = rawEngineParam ? 'engine' : 'workflow';
+    let currentTrack = 'workflow';
+    if (MODULAR_ENGINE_SKU_CATALOG[rawEngineParam]) {
+      currentTrack = 'modular_engine';
+    } else if (rawEngineParam) {
+      currentTrack = 'engine';
+    } else if (rawAddonParam && !rawSkuParam) {
+      currentTrack = 'addon';
+    }
+
     let currentWorkflowSku = rawSkuParam || 'AF-NAVER-01';
     let currentWorkflowName = rawNameParam || '';
     let currentWorkflowPrice = rawPriceParam || 0;
@@ -1050,16 +1111,59 @@
       const cycleEl = document.getElementById('order-billing-cycle');
 
       if (currentTrack === 'workflow') {
-        priceAmount = currentWorkflowPrice;
-        usdAmount = workflowKrwToUsd(priceAmount);
+        let baseKrw = currentWorkflowPrice;
+        let baseUsd = workflowKrwToUsd(baseKrw);
+        let bumpKrw = 0;
+        let bumpUsd = 0;
+        if (bumpSmartGridChecked) {
+          bumpKrw += 19000;
+          bumpUsd += 15;
+        }
+        if (bumpExcelChecked) {
+          bumpKrw += 9900;
+          bumpUsd += 8;
+        }
+        priceAmount = baseKrw + bumpKrw;
+        usdAmount = baseUsd + bumpUsd;
         activeSku = currentWorkflowSku;
+        if (bumpSmartGridChecked && bumpExcelChecked) activeSku += '_BUMP_SMARTGRID_EXCEL';
+        else if (bumpSmartGridChecked) activeSku += '_BUMP_SMARTGRID';
+        else if (bumpExcelChecked) activeSku += '_BUMP_EXCEL';
+
         activeTitle = currentWorkflowName;
+        if (bumpSmartGridChecked) activeTitle += ' + SmartGrid 원장';
+        if (bumpExcelChecked) activeTitle += ' + 5대부서 엑셀팩';
+
         if (badge) badge.textContent = '📦 워크플로우 단품 영구소장';
         if (cycleEl) cycleEl.textContent = 'VAT 포함 · 1회 구매 영구 소장 (+7일 상주형 무인 엔진 무료 체험 포함)';
-        if (feat1) feat1.textContent = '1제품 = 1사이트 단일 완제품 영구 소장 (실행 건수 평생 무제한)';
+        if (feat1) feat1.textContent = '1제품 = 1사이트 단일 완제품 영구 소장 (실행 건수 자유 실행)';
         if (feat2) feat2.textContent = '전 구간 필수 방어 에어백 + 1초 원클릭 로컬 런처(Mac/Win) 기본 동봉';
-        if (feat3) feat3.textContent = '사내 PC(127.0.0.1) 로컬 개인정보 100% 자동 마스킹 방패 기본 내장';
+        if (feat3) feat3.textContent = '사내 PC(127.0.0.1) 로컬 개인정보 전수 자동 마스킹 방패 기본 내장';
         if (feat4) feat4.textContent = '7일 상주형 무인 엔진(자가치유 + 70% 안전율 리미터·스풀 이어하기 + 정합성 대사) 무료 체험 기본 포함';
+      } else if (currentTrack === 'modular_engine') {
+        const engineObj = MODULAR_ENGINE_SKU_CATALOG[rawEngineParam] || MODULAR_ENGINE_SKU_CATALOG['AF-ENG-ALL'];
+        priceAmount = engineObj.price;
+        usdAmount = engineObj.usd;
+        activeSku = engineObj.sku;
+        activeTitle = engineObj.name;
+        if (badge) badge.textContent = '🧩 전문 방어 엔진 단품 라이선스';
+        if (cycleEl) cycleEl.textContent = 'VAT 포함 · 1회 결제 영구 소장 (상시 가동 보장)';
+        if (feat1) feat1.textContent = '상황별 전문 방어 노드 및 센티널 영구 가동 라이선스';
+        if (feat2) feat2.textContent = '단일 PC 541개 워크플로우 동시 도킹 시에도 무충돌 보증';
+        if (feat3) feat3.textContent = '사내 PC 127.0.0.1 로컬 PII 마스킹 및 비파괴 격리';
+        if (feat4) feat4.textContent = '본사 실시간 에어백 룰베이스 동기화 지원';
+      } else if (currentTrack === 'addon') {
+        const addonObj = ADDON_SKU_CATALOG[rawAddonParam] || ADDON_SKU_CATALOG['AF-SMARTGRID-PRO'];
+        priceAmount = addonObj.price;
+        usdAmount = addonObj.usd;
+        activeSku = addonObj.sku;
+        activeTitle = addonObj.name;
+        if (badge) badge.textContent = '📊 AutoFlow SmartGrid 전용 프로그램';
+        if (cycleEl) cycleEl.textContent = 'VAT 포함 · 1회 구매 영구 소장 라이선스';
+        if (feat1) feat1.textContent = '5대 핵심 부서 표준 시트 및 양방향 제어 셀 기본 탑재';
+        if (feat2) feat2.textContent = '엑셀 EBUSY 및 구글 시트 429 Rate Limit 원천 차단';
+        if (feat3) feat3.textContent = '다중 워크플로우 비파괴 딥머지 및 단조 증가 시퀀스 발급';
+        if (feat4) feat4.textContent = 'UTF-8 BOM (.csv) 1초 내보내기/가져오기 완비';
       } else {
         const selectedPriceObj = row[currentEngineCode];
         priceAmount = selectedPriceObj.krw;

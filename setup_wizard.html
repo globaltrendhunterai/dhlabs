@@ -1720,8 +1720,11 @@
             <span style="font-size: 13px; font-weight: 800; color: #0f172a;">🎛️ 상황별 6대 엔진 카트리지 슬롯 (Auto-Mount Engine Pack)</span>
             <span id="openHoodArbKernelBadge" style="background: #0f172a; color: #38bdf8; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 999px; border: 1px solid #0284c7;">Universal Arbitration Kernel: ACTIVE (6대 도메인 중재 가동 중)</span>
           </div>
-          <div style="font-size: 11px; color: #475569;">
-            도킹된 워크플로우 수: <b id="openHoodDockedWorkflowsCount" style="color: #0f172a; font-weight: 800;">0</b>개
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <a href="/smartgrid.html" target="_blank" style="background: #2563eb; color: #ffffff; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">📊 AutoFlow SmartGrid 전용 원장 열기</a>
+            <div style="font-size: 11px; color: #475569;">
+              도킹된 워크플로우 수: <b id="openHoodDockedWorkflowsCount" style="color: #0f172a; font-weight: 800;">0</b>개
+            </div>
           </div>
         </div>
 
@@ -1740,7 +1743,7 @@
         </div>
 
         <!-- 2) 휴면 대기 카트리지 (Dormant Standby — 0MB) -->
-        <div>
+        <div style="margin-bottom: 8px;">
           <div style="font-size: 11px; font-weight: 700; color: #64748b; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
             <span>💤 휴면 대기 카트리지 (Dormant Standby — 0MB)</span>
             <span id="dormantPacksCountBadge" style="font-size: 10px; background: #f1f5f9; color: #475569; padding: 1px 6px; border-radius: 999px; font-weight: 700;">5개 대기</span>
@@ -1765,6 +1768,20 @@
             <span style="background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
               <span>글로벌 역직구·통관·외환 팩 (PACK_GLOBAL_CUSTOMS_FX)</span>
               <span style="background: #e2e8f0; color: #475569; font-size: 9.5px; padding: 1px 5px; border-radius: 4px; font-weight: 600;">💤 휴면 대기 (워크플로우 도킹 시 0초 자동 장착)</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 3) 미구독 필수 엔진 (Locked Required — 방어선 미작동) -->
+        <div id="lockedEngineCartridgesContainer" style="margin-top: 8px;">
+          <div style="font-size: 11px; font-weight: 700; color: #b91c1c; margin-bottom: 4px; display: flex; align-items: center; gap: 4px;">
+            <span>🔒 미구독 필수 엔진 (Locked Required — 방어선 미작동)</span>
+            <span id="lockedPacksCountBadge" style="font-size: 10px; background: #fee2e2; color: #991b1b; padding: 1px 6px; border-radius: 999px; font-weight: 700;">0개</span>
+          </div>
+          <div id="lockedEngineCartridgesList" style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="background: #fff1f2; border: 1px dashed #fca5a5; color: #991b1b; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+              <span>미구독 잠금 엔진 없음 (필수 방어선 전수 가동 중)</span>
+              <a href="/checkout.html?engine=AF-ENG-ALL" target="_blank" style="background: #dc2626; color: #ffffff; padding: 2px 6px; border-radius: 4px; font-size: 9.5px; font-weight: 700; text-decoration: none;">1초 레고식 엔진 해금하기 ➔</a>
             </span>
           </div>
         </div>
@@ -2106,6 +2123,35 @@
           if (dormantCountBadge) {
             const dCount = ALL_ENGINE_PACKS_KO.filter(p => !mountedSet.has(p.id)).length;
             dormantCountBadge.textContent = `${dCount}개 대기`;
+          }
+
+          const lockedListEl = document.getElementById('lockedEngineCartridgesList');
+          const lockedCountBadge = document.getElementById('lockedPacksCountBadge');
+          const lockedPacks = Array.isArray(data.lockedEnginePacks) ? data.lockedEnginePacks : (Array.isArray(data.lockedEngineCartridges) ? data.lockedEngineCartridges : []);
+          if (lockedListEl) {
+            if (lockedPacks.length === 0) {
+              lockedListEl.innerHTML = `
+                <span style="background: #fff1f2; border: 1px dashed #fca5a5; color: #991b1b; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                  <span>미구독 잠금 엔진 없음 (필수 방어선 전수 가동 중)</span>
+                  <a href="/checkout.html?engine=AF-ENG-ALL" target="_blank" style="background: #dc2626; color: #ffffff; padding: 2px 6px; border-radius: 4px; font-size: 9.5px; font-weight: 700; text-decoration: none;">1초 레고식 엔진 해금하기 ➔</a>
+                </span>
+              `;
+            } else {
+              lockedListEl.innerHTML = lockedPacks.map(p => {
+                const pId = typeof p === 'string' ? p : (p.packId || p.id || 'PACK_UNKNOWN');
+                const pName = typeof p === 'object' && p.packName ? p.packName : pId;
+                const pUrl = (typeof p === 'object' && p.upsellUrl) ? p.upsellUrl : (`/checkout.html?engine=${p.skuId || 'AF-ENG-ALL'}`);
+                return `
+                  <span style="background: #fff1f2; border: 1px solid #f87171; color: #991b1b; padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                    <span>🔒 <b>${pName}</b> (${pId})</span>
+                    <a href="${pUrl}" target="_blank" style="background: #dc2626; color: #ffffff; padding: 2px 6px; border-radius: 4px; font-size: 9.5px; font-weight: 700; text-decoration: none;">1초 즉시 해금 ➔</a>
+                  </span>
+                `;
+              }).join('');
+            }
+          }
+          if (lockedCountBadge) {
+            lockedCountBadge.textContent = `${lockedPacks.length}개`;
           }
         }
 
