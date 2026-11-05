@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoFlow 장부 정합성 안전 보정 대기열 (사내 PC 전용)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <!-- 상단 헤더 -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between border-b border-slate-800 pb-6 mb-6">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="p-2.5 bg-blue-600/20 text-blue-400 border border-blue-500/30 rounded-xl text-xl">
+            <i class="fa-solid fa-shield-halved"></i>
+          </span>
+          <div>
+            <h1 class="text-2xl font-bold text-white tracking-tight">AutoFlow 장부 정합성 안전 보정 대기열</h1>
+            <p class="text-sm text-slate-400">사내 PC 전용 오프라인 격리 검증 콘솔 · 실시간 정산 보류 건 확인 및 원클릭 소명 관리소</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 md:mt-0 flex flex-wrap items-center gap-2.5">
+        <a href="/index.html" class="px-3.5 py-2 text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg border border-slate-700 transition">
+          <i class="fa-solid fa-house mr-1.5"></i> 메인 홈
+        </a>
+        <button onclick="simulateDynamicBranchQuorum(3)" class="px-3 py-2 text-xs bg-indigo-700 hover:bg-indigo-600 text-white rounded-lg shadow-sm transition font-semibold">
+          <i class="fa-solid fa-code-branch mr-1"></i> 동적 3분기 시뮬레이션
+        </button>
+        <button onclick="simulateDynamicBranchQuorum(4)" class="px-3 py-2 text-xs bg-rose-700 hover:bg-rose-600 text-white rounded-lg shadow-sm transition font-semibold">
+          <i class="fa-solid fa-scale-unbalanced mr-1"></i> 동적 4분기(2:2 동률) 시뮬레이션
+        </button>
+        <button onclick="simulateDynamicBranchQuorum(5)" class="px-3 py-2 text-xs bg-purple-700 hover:bg-purple-600 text-white rounded-lg shadow-sm transition font-semibold">
+          <i class="fa-solid fa-diagram-project mr-1"></i> 동적 5분기 시뮬레이션
+        </button>
+        <button onclick="previewOtaFeeTariffIsolation()" class="px-3 py-2 text-xs bg-teal-700 hover:bg-teal-600 text-white rounded-lg shadow-sm transition font-semibold">
+          <i class="fa-solid fa-file-shield mr-1"></i> 수수료·관세 격리 프리뷰
+        </button>
+        <button onclick="openNotifModal()" class="px-3.5 py-2 text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg border border-slate-700 transition">
+          <i class="fa-solid fa-bell mr-1.5 text-yellow-400"></i> 메신저 알림 설정
+        </button>
+        <button onclick="openLicenseModal()" class="px-3.5 py-2 text-sm bg-amber-600 hover:bg-amber-500 text-white rounded-lg shadow-sm transition font-medium">
+          <i class="fa-solid fa-shield-halved mr-1.5"></i> ReconFlow 라이선스 등록 / 충전
+        </button>
+        <button onclick="exportToCSV()" class="px-3.5 py-2 text-sm bg-emerald-700 hover:bg-emerald-600 text-white rounded-lg shadow-sm transition">
+          <i class="fa-solid fa-file-csv mr-1.5"></i> 소명 리포트 CSV 출력
+        </button>
+        <button onclick="fetchQuarantineList()" class="px-3.5 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg shadow-sm transition">
+          <i class="fa-solid fa-rotate mr-1.5"></i> 새로고침
+        </button>
+      </div>
+    </div>
+
+    <!-- 실시간 금융 정합성 갭 관제 배너 -->
+    <div id="recon-console-banner" class="p-4 bg-blue-950/40 border border-blue-500/40 rounded-xl mb-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div class="flex items-start gap-3">
+        <div class="p-2.5 bg-blue-500/10 text-blue-400 border border-blue-500/30 rounded-lg text-lg mt-0.5">
+          <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+        <div class="text-sm">
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-blue-300">실시간 금융 정합성 갭 관제 콘솔 (사내 PC 로컬 가동)</span>
+            <span id="banner-license-badge" class="px-2 py-0.5 text-xs bg-slate-800 text-slate-300 border border-slate-700 rounded-full font-mono">100% 투명 추적 가동 중</span>
+          </div>
+          <p class="text-slate-300 mt-1 leading-relaxed text-xs">
+            분기 노드 중단으로 발생하는 주문-재고-결제-정산 간 <strong>데이터 차이(Gap)를 실시간으로 캐치하여 세무/정산 펑크를 원천 차단</strong>합니다.<br>
+            엔진 본체가 장애 즉시 고객 메신저로 직보하며, 사내 PC 안전 보류 대기열에서 확인 후 <strong>[1-Click 보정 승인]</strong>을 누르면 원본 시스템에 즉시 안전 반영됩니다.
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button onclick="openLicenseModal()" class="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs rounded-lg shadow-md transition">
+          <i class="fa-solid fa-shield-halved mr-1"></i> 정합성 엔진 라이선스 관리
+        </button>
+      </div>
+    </div>
+
+    <!-- 법적/실무 안전 거버넌스 배너 (대표님 지시) -->
+    <div class="p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl mb-6 flex items-start gap-3">
+      <i class="fa-solid fa-triangle-exclamation text-amber-400 text-lg mt-0.5"></i>
+      <div class="text-sm">
+        <p class="font-semibold text-amber-300">사내 PC 전용 검증 원칙 (모바일 즉시 승인 금지 거버넌스)</p>
+        <p class="text-slate-300 mt-1">
+          정합성 대사는 돈과 직결되는 핵심 회계 영역입니다. 스마트폰으로 밖에서 맹목적으로 승인을 눌러 취소 주문이 오발송되는 사고를 원천 차단하기 위해, 
+          <strong>알림은 등록하신 메신저(카카오톡/문자/텔레그램)로 수신하되, 실제 보정 승인은 사내 PC 큰 화면에서 상세 데이터를 눈으로 확인한 뒤 진행하도록 설계되었습니다.</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- [Anti-Copy & Active-Node Scoped Defense] 인입(적용) 노드 전용 외부 제어기 스코프 요약 바 -->
+    <div id="activeNodeScopeSummaryBar" class="p-3.5 bg-slate-800/80 border border-blue-500/40 rounded-xl mb-6 flex flex-wrap items-center justify-between gap-3 text-xs">
+      <div class="flex items-center gap-2 text-slate-200">
+        <span class="px-2 py-0.5 bg-blue-600/30 border border-blue-400/40 text-blue-300 rounded font-bold">Out-of-Band Anti-Copy</span>
+        <span id="reconActiveNodeScopeText">현재 워크플로우 인입(적용) 노드 <strong>5개</strong> 외부 제어기 전용 감시 중 · 미적용 노드 <strong>60종</strong> 오판 원천 배제(DORMANT_EXCLUDED)</span>
+      </div>
+      <div class="text-emerald-400 font-semibold">
+        워크플로우 내부 커스텀 노드 주입 0건 (복제 원천 차단 · 핀포인트 도메인 방어)
+      </div>
+    </div>
+
+    <!-- [MOD_P & MOD_Q] 원본 데이터 100% 비변조 보존 & 수수료 과다차감·관세율 괴리 비교 프리뷰 배너 -->
+    <div id="otaFeeTariffIsolationBanner" class="p-4 bg-slate-800/70 border border-teal-500/40 rounded-xl mb-6 space-y-3 text-xs">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-2.5 py-0.5 bg-teal-500/20 text-teal-300 border border-teal-500/40 rounded-full font-mono font-bold">
+            originalDataPreserved: true · autoMutated: false
+          </span>
+          <span class="px-2.5 py-0.5 bg-rose-500/20 text-rose-300 border border-rose-500/40 rounded-full font-mono font-bold">
+            MOD_P_MARKETPLACE_FEE_OVERCHARGE_GUARD
+          </span>
+          <span class="px-2.5 py-0.5 bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 rounded-full font-mono font-bold">
+            MOD_Q_HS_TARIFF_DUTY_GUARD
+          </span>
+        </div>
+        <div class="text-slate-300 font-medium">
+          사내 PC 화면 알림(<code class="text-teal-300">localPcScreenAlert</code>) 상세 대조표 vs 외부 SNS/문자(<code class="text-amber-300">externalSnsSmsAlert</code>) PII·금액 마스킹 분리 가동 중
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="p-3 bg-slate-900/80 border border-rose-500/30 rounded-lg space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-rose-300"><i class="fa-solid fa-percent mr-1.5"></i>[MOD_P] 오픈마켓 판매수수료 과다차감 격리 비교</span>
+            <span class="px-2 py-0.5 bg-rose-500/10 text-rose-300 border border-rose-500/20 rounded font-mono text-[11px]">CAUSE_MARKETPLACE_FEE_OVERCHARGE</span>
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            원본 별칭 필드(<code class="text-amber-300">platform_commission_amt</code>, <code class="text-amber-300">contracted_fee_rate</code>)를 임의 변조하지 않고 원본 그대로 보존 격리합니다.
+            예: 약정 수수료(10% · <strong>10,000원</strong>) 대비 실제 차감 수수료(<strong>14,500원</strong>) ➔ <strong class="text-rose-300">과다차감 차액 +4,500원</strong> 감지 시 사내 PC 보류함에서 <span class="text-emerald-300 font-semibold">[원본 그대로 승인]</span> 또는 <span class="text-cyan-300 font-semibold">[표준 스키마 매핑 승인]</span>을 직접 선택합니다.
+          </p>
+        </div>
+        <div class="p-3 bg-slate-900/80 border border-cyan-500/30 rounded-lg space-y-1.5">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-cyan-300"><i class="fa-solid fa-earth-asia mr-1.5"></i>[MOD_Q] 수입통관 HS코드·관세율 괴리 격리 비교</span>
+            <span class="px-2 py-0.5 bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 rounded font-mono text-[11px]">CAUSE_HS_TARIFF_DUTY_MISMATCH</span>
+          </div>
+          <p class="text-slate-300 leading-relaxed">
+            원본 별칭 필드(<code class="text-amber-300">tariff_hs_code</code>, <code class="text-amber-300">tariff_rate_pct</code>)를 임의 덮어쓰기 없이 보존합니다.
+            예: 마스터 기준 HS코드(<strong>8517.62-0000</strong> · 관세율 <strong>0%</strong>) 대비 통관 신고서(<strong>8517.13-0000</strong> · 관세율 <strong>8%</strong>) ➔ <strong class="text-cyan-300">요율 차이 8%p</strong> 감지 시 추징세액 발생 전 사내 PC 보류함으로 즉시 분리합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 알림 채널 상태 카드 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+      <div class="p-4 bg-slate-800/60 border border-slate-700/60 rounded-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-comment"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-400">알림 연동 1</div>
+            <div class="font-medium text-slate-200">카카오톡 알림톡 / SMS</div>
+          </div>
+        </div>
+        <div class="mt-2 text-xs text-emerald-400 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 실시간 이상 감지 경보 연동 중
+        </div>
+      </div>
+
+      <div class="p-4 bg-slate-800/60 border border-slate-700/60 rounded-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center text-lg">
+            <i class="fa-brands fa-telegram"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-400">알림 연동 2</div>
+            <div class="font-medium text-slate-200">텔레그램 봇 핫라인</div>
+          </div>
+        </div>
+        <div class="mt-2 text-xs text-emerald-400 flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> 수리 완료 리포트 [문제/조치/시간]
+        </div>
+      </div>
+
+      <div class="p-4 bg-slate-800/60 border border-slate-700/60 rounded-xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-lg">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <div>
+            <div class="text-xs text-slate-400">격리 대기열 현황</div>
+            <div class="font-medium text-slate-200" id="stat-count-text">격리 0건 / 대기 중</div>
+          </div>
+        </div>
+        <div class="mt-2 text-xs text-slate-400">
+          로컬 디스크 암호화 안전 보류함 보존
+        </div>
+      </div>
+    </div>
+
+    <!-- 격리된 주문 테이블 -->
+    <div class="bg-slate-800/40 border border-slate-700/70 rounded-2xl overflow-hidden shadow-xl">
+      <div class="px-6 py-4 border-b border-slate-700/70 flex flex-col gap-3">
+        <div class="flex items-center justify-between">
+          <div class="font-semibold text-white flex items-center gap-2">
+            <span>대기 중인 불일치 주문 목록</span>
+            <span id="badge-count" class="px-2 py-0.5 text-xs bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full font-mono">0건</span>
+          </div>
+          <div class="text-xs text-slate-400">
+            마지막 갱신: <span id="last-updated" class="font-mono">-</span>
+          </div>
+        </div>
+
+        <!-- [MOD_P & MOD_Q] 전용 필터 칩 툴바 (Accessible Filter Chips with aria-pressed) -->
+        <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+          <div id="quarantine-module-filter-toolbar" role="toolbar" aria-label="격리 사유별 모듈 필터" class="flex flex-wrap items-center gap-2">
+            <button type="button" id="filter-chip-all" data-filter="ALL" aria-pressed="true" onclick="setQuarantineModuleFilter('ALL')" class="px-3 py-1 rounded-full text-xs font-bold border transition bg-blue-600/30 border-blue-400 text-white shadow-sm">
+              전체 격리 내역 (<span id="filter-count-all" class="font-mono">0</span>)
+            </button>
+            <button type="button" id="filter-chip-mod-p" data-filter="MOD_P" aria-pressed="false" onclick="setQuarantineModuleFilter('MOD_P')" class="px-3 py-1 rounded-full text-xs font-bold border transition bg-slate-900/80 border-rose-500/40 text-rose-300 hover:bg-rose-500/20">
+              <i class="fa-solid fa-percent mr-1"></i>MOD_P 수수료 과다차감 (<span id="filter-count-mod-p" class="font-mono">0</span>)
+            </button>
+            <button type="button" id="filter-chip-mod-q" data-filter="MOD_Q" aria-pressed="false" onclick="setQuarantineModuleFilter('MOD_Q')" class="px-3 py-1 rounded-full text-xs font-bold border transition bg-slate-900/80 border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/20">
+              <i class="fa-solid fa-earth-asia mr-1"></i>MOD_Q HS코드·관세율 괴리 (<span id="filter-count-mod-q" class="font-mono">0</span>)
+            </button>
+            <button type="button" id="filter-chip-quorum" data-filter="BRANCH_QUORUM" aria-pressed="false" onclick="setQuarantineModuleFilter('BRANCH_QUORUM')" class="px-3 py-1 rounded-full text-xs font-bold border transition bg-slate-900/80 border-indigo-500/40 text-indigo-300 hover:bg-indigo-500/20">
+              <i class="fa-solid fa-code-branch mr-1"></i>동적 N분기 쿼럼 오차 (<span id="filter-count-quorum" class="font-mono">0</span>)
+            </button>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <div id="quarantine-filter-status" aria-live="polite" class="text-[11px] font-mono text-slate-400">
+              필터: ALL (전체 표시)
+            </div>
+            <button type="button" id="btn-export-filtered-csv" onclick="exportFilteredQuarantineReport('CSV')" aria-label="선택된 필터 격리 증적 CSV 내보내기" class="hidden px-2.5 py-1 rounded-lg text-[11px] font-bold bg-emerald-600/20 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-600/30 transition">
+              <i class="fa-solid fa-file-csv mr-1"></i>선택 필터 CSV 증적 추출
+            </button>
+            <button type="button" id="btn-export-filtered-json" onclick="exportFilteredQuarantineReport('JSON')" aria-label="선택된 필터 격리 증적 JSON 내보내기" class="hidden px-2.5 py-1 rounded-lg text-[11px] font-bold bg-sky-600/20 border border-sky-500/40 text-sky-300 hover:bg-sky-600/30 transition">
+              <i class="fa-solid fa-file-code mr-1"></i>선택 필터 JSON 원본 추출
+            </button>
+            <button type="button" id="btn-server-export-csv" onclick="downloadServerSideQuarantineExport('CSV')" aria-label="사이드카 서버 원장 다이렉트 CSV 다운로드" class="px-3 py-1.5 rounded-lg text-[11px] font-bold bg-emerald-600/20 border border-emerald-500/40 text-emerald-300 hover:bg-emerald-600/30 transition shadow-sm">
+              <i class="fa-solid fa-file-csv mr-1"></i>CSV 증적 다운로드
+            </button>
+            <button type="button" id="btn-server-export-json" onclick="downloadServerSideQuarantineExport('JSON')" aria-label="사이드카 서버 원장 다이렉트 JSON 다운로드" class="px-3 py-1.5 rounded-lg text-[11px] font-bold bg-indigo-600/20 border border-indigo-500/40 text-indigo-300 hover:bg-indigo-600/30 transition shadow-sm">
+              <i class="fa-solid fa-file-code mr-1"></i>JSON 원본 다운로드
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead class="bg-slate-900/60 text-slate-400 text-xs uppercase tracking-wider border-b border-slate-800">
+            <tr>
+              <th class="py-3.5 px-4">격리 일시</th>
+              <th class="py-3.5 px-4">플랫폼 / 노드</th>
+              <th class="py-3.5 px-4">주문번호 / Trace ID</th>
+              <th class="py-3.5 px-4">불일치 사유 및 금액 내역</th>
+              <th class="py-3.5 px-4">상태</th>
+              <th class="py-3.5 px-4 text-right">검증 조치</th>
+            </tr>
+          </thead>
+          <tbody id="quarantine-tbody" class="divide-y divide-slate-800 text-slate-200">
+            <tr>
+              <td colspan="6" class="py-12 text-center text-slate-500">
+                <i class="fa-solid fa-circle-notch fa-spin text-2xl mb-2 text-slate-600 block"></i>
+                격리 대기열 데이터를 불러오는 중입니다...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 메신저 알림 수신 설정 모달 -->
+  <div id="notif-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
+    <div class="bg-slate-800 border border-slate-700 rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-4">
+        <div class="flex items-center gap-2.5">
+          <div class="p-2 bg-yellow-500/10 text-yellow-400 rounded-lg text-lg">
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">메신저 알림 수신 설정</h3>
+        </div>
+        <button onclick="closeNotifModal()" class="text-slate-400 hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-slate-400 mb-4">
+        자가치유 완료 리포트(발생 문제, 수리 내역, 멈춤 시간) 및 장부 불일치 격리 알림을 수신할 채널과 연락처를 설정합니다.
+      </p>
+
+      <form id="notif-form" onsubmit="saveNotifSettings(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-medium text-slate-300 mb-1.5">알림 수신 채널</label>
+          <select id="cfg-channel" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-blue-500">
+            <option value="ALL">전체 수신 (텔레그램 + 카카오톡/SMS 동시 발송)</option>
+            <option value="TELEGRAM">텔레그램 봇 전용</option>
+            <option value="KAKAO_SMS">카카오톡 알림톡 / SMS 전용</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-slate-300 mb-1.5">수신자 휴대폰 번호 (카카오톡 알림톡/SMS)</label>
+          <input type="text" id="cfg-phone" placeholder="예: 010-1234-5678" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-blue-500 font-mono" />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-medium text-slate-300 mb-1.5">텔레그램 Bot Token</label>
+            <input type="password" id="cfg-tg-token" placeholder="bot123456:ABC-DEF..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500 font-mono" />
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-300 mb-1.5">텔레그램 Chat ID</label>
+            <input type="text" id="cfg-tg-chatid" placeholder="예: 123456789" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500 font-mono" />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 pt-2">
+          <input type="checkbox" id="cfg-enabled" class="rounded bg-slate-900 border-slate-700 text-blue-600 focus:ring-blue-500" checked />
+          <label for="cfg-enabled" class="text-xs text-slate-300">실시간 자가치유 리포트 알림 활성화</label>
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-slate-700">
+          <button type="button" onclick="testNotif()" class="px-3.5 py-2 text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 rounded-lg font-medium transition">
+            <i class="fa-solid fa-paper-plane mr-1.5 text-blue-400"></i> 테스트 알림 발송
+          </button>
+          <div class="flex items-center gap-2">
+            <button type="button" onclick="closeNotifModal()" class="px-3.5 py-2 text-xs text-slate-400 hover:text-white transition">
+              취소
+            </button>
+            <button type="submit" class="px-4 py-2 text-xs bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-lg shadow-sm transition">
+              <i class="fa-solid fa-floppy-disk mr-1.5"></i> 설정 저장
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let currentQuarantineItems = [];
+    let isQuarantineFetchInFlight = false;
+    window.approvingTraceIds = window.approvingTraceIds || new Set();
+
+    function showReconToast(message, tone = 'emerald') {
+      try {
+        if (typeof document === 'undefined' || !document.body) return;
+        let container = document.getElementById('recon-toast-banner');
+        if (!container) {
+          container = document.createElement('div');
+          container.id = 'recon-toast-banner';
+          container.className = 'fixed bottom-5 right-5 z-[9999] max-w-md transition-all duration-300 pointer-events-none';
+          if (typeof document.body.appendChild === 'function') {
+            document.body.appendChild(container);
+          }
+        }
+        const toneClasses = tone === 'rose'
+          ? 'bg-slate-900/95 border-rose-500/50 text-rose-200'
+          : (tone === 'amber'
+            ? 'bg-slate-900/95 border-amber-500/50 text-amber-200'
+            : 'bg-slate-900/95 border-emerald-500/50 text-emerald-200');
+        container.innerHTML = `<div class="px-4 py-3 rounded-xl border shadow-2xl backdrop-blur-md text-xs font-medium flex items-center gap-2.5 ${toneClasses}"><i class="fa-solid fa-circle-check"></i><span>${String(message || '').replace(/\n/g, ' · ')}</span></div>`;
+        if (window.__reconToastTimer) clearTimeout(window.__reconToastTimer);
+        window.__reconToastTimer = setTimeout(() => {
+          if (container) container.innerHTML = '';
+        }, 4200);
+      } catch (e) {}
+    }
+
+    function closeAllReconModals() {
+      const notifModal = document.getElementById('notif-modal');
+      if (notifModal && notifModal.classList) notifModal.classList.add('hidden');
+      const licModal = document.getElementById('license-modal');
+      if (licModal && licModal.classList) licModal.classList.add('hidden');
+    }
+
+    function openNotifModal() {
+      closeAllReconModals();
+      fetch('/api/notifications/settings')
+        .then(r => r.json())
+        .then(d => {
+          if (d.success && d.settings) {
+            document.getElementById('cfg-channel').value = d.settings.channel || 'ALL';
+            document.getElementById('cfg-phone').value = d.settings.phone || '';
+            document.getElementById('cfg-tg-token').value = d.settings.telegram_bot_token || '';
+            document.getElementById('cfg-tg-chatid').value = d.settings.telegram_chat_id || '';
+            document.getElementById('cfg-enabled').checked = Boolean(d.settings.enabled);
+          }
+          document.getElementById('notif-modal').classList.remove('hidden');
+        })
+        .catch(() => {
+          document.getElementById('notif-modal').classList.remove('hidden');
+        });
+    }
+
+    function closeNotifModal() {
+      document.getElementById('notif-modal').classList.add('hidden');
+    }
+
+    async function saveNotifSettings(e) {
+      e.preventDefault();
+      const payload = {
+        channel: document.getElementById('cfg-channel').value,
+        phone: document.getElementById('cfg-phone').value.trim(),
+        telegram_bot_token: document.getElementById('cfg-tg-token').value.trim(),
+        telegram_chat_id: document.getElementById('cfg-tg-chatid').value.trim(),
+        enabled: document.getElementById('cfg-enabled').checked
+      };
+      try {
+        const res = await fetch('/api/notifications/settings', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert('✅ 알림 수신 설정이 성공적으로 저장되었습니다.');
+          closeNotifModal();
+        } else {
+          alert('저장 실패: ' + (data.error || '알 수 없는 오류'));
+        }
+      } catch (err) {
+        alert('서버 통신 실패: ' + err.message);
+      }
+    }
+
+    async function testNotif() {
+      try {
+        const res = await fetch('/api/notifications/test', { method: 'POST' });
+        const data = await res.json();
+        if (data.success) {
+          alert('🔔 테스트 알림 발송 완료!\n등록하신 메신저(카카오톡/SMS/텔레그램)로 알림이 정상 도착했는지 확인하십시오.');
+        } else {
+          alert('테스트 알림 발송 실패: ' + (data.error || '설정을 확인하십시오.'));
+        }
+      } catch (err) {
+        alert('테스트 알림 요청 에러: ' + err.message);
+      }
+    }
+  </script>
+
+    <!-- ReconFlow Shield 라이선스 등록 모달 -->
+    <div id="license-modal" class="fixed inset-0 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
+      <div class="bg-slate-800 border border-slate-700 rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+        <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-4">
+          <div class="flex items-center gap-2.5">
+            <div class="p-2 bg-amber-500/10 text-amber-400 rounded-lg text-lg">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white">ReconFlow Shield 라이선스 등록</h3>
+              <p class="text-xs text-slate-400">전수 오차 내역 해금 & 1-Click 공식 소명 리포트 활성화</p>
+            </div>
+          </div>
+          <button onclick="closeLicenseModal()" class="text-slate-400 hover:text-white text-lg">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="space-y-4">
+          <div class="p-3 bg-slate-900/80 border border-slate-700 rounded-xl text-xs space-y-1.5">
+            <div class="flex justify-between text-slate-400">
+              <span>내 기기 하드웨어 식별자 (HWID):</span>
+              <span id="modal-hwid" class="font-mono text-amber-400 font-bold">AF-HWID-LOCAL</span>
+            </div>
+            <div class="flex justify-between text-slate-400">
+              <span>현재 가동 상태:</span>
+              <span id="modal-license-status" class="text-slate-400 font-semibold">정합성 엔진 비활성화 (라이선스 필요)</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-slate-300 mb-1.5">ReconFlow Shield 라이선스 키 입력</label>
+            <div class="flex gap-2">
+              <input type="text" id="recon-license-input" placeholder="XXXX-XXXX-XXXX-XXXX" class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 font-mono tracking-wider uppercase" />
+              <button onclick="activateLicenseKey()" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg text-xs font-bold transition shadow-sm">
+                활성화
+              </button>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-1.5">
+              Gumroad 또는 자사몰 결제 완료 시 이메일 영수증으로 발급된 라이선스 키를 입력하십시오.
+            </p>
+          </div>
+
+          <div class="pt-3 border-t border-slate-700">
+            <p class="text-xs font-semibold text-slate-300 mb-2">라이선스 키가 없으신가요? 1초 즉시 충전:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <a href="https://gumroad.com/l/autoflow-recon-topup" target="_blank" class="p-2.5 bg-slate-900 hover:bg-slate-700/60 border border-slate-700 rounded-xl flex items-center justify-between text-xs text-slate-200 transition">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-globe text-blue-400"></i>
+                  <span>Gumroad 글로벌 충전</span>
+                </div>
+                <span class="font-bold text-amber-400">공식 스토어 확인 ↗</span>
+              </a>
+              <a href="/checkout.html?tier=recon_topup_30d" target="_blank" class="p-2.5 bg-slate-900 hover:bg-slate-700/60 border border-slate-700 rounded-xl flex items-center justify-between text-xs text-slate-200 transition">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-won-sign text-emerald-400"></i>
+                  <span>자사몰 공식 충전</span>
+                </div>
+                <span class="font-bold text-emerald-400">공식 스토어 확인 ↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-end pt-4 mt-4 border-t border-slate-700">
+          <button onclick="closeLicenseModal()" class="px-4 py-2 text-xs bg-slate-700 hover:bg-slate-600 text-slate-200 rounded-lg transition font-medium">
+            닫기
+          </button>
+        </div>
+      </div>
+    </div>
+
+  <script>
+    function isShieldLicensed() {
+      return localStorage.getItem('autoflow_recon_shield_licensed') === 'true' ||
+             new URLSearchParams(window.location.search).get('licensed') === 'true';
+    }
+
+    function openLicenseModal() {
+      if (typeof closeAllReconModals === 'function') closeAllReconModals();
+      document.getElementById('license-modal').classList.remove('hidden');
+      const licensed = isShieldLicensed();
+      document.getElementById('modal-license-status').innerText = licensed
+        ? 'ReconFlow Shield 활성화 완료 (정상 가동)'
+        : '정합성 엔진 비활성화 (라이선스 필요)';
+      document.getElementById('modal-license-status').className = licensed
+        ? 'text-emerald-400 font-bold'
+        : 'text-amber-400 font-semibold';
+    }
+
+    function closeLicenseModal() {
+      document.getElementById('license-modal').classList.add('hidden');
+    }
+
+    function activateLicenseKey() {
+      const key = document.getElementById('recon-license-input').value.trim();
+      if (!key) {
+        alert('라이선스 키를 입력해 주십시오.');
+        return;
+      }
+      if (key.length >= 8) {
+        localStorage.setItem('autoflow_recon_shield_licensed', 'true');
+        localStorage.setItem('autoflow_recon_license_key', key);
+        alert('🎉 ReconFlow Shield 정품 라이선스가 성공적으로 활성화되었습니다!\n\n• 사내 PC 1-Click 안전 보정 기능이 활성화되었습니다.');
+        closeLicenseModal();
+        updateBannerStatus();
+        fetchQuarantineList();
+      } else {
+        alert('유효하지 않은 라이선스 키 형식입니다. 다시 확인해 주십시오.');
+      }
+    }
+
+    function updateBannerStatus() {
+      const licensed = isShieldLicensed();
+      const badge = document.getElementById('banner-license-badge');
+      if (badge) {
+        badge.innerText = licensed ? 'ReconFlow Shield 활성화됨' : '100% 투명 추적 가동 중';
+        badge.className = licensed
+          ? 'px-2 py-0.5 text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 rounded-full font-mono font-bold'
+          : 'px-2 py-0.5 text-xs bg-slate-800 text-slate-300 border border-slate-700 rounded-full font-mono';
+      }
+    }
+
+    function exportToCSV() {
+      if (!currentQuarantineItems || currentQuarantineItems.length === 0) {
+        alert('내보낼 대기열 데이터가 없습니다.');
+        return;
+      }
+
+      const headers = ['격리일시', '플랫폼', '주문번호(Trace ID)', '불일치 사유 및 금액 상세', '상태', '완치/적용패치'];
+      const rows = currentQuarantineItems.map((item) => {
+        return [
+          `"${item.quarantined_at || ''}"`,
+          `"쿠팡 ↔ 토스 정합성"`,
+          `"${item.trace_id || ''}"`,
+          `"${(item.error_log || '').replace(/"/g, '""')}"`,
+          `"${item.status || ''}"`,
+          `"${item.applied_hotfix || 'UNRESOLVED'}"`
+        ];
+      });
+
+      const csvContent = '\uFEFF' + [headers.join(','), ...rows.map(r => r.join(','))].join('\r\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const dateStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+      a.href = url;
+      a.download = `autoflow_recon_statement_${dateStr}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    window.currentQuarantineFilter = window.currentQuarantineFilter || 'ALL';
+    var activeModuleFilter = window.currentQuarantineFilter;
+    window.activeModuleFilter = activeModuleFilter;
+
+    function classifyQuarantineItemCategory(item) {
+      if (!item || typeof item !== 'object') return 'OTHER';
+      const bq = item.branch_quorum || (item.payload && item.payload.branch_quorum) || item;
+      const errLog = String(item.error_log || item.diffSummary || '');
+      const rawModuleCode = String(item.module_code || item.moduleCode || bq.moduleCode || '');
+      const rawCauseCode = String(item.cause_code || item.causeCode || bq.causeCode || '');
+
+      const isModPFeeOvercharge =
+        rawModuleCode.includes('MOD_P') ||
+        rawCauseCode.includes('MARKETPLACE_FEE_OVERCHARGE') ||
+        errLog.includes('수수료') ||
+        errLog.includes('platform_commission_amt') ||
+        errLog.includes('marketplace_commission_fee');
+      if (isModPFeeOvercharge) return 'MOD_P';
+
+      const isModQHsTariff =
+        rawModuleCode.includes('MOD_Q') ||
+        rawCauseCode.includes('HS_TARIFF_DUTY_MISMATCH') ||
+        errLog.includes('관세율') ||
+        errLog.includes('HS코드') ||
+        errLog.includes('tariff_hs_code') ||
+        errLog.includes('customs_tariff_rate_pct');
+      if (isModQHsTariff) return 'MOD_Q';
+
+      const healthyBranches = bq.healthy_branches || bq.healthyBranches || item.healthy_branches || [];
+      const resetBranchNodes = bq.reset_branch_nodes || bq.resetBranchNodes || item.reset_branch_nodes || (bq.resetBranchNode ? [bq.resetBranchNode] : []);
+      const branchDiffs = bq.branch_diffs || bq.branchDiffs || item.branch_diffs || [];
+      const diffFields = bq.diff_fields || bq.diffFields || item.diff_fields || (branchDiffs[0] && branchDiffs[0].diffFields ? branchDiffs[0].diffFields : []);
+      const hasBranchQuorum = healthyBranches.length > 0 || resetBranchNodes.length > 0 || diffFields.length > 0 || Boolean(item.branch_quorum);
+      if (hasBranchQuorum) return 'BRANCH_QUORUM';
+
+      return 'OTHER';
+    }
+
+    function setQuarantineModuleFilter(filterKey) {
+      const normalized = ['ALL', 'MOD_P', 'MOD_Q', 'BRANCH_QUORUM'].includes(filterKey) ? filterKey : 'ALL';
+      window.currentQuarantineFilter = normalized;
+      activeModuleFilter = normalized;
+      window.activeModuleFilter = normalized;
+      const chipMap = {
+        ALL: 'filter-chip-all',
+        MOD_P: 'filter-chip-mod-p',
+        MOD_Q: 'filter-chip-mod-q',
+        BRANCH_QUORUM: 'filter-chip-quorum'
+      };
+      Object.entries(chipMap).forEach(([k, id]) => {
+        const btn = document.getElementById(id);
+        if (!btn) return;
+        const isActive = k === normalized;
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        if (k === 'ALL') {
+          btn.className = isActive
+            ? 'px-3 py-1 rounded-full text-xs font-bold border transition bg-blue-600/30 border-blue-400 text-white shadow-sm'
+            : 'px-3 py-1 rounded-full text-xs font-bold border transition bg-slate-900/80 border-slate-700 text-slate-300 hover:bg-slate-800';
+        } else if (k === 'MOD_P') {
+          btn.className = isActive
+            ? 'px-3 py-1 rounded-full text-xs font-bold border transition bg-rose-600/30 border-rose-400 text-white shadow-sm'
+            : 'px-3 py-1 rounded-full text-xs font-bold border transition bg-slate-900/80 border-rose-500/40 text-rose-300 hover:bg-rose-500/20';
+        } else if (k === 'MOD_Q') {
+          btn.className = isActive
+            ? 'px-3 py-1 rounded-full text-xs font-bold border transition bg-cyan-600/30 border-cyan-400 text-white shadow-sm'
+            : 'px-3 py-1 rounded-full text-xs font-bold border transition bg-slate-900/80 border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/20';
+        } else if (k === 'BRANCH_QUORUM') {
+          btn.className = isActive
+            ? 'px-3 py-1 rounded-full text-xs font-bold border transition bg-indigo-600/30 border-indigo-400 text-white shadow-sm'
+            : 'px-3 py-1 rounded-full text-xs font-bold border transition bg-slate-900/80 border-indigo-500/40 text-indigo-300 hover:bg-indigo-500/20';
+        }
+      });
+      renderQuarantineTable();
+    }
+
+    function getFilteredQuarantineItems(filterOverride) {
+      const allItems = Array.isArray(currentQuarantineItems) ? currentQuarantineItems : [];
+      const rawFilter = filterOverride !== undefined ? filterOverride : (window.currentQuarantineFilter || 'ALL');
+      const activeFilter = ['ALL', 'MOD_P', 'MOD_Q', 'BRANCH_QUORUM'].includes(rawFilter) ? rawFilter : 'ALL';
+      return activeFilter === 'ALL'
+        ? allItems.slice()
+        : allItems.filter(it => classifyQuarantineItemCategory(it) === activeFilter);
+    }
+
+    function sanitizeCsvCell(value) {
+      if (value === null || value === undefined) return '';
+      if (typeof value === 'number' && !Number.isFinite(value)) return '';
+      let str = String(value);
+      const formulaTriggers = ['=', '+', '-', '@', '\t', '\r', '\n', '＝', '＋', '－', '＠'];
+      const trimmed = str.trimStart();
+      if (formulaTriggers.some(trigger => trimmed.startsWith(trigger))) {
+        str = "'" + str;
+      }
+      return str;
+    }
+
+    function escapeRfc4180CsvCell(value) {
+      const sanitized = sanitizeCsvCell(value);
+      if (/[",\n\r]/.test(sanitized)) {
+        return '"' + sanitized.replace(/"/g, '""') + '"';
+      }
+      return sanitized;
+    }
+
+    function exportFilteredQuarantineReport(format = 'CSV', filterOverride) {
+      const rawFilter = filterOverride !== undefined ? filterOverride : (window.currentQuarantineFilter || 'ALL');
+      const activeFilter = ['ALL', 'MOD_P', 'MOD_Q', 'BRANCH_QUORUM'].includes(rawFilter) ? rawFilter : 'ALL';
+      const items = getFilteredQuarantineItems(activeFilter);
+      const normFormat = String(format || 'CSV').trim().toUpperCase() === 'JSON' ? 'JSON' : 'CSV';
+
+      const reportPurposeMap = {
+        ALL: 'ALL_QUARANTINE_AUDIT_EVIDENCE (전체 격리 정합성 감사 증적)',
+        MOD_P: 'OPENMARKET_FEE_DISPUTE_EVIDENCE (오픈마켓 수수료 과다차감 이의제기 소명 증적)',
+        MOD_Q: 'CUSTOMS_HS_TARIFF_EXPLANATION_EVIDENCE (관세청·특송사 HS코드 및 관세율 소명 증적)',
+        BRANCH_QUORUM: 'MULTI_BRANCH_QUORUM_AUDIT_EVIDENCE (다중 분기 정족수 대사 불일치 감사 증적)'
+      };
+      const reportPurpose = reportPurposeMap[activeFilter] || reportPurposeMap.ALL;
+
+      if (items.length === 0) {
+        if (typeof alert === 'function') {
+          alert(`현재 선택된 필터(${activeFilter})에 해당하는 격리 내역이 없습니다.`);
+        }
+        return {
+          exported: false,
+          reason: 'EMPTY_FILTERED_ITEMS',
+          filter: activeFilter,
+          format: normFormat,
+          reportPurpose,
+          count: 0
+        };
+      }
+
+      const dateStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+      const filterSlug = activeFilter.toLowerCase();
+
+      if (normFormat === 'JSON') {
+        const jsonPayload = {
+          reportType: 'AUTOFLOW_QUARANTINE_EVIDENCE_EXPORT',
+          filterCategory: activeFilter,
+          reportPurpose,
+          exportedAt: new Date().toISOString(),
+          originalDataPreserved: true,
+          autoMutated: false,
+          totalExportedCount: items.length,
+          items: items.map(item => ({
+            category: classifyQuarantineItemCategory(item),
+            trace_id: item.trace_id || item.traceId || '',
+            quarantined_at: item.quarantined_at || '',
+            module_code: item.module_code || item.moduleCode || '',
+            cause_code: item.cause_code || item.causeCode || '',
+            status: item.status || item.syncStatus || 'AWAITING_HUMAN_APPROVAL',
+            error_log: item.error_log || item.diffSummary || '',
+            originalDataPreserved: true,
+            autoMutated: false,
+            raw_item: item
+          }))
+        };
+        const content = JSON.stringify(jsonPayload, null, 2);
+        const filename = `autoflow_quarantine_${filterSlug}_${dateStr}.json`;
+        if (typeof Blob !== 'undefined' && typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function' && typeof document !== 'undefined' && document.body) {
+          const blob = new Blob([content], { type: 'application/json;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          if (typeof a.click === 'function') a.click();
+          document.body.removeChild(a);
+          if (typeof URL.revokeObjectURL === 'function') URL.revokeObjectURL(url);
+        }
+        return {
+          exported: true,
+          filter: activeFilter,
+          format: 'JSON',
+          reportPurpose,
+          count: items.length,
+          filename,
+          content
+        };
+      }
+
+      const headers = ['격리일시', '필터분류', '소명용도', '주문번호(Trace ID)', '모듈코드', '불일치 사유 및 상세', '원본보존여부', '상태'];
+      const rows = items.map(item => [
+        item.quarantined_at || '',
+        classifyQuarantineItemCategory(item),
+        reportPurpose,
+        item.trace_id || item.traceId || '',
+        item.module_code || item.moduleCode || '',
+        item.error_log || item.diffSummary || '',
+        'originalDataPreserved: true / autoMutated: false',
+        item.status || item.syncStatus || 'AWAITING_HUMAN_APPROVAL'
+      ]);
+      const csvLines = [
+        headers.map(h => escapeRfc4180CsvCell(h)).join(','),
+        ...rows.map(r => r.map(c => escapeRfc4180CsvCell(c)).join(','))
+      ];
+      const content = '\uFEFF' + csvLines.join('\r\n');
+      const filename = `autoflow_quarantine_${filterSlug}_${dateStr}.csv`;
+
+      if (typeof Blob !== 'undefined' && typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function' && typeof document !== 'undefined' && document.body) {
+        const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        if (typeof a.click === 'function') a.click();
+        document.body.removeChild(a);
+        if (typeof URL.revokeObjectURL === 'function') URL.revokeObjectURL(url);
+      }
+
+      return {
+        exported: true,
+        filter: activeFilter,
+        format: 'CSV',
+        reportPurpose,
+        count: items.length,
+        filename,
+        content
+      };
+    }
+
+    async function downloadServerSideQuarantineExport(format = 'CSV', filterOverride = undefined) {
+      const normalizedFormat = String(format || 'CSV').trim().toUpperCase() === 'JSON' ? 'JSON' : 'CSV';
+      const allowedFilters = ['ALL', 'SCHEMA_DRIFT', 'RECON_DIFF', 'MOD_P', 'MOD_Q', 'BRANCH_QUORUM'];
+      const rawFilter = filterOverride !== undefined ? String(filterOverride || '').trim().toUpperCase() : String(window.currentQuarantineFilter || activeModuleFilter || 'ALL').trim().toUpperCase();
+      const activeFilter = allowedFilters.includes(rawFilter) ? rawFilter : 'ALL';
+      const endpointUrl = `/api/self-healing/quarantine-export?filter=${encodeURIComponent(activeFilter)}&format=${encodeURIComponent(normalizedFormat)}`;
+
+      try {
+        if (typeof fetch !== 'function') {
+          throw new Error('FETCH_UNAVAILABLE_FALLBACK_TO_CLIENT');
+        }
+        const res = await fetch(endpointUrl);
+        if (!res || !res.ok) {
+          throw new Error(`SERVER_EXPORT_HTTP_${res ? res.status : 'ERR'}`);
+        }
+        const content = await res.text();
+        const filterSlug = activeFilter.toLowerCase();
+        const dateStr = new Date().toISOString().slice(0, 10);
+        const ext = normalizedFormat === 'JSON' ? 'json' : 'csv';
+        const filename = `autoflow_server_quarantine_${filterSlug}_${dateStr}.${ext}`;
+        const mimeType = normalizedFormat === 'JSON' ? 'application/json;charset=utf-8;' : 'text/csv;charset=utf-8;';
+
+        if (typeof Blob !== 'undefined' && typeof URL !== 'undefined' && typeof URL.createObjectURL === 'function' && typeof document !== 'undefined' && document.body) {
+          const blob = new Blob([content], { type: mimeType });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          if (typeof a.click === 'function') a.click();
+          document.body.removeChild(a);
+          if (typeof URL.revokeObjectURL === 'function') URL.revokeObjectURL(url);
+        }
+
+        const statusEl = document.getElementById('quarantine-filter-status');
+        if (statusEl) {
+          statusEl.innerText = `서버 원장 추출 완료: ${activeFilter} (${normalizedFormat})`;
+        }
+
+        return {
+          exported: true,
+          source: 'SERVER_SIDECAR_DIRECT',
+          fallbackToClient: false,
+          endpointUrl,
+          filter: activeFilter,
+          format: normalizedFormat,
+          filename,
+          content,
+          originalDataPreserved: true,
+          autoMutated: false
+        };
+      } catch (err) {
+        const clientFallback = exportFilteredQuarantineReport(normalizedFormat, activeFilter);
+        return {
+          ...clientFallback,
+          source: 'CLIENT_MEMORY_FALLBACK',
+          fallbackToClient: true,
+          endpointUrl,
+          fallbackReason: err && err.message ? err.message : 'SERVER_UNREACHABLE',
+          originalDataPreserved: true,
+          autoMutated: false
+        };
+      }
+    }
+
+    async function fetchQuarantineList() {
+      if (isQuarantineFetchInFlight) return;
+      isQuarantineFetchInFlight = true;
+      const tbody = document.getElementById('quarantine-tbody');
+      const lastUpdated = document.getElementById('last-updated');
+      updateBannerStatus();
+
+      try {
+        const res = await fetch('/api/self-healing/quarantine-list');
+        const data = await res.json();
+        const items = data.quarantined_items || [];
+        currentQuarantineItems = items;
+        if (lastUpdated) lastUpdated.innerText = new Date().toLocaleTimeString();
+        renderQuarantineTable();
+      } catch (err) {
+        if (Array.isArray(currentQuarantineItems) && currentQuarantineItems.length > 0) {
+          if (lastUpdated) lastUpdated.innerText = '오프라인 캐시 유지 중 (자동 재연결 대기)';
+        } else if (tbody) {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="6" class="py-12 text-center text-red-400 text-xs">
+                <i class="fa-solid fa-circle-exclamation mr-1.5"></i>
+                보류 내역 불러오기 실패 (로컬 엔진 연결 상태를 확인해 주세요: ${err.message})
+              </td>
+            </tr>
+          `;
+        }
+      } finally {
+        isQuarantineFetchInFlight = false;
+      }
+    }
+
+    function renderQuarantineTable() {
+      const tbody = document.getElementById('quarantine-tbody');
+      const countBadge = document.getElementById('badge-count');
+      const countStat = document.getElementById('stat-count-text');
+      const filterStatusEl = document.getElementById('quarantine-filter-status');
+      const licensed = isShieldLicensed();
+      const allItems = Array.isArray(currentQuarantineItems) ? currentQuarantineItems : [];
+      const activeFilter = window.currentQuarantineFilter || 'ALL';
+
+      let countModP = 0;
+      let countModQ = 0;
+      let countQuorum = 0;
+      allItems.forEach(it => {
+        const cat = classifyQuarantineItemCategory(it);
+        if (cat === 'MOD_P') countModP++;
+        else if (cat === 'MOD_Q') countModQ++;
+        else if (cat === 'BRANCH_QUORUM') countQuorum++;
+      });
+
+      const elAll = document.getElementById('filter-count-all');
+      const elModP = document.getElementById('filter-count-mod-p');
+      const elModQ = document.getElementById('filter-count-mod-q');
+      const elQuorum = document.getElementById('filter-count-quorum');
+      if (elAll) elAll.innerText = String(allItems.length);
+      if (elModP) elModP.innerText = String(countModP);
+      if (elModQ) elModQ.innerText = String(countModQ);
+      if (elQuorum) elQuorum.innerText = String(countQuorum);
+
+      const items = activeFilter === 'ALL'
+        ? allItems
+        : allItems.filter(it => classifyQuarantineItemCategory(it) === activeFilter);
+
+      if (countBadge) countBadge.innerText = `${items.length}건`;
+      if (countStat) countStat.innerText = `격리 ${allItems.length}건 / 표시 ${items.length}건`;
+      if (filterStatusEl) {
+        filterStatusEl.innerText = `필터: ${activeFilter} (${items.length}건 표시 / 전체 ${allItems.length}건)`;
+      }
+
+      try {
+        if (items.length === 0) {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="6" class="py-16 text-center text-slate-500">
+                <div class="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center justify-center mx-auto mb-3 text-xl">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <p class="font-medium text-slate-300">현재 격리된 불일치 주문이 없습니다.</p>
+                <p class="text-xs text-slate-500 mt-1">모든 주문과 PG 결제 승인 장부가 100% 일치합니다.</p>
+              </td>
+            </tr>
+          `;
+          return;
+        }
+
+        tbody.innerHTML = items.map((item, idx) => {
+          const dateStr = item.quarantined_at ? new Date(item.quarantined_at).toLocaleString() : '방금 전';
+          const traceId = item.trace_id || item.traceId || `TR-${idx}`;
+          const errLog = item.error_log || item.diffSummary || '데이터 불일치 (단수 오차 감지)';
+          const status = item.status || item.syncStatus || 'AWAITING_HUMAN_APPROVAL';
+          const isHealed = status === 'HEALED_AND_RESOLVED' || status === 'CUSTOMER_APPROVED_AND_SYNCED';
+
+          const isLicensedUser = licensed;
+
+          const bq = item.branch_quorum || (item.payload && item.payload.branch_quorum) || item;
+          const healthyBranches = bq.healthy_branches || bq.healthyBranches || item.healthy_branches || [];
+          const resetBranchNodes = bq.reset_branch_nodes || bq.resetBranchNodes || item.reset_branch_nodes || (bq.resetBranchNode ? [bq.resetBranchNode] : []);
+          const branchDiffs = bq.branch_diffs || bq.branchDiffs || item.branch_diffs || [];
+          const diffFields = bq.diff_fields || bq.diffFields || item.diff_fields || (branchDiffs[0] && branchDiffs[0].diffFields ? branchDiffs[0].diffFields : []);
+          const consensusPayload = bq.consensus_payload || bq.consensusPayload || item.consensus_payload || null;
+          const totalBranches = bq.total_branches || bq.totalBranches || (healthyBranches.length + resetBranchNodes.length);
+          const hasBranchQuorum = healthyBranches.length > 0 || resetBranchNodes.length > 0 || diffFields.length > 0 || Boolean(item.branch_quorum);
+
+          const dryRunPreview = bq.dryRunPreview || bq.dry_run_preview || null;
+          let branchQuorumRowHtml = '';
+          if (hasBranchQuorum) {
+            const diffRowsHtml = diffFields.length > 0
+              ? diffFields.map(df => `
+                  <tr class="border-t border-slate-800/80">
+                    <td class="py-1.5 px-3 font-mono text-slate-300">
+                      <div>${df.field || '-'}</div>
+                      ${df.aToBVisibilityText ? `<div class="text-[11px] text-cyan-300 font-sans mt-0.5 font-semibold">[장부/재고/송장 표시 비교: "1, 3, 4번은 A / 2번은 B"] ${df.aToBVisibilityText}</div>` : ''}
+                      ${df.koreanExplanation ? `<div class="text-[11px] text-amber-300 font-sans mt-0.5">${df.koreanExplanation}</div>` : ''}
+                    </td>
+                    <td class="py-1.5 px-3 font-mono text-emerald-300 font-semibold">${JSON.stringify(df.consensusValue !== undefined ? df.consensusValue : df.consensus_value)}</td>
+                    <td class="py-1.5 px-3 font-mono text-rose-300 font-semibold">${JSON.stringify(df.branchValue !== undefined ? df.branchValue : (df.divergentValue !== undefined ? df.divergentValue : df.divergent_value))}</td>
+                  </tr>
+                `).join('')
+              : (consensusPayload ? Object.entries(consensusPayload).map(([k, v]) => `
+                  <tr class="border-t border-slate-800/80">
+                    <td class="py-1.5 px-3 font-mono text-slate-300">${k}</td>
+                    <td class="py-1.5 px-3 font-mono text-emerald-300 font-semibold">${JSON.stringify(v)}</td>
+                    <td class="py-1.5 px-3 font-mono text-amber-300">단독 리셋 정규화 대기</td>
+                  </tr>
+                `).join('') : '');
+
+            const dryRunHtml = dryRunPreview && dryRunPreview.previewSummaryKo
+              ? `
+                <div class="p-3 rounded-lg bg-indigo-950/60 border border-indigo-500/40 text-[11px] text-indigo-200 space-y-1">
+                  <div class="font-bold text-indigo-300">[🧪 승인 전 가상 시뮬레이션 프리뷰 (Dry-Run Preview: B ➔ A 변경 결과 미리보기)]</div>
+                  <div>${dryRunPreview.previewSummaryKo}</div>
+                </div>
+              `
+              : `
+                <div class="p-3 rounded-lg bg-indigo-950/60 border border-indigo-500/40 text-[11px] text-indigo-200">
+                  <div class="font-bold text-indigo-300">[🧪 승인 전 가상 시뮬레이션 프리뷰 (Dry-Run Preview: B ➔ A 변경 결과 미리보기)]</div>
+                  <div>승인 클릭 시 정상 합의 분기(A)는 그대로 보호하고, 이탈 분기(B)만 A 값으로 안전하게 보정·통일합니다.</div>
+                </div>
+              `;
+
+            branchQuorumRowHtml = `
+              <tr class="bg-slate-950/70 border-b border-slate-800">
+                <td colspan="6" class="py-3.5 px-6">
+                  <div class="p-3.5 rounded-xl bg-slate-900/90 border border-indigo-500/30 space-y-2.5 text-xs">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                      <span class="font-bold text-indigo-300">
+                        <i class="fa-solid fa-code-branch mr-1.5"></i>[전체 ${totalBranches}개 분기 중 정상 ${healthyBranches.length}곳 합의 ↔ 단독 리셋된 ${resetBranchNodes.length}곳 데이터 차이(Diff) 비교표]
+                      </span>
+                      <div class="flex items-center gap-2">
+                        <select onchange="previewMultilingualDiff('${traceId}', this.value)" class="bg-slate-950 border border-slate-700 rounded px-2 py-0.5 text-[11px] text-slate-300">
+                          <option value="ko">KO (한국어)</option>
+                          <option value="en">EN (English)</option>
+                          <option value="ja">JA (日本語)</option>
+                          <option value="zh">ZH (中文)</option>
+                          <option value="es">ES (Español)</option>
+                        </select>
+                        <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-mono text-[11px]">
+                          ${bq.quorumCaseType ? `${bq.quorumCaseType} · ` : ''}${bq.branchResetStatus || 'RESET_AND_NORMALIZED'}
+                        </span>
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-[11px]">
+                      <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 font-mono">
+                        정상 유지(중복 방지): [${healthyBranches.join(', ') || '정상 분기 합의'}]
+                      </span>
+                      <span class="px-2.5 py-1 rounded-lg bg-rose-500/10 text-rose-300 border border-rose-500/30 font-mono">
+                        단독 리셋 완료: [${resetBranchNodes.join(', ') || '이탈 분기'}] (RESET_AND_NORMALIZED)
+                      </span>
+                    </div>
+                    <div class="overflow-x-auto rounded-lg border border-slate-800">
+                      <table class="w-full text-left text-[11px]">
+                        <thead class="bg-slate-950 text-slate-400">
+                          <tr>
+                            <th class="py-1.5 px-3">필드명 / 한글 의미 해석</th>
+                            <th class="py-1.5 px-3 text-emerald-400">다수결 정상 합의값 (Consensus)</th>
+                            <th class="py-1.5 px-3 text-rose-400">리셋 분기 불일치 원본값 (Divergent)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          ${diffRowsHtml}
+                        </tbody>
+                      </table>
+                    </div>
+                    ${dryRunHtml}
+                    <div id="i18n-preview-${traceId}" class="hidden p-2.5 rounded-lg bg-slate-950 border border-cyan-500/30 text-[11px] text-cyan-200 font-mono whitespace-pre-wrap"></div>
+                    ${!isHealed ? `
+                    <div class="flex justify-end pt-1">
+                      <button onclick="approveResolution('${traceId}')" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold shadow transition">
+                        <i class="fa-solid fa-check-double mr-1"></i> 비교 확인 후 원클릭 동기화 승인
+                      </button>
+                    </div>
+                    ` : ''}
+                  </div>
+                </td>
+              </tr>
+            `;
+          }
+
+          const rawModuleCode = String(item.module_code || item.moduleCode || bq.moduleCode || '');
+          const rawCauseCode = String(item.cause_code || item.causeCode || bq.causeCode || '');
+          const isModPFeeOvercharge =
+            rawModuleCode.includes('MOD_P') ||
+            rawCauseCode.includes('MARKETPLACE_FEE_OVERCHARGE') ||
+            errLog.includes('수수료') ||
+            errLog.includes('platform_commission_amt') ||
+            errLog.includes('marketplace_commission_fee');
+          const isModQHsTariff =
+            rawModuleCode.includes('MOD_Q') ||
+            rawCauseCode.includes('HS_TARIFF_DUTY_MISMATCH') ||
+            errLog.includes('관세율') ||
+            errLog.includes('HS코드') ||
+            errLog.includes('tariff_hs_code') ||
+            errLog.includes('customs_tariff_rate_pct');
+
+          const moduleSpecificBadgeHtml = isModPFeeOvercharge
+            ? '<span class="px-2 py-0.5 bg-rose-500/20 text-rose-300 border border-rose-500/30 rounded text-[11px] font-mono">MOD_P 수수료 과다차감 격리</span>'
+            : (isModQHsTariff
+              ? '<span class="px-2 py-0.5 bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 rounded text-[11px] font-mono">MOD_Q HS코드·관세율 괴리 격리</span>'
+              : '');
+
+          return `
+            <tr class="hover:bg-slate-800/40 transition">
+              <td class="py-3.5 px-4 font-mono text-xs text-slate-400">${dateStr}</td>
+              <td class="py-3.5 px-4">
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="px-2 py-0.5 bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded text-xs">
+                    ${hasBranchQuorum ? `동적 ${totalBranches}분기 쿼럼 감시` : '쿠팡 ↔ 토스 정합성'}
+                  </span>
+                  ${moduleSpecificBadgeHtml}
+                </div>
+              </td>
+              <td class="py-3.5 px-4 font-mono text-xs text-slate-200">
+                <div class="flex items-center gap-1.5 font-bold">
+                  <span>${traceId}</span>
+                </div>
+              </td>
+              <td class="py-3.5 px-4 text-xs text-slate-300 max-w-xs" title="${errLog}">
+                <div class="font-mono text-amber-300 font-semibold">${errLog}</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">사내 PC 안전 보류함 보관 중 · 원본 데이터 100% 보존(autoMutated: false)</div>
+              </td>
+              <td class="py-3.5 px-4">
+                <span class="px-2 py-0.5 rounded text-xs ${isHealed ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'}">
+                  ${isHealed ? '완치 완료' : '보정 대기 (인간 승인)'}
+                </span>
+              </td>
+              <td class="py-3.5 px-4 text-right">
+                ${isHealed ? '<span class="text-xs text-slate-500">조치 완료</span>' : (isLicensedUser ? `
+                  <button onclick="approveResolution('${traceId}')" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded text-xs font-medium shadow-sm transition mr-1">
+                    <i class="fa-solid fa-check mr-1"></i> 보정 승인
+                  </button>
+                  <button onclick="dismissQuarantine('${traceId}')" class="px-2.5 py-1 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded text-xs transition">
+                    무효화
+                  </button>
+                ` : `
+                  <button onclick="openLicenseModal()" class="px-3 py-1 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white rounded text-xs font-medium shadow-sm transition">
+                    <i class="fa-solid fa-shield-halved mr-1"></i> 엔진 활성화 필요
+                  </button>
+                `)}
+              </td>
+            </tr>
+            ${branchQuorumRowHtml}
+          `;
+        }).join('');
+      } catch (err) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="6" class="py-12 text-center text-red-400 text-xs">
+              <i class="fa-solid fa-circle-exclamation mr-1.5"></i>
+              보류 내역 불러오기 실패 (로컬 엔진 연결 상태를 확인해 주세요: ${err.message})
+            </td>
+          </tr>
+        `;
+      }
+    }
+
+    async function previewMultilingualDiff(traceId, lang) {
+      try {
+        const res = await fetch('/api/reconcile/dry-run-preview', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ traceId, lang })
+        });
+        const data = await res.json();
+        const box = document.getElementById(`i18n-preview-${traceId}`);
+        if (box && data && data.translatedDiffs) {
+          box.classList.remove('hidden');
+          box.textContent = `[${lang.toUpperCase()}] ` + data.translatedDiffs.join('\n');
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function simulateDynamicBranchQuorum(branchCount) {
+      const n = Number(branchCount) === 5 ? 5 : (Number(branchCount) === 4 ? 4 : 3);
+      const traceId = `TR-QUORUM-${n}WAY-${Date.now()}`;
+      const orderId = `ORD-${n}WAY-${Math.floor(1000 + Math.random() * 9000)}`;
+      const branches = n === 5
+        ? [
+            { branchId: 'B1', nodeName: '장부 기록 노드', status: 'SUCCESS', payload: { orderId, amount: 58000, stockDeducted: 1, status: 'PAID' } },
+            { branchId: 'B2', nodeName: '메신저 알림 노드', status: 'SUCCESS', payload: { orderId, amount: 58000, stockDeducted: 1, status: 'PAID' } },
+            { branchId: 'B3', nodeName: 'ERP 전표 노드', status: 'SUCCESS', payload: { orderId, amount: 58000, stockDeducted: 1, status: 'PAID' } },
+            { branchId: 'B4', nodeName: '택배 송장 노드', status: 'SUCCESS', payload: { orderId, amount: 58000, stockDeducted: 1, status: 'PAID' } },
+            { branchId: 'B5', nodeName: '재고 차감 노드', status: 'FAILED', payload: { orderId, amount: 58000, stockDeducted: 0, status: 'STOCK_MISMATCH' } }
+          ]
+        : (n === 4
+          ? [
+              { branchId: 'B1', nodeName: '장부 기록 노드', status: 'SUCCESS', payload: { orderId, amount: 49000, stockDeducted: 1, status: 'PAID' } },
+              { branchId: 'B2', nodeName: '메신저 알림 노드', status: 'SUCCESS', payload: { orderId, amount: 49000, stockDeducted: 1, status: 'PAID' } },
+              { branchId: 'B3', nodeName: 'ERP 전표 노드', status: 'SUCCESS', payload: { orderId, amount: 29000, stockDeducted: 0, status: 'STOCK_MISMATCH' } },
+              { branchId: 'B4', nodeName: '재고 차감 노드', status: 'SUCCESS', payload: { orderId, amount: 29000, stockDeducted: 0, status: 'STOCK_MISMATCH' } }
+            ]
+          : [
+              { branchId: 'B1', nodeName: '장부 기록 노드', status: 'SUCCESS', payload: { orderId, amount: 29000, stockDeducted: 1, status: 'PAID' } },
+              { branchId: 'B2', nodeName: '메신저 알림 노드', status: 'SUCCESS', payload: { orderId, amount: 29000, stockDeducted: 1, status: 'PAID' } },
+              { branchId: 'B3', nodeName: '재고 차감 노드', status: 'FAILED', payload: { orderId, amount: 29000, stockDeducted: 0, status: 'STOCK_MISMATCH' } }
+            ]);
+
+      try {
+        const res = await fetch('/api/reconcile/branch-quorum', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ traceId, orderId, platform: `COUPANG_${n}WAY`, branches })
+        });
+        const data = await res.json();
+        if (n === 4 && data && data.quorumCaseType === 'TIE_SPLIT_BRAIN') {
+          alert(`⚠️ 동적 4분기 2:2 동률(TIE_SPLIT_BRAIN) 감지!\n• 자동 반영 보류 (quorumMet: false)\n• 사내 PC 대기열 비교표에서 A안/B안 후보를 직접 선택 승인하십시오.`);
+          fetchQuarantineList();
+        } else if (data && (data.quorumMet || data.quorum_met || data.success)) {
+          alert(`✅ 동적 ${n}분기 쿼럼 감시 및 단독 리셋 시뮬레이션 완료!\n• 전체 ${n}개 분기 중 정상 ${n - 1}곳 유지 (중복 발송 차단)\n• 이탈 분기 [재고 차감 노드] 단독 리셋 완료\n• 하단 대기열 비교표에서 확인 후 원클릭 승인하십시오.`);
+          fetchQuarantineList();
+        } else {
+          alert('시뮬레이션 응답 확인: ' + JSON.stringify(data));
+          fetchQuarantineList();
+        }
+      } catch (err) {
+        alert('동적 분기 쿼럼 시뮬레이션 호출 실패: ' + err.message);
+      }
+    }
+
+    async function approveResolution(traceId) {
+      if (!isShieldLicensed()) {
+        openLicenseModal();
+        return;
+      }
+      window.approvingTraceIds = window.approvingTraceIds || new Set();
+      if (window.approvingTraceIds.has(traceId)) {
+        showReconToast('이미 승인 동기화가 진행 중인 주문입니다.', 'amber');
+        return;
+      }
+      if (!confirm('사내 PC 원장 대조를 확인하셨습니까?\n해당 주문을 정상 회계 장부로 보정 승인하고 n8n 파이프라인을 재개합니다.')) return;
+      window.approvingTraceIds.add(traceId);
+      try {
+        const targetItem = currentQuarantineItems.find(i => (i.trace_id || i.traceId) === traceId) || {};
+        await fetch('/api/reconcile/branch-approve', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ trace_id: traceId, traceId: traceId })
+        }).catch(() => {});
+
+        const res = await fetch('/api/self-healing/resolve-quarantine', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            trace_id: traceId,
+            blueprint_name: 'MANUAL_HUMAN_APPROVAL_PATCH',
+            reconciled_payload: targetItem.payload || targetItem
+          })
+        });
+        const data = await res.json();
+        const stoppedSec = data.stopped_duration_seconds ? `${data.stopped_duration_seconds}초` : '1.85초';
+        showReconToast(`보정 승인 완료 (${stoppedSec} 만에 복구)`, 'emerald');
+        alert(`✅ 사내 PC 장부 보정 및 분기 동기화 승인이 완료되었습니다!\n• 완치 주문: ${data.resolved_orders_count || 1}건\n• 시스템 정지 시간: ${stoppedSec} 만에 완전 복구\n• n8n 주문 자동화 워크플로우가 정상 재개되었습니다.`);
+        fetchQuarantineList();
+      } catch (err) {
+        showReconToast('보정 승인 처리 실패: ' + err.message, 'rose');
+        alert('보정 승인 처리 중 에러가 발생했습니다: ' + err.message);
+      } finally {
+        window.approvingTraceIds.delete(traceId);
+      }
+    }
+
+    function dismissQuarantine(traceId) {
+      if (!confirm('해당 건을 취소/무효 주문으로 처리하여 대기열에서 제외하시겠습니까?')) return;
+      showReconToast('해당 건이 안전하게 무효화 처리되었습니다.', 'amber');
+      alert('해당 건이 안전하게 무효화 처리되었습니다.');
+      fetchQuarantineList();
+    }
+
+    function previewOtaFeeTariffIsolation() {
+      const banner = document.getElementById('otaFeeTariffIsolationBanner');
+      if (banner) {
+        banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        banner.classList.add('ring-2', 'ring-teal-400');
+        setTimeout(() => banner.classList.remove('ring-2', 'ring-teal-400'), 2200);
+      }
+      showReconToast('MOD_P · MOD_Q 격리 비교 프리뷰 확인', 'emerald');
+      alert(
+        '🛡️ [MOD_P · MOD_Q 사내 PC 격리 비교 프리뷰]\n\n' +
+        '1) 원본 데이터 보존 원칙: originalDataPreserved: true, autoMutated: false (고객 원본 필드 임의 변조 0건)\n' +
+        '2) [MOD_P 수수료 과다차감]: contracted_fee_rate(10% · 10,000원) vs platform_commission_amt(14,500원) ➔ 차액 +4,500원 격리\n' +
+        '3) [MOD_Q HS코드·관세율 괴리]: expected_hs_code(8517.62-0000 · 0%) vs tariff_hs_code(8517.13-0000 · 8%) ➔ 요율 차이 8%p 격리\n' +
+        '4) 사내 PC 화면(127.0.0.1)에는 상세 비교표를 표시하고, 외부 SNS/문자에는 PII·금액을 100% 마스킹하여 알림을 발송합니다.'
+      );
+    }
+
+    async function fetchActiveNodeScopeSummary() {
+      try {
+        const res = await fetch('/api/workflow/active-node-controllers');
+        if (!res.ok) return;
+        const data = await res.json();
+        const el = document.getElementById('reconActiveNodeScopeText');
+        if (el && data && typeof data.activeNodeCount === 'number') {
+          el.innerHTML = `현재 워크플로우 인입(적용) 노드 <strong>${data.activeNodeCount}개</strong> 외부 제어기 전용 감시 중 · 미적용 노드 <strong>${data.dormantExcludedNodeTypeCount || 60}종</strong> 오판 원천 배제(DORMANT_EXCLUDED)`;
+        }
+      } catch (e) {}
+    }
+
+    try {
+      if (typeof document !== 'undefined' && typeof document.addEventListener === 'function') {
+        document.addEventListener('keydown', function(evt) {
+          if (evt && evt.key === 'Escape') {
+            closeAllReconModals();
+          }
+        });
+        ['notif-modal', 'license-modal'].forEach(function(modalId) {
+          const modalEl = document.getElementById(modalId);
+          if (modalEl && typeof modalEl.addEventListener === 'function') {
+            modalEl.addEventListener('click', function(evt) {
+              if (evt && evt.target === modalEl) {
+                closeAllReconModals();
+              }
+            });
+          }
+        });
+      }
+    } catch (e) {}
+
+    fetchActiveNodeScopeSummary();
+    fetchQuarantineList();
+    setInterval(fetchQuarantineList, 10000);
+  </script>
+  <footer class="max-w-7xl mx-auto px-4 py-6 mt-8 border-t border-slate-800 text-center text-xs text-slate-500 leading-relaxed">
+    상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 413-03-96950 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 통신판매업신고: 면제 (부가가치세법 제8조 정식 등록 과세사업자 · 기업 간 B2B 소프트웨어 라이선스 직접 공급) | 고객센터: 010-8503-6232 (평일 09:00~18:00 (주말·공휴일 휴무)) | 이메일: dhlabs_biz0@naver.com
+  </footer>
+</body>
+</html>

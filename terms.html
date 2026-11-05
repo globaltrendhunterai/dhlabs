@@ -270,15 +270,15 @@
       <h2>제4조 (최종사용자 라이선스 계약(EULA) 및 3대 하이브리드 플랜 체계)</h2>
       <ol>
         <li><strong>1:1 Device HWID 기기 귀속 및 재판매 및 재배포 금지 원칙:</strong> 모든 라이선스는 최초 활성화된 단일 물리 기기(HWID/CPU/MAC 스냅샷)에 1:1로 귀속되며, 무단 복제·다중 기기 동시 구동·제3자 재판매 및 재배포 금지 조항이 엄격히 적용됩니다.</li>
-        <li><strong>3대 플랜 체계 (3-Tier Hybrid Architecture):</strong>
+        <li><strong>3대 상주형 무인 엔진 기간권 체계 (Resident Autonomous Engine Passes):</strong>
           <ul>
-            <li><strong><code>개발자 MCP 연동형 엔진</code> (월 ₩99,000):</strong> 127ms 로컬 결정론적 자가치유 데몬 + 사내 로컬 PII 0-Leakage 가명화 방패(<code>byok_privacy_sentinel.js</code>) 기본 탑재 + 고객 자체 AI API 키(OpenAI/Anthropic/Gemini) 연동 지원. (5회 연속 미해결 장애 시 로컬 DLQ 안전 격리)</li>
-            <li><strong><code>정합성 대사 엔진</code> (월 ₩49,000):</strong> <code>개발자 MCP 연동형 엔진</code> 전 기능 + 5-Strike 도달 시 AutoFlow 중앙 도메인 특화 AI 파인튜닝 수리 모델 에스컬레이션 및 서명된 원격 핫패치(Signed Hot-Patch) 자동 수신.</li>
-            <li><strong><code>듀얼 통합 엔진</code> (월 ₩69,000):</strong> <code>정합성 대사 엔진</code> 전 기능 + ReconFlow 1원 정합성 대사 엔진, 다중 스토어 무제한 확장 및 전담 SLA 기술 보증.</li>
+            <li><strong><code>① 자가치유 엔진 단독 (ENGINE_HEAL)</code> (30일 ₩39,000 / 90일 ₩99,000 / 365일 ₩330,000 · 개발자 MCP 특가 30일 ₩29,000 / 90일 ₩75,000 / 365일 ₩249,000):</strong> 127ms 로컬 결정론적 자가치유 데몬 + 사내 로컬 PII 0-Leakage 가명화 방패(<code>byok_privacy_sentinel.js</code>) 기본 탑재 + 5회 연속 미해결 장애 시 로컬 DLQ 안전 격리 및 당사 맥미니(Mac Mini) 파인튜닝 AI 원격 핫픽스(60초 비콘 무인 주입) 지원.</li>
+            <li><strong><code>② 정합성 대사 엔진 단독 (ENGINE_RECON)</code> (30일 ₩49,000 / 90일 ₩129,000 / 365일 ₩420,000 · 개발자 MCP 특가 30일 ₩39,000 / 90일 ₩99,000 / 365일 ₩330,000):</strong> 오케스트레이션 실행 전후 1원 단위 금액·수량·수수료 교차 검증 및 누락·중복 결제 실시간 차단, 당사 맥미니 신규 정산 스키마 룰셋 자동 배포.</li>
+            <li><strong><code>③ 듀얼 통합 엔진 (ENGINE_DUAL)</code> (30일 ₩69,000 / 90일 ₩179,000 / 365일 ₩590,000 · 개발자 MCP 특가 30일 ₩49,000 / 90일 ₩129,000 / 365일 ₩440,000):</strong> 자가치유 엔진 + 정합성 대사 엔진 2종 동시 무제한 가동 및 당사 맥미니 컨트롤타워 최우선 핫픽스 SLA 보증.</li>
           </ul>
         </li>
-        <li><strong>공식 포털 일할 차액 업그레이드 (<code>https://autoflow.io/upgrade</code>):</strong> 하위 티어(<code>개발자 MCP 연동형 엔진</code>) 이용 고객은 언제든지 자사 공식 결제 포털(<a href="https://autoflow.io/upgrade" style="color: var(--primary-light); text-decoration: underline;">https://autoflow.io/upgrade</a>)에서 기존 잔여 일수 가치를 100% 일할 계산하여 차감받고 차액만 결제하여 상위 티어(<code>정합성 대사 엔진</code> 또는 <code>듀얼 통합 엔진</code>)로 즉시 승급할 수 있습니다.<br>
-          <span style="font-size: 0.88rem; color: var(--text-dim);">[EN] <strong>Article 4 (EULA &amp; 3-Tier Hybrid Plans):</strong> Licenses are bound 1:1 to a single Device HWID across three tiers: <code>개발자 MCP 연동형 엔진 (₩99,000/mo)</code>, <code>정합성 대사 엔진 (₩49,000/mo)</code>, and <code>듀얼 통합 엔진 (₩69,000/mo)</code>, all equipped with the Local PII 0-Leakage Shield (<code>byok_privacy_sentinel.js</code>). Instant prorated tier upgrades are available at <a href="https://autoflow.io/upgrade" style="color: var(--primary-light);">https://autoflow.io/upgrade</a>.</span>
+        <li><strong>공식 포털 일할 차액 업그레이드 및 만료 전 누적 연장 (<code>https://autoflow.io/upgrade</code>):</strong> 이용 고객은 언제든지 고객 PC 내 활성화 창(<code>setup_wizard.html</code>) 또는 공식 결제 포털에서 기간권을 연장(잔여 일수 100% 누적 합산)하거나 상위 엔진으로 즉시 승급할 수 있습니다.<br>
+          <span style="font-size: 0.88rem; color: var(--text-dim);">[EN] <strong>Article 4 (EULA &amp; 3 Resident Engine Passes):</strong> Licenses are bound 1:1 to a single Device HWID across three resident autonomous engine passes: <code>ENGINE_HEAL (₩39,000/30d, MCP ₩29,000)</code>, <code>ENGINE_RECON (₩49,000/30d, MCP ₩39,000)</code>, and <code>ENGINE_DUAL (₩69,000/30d, MCP ₩49,000)</code>, all equipped with the Local PII 0-Leakage Shield (<code>byok_privacy_sentinel.js</code>).</span>
         </li>
       </ol>
 

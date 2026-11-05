@@ -73,6 +73,49 @@
   <!-- Main Container -->
   <main class="flex-1 max-w-4xl w-full mx-auto p-6 flex flex-col gap-8 my-6">
 
+    <!-- ==================================================================== -->
+    <!-- 🏛️ 3-TIER ENGINE ARCHITECTURE & LV.1~LV.4 COMPOSITE MODULES (AF-ENG-CORE) -->
+    <!-- ==================================================================== -->
+    <div id="af-eng-core-success-banner" class="p-5 sm:p-6 rounded-2xl bg-slate-900 border border-slate-800 text-slate-100 shadow-xl space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+        <div>
+          <span class="text-[11px] font-mono font-bold text-emerald-400">3-TIER RESIDENT ENGINE ARCHITECTURE (AF-ENG-CORE)</span>
+          <h3 class="text-sm sm:text-base font-black text-white mt-0.5">
+            3계층 엔진 아키텍처: 1층 단일 창구(AF-ENG-CORE 127.0.0.1:8080) ➔ 2층 Lv.1~Lv.4 상위 합본 모듈
+          </h3>
+          <p class="text-[11px] text-slate-400 mt-1 leading-relaxed">
+            모듈 선택 피로도 0% 구조: 1층 단일 엔진 창구(AF-ENG-CORE) 기반 Lv.1~Lv.4 단계별 상위 합본 모듈(고객 AI BYOK 연결 시 ~35% 즉시 할인 월 ₩19,000/$15~)과 3층 0.5KB 초미세 방어 카트리지 3갈래 60초 하트비트 무인 배포가 즉시 연동됩니다.
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
+        <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+          <div class="font-bold text-white">Lv.1 자가치유</div>
+          <div class="text-[10px] text-sky-400 mt-1 font-mono font-bold">월 ₩29,000 / $22</div>
+          <div class="text-[9px] text-emerald-400 font-bold">(BYOK ₩19,000)</div>
+        </div>
+        <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+          <div class="font-bold text-white">Lv.2 노드적응</div>
+          <div class="text-[10px] text-indigo-400 mt-1 font-mono font-bold">월 ₩45,000 / $35</div>
+          <div class="text-[9px] text-emerald-400 font-bold">(BYOK ₩29,000)</div>
+        </div>
+        <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800">
+          <div class="font-bold text-white">Lv.3 정산무결성</div>
+          <div class="text-[10px] text-purple-400 mt-1 font-mono font-bold">월 ₩69,000 / $52</div>
+          <div class="text-[9px] text-emerald-400 font-bold">(BYOK ₩45,000)</div>
+        </div>
+        <div class="p-2.5 rounded-xl bg-slate-950 border border-emerald-800/60 shadow-xs">
+          <div class="font-bold text-emerald-400">Lv.4 마스터자율</div>
+          <div class="text-[10px] text-emerald-400 mt-1 font-mono font-bold">월 ₩99,000 / $75</div>
+          <div class="text-[9px] text-emerald-400 font-bold">(BYOK ₩65,000)</div>
+        </div>
+      </div>
+      <div class="p-2.5 rounded-lg bg-slate-950/80 border border-slate-800 text-[10px] text-slate-400 flex justify-between items-center">
+        <span>🛡️ 2단계 AI Build-vs-Buy 경제성 유도 &amp; 4단계 역설계 보호(카나리 허니토큰·Tarpit 미궁)</span>
+        <span class="text-emerald-400 font-mono font-bold">0.5KB Cartridge</span>
+      </div>
+    </div>
+
     <!-- Success Card -->
     <div class="bg-slate-900/90 border border-emerald-500/30 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
       <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
@@ -277,33 +320,30 @@
     const tier = urlParams.get('tier') || 'tier_2';
     const selectedModulesParam = urlParams.get('modules') || '';
 
-    // Tier Name Map (Aligned with Official Hybrid Enterprise Tiers & Modular Pick & Mix Lineup)
+    // Tier Name Map (Aligned with Official 5-Stage Single-Edition Workflows & 3 Resident Autonomous Engine Passes)
     const tierNames = {
-      'tier_1': '개발자 MCP 연동형 엔진',
-      'tier_starter': '개발자 MCP 연동형 엔진 (Starter Pass)',
-      'tier_2': '정합성 대사 엔진',
-      'tier_pro': '정합성 대사 엔진 (Clean Swap Pro)',
-      'tier_3': '듀얼 통합 엔진',
-      'tier_enterprise': '듀얼 통합 엔진',
-      'tier_4': 'ReconFlow Reconciliation Pass',
-      'tier_make': 'Make.com Escape Pack',
-      'tier_make_hook': 'Make.com Escape Pack',
-      'tier_recharge': 'Recharge Top-Up Engine Pass',
-      'WF_ENTRY': '단품 Entry (₩9,900 · 7일 전체 엔진 모듈 A+B 무료 테스트 기본 포함)',
-      'WF_STANDARD': '단품 Standard (₩19,000 · 7일 전체 엔진 모듈 A+B 무료 테스트 기본 포함)',
-      'WF_COMPLEX': '단품 Complex (₩29,000 · 7일 전체 엔진 모듈 A+B 무료 테스트 기본 포함)',
-      'MODULE_A1_MCP 연동': '모듈 A-1: 자가치유 데몬 (MCP 연동 · 월 ₩29,000)',
-      'MODULE_A2_MANAGED_AI': '모듈 A-2: 자가치유 데몬 (본사 AI 포함 · 월 ₩49,000)',
-      'MODULE_B_BRANCH_RECON': '모듈 B: 동적 N분기 정합성 대사 엔진 (월 ₩29,000)',
-      'AF-MOD-COMBO-A1B-30D': '모듈 A-1 + 모듈 B 골라담기 팩 (MCP 연동 + N분기 정합성 · 월 ₩58,000)',
-      'AF-MOD-COMBO-A2B-30D': '모듈 A-2 + 모듈 B 골라담기 팩 (본사 AI + N분기 정합성 · 월 ₩78,000)',
-      'ENGINE_HEAL': '개발자 MCP 연동형 엔진 (월 ₩9,900)',
-      'ENGINE_RECON': '정합성 대사 엔진 (월 ₩29,000)',
-      'ENGINE_DUAL': '듀얼 통합 엔진 (월 ₩99,000)',
-      'AF-MOD-1PACK': '모듈 1종 선택팩 (월 ₩19,000)',
-      'AF-MOD-2PACK': '모듈 2종 골라담기 팩 (월 ₩29,000)',
-      'AF-MOD-3PACK': '모듈 3종 골라담기 팩 (월 ₩39,000)',
-      'AF-MOD-ALL4': '4대 모듈 풀패키지 (월 ₩49,000)'
+      'tier_1': '자가치유 상주형 엔진 단독 (ENGINE_HEAL · 30일 ₩39,000 / MCP 특가 ₩29,000)',
+      'tier_starter': '자가치유 상주형 엔진 단독 (ENGINE_HEAL · 30일 ₩39,000 / MCP 특가 ₩29,000)',
+      'tier_2': '정합성 대사 상주형 엔진 단독 (ENGINE_RECON · 30일 ₩49,000 / MCP 특가 ₩39,000)',
+      'tier_pro': '정합성 대사 상주형 엔진 단독 (ENGINE_RECON · 30일 ₩49,000 / MCP 특가 ₩39,000)',
+      'tier_3': '듀얼 통합 상주형 엔진 (ENGINE_DUAL · 30일 ₩69,000 / MCP 특가 ₩49,000)',
+      'tier_enterprise': '듀얼 통합 상주형 엔진 (ENGINE_DUAL · 30일 ₩69,000 / MCP 특가 ₩49,000)',
+      'tier_4': '정합성 대사 상주형 엔진 단독 (ENGINE_RECON)',
+      'tier_make': 'Make.com Escape Pack (워크플로우 단품 영구소장)',
+      'tier_make_hook': 'Make.com Escape Pack (워크플로우 단품 영구소장)',
+      'tier_recharge': '상주형 무인 엔진 기간권 충전 패스 (30일 / 90일 / 365일 누적 합산)',
+      'WF_ENTRY': '워크플로우 단품 1단계 (₩39,000 영구소장 · 7일 상주형 무인 엔진 무료 체험 포함)',
+      'WF_STANDARD': '워크플로우 단품 2단계 (₩49,000 영구소장 · 7일 상주형 무인 엔진 무료 체험 포함)',
+      'WF_COMPLEX': '워크플로우 단품 3단계 (₩59,000 영구소장 · 7일 상주형 무인 엔진 무료 체험 포함)',
+      'AF-TIER1-SINGLE': '워크플로우 단품 1단계 (8~10노드 · ₩39,000 영구소장)',
+      'AF-TIER2-GUARD': '워크플로우 단품 2단계 (11~13노드 · ₩49,000 영구소장)',
+      'AF-TIER3-AI-PIPE': '워크플로우 단품 3단계 (14~18노드 · ₩59,000 영구소장)',
+      'AF-TIER4-ERP-CORE': '워크플로우 단품 4단계 (19~30노드 · ₩69,000 영구소장)',
+      'AF-TIER5-FULL-ORCH': '워크플로우 단품 5단계 (31~65노드 · ₩79,000 영구소장)',
+      'ENGINE_HEAL': '자가치유 상주형 엔진 단독 (30일 ₩39,000 / MCP 특가 ₩29,000)',
+      'ENGINE_RECON': '정합성 대사 상주형 엔진 단독 (30일 ₩49,000 / MCP 특가 ₩39,000)',
+      'ENGINE_DUAL': '듀얼 통합 상주형 엔진 (30일 ₩69,000 / MCP 특가 ₩49,000)',
+      'AF-SMARTGRID-PRO': 'AutoFlow SmartGrid 프로 원장 프로그램 (영구소장)'
     };
 
     document.getElementById('order-id-val').textContent = orderId;

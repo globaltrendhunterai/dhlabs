@@ -15,11 +15,11 @@
       <description>스마트스토어, 쿠팡 윙, 카페24, 쇼피파이, 홈택스, 더존 ERP 등 150종 비즈니스 워크플로우 단품(541+ 검증 블루프린트)을 번들 강매 없이 ₩39,000~₩79,000 ($29~$59 USD) 순수 기술가로 영구 소장하세요.</description>
     </item>
     <item>
-      <title>3단계 상주형 무인 방어 엔진 — 70% 안전율 스풀 이어하기 · 127ms 자가치유 · 1원 정합성 대사 기간권</title>
+      <title>3계층 상주형 무인 방어 엔진 창구(AF-ENG-CORE) — Lv.1~Lv.4 상위 합본 모듈 &amp; 0.5KB 60초 하트비트 카트리지</title>
       <link>https://autoflow.io/checkout.html</link>
       <guid isPermaLink="true">https://autoflow.io/checkout.html</guid>
       <pubDate>Sun, 01 Nov 2026 09:15:00 +0900</pubDate>
-      <description>사전 입구 70% 안전율 리미터 &amp; 로컬 스풀 자동 이어하기(core/safety_governor_spool_engine.js), 실행 과정 127ms 비언어 결정론적 자가치유(ENGINE_HEAL ₩39,000/$29), 사후 출구 주문·PG·택배·ERP 1원 단위 4자 정합성 대사(ReconFlow ₩49,000/$39), 듀얼 통합 엔진(₩69,000/$49, MCP 연동 시 ₩29,000/₩39,000/₩49,000).</description>
+      <description>1층 단일 엔진 창구(AF-ENG-CORE 127.0.0.1:8080) 기반 모듈 선택 피로도 0%의 2층 Lv.1~Lv.4 단계별 상위 합본 모듈(고객 AI BYOK 연결 시 ~35% 할인 월 ₩19,000/$15~, 일반 월 ₩29,000/$22~) 및 신규 노드·에러 3층 0.5KB 초미세 방어 카트리지 3갈래 60초 하트비트 무인 자동 배포.</description>
     </item>
     <item>
       <title>4단계 사이버 기만 방어 센티널 (Tarpit Labyrinth &amp; Lawful Forensic Beacon) 및 로컬 PII 100% 마스킹</title>
@@ -34,6 +34,97 @@
       <guid isPermaLink="true">https://autoflow.io/WORKFLOW_MENU_BOARD.html</guid>
       <pubDate>Sun, 01 Nov 2026 09:45:00 +0900</pubDate>
       <description>이커머스, 물류/3PL, 재무/회계, 마케팅/CRM, CS/리뷰, 보안/인프라 6대 분야 150종 완제품 스펙 및 AI 검색/에이전트 브라우징용 llms.txt · llms-full.txt · ai-catalog.json 공개.</description>
+    </item>
+      <item>
+      <title>AutoFlow Official Technical Engineering Blog Hub (Google SEO &amp; GEO Whitepapers)</title>
+      <link>https://autoflow.io/blog/</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/</guid>
+      <pubDate>Sun, 01 Nov 2026 10:00:00 +0900</pubDate>
+      <description>AutoFlow Official Technical Blog Hub: In-depth architecture whitepapers covering 3-Tier Defense Engines, Global 10-Angle Workflows, and SmartGrid Pro Ledgers.</description>
+    </item>
+    <item>
+      <title>AutoFlow 3-Tier Autonomous Defense Engine (AF-ENG-CORE): Lv.1~Lv.4 Cumulative Architecture &amp; 0.5KB Heartbeat Cartridges</title>
+      <link>https://autoflow.io/blog/af-eng-core-3-tier-byok-self-healing-engine.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/af-eng-core-3-tier-byok-self-healing-engine.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Zero Vendor Lock-In 24/7 Daemon, 35% BYOK AI Discount from $15/mo, 127ms Self-Healing &amp; 4-Stage Cyber Deception SKU: AF-ENG-CORE | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>AutoFlow SmartGrid Pro: On-Premise High-Performance Smart Ledger &amp; 5-Department Enterprise Excel (.xlsx) Master Pack</title>
+      <link>https://autoflow.io/blog/smartgrid-pro-5-department-excel-master-pack.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/smartgrid-pro-5-department-excel-master-pack.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Eliminate Cloud Spreadsheet API Limits: 14 Pre-Configured Templates, 100% Local PII Masking, 1-Cent Precision Audit SKU: AF-SMARTGRID-PRO | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>[Angle #01 · AF-GL-ECOM-01] Shopify &amp; WooCommerce Multi-Store Order Intake -&gt; Slack/Email Failover &amp; SmartGrid Ledger</title>
+      <link>https://autoflow.io/blog/angle-01-shopify-woocommerce-order-intake-failover.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/angle-01-shopify-woocommerce-order-intake-failover.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Zero Dropped Orders: E.164 Phone Sanitization, ISO Currency Normalization, Multi-Channel Alerting ($29 One-Time) SKU: AF-GL-ECOM-01 | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>[Angle #02 · AF-GL-ECOM-02] Real-Time Shopify &amp; Stripe Fee + COGS + 3PL Negative Margin Brake &amp; Fulfillment Hold</title>
+      <link>https://autoflow.io/blog/angle-02-shopify-stripe-negative-margin-brake.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/angle-02-shopify-stripe-negative-margin-brake.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Prevent Bleeding Cash on Discount Stacking, Stripe Fees (2.9%+$0.30) &amp; Remote Shipping Surcharges ($39 One-Time) SKU: AF-GL-ECOM-02 | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>[Angle #03 · AF-GL-ECOM-03] Confirmed Order -&gt; ShipStation / 3PL Multi-Carrier 14-Column CSV Auto-Transformer</title>
+      <link>https://autoflow.io/blog/angle-03-shipstation-3pl-14col-csv-transformer.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/angle-03-shipstation-3pl-14col-csv-transformer.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Standardize Raw Storefront Data into 3PL Warehouse-Ready Manifests with PO Box &amp; Remote Area Detection ($39 One-Time) SKU: AF-GL-ECOM-03 | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>[Angle #04 · AF-GL-ECOM-04] 3PL Carrier Tracking Bulk Write-Back -&gt; Shopify &amp; Customer Delivery Email Dispatcher</title>
+      <link>https://autoflow.io/blog/angle-04-3pl-tracking-bulk-writeback-notification.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/angle-04-3pl-tracking-bulk-writeback-notification.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Close the Fulfillment Loop: Validated Tracking Numbers, Shopify API Fulfillments, Branded SendGrid Emails ($39 One-Time) SKU: AF-GL-ECOM-04 | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>[Angle #05 · AF-GL-FIN-05] Stripe, PayPal &amp; Shopify Daily 1-Cent ($0.01) Payout &amp; Fee Reconciliation Auditor</title>
+      <link>https://autoflow.io/blog/angle-05-stripe-paypal-shopify-1cent-payout-recon.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/angle-05-stripe-paypal-shopify-1cent-payout-recon.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Catch Gateway Fee Overcharges, FX Slippage &amp; Hidden Reserve Holds with 1-Cent Math Precision ($45 One-Time) SKU: AF-GL-FIN-05 | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>[Angle #06 · AF-GL-FIN-06] Cross-Border HS Tariff / EU IOSS VAT Validator &amp; Stripe-to-QuickBooks Invoice Sync</title>
+      <link>https://autoflow.io/blog/angle-06-cross-border-hs-tariff-vat-quickbooks-sync.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/angle-06-cross-border-hs-tariff-vat-quickbooks-sync.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Automate International Customs Compliance, EU VIES VAT Verification &amp; QuickBooks Enterprise Bookkeeping ($45 One-Time) SKU: AF-GL-FIN-06 | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>[Angle #07 · AF-GL-OPS-07] Multi-Location Safety Stock Monitor &amp; Automated Supplier Purchase Order Generator</title>
+      <link>https://autoflow.io/blog/angle-07-multi-location-safety-stock-po-generator.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/angle-07-multi-location-safety-stock-po-generator.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Prevent Stockout Disasters: Dynamic Reorder Points, Velocity Burn Rate Tracking &amp; Automated Supplier PO Drafts ($29 One-Time) SKU: AF-GL-OPS-07 | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>[Angle #08 · AF-GL-CS-08] Cancel / Return / Chargeback Radar &amp; Pre-Shipment 3PL Dispatch Intercept Automation</title>
+      <link>https://autoflow.io/blog/angle-08-cancel-return-chargeback-3pl-intercept.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/angle-08-cancel-return-chargeback-3pl-intercept.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Stop Shipping to Fraudsters &amp; Cancelled Buyers: Instant Warehouse Intercept &amp; Automated Return RMA Labels ($39 One-Time) SKU: AF-GL-CS-08 | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>[Angle #09 · AF-GL-CS-09] Trustpilot &amp; Shopify 1-Star Review Real-Time Catch &amp; AI Crisis Reply 1-Click Approval Bot</title>
+      <link>https://autoflow.io/blog/angle-09-trustpilot-shopify-1star-review-ai-defense.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/angle-09-trustpilot-shopify-1star-review-ai-defense.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Protect Brand Reputation: Real-Time Negative Review Radar, Legal Threat Escalation, AI Drafts via Telegram ($45 One-Time) SKU: AF-GL-CS-09 | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
+    </item>
+    <item>
+      <title>[Angle #10 · AF-GL-MKT-10] Post-Purchase VIP Review Reward &amp; HubSpot/Klaviyo RFM Repurchase Drip Sequence</title>
+      <link>https://autoflow.io/blog/angle-10-vip-repurchase-rfm-hubspot-klaviyo-drip.html</link>
+      <guid isPermaLink="true">https://autoflow.io/blog/angle-10-vip-repurchase-rfm-hubspot-klaviyo-drip.html</guid>
+      <pubDate>Sun, 01 Nov 2026 10:15:00 +0900</pubDate>
+      <description>Maximize Customer Lifetime Value: GDPR-Compliant Photo Review Incentives &amp; Automated Lifecycle CRM Tags ($29 One-Time) SKU: AF-GL-MKT-10 | Pure Technical Whitepaper &amp; 1:1 Dedicated Hero Architecture.</description>
     </item>
   </channel>
 </rss>

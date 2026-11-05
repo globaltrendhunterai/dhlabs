@@ -475,16 +475,17 @@
             <label for="workflowQuickSelect" class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-1">인기 단품 빠른 선택 (또는 스토어 카탈로그에서 선택한 품목 자동 연동):</label>
             <select id="workflowQuickSelect" onchange="onWorkflowQuickSelect(this.value)" class="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-xs font-bold text-slate-800 dark:text-slate-100 focus:outline-none focus:border-sky-600">
               <option value="CUSTOM">-- 선택한 카탈로그 품목 유지 --</option>
-              <optgroup label="⚡ 연결 시스템 수별 4단계 정찰 라인업 (541종)">
-                <option value="AF-TIER1-SINGLE|39000|[4단계 정찰 1티어] 단일 연결·알림형 워크플로우 (1~2개 시스템 직결)">⚡ [AF-TIER1-SINGLE] 단일 연결·알림형 (1~2개 시스템) — ₩39,000 ($29)</option>
-                <option value="AF-TIER2-GUARD|59000|[4단계 정찰 2티어] 도메인 규칙·검증 가드형 워크플로우 (3개 시스템 / 조건부 보류)">⚡ [AF-TIER2-GUARD] 도메인 규칙·검증 가드형 (3개 시스템) — ₩59,000 ($45)</option>
-                <option value="AF-TIER3-AI-PIPE|119000|[4단계 정찰 3티어] 크로스-시스템·AI 복합 파이프라인 (4개 시스템 / AI 에이전트)">⚡ [AF-TIER3-AI-PIPE] 크로스-시스템·AI 복합 (4개 시스템) — ₩119,000 ($89)</option>
-                <option value="AF-TIER4-ERP-CORE|199000|[4단계 정찰 4티어] 전사 ERP·재무·기간망 하이엔드 파이프라인 (5개+ 시스템 / 홈택스·금융·ERP 대사)">⚡ [AF-TIER4-ERP-CORE] 전사 ERP·재무·기간망 (5개+ 시스템) — ₩199,000 ($149)</option>
+              <optgroup label="⚡ 노드 및 연결 시스템 복잡도 기준 5단계 정찰 라인업 (541종)">
+                <option value="AF-TIER1-SINGLE|39000|[5단계 정찰 1티어] 단일 연결·알림형 워크플로우 (8~10개 노드 직결)">⚡ [AF-TIER1-SINGLE] 단일 연결·알림형 (8~10개 노드) — ₩39,000 ($29)</option>
+                <option value="AF-TIER2-GUARD|49000|[5단계 정찰 2티어] 도메인 규칙·역마진 브레이크·택배 송장 변환 가드형 (11~13개 노드)">⚡ [AF-TIER2-GUARD] 도메인 규칙·검증 가드형 (11~13개 노드) — ₩49,000 ($39)</option>
+                <option value="AF-TIER3-AI-PIPE|59000|[5단계 정찰 3티어] 1원 정산 대사·관세청 검증·AI 결합 파이프라인 (14~18개 노드)">⚡ [AF-TIER3-AI-PIPE] 1원 정산 대사·AI 결합형 (14~18개 노드) — ₩59,000 ($45)</option>
+                <option value="AF-TIER4-ERP-CORE|69000|[5단계 정찰 4티어] 크로스-시스템 엔터프라이즈 복합 파이프라인 (19~30개 노드)">⚡ [AF-TIER4-ERP-CORE] 크로스-시스템 복합 파이프라인 (19~30개 노드) — ₩69,000 ($52)</option>
+                <option value="AF-TIER5-FULL-ORCH|79000|[5단계 정찰 5티어] 전사 ERP·재무·기간망 고밀도 풀스택 오케스트레이터 (31~65개 노드)">⚡ [AF-TIER5-FULL-ORCH] 고밀도 풀스택 오케스트레이터 (31~65개 노드) — ₩79,000 ($59)</option>
               </optgroup>
               <optgroup label="🏢 도메인별 대표 워크플로우 완제품">
-                <option value="AF-BO-01|119000|[경영·백오피스] 매일 아침 전사 매출·재고·CS 통합 AI 경영 요약 브리핑">📊 [AF-BO-01] 매일 아침 AI 경영 요약 브리핑 — ₩119,000 ($89)</option>
-                <option value="AF-BO-02|199000|[경영·세무회계] 법인카드 영수증 OCR 인식 ➔ 국세청 홈택스 대사 & ERP 전표 자동 기표">🧾 [AF-BO-02] 법인카드 OCR·홈택스·ERP 기표 — ₩199,000 ($149)</option>
-                <option value="AF-CS-01|119000|[고객지원·CS] 옴니채널 인바운드 문의 AI 감정분석·자동 분류 & CRM 연동 파이프라인">🎧 [AF-CS-01] 인바운드 문의 AI CS·CRM 파이프라인 — ₩119,000 ($89)</option>
+                <option value="AF-BO-01|59000|[경영·백오피스] 매일 아침 전사 매출·재고·CS 통합 AI 경영 요약 브리핑">📊 [AF-BO-01] 매일 아침 AI 경영 요약 브리핑 — ₩59,000 ($45)</option>
+                <option value="AF-BO-02|79000|[경영·세무회계] 법인카드 영수증 OCR 인식 ➔ 국세청 홈택스 대사 & ERP 전표 자동 기표">🧾 [AF-BO-02] 법인카드 OCR·홈택스·ERP 기표 — ₩79,000 ($59)</option>
+                <option value="AF-CS-01|59000|[고객지원·CS] 옴니채널 인바운드 문의 AI 감정분석·자동 분류 & CRM 연동 파이프라인">🎧 [AF-CS-01] 인바운드 문의 AI CS·CRM 파이프라인 — ₩59,000 ($45)</option>
                 <option value="AF-EC-04|59000|[이커머스·재무] 토스페이먼츠·스토어 실결제 승인 ➔ 국세청 전자세금계산서 PDF 자동 발행">📑 [AF-EC-04] 전자세금계산서 PDF 자동 발행 — ₩59,000 ($45)</option>
                 <option value="AF-HR-03|39000|[인사·총무] 슬랙·카카오 연차 신청 ➔ 캘린더 등록 및 잔여일수 자동 동기화">📅 [AF-HR-03] 연차 승인 및 캘린더 자동 동기화 — ₩39,000 ($29)</option>
               </optgroup>
@@ -509,8 +510,8 @@
 
           <!-- Technical Complexity Price Band Buttons -->
           <div>
-            <span class="block text-xs font-bold text-slate-500 mb-1.5">기능 노드 및 연결 시스템 수 기반 기술가 구간:</span>
-            <div class="grid grid-cols-4 sm:grid-cols-7 gap-1.5">
+            <span class="block text-xs font-bold text-slate-500 mb-1.5">기능 노드 및 연결 시스템 수 기반 5단계 정찰 기술가 구간:</span>
+            <div class="grid grid-cols-5 gap-1.5">
               <button type="button" onclick="setWorkflowPriceBand(39000)" id="btn-wf-price-39000" class="py-1.5 px-1 rounded-xl border border-sky-600 bg-sky-600 text-white text-xs font-extrabold text-center transition cursor-pointer">
                 ₩3.9만<br><span class="text-xs font-normal opacity-90">$29</span>
               </button>
@@ -525,12 +526,6 @@
               </button>
               <button type="button" onclick="setWorkflowPriceBand(79000)" id="btn-wf-price-79000" class="py-1.5 px-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer">
                 ₩7.9만<br><span class="text-xs font-normal opacity-80">$59</span>
-              </button>
-              <button type="button" onclick="setWorkflowPriceBand(119000)" id="btn-wf-price-119000" class="py-1.5 px-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer">
-                ₩11.9만<br><span class="text-xs font-normal opacity-80">$89</span>
-              </button>
-              <button type="button" onclick="setWorkflowPriceBand(199000)" id="btn-wf-price-199000" class="py-1.5 px-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold text-center transition cursor-pointer">
-                ₩19.9만<br><span class="text-xs font-normal opacity-80">$149</span>
               </button>
             </div>
           </div>
@@ -567,6 +562,17 @@
               <span>24/7 상주형 무인 엔진 기간권 선택</span>
             </span>
             <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-300 font-bold">미해결률 5% 미만</span>
+          </div>
+
+          <!-- 3계층 아키텍처 요약 배너: Lv.1~Lv.4 단계별 상위 합본 모듈 & BYOK 35% 할인 -->
+          <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-emerald-300 dark:border-emerald-700/60 text-xs space-y-1">
+            <div class="flex items-center justify-between font-extrabold text-emerald-900 dark:text-emerald-300">
+              <span>🏛️ 1층 단일 엔진 창구(AF-ENG-CORE) ➔ 2층 Lv.1~Lv.4 단계별 상위 합본 모듈</span>
+              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 font-bold">모듈 선택 피로도 0%</span>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-[11px]">
+              수십 개 카트리지를 일일이 고를 필요 없이 <strong>Lv.1~Lv.4 상위 합본 모듈 &amp; 고객 AI(BYOK) 연결 시 35% 즉시 할인(월 ₩19,000~₩65,000) · 모듈 선택 피로도 0%</strong> 구조로 가동됩니다. 상위 모듈 선택 시 내부 0.5KB 방어 카트리지가 60초 하트비트로 자동 주입됩니다.
+            </p>
           </div>
 
           <!-- Engine Type Buttons -->
@@ -621,6 +627,54 @@
                 365일권 (연간 특가)
               </button>
             </div>
+          </div>
+
+          <!-- 장착형 특화 카트리지(Stacking Cartridges) 누적 개통 & 업종별 1클릭 프리셋 -->
+          <div id="checkout-industry-preset-bar" class="pt-3 border-t border-emerald-200/70 dark:border-emerald-800/60 space-y-2.5">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs font-extrabold text-slate-800 dark:text-slate-200">🧩 복수 워크플로우·사업 확장용 장착 카트리지 추가 개통 (선택 · 누적 합산):</span>
+              <span class="text-xs font-mono text-emerald-700 dark:text-emerald-400 font-bold">0.5KB 하트비트 OTA</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <button type="button" onclick="applyIndustryModulePreset('PRESET_ECOMMERCE_FEE_GUARD')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:border-sky-600 text-xs font-bold text-slate-700 dark:text-slate-300 cursor-pointer">오픈마켓 수수료·역마진 프리셋</button>
+              <button type="button" onclick="applyIndustryModulePreset('PRESET_CBT_TARIFF_GUARD')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:border-emerald-600 text-xs font-bold text-slate-700 dark:text-slate-300 cursor-pointer">관세청 통관·HS관세 프리셋</button>
+              <button type="button" onclick="applyIndustryModulePreset('PRESET_FEE_TARIFF_OTA_PACK')" class="px-2.5 py-1 rounded-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 hover:border-indigo-600 text-xs font-bold text-slate-700 dark:text-slate-300 cursor-pointer">수수료(MOD_P)+관세(MOD_Q) 통합</button>
+              <button type="button" onclick="applyIndustryModulePreset('CLEAR')" class="px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-500 cursor-pointer">선택 해제</button>
+            </div>
+
+            <!-- 개별 카트리지 접기 블록: 모듈 선택 피로도 제거 -->
+            <details class="group rounded-xl border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 p-2.5">
+              <summary class="text-xs font-bold text-slate-700 dark:text-slate-300 cursor-pointer flex items-center justify-between">
+                <span>상위 합본 모듈 선택 시 내부 0.5KB 방어 카트리지가 자동 장착됩니다 (고급: 내부 초미세 카트리지 개별 구성 확인)</span>
+                <span class="text-xs text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs mt-2.5 pt-2 border-t border-slate-200 dark:border-slate-800">
+                <label class="flex items-center gap-2 p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer">
+                  <input type="checkbox" id="chk-mod-p" onchange="onStackingCartridgeChange()" class="h-3.5 w-3.5 rounded border-slate-400 text-emerald-600" />
+                  <span class="font-semibold text-slate-800 dark:text-slate-200">MOD_P 수수료 과다차감 격리 (+₩19,000)</span>
+                </label>
+                <label class="flex items-center gap-2 p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer">
+                  <input type="checkbox" id="chk-mod-q" onchange="onStackingCartridgeChange()" class="h-3.5 w-3.5 rounded border-slate-400 text-emerald-600" />
+                  <span class="font-semibold text-slate-800 dark:text-slate-200">MOD_Q HS코드·관세율 가드 (+₩19,000)</span>
+                </label>
+                <label class="flex items-center gap-2 p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer">
+                  <input type="checkbox" id="chk-mod-j" onchange="onStackingCartridgeChange()" class="h-3.5 w-3.5 rounded border-slate-400 text-emerald-600" />
+                  <span class="font-semibold text-slate-800 dark:text-slate-200">MOD_J 관세청 PCCC 검증 (+₩29,000)</span>
+                </label>
+                <label class="flex items-center gap-2 p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer">
+                  <input type="checkbox" id="chk-mod-k" onchange="onStackingCartridgeChange()" class="h-3.5 w-3.5 rounded border-slate-400 text-emerald-600" />
+                  <span class="font-semibold text-slate-800 dark:text-slate-200">MOD_K 다통화 외환 정산 (+₩29,000)</span>
+                </label>
+                <label class="flex items-center gap-2 p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer">
+                  <input type="checkbox" id="chk-mod-l" onchange="onStackingCartridgeChange()" class="h-3.5 w-3.5 rounded border-slate-400 text-emerald-600" />
+                  <span class="font-semibold text-slate-800 dark:text-slate-200">MOD_L 콜드체인·유통기한 (+₩29,000)</span>
+                </label>
+                <label class="flex items-center gap-2 p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 cursor-pointer">
+                  <input type="checkbox" id="chk-mod-n" onchange="onStackingCartridgeChange()" class="h-3.5 w-3.5 rounded border-slate-400 text-emerald-600" />
+                  <span class="font-semibold text-slate-800 dark:text-slate-200">MOD_N 반품 중량·사기 레이더 (+₩19,000)</span>
+                </label>
+              </div>
+            </details>
           </div>
         </div>
 
@@ -847,16 +901,74 @@
     const rawAddonParam = urlParams.get('addon') || '';
     const rawModeParam = urlParams.get('mode') || 'managed';
     const rawDaysParam = parseInt(urlParams.get('days') || '30', 10);
+    const rawPresetParam = urlParams.get('preset') || '';
+    const rawBitmaskParam = parseInt(urlParams.get('bitmask') || '0', 10);
+    const rawCartridgeParam = urlParams.get('cartridge') || '';
     const targetHwid = urlParams.get('hwid') || urlParams.get('custom[hwid]') || '';
 
+    const INDUSTRY_MODULE_PRESETS = {
+      PRESET_ECOMMERCE_FEE_GUARD: {
+        presetCode: 'PRESET_ECOMMERCE_FEE_GUARD',
+        label: '오픈마켓 수수료 과다차감·역마진 방어 카트리지 팩',
+        checkboxIds: ['chk-mod-p', 'chk-mod-n'],
+        bitmask: 65536 | 16384
+      },
+      PRESET_CBT_TARIFF_GUARD: {
+        presetCode: 'PRESET_CBT_TARIFF_GUARD',
+        label: '관세청 유니패스 PCCC·HS코드 관세율·외환 카트리지 팩',
+        checkboxIds: ['chk-mod-j', 'chk-mod-k', 'chk-mod-q'],
+        bitmask: 1024 | 2048 | 131072
+      },
+      PRESET_FEE_TARIFF_OTA_PACK: {
+        presetCode: 'PRESET_FEE_TARIFF_OTA_PACK',
+        label: '오픈마켓 수수료(MOD_P) + HS관세율(MOD_Q) OTA 통합 카트리지',
+        checkboxIds: ['chk-mod-p', 'chk-mod-q'],
+        bitmask: 65536 | 131072
+      }
+    };
+
+    const BITMASK_TO_CHECKBOX_MAP = [
+      { bit: 1024, id: 'chk-mod-j', code: 'MOD_J_CUSTOMS_CLEARANCE', krw: 29000, usd: 22, label: 'MOD_J 관세청 PCCC' },
+      { bit: 2048, id: 'chk-mod-k', code: 'MOD_K_GLOBAL_FX_SETTLEMENT', krw: 29000, usd: 22, label: 'MOD_K 다통화 외환' },
+      { bit: 4096, id: 'chk-mod-l', code: 'MOD_L_COLDCHAIN_LOT_GUARD', krw: 29000, usd: 22, label: 'MOD_L 콜드체인' },
+      { bit: 16384, id: 'chk-mod-n', code: 'MOD_N_RETURN_FRAUD_CLAIM_RADAR', krw: 19000, usd: 15, label: 'MOD_N 반품 사기 레이더' },
+      { bit: 65536, id: 'chk-mod-p', code: 'MOD_P_MARKETPLACE_FEE_OVERCHARGE_GUARD', krw: 19000, usd: 15, label: 'MOD_P 수수료 과다차감' },
+      { bit: 131072, id: 'chk-mod-q', code: 'MOD_Q_HS_TARIFF_DUTY_GUARD', krw: 19000, usd: 15, label: 'MOD_Q HS관세율 가드' }
+    ];
+
+    function applyIndustryModulePreset(presetKey) {
+      BITMASK_TO_CHECKBOX_MAP.forEach(item => {
+        const el = document.getElementById(item.id);
+        if (el) el.checked = false;
+      });
+      if (presetKey && presetKey !== 'CLEAR' && INDUSTRY_MODULE_PRESETS[presetKey]) {
+        const preset = INDUSTRY_MODULE_PRESETS[presetKey];
+        preset.checkboxIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.checked = true;
+        });
+      }
+      selectCheckoutTrack('engine');
+    }
+
+    function applyBitmaskModuleSelection(bitmask) {
+      const safeMask = Number(bitmask) || 0;
+      if (safeMask <= 0) return;
+      BITMASK_TO_CHECKBOX_MAP.forEach(item => {
+        const el = document.getElementById(item.id);
+        if (el) el.checked = (safeMask & item.bit) === item.bit;
+      });
+      selectCheckoutTrack('engine');
+    }
+
+    function onStackingCartridgeChange() {
+      selectCheckoutTrack('engine');
+    }
+
     const MODULAR_ENGINE_SKU_CATALOG = {
-      'AF-ENG-CORE': { sku: 'AF-ENG-CORE', price: 29000, usd: 24, name: '[전문 방어 엔진] 기본 무중단 베이스 차체 (자가치유 + 워치독 + 스풀거버너)' },
-      'AF-ENG-COMMERCE': { sku: 'AF-ENG-COMMERCE', price: 49000, usd: 39, name: '[전문 방어 엔진] 커머스·물류·합배송·출고보류 엔진' },
-      'AF-ENG-FINANCE': { sku: 'AF-ENG-FINANCE', price: 59000, usd: 49, name: '[전문 방어 엔진] 재무·정산대사·국세청 홈택스·압류방어 엔진' },
-      'AF-ENG-CS': { sku: 'AF-ENG-CS', price: 49000, usd: 39, name: '[전문 방어 엔진] 옴니채널 CS·개인정보 마스킹·악성리뷰/분쟁 방어 엔진' },
-      'AF-ENG-MARKETING': { sku: 'AF-ENG-MARKETING', price: 39000, usd: 29, name: '[전문 방어 엔진] 마케팅·CRM·드리프트 방어 엔진' },
-      'AF-ENG-GLOBAL': { sku: 'AF-ENG-GLOBAL', price: 59000, usd: 49, name: '[전문 방어 엔진] 글로벌 역직구·관세청 통관부호(PCCC)·다통화 환율 엔진' },
-      'AF-ENG-ALL': { sku: 'AF-ENG-ALL', price: 189000, usd: 149, name: '[올인원 마스터 패스] 6대 상황별 전문 엔진 올인원 마스터 패스' }
+      'ENGINE_HEAL': { sku: 'ENGINE_HEAL', price: 39000, usd: 29, name: '[24/7 상주형 무인 엔진] ① 자가치유 엔진 단독 (30일 기본형 · MCP 특가 ₩29,000)' },
+      'ENGINE_RECON': { sku: 'ENGINE_RECON', price: 49000, usd: 39, name: '[24/7 상주형 무인 엔진] ② 정합성 대사 엔진 단독 (30일 기본형 · MCP 특가 ₩39,000)' },
+      'ENGINE_DUAL': { sku: 'ENGINE_DUAL', price: 69000, usd: 49, name: '[24/7 상주형 무인 엔진] ③ 듀얼 통합 엔진 (30일 기본형 · MCP 특가 ₩49,000)' }
     };
 
     const ADDON_SKU_CATALOG = {
@@ -898,15 +1010,19 @@
     };
 
     const WORKFLOW_PRODUCT_MAP = {
-      'AF-TIER1-SINGLE': { sku: 'AF-TIER1-SINGLE', price: 39000, usd: 29, name: '[4단계 정찰 1티어] 단일 연결·알림형 워크플로우 (1~2개 시스템 직결)' },
-      'AF-TIER2-GUARD': { sku: 'AF-TIER2-GUARD', price: 59000, usd: 45, name: '[4단계 정찰 2티어] 도메인 규칙·검증 가드형 워크플로우 (3개 시스템 / 조건부 보류)' },
-      'AF-TIER3-AI-PIPE': { sku: 'AF-TIER3-AI-PIPE', price: 119000, usd: 89, name: '[4단계 정찰 3티어] 크로스-시스템·AI 복합 파이프라인 (4개 시스템 / AI 에이전트)' },
-      'AF-TIER4-ERP-CORE': { sku: 'AF-TIER4-ERP-CORE', price: 199000, usd: 149, name: '[4단계 정찰 4티어] 전사 ERP·재무·기간망 하이엔드 파이프라인 (5개+ 시스템 / 홈택스·금융·ERP 대사)' },
-      'AF-BO-01': { sku: 'AF-BO-01', price: 119000, usd: 89, name: '[경영·백오피스] 매일 아침 전사 매출·재고·CS 통합 AI 경영 요약 브리핑' },
-      'AF-BO-02': { sku: 'AF-BO-02', price: 199000, usd: 149, name: '[경영·세무회계] 법인카드 영수증 OCR 인식 ➔ 국세청 홈택스 대사 & ERP 전표 자동 기표' },
-      'AF-CS-01': { sku: 'AF-CS-01', price: 119000, usd: 89, name: '[고객지원·CS] 옴니채널 인바운드 문의 AI 감정분석·자동 분류 & CRM 연동 파이프라인' },
+      'AF-TIER1-SINGLE': { sku: 'AF-TIER1-SINGLE', price: 39000, usd: 29, name: '[5단계 정찰 1티어] 단일 연결·알림형 워크플로우 (8~10개 노드 직결)' },
+      'AF-TIER2-GUARD': { sku: 'AF-TIER2-GUARD', price: 49000, usd: 39, name: '[5단계 정찰 2티어] 도메인 규칙·역마진 브레이크·택배 송장 변환 가드형 (11~13개 노드)' },
+      'AF-TIER3-AI-PIPE': { sku: 'AF-TIER3-AI-PIPE', price: 59000, usd: 45, name: '[5단계 정찰 3티어] 1원 정산 대사·관세청 검증·AI 결합 파이프라인 (14~18개 노드)' },
+      'AF-TIER4-ERP-CORE': { sku: 'AF-TIER4-ERP-CORE', price: 69000, usd: 52, name: '[5단계 정찰 4티어] 크로스-시스템 엔터프라이즈 복합 파이프라인 (19~30개 노드)' },
+      'AF-TIER5-FULL-ORCH': { sku: 'AF-TIER5-FULL-ORCH', price: 79000, usd: 59, name: '[5단계 정찰 5티어] 전사 ERP·재무·기간망 고밀도 풀스택 오케스트레이터 (31~65개 노드)' },
+      'AF-BO-01': { sku: 'AF-BO-01', price: 59000, usd: 45, name: '[경영·백오피스] 매일 아침 전사 매출·재고·CS 통합 AI 경영 요약 브리핑' },
+      'AF-BO-02': { sku: 'AF-BO-02', price: 79000, usd: 59, name: '[경영·세무회계] 법인카드 영수증 OCR 인식 ➔ 국세청 홈택스 대사 & ERP 전표 자동 기표' },
+      'AF-CS-01': { sku: 'AF-CS-01', price: 59000, usd: 45, name: '[고객지원·CS] 옴니채널 인바운드 문의 AI 감정분석·자동 분류 & CRM 연동 파이프라인' },
       'AF-EC-04': { sku: 'AF-EC-04', price: 59000, usd: 45, name: '[이커머스·재무] 토스페이먼츠·스토어 실결제 승인 ➔ 국세청 전자세금계산서 PDF 자동 발행' },
-      'AF-HR-03': { sku: 'AF-HR-03', price: 39000, usd: 29, name: '[인사·총무] 슬랙·카카오 연차 신청 ➔ 캘린더 등록 및 잔여일수 자동 동기화' }
+      'AF-HR-03': { sku: 'AF-HR-03', price: 39000, usd: 29, name: '[인사·총무] 슬랙·카카오 연차 신청 ➔ 캘린더 등록 및 잔여일수 자동 동기화' },
+      'WF_ENTRY': { sku: 'AF-NAVER-01', price: 39000, usd: 29, name: '[스마트스토어 전용] 신규 주문 실시간 수집 ➔ 카카오 알림톡(SMS 폴백) & 구글시트 원장' },
+      'WF_STANDARD': { sku: 'AF-NAVER-03', price: 49000, usd: 39, name: '[스마트스토어 전용] 발주확인 주문 택배사(CJ·한진·롯데·우체국) 14컬럼 송장 엑셀 자동 변환기' },
+      'WF_COMPLEX': { sku: 'AF-NAVER-05', price: 59000, usd: 45, name: '[스마트스토어 전용] 일별 정산 내역 vs 실주문 원장 1원 단위 누락·수수료 과오납 대사기' }
     };
 
     function workflowKrwToUsd(krw) {
@@ -914,29 +1030,32 @@
       if (krw <= 49000) return 39;
       if (krw <= 59000) return 45;
       if (krw <= 69000) return 52;
-      if (krw <= 79000) return 59;
-      if (krw <= 119000) return 89;
-      if (krw <= 199000) return 149;
-      return 149;
+      return 59;
     }
 
     function clampWorkflowPrice(p) {
-      const valid = [39000, 49000, 59000, 69000, 79000, 119000, 199000];
+      const valid = [39000, 49000, 59000, 69000, 79000];
       if (valid.includes(p)) return p;
       if (p > 0 && p <= 39000) return 39000;
       if (p > 39000 && p <= 49000) return 49000;
       if (p > 49000 && p <= 59000) return 59000;
       if (p > 59000 && p <= 69000) return 69000;
-      if (p > 69000 && p <= 79000) return 79000;
-      if (p > 79000 && p <= 119000) return 119000;
-      if (p > 119000) return 199000;
+      if (p > 69000) return 79000;
       return 39000;
     }
 
+    const LEGACY_ENGINE_REDIRECT_MAP = {
+      'AF-ENG-CORE': 'ENGINE_HEAL',
+      'AF-ENG-FINANCE': 'ENGINE_RECON',
+      'AF-ENG-COMMERCE': 'ENGINE_DUAL',
+      'AF-ENG-CS': 'ENGINE_DUAL',
+      'AF-ENG-MARKETING': 'ENGINE_DUAL',
+      'AF-ENG-GLOBAL': 'ENGINE_DUAL',
+      'AF-ENG-ALL': 'ENGINE_DUAL'
+    };
+
     let currentTrack = 'workflow';
-    if (MODULAR_ENGINE_SKU_CATALOG[rawEngineParam]) {
-      currentTrack = 'modular_engine';
-    } else if (rawEngineParam) {
+    if (rawEngineParam || rawPresetParam || rawBitmaskParam > 0 || rawCartridgeParam) {
       currentTrack = 'engine';
     } else if (rawAddonParam && !rawSkuParam) {
       currentTrack = 'addon';
@@ -958,7 +1077,8 @@
     }
     currentWorkflowPrice = clampWorkflowPrice(currentWorkflowPrice || 39000);
 
-    let currentEngineCode = ['ENGINE_HEAL', 'ENGINE_RECON', 'ENGINE_DUAL'].includes(rawEngineParam) ? rawEngineParam : 'ENGINE_DUAL';
+    const normalizedEngineParam = LEGACY_ENGINE_REDIRECT_MAP[rawEngineParam] || rawEngineParam;
+    let currentEngineCode = ['ENGINE_HEAL', 'ENGINE_RECON', 'ENGINE_DUAL'].includes(normalizedEngineParam) ? normalizedEngineParam : 'ENGINE_DUAL';
     let currentEngineMode = rawModeParam === 'mcp' ? 'mcp' : 'managed';
     let currentEngineDays = [30, 90, 365].includes(rawDaysParam) ? rawDaysParam : 30;
 
@@ -1045,7 +1165,7 @@
 
     function refreshCheckoutSummary() {
       // Highlight workflow price band buttons
-      [39000, 49000, 59000, 69000, 79000, 119000, 199000].forEach(p => {
+      [39000, 49000, 59000, 69000, 79000].forEach(p => {
         const b = document.getElementById('btn-wf-price-' + p);
         if (!b) return;
         const u = workflowKrwToUsd(p);
@@ -1141,7 +1261,7 @@
         if (feat3) feat3.textContent = '사내 PC(127.0.0.1) 로컬 개인정보 전수 자동 마스킹 방패 기본 내장';
         if (feat4) feat4.textContent = '7일 상주형 무인 엔진(자가치유 + 70% 안전율 리미터·스풀 이어하기 + 정합성 대사) 무료 체험 기본 포함';
       } else if (currentTrack === 'modular_engine') {
-        const engineObj = MODULAR_ENGINE_SKU_CATALOG[rawEngineParam] || MODULAR_ENGINE_SKU_CATALOG['AF-ENG-ALL'];
+        const engineObj = MODULAR_ENGINE_SKU_CATALOG[rawEngineParam] || MODULAR_ENGINE_SKU_CATALOG['ENGINE_DUAL'];
         priceAmount = engineObj.price;
         usdAmount = engineObj.usd;
         activeSku = engineObj.sku;
@@ -1166,15 +1286,28 @@
         if (feat4) feat4.textContent = 'UTF-8 BOM (.csv) 1초 내보내기/가져오기 완비';
       } else {
         const selectedPriceObj = row[currentEngineCode];
-        priceAmount = selectedPriceObj.krw;
-        usdAmount = selectedPriceObj.usd;
+        let stackAddKrw = 0;
+        let stackAddUsd = 0;
+        let stackCodes = [];
+        let stackLabels = [];
+        BITMASK_TO_CHECKBOX_MAP.forEach(item => {
+          const el = document.getElementById(item.id);
+          if (el && el.checked) {
+            stackAddKrw += item.krw;
+            stackAddUsd += item.usd;
+            stackCodes.push(item.code.split('_').slice(0, 2).join('_'));
+            stackLabels.push(item.label);
+          }
+        });
+        priceAmount = selectedPriceObj.krw + stackAddKrw;
+        usdAmount = selectedPriceObj.usd + stackAddUsd;
         const modeTag = currentEngineMode === 'mcp' ? 'MCP' : 'MANAGED';
-        activeSku = currentEngineCode + '_' + currentEngineDays + 'D_' + modeTag;
+        activeSku = currentEngineCode + '_' + currentEngineDays + 'D_' + modeTag + (stackCodes.length > 0 ? ('_' + stackCodes.join('_')) : '');
         const modeDesc = currentEngineMode === 'mcp'
           ? '개발자 MCP 외부 AI 연동 + 익명 해결로그 본사 공유 특가'
           : '기본형 · 본사 파인튜닝 AI 포함';
-        activeTitle = ENGINE_NAME_MAP[currentEngineCode] + ' [' + modeDesc + ' · ' + currentEngineDays + '일 기간권]';
-        if (badge) badge.textContent = '🛡️ 상주형 무인 엔진 (' + currentEngineDays + '일권)';
+        activeTitle = ENGINE_NAME_MAP[currentEngineCode] + (stackLabels.length > 0 ? (' + 장착 카트리지[' + stackLabels.join(', ') + ']') : '') + ' [' + modeDesc + ' · ' + currentEngineDays + '일 기간권]';
+        if (badge) badge.textContent = '🛡️ 상주형 무인 엔진 (' + currentEngineDays + '일권' + (stackLabels.length > 0 ? ' + 확장 카트리지' : '') + ')';
         if (cycleEl) cycleEl.textContent = 'VAT 포함 · ' + currentEngineDays + '일 기간권 (' + modeDesc + ' · 자동결제 없음)';
         if (feat1) feat1.textContent = '24/7 상주형 무인 엔진 ' + currentEngineDays + '일 가동 패스 (만료 후에도 워크플로우 단품은 영구 작동)';
         if (feat2) feat2.textContent = currentEngineCode === 'ENGINE_RECON'
@@ -1183,7 +1316,7 @@
         if (feat3) feat3.textContent = currentEngineMode === 'mcp'
           ? '고객 외부 AI(OpenAI/Claude/로컬 LLM) MCP 직접 연결 + 익명 해결로그 본사 자동 공유 조건부 할인가'
           : '본사 도메인 파인튜닝 AI 모델 기본 포함 (별도 외부 AI API 키 설정 불필요)';
-        if (feat4) feat4.textContent = '사내 PC(127.0.0.1) 로컬 개인정보 100% 마스킹 후 익명 에러코드만 본사 패치 서버와 통신';
+        if (feat4) feat4.textContent = '사내 PC(127.0.0.1) 로컬 개인정보 100% 마스킹 후 익명 에러코드만 본사 패치 서버와 통신 (60초 0.6KB 하트비트 OTA)';
       }
 
       const subtotal = Math.round(priceAmount / 1.1);
@@ -1533,6 +1666,16 @@
       const savedLang = localStorage.getItem('autoflow_checkout_lang') || 'ko';
       setCheckoutLang(savedLang);
       syncWorkflowQuickSelect();
+      if (rawPresetParam && INDUSTRY_MODULE_PRESETS[rawPresetParam]) {
+        applyIndustryModulePreset(rawPresetParam);
+      } else if (rawBitmaskParam > 0) {
+        applyBitmaskModuleSelection(rawBitmaskParam);
+      } else if (rawCartridgeParam) {
+        BITMASK_TO_CHECKBOX_MAP.forEach(item => {
+          const el = document.getElementById(item.id);
+          if (el && item.code === rawCartridgeParam.toUpperCase()) el.checked = true;
+        });
+      }
       selectCheckoutTrack(currentTrack);
       initTossPaymentsWidget();
     });
