@@ -542,6 +542,101 @@
       color: var(--text-bright);
       font-size: 0.9rem;
     }
+    .dual-layer-box {
+      background: var(--bg-arch);
+      border: 1px solid var(--border-blue);
+      border-radius: 14px;
+      padding: 24px;
+      margin: 32px 0;
+      text-align: left;
+    }
+    .dual-layer-box h2 {
+      margin-top: 0;
+      font-size: 1.35rem;
+      color: var(--text-bright);
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+    }
+    .dual-layer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .dual-layer-card {
+      background: var(--bg-deep);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .dual-layer-niche {
+      border-left: 4px solid var(--accent-gold);
+    }
+    .dual-layer-proof {
+      border-left: 4px solid var(--accent-blue);
+    }
+    .dual-layer-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .tag-niche {
+      background: var(--badge-gold-bg);
+      color: var(--accent-amber-light);
+      border: 1px solid var(--badge-gold-border);
+    }
+    .tag-proof {
+      background: var(--badge-blue-bg);
+      color: var(--accent-blue-light);
+      border: 1px solid var(--badge-blue-border);
+    }
+    .dual-layer-card h3 {
+      font-size: 1.05rem;
+      color: var(--text-bright);
+      margin: 0 0 8px 0;
+    }
+    .dual-layer-card p {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .dual-layer-card ul {
+      margin: 0 0 0 18px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .dual-layer-card li {
+      margin-bottom: 6px;
+    }
+    .card-niche-box {
+      background: var(--bg-deep);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 16px;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: var(--text-body);
+    }
+    .card-niche-row {
+      margin-bottom: 6px;
+    }
+    .card-niche-row:last-child {
+      margin-bottom: 0;
+    }
+    .niche-label {
+      color: var(--accent-amber-light);
+      font-weight: 800;
+    }
+    .proof-label {
+      color: var(--accent-blue-light);
+      font-weight: 800;
+    }
 
     .site-nav {
       max-width: 1140px;
@@ -784,6 +879,34 @@
         </ul>
       </section>
 
+      <section class="dual-layer-box" aria-label="Dual-Layer Non-Technical Buyer and Technical Proof Guide">
+        <h2>How Do Store Owners and Non-Technical Teams Match Their Daily Bottleneck to AutoFlow Engineering Proof?</h2>
+        <div class="dual-layer-grid">
+          <div class="dual-layer-card dual-layer-niche">
+            <div class="dual-layer-tag tag-niche">Layer 1 · Non-Technical Merchant &amp; Team Niche (Business Outcome)</div>
+            <h3>5 Core Operational Pains We Stop Immediately (No Coding Needed)</h3>
+            <ul>
+              <li><strong>Pain 1 · Selling at a Loss (Negative Margins):</strong> Ad spend, marketplace fees, COGS, and shipping quietly turn discounted orders into net losses.</li>
+              <li><strong>Pain 2 · 3 Hours of Morning Carrier Excel Edits:</strong> Staff manually reformat orders into 14-column carrier spreadsheets and copy-paste tracking numbers.</li>
+              <li><strong>Pain 3 · Missing Card &amp; Gateway Payouts:</strong> Rolling reserves, fee overcharges, and unrecorded refunds make bank deposits fall short of sales.</li>
+              <li><strong>Pain 4 · Flash-Sale API Bans &amp; Dropped Orders:</strong> Weekend order surges trigger HTTP 429 rate limits and drop customer orders.</li>
+              <li><strong>Pain 5 · 2 AM Outages &amp; $500/mo SaaS Bills:</strong> Marketplace API updates break workflows overnight while cloud tools charge recurring per-task fees.</li>
+            </ul>
+          </div>
+          <div class="dual-layer-card dual-layer-proof">
+            <div class="dual-layer-tag tag-proof">Layer 2 · Plain-Language Technical Proof (Why It Works Safely)</div>
+            <h3>1:1 Verifiable Engineering Mechanism Behind Each Outcome</h3>
+            <ul>
+              <li><strong>Proof 1 · 0.1s Pre-Shipment Margin Brake (<code>AF-GL-ECOM-02</code>):</strong> Computes net profit per order in real time and holds negative-margin shipments before 3PL dispatch.</li>
+              <li><strong>Proof 2 · 24-Carrier Auto-Mapper &amp; 198 Audited Excel Formulas (<code>AF-GL-ECOM-03</code>):</strong> Converts 14-column shipping files and writes back tracking numbers with 0 formula errors.</li>
+              <li><strong>Proof 3 · 4-Way 0.01-Unit Payout Auditor (<code>ReconFlow AF-GL-FIN-05</code>):</strong> Cross-checks store orders, PG fees, shipping deductions, and bank deposits down to $0.01 / ₩1.</li>
+              <li><strong>Proof 4 · 70% Safety Rate Governor &amp; Local Spool (<code>127.0.0.1:8080</code>):</strong> Caps traffic at 42/60 req/min, buffers overflow to disk (<code>overflow_spool</code>), and drains with 0 loss.</li>
+              <li><strong>Proof 5 · 127 ms AST Self-Healing &amp; 35% BYOK Discount (<code>AF-ENG-CORE</code>):</strong> Hot-swaps 0.5KB cartridges every 60s and connects your own AI key from $15/mo.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- Category Filter Tabs -->
       <div class="filter-tabs">
         <button class="tab-btn active" data-filter="all">All Whitepapers (18)</button>
@@ -809,6 +932,10 @@
           <span class="card-sku">Catalog SKU: AF-ENG-CORE</span>
         </div>
         <p class="card-desc">Zero Vendor Lock-In 24/7 Resident Engine, 35% BYOK AI Discount from $15/mo, 127 ms Self-Healing &amp; 4-Stage Cyber Deception</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Monthly Recurring Overhead: $299~$899/mo per-task metering &rarr; <strong>$15~$39/mo flat (35% BYOK AI discount)</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Local Engine Initialization &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$15~$39/mo (₩19,000~₩49,000)</span>
@@ -829,6 +956,10 @@
           <span class="card-sku">Catalog SKU: AF-SMARTGRID-PRO</span>
         </div>
         <p class="card-desc">Eliminate Cloud Spreadsheet API Limits: 14 Pre-Configured Templates, 100% Local PII Masking, 1-Cent Precision Audit</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> API Read/Write Quota Limit: 300 requests/min (Google Sheets quota crash) &rarr; <strong>Unlimited local throughput (10,000+ ops/sec)</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Department Pack Deployment &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$15~$49 (₩19,000~₩65,000)</span>
@@ -849,6 +980,10 @@
           <span class="card-sku">Catalog SKU: AF-GL-ECOM-01</span>
         </div>
         <p class="card-desc">Zero Dropped Orders: E.164 Phone Sanitization, ISO Currency Normalization, Multi-Channel Alerting ($29 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Order Ingestion Reliability: 96.2% (unhandled event hook dropouts on peak days) &rarr; <strong>99.99% with idempotent local retry buffers</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Scheduled &amp; Event Hook Trigger &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$29 USD</span>
@@ -869,6 +1004,10 @@
           <span class="card-sku">Catalog SKU: AF-GL-ECOM-02</span>
         </div>
         <p class="card-desc">Prevent Bleeding Cash on Discount Stacking, Stripe Fees (2.9%+$0.30) &amp; Remote Shipping Surcharges ($39 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Negative Margin Detection: Discovered weeks later during monthly bookkeeping &rarr; <strong>Calculated in real time (&lt;200ms) before shipment dispatch</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Paid Order Ingestion &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$39 USD</span>
@@ -889,6 +1028,10 @@
           <span class="card-sku">Catalog SKU: AF-GL-ECOM-03</span>
         </div>
         <p class="card-desc">Standardize Raw Storefront Data into 3PL Warehouse-Ready Manifests with PO Box &amp; Remote Area Detection ($39 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Daily Manifest Preparation: 120~180 minutes manual spreadsheet formatting &rarr; <strong>0 minutes (automated background execution every 10 min)</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Unfulfilled Orders Query &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$39 USD</span>
@@ -909,6 +1052,10 @@
           <span class="card-sku">Catalog SKU: AF-GL-ECOM-04</span>
         </div>
         <p class="card-desc">Close the Fulfillment Loop: Validated Tracking Numbers, Shopify API Fulfillments, Branded SendGrid Emails ($39 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Tracking Sync Lag: 12~24 hours end-of-day manual CSV upload &rarr; <strong>&lt;10 minutes automated bulk polling and write-back</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Carrier &amp; ShipStation Poll &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$39 USD</span>
@@ -929,6 +1076,10 @@
           <span class="card-sku">Catalog SKU: AF-GL-FIN-05</span>
         </div>
         <p class="card-desc">Catch Gateway Fee Overcharges, FX Slippage &amp; Hidden Reserve Holds with 1-Cent Math Precision ($45 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Reconciliation Precision: Estimated aggregate totals with $200+ tolerance &rarr; <strong>1-Cent ($0.01) exact per-transaction mathematical verification</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Daily Settlement Ingestion &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$45 USD</span>
@@ -949,6 +1100,10 @@
           <span class="card-sku">Catalog SKU: AF-GL-FIN-06</span>
         </div>
         <p class="card-desc">Automate International Customs Compliance, EU VIES VAT Verification &amp; QuickBooks Enterprise Bookkeeping ($45 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Customs Clearance Delay: 3~7 days packages stuck at border inspection &rarr; <strong>Instant clearance with pre-validated 6-digit HS codes</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Open International Orders Fetch &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$45 USD</span>
@@ -969,6 +1124,10 @@
           <span class="card-sku">Catalog SKU: AF-GL-OPS-07</span>
         </div>
         <p class="card-desc">Prevent Stockout Disasters: Dynamic Reorder Points, Velocity Burn Rate Tracking &amp; Automated Supplier PO Drafts ($29 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Stockout Prevention: 14% top-SKU out-of-stock downtime annually &rarr; <strong>0 unplanned stockouts with proactive reorder alerts</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Multi-Location Inventory Sweep &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$29 USD</span>
@@ -989,6 +1148,10 @@
           <span class="card-sku">Catalog SKU: AF-GL-CS-08</span>
         </div>
         <p class="card-desc">Stop Shipping to Fraudsters &amp; Cancelled Buyers: Instant Warehouse Intercept &amp; Automated Return RMA Labels ($39 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Cancellation Intercept Speed: 4~12 hours manual warehouse communication &rarr; <strong>&lt;30 seconds automated ShipStation void call</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Cancellation &amp; Dispute Ingestion &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$39 USD</span>
@@ -1009,6 +1172,10 @@
           <span class="card-sku">Catalog SKU: AF-GL-CS-09</span>
         </div>
         <p class="card-desc">Protect Brand Reputation: Real-Time Negative Review Radar, Legal Threat Escalation, AI Drafts via Telegram ($45 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Negative Review Response Time: 48~72 hours delayed or completely unanswered &rarr; <strong>&lt;15 minutes from customer posting to approved reply</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Review Ingestion Sweep &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$45 USD</span>
@@ -1029,6 +1196,10 @@
           <span class="card-sku">Catalog SKU: AF-GL-MKT-10</span>
         </div>
         <p class="card-desc">Maximize Customer Lifetime Value: GDPR-Compliant Photo Review Incentives &amp; Automated Lifecycle CRM Tags ($29 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Customer Repeat Purchase Rate: 11% baseline repurchase rate &rarr; <strong>28% repeat orders driven by automated VIP discount drips</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Delivered Orders Polling &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$29 USD</span>
@@ -1049,6 +1220,10 @@
           <span class="card-sku">Catalog SKU: AF-DEPT-01A</span>
         </div>
         <p class="card-desc">Keyword Trend Harvesting, Answer-First GEO Article Drafting &amp; Multi-Platform Social Distribution ($45 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Content Production Velocity: 4~6 hours per technical SEO blog article &rarr; <strong>&lt;90 seconds structured GEO draft + social carousel spec</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Search Trend &amp; Keyword Ingestion &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$45 USD</span>
@@ -1069,6 +1244,10 @@
           <span class="card-sku">Catalog SKU: AF-DEPT-01B</span>
         </div>
         <p class="card-desc">Real-Time Ad Spend vs. Net Margin Attribution, Instant Campaign Pause Breaker &amp; HubSpot/Slack Lead Routing ($45 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Unprofitable Ad Spend Bleed: Days of wasted budget before manual ad review &rarr; <strong>Automatic ad-set pause when net ROAS drops below threshold</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Multi-Channel Lead &amp; Ad Metric Intake &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$45 USD</span>
@@ -1089,6 +1268,10 @@
           <span class="card-sku">Catalog SKU: AF-DEPT-02</span>
         </div>
         <p class="card-desc">Zero-Cloud PII Sanitization, Live Order Status Lookup &amp; 1-Click Approved AI Support Responses ($45 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> First-Response Ticket Latency: 3~12 hours average human queue wait time &rarr; <strong>&lt;5 seconds automated order lookup + AI draft generation</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Omnichannel Ticket Event Hook Intake &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$45 USD</span>
@@ -1109,6 +1292,10 @@
           <span class="card-sku">Catalog SKU: AF-DEPT-03</span>
         </div>
         <p class="card-desc">Automated Accounts Receivable Dunning, 3-Way PO-Invoice-Receipt Matching &amp; Inventory Ledger Sync ($45 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> 3-Way PO/Invoice/Receipt Audit: Manual VLOOKUP across 3 disconnected spreadsheets &rarr; <strong>Automated 1-cent 3-way match flagging overbilled SKUs</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Invoice, PO &amp; WMS Receipt Ingestion &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$45 USD</span>
@@ -1129,6 +1316,10 @@
           <span class="card-sku">Catalog SKU: AF-DEPT-04</span>
         </div>
         <p class="card-desc">Bias-Audited BYOK AI Candidate Scoring, 1-Click Account Provisioning &amp; 30/14/7-Day Contract Renewal Radar ($45 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Applicant Resume Triage Time: 15 minutes manual reading per applicant PDF &rarr; <strong>&lt;10 seconds structured rubric scoring + interview brief</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> Applicant &amp; Contract Metadata Intake &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$45 USD</span>
@@ -1149,6 +1340,10 @@
           <span class="card-sku">Catalog SKU: AF-DEPT-05</span>
         </div>
         <p class="card-desc">24/7 Endpoint Health Probing, Secret Leak &amp; CVE Triage, Automated Rollback &amp; Incident War-Room Orchestration ($45 One-Time)</p>
+        <div class="card-niche-box">
+          <div class="card-niche-row"><span class="niche-label">[Customer Niche]</span> Mean Time to Detect &amp; Recover (MTTR): 45~180 minutes manual on-call wake-up and debugging &rarr; <strong>&lt;127 ms local AST self-healing + &lt;15s failover event hook trigger</strong></div>
+          <div class="card-niche-row"><span class="proof-label">[Technical Proof]</span> 60s Heartbeat &amp; Event Hook Event Ingestion &middot; 127.0.0.1:8080 Local Core + 0.5KB 60s Cartridge</div>
+        </div>
       </div>
       <div class="card-footer">
         <span class="card-price">$45 USD</span>
@@ -1201,18 +1396,21 @@
       <div class="stageshow-grid">
         <div class="stage-win">
           <div class="stage-chrome"><span>Stage 01: Device Pair Intake</span><span>127.0.0.1:8080</span></div>
+          <div class="stage-row"><span>Customer Niche</span><span class="stage-val-ok">0 Dropped Flash-Sale Orders</span></div>
           <div class="stage-row"><span>Order Intake Spool</span><span class="stage-val-blue">42/60 req/min (70%)</span></div>
           <div class="stage-row"><span>Local PII Sanitization</span><span class="stage-val-ok">100% Masked</span></div>
           <div class="stage-row"><span>Mobile Alert Dispatch</span><span class="stage-val-ok">0.4 s Delivered</span></div>
         </div>
         <div class="stage-win">
           <div class="stage-chrome"><span>Stage 02: Payout Flow Audit</span><span>ReconFlow 4-Way</span></div>
+          <div class="stage-row"><span>Customer Niche</span><span class="stage-val-ok">Catch Missing Card &amp; PG Fees</span></div>
           <div class="stage-row"><span>Store Order vs Payout</span><span class="stage-val-ok">$14,280.00 Exact</span></div>
           <div class="stage-row"><span>Fee Overcharge Catch</span><span class="stage-val-blue">+$42.15 Recovered</span></div>
           <div class="stage-row"><span>Ledger Hash Integrity</span><span class="stage-val-ok">0.01 Unit Verified</span></div>
         </div>
         <div class="stage-win">
           <div class="stage-chrome"><span>Stage 03: Hero Demo Hot-Swap</span><span>Tier 3 Cartridge</span></div>
+          <div class="stage-row"><span>Customer Niche</span><span class="stage-val-ok">No 2 AM Store API Outages</span></div>
           <div class="stage-row"><span>Schema Drift Detected</span><span class="stage-val-blue">HTTP 429 / Field Shift</span></div>
           <div class="stage-row"><span>0.5KB Cartridge Latch</span><span class="stage-val-ok">60 s Heartbeat Sync</span></div>
           <div class="stage-row"><span>Runtime Self-Healing</span><span class="stage-val-ok">127 ms Healed</span></div>

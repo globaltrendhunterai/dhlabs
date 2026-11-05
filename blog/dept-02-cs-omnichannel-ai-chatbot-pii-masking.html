@@ -380,6 +380,101 @@
       color: var(--text-bright);
       font-size: 0.9rem;
     }
+    .dual-layer-box {
+      background: var(--bg-arch);
+      border: 1px solid var(--border-blue);
+      border-radius: 14px;
+      padding: 24px;
+      margin: 32px 0;
+      text-align: left;
+    }
+    .dual-layer-box h2 {
+      margin-top: 0;
+      font-size: 1.35rem;
+      color: var(--text-bright);
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+    }
+    .dual-layer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .dual-layer-card {
+      background: var(--bg-deep);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .dual-layer-niche {
+      border-left: 4px solid var(--accent-gold);
+    }
+    .dual-layer-proof {
+      border-left: 4px solid var(--accent-blue);
+    }
+    .dual-layer-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .tag-niche {
+      background: var(--badge-gold-bg);
+      color: var(--accent-amber-light);
+      border: 1px solid var(--badge-gold-border);
+    }
+    .tag-proof {
+      background: var(--badge-blue-bg);
+      color: var(--accent-blue-light);
+      border: 1px solid var(--badge-blue-border);
+    }
+    .dual-layer-card h3 {
+      font-size: 1.05rem;
+      color: var(--text-bright);
+      margin: 0 0 8px 0;
+    }
+    .dual-layer-card p {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .dual-layer-card ul {
+      margin: 0 0 0 18px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .dual-layer-card li {
+      margin-bottom: 6px;
+    }
+    .card-niche-box {
+      background: var(--bg-deep);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 16px;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: var(--text-body);
+    }
+    .card-niche-row {
+      margin-bottom: 6px;
+    }
+    .card-niche-row:last-child {
+      margin-bottom: 0;
+    }
+    .niche-label {
+      color: var(--accent-amber-light);
+      font-weight: 800;
+    }
+    .proof-label {
+      color: var(--accent-blue-light);
+      font-weight: 800;
+    }
 
     .site-nav {
       max-width: 1040px;
@@ -645,6 +740,33 @@
         <p>AutoFlow Commerce Engine Dept #02 (AF-DEPT-02) automates omnichannel customer support across Zendesk, Intercom, Shopify, and email while enforcing 100% local PII masking on 127.0.0.1:8080 before any prompt reaches external LLMs. It resolves repetitive WISMO (Where Is My Order) tickets in seconds for a one-time $45 license.</p>
       </section>
 
+      <!-- Dual-Layer Messaging: Non-Technical Business Niche + Plain-Language Technical Proof -->
+      <section class="dual-layer-box" aria-label="Customer Niche and Technical Proof">
+        <h2>How Does AF-DEPT-02 Solve Non-Technical Business Pains with Verifiable Engineering?</h2>
+        <div class="dual-layer-grid">
+          <div class="dual-layer-card dual-layer-niche">
+            <div class="dual-layer-tag tag-niche">Layer 1 · Non-Technical Merchant &amp; Team Niche (Business Outcome)</div>
+            <h3>Who Is This Built For &amp; What Daily Pain Does It Stop?</h3>
+            <p><strong>Built for store owners, finance managers, and operations teams (no coding required):</strong> Support teams spend 70% of their day answering repetitive order-tracking and refund-status inquiries. Worse, pasting customer messages directly into public AI tools leaks customer names, phone numbers, and home addresses to external cloud servers.</p>
+            <ul>
+              <li><strong>First-Response Ticket Latency:</strong> Shifts from <em>3~12 hours average human queue wait time</em> to <strong>&lt;5 seconds automated order lookup + AI draft generation</strong>.</li>
+              <li><strong>Customer PII Privacy Compliance:</strong> Shifts from <em>Raw names, phones, and addresses sent to cloud LLMs</em> to <strong>100% local regex/AST PII masking on 127.0.0.1 before AI call</strong>.</li>
+              <li><strong>Repetitive WISMO Ticket Load:</strong> Shifts from <em>65~75% of daily CS agent workload</em> to <strong>Automated tracking lookup resolves 80%+ without manual typing</strong>.</li>
+            </ul>
+          </div>
+          <div class="dual-layer-card dual-layer-proof">
+            <div class="dual-layer-tag tag-proof">Layer 2 · Plain-Language Technical Proof (Why It Never Breaks)</div>
+            <h3>How Does the Underlying Engine Guarantee This Outcome?</h3>
+            <p>Instead of cloud scripts that fail during flash sales or API updates, <strong>AF-DEPT-02</strong> executes deterministically on your workstation (<code>127.0.0.1:8080</code>):</p>
+            <ul>
+              <li><strong>Step 1 (Omnichannel Ticket Event Hook Intake):</strong> Captures inbound support tickets from Zendesk, Intercom, Freshdesk, or store contact forms.</li>
+              <li><strong>Step 2 (On-Premise PII Sanitization Gate):</strong> Strips and tokenizes customer phone numbers, emails, street addresses, and card digits locally on 127.0.0.1.</li>
+              <li><strong>3-Tier Engine Protection:</strong> Backed by the 70% Safety Rate Governor (<code>overflow_spool</code>), 127 ms AST Self-Healing, 35% BYOK AI discount ($15/mo), and 0.5KB 60-second heartbeat defense cartridges.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- 1:1 Hero Product CTA Box (Apex = 1) -->
       <section class="hero-product-cta">
         <div class="cta-header">
@@ -745,18 +867,21 @@
           <div class="stageshow-grid">
             <div class="stage-win">
               <div class="stage-chrome"><span>Stage 01: Device Pair Intake</span><span>127.0.0.1:8080</span></div>
+              <div class="stage-row"><span>Customer Niche</span><span class="stage-val-ok">0 Dropped Flash-Sale Orders</span></div>
               <div class="stage-row"><span>Order Intake Spool</span><span class="stage-val-blue">42/60 req/min (70%)</span></div>
               <div class="stage-row"><span>Local PII Sanitization</span><span class="stage-val-ok">100% Masked</span></div>
               <div class="stage-row"><span>Mobile Alert Dispatch</span><span class="stage-val-ok">0.4 s Delivered</span></div>
             </div>
             <div class="stage-win">
               <div class="stage-chrome"><span>Stage 02: Payout Flow Audit</span><span>ReconFlow 4-Way</span></div>
+              <div class="stage-row"><span>Customer Niche</span><span class="stage-val-ok">Catch Missing Card &amp; PG Fees</span></div>
               <div class="stage-row"><span>Store Order vs Payout</span><span class="stage-val-ok">$14,280.00 Exact</span></div>
               <div class="stage-row"><span>Fee Overcharge Catch</span><span class="stage-val-blue">+$42.15 Recovered</span></div>
               <div class="stage-row"><span>Ledger Hash Integrity</span><span class="stage-val-ok">0.01 Unit Verified</span></div>
             </div>
             <div class="stage-win">
               <div class="stage-chrome"><span>Stage 03: Hero Demo Hot-Swap</span><span>Tier 3 Cartridge</span></div>
+              <div class="stage-row"><span>Customer Niche</span><span class="stage-val-ok">No 2 AM Store API Outages</span></div>
               <div class="stage-row"><span>Schema Drift Detected</span><span class="stage-val-blue">HTTP 429 / Field Shift</span></div>
               <div class="stage-row"><span>0.5KB Cartridge Latch</span><span class="stage-val-ok">60 s Heartbeat Sync</span></div>
               <div class="stage-row"><span>Runtime Self-Healing</span><span class="stage-val-ok">127 ms Healed</span></div>

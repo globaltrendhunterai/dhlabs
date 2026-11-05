@@ -380,6 +380,101 @@
       color: var(--text-bright);
       font-size: 0.9rem;
     }
+    .dual-layer-box {
+      background: var(--bg-arch);
+      border: 1px solid var(--border-blue);
+      border-radius: 14px;
+      padding: 24px;
+      margin: 32px 0;
+      text-align: left;
+    }
+    .dual-layer-box h2 {
+      margin-top: 0;
+      font-size: 1.35rem;
+      color: var(--text-bright);
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+    }
+    .dual-layer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .dual-layer-card {
+      background: var(--bg-deep);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .dual-layer-niche {
+      border-left: 4px solid var(--accent-gold);
+    }
+    .dual-layer-proof {
+      border-left: 4px solid var(--accent-blue);
+    }
+    .dual-layer-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .tag-niche {
+      background: var(--badge-gold-bg);
+      color: var(--accent-amber-light);
+      border: 1px solid var(--badge-gold-border);
+    }
+    .tag-proof {
+      background: var(--badge-blue-bg);
+      color: var(--accent-blue-light);
+      border: 1px solid var(--badge-blue-border);
+    }
+    .dual-layer-card h3 {
+      font-size: 1.05rem;
+      color: var(--text-bright);
+      margin: 0 0 8px 0;
+    }
+    .dual-layer-card p {
+      font-size: 0.92rem;
+      color: var(--text-body);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .dual-layer-card ul {
+      margin: 0 0 0 18px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .dual-layer-card li {
+      margin-bottom: 6px;
+    }
+    .card-niche-box {
+      background: var(--bg-deep);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 16px;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      color: var(--text-body);
+    }
+    .card-niche-row {
+      margin-bottom: 6px;
+    }
+    .card-niche-row:last-child {
+      margin-bottom: 0;
+    }
+    .niche-label {
+      color: var(--accent-amber-light);
+      font-weight: 800;
+    }
+    .proof-label {
+      color: var(--accent-blue-light);
+      font-weight: 800;
+    }
 
     .site-nav {
       max-width: 1040px;
@@ -645,6 +740,33 @@
         <p>AutoFlow Commerce Engine Angle #03 (AF-GL-ECOM-03) automates warehouse order handoff by converting unfulfilled Shopify and WooCommerce orders into standardized 14-column 3PL fulfillment manifests. Featuring postal validation, remote zone classification, and direct ShipStation API dispatch, it eliminates manual CSV data entry errors for $39.</p>
       </section>
 
+      <!-- Dual-Layer Messaging: Non-Technical Business Niche + Plain-Language Technical Proof -->
+      <section class="dual-layer-box" aria-label="Customer Niche and Technical Proof">
+        <h2>How Does AF-GL-ECOM-03 Solve Non-Technical Business Pains with Verifiable Engineering?</h2>
+        <div class="dual-layer-grid">
+          <div class="dual-layer-card dual-layer-niche">
+            <div class="dual-layer-tag tag-niche">Layer 1 · Non-Technical Merchant &amp; Team Niche (Business Outcome)</div>
+            <h3>Who Is This Built For &amp; What Daily Pain Does It Stop?</h3>
+            <p><strong>Built for store owners, finance managers, and operations teams (no coding required):</strong> 3PL fulfillment centers and logistics warehouses demand strict CSV format compliance. Store operators spend 2 to 4 hours every morning manually formatting columns, catching invalid addresses, remapping bundle SKUs, and re-uploading files, leading to wrong shipments and delivery delays.</p>
+            <ul>
+              <li><strong>Daily Manifest Preparation:</strong> Shifts from <em>120~180 minutes manual spreadsheet formatting</em> to <strong>0 minutes (automated background execution every 10 min)</strong>.</li>
+              <li><strong>Address Validation Errors:</strong> Shifts from <em>8~12 misrouted packages per 500 shipments</em> to <strong>0 invalid postal codes reach warehouse floor</strong>.</li>
+              <li><strong>Remote Zone Surcharge Routing:</strong> Shifts from <em>Ground carriers hitting $18 remote area penalties</em> to <strong>Automated classification to USPS Priority Remote service</strong>.</li>
+            </ul>
+          </div>
+          <div class="dual-layer-card dual-layer-proof">
+            <div class="dual-layer-tag tag-proof">Layer 2 · Plain-Language Technical Proof (Why It Never Breaks)</div>
+            <h3>How Does the Underlying Engine Guarantee This Outcome?</h3>
+            <p>Instead of cloud scripts that fail during flash sales or API updates, <strong>AF-GL-ECOM-03</strong> executes deterministically on your workstation (<code>127.0.0.1:8080</code>):</p>
+            <ul>
+              <li><strong>Step 1 (Unfulfilled Orders Query):</strong> Pulls open, unfulfilled orders from the Shopify API, filtering out previously queued shipments.</li>
+              <li><strong>Step 2 (Address &amp; Postal Code Scrubbing):</strong> Validates zip code length, identifies military APO/FPO addresses, and tags remote territories (AK, HI, PR, GU).</li>
+              <li><strong>3-Tier Engine Protection:</strong> Backed by the 70% Safety Rate Governor (<code>overflow_spool</code>), 127 ms AST Self-Healing, 35% BYOK AI discount ($15/mo), and 0.5KB 60-second heartbeat defense cartridges.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- 1:1 Hero Product CTA Box (Apex = 1) -->
       <section class="hero-product-cta">
         <div class="cta-header">
@@ -745,18 +867,21 @@
           <div class="stageshow-grid">
             <div class="stage-win">
               <div class="stage-chrome"><span>Stage 01: Device Pair Intake</span><span>127.0.0.1:8080</span></div>
+              <div class="stage-row"><span>Customer Niche</span><span class="stage-val-ok">0 Dropped Flash-Sale Orders</span></div>
               <div class="stage-row"><span>Order Intake Spool</span><span class="stage-val-blue">42/60 req/min (70%)</span></div>
               <div class="stage-row"><span>Local PII Sanitization</span><span class="stage-val-ok">100% Masked</span></div>
               <div class="stage-row"><span>Mobile Alert Dispatch</span><span class="stage-val-ok">0.4 s Delivered</span></div>
             </div>
             <div class="stage-win">
               <div class="stage-chrome"><span>Stage 02: Payout Flow Audit</span><span>ReconFlow 4-Way</span></div>
+              <div class="stage-row"><span>Customer Niche</span><span class="stage-val-ok">Catch Missing Card &amp; PG Fees</span></div>
               <div class="stage-row"><span>Store Order vs Payout</span><span class="stage-val-ok">$14,280.00 Exact</span></div>
               <div class="stage-row"><span>Fee Overcharge Catch</span><span class="stage-val-blue">+$42.15 Recovered</span></div>
               <div class="stage-row"><span>Ledger Hash Integrity</span><span class="stage-val-ok">0.01 Unit Verified</span></div>
             </div>
             <div class="stage-win">
               <div class="stage-chrome"><span>Stage 03: Hero Demo Hot-Swap</span><span>Tier 3 Cartridge</span></div>
+              <div class="stage-row"><span>Customer Niche</span><span class="stage-val-ok">No 2 AM Store API Outages</span></div>
               <div class="stage-row"><span>Schema Drift Detected</span><span class="stage-val-blue">HTTP 429 / Field Shift</span></div>
               <div class="stage-row"><span>0.5KB Cartridge Latch</span><span class="stage-val-ok">60 s Heartbeat Sync</span></div>
               <div class="stage-row"><span>Runtime Self-Healing</span><span class="stage-val-ok">127 ms Healed</span></div>
