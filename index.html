@@ -181,15 +181,39 @@
       {
         "@type": "VideoObject",
         "@id": "https://autoflow.io/#demo-video",
-        "name": "AutoFlow Commerce Engine — 70% Safety Factor Spool-Resume, 127 ms Self-Healing & 1-Won Reconciliation Demo",
-        "description": "Official architecture demonstration of AutoFlow Commerce Engine regulating API bursts at 70% safety factor (42/60), auto-draining overflow spool items, healing 429/5xx errors in 127 ms, and cross-checking 4-way settlements down to 1 KRW.",
+        "name": "AutoFlow 3-Tier Engine — 16:9 60fps Architecture, Isometric CAD & Smart-Zoom Demo",
+        "description": "Deterministic 60fps 1920x1080 architecture demonstration of AutoFlow 3-Tier Resident Engine: Tier 1 70% safety spool and 127 ms self-healing, Tier 3 isometric 0.5KB micro-cartridge 60s heartbeat hot-swap, and Tier 2 Lv.1~Lv.4 35% BYOK discount with 198 verified Excel formulas.",
         "thumbnailUrl": [
-          "https://autoflow.io/og_preview.png",
+          "https://globaltrendhunterai.github.io/dhlabs/media/autoflow_3tier_launch_16x9_poster.jpg",
+          "https://autoflow.io/media/autoflow_3tier_launch_16x9_poster.jpg",
           "https://globaltrendhunterai.github.io/dhlabs/og_preview.png"
         ],
-        "uploadDate": "2026-11-01",
-        "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/demo.mp4",
-        "embedUrl": "https://autoflow.io/demo.mp4",
+        "uploadDate": "2026-11-05",
+        "duration": "PT12S",
+        "width": 1920,
+        "height": 1080,
+        "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/media/autoflow_3tier_launch_16x9.mp4",
+        "embedUrl": "https://globaltrendhunterai.github.io/dhlabs/demo.mp4",
+        "publisher": {
+          "@id": "https://autoflow.io/#organization"
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://autoflow.io/#shorts-video-9x16",
+        "name": "AutoFlow 3-Tier Engine — 9:16 60fps Vertical Mobile Shorts & Recordly Smart-Zoom Demo",
+        "description": "Native 1080x1920 60fps vertical demonstration of AutoFlow 3-Tier Resident Engine across 4 scenes: 127 ms self-healing console, 3-Tier isometric CAD 0.5KB hot-swap, Lv.1~Lv.4 BYOK -35% governor with 198 Excel formulas, and instant 5.29 MB Starter Pack deployment.",
+        "thumbnailUrl": [
+          "https://globaltrendhunterai.github.io/dhlabs/media/autoflow_3tier_shorts_9x16_poster.jpg",
+          "https://autoflow.io/media/autoflow_3tier_shorts_9x16_poster.jpg",
+          "https://globaltrendhunterai.github.io/dhlabs/og_preview.png"
+        ],
+        "uploadDate": "2026-11-05",
+        "duration": "PT12S",
+        "width": 1080,
+        "height": 1920,
+        "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/media/autoflow_3tier_shorts_9x16.mp4",
+        "embedUrl": "https://globaltrendhunterai.github.io/dhlabs/media/autoflow_3tier_shorts_9x16.mp4",
         "publisher": {
           "@id": "https://autoflow.io/#organization"
         }
@@ -1528,14 +1552,22 @@
               </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-950">
-                <video controls preload="metadata" poster="og_preview.png" class="w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 items-start">
+              <div class="p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-950">
+                <div class="flex items-center justify-between px-1 pb-2 text-xs font-mono text-slate-400">
+                  <span>16:9 데스크톱 해부도 &amp; 스마트 줌 데모</span>
+                  <span class="text-sky-400 font-bold">1920×1080 · 60fps</span>
+                </div>
+                <video controls preload="metadata" poster="media/autoflow_3tier_launch_16x9_poster.jpg" class="w-full rounded-xl aspect-video object-cover bg-slate-950">
                   <source src="media/autoflow_3tier_launch_16x9.mp4" type="video/mp4" />
                 </video>
               </div>
-              <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-950">
-                <video controls preload="metadata" poster="og_preview.png" class="w-full max-h-[260px] object-contain">
+              <div class="p-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-950">
+                <div class="flex items-center justify-between px-1 pb-2 text-xs font-mono text-slate-400">
+                  <span>9:16 모바일 쇼츠 &amp; 포커스 트래킹 데모</span>
+                  <span class="text-emerald-400 font-bold">1080×1920 · 60fps</span>
+                </div>
+                <video controls preload="metadata" poster="media/autoflow_3tier_shorts_9x16_poster.jpg" class="mx-auto rounded-xl max-h-[360px] w-auto object-contain bg-slate-950" style="aspect-ratio: 9 / 16;">
                   <source src="media/autoflow_3tier_shorts_9x16.mp4" type="video/mp4" />
                 </video>
               </div>

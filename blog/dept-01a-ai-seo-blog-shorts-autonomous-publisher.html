@@ -82,16 +82,39 @@
     {
       "@type": "VideoObject",
       "@id": "https://autoflow.io/blog/dept-01a-ai-seo-blog-shorts-autonomous-publisher.html#3tier-launch-video",
-      "name": "AutoFlow 3-Tier Engine & AF-DEPT-01A Architecture Demo",
-      "description": "Deterministic 60fps architecture demonstration of the AutoFlow 3-Tier Resident Engine on 127.0.0.1:8080: Tier 1 70% safety spool and 127 ms self-healing, Tier 2 Lv.1~Lv.4 cumulative modules with 35% BYOK discount, and Tier 3 0.5KB micro-defense cartridge hot-swapping.",
+      "name": "AutoFlow 3-Tier Engine & AF-DEPT-01A — 16:9 60fps Architecture & Isometric CAD Demo",
+      "description": "Deterministic 60fps 1920x1080 architecture demonstration of the AutoFlow 3-Tier Resident Engine on 127.0.0.1:8080: Tier 1 70% safety spool and 127 ms self-healing, Tier 3 isometric 0.5KB micro-defense cartridge 60s heartbeat hot-swap, and Tier 2 Lv.1~Lv.4 cumulative modules with 35% BYOK discount and 198 verified Excel formulas.",
       "thumbnailUrl": [
-        "https://autoflow.io/og_preview.png",
+        "https://globaltrendhunterai.github.io/dhlabs/media/autoflow_3tier_launch_16x9_poster.jpg",
+        "https://autoflow.io/media/autoflow_3tier_launch_16x9_poster.jpg",
         "https://globaltrendhunterai.github.io/dhlabs/og_preview.png"
       ],
-      "uploadDate": "2026-11-01",
-      "duration": "PT6S",
-      "contentUrl": "https://autoflow.io/media/autoflow_3tier_launch_16x9.mp4",
-      "embedUrl": "https://autoflow.io/demo.mp4",
+      "uploadDate": "2026-11-05",
+      "duration": "PT12S",
+      "width": 1920,
+      "height": 1080,
+      "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/media/autoflow_3tier_launch_16x9.mp4",
+      "embedUrl": "https://globaltrendhunterai.github.io/dhlabs/demo.mp4",
+      "publisher": {
+        "@id": "https://autoflow.io/#organization"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://autoflow.io/blog/dept-01a-ai-seo-blog-shorts-autonomous-publisher.html#3tier-shorts-video",
+      "name": "AutoFlow 3-Tier Engine & AF-DEPT-01A — 9:16 60fps Mobile Shorts & Recordly Smart-Zoom Demo",
+      "description": "Native 1080x1920 60fps vertical demonstration of AutoFlow 3-Tier Resident Engine across 4 scenes: 127 ms AST self-healing console, 3-Tier isometric CAD 0.5KB hot-swap, Lv.1~Lv.4 BYOK -35% governor with 198 Excel formulas, and instant 5.29 MB Starter Pack deployment.",
+      "thumbnailUrl": [
+        "https://globaltrendhunterai.github.io/dhlabs/media/autoflow_3tier_shorts_9x16_poster.jpg",
+        "https://autoflow.io/media/autoflow_3tier_shorts_9x16_poster.jpg",
+        "https://globaltrendhunterai.github.io/dhlabs/og_preview.png"
+      ],
+      "uploadDate": "2026-11-05",
+      "duration": "PT12S",
+      "width": 1080,
+      "height": 1920,
+      "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/media/autoflow_3tier_shorts_9x16.mp4",
+      "embedUrl": "https://globaltrendhunterai.github.io/dhlabs/media/autoflow_3tier_shorts_9x16.mp4",
       "publisher": {
         "@id": "https://autoflow.io/#organization"
       }
@@ -313,12 +336,40 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 16px;
       margin-top: 14px;
+      align-items: start;
+    }
+    .video-card {
+      background: var(--bg-deep);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .video-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
     }
     .video-player {
       width: 100%;
-      border-radius: 10px;
+      display: block;
+      border-radius: 8px;
       border: 1px solid var(--card-border);
       background: var(--bg-deep);
+    }
+    .video-player-16x9 {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+    .video-player-9x16 {
+      aspect-ratio: 9 / 16;
+      max-height: 440px;
+      width: auto;
+      margin: 0 auto;
+      object-fit: contain;
     }
     .ooxml-badge-box {
       margin-top: 16px;
@@ -712,13 +763,15 @@
             </div>
           </div>
           <div class="video-grid">
-            <div>
-              <video class="video-player" controls preload="metadata" poster="../og_preview.png">
+            <div class="video-card">
+              <div class="video-label"><span>16:9 Architecture &amp; Isometric CAD Demo</span><span>1920×1080 · 60fps</span></div>
+              <video class="video-player video-player-16x9" controls preload="metadata" poster="../media/autoflow_3tier_launch_16x9_poster.jpg">
                 <source src="../media/autoflow_3tier_launch_16x9.mp4" type="video/mp4">
               </video>
             </div>
-            <div>
-              <video class="video-player" controls preload="metadata" poster="../og_preview.png">
+            <div class="video-card">
+              <div class="video-label"><span>9:16 Mobile Shorts &amp; Recordly Smart-Zoom</span><span>1080×1920 · 60fps</span></div>
+              <video class="video-player video-player-9x16" controls preload="metadata" poster="../media/autoflow_3tier_shorts_9x16_poster.jpg">
                 <source src="../media/autoflow_3tier_shorts_9x16.mp4" type="video/mp4">
               </video>
             </div>
