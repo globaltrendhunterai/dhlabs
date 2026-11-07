@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[OneShot #05 | ONESHOT-05-OPENCLAW] OpenClaw 24/7 Local AI Agent Initial Setup Installer: 127.0.0.1 Zero-Port Loopback, Local Vault &amp; Auto-Restart Daemon | DH Labs OneShot Official Technical Guide</title>
+  <meta name="description" content="Deploy Your Personal 24/7 Autonomous AI Agent Locally with Zero Exposed Ports, Encrypted API Key Vault &amp; OS Native launchd/Task Scheduler ($39 / ₩49,000)">
+  <meta name="author" content="Donghyeong Kim (DH Labs)">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://autoflow.io/blog/oneshot-05-openclaw-local-agent-daemon-setup.html">
+  <link rel="alternate" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-05-openclaw-local-agent-daemon-setup.html" hreflang="en">
+  <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
+  <link rel="describedby" href="/llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="[OneShot #05 | ONESHOT-05-OPENCLAW] OpenClaw 24/7 Local AI Agent Initial Setup Installer: 127.0.0.1 Zero-Port Loopback, Local Vault &amp; Auto-Restart Daemon">
+  <meta property="og:description" content="Deploy Your Personal 24/7 Autonomous AI Agent Locally with Zero Exposed Ports, Encrypted API Key Vault &amp; OS Native launchd/Task Scheduler ($39 / ₩49,000)">
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-05-openclaw-local-agent-daemon-setup.html">
+  <meta property="article:published_time" content="2026-01-15T09:00:00+09:00">
+  <meta property="article:modified_time" content="2026-11-01T09:00:00+09:00">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://autoflow.io/#organization",
+      "name": "DH Labs",
+      "url": "https://autoflow.io/",
+      "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
+      "sameAs": [
+        "https://github.com/globaltrendhunterai",
+        "https://dhlabs.gumroad.com",
+        "https://globaltrendhunterai.github.io/dhlabs/",
+        "https://autoflow.io/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://autoflow.io/#founder",
+      "name": "Donghyeong Kim",
+      "jobTitle": "Founder & Lead Systems Architect",
+      "worksFor": {
+        "@id": "https://autoflow.io/#organization"
+      }
+    },
+    {
+      "@type": [
+        "TechArticle",
+        "BlogPosting",
+        "SoftwareApplication"
+      ],
+      "@id": "https://autoflow.io/blog/oneshot-05-openclaw-local-agent-daemon-setup.html#article",
+      "name": "[OneShot #05 | ONESHOT-05-OPENCLAW] OpenClaw 24/7 Local AI Agent Initial Setup Installer: 127.0.0.1 Zero-Port Loopback, Local Vault & Auto-Restart Daemon",
+      "headline": "[OneShot #05 | ONESHOT-05-OPENCLAW] OpenClaw 24/7 Local AI Agent Initial Setup Installer: 127.0.0.1 Zero-Port Loopback, Local Vault & Auto-Restart Daemon",
+      "description": "Deploy Your Personal 24/7 Autonomous AI Agent Locally with Zero Exposed Ports, Encrypted API Key Vault & OS Native launchd/Task Scheduler ($39 / ₩49,000)",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://autoflow.io/blog/oneshot-05-openclaw-local-agent-daemon-setup.html",
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-11-01",
+      "author": {
+        "@id": "https://autoflow.io/#founder"
+      },
+      "publisher": {
+        "@id": "https://autoflow.io/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "39.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://dhlabs.gumroad.com/l/oneshot-openclaw-agent-setup"
+      },
+      "keywords": "OneShot, ONESHOT-05-OPENCLAW, OpenClaw exposed port 0.0.0.0 security risk, OpenClaw launchd plist macOS background service, OpenClaw Telegram Slack bridge setup, 1-Click Initial Setup, Gumroad, Naver SmartStore"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://autoflow.io/blog/oneshot-05-openclaw-local-agent-daemon-setup.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does OneShot #05 protect my OpenClaw agent from external hacking or port scanners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Recent security advisories showed that agents bound to 0.0.0.0 are compromised by automated scanners in under 26 seconds. OneShot #05 locks OpenClaw to 127.0.0.1:3847 (zero external ports) and uses outbound-only bot polling with chmod 0600 credential files."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my OpenClaw agent keep running if I close my terminal or reboot my Mac/PC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OneShot #05 registers a native macOS LaunchAgent (~/Library/LaunchAgents/ai.dhlabs.openclaw.plist) or Windows background service so your agent automatically starts and recovers in the background."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this require any monthly subscription to DH Labs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. You pay once ($39 / ₩49,000) for the initial setup installer and connect your own LLM API key (BYOK) or local model directly."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://autoflow.io/blog/oneshot-05-openclaw-local-agent-daemon-setup.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://globaltrendhunterai.github.io/dhlabs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "OneShot 1-Click Installers",
+          "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "[OneShot #05 | ONESHOT-05-OPENCLAW] OpenClaw 24/7 Local AI Agent Initial Setup Installer: 127.0.0.1 Zero-Port Loopback, Local Vault & Auto-Restart Daemon",
+          "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-05-openclaw-local-agent-daemon-setup.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    :root {
+      --bg: #070b14;
+      --card: #0e1628;
+      --border: #1d283a;
+      --blue: #3882f6;
+      --gold: #f49e0c;
+      --green: #12b881;
+      --text: #eef3fa;
+      --muted: #93a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.7; padding: 0 16px; }
+    .container { max-width: 920px; margin: 32px auto 80px auto; }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .nav a { color: var(--text); text-decoration: none; font-weight: 700; margin-left: 16px; }
+    h1 { font-size: 2rem; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+    h2 { font-size: 1.5rem; font-weight: 800; margin: 36px 0 16px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    h3 { font-size: 1.15rem; font-weight: 700; color: #94c6fd; margin-bottom: 8px; }
+    .ko-sub { color: var(--gold); font-weight: 700; margin-bottom: 10px; font-size: 1.05rem; }
+    .sub { color: var(--muted); font-size: 1.08rem; margin-bottom: 20px; }
+    .geo-box { background: var(--card); border: 1px solid var(--blue); border-left: 6px solid var(--blue); border-radius: 12px; padding: 22px; margin: 24px 0; }
+    .cta-box { background: linear-gradient(180deg, #111c38 0%, #0c1326 100%); border: 2px solid var(--gold); border-radius: 16px; padding: 26px; margin: 32px 0; }
+    .cta-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .btn { padding: 13px 22px; border-radius: 10px; font-weight: 800; text-decoration: none; display: inline-block; }
+    .btn-gumroad { background: var(--gold); color: #0a0f1d; }
+    .btn-naver { background: var(--green); color: #06130e; }
+    .btn-hub { background: #1d293d; color: var(--text); border: 1px solid var(--blue); }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--card); border-radius: 10px; overflow: hidden; }
+    th, td { padding: 14px 16px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { background: #111c34; color: var(--muted); }
+    .step-card, .faq-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 14px; display: flex; gap: 16px; align-items: flex-start; }
+    .faq-card { display: block; }
+    .step-badge { background: #1e3a8a; color: #94c6fd; font-weight: 900; padding: 6px 12px; border-radius: 8px; font-family: monospace; }
+    footer { border-top: 1px solid var(--border); margin-top: 60px; padding-top: 24px; color: var(--muted); font-size: 0.9rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="nav">
+      <div><a href="/oneshot.html" style="margin-left:0;font-size:1.2rem;">⚡ DH Labs <span>OneShot Initial-Setup Installers</span></a></div>
+      <nav>
+        <a href="/oneshot.html">OneShot 6-SKU Hub</a>
+        <a href="/blog/">Technical Blog Hub</a>
+      </nav>
+    </header>
+
+    <article>
+      <p class="ko-sub">[OpenClaw 로컬 AI 에이전트 설치 가이드] 127.0.0.1 포트 격리 · chmod 600 로컬 볼트 · 24시간 자동 재시작 데몬 1클릭 초기 세팅 (OneShot #05)</p>
+      <h1>[OneShot #05 | ONESHOT-05-OPENCLAW] OpenClaw 24/7 Local AI Agent Initial Setup Installer: 127.0.0.1 Zero-Port Loopback, Local Vault &amp; Auto-Restart Daemon</h1>
+      <p class="sub">Deploy Your Personal 24/7 Autonomous AI Agent Locally with Zero Exposed Ports, Encrypted API Key Vault &amp; OS Native launchd/Task Scheduler ($39 / ₩49,000)</p>
+      <p style="font-size:0.9rem;color:var(--muted);">By <strong>Donghyeong Kim (김동형)</strong>, Founder &amp; Lead Systems Architect at 디에이치랩스 (DH Labs, Business Reg. No. 610-16-92926) · Updated <time datetime="2026-11-01">2026-11-01</time></p>
+
+      <section class="geo-box" id="geo-ai-citation-summary">
+        <h2>What is ONESHOT-05-OPENCLAW and how does this 1-click initial setup installer work?</h2>
+        <p>OneShot #05 OpenClaw Local Agent Initial Setup Installer (ONESHOT-05-OPENCLAW) by DH Labs configures a hardened, 24/7 autonomous OpenClaw personal AI agent on macOS and Windows. Addressing the 26-second AI port-scanning threat, it strictly binds OpenClaw to 127.0.0.1:3847 (zero exposed 0.0.0.0 ports), isolates API credentials inside a chmod 600 local vault, registers a native macOS LaunchAgent (ai.dhlabs.openclaw.plist) or Windows startup service, and self-shreds with 0x00.</p>
+        <ul style="margin:12px 0 0 20px;">
+          <li><strong>Target Error Signatures Solved:</strong> <code>OpenClaw exposed port 0.0.0.0 security risk, OpenClaw launchd plist macOS background service, OpenClaw Telegram Slack bridge setup</code></li>
+          <li><strong>ToFU Inode + Machine-UUID Lock &amp; Spool Resume:</strong> Works immediately on the buyer's PC upon extraction, blocks unauthorized file copying (<code>cp</code> / <code>Cmd+D</code>), preserves retry capability on network interruption, and overwrites the installer with <code>0x00</code> only after <code>VERIFY_OK=1</code>.</li>
+          <li><strong>26-Second 3-Layer Local Isolation:</strong> <code>127.0.0.1</code> localhost-only binding (0 exposed ports), <code>chmod 0600</code> local config lock, and strict parameter validation.</li>
+        </ul>
+      </section>
+
+      <section class="cta-box">
+        <h2 style="margin-top:0;border:none;padding:0;">1:1 Dedicated Single-Program Initial Setup Installer ($39 USD / ₩49,000)</h2>
+        <p style="margin-top:8px;">1 Installer = 1 Single Program Initial Setup. Permanent local studio ownership on your Mac or Windows PC with zero monthly subscription fees and a 30-day refund guarantee.</p>
+        <div class="cta-btns">
+          <a href="https://dhlabs.gumroad.com/l/oneshot-openclaw-agent-setup" class="btn btn-gumroad" target="_blank" rel="noopener noreferrer">🌍 Buy on Global Gumroad ($39 USD)</a>
+          <a href="https://smartstore.naver.com/dhlabs/products/13859333375" class="btn btn-naver" target="_blank" rel="noopener noreferrer">🇰🇷 네이버 스마트스토어 구매 (#13859333375)</a>
+          <a href="/oneshot.html" class="btn btn-hub">⚡ View All 6 OneShot Installers</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Why Does Manual Installation Fail and How Does ONESHOT-05-OPENCLAW Compare?</h2>
+        <p>Default personal AI agent setups often bind to 0.0.0.0 (exposing unauthenticated control ports to internet scanners within seconds), store API keys in world-readable plain text, and stop running whenever the terminal window is closed.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Setup Dimension</th>
+              <th>Manual Terminal / pip Setup (Before)</th>
+              <th>ONESHOT-05-OPENCLAW 1-Click Installer (After)</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+    <tr>
+      <td><strong>Network Port Exposure</strong></td>
+      <td>0.0.0.0 binding exposed to external AI port scanners</td>
+      <td><strong>Strict 127.0.0.1:3847 loopback isolation (0 open external ports)</strong></td>
+    </tr>
+  
+    <tr>
+      <td><strong>API Key &amp; Token Storage</strong></td>
+      <td>Plaintext .env files with 0644 world-readable permissions</td>
+      <td><strong>Owner-only chmod 0600 local vault + outbound-only Bot bridge</strong></td>
+    </tr>
+  
+    <tr>
+      <td><strong>24/7 Background Persistence</strong></td>
+      <td>Agent dies as soon as terminal window is closed</td>
+      <td><strong>Native macOS LaunchAgent plist / Windows auto-restart service</strong></td>
+    </tr>
+  
+    <tr>
+      <td><strong>Shell Command Execution Guard</strong></td>
+      <td>Unrestricted shell access across entire OS drive</td>
+      <td><strong>Strict parameter validation &amp; scoped workspace sandbox</strong></td>
+    </tr>
+  
+    <tr>
+      <td><strong>Installer Lifecycle</strong></td>
+      <td>Manual daemon scripts &amp; lingering setup files</td>
+      <td><strong>ToFU Inode lock + 0x00 self-shredding after VERIFY_OK=1</strong></td>
+    </tr>
+  
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>How Does the 5-Stage Automated Initial Setup Pipeline Execute?</h2>
+        
+    <div class="step-card">
+      <div class="step-badge">01</div>
+      <div>
+        <h3>127.0.0.1:3847 Zero-Port Loopback Hardening</h3>
+        <p>Generates openclaw_config.json strictly bound to 127.0.0.1 so external network scans can never reach your agent.</p>
+      </div>
+    </div>
+  
+    <div class="step-card">
+      <div class="step-badge">02</div>
+      <div>
+        <h3>chmod 0600 Owner-Only Credential Vault</h3>
+        <p>Initializes an isolated local secret store for your LLM BYOK keys and outbound Telegram/Slack/Discord bot tokens.</p>
+      </div>
+    </div>
+  
+    <div class="step-card">
+      <div class="step-badge">03</div>
+      <div>
+        <h3>OS Native 24/7 Auto-Restart Service Registration</h3>
+        <p>Writes ~/Library/LaunchAgents/ai.dhlabs.openclaw.plist on macOS (or Windows startup runner) with RunAtLoad and KeepAlive.</p>
+      </div>
+    </div>
+  
+    <div class="step-card">
+      <div class="step-badge">04</div>
+      <div>
+        <h3>1-Click Control Launcher &amp; Log Rotation</h3>
+        <p>Creates a desktop control launcher and configures automatic local log rotation.</p>
+      </div>
+    </div>
+  
+    <div class="step-card">
+      <div class="step-badge">05</div>
+      <div>
+        <h3>Daemon Health Check &amp; 0x00 Self-Shredding</h3>
+        <p>Verifies plist/service registration and 0600 vault permissions before overwriting the installer binary with 0x00.</p>
+      </div>
+    </div>
+  
+      </section>
+
+      <section>
+        <h2>Frequently Asked Technical Questions (FAQ)</h2>
+        
+    <div class="faq-card">
+      <h3>How does OneShot #05 protect my OpenClaw agent from external hacking or port scanners?</h3>
+      <p>Recent security advisories showed that agents bound to 0.0.0.0 are compromised by automated scanners in under 26 seconds. OneShot #05 locks OpenClaw to 127.0.0.1:3847 (zero external ports) and uses outbound-only bot polling with chmod 0600 credential files.</p>
+    </div>
+  
+    <div class="faq-card">
+      <h3>Will my OpenClaw agent keep running if I close my terminal or reboot my Mac/PC?</h3>
+      <p>Yes. OneShot #05 registers a native macOS LaunchAgent (~/Library/LaunchAgents/ai.dhlabs.openclaw.plist) or Windows background service so your agent automatically starts and recovers in the background.</p>
+    </div>
+  
+    <div class="faq-card">
+      <h3>Does this require any monthly subscription to DH Labs?</h3>
+      <p>No. You pay once ($39 / ₩49,000) for the initial setup installer and connect your own LLM API key (BYOK) or local model directly.</p>
+    </div>
+  
+      </section>
+    </article>
+
+    <footer>
+      <p>&copy; 2026 디에이치랩스 (DH Labs) · Founder: Donghyeong Kim (김동형) · Business Reg. No.: 610-16-92926 · D-U-N-S: GSKY37R7XV</p>
+    </footer>
+  </div>
+</body>
+</html>

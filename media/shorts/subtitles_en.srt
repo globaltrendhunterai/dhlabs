@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:03,000
+Woke up at 3 AM: 50 e-commerce orders completely lost?!
+
+2
+00:00:03,000 --> 00:00:15,000
+Freelance fix costs $300... Ignoring it ruins rating & revenue!
+
+3
+00:00:15,000 --> 00:00:27,000
+AutoFlow 127ms Guardian: Auto-revives crashed servers in 127ms!
+
+4
+00:00:27,000 --> 00:00:35,000
+Founding Pass: 50% OFF for 1 Year ($24/mo) 👉 autoflow.io

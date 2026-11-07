@@ -1,0 +1,9 @@
+file '/Volumes/Mac_SSD/Projects/AutoFlowEngine/dist/media/shorts/universal_scene_1.png'
+duration 3
+file '/Volumes/Mac_SSD/Projects/AutoFlowEngine/dist/media/shorts/universal_scene_2.png'
+duration 12
+file '/Volumes/Mac_SSD/Projects/AutoFlowEngine/dist/media/shorts/universal_scene_3.png'
+duration 12
+file '/Volumes/Mac_SSD/Projects/AutoFlowEngine/dist/media/shorts/universal_scene_4.png'
+duration 8
+file '/Volumes/Mac_SSD/Projects/AutoFlowEngine/dist/media/shorts/universal_scene_4.png'
