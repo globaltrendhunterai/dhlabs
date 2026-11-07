@@ -1,74 +1,102 @@
-[
-  {
-    "sku": "ONESHOT-01-OLLAMA",
-    "num": "01",
-    "prog": "Ollama",
-    "bin_name": "OneShot_01_Ollama_Installer.bin",
-    "zip_name": "OneShot_01_Ollama_Installer.zip",
-    "cmd": "curl -fsSL https://ollama.com/install.sh | sh",
-    "usd": 29,
-    "krw": 39000,
-    "inode": 13342791,
-    "hmac_sha256": "6827655f1f1a58f63ee71eb4c063e7fdc3575b8d460ac1cb36da5a1b00a57fd3"
+{
+  "product_line": "DH Labs OneShot Disposable Initial-Setup Installers (Global / Gumroad Standard — 1 Installer = 1 Single Program Initial Setup Only)",
+  "architecture": "MacMiniMasterMinter OS Inode + nlink=1 HMAC-SHA256 Sealed | Zero License Key | 0x00 Self-Destruct After Initial Setup",
+  "invariants": {
+    "cad_modules_count": 0,
+    "workflow_overlap_count": 0,
+    "simple_download_apps_count": 0,
+    "multi_program_bundles_count": 0
   },
-  {
-    "sku": "ONESHOT-02-COMFYUI",
-    "num": "02",
-    "prog": "ComfyUI",
-    "bin_name": "OneShot_02_ComfyUI_Installer.bin",
-    "zip_name": "OneShot_02_ComfyUI_Installer.zip",
-    "cmd": "git clone https://github.com/comfyanonymous/ComfyUI.git && pip install torch torchvision torchaudio",
-    "usd": 39,
-    "krw": 49000,
-    "inode": 13342793,
-    "hmac_sha256": "97cc94141a24fd2d9f071f14edbf0143d86e0020190522fd30341eeee8e2258b"
-  },
-  {
-    "sku": "ONESHOT-03-SDFORGE",
-    "num": "03",
-    "prog": "Stable Diffusion WebUI Forge",
-    "bin_name": "OneShot_03_SDForge_Installer.bin",
-    "zip_name": "OneShot_03_SDForge_Installer.zip",
-    "cmd": "git clone https://github.com/lllyasviel/stable-diffusion-webui-forge.git",
-    "usd": 39,
-    "krw": 49000,
-    "inode": 13342795,
-    "hmac_sha256": "ade80092cfe2177ccb0b9617824d836398ac690d5fa242922988ea1c92d63938"
-  },
-  {
-    "sku": "ONESHOT-04-N8N",
-    "num": "04",
-    "prog": "n8n",
-    "bin_name": "OneShot_04_n8n_Installer.bin",
-    "zip_name": "OneShot_04_n8n_Installer.zip",
-    "cmd": "npx n8n@latest",
-    "usd": 39,
-    "krw": 49000,
-    "inode": 13342797,
-    "hmac_sha256": "5bdd7833c9a3e6e7da5766afff4aab77e7dcfe9c0edf10c85988fca29ea964fe"
-  },
-  {
-    "sku": "ONESHOT-05-OPENWEBUI",
-    "num": "05",
-    "prog": "OpenWebUI",
-    "bin_name": "OneShot_05_OpenWebUI_Installer.bin",
-    "zip_name": "OneShot_05_OpenWebUI_Installer.zip",
-    "cmd": "pip install open-webui",
-    "usd": 29,
-    "krw": 39000,
-    "inode": 13342799,
-    "hmac_sha256": "c5186388ff0ece09526f2dd22442d86b76309bdf106c5d1f30cef6ba7c829197"
-  },
-  {
-    "sku": "ONESHOT-06-WHISPER",
-    "num": "06",
-    "prog": "Faster-Whisper",
-    "bin_name": "OneShot_06_Whisper_Installer.bin",
-    "zip_name": "OneShot_06_Whisper_Installer.zip",
-    "cmd": "pip install faster-whisper",
-    "usd": 29,
-    "krw": 39000,
-    "inode": 13342801,
-    "hmac_sha256": "de32979632a9e7709fac1941ef8262df49df7a09820ffa6a8ec318d2f538d234"
-  }
-]
+  "installers": [
+    {
+      "sku": "ONESHOT-01-COMFYUI",
+      "index": "01",
+      "name_en": "ComfyUI Initial Setup Installer (GPU CUDA/MPS + Manager & Custom Nodes Wiring)",
+      "name_ko": "ComfyUI 초기 환경 세팅기 (GPU CUDA/MPS 가속 + Manager·필수 커스텀노드 의존성 배선)",
+      "target_program": "ComfyUI (Python 3.11 venv + PyTorch CUDA/MPS + insightface/dlib C++ Build + ComfyUI-Manager Initial Wiring)",
+      "pain_point_resolved": "Torch not compiled with CUDA, insightface C++ compiler errors, custom_nodes requirements.txt dependency conflicts",
+      "binary_file": "OneShot_01_ComfyUI_Setup.bin",
+      "zip_file": "OneShot_01_ComfyUI_Setup.zip",
+      "sealed_inode": 13346539,
+      "sealed_nlink": 1,
+      "hmac_sha256": "88fe1b5f4bb7af762432a901766fd1cd4f0a141871d710eb46ebfaa54a786005",
+      "price_usd": 39,
+      "price_krw": 49000
+    },
+    {
+      "sku": "ONESHOT-02-KOHYA",
+      "index": "02",
+      "name_en": "Kohya_ss / FluxGym Initial Setup Installer (Custom LoRA Training & VRAM Optimization Wiring)",
+      "name_ko": "Kohya_ss / FluxGym 초기 환경 세팅기 (커스텀 LoRA 학습 + bitsandbytes·xformers·VRAM 최적화 배선)",
+      "target_program": "Kohya_ss / FluxGym (bitsandbytes + xformers + accelerate + CUDA Toolkit & Low-VRAM Config Initial Wiring)",
+      "pain_point_resolved": "bitsandbytes CUDA library mismatch, xformers build failure, accelerate config and 12GB/16GB VRAM OOM crashes",
+      "binary_file": "OneShot_02_Kohya_FluxGym_Setup.bin",
+      "zip_file": "OneShot_02_Kohya_FluxGym_Setup.zip",
+      "sealed_inode": 13346541,
+      "sealed_nlink": 1,
+      "hmac_sha256": "a56db442ea015666d2836b17f2862056f8fc949ea58985d4b00102cd42ce56fb",
+      "price_usd": 39,
+      "price_krw": 49000
+    },
+    {
+      "sku": "ONESHOT-03-RVC",
+      "index": "03",
+      "name_en": "RVC / Applio Voice Cloning Initial Setup Installer (PyTorch + fairseq + FFmpeg + Audio Routing Wiring)",
+      "name_ko": "RVC / Applio AI 보이스 클로닝 초기 환경 세팅기 (PyTorch·fairseq·FFmpeg·가상 오디오 라우팅 배선)",
+      "target_program": "RVC / Applio (PyTorch + fairseq + pyworld C++ Compiler + FFmpeg + Virtual Audio Cable Routing Initial Wiring)",
+      "pain_point_resolved": "pyworld/fairseq C++ wheel compilation errors, FFmpeg system PATH missing, RMVPE pitch extraction weight placement",
+      "binary_file": "OneShot_03_RVC_Applio_Setup.bin",
+      "zip_file": "OneShot_03_RVC_Applio_Setup.zip",
+      "sealed_inode": 13346543,
+      "sealed_nlink": 1,
+      "hmac_sha256": "8917b4ed192104b12858c46dce1a184839363598f936905383b531331f97bf73",
+      "price_usd": 39,
+      "price_krw": 49000
+    },
+    {
+      "sku": "ONESHOT-04-CLAUDECODE",
+      "index": "04",
+      "name_en": "Claude Code MCP Initial Setup Installer (CLI PATH + Local Permissions + Essential MCP config.json Wiring)",
+      "name_ko": "Claude Code + MCP 초기 환경 세팅기 (터미널 CLI 환경변수 + 권한 승인 + 필수 MCP config.json 자동 배선)",
+      "target_program": "Claude Code CLI + Essential MCP Servers (Node.js/Git PATH + Filesystem/Browser/GitHub/Blender MCP JSON Initial Wiring)",
+      "pain_point_resolved": "Node/npm PATH errors, JSON syntax errors in claude_desktop_config.json / .claude.json, local folder permission blocks",
+      "binary_file": "OneShot_04_ClaudeCode_MCP_Setup.bin",
+      "zip_file": "OneShot_04_ClaudeCode_MCP_Setup.zip",
+      "sealed_inode": 13346545,
+      "sealed_nlink": 1,
+      "hmac_sha256": "1c9ffef5ba5cb27d0cf8e25fa82f1b10a432726d7d0bed9dabbe2c13ebd9110c",
+      "price_usd": 29,
+      "price_krw": 39000
+    },
+    {
+      "sku": "ONESHOT-05-OPENCLAW",
+      "index": "05",
+      "name_en": "OpenClaw Autonomous Agent Initial Setup Installer (.env Bot Token Binding + Background Daemon Wiring)",
+      "name_ko": "OpenClaw 로컬 AI 비서 초기 환경 세팅기 (Node 런타임 + 메신저 봇 토큰 .env 바인딩 + 백그라운드 데몬 배선)",
+      "target_program": "OpenClaw Autonomous Agent (Node Runtime + Telegram/Discord/Slack Bot Token .env Binding + PM2/LaunchAgent Daemon Wiring)",
+      "pain_point_resolved": "Node version mismatch, .env token formatting errors, firewall/port binding failure, process dying after terminal close",
+      "binary_file": "OneShot_05_OpenClaw_Agent_Setup.bin",
+      "zip_file": "OneShot_05_OpenClaw_Agent_Setup.zip",
+      "sealed_inode": 13346547,
+      "sealed_nlink": 1,
+      "hmac_sha256": "52f1744c26bcc1b3eb1d2b0d363213dceab6f0d959a964b159f7dbbcc847891f",
+      "price_usd": 29,
+      "price_krw": 39000
+    },
+    {
+      "sku": "ONESHOT-06-WHISPERX",
+      "index": "06",
+      "name_en": "WhisperX Subtitle & Speaker Diarization Initial Setup Installer (FFmpeg PATH + cuDNN + Pyannote Wiring)",
+      "name_ko": "WhisperX 칼싱크 자막·화자분리 초기 환경 세팅기 (FFmpeg PATH + cuDNN GPU 가속 + Pyannote 토큰 배선)",
+      "target_program": "WhisperX (System FFmpeg PATH + CTranslate2 cuDNN 8/9 GPU Matching + HuggingFace Pyannote Speaker Diarization Wiring)",
+      "pain_point_resolved": "cublas64_12.dll / libcudnn_ops_infer.so missing errors, FFmpeg not found in PATH, Pyannote gated pipeline token failure",
+      "binary_file": "OneShot_06_WhisperX_Diarization_Setup.bin",
+      "zip_file": "OneShot_06_WhisperX_Diarization_Setup.zip",
+      "sealed_inode": 13346549,
+      "sealed_nlink": 1,
+      "hmac_sha256": "b4f8f77b06c05a88c8aae10dae4987ad67d2247541a439c1d07edef20f258243",
+      "price_usd": 29,
+      "price_krw": 39000
+    }
+  ]
+}
