@@ -61,7 +61,7 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
 | **듀얼 통합 엔진 (`ENGINE_DUAL` · BEST)** | 기본형 (Managed · 본사 파인튜닝 AI 포함) | **₩69,000 ($49 USD)** | **₩179,000 ($129 USD)** | **₩590,000 ($449 USD)** | 70% 안전율 스풀 이어하기 + 127ms 자가치유 + 1원 정합성 대사 + 4단계 사이버 기만 방어 전 기능 통합 가동 |
 | **듀얼 통합 엔진 (`ENGINE_DUAL` · BEST)** | 개발자 MCP 외부 AI 연동 특가 (`mcp`) | **₩49,000 ($37 USD)** | **₩129,000 ($95 USD)** | **₩440,000 ($329 USD)** | 자가치유 + 정합성 전 기능 통합 + 개발자 MCP 연동 및 익명 해결로그 공유 특가 |
 
-> **중요 보장**: 기간권이 만료되거나 중도 환불하더라도 자동 결제(정기 과금 폭탄)는 절대 발생하지 않으며, 구매하신 **기본 워크플로우 단품은 멈추지 않고 평생 정상 작동(`workflowAlwaysRuns = true`)**합니다. 또한 사내 로컬 대시보드(`setup_wizard.html`) 내장 Lemon Squeezy 인앱 오버레이(`lemon.js`) 및 토스페이먼츠 결제창을 통해 0초 만에 기간권을 연장할 수 있습니다.
+> **중요 보장**: 기간권이 만료되거나 중도 환불하더라도 자동 결제(정기 과금 폭탄)는 절대 발생하지 않으며, 구매하신 **기본 워크플로우 단품은 멈추지 않고 평생 정상 작동(`workflowAlwaysRuns = true`)**합니다. 또한 사내 로컬 대시보드(`setup_wizard.html`) 내장 글로벌 검로드(Gumroad) 및 토스페이먼츠 결제창을 통해 0초 만에 기간권을 연장할 수 있습니다.
 
 ### Track 3: Tiered Composite Modules (Lv.1~Lv.4) & 3-Way Heartbeat Distribution Pipelines (3계층 엔진 창구 · 단계별 상위 합본 모듈 · 하트비트 플라이휠)
 
@@ -84,7 +84,7 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
 - **Primary Official Storefront**: [https://autoflow.io/](https://autoflow.io/) (`https://autoflow.io/index.html`)
 - **Global GitHub Pages Mirror**: [https://globaltrendhunterai.github.io/dhlabs/](https://globaltrendhunterai.github.io/dhlabs/) (`https://globaltrendhunterai.github.io/dhlabs/index.html`)
 - **150 Single-Edition Workflow Catalog Board**: [https://autoflow.io/WORKFLOW_MENU_BOARD.html](https://autoflow.io/WORKFLOW_MENU_BOARD.html) | [https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html](https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html)
-- **Official Dual-Gateway Checkout (Toss Payments KRW & Lemon Squeezy USD)**: [https://autoflow.io/checkout.html](https://autoflow.io/checkout.html) | [https://globaltrendhunterai.github.io/dhlabs/checkout.html](https://globaltrendhunterai.github.io/dhlabs/checkout.html)
+- **Official Dual-Gateway Checkout (Toss Payments KRW & Gumroad USD)**: [https://autoflow.io/checkout.html](https://autoflow.io/checkout.html) | [https://globaltrendhunterai.github.io/dhlabs/checkout.html](https://globaltrendhunterai.github.io/dhlabs/checkout.html)
 - **127ms Chaos Sandbox & Spool-Resume Live Simulator**: [https://autoflow.io/chaos_sandbox.html](https://autoflow.io/chaos_sandbox.html) | [https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html](https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html)
 - **Live Architecture Demo Video (MP4)**: [https://globaltrendhunterai.github.io/dhlabs/demo.mp4](https://globaltrendhunterai.github.io/dhlabs/demo.mp4) | [https://autoflow.io/demo.mp4](https://autoflow.io/demo.mp4)
 - **Agentic Resource Discovery (ARD 1.0 Catalog)**: [https://autoflow.io/ai-catalog.json](https://autoflow.io/ai-catalog.json) | [https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json](https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json)
