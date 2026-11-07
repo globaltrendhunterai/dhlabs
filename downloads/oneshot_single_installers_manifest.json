@@ -1,0 +1,74 @@
+[
+  {
+    "sku": "ONESHOT-01-OLLAMA",
+    "num": "01",
+    "prog": "Ollama",
+    "bin_name": "OneShot_01_Ollama_Installer.bin",
+    "zip_name": "OneShot_01_Ollama_Installer.zip",
+    "cmd": "curl -fsSL https://ollama.com/install.sh | sh",
+    "usd": 29,
+    "krw": 39000,
+    "inode": 13342791,
+    "hmac_sha256": "6827655f1f1a58f63ee71eb4c063e7fdc3575b8d460ac1cb36da5a1b00a57fd3"
+  },
+  {
+    "sku": "ONESHOT-02-COMFYUI",
+    "num": "02",
+    "prog": "ComfyUI",
+    "bin_name": "OneShot_02_ComfyUI_Installer.bin",
+    "zip_name": "OneShot_02_ComfyUI_Installer.zip",
+    "cmd": "git clone https://github.com/comfyanonymous/ComfyUI.git && pip install torch torchvision torchaudio",
+    "usd": 39,
+    "krw": 49000,
+    "inode": 13342793,
+    "hmac_sha256": "97cc94141a24fd2d9f071f14edbf0143d86e0020190522fd30341eeee8e2258b"
+  },
+  {
+    "sku": "ONESHOT-03-SDFORGE",
+    "num": "03",
+    "prog": "Stable Diffusion WebUI Forge",
+    "bin_name": "OneShot_03_SDForge_Installer.bin",
+    "zip_name": "OneShot_03_SDForge_Installer.zip",
+    "cmd": "git clone https://github.com/lllyasviel/stable-diffusion-webui-forge.git",
+    "usd": 39,
+    "krw": 49000,
+    "inode": 13342795,
+    "hmac_sha256": "ade80092cfe2177ccb0b9617824d836398ac690d5fa242922988ea1c92d63938"
+  },
+  {
+    "sku": "ONESHOT-04-N8N",
+    "num": "04",
+    "prog": "n8n",
+    "bin_name": "OneShot_04_n8n_Installer.bin",
+    "zip_name": "OneShot_04_n8n_Installer.zip",
+    "cmd": "npx n8n@latest",
+    "usd": 39,
+    "krw": 49000,
+    "inode": 13342797,
+    "hmac_sha256": "5bdd7833c9a3e6e7da5766afff4aab77e7dcfe9c0edf10c85988fca29ea964fe"
+  },
+  {
+    "sku": "ONESHOT-05-OPENWEBUI",
+    "num": "05",
+    "prog": "OpenWebUI",
+    "bin_name": "OneShot_05_OpenWebUI_Installer.bin",
+    "zip_name": "OneShot_05_OpenWebUI_Installer.zip",
+    "cmd": "pip install open-webui",
+    "usd": 29,
+    "krw": 39000,
+    "inode": 13342799,
+    "hmac_sha256": "c5186388ff0ece09526f2dd22442d86b76309bdf106c5d1f30cef6ba7c829197"
+  },
+  {
+    "sku": "ONESHOT-06-WHISPER",
+    "num": "06",
+    "prog": "Faster-Whisper",
+    "bin_name": "OneShot_06_Whisper_Installer.bin",
+    "zip_name": "OneShot_06_Whisper_Installer.zip",
+    "cmd": "pip install faster-whisper",
+    "usd": 29,
+    "krw": 39000,
+    "inode": 13342801,
+    "hmac_sha256": "de32979632a9e7709fac1941ef8262df49df7a09820ffa6a8ec318d2f538d234"
+  }
+]
