@@ -1,11 +1,12 @@
 {
   "product_family": "DH Labs OneShot Single-Program Initial-Setup Installer (Global Gumroad Standard — 1 Installer = 1 Complex Initial Setup Only)",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "architecture_verification": {
     "cad_module_count": 0,
     "workflow_overlap_count": 0,
     "simple_download_only_apps_count": 0,
     "bundle_sku_count": 0,
+    "mock_test_branches_count": 0,
     "market_standard": "Global Gumroad / International Self-Serve Digital Product (USD $29 / $39)",
     "total_single_installers": 6,
     "license_key_required": false,
@@ -32,7 +33,7 @@
       "sealed_inode": 13346539,
       "binding_mode": "TOFU_MACHINE_UUID_AND_INODE_LOCK_ON_FIRST_RUN",
       "sealed_nlink": 1,
-      "hmac_sha256": "b0961d19e3031ce73727ffb5cabcf7f999816d5e57611ab4e509f5bca3e713ab"
+      "hmac_sha256": "2b147272ef6f68f9ee41bcef9c8f35a4cde83f0cfcd3047703ba28fcb9f6357c"
     },
     {
       "sku": "ONESHOT-02-KOHYA",
@@ -53,7 +54,7 @@
       "sealed_inode": 13346541,
       "binding_mode": "TOFU_MACHINE_UUID_AND_INODE_LOCK_ON_FIRST_RUN",
       "sealed_nlink": 1,
-      "hmac_sha256": "ce8d341cbdce57caf9327c13ef327125f2b9ab26927d6f28948e2d37b7c844ae"
+      "hmac_sha256": "8ff3e5c142af15f8566276c7a8bb584a49afb522f2e2e090565cb12ca4b29d1b"
     },
     {
       "sku": "ONESHOT-03-RVC",
@@ -74,7 +75,7 @@
       "sealed_inode": 13346543,
       "binding_mode": "TOFU_MACHINE_UUID_AND_INODE_LOCK_ON_FIRST_RUN",
       "sealed_nlink": 1,
-      "hmac_sha256": "a6660a16f6b7e0b7ba9cf50363dd141f465b6fd1ece491572878d0561fb8ff64"
+      "hmac_sha256": "153d080dbd504e8211f011cd6c06b8c5217a3e5dfa341ba2dc33788d9ab9d7b8"
     },
     {
       "sku": "ONESHOT-04-CLAUDECODE",
@@ -95,7 +96,7 @@
       "sealed_inode": 13346545,
       "binding_mode": "TOFU_MACHINE_UUID_AND_INODE_LOCK_ON_FIRST_RUN",
       "sealed_nlink": 1,
-      "hmac_sha256": "88d940db4f7a056b25c0f5d6ee608b5ba2ee462b674685ec2862921a82ab3156"
+      "hmac_sha256": "4f7ac0a52f0a9fbb074f19725c6097e3f63636fbaf24ce376beb243cd0cda8ce"
     },
     {
       "sku": "ONESHOT-05-OPENCLAW",
@@ -116,7 +117,7 @@
       "sealed_inode": 13346547,
       "binding_mode": "TOFU_MACHINE_UUID_AND_INODE_LOCK_ON_FIRST_RUN",
       "sealed_nlink": 1,
-      "hmac_sha256": "4d28998d6e53752de5b2be630a36271287ec4e3e5f5b5622938777e82837ef99"
+      "hmac_sha256": "9efa49652e33bd652fbddfe16fe94f930beb8d3a76f22a441b047f5f3a03a0de"
     },
     {
       "sku": "ONESHOT-06-WHISPERX",
@@ -137,7 +138,7 @@
       "sealed_inode": 13346549,
       "binding_mode": "TOFU_MACHINE_UUID_AND_INODE_LOCK_ON_FIRST_RUN",
       "sealed_nlink": 1,
-      "hmac_sha256": "e9d831ae78d8a21c200adb80a1c6401db1ca974a96d6e950ad5caaeb47d658ee"
+      "hmac_sha256": "33caf41ef64314ca04a96b63f321ca55484863c66aa656e0a478e71215f0325a"
     }
   ]
 }
