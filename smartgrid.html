@@ -293,27 +293,31 @@ button:disabled {
       <p style="color: var(--af-tok-c14); font-size: 0.96rem; margin-bottom: 24px; line-height: 1.6;">AutoFlow SmartGrid는 사내 로컬 PC(127.0.0.1) 환경에서 가동되는 온프레미스 지능형 원장 프로그램입니다. 외부 클라우드 SaaS나 분산 스프레드시트 사용 시 빈번하게 발생하는 파일 잠금 충돌(Ebusy) 및 분당 60회 Api 쿼터 고갈(HTTP 429)을 사내 통합 무충돌 아비트레이션 뮤텍스(order_dedup_sentinel.js)로 순차 정렬하여 데이터 손실 없는 비파괴 심층 병합(nonDestructiveDeepMerge)을 수행합니다.</p>
 
       
-      <div style="margin: 20px 0 28px 0; padding: 20px; border-radius: 14px; background: rgba(15, 23, 42, 0.04); border: 1px solid var(--af-tok-c6);">
+      <div style="margin: 20px 0 28px 0; padding: 20px; border-radius: 14px; background: var(--bg-subtle); border: 1px solid var(--af-tok-c6);">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 18px;">
-          <div style="padding: 14px 16px; border-radius: 10px; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.35);">
-            <div style="font-weight: 800; font-size: 13px; color: #b45309; margin-bottom: 6px;">🎯 [1층: 비개발자 사장님·실무자 현장 효익 (Customer Niche)]</div>
+          <div style="padding: 14px 16px; border-radius: 10px; background: var(--af-tok-c1); border: 1px solid var(--af-tok-c2);">
+            <div style="font-weight: 800; font-size: 13px; color: var(--accent-amber); margin-bottom: 6px;">[1층: 비개발자 사장님·실무자 현장 효익 (Customer Niche)]</div>
             <div style="font-size: 13px; color: var(--af-tok-c12); line-height: 1.55;">5개 부서 엑셀 파일 열림 잠금(Ebusy) 충돌과 수식 깨짐(#REF!) 걱정을 없애고, 매일 아침 3시간 수기 복붙을 1분 자동 기장으로 단축합니다 (198/198 수식 무결성 보증).</div>
           </div>
-          <div style="padding: 14px 16px; border-radius: 10px; background: rgba(14, 165, 233, 0.08); border: 1px solid rgba(14, 165, 233, 0.35);">
-            <div style="font-weight: 800; font-size: 13px; color: #0369a1; margin-bottom: 6px;">⚙️ [2층: 쉬운 기술적 작동 원리 (Technical Proof)]</div>
+          <div style="padding: 14px 16px; border-radius: 10px; background: var(--af-tok-c1); border: 1px solid var(--af-tok-c2);">
+            <div style="font-weight: 800; font-size: 13px; color: var(--primary); margin-bottom: 6px;">[2층: 쉬운 기술적 작동 원리 (Technical Proof)]</div>
             <div style="font-size: 13px; color: var(--af-tok-c12); line-height: 1.55;">사내 로컬 PC(127.0.0.1:8080) 시퀀스 뮤텍스가 다중 워크플로우 쓰기 요청을 비파괴 병합하며, BYOK -35%($15/mo) 및 0.5KB 60초 카트리지와 직결됩니다.</div>
           </div>
         </div>
+        <div style="padding: 12px 16px; margin-bottom: 18px; border-radius: 10px; background: var(--af-tok-c3); border: 1px solid var(--af-tok-c4); font-size: 13px; line-height: 1.55; color: var(--af-tok-c12);">
+          <strong style="color: var(--accent-green);">[보안 보증: 26초 AI 해킹 에이전트 3중 차단 (Zero-Port / Anti-Injection / Vault 600)]</strong><br />
+          <strong>[1층 고객 안심]</strong> 외주 서버 포트 개방이나 운송장 입력칸 해킹 명령어로 인한 고객 명부·API 키 유출 위험 0% | <strong>[2층 기술 증명]</strong> 외부 수신 포트 0개(127.0.0.1 내부 격리) + 송장 쉘 메타문자 0.1ms 즉시 소각(SHELL_INJECTION_BLOCKED) + 소유자 전용(chmod 600) 로컬 볼트 잠금
+        </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start;">
-          <div style="background: #090a10; padding: 12px; border-radius: 12px;">
-            <div style="font-size: 12px; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">Storyline B v2.0 · 16:9 데스크톱 3D 해부 &amp; 커서 데모 (1920×1080 · 60fps)</div>
-            <video controls preload="metadata" poster="media/autoflow_3tier_launch_16x9_poster.jpg" style="width: 100%; border-radius: 8px; aspect-ratio: 16 / 9; background: #090a10;">
+          <div style="background: var(--text-main); padding: 12px; border-radius: 12px;">
+            <div style="font-size: 12px; font-weight: 700; color: var(--af-tok-c2); margin-bottom: 8px;">Storyline B v2.0 / 16:9 데스크톱 3D 해부 &amp; 커서 데모 (1920×1080 / 60fps)</div>
+            <video controls preload="metadata" poster="media/autoflow_3tier_launch_16x9_poster.jpg" style="width: 100%; border-radius: 8px; aspect-ratio: 16 / 9; background: var(--text-main);">
               <source src="media/autoflow_3tier_launch_16x9.mp4" type="video/mp4" />
             </video>
           </div>
-          <div style="background: #090a10; padding: 12px; border-radius: 12px; text-align: center;">
-            <div style="font-size: 12px; font-weight: 700; color: #34d399; margin-bottom: 8px;">Storyline B v2.0 · 9:16 모바일 쇼츠 데모 (1080×1920 · 60fps)</div>
-            <video controls preload="metadata" poster="media/autoflow_3tier_shorts_9x16_poster.jpg" style="max-height: 280px; width: auto; border-radius: 8px; aspect-ratio: 9 / 16; background: #090a10;">
+          <div style="background: var(--text-main); padding: 12px; border-radius: 12px; text-align: center;">
+            <div style="font-size: 12px; font-weight: 700; color: var(--af-tok-c4); margin-bottom: 8px;">Storyline B v2.0 / 9:16 모바일 쇼츠 데모 (1080×1920 / 60fps)</div>
+            <video controls preload="metadata" poster="media/autoflow_3tier_shorts_9x16_poster.jpg" style="max-height: 280px; width: auto; border-radius: 8px; aspect-ratio: 9 / 16; background: var(--text-main);">
               <source src="media/autoflow_3tier_shorts_9x16.mp4" type="video/mp4" />
             </video>
           </div>
