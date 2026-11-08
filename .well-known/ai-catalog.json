@@ -86,13 +86,13 @@
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:oneshot:setup-capsules-6sku",
-      "displayName": "OneShot Setup Capsule — 6 Individual 1-Click Initial Setup Installers (oneshot.html)",
+      "identifier": "urn:air:autoflow.io:oneshot:setup-capsules-12sku",
+      "displayName": "OneShot Setup Capsule — 12 Individual 1-Click Initial Setup Installers (oneshot.html)",
       "type": "application/ai-catalog+json",
       "url": "https://autoflow.io/oneshot.html",
       "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html",
       "representativeQueries": [
-        "How do I set up ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, or WhisperX in 1 click without CUDA or C++ build errors?",
+        "How do I set up ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX, SD WebUI Forge/Flux, Open WebUI RAG, Wan 2.1 Video, F5-TTS, Cursor/Windsurf MCP, or UVR5/Demucs in 1 click without CUDA or C++ build errors?",
         "How does the MacMiniMasterMinter ToFU Inode + Machine-UUID lock and 0x00 self-destruct disposable setup installer work?",
         "Where can I buy individual OneShot Setup Capsules on Gumroad ($29/$39 USD) or Naver SmartStore (#13858840987 ~ #13859333698)?"
       ],

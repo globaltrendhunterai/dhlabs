@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[OneShot #11 | ONESHOT-11-CURSOR] Cursor &amp; Windsurf IDE 7 Essential MCP Servers + .cursorrules Initial Setup Installer: Fix MCP Red Dot Errors in 1 Click | DH Labs OneShot Official Technical Guide</title>
+  <meta name="description" content="Non-Destructively Wire 7 Core Coding MCP Servers into ~/.cursor/mcp.json and ~/.codeium/windsurf/mcp_config.json with Full Backup ($29 / ₩39,000)">
+  <meta name="author" content="Donghyeong Kim (DH Labs)">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://autoflow.io/blog/oneshot-11-cursor-windsurf-mcp-setup.html">
+  <link rel="alternate" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-11-cursor-windsurf-mcp-setup.html" hreflang="en">
+  <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
+  <link rel="describedby" href="/llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="[OneShot #11 | ONESHOT-11-CURSOR] Cursor &amp; Windsurf IDE 7 Essential MCP Servers + .cursorrules Initial Setup Installer: Fix MCP Red Dot Errors in 1 Click">
+  <meta property="og:description" content="Non-Destructively Wire 7 Core Coding MCP Servers into ~/.cursor/mcp.json and ~/.codeium/windsurf/mcp_config.json with Full Backup ($29 / ₩39,000)">
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-11-cursor-windsurf-mcp-setup.html">
+  <meta property="article:published_time" content="2026-01-15T09:00:00+09:00">
+  <meta property="article:modified_time" content="2026-11-01T09:00:00+09:00">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://autoflow.io/#organization",
+      "name": "DH Labs",
+      "url": "https://autoflow.io/",
+      "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
+      "sameAs": [
+        "https://github.com/globaltrendhunterai",
+        "https://dhlabs.gumroad.com",
+        "https://globaltrendhunterai.github.io/dhlabs/",
+        "https://autoflow.io/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://autoflow.io/#founder",
+      "name": "Donghyeong Kim",
+      "jobTitle": "Founder & Lead Systems Architect",
+      "worksFor": {
+        "@id": "https://autoflow.io/#organization"
+      }
+    },
+    {
+      "@type": [
+        "TechArticle",
+        "BlogPosting",
+        "SoftwareApplication"
+      ],
+      "@id": "https://autoflow.io/blog/oneshot-11-cursor-windsurf-mcp-setup.html#article",
+      "name": "[OneShot #11 | ONESHOT-11-CURSOR] Cursor & Windsurf IDE 7 Essential MCP Servers + .cursorrules Initial Setup Installer: Fix MCP Red Dot Errors in 1 Click",
+      "headline": "[OneShot #11 | ONESHOT-11-CURSOR] Cursor & Windsurf IDE 7 Essential MCP Servers + .cursorrules Initial Setup Installer: Fix MCP Red Dot Errors in 1 Click",
+      "description": "Non-Destructively Wire 7 Core Coding MCP Servers into ~/.cursor/mcp.json and ~/.codeium/windsurf/mcp_config.json with Full Backup ($29 / ₩39,000)",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://autoflow.io/blog/oneshot-11-cursor-windsurf-mcp-setup.html",
+      "datePublished": "2026-01-15",
+      "dateModified": "2026-11-01",
+      "author": {
+        "@id": "https://autoflow.io/#founder"
+      },
+      "publisher": {
+        "@id": "https://autoflow.io/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "29.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://dhlabs.gumroad.com/l/oneshot-cursor-windsurf-mcp-setup"
+      },
+      "keywords": "OneShot, ONESHOT-11-CURSOR, Cursor MCP server red dot failed to create client, ~/.cursor/mcp.json spawn npx ENOENT, Windsurf mcp_config.json syntax error, .cursorrules setup, 1-Click Initial Setup, Gumroad, Naver SmartStore"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://autoflow.io/blog/oneshot-11-cursor-windsurf-mcp-setup.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is OneShot #11 different from OneShot #04 (Claude Code & Desktop MCP)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OneShot #04 targets Anthropic Claude Desktop (claude_desktop_config.json) and Claude Code CLI (~/.claude.json). OneShot #11 specifically targets Cursor IDE (~/.cursor/mcp.json) and Windsurf IDE (~/.codeium/windsurf/mcp_config.json) plus a production .cursorrules coding guardrail file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will OneShot #11 delete MCP servers I already have in Cursor or Windsurf?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. It creates a timestamped .bak backup first and performs a non-destructive merge that preserves every existing custom MCP server key you already configured."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does Cursor show a red dot next to MCP servers on macOS and Windows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cursor runs as a GUI process that often cannot find npx in nvm/Homebrew paths. OneShot #11 injects the resolved binary path directly into ~/.cursor/mcp.json so servers turn green immediately."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://autoflow.io/blog/oneshot-11-cursor-windsurf-mcp-setup.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://globaltrendhunterai.github.io/dhlabs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "OneShot 1-Click Installers",
+          "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "[OneShot #11 | ONESHOT-11-CURSOR] Cursor & Windsurf IDE 7 Essential MCP Servers + .cursorrules Initial Setup Installer: Fix MCP Red Dot Errors in 1 Click",
+          "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-11-cursor-windsurf-mcp-setup.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    :root {
+      --bg: #070b14;
+      --card: #0e1628;
+      --border: #1d283a;
+      --blue: #3882f6;
+      --gold: #f49e0c;
+      --green: #12b881;
+      --text: #eef3fa;
+      --muted: #93a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.7; padding: 0 16px; }
+    .container { max-width: 920px; margin: 32px auto 80px auto; }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .nav a { color: var(--text); text-decoration: none; font-weight: 700; margin-left: 16px; }
+    h1 { font-size: 2rem; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+    h2 { font-size: 1.5rem; font-weight: 800; margin: 36px 0 16px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    h3 { font-size: 1.15rem; font-weight: 700; color: #94c6fd; margin-bottom: 8px; }
+    .ko-sub { color: var(--gold); font-weight: 700; margin-bottom: 10px; font-size: 1.05rem; }
+    .sub { color: var(--muted); font-size: 1.08rem; margin-bottom: 20px; }
+    .geo-box { background: var(--card); border: 1px solid var(--blue); border-left: 6px solid var(--blue); border-radius: 12px; padding: 22px; margin: 24px 0; }
+    .cta-box { background: linear-gradient(180deg, #111c38 0%, #0c1326 100%); border: 2px solid var(--gold); border-radius: 16px; padding: 26px; margin: 32px 0; }
+    .cta-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .btn { padding: 13px 22px; border-radius: 10px; font-weight: 800; text-decoration: none; display: inline-block; }
+    .btn-gumroad { background: var(--gold); color: #0a0f1d; }
+    .btn-naver { background: var(--green); color: #06130e; }
+    .btn-hub { background: #1d293d; color: var(--text); border: 1px solid var(--blue); }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--card); border-radius: 10px; overflow: hidden; }
+    th, td { padding: 14px 16px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { background: #111c34; color: var(--muted); }
+    .step-card, .faq-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 14px; display: flex; gap: 16px; align-items: flex-start; }
+    .faq-card { display: block; }
+    .step-badge { background: #1e3a8a; color: #94c6fd; font-weight: 900; padding: 6px 12px; border-radius: 8px; font-family: monospace; }
+    footer { border-top: 1px solid var(--border); margin-top: 60px; padding-top: 24px; color: var(--muted); font-size: 0.9rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="nav">
+      <div><a href="/oneshot.html" style="margin-left:0;font-size:1.2rem;">⚡ DH Labs <span>OneShot Initial-Setup Installers</span></a></div>
+      <nav>
+        <a href="/oneshot.html">OneShot 12-SKU Hub</a>
+        <a href="/blog/">Technical Blog Hub</a>
+      </nav>
+    </header>
+
+    <article>
+      <p class="ko-sub">[Cursor · Windsurf IDE 실전 MCP 7종 &amp; .cursorrules 자동 배선 가이드] MCP Red Dot 연결 끊김 해결 · 1클릭 초기 세팅 (OneShot #11)</p>
+      <h1>[OneShot #11 | ONESHOT-11-CURSOR] Cursor &amp; Windsurf IDE 7 Essential MCP Servers + .cursorrules Initial Setup Installer: Fix MCP Red Dot Errors in 1 Click</h1>
+      <p class="sub">Non-Destructively Wire 7 Core Coding MCP Servers into ~/.cursor/mcp.json and ~/.codeium/windsurf/mcp_config.json with Full Backup ($29 / ₩39,000)</p>
+      <p style="font-size:0.9rem;color:var(--muted);">By <strong>Donghyeong Kim (김동형)</strong>, Founder &amp; Lead Systems Architect at 디에이치랩스 (DH Labs, Business Reg. No. 610-16-92926) · Updated <time datetime="2026-11-01">2026-11-01</time></p>
+
+      <section class="geo-box" id="geo-ai-citation-summary">
+        <h2>What is ONESHOT-11-CURSOR and how does this 1-click initial setup installer work?</h2>
+        <p>OneShot #11 Cursor &amp; Windsurf 7-MCP Initial Setup Installer (ONESHOT-11-CURSOR) by DH Labs automates Model Context Protocol (MCP) server wiring and anti-hallucination .cursorrules provisioning for Cursor IDE and Windsurf IDE on macOS and Windows. It creates timestamped .bak backups, resolves absolute npx binary paths, non-destructively merges 7 essential coding MCP servers (filesystem, github, playwright, postgres-sqlite, sequential-thinking, fetch, memory) into ~/.cursor/mcp.json and ~/.codeium/windsurf/mcp_config.json with chmod 0600 permissions, and self-shreds with 0x00.</p>
+        <ul style="margin:12px 0 0 20px;">
+          <li><strong>Target Error Signatures Solved:</strong> <code>Cursor MCP server red dot failed to create client, ~/.cursor/mcp.json spawn npx ENOENT, Windsurf mcp_config.json syntax error, .cursorrules setup</code></li>
+          <li><strong>ToFU Inode + Machine-UUID Lock &amp; Spool Resume:</strong> Works immediately on the buyer's PC upon extraction, blocks unauthorized file copying (<code>cp</code> / <code>Cmd+D</code>), preserves retry capability on network interruption, and overwrites the installer with <code>0x00</code> only after <code>VERIFY_OK=1</code>.</li>
+          <li><strong>26-Second 3-Layer Local Isolation:</strong> <code>127.0.0.1</code> localhost-only binding (0 exposed ports), <code>chmod 0600</code> local config lock, and strict parameter validation.</li>
+        </ul>
+      </section>
+
+      <section class="cta-box">
+        <h2 style="margin-top:0;border:none;padding:0;">1:1 Dedicated Single-Program Initial Setup Installer ($29 USD / ₩39,000)</h2>
+        <p style="margin-top:8px;">1 Installer = 1 Single Program Initial Setup. Permanent local studio ownership on your Mac or Windows PC with zero monthly subscription fees and a 30-day refund guarantee.</p>
+        <div class="cta-btns">
+          <a href="https://dhlabs.gumroad.com/l/oneshot-cursor-windsurf-mcp-setup" class="btn btn-gumroad" target="_blank" rel="noopener noreferrer">🌍 Buy on Global Gumroad ($29 USD)</a>
+          <a href="https://smartstore.naver.com/dhlabs" class="btn btn-naver" target="_blank" rel="noopener noreferrer">🇰🇷 네이버 스마트스토어 구매 (#ONESHOT-11)</a>
+          <a href="/oneshot.html" class="btn btn-hub">⚡ View All 12 OneShot Installers</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Why Does Manual Installation Fail and How Does ONESHOT-11-CURSOR Compare?</h2>
+        <p>Vibe coders and indie developers adding MCP servers to Cursor or Windsurf constantly hit the dreaded &quot;Red Dot / Failed to create client&quot; error caused by GUI PATH isolation (spawn npx ENOENT), malformed JSON files, or overwriting existing IDE settings.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Setup Dimension</th>
+              <th>Manual Terminal / pip Setup (Before)</th>
+              <th>ONESHOT-11-CURSOR 1-Click Installer (After)</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+    <tr>
+      <td><strong>Cursor &amp; Windsurf MCP Status</strong></td>
+      <td>Red dot &quot;Failed to create client / spawn npx ENOENT&quot;</td>
+      <td><strong>Absolute npx binary path injected -&gt; instant Green Dot active</strong></td>
+    </tr>
+  
+    <tr>
+      <td><strong>Dual AI IDE Coverage</strong></td>
+      <td>Configuring Cursor and Windsurf separately by hand</td>
+      <td><strong>Simultaneous sync of ~/.cursor/mcp.json &amp; Windsurf mcp_config.json</strong></td>
+    </tr>
+  
+    <tr>
+      <td><strong>Existing Config Preservation</strong></td>
+      <td>Overwriting custom MCP servers or breaking JSON syntax</td>
+      <td><strong>Timestamped .bak backup + non-destructive key-preserving merge</strong></td>
+    </tr>
+  
+    <tr>
+      <td><strong>AI Coding Guardrails</strong></td>
+      <td>AI hallucinating fake packages or deleting working code</td>
+      <td><strong>Production .cursorrules template generated in workspace</strong></td>
+    </tr>
+  
+    <tr>
+      <td><strong>File Permission Security</strong></td>
+      <td>0644 world-readable IDE config files</td>
+      <td><strong>Strict chmod 0600 owner-only lock + 0x00 self-shredding</strong></td>
+    </tr>
+  
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>How Does the 5-Stage Automated Initial Setup Pipeline Execute?</h2>
+        
+    <div class="step-card">
+      <div class="step-badge">01</div>
+      <div>
+        <h3>Absolute Node.js / npx Binary Path Discovery</h3>
+        <p>Resolves the exact npx executable path so Cursor and Windsurf GUI processes never fail with spawn ENOENT.</p>
+      </div>
+    </div>
+  
+    <div class="step-card">
+      <div class="step-badge">02</div>
+      <div>
+        <h3>Timestamped .bak Backup of Existing IDE Configs</h3>
+        <p>Backs up ~/.cursor/mcp.json and ~/.codeium/windsurf/mcp_config.json before touching any JSON keys.</p>
+      </div>
+    </div>
+  
+    <div class="step-card">
+      <div class="step-badge">03</div>
+      <div>
+        <h3>Non-Destructive 7-MCP Server AST Merge</h3>
+        <p>Merges filesystem, github, playwright, postgres-sqlite, sequential-thinking, fetch, and memory MCP servers.</p>
+      </div>
+    </div>
+  
+    <div class="step-card">
+      <div class="step-badge">04</div>
+      <div>
+        <h3>Production .cursorrules &amp; chmod 0600 Hardening</h3>
+        <p>Generates a battle-tested .cursorrules file and locks both IDE MCP config files to chmod 0600.</p>
+      </div>
+    </div>
+  
+    <div class="step-card">
+      <div class="step-badge">05</div>
+      <div>
+        <h3>Dual JSON Parse Verification &amp; 0x00 Self-Shredding</h3>
+        <p>Verifies all 7 MCP keys across both Cursor and Windsurf configs before overwriting the installer binary with 0x00.</p>
+      </div>
+    </div>
+  
+      </section>
+
+      <section>
+        <h2>Frequently Asked Technical Questions (FAQ)</h2>
+        
+    <div class="faq-card">
+      <h3>How is OneShot #11 different from OneShot #04 (Claude Code &amp; Desktop MCP)?</h3>
+      <p>OneShot #04 targets Anthropic Claude Desktop (claude_desktop_config.json) and Claude Code CLI (~/.claude.json). OneShot #11 specifically targets Cursor IDE (~/.cursor/mcp.json) and Windsurf IDE (~/.codeium/windsurf/mcp_config.json) plus a production .cursorrules coding guardrail file.</p>
+    </div>
+  
+    <div class="faq-card">
+      <h3>Will OneShot #11 delete MCP servers I already have in Cursor or Windsurf?</h3>
+      <p>Never. It creates a timestamped .bak backup first and performs a non-destructive merge that preserves every existing custom MCP server key you already configured.</p>
+    </div>
+  
+    <div class="faq-card">
+      <h3>Why does Cursor show a red dot next to MCP servers on macOS and Windows?</h3>
+      <p>Cursor runs as a GUI process that often cannot find npx in nvm/Homebrew paths. OneShot #11 injects the resolved binary path directly into ~/.cursor/mcp.json so servers turn green immediately.</p>
+    </div>
+  
+      </section>
+    </article>
+
+    <footer>
+      <p>&copy; 2026 디에이치랩스 (DH Labs) · Founder: Donghyeong Kim (김동형) · Business Reg. No.: 610-16-92926 · D-U-N-S: GSKY37R7XV</p>
+    </footer>
+  </div>
+</body>
+</html>
