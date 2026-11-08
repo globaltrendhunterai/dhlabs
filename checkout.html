@@ -1436,11 +1436,27 @@
       }
 
       const engineShort = currentEngineCode.replace('ENGINE_', '').toLowerCase();
+      const STANDALONE_GUMROAD_SKU_MAP = {
+        'AF-GL-ECOM-02': 'https://dhlabs.gumroad.com/l/autoflow-angle02-margin-brake',
+        'AF-PROD-02': 'https://dhlabs.gumroad.com/l/autoflow-angle02-margin-brake',
+        'AF-GL-ECOM-03': 'https://dhlabs.gumroad.com/l/autoflow-angle03-3pl-csv-transformer',
+        'AF-PROD-03': 'https://dhlabs.gumroad.com/l/autoflow-angle03-3pl-csv-transformer',
+        'AF-GL-ECOM-04': 'https://dhlabs.gumroad.com/l/autoflow-angle04-tracking-writeback',
+        'AF-PROD-04': 'https://dhlabs.gumroad.com/l/autoflow-angle04-tracking-writeback',
+        'AF-GL-FIN-05': 'https://dhlabs.gumroad.com/l/autoflow-angle05-1cent-payout-recon',
+        'AF-PROD-05': 'https://dhlabs.gumroad.com/l/autoflow-angle05-1cent-payout-recon',
+        'ONESHOT-01-COMFYUI': 'https://dhlabs.gumroad.com/l/oneshot-setup-capsule',
+        'ONESHOT-02-KOHYA': 'https://dhlabs.gumroad.com/l/oneshot-kohya-fluxgym-setup',
+        'ONESHOT-03-RVC': 'https://dhlabs.gumroad.com/l/oneshot-rvc-applio-setup',
+        'ONESHOT-04-CLAUDECODE': 'https://dhlabs.gumroad.com/l/oneshot-claudecode-mcp-setup',
+        'ONESHOT-05-OPENCLAW': 'https://dhlabs.gumroad.com/l/oneshot-openclaw-agent-setup',
+        'ONESHOT-06-WHISPERX': 'https://dhlabs.gumroad.com/l/oneshot-whisperx-diarization-setup'
+      };
       const defaultGumroadPath = currentTrack === 'addon'
         ? 'https://dhlabs.gumroad.com/l/autoflow-smartgrid-excel'
         : ((currentTrack === 'engine' || currentTrack === 'modular_engine')
           ? 'https://dhlabs.gumroad.com/l/autoflow-defense-engines'
-          : 'https://dhlabs.gumroad.com/l/fscptt');
+          : (STANDALONE_GUMROAD_SKU_MAP[activeSku] || 'https://dhlabs.gumroad.com/l/fscptt'));
       const customMatrix = window.AUTOFLOW_LEMON_VARIANT_MATRIX || null;
       const resolvedBaseUrl = (
         currentTrack === 'engine' &&
