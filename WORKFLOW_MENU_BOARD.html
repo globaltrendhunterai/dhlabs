@@ -1026,7 +1026,7 @@ button:disabled {
                     "name": "70% 안전율 리미터 및 초과 물량 스풀 금고 자동 이어하기는 어떻게 작동하나요?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고, 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
+                        "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
                     }
                 },
                 {
@@ -1034,7 +1034,7 @@ button:disabled {
                     "name": "127ms 무인 자가치유와 1원 단위 4자 정산 대사는 어떻게 무결성을 보장하나요?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며, 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
+                        "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
                     }
                 },
                 {
@@ -1091,7 +1091,7 @@ button:disabled {
                   어떻게 3단계 상주형 무인 방어 엔진과 4단계 기만 방어 체계가 작동하나요? / How Does the 3-Stage Resident Defense Engine Work?
                 </h3>
                 <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  <li><strong>Stage 1 / 70% Safety Factor Governor &amp; Overflow Spool-Resume (<code>core/safety_governor_spool_engine.js</code>):</strong> 오픈마켓/국세청/택배사 API 물리적 임계치의 <strong>70% 안전 정격(42/60 req/min)</strong>만 통과시키고, 폭주 물량은 로컬 암호화 스풀(<code>overflow_spool/*.spool.json</code>)에 무손실 적재한 뒤 잔여 0건까지 자동 이어하기(Auto-Resume)로 완주합니다.</li>
+                  <li><strong>Stage 1 / 70% Safety Factor Governor &amp; Overflow Spool-Resume (<code>core/safety_governor_spool_engine.js</code>):</strong> 오픈마켓/국세청/택배사 API 물리적 임계치의 <strong>70% 안전 정격(42/60 req/min)</strong>만 통과시키고 폭주 물량은 로컬 암호화 스풀(<code>overflow_spool/*.spool.json</code>)에 무손실 적재한 뒤 잔여 0건까지 자동 이어하기(Auto-Resume)로 완주합니다.</li>
                   <li><strong>Stage 2 / 127ms Non-LLM Deterministic Self-Healing:</strong> HTTP 429/502/503, OAuth 토큰 만료, JSON 스키마 변경 발생 시 외부 AI 호출 없이 1:1 결정론적 상태 머신으로 <strong>평균 127ms</strong> 이내에 자동 복구하며 사내 PC에서 고객 개인정보(PII)를 <strong>100% 로컬 마스킹</strong>합니다.</li>
                   <li><strong>Stage 3 / ReconFlow 1-Won 4-Way Settlement Reconciliation:</strong> 주문(Order)/결제(PG)/택배 송장(Waybill)/ERP 장부(Ledger) 간 <strong>1원(1-Won / $0.01)</strong> 오차까지 전수 대조하여 오염 데이터를 즉시 격리(Quarantine)합니다.</li>
                   <li><strong>4-Stage Cyber Deception &amp; Tarpit Sentinel (<code>core/cyber_deception_tarpit_sentinel.js</code>):</strong> ① Polymorphic Canary Honeytokens(기기별 다형성 카나리 허니토큰 미끼 <code>AF-TKT-CANARY-*</code>)  ② 0% False-Positive Active Trigger(정상 사용자 오탐률 0%, <code>&lt;0.1ms</code> 초고속 판별)  ③ Deceptive HTTP 200 Adaptive Tarpit Labyrinth(가짜 <code>HTTP 200</code> 12단계 지연 미궁 <code>TARPIT_LABYRINTH_IN_PROGRESS</code>)  ④ Lawful Forensic Beacon Callback &amp; Ledger(대한민국 정보통신망법 제48조 준수 합법 포렌식 비콘 원장 <code>INFO_COMM_ACT_ART48_COMPLIANT</code>)로 불법 복제 및 크리덴셜 탈취를 무력화합니다.</li>
@@ -1229,7 +1229,7 @@ button:disabled {
         </div>
         <div style="font-size: 0.96rem; color: var(--af-tok-c10); line-height: 1.5;">
           | <strong>Step 1 첫 구매 시 고민 제로 ("이걸 사면 이게 바로 된다")</strong>: 워크플로우 단품(1~5단계 <strong>₩39,000 ~ ₩79,000</strong> 영구 소장) 구매 시, 고객이 18종 카트리지를 직접 고를 필요 없이 <strong>베이스 엔진 본체(<code>AF-ENG-CORE</code>) + 해당 워크플로우 전용 카트리지 1칸만 자동 장착(7일 무료 체험)</strong>되어 출고되며 나머지 카트리지는 잠금() 유지됩니다.<br>
-          | <strong>Step 2 다중 구매/사업 확장 시 누적 개통 &amp; 0.6KB 하트비트 OTA</strong>: 상주형 엔진 기간권(자가치유 <strong>₩39,000</strong> / 정합성 <strong>₩49,000</strong> / 듀얼 <strong>₩69,000</strong> / MCP 특가 <strong>₩29,000~</strong>) 기반으로 가동 중 추가 워크플로우를 도킹하면 <strong>잠긴 필수 카트리지( +월 ₩12,900~₩29,000)를 0.1초 만에 자동 감지해 1클릭 누적 개통</strong>하며, 신규 연동 종목은 60초 하트비트(<code>0.6KB</code>)로 무설치 자동 패치됩니다.
+          | <strong>Step 2 다중 구매/사업 확장 시 누적 개통 &amp; 0.6KB 하트비트 OTA</strong>: 상주형 엔진 기간권(자가치유 <strong>₩39,000</strong> / 정합성 <strong>₩49,000</strong> / 듀얼 <strong>₩69,000</strong> / MCP 특가 <strong>₩29,000~</strong>) 기반으로 가동 중 추가 워크플로우를 도킹하면 <strong>잠긴 필수 카트리지( +월 ₩12,900~₩29,000)를 0.1초 만에 자동 감지해 1클릭 누적 개통</strong>하며 신규 연동 종목은 60초 하트비트(<code>0.6KB</code>)로 무설치 자동 패치됩니다.
         </div>
       </div>
       <div style="display: flex; gap: 8px; flex-wrap: wrap;">
@@ -1434,7 +1434,7 @@ button:disabled {
         <div>
           <span style="color: var(--af-tok-c2); font-weight: 700; font-size: 0.96rem;  ">24/7 Resident Autonomous Engines &amp; SmartGrid</span>
           <h2 style="font-size: 1.7rem; color: var(--af-tok-c9); margin-top: 4px;"> 24/7 상주형 무인 엔진 기간권 (30일/90일/365일) &amp; 전용 스마트 원장</h2>
-          <p style="color: var(--af-tok-c107); font-size: 0.95rem; margin-top: 4px;">워크플로우 단품은 1회 구매로 영구 소장하고, 사내 PC 전체 워크플로우(무제한 개수)를 지키는 상주형 무인 엔진과 본사 맥미니 원격 핫픽스는 필요한 기간만큼 충전하십시오.</p>
+          <p style="color: var(--af-tok-c107); font-size: 0.95rem; margin-top: 4px;">워크플로우 단품은 1회 구매로 영구 소장하고 사내 PC 전체 워크플로우(무제한 개수)를 지키는 상주형 무인 엔진과 본사 맥미니 원격 핫픽스는 필요한 기간만큼 충전하십시오.</p>
         </div>
         <a href="/checkout.html?engine=ENGINE_DUAL&amp;mode=managed&amp;days=30" style="background: linear-gradient(135deg, var(--af-tok-c12), var(--af-tok-c37)); color: var(--af-tok-c9); padding: 10px 20px; border-radius: 8px; font-weight: 800; text-decoration: none; font-size: 0.92rem;">
            듀얼 통합 엔진 30일권 즉시 개통 (₩69,000 / MCP 특가 ₩49,000) 
@@ -1506,7 +1506,7 @@ button:disabled {
     <div class="quiz-hero-card">
       <div class="quiz-hero-text">
         <h2> "어떤 자동화부터 시작해야 할지 막막하신가요?"</h2>
-        <p>3개 질문으로 구성된 30초 맞춤 진단을 통해, 사내 비용을 가장 크게 줄여줄 <strong>최우선 추천 워크플로우</strong>를 찾아드립니다.</p>
+        <p>3개 질문으로 구성된 30초 맞춤 진단으로 사내 비용을 가장 크게 줄여줄 <strong>최우선 추천 워크플로우</strong>를 찾아드립니다.</p>
       </div>
       <button class="btn-quiz-trigger" onclick="openQuizModal()">
         <span> 30초 무료 맞춤 진단 시작</span>
@@ -2245,7 +2245,7 @@ button:disabled {
 
         <!-- 법적 투명성 고지 문구 -->
         <div style="font-size: 0.96rem; color: var(--af-tok-c107); background: var(--af-tok-c105); padding: 12px 16px; border-radius: 8px; border-left: 3px solid var(--af-tok-c32); margin-bottom: 20px; line-height: 1.5;">
-           <strong>법적 투명성 고지:</strong> 본 계산기는 주당 반복 수작업 시간 및 평균 인건비를 기반으로 한 추정치이며, 기업의 실제 운영 환경에 따라 차이가 발생할 수 있습니다
+           <strong>법적 투명성 고지:</strong> 본 계산기는 주당 반복 수작업 시간 및 평균 인건비를 기반으로 한 추정치이며 기업의 실제 운영 환경에 따라 차이가 발생할 수 있습니다
         </div>
 
         <!-- Action Buttons -->
@@ -2388,7 +2388,7 @@ button:disabled {
         <div style="background: var(--af-tok-c105); border: 1px solid var(--af-tok-c144); border-radius: 10px; padding: 14px 16px; font-size: 0.96rem; color: var(--af-tok-c107); line-height: 1.6;">
           <div style="font-weight: 700; color: var(--af-tok-c10); margin-bottom: 4px;"> 기술적 신뢰도 보증 및 상표권 면책 고지</div>
           <div>| <strong>버전 호환성:</strong> AutoFlow의 477종 워크플로우 템플릿은 n8n 공식 최신 브랜치(v1.20+ Community / Enterprise)와 100% 호환되며, 0.1초 원클릭 JSON 임포트 규격을 철저히 준수합니다.</div>
-          <div>| <strong>API 연동 독립성:</strong> 슬랙, 네이버 커머스, 솔라피, 쿠팡, 쇼피파이 등 외부 서비스 연동 노드는 각 공급사의 최신 공식 API 규격을 따르며, 고객사 고유 API Key 및 OAuth 인증을 직접 안전하게 바인딩할 수 있도록 설계되었습니다.</div>
+          <div>| <strong>API 연동 독립성:</strong> 슬랙, 네이버 커머스, 솔라피, 쿠팡, 쇼피파이 등 외부 서비스 연동 노드는 각 공급사의 최신 공식 API 규격을 따르며 고객사 고유 API Key 및 OAuth 인증을 직접 안전하게 바인딩할 수 있도록 설계되었습니다.</div>
           <div>| <strong>상표권 면책:</strong> 본 서비스는 n8n 공식 제품이 아니며, n8n 환경에서 실행되는 독립 검증된 워크플로우 템플릿 및 자동화 가속 솔루션입니다.</div>
         </div>
 
@@ -2516,7 +2516,7 @@ button:disabled {
         </div>
 
         <div style="background: var(--af-tok-c51); border: 1px solid var(--af-tok-c78); border-radius: 10px; padding: 14px; font-size: 0.96rem; color: var(--af-tok-c107); line-height: 1.6;">
-          <div>| <strong>라이선스 정책:</strong> 번들 패키지 구매 시 포함된 모든 워크플로우에 대해 영구 라이선스가 일괄 발급되며 n8n v1.20+ 환경에 즉시 임포트 가능합니다.</div>
+          <div>| <strong>라이선스 정책:</strong> 번들 패키지 구매 시 포함된 전체 워크플로우의 영구 라이선스가 일괄 발급되며 n8n v1.20+ 환경에 즉시 임포트 가능합니다.</div>
           <div>| <strong>다중 사용자:</strong> 결제창에서 라이선스 시트 수를 선택하시면 전사 팀 단위 볼륨 라이선스로 자동 확장됩니다.</div>
         </div>
 
@@ -2656,7 +2656,7 @@ button:disabled {
               <strong style="color: var(--af-tok-c9); font-size: 0.96rem;">부가세 영세율 & 영문 영수증</strong>
             </div>
             <p style="font-size: 0.96rem; color: var(--af-tok-c107); line-height: 1.5; margin: 0 0 8px;">
-              해외 비거주 바이어는 부가가치세법상 영세율이 적용되며, 결제 직후 포털에서 글로벌 회계용 영문 영수증(Payment Receipt)이 자동 발급됩니다.
+              해외 비거주 바이어는 부가가치세법상 영세율이 적용되며 결제 직후 포털에서 글로벌 회계용 영문 영수증(Payment Receipt)이 자동 발급됩니다.
             </p>
             <div style="font-size: 0.96rem; color: var(--af-tok-c3);">
                즉시 다운로드 포털 영수증 인쇄 지원
@@ -2821,7 +2821,7 @@ button:disabled {
               </div>
             </div>
             <div id="envResSummaryMessage" style="font-size: 0.96rem; color: var(--af-tok-c10); line-height: 1.4;">
-              축하합니다! 귀사의 서버 환경은 AutoFlow 100개 완제품 워크플로우를 완벽하게 즉시 구동할 수 있습니다.
+              축하합니다! 귀사의 서버 환경은 AutoFlow 100개 완제품 워크플로우를 완벽하게 즉시 구동합니다.
             </div>
           </div>
 
@@ -2885,7 +2885,7 @@ button:disabled {
         <div style="overflow-y: auto; flex: 1; padding-right: 4px; color: var(--af-tok-c10); font-size: 0.9rem; line-height: 1.6;">
           <div style="background: var(--af-tok-c184); border: 1px solid var(--af-tok-c132); border-radius: 12px; padding: 16px; margin-bottom: 16px;">
             <div style="font-weight: 700; color: var(--af-tok-c185); margin-bottom: 6px;"> 실시간 언어 전환 및 통화 안내</div>
-            <div>상단 GNB의 [ KR |  EN |  JA] 토글 버튼을 통해 전체 카탈로그 및 주문 인터페이스를 원하는 언어로 즉시 전환할 수 있습니다.</div>
+            <div>상단 GNB의 [ KR |  EN |  JA] 토글 버튼으로 전체 카탈로그 및 주문 인터페이스를 원하는 언어로 즉시 전환됩니다.</div>
           </div>
           <div style="display: flex; gap: 10px; margin-top: 10px;">
             <button type="button" onclick="switchCatalogLanguage('ko'); closeLanguageInfoModal();" style="flex:1; padding: 10px; border-radius: 8px; border: 1px solid var(--af-tok-c186); background: var(--af-tok-c186); color: var(--af-tok-c9); font-weight: 700; cursor: pointer;"> 한국어</button>
@@ -3053,7 +3053,7 @@ button:disabled {
       <div style="text-align: center; margin-bottom: 35px;">
         <div style="color: var(--accent); font-weight: 700; font-size: 0.9rem;  ">Resident Autonomous Engine Licensing</div>
         <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--af-tok-c9); margin-top: 6px;">24/7 상주형 무인 엔진 기간권 3종 &amp; 본사 맥미니 원격 핫픽스 정책</h2>
-        <p style="color: var(--text-muted); font-size: 1rem; max-width: 760px; margin: 8px auto 0;">워크플로우 단품(₩39,000~₩79,000 영구 소장) 구매 시 7일 엔진 체험이 기본 제공됩니다. 상주형 엔진 기간권 1장만 활성화하면 사내 PC에 설치된 모든 워크플로우를 24시간 무인 보호하며, 고객 PC 내부(<code>setup_wizard.html</code>)에서 0초 인앱 자동 충전이 가능합니다.</p>
+        <p style="color: var(--text-muted); font-size: 1rem; max-width: 760px; margin: 8px auto 0;">워크플로우 단품(₩39,000~₩79,000 영구 소장) 구매 시 7일 엔진 체험이 기본 제공됩니다. 상주형 엔진 기간권 1장만 활성화하면 사내 PC에 설치된 모든 워크플로우를 24시간 무인 보호하며 고객 PC 내부(<code>setup_wizard.html</code>)에서 0초 인앱 자동 충전이 가능합니다.</p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
@@ -3418,7 +3418,7 @@ button:disabled {
             <input type="checkbox" id="chkRefundConsent" style="margin-top: 3px; accent-color: var(--af-tok-c12); width: 16px; height: 16px;">
             <span>
               <strong>[필수] 1:1 기기 바인딩 및 3단계 공정 차감 환불 규정 동의</strong><br>
-              결제 후 7일 이내 라이선스 미활성화(<code>FULL_REFUND_UNACTIVATED</code>) 또는 중대 기술 결함(<code>FULL_REFUND_DEFECT</code>) 시 100% 전액 환불되며, 활성화 이후 단순 변심 환불 요청 시(<code>PRORATED_FAIR_REFUND</code>) 실제 사용된 티켓 실비 및 경과일 정액만 공정 차감 후 잔액을 환불하고 해당 기기 라이선스는 즉시 자동 회수(<code>REVOKED</code>)됨에 동의합니다.
+              결제 후 7일 이내 라이선스 미활성화(<code>FULL_REFUND_UNACTIVATED</code>) 또는 중대 기술 결함(<code>FULL_REFUND_DEFECT</code>) 시 100% 전액 환불되며 활성화 이후 단순 변심 환불 요청 시(<code>PRORATED_FAIR_REFUND</code>) 실제 사용된 티켓 실비 및 경과일 정액만 공정 차감 후 잔액을 환불하고 해당 기기 라이선스는 즉시 자동 회수(<code>REVOKED</code>)됨에 동의합니다.
             </span>
           </label>
         </div>
@@ -3552,7 +3552,7 @@ button:disabled {
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.96rem;">
             <div style="background: var(--af-tok-c51); border: 1px solid var(--af-tok-c78); border-radius: 10px; padding: 12px;">
               <strong style="color: var(--af-tok-c2);">① 고객 취소 또는 팝업창 닫힘</strong>
-              <p style="color: var(--af-tok-c107); margin-top: 3px; line-height: 1.4;">인증창을 닫으셨거나 결제를 중단하셨다면, 주문 정보가 그대로 보존되어 있으니 아래 [결제 다시 시도하기] 버튼을 눌러 즉시 재결제하실 수 있습니다.</p>
+              <p style="color: var(--af-tok-c107); margin-top: 3px; line-height: 1.4;">인증창을 닫으셨거나 결제를 중단하셨다면, 주문 정보가 그대로 보존되어 있으니 아래 [결제 다시 시도하기] 버튼을 누르면 즉시 재결제됩니다.</p>
             </div>
             
             <div style="background: var(--af-tok-c51); border: 1px solid var(--af-tok-c78); border-radius: 10px; padding: 12px;">
@@ -3585,9 +3585,9 @@ button:disabled {
         <div style="color: var(--af-tok-c10); font-size: 0.96rem; line-height: 1.7;">
           <p><strong>제1조 (목적)</strong> 본 약관은 디에이치랩스 (DH Labs)(AutoFlow)가 제공하는 업무자동화 워크플로우 템플릿 파일 및 자가치유 소프트웨어 제품군의 이용 조건 및 절차를 규정함을 목적으로 합니다.</p>
           <p><strong>제2조 (용역 및 디지털 상품의 정의)</strong> 회사가 제공하는 상품은 n8n 기반 실행 청사진 JSON, 자동화 실행 스크립트, 자가치유 바이너리 및 관련 기술 문서 일체를 포함합니다.</p>
-          <p><strong>제3조 (지적재산권 및 라이선스 범위)</strong> 구매자는 구입한 워크플로우를 사내 업무 자동화 목적으로 영구히 자유롭게 수정 및 배포하여 사용할 수 있습니다. 단, 원본 템플릿의 무단 재배포, 공개 공유, 외부 재판매 행위는 엄격히 금지됩니다.</p>
-          <p><strong>제4조 (청약철회 및 공정 차감 환불 특약)</strong> ① 결제 후 7일 이내 라이선스 미활성화(<code>FULL_REFUND_UNACTIVATED</code>) 또는 중대 기술 결함(<code>FULL_REFUND_DEFECT</code>) 시 100% 전액 환불을 보장합니다. ② 활성화 이후 단순 변심 환불 요청 시(<code>PRORATED_FAIR_REFUND</code>), 일방적 환불 불가가 아닌 실제 사용된 자가치유 티켓 실비 및 경과일 정액만 공정 차감한 잔액을 정산 환불하며, 환불 완료 즉시 해당 기기의 HWID 라이선스는 자동 회수(<code>REVOKED</code>)됩니다.</p>
-          <p><strong>제5조 (면책 조항)</strong> 회사는 제3자 외부 API(토스, 슬랙, 스마트스토어 등)의 자체 정책 변경이나 단선으로 인한 일시적 장애에 대해 사전 공지 후 기술적 패치를 지원하며, 이로 인한 간접 손해에 대해 회사의 고의 또는 중과실이 없는 한 책임을 지지 않습니다.</p>
+          <p><strong>제3조 (지적재산권 및 라이선스 범위)</strong> 구매자는 구입한 워크플로우를 사내 업무 자동화 목적으로 영구히 자유롭게 수정·배포하여 사용합니다. 단, 원본 템플릿의 무단 재배포, 공개 공유, 외부 재판매 행위는 엄격히 금지됩니다.</p>
+          <p><strong>제4조 (청약철회 및 공정 차감 환불 특약)</strong> ① 결제 후 7일 이내 라이선스 미활성화(<code>FULL_REFUND_UNACTIVATED</code>) 또는 중대 기술 결함(<code>FULL_REFUND_DEFECT</code>) 시 100% 전액 환불을 보장합니다. ② 활성화 이후 단순 변심 환불 요청 시(<code>PRORATED_FAIR_REFUND</code>), 일방적 환불 불가가 아닌 실제 사용된 자가치유 티켓 실비 및 경과일 정액만 공정 차감한 잔액을 정산 환불하며 환불 완료 즉시 해당 기기의 HWID 라이선스는 자동 회수(<code>REVOKED</code>)됩니다.</p>
+          <p><strong>제5조 (면책 조항)</strong> 회사는 제3자 외부 API(토스, 슬랙, 스마트스토어 등)의 자체 정책 변경이나 단선으로 인한 일시적 장애 발생 시 사전 공지 후 기술적 패치를 지원하며 이로 인한 간접 손해는 회사의 고의 또는 중과실이 없는 한 책임을 지지 않습니다.</p>
         </div>
         <button onclick="closeTermsModal()" style="margin-top: 18px; width: 100%; background: var(--af-tok-c11); color: var(--af-tok-c9); border: none; padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer;">확인 및 닫기</button>
       </div>
@@ -3602,7 +3602,7 @@ button:disabled {
           <p><strong>1. 수집하는 개인정보 항목</strong><br>회사는 주문 생성, 정품 라이선스 키 발급, 세금계산서 발행 및 기술지원을 위해 아래 항목을 수집합니다.<br>- 필수항목: 구매자명(또는 법인명), 이메일 주소, 연락처, 결제 승인 기록</p>
           <p><strong>2. 개인정보의 수집 및 이용 목적</strong><br>- 디지털 상품 라이선스 키 발급 및 보안 다운로드 링크 제공<br>- 토스페이먼츠 등 결제대행사를 통한 대금 결제 및 정산<br>- 제품 기술지원, 에러 핫픽스 공지 및 긴급 보안 패치 전달</p>
           <p><strong>3. 개인정보의 보유 및 이용 기간</strong><br>상법 및 전자상거래법 등 관계 법령의 규정에 의거하여 계약 또는 청약철회 등에 관한 기록은 5년간 안전하게 보관 후 파기합니다.</p>
-          <p><strong>4. 개인정보의 파기 및 잊힐 권리(GDPR)</strong><br>이용자는 언제든지 본인의 개인정보 열람, 정정 및 카스케이딩 영구 파기를 요청할 수 있으며, 회사는 GDPR 카스케이딩 파기 프로토콜을 통해 즉시 모든 데이터스토어에서 삭제 처리합니다.</p>
+          <p><strong>4. 개인정보의 파기 및 잊힐 권리(GDPR)</strong><br>이용자는 언제든지 본인의 개인정보 열람, 정정 및 카스케이딩 영구 파기를 요청할 수 있으며 회사는 GDPR 카스케이딩 파기 프로토콜을 통해 즉시 모든 데이터스토어에서 삭제 처리합니다.</p>
         </div>
         <button onclick="closePrivacyModal()" style="margin-top: 18px; width: 100%; background: var(--af-tok-c11); color: var(--af-tok-c9); border: none; padding: 12px; border-radius: 8px; font-weight: 700; cursor: pointer;">확인 및 닫기</button>
       </div>
@@ -3738,7 +3738,7 @@ button:disabled {
       </div>
       <div style="border-top: 1px solid var(--af-tok-c144); padding-top: 16px; font-size: 0.96rem; color: var(--af-tok-c107); line-height: 1.8;">
         <strong>[전자상거래 등에서의 소비자보호에 관한 법률 및 공정 차감 환불 규정에 따른 법적 고지]</strong><br>
-        본 상품은 엔터프라이즈 업무자동화 소프트웨어로서, 3단계 공정 차감 환불 규정(결제 후 7일 이내 미활성화 시 100% 전액 환불 FULL_REFUND_UNACTIVATED / 기술적 결함 시 100% 전액 환불 FULL_REFUND_DEFECT / 활성화 이후 실제 사용 티켓 및 경과일 공정 차감 정산 환불 PRORATED_FAIR_REFUND)이 적용되며, 환불 완료 시 1:1 기기 바인딩 라이선스는 즉시 자동 회수(REVOKED)됩니다. Copyright © 2026 디에이치랩스 (DH Labs). All rights reserved.
+        본 상품은 엔터프라이즈 업무자동화 소프트웨어로서, 3단계 공정 차감 환불 규정(결제 후 7일 이내 미활성화 시 100% 전액 환불 FULL_REFUND_UNACTIVATED / 기술적 결함 시 100% 전액 환불 FULL_REFUND_DEFECT / 활성화 이후 실제 사용 티켓 및 경과일 공정 차감 정산 환불 PRORATED_FAIR_REFUND)이 적용되며 환불 완료 시 1:1 기기 바인딩 라이선스는 즉시 자동 회수(REVOKED)됩니다. Copyright © 2026 디에이치랩스 (DH Labs). All rights reserved.
       </div>
     </footer>
   </div>
@@ -4031,14 +4031,14 @@ button:disabled {
           id: "FAQ-PAY-02",
           category: "결제/정산",
           question: "법인 세금계산서 또는 지출증빙용 현금영수증 발행이 가능한가요?",
-          answer: "네, 100% 실시간 자동 발행을 지원합니다. 카드 결제 시 토스페이먼츠 매출전표가 자동 발급되며, 가상계좌(무통장입금) 결제 시 사업자등록번호 또는 휴대폰번호를 입력하시면 홈택스에 연동되어 10분 이내 국세청 전자세금계산서/현금영수증이 승인 발행됩니다.",
+          answer: "네, 100% 실시간 자동 발행을 지원합니다. 카드 결제 시 토스페이먼츠 매출전표가 자동 발급되며 가상계좌(무통장입금) 결제 시 사업자등록번호 또는 휴대폰번호를 입력하시면 홈택스에 연동되어 10분 이내 국세청 전자세금계산서/현금영수증이 승인 발행됩니다.",
           related_link: "/checkout/tax-invoice"
         },
         {
           id: "FAQ-PAY-03",
           category: "결제/정산",
           question: "해외 법인 카드 및 USD / JPY 통화 결제도 지원하나요?",
-          answer: "네, Visa, MasterCard, AMEX, JCB 등 전 세계 주요 해외 카드를 모두 지원하며, 상단 통화 전환기(Currency Switcher)를 통해 KRW, USD, JPY 중 원하는 통화로 실시간 환율이 적용된 결제가 가능합니다.",
+          answer: "네, Visa, MasterCard, AMEX, JCB 등 전 세계 주요 해외 카드를 모두 지원하며 상단 통화 전환기(Currency Switcher)를 통해 KRW, USD, JPY 중 원하는 통화로 실시간 환율이 적용된 결제가 가능합니다.",
           related_link: "/api/checkout/currencies"
         },
         {
@@ -4052,7 +4052,7 @@ button:disabled {
           id: "FAQ-TECH-02",
           category: "기술/환경",
           question: "코딩을 모르는 비개발자나 노코드 실무자도 쉽게 사용할 수 있나요?",
-          answer: "물론입니다. 모든 워크플로우는 100% 노코드/로우코드 GUI 기반으로 설계되어 있습니다. 스타터팩에 포함된 '3분 무인 온보딩 퀵스타트 가이드'와 자동 임포트 마법사를 이용하면 복잡한 설정 없이 필수 환경변수(API 키 등)만 입력하여 즉시 업무에 투입할 수 있습니다.",
+          answer: "물론입니다. 모든 워크플로우는 100% 노코드/로우코드 GUI 기반으로 설계되어 있습니다. 스타터팩에 포함된 '3분 무인 온보딩 퀵스타트 가이드'와 자동 임포트 마법사를 이용하면 복잡한 설정 없이 필수 환경변수(API 키 등)만 입력하여 즉시 업무에 투입합니다.",
           related_link: "/catalog/quickstart-guide"
         },
         {
@@ -4066,14 +4066,14 @@ button:disabled {
           id: "FAQ-LIC-01",
           category: "라이선스/보안",
           question: "시트(사용자) 수 제한이 있나요? 사내 무제한 라이선스인가요?",
-          answer: "단일 구매로 구매하신 법인 또는 개인 사업장 내에서 인원 수(시트 수) 제한 없이 무제한으로 사용하실 수 있습니다. 부서원 전원이 동일한 워크플로우를 사내 업무 자동화에 자유롭게 배포하고 활용할 수 있습니다.",
+          answer: "단일 구매로 구매하신 법인 또는 개인 사업장 내에서 인원 수(시트 수) 제한 없이 무제한으로 사용하십니다. 부서원 전원이 동일한 워크플로우를 사내 업무 자동화에 자유롭게 배포해 활용합니다.",
           related_link: null
         },
         {
           id: "FAQ-LIC-02",
           category: "라이선스/보안",
           question: "사내 데이터나 민감한 고객 정보가 외부 AutoFlow 서버로 전송되나요?",
-          answer: "절대로 전송되지 않습니다. AutoFlow는 100% 온프레미스(로컬 폐쇄망) 우선 아키텍처로 작동합니다. 모든 데이터 가공과 워크플로우 실행은 귀사의 n8n 인스턴스 및 로컬 환경 내부에서만 처리되며, 외부 원격 서버로 어떠한 업무 페이로드나 고객 데이터도 유출되지 않습니다.",
+          answer: "절대로 전송되지 않습니다. AutoFlow는 100% 온프레미스(로컬 폐쇄망) 우선 아키텍처로 작동합니다. 모든 데이터 가공과 워크플로우 실행은 귀사의 n8n 인스턴스 및 로컬 환경 내부에서만 처리되며 외부 원격 서버로 어떠한 업무 페이로드나 고객 데이터도 유출되지 않습니다.",
           related_link: null
         },
         {
@@ -4087,7 +4087,7 @@ button:disabled {
           id: "FAQ-HEAL-01",
           category: "장애/자가치유",
           question: "n8n 코어 버전이 업데이트되면 기존 워크플로우가 깨지지 않나요?",
-          answer: "AutoFlow 팀은 n8n의 최신 릴리즈를 실시간 모니터링하여 지속적인 하위 호환성 검증을 수행합니다. 노드 스키마 변경 시 13-Subsystem 무회귀 테스트를 거쳐 자동 패치가 제공되며, 구매 고객 포털을 통해 업데이트된 워크플로우를 영구 무상으로 재다운로드 받으실 수 있습니다.",
+          answer: "AutoFlow 팀은 n8n의 최신 릴리즈를 실시간 모니터링하여 지속적인 하위 호환성 검증을 수행합니다. 노드 스키마 변경 시 13-Subsystem 무회귀 테스트를 거쳐 자동 패치가 제공되며 구매 고객 포털에서 업데이트된 워크플로우를 영구 무상으로 재다운로드 받으십니다.",
           related_link: "/checkout/portal"
         },
         {
@@ -16260,7 +16260,7 @@ button:disabled {
               </div>
               <div ${"style"}="margin-top: 10px; color: #a7f3d0; font-size: 0.96rem; line-height: 1.5;">${data.message || ''}</div>
               <div ${"style"}="margin-top: 10px; font-size: 0.96rem; color: #94a3b8; background: rgba(255, 255, 255, 0.05); padding: 8px 12px; border-radius: 6px;">
-                ℹ️ 카드 결제 고객은 카드사 매입 취소로 자동 환불되며, 가상계좌 결제 고객은 입력하신 환불 계좌로 입금 처리됩니다.
+                ℹ️ 카드 결제 고객은 카드사 매입 취소로 자동 환불되며 가상계좌 결제 고객은 입력하신 환불 계좌로 입금 처리됩니다.
               </div>
             `;
           } else {

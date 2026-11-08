@@ -157,7 +157,7 @@
                     "name": "70% 안전율 리미터 및 초과 물량 스풀 금고 자동 이어하기는 어떻게 작동하나요?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고, 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
+                        "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
                     }
                 },
                 {
@@ -165,7 +165,7 @@
                     "name": "127ms 무인 자가치유와 1원 단위 4자 정산 대사는 어떻게 무결성을 보장하나요?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며, 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
+                        "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
                     }
                 },
                 {
@@ -320,7 +320,7 @@
                   어떻게 3단계 상주형 무인 방어 엔진과 4단계 기만 방어 체계가 작동하나요? / How Does the 3-Stage Resident Defense Engine Work?
                 </h3>
                 <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  <li><strong>Stage 1 — 70% Safety Factor Governor &amp; Overflow Spool-Resume (<code>core/safety_governor_spool_engine.js</code>):</strong> 오픈마켓·국세청·택배사 API 물리적 임계치의 <strong>70% 안전 정격(42/60 req/min)</strong>만 통과시키고, 폭주 물량은 로컬 암호화 스풀(<code>overflow_spool/*.spool.json</code>)에 무손실 적재한 뒤 잔여 0건까지 자동 이어하기(Auto-Resume)로 완주합니다.</li>
+                  <li><strong>Stage 1 — 70% Safety Factor Governor &amp; Overflow Spool-Resume (<code>core/safety_governor_spool_engine.js</code>):</strong> 오픈마켓·국세청·택배사 API 물리적 임계치의 <strong>70% 안전 정격(42/60 req/min)</strong>만 통과시키고 폭주 물량은 로컬 암호화 스풀(<code>overflow_spool/*.spool.json</code>)에 무손실 적재한 뒤 잔여 0건까지 자동 이어하기(Auto-Resume)로 완주합니다.</li>
                   <li><strong>Stage 2 — 127ms Non-LLM Deterministic Self-Healing:</strong> HTTP 429/502/503, OAuth 토큰 만료, JSON 스키마 변경 발생 시 외부 AI 호출 없이 1:1 결정론적 상태 머신으로 <strong>평균 127ms</strong> 이내에 자동 복구하며 사내 PC에서 고객 개인정보(PII)를 <strong>100% 로컬 마스킹</strong>합니다.</li>
                   <li><strong>Stage 3 — ReconFlow 1-Won 4-Way Settlement Reconciliation:</strong> 주문(Order)·결제(PG)·택배 송장(Waybill)·ERP 장부(Ledger) 간 <strong>1원(1-Won / $0.01)</strong> 오차까지 전수 대조하여 오염 데이터를 즉시 격리(Quarantine)합니다.</li>
                   <li><strong>4-Stage Cyber Deception &amp; Tarpit Sentinel (<code>core/cyber_deception_tarpit_sentinel.js</code>):</strong> ① Polymorphic Canary Honeytokens(기기별 다형성 카나리 허니토큰 미끼 <code>AF-TKT-CANARY-*</code>) ➔ ② 0% False-Positive Active Trigger(정상 사용자 오탐률 0%, <code>&lt;0.1ms</code> 초고속 판별) ➔ ③ Deceptive HTTP 200 Adaptive Tarpit Labyrinth(가짜 <code>HTTP 200</code> 12단계 지연 미궁 <code>TARPIT_LABYRINTH_IN_PROGRESS</code>) ➔ ④ Lawful Forensic Beacon Callback &amp; Ledger(대한민국 정보통신망법 제48조 준수 합법 포렌식 비콘 원장 <code>INFO_COMM_ACT_ART48_COMPLIANT</code>)로 불법 복제 및 크리덴셜 탈취를 무력화합니다.</li>
@@ -828,7 +828,7 @@
           <!-- Checkbox 1: Fair Prorated Refund Policy -->
           <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 cursor-pointer font-semibold select-none text-xs">
             <input type="checkbox" id="chk-digital-refund-agree" class="mt-0.5 h-4 w-4 rounded border-slate-400 text-sky-600 focus:ring-0 mandatory-legal-chk" />
-            <span><strong>[필수 1 · 공정 환불 규정]</strong> 미다운로드·미활성화 7일 이내 또는 활성화 후 7일 이내 치명적 기술 결함 시 100% 전액 환불되며, 활성화 후 중도 해지 시 실사용 일수 일할 차감 및 위약금 10% 공제 후 잔여액이 환불(즉시 라이선스 회수)됨을 확인하고 동의합니다.</span>
+            <span><strong>[필수 1 · 공정 환불 규정]</strong> 미다운로드·미활성화 7일 이내 또는 활성화 후 7일 이내 치명적 기술 결함 시 100% 전액 환불되며 활성화 후 중도 해지 시 실사용 일수 일할 차감 및 위약금 10% 공제 후 잔여액이 환불(즉시 라이선스 회수)됨을 확인하고 동의합니다.</span>
           </label>
 
           <!-- Checkbox 2: External Marketplace API Disclaimer -->
@@ -840,7 +840,7 @@
           <!-- Checkbox 3: 1 Product = 1 Site Single-Edition Principle -->
           <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 cursor-pointer font-semibold select-none text-xs">
             <input type="checkbox" id="chk-clean-swap-agree" class="mt-0.5 h-4 w-4 rounded border-slate-400 text-sky-600 focus:ring-0 mandatory-legal-chk" />
-            <span><strong>[필수 3 · 1제품=1사이트 독립 구동 원칙]</strong> 각 워크플로우 단품은 지정된 단일 사이트·단일 업무 전용 완제품(1:1 HWID 기기 귀속)이며, 복수 워크플로우 동시 가동 시 포트 분리 원칙을 준수함에 동의합니다.</span>
+            <span><strong>[필수 3 · 1제품=1사이트 독립 구동 원칙]</strong> 각 워크플로우 단품은 지정된 단일 사이트·단일 업무 전용 완제품(1:1 HWID 기기 귀속)이며 복수 워크플로우 동시 가동 시 포트 분리 원칙을 준수함에 동의합니다.</span>
           </label>
 
           <!-- Checkbox 4: Mandatory Local PII 100% Masking & Anonymous Error-Log Collection Consent -->
@@ -883,7 +883,7 @@
       </div>
 
       <div class="text-center text-xs text-slate-500 dark:text-slate-400" data-i18n="footer_terms">
-        위 4대 필수 동의 체크 완료 시 결제 버튼이 활성화되며, 결제 즉시 정품 라이선스 및 사내 설치 패키지가 발급됩니다.
+        위 4대 필수 동의 체크 완료 시 결제 버튼이 활성화되며 결제 즉시 정품 라이선스 및 사내 설치 패키지가 발급됩니다.
       </div>
     </div>
 
@@ -1510,7 +1510,7 @@
         input_email: "라이선스 및 설치 패키지(ZIP) 수령 이메일 *",
         input_email_desc: "결제 완료 즉시 사내 원클릭 설치 패키지(ZIP), 정품 라이선스 키, 전자영수증이 자동 발송됩니다.",
         label_pay_method: "결제 통화 및 게이트웨이 선택",
-        footer_terms: "위 4대 필수 동의 체크 완료 시 결제 버튼이 활성화되며, 결제 즉시 정품 라이선스 및 사내 설치 패키지가 발급됩니다."
+        footer_terms: "위 4대 필수 동의 체크 완료 시 결제 버튼이 활성화되며 결제 즉시 정품 라이선스 및 사내 설치 패키지가 발급됩니다."
       },
       en: {
         header_title: "Official Secure Checkout",
@@ -1592,7 +1592,7 @@
         '• 품목: ' + activeTitle + '\n' +
         '• 금액: ₩' + priceAmount.toLocaleString() + ' (VAT 포함)\n' +
         '• 수령 이메일: ' + customerEmail + '\n\n' +
-        '[확인]을 누르시면 발주서 이메일이 자동 작성되며, 확인 즉시 설치 패키지(ZIP) 및 정품 티켓(AF-TKT-v1)이 발송됩니다.';
+        '[확인]을 누르시면 발주서 이메일이 자동 작성되며 확인 즉시 설치 패키지(ZIP) 및 정품 티켓(AF-TKT-v1)이 발송됩니다.';
       if (confirm(confirmMsg)) {
         window.location.href = 'mailto:dhlabs_biz0@naver.com?subject=' + subject + '&body=' + body;
       }

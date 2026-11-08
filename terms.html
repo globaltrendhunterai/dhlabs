@@ -269,7 +269,7 @@
 
       <h2>제4조 (최종사용자 라이선스 계약(EULA) 및 3대 하이브리드 플랜 체계)</h2>
       <ol>
-        <li><strong>1:1 Device HWID 기기 귀속 및 재판매 및 재배포 금지 원칙:</strong> 모든 라이선스는 최초 활성화된 단일 물리 기기(HWID/CPU/MAC 스냅샷)에 1:1로 귀속되며, 무단 복제·다중 기기 동시 구동·제3자 재판매 및 재배포 금지 조항이 엄격히 적용됩니다.</li>
+        <li><strong>1:1 Device HWID 기기 귀속 및 재판매 및 재배포 금지 원칙:</strong> 모든 라이선스는 최초 활성화된 단일 물리 기기(HWID/CPU/MAC 스냅샷)에 1:1로 귀속되며 무단 복제·다중 기기 동시 구동·제3자 재판매 및 재배포 금지 조항이 엄격히 적용됩니다.</li>
         <li><strong>3대 상주형 무인 엔진 기간권 체계 (Resident Autonomous Engine Passes):</strong>
           <ul>
             <li><strong><code>① 자가치유 엔진 단독 (ENGINE_HEAL)</code> (30일 ₩39,000 / 90일 ₩99,000 / 365일 ₩330,000 · 개발자 MCP 특가 30일 ₩29,000 / 90일 ₩75,000 / 365일 ₩249,000):</strong> 127ms 로컬 결정론적 자가치유 데몬 + 사내 로컬 PII 0-Leakage 가명화 방패(<code>byok_privacy_sentinel.js</code>) 기본 탑재 + 5회 연속 미해결 장애 시 로컬 DLQ 안전 격리 및 당사 맥미니(Mac Mini) 파인튜닝 AI 원격 핫픽스(60초 비콘 무인 주입) 지원.</li>
@@ -293,7 +293,7 @@
         <li><strong>제1단계 — 미활성화 7일 이내 100% 전액 무상 환불 (<code>FULL_REFUND_UNACTIVATED</code>):</strong> 라이선스 키가 기기(HWID)에 한 번도 활성화되지 않은 상태에서 결제 후 7일 이내 환불 요청 시 위약금 없이 100% 전액 무상 환불됩니다.</li>
         <li><strong>제2단계 — 활성화 후 7일 이내 엔진 치명적 결함 100% 환불 (<code>REFUND_PENDING_DEFECT_VERIFICATION</code> ➔ <code>FULL_REFUND_DEFECT</code>):</strong> 활성화 후 7일 이내 당사 기술지원팀 실사 결과 수리 불가능한 엔진 자체 결함 또는 호환성 불가 판정 시 관리자 결함 실사 승인을 거쳐 100% 전액 환불됩니다.</li>
         <li><strong>제3단계 — 활성화 후 7일 경과 또는 중도 해지 시 공정 일할 정산 환불 (<code>PRORATED_FAIR_REFUND</code>):</strong> 공정거래위원회 디지털콘텐츠/계속거래 표준약관에 의거하여, 환불 접수 타임스탬프 기준 실사용 일수 일할 차감 금액(<code>(결제금액 ÷ 전체계약일수) × 실사용일수</code>) 및 위약수수료(총 결제금액의 10%)를 공제한 잔여 금액을 투명하게 정산 환불합니다.</li>
-        <li><strong>라이선스 즉시 영구 회수 (<code>REVOKED</code>):</strong> 환불 신청 및 정산 처리 시 기기 고유 식별자(HWID) 대조 검증을 수행하며, 환불 처리 즉시 해당 라이선스는 <code>REVOKED</code>(영구 회수) 상태로 전환되어 로컬 데몬 및 엔진 가동이 즉시 차단됩니다. 상세 규정은 <strong><a href="/refund.html" style="color: var(--primary-light); text-decoration: underline;">청약철회 및 공정 환불·정산 정책</a></strong>에 따릅니다.<br>
+        <li><strong>라이선스 즉시 영구 회수 (<code>REVOKED</code>):</strong> 환불 신청 및 정산 처리 시 기기 고유 식별자(HWID) 대조 검증을 수행하며 환불 처리 즉시 해당 라이선스는 <code>REVOKED</code>(영구 회수) 상태로 전환되어 로컬 데몬 및 엔진 가동이 즉시 차단됩니다. 상세 규정은 <strong><a href="/refund.html" style="color: var(--primary-light); text-decoration: underline;">청약철회 및 공정 환불·정산 정책</a></strong>에 따릅니다.<br>
           <span style="font-size: 0.88rem; color: var(--text-dim);">[EN] <strong>Article 6 (3-Stage Fair Refund &amp; <code>REVOKED</code> Termination):</strong> (1) 100% full refund within 7 days if unactivated (<code>FULL_REFUND_UNACTIVATED</code>); (2) 100% full refund within 7 days of activation upon verified engine defect (<code>REFUND_PENDING_DEFECT_VERIFICATION</code> ➔ <code>FULL_REFUND_DEFECT</code>); (3) Fair prorated refund deducting daily usage and a 10% early termination fee for mid-term cancellations (<code>PRORATED_FAIR_REFUND</code>), with immediate <code>REVOKED</code> license termination.</span>
         </li>
       </ol>

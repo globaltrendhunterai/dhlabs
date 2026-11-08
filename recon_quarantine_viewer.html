@@ -69,7 +69,7 @@
           </div>
           <p class="text-slate-300 mt-1 leading-relaxed text-xs">
             분기 노드 중단으로 발생하는 주문-재고-결제-정산 간 <strong>데이터 차이(Gap)를 실시간으로 캐치하여 세무/정산 펑크를 원천 차단</strong>합니다.<br>
-            엔진 본체가 장애 즉시 고객 메신저로 직보하며, 사내 PC 안전 보류 대기열에서 확인 후 <strong>[1-Click 보정 승인]</strong>을 누르면 원본 시스템에 즉시 안전 반영됩니다.
+            엔진 본체가 장애 즉시 고객 메신저로 직보하며 사내 PC 안전 보류 대기열에서 확인 후 <strong>[1-Click 보정 승인]</strong>을 누르면 원본 시스템에 즉시 안전 반영됩니다.
           </p>
         </div>
       </div>
@@ -1014,7 +1014,7 @@
               : `
                 <div class="p-3 rounded-lg bg-indigo-950/60 border border-indigo-500/40 text-[11px] text-indigo-200">
                   <div class="font-bold text-indigo-300">[🧪 승인 전 가상 시뮬레이션 프리뷰 (Dry-Run Preview: B ➔ A 변경 결과 미리보기)]</div>
-                  <div>승인 클릭 시 정상 합의 분기(A)는 그대로 보호하고, 이탈 분기(B)만 A 값으로 안전하게 보정·통일합니다.</div>
+                  <div>승인 클릭 시 정상 합의 분기(A)는 그대로 보호하고 이탈 분기(B)만 A 값으로 안전하게 보정·통일합니다.</div>
                 </div>
               `;
 
@@ -1280,7 +1280,7 @@
         '1) 원본 데이터 보존 원칙: originalDataPreserved: true, autoMutated: false (고객 원본 필드 임의 변조 0건)\n' +
         '2) [MOD_P 수수료 과다차감]: contracted_fee_rate(10% · 10,000원) vs platform_commission_amt(14,500원) ➔ 차액 +4,500원 격리\n' +
         '3) [MOD_Q HS코드·관세율 괴리]: expected_hs_code(8517.62-0000 · 0%) vs tariff_hs_code(8517.13-0000 · 8%) ➔ 요율 차이 8%p 격리\n' +
-        '4) 사내 PC 화면(127.0.0.1)에는 상세 비교표를 표시하고, 외부 SNS/문자에는 PII·금액을 100% 마스킹하여 알림을 발송합니다.'
+        '4) 사내 PC 화면(127.0.0.1)에는 상세 비교표를 표시하고 외부 SNS/문자에는 PII·금액을 100% 마스킹하여 알림을 발송합니다.'
       );
     }
 

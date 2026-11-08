@@ -150,7 +150,7 @@
                     "name": "70% 안전율 리미터 및 초과 물량 스풀 금고 자동 이어하기는 어떻게 작동하나요?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고, 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
+                        "text": "사전 입구(Entry)에서 core/safety_governor_spool_engine.js가 외부 API 한계치(예: 분당 60건)의 70% 안전 정격 수량(42건)만 통과시켜 HTTP 429 차단을 예방하고 초과 유입된 물량은 로컬 디스크 스풀 금고(overflow_spool, 정전 복구용 .bak 포함)에 무손실 보관한 뒤 쿨다운 후 유실·중복 0건으로 자동 인출(Auto-Drain)합니다."
                     }
                 },
                 {
@@ -158,7 +158,7 @@
                     "name": "127ms 무인 자가치유와 1원 단위 4자 정산 대사는 어떻게 무결성을 보장하나요?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며, 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
+                        "text": "실행 과정에서 비언어 결정론적 자가치유 엔진이 401 토큰 만료 및 429/502/504 장애를 127ms 만에 무인 복구하며 출구에서 ReconFlow가 주문·결제(PG)·택배 송장·회계 장부 4자 데이터를 1원 단위로 전수 대사하여 정합성을 보장합니다."
                     }
                 },
                 {
@@ -390,7 +390,7 @@
                   어떻게 3단계 상주형 무인 방어 엔진과 4단계 기만 방어 체계가 작동하나요? / How Does the 3-Stage Resident Defense Engine Work?
                 </h3>
                 <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  <li><strong>Stage 1 / 70% Safety Factor Governor &amp; Overflow Spool-Resume (<code>core/safety_governor_spool_engine.js</code>):</strong> 오픈마켓/국세청/택배사 API 물리적 임계치의 <strong>70% 안전 정격(42/60 req/min)</strong>만 통과시키고, 폭주 물량은 로컬 암호화 스풀(<code>overflow_spool/*.spool.json</code>)에 무손실 적재한 뒤 잔여 0건까지 자동 이어하기(Auto-Resume)로 완주합니다.</li>
+                  <li><strong>Stage 1 / 70% Safety Factor Governor &amp; Overflow Spool-Resume (<code>core/safety_governor_spool_engine.js</code>):</strong> 오픈마켓/국세청/택배사 API 물리적 임계치의 <strong>70% 안전 정격(42/60 req/min)</strong>만 통과시키고 폭주 물량은 로컬 암호화 스풀(<code>overflow_spool/*.spool.json</code>)에 무손실 적재한 뒤 잔여 0건까지 자동 이어하기(Auto-Resume)로 완주합니다.</li>
                   <li><strong>Stage 2 / 127ms Non-LLM Deterministic Self-Healing:</strong> HTTP 429/502/503, OAuth 토큰 만료, JSON 스키마 변경 발생 시 외부 AI 호출 없이 1:1 결정론적 상태 머신으로 <strong>평균 127ms</strong> 이내에 자동 복구하며 사내 PC에서 고객 개인정보(PII)를 <strong>100% 로컬 마스킹</strong>합니다.</li>
                   <li><strong>Stage 3 / ReconFlow 1-Won 4-Way Settlement Reconciliation:</strong> 주문(Order)/결제(PG)/택배 송장(Waybill)/ERP 장부(Ledger) 간 <strong>1원(1-Won / $0.01)</strong> 오차까지 전수 대조하여 오염 데이터를 즉시 격리(Quarantine)합니다.</li>
                   <li><strong>4-Stage Cyber Deception &amp; Tarpit Sentinel (<code>core/cyber_deception_tarpit_sentinel.js</code>):</strong> ① Polymorphic Canary Honeytokens(기기별 다형성 카나리 허니토큰 미끼 <code>AF-TKT-CANARY-*</code>)  ② 0% False-Positive Active Trigger(정상 사용자 오탐률 0%, <code>&lt;0.1ms</code> 초고속 판별)  ③ Deceptive HTTP 200 Adaptive Tarpit Labyrinth(가짜 <code>HTTP 200</code> 12단계 지연 미궁 <code>TARPIT_LABYRINTH_IN_PROGRESS</code>)  ④ Lawful Forensic Beacon Callback &amp; Ledger(대한민국 정보통신망법 제48조 준수 합법 포렌식 비콘 원장 <code>INFO_COMM_ACT_ART48_COMPLIANT</code>)로 불법 복제 및 크리덴셜 탈취를 무력화합니다.</li>
@@ -545,7 +545,7 @@
             3계층 엔진 아키텍처: 1층 단일 엔진 창구(AF-ENG-CORE 127.0.0.1:8080)  2층 Lv.1~Lv.4 상위 합본 모듈  3층 0.5KB 초미세 카트리지
           </div>
           <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
-            고객에게 수십 개의 복잡한 부품을 고르게 하지 않습니다 (<strong>모듈 선택 피로도 0%</strong>). <strong>1층 단일 엔진 프로그램 창구(AF-ENG-CORE)</strong>를 바탕으로, 상위로 갈수록 하위 보호막을 100% 포함하는 <strong>2층 Lv.1~Lv.4 단계별 상위 합본 모듈</strong>을 선택하고, 내부에서는 신규 노드/에러마다 <strong>3층 0.5KB 초미세 방어 카트리지</strong>가 3갈래 60초 하트비트로 무인 자동 주입됩니다. <strong>고객 AI 모델(BYOK) 연결 시 구독료 약 35% 즉시 할인(월 ₩19,000/$15~)</strong> 혜택이 적용됩니다.
+            고객에게 수십 개의 복잡한 부품을 고르게 하지 않습니다 (<strong>모듈 선택 피로도 0%</strong>). <strong>1층 단일 엔진 프로그램 창구(AF-ENG-CORE)</strong>를 바탕으로, 상위로 갈수록 하위 보호막을 100% 포함하는 <strong>2층 Lv.1~Lv.4 단계별 상위 합본 모듈</strong>을 선택하고 내부에서는 신규 노드/에러마다 <strong>3층 0.5KB 초미세 방어 카트리지</strong>가 3갈래 60초 하트비트로 무인 자동 주입됩니다. <strong>고객 AI 모델(BYOK) 연결 시 구독료 약 35% 즉시 할인(월 ₩19,000/$15~)</strong> 혜택이 적용됩니다.
           </p>
         </div>
         <div class="flex flex-wrap gap-2 shrink-0">
@@ -1521,7 +1521,7 @@
           <span> [스펙 공식 고지]</span>
         </div>
         <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-xs">
-          AutoFlow 공식 라이선스는 귀사의 운영 규모에 맞추어 자가치유 상주형 엔진 (30일 ₩39,000 / MCP 특가 ₩29,000), 정합성 대사 상주형 엔진 (30일 ₩49,000 / MCP 특가 ₩39,000), 듀얼 통합 상주형 엔진 (30일 ₩69,000 / MCP 특가 ₩49,000) 3단계 공식 티어로 제공됩니다. 실무 현장의 돌발 상황(고객 전화번호 오타, 중복 결제/주문, 외부 서버 일시 지연 등)을 사전에 원천 차단하여 24/7 안심하고 운영할 수 있도록 방어로직(안전 에어백)과 24시간 무중단 자동 복구 엔진이 단계별로 결선되어 있으며, 전 품목 출고 시 1:1 HWID 기기 종속 공식 품질보증서가 동봉됩니다.
+          AutoFlow 공식 라이선스는 귀사의 운영 규모에 맞추어 자가치유 상주형 엔진 (30일 ₩39,000 / MCP 특가 ₩29,000), 정합성 대사 상주형 엔진 (30일 ₩49,000 / MCP 특가 ₩39,000), 듀얼 통합 상주형 엔진 (30일 ₩69,000 / MCP 특가 ₩49,000) 3단계 공식 티어로 제공됩니다. 실무 현장의 돌발 상황(고객 전화번호 오타, 중복 결제/주문, 외부 서버 일시 지연 등)을 사전에 원천 차단하여 24/7 안심하고 운영할 수 있도록 방어로직(안전 에어백)과 24시간 무중단 자동 복구 엔진이 단계별로 결선되어 있으며 전 품목 출고 시 1:1 HWID 기기 종속 공식 품질보증서가 동봉됩니다.
         </p>
       </div>
 
@@ -1944,7 +1944,7 @@
       <div role="heading" aria-level="3" class="text-xl font-bold text-slate-900 dark:text-white mt-2 mb-2">지능 치유 쿼터가 소진되었습니다</div>
       <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
         이번 달 기본 제공된 Level 2 지능 치유 쿼터를 모두 사용하셨습니다.<br />
-        기본적인 사내 로컬 즉시 복구는 계속 무료로 작동하며, 상시 무중단 케어를 원하시면 공식 플랜으로 업그레이드해 주세요.
+        기본적인 사내 로컬 즉시 복구는 계속 무료로 작동하며 상시 무중단 케어를 원하시면 공식 플랜으로 업그레이드해 주세요.
       </p>
 
       <div class="space-y-2.5">
@@ -14215,8 +14215,8 @@
       <div class="articles-box">
         <h4>[공식 품질 보증 규약 및 SLA 정책]</h4>
         <div><strong>제1조 (품질 보증의 범위)</strong> 본 소프트웨어는 디에이치랩스 레드팀(Red Team)의 8대 카오스 장애 공격 하네스 테스트를 통과한 정품 패키지로서, 명시된 에어백 규격 및 공식 API 연동에 대해 완벽한 기술적 무결성을 보증합니다.</div>
-        <div><strong>제2조 (레벨별 보증 조건)</strong> ① 개발자 MCP 연동형 엔진 모델은 공급가를 낮춘 경제형으로 돌발 예외 방어 에어백을 미포함하여 실무 예외 시 정지될 수 있으며, 비상 응급 복구를 위한 1회 무료 치료 티켓을 보증합니다. ② 정합성 대사 엔진 이상 모델은 명시된 4대~8대 에어백의 100% 무결점 방어 성능을 보증합니다.</div>
-        <div><strong>제3조 (Zero-Cloud 및 보안 보증)</strong> 고객사의 모든 결제 데이터, 주문서, 고객 PII는 일절 외산 클라우드로 전송되지 않으며, 고객사 내부 기기(1:1 바인딩 HWID) 폐쇄망에서만 안전하게 작동함을 보증합니다.</div>
+        <div><strong>제2조 (레벨별 보증 조건)</strong> ① 개발자 MCP 연동형 엔진 모델은 공급가를 낮춘 경제형으로 돌발 예외 방어 에어백을 미포함하여 실무 예외 시 정지될 수 있으며 비상 응급 복구를 위한 1회 무료 치료 티켓을 보증합니다. ② 정합성 대사 엔진 이상 모델은 명시된 4대~8대 에어백의 100% 무결점 방어 성능을 보증합니다.</div>
+        <div><strong>제3조 (Zero-Cloud 및 보안 보증)</strong> 고객사의 모든 결제 데이터, 주문서, 고객 PII는 일절 외산 클라우드로 전송되지 않으며 고객사 내부 기기(1:1 바인딩 HWID) 폐쇄망에서만 안전하게 작동함을 보증합니다.</div>
         <div><strong>제4조 (24/7 데드맨 사내 관제)</strong> 듀얼 통합 엔진 품목의 경우, 사내 PC 단선 또는 시스템 고착 90초 감지 시 대표님 스마트폰 긴급 경보 및 자가치유 데몬 복구 프로토콜을 보증합니다.</div>
       </div>
       <div class="cert-footer">
@@ -14732,8 +14732,8 @@
           <div>1. <strong>1:1 기기 영구 종속 라이선스:</strong> 본 라이선스는 개인이나 회사가 아닌, '설치되는 기기(1 Device HWID)'에 1:1로 영구 종속됩니다. 추가 PC 구동 시 수량별 라이선스를 추가 구매하셔야 합니다 (PC 교체 시 이전 가능).</div>
           <div>2. <strong>납품 방식 (즉시 출고):</strong> 결제 완료 즉시 1초 만에 사내 즉시 출고 (Instant Download) 형태로 ZIP 실물 패키지 및 시크릿 바우처 키가 발송됩니다.</div>
           <div>3. <strong>자가치유 티켓 금액대별 차등 제공:</strong> 10만 원 미만(1회) / 10~30만 원(3회) / 30~50만 원(5회) / 50~100만 원(10회 VIP) 무상 제공됩니다.</div>
-          <div>4. <strong>24/7 사내 PC 안심 관제 (데드맨 스위치):</strong> 사내 PC 전원 꺼짐 또는 인터넷 단선 90초 감지 시 사장님 스마트폰으로 긴급 경보를 발송하며, 전원/인터넷 재연결 시 '정상 복구 완료 알림' 1세트가 발송됩니다 (티켓 1회 차감).</div>
-          <div>5. <strong>소프트웨어 자가보호 &amp; 보증 범위:</strong> 프로그램 무단 변조(해킹) 및 API 키 탈취 시도 실시간 감지 시 즉각 시스템 잠금 및 사장님께 긴급 통보됩니다. 보증 범위는 '노드 및 API 결함 전용'이며, 컴퓨터 OS 수리는 전면 제외됩니다.</div>
+          <div>4. <strong>24/7 사내 PC 안심 관제 (데드맨 스위치):</strong> 사내 PC 전원 꺼짐 또는 인터넷 단선 90초 감지 시 사장님 스마트폰으로 긴급 경보를 발송하며 전원/인터넷 재연결 시 '정상 복구 완료 알림' 1세트가 발송됩니다 (티켓 1회 차감).</div>
+          <div>5. <strong>소프트웨어 자가보호 &amp; 보증 범위:</strong> 프로그램 무단 변조(해킹) 및 API 키 탈취 시도 실시간 감지 시 즉각 시스템 잠금 및 사장님께 긴급 통보됩니다. 보증 범위는 '노드 및 API 결함 전용'이며 컴퓨터 OS 수리는 전면 제외됩니다.</div>
           <div>6. <strong>유효 기간:</strong> 본 견적서는 발행일로부터 14일간 유효합니다.</div>
         </div>
 
