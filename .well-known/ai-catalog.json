@@ -352,6 +352,20 @@
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6793011796)"
       }
+    },
+    {
+      "identifier": "urn:air:dhlabs:ios:solocraft:8lang-blog-suite",
+      "displayName": "SoloCraft iOS App (id6795770086) — 8-Language SEO & GEO Official Blog Suite",
+      "type": "application/ai-catalog+json",
+      "url": "https://solocraft-app.vercel.app/ai-catalog.json",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/solocraft-en.html",
+      "representativeQueries": [
+        "SoloCraft 1인 시공 인테리어 도배 타일 설비 현장 사진 PDF 견적서 청구서 앱",
+        "SoloCraft 100% offline contractor PDF estimate & invoice maker with before/after job site photos and Kanban board"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6795770086)"
+      }
     }
   ]
 }

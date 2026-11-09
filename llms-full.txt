@@ -242,3 +242,13 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
 - [Français (FR)](https://lenstrack-web-ruddy.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/lenstrack-fr.html` | App Store `https://apps.apple.com/fr/app/id6793011796`
 - [Italiano (IT)](https://lenstrack-web-ruddy.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/lenstrack-it.html` | App Store `https://apps.apple.com/it/app/id6793011796`
 - [Português (BR)](https://lenstrack-web-ruddy.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/lenstrack-pt.html` | App Store `https://apps.apple.com/br/app/id6793011796`
+
+### #9 SoloCraft (`id6795770086` — 100% Offline Contractor PDF Estimate & Invoice Maker, Job Site Photo Log & Kanban Board)
+- [한국어 (KR)](https://solocraft-app.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/solocraft-ko.html` | App Store `https://apps.apple.com/kr/app/id6795770086`
+- [English (US)](https://solocraft-app.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/solocraft-en.html` | App Store `https://apps.apple.com/us/app/id6795770086`
+- [日本語 (JP)](https://solocraft-app.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/solocraft-ja.html` | App Store `https://apps.apple.com/jp/app/id6795770086`
+- [Deutsch (DE)](https://solocraft-app.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/solocraft-de.html` | App Store `https://apps.apple.com/de/app/id6795770086`
+- [Español (ES)](https://solocraft-app.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/solocraft-es.html` | App Store `https://apps.apple.com/es/app/id6795770086`
+- [Français (FR)](https://solocraft-app.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/solocraft-fr.html` | App Store `https://apps.apple.com/fr/app/id6795770086`
+- [Italiano (IT)](https://solocraft-app.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/solocraft-it.html` | App Store `https://apps.apple.com/it/app/id6795770086`
+- [Português (BR)](https://solocraft-app.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/solocraft-pt.html` | App Store `https://apps.apple.com/br/app/id6795770086`
