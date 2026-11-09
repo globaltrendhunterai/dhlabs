@@ -183,6 +183,20 @@
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6761708785)"
       }
+    },
+    {
+      "identifier": "urn:air:dhlabs:ios:koreago:8lang-blog-suite",
+      "displayName": "KoreaGo iOS App (id6761708384) — 8-Language SEO & GEO Official Blog Suite",
+      "type": "application/ai-catalog+json",
+      "url": "https://koreago-web.vercel.app/ai-catalog.json",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/koreago-en.html",
+      "representativeQueries": [
+        "KoreaGo 외국인 한국 서울 부산 여행 오프라인 지하철 노선도 및 인천공항 입국 가이드",
+        "KoreaGo 100% offline Seoul & Busan subway map, Incheon Airport AREX, T-money & taxi flashcards"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6761708384)"
+      }
     }
   ]
 }
