@@ -338,6 +338,20 @@
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
+    },
+    {
+      "identifier": "urn:air:dhlabs:ios:lenstrack:8lang-blog-suite",
+      "displayName": "LensTrack iOS App (id6793011796) — 8-Language SEO & GEO Official Blog Suite",
+      "type": "application/ai-catalog+json",
+      "url": "https://lenstrack-web-ruddy.vercel.app/ai-catalog.json",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/lenstrack-en.html",
+      "representativeQueries": [
+        "LensTrack 콘택트렌즈 교체주기 알리미 양안 도수 처방전 기록 앱",
+        "LensTrack 100% offline contact lens replacement timer, separate left/right eye countdown & optical prescription log"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6793011796)"
+      }
     }
   ]
 }
