@@ -114,3 +114,13 @@ AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사�
 - [Français (FR)](https://formulavault-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-fr.html` | App Store `https://apps.apple.com/fr/app/id6796941530`
 - [Italiano (IT)](https://formulavault-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-it.html` | App Store `https://apps.apple.com/it/app/id6796941530`
 - [Português (BR)](https://formulavault-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-pt.html` | App Store `https://apps.apple.com/br/app/id6796941530`
+
+### #4 TherapyVault (`id6795766557` — 100% Offline Encrypted SOAP Notes & Client Session Vault)
+- [한국어 (KR)](https://therapyvault-web.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-ko.html` | App Store `https://apps.apple.com/kr/app/id6795766557`
+- [English (US)](https://therapyvault-web.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-en.html` | App Store `https://apps.apple.com/us/app/id6795766557`
+- [日本語 (JP)](https://therapyvault-web.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-ja.html` | App Store `https://apps.apple.com/jp/app/id6795766557`
+- [Deutsch (DE)](https://therapyvault-web.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-de.html` | App Store `https://apps.apple.com/de/app/id6795766557`
+- [Español (ES)](https://therapyvault-web.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-es.html` | App Store `https://apps.apple.com/es/app/id6795766557`
+- [Français (FR)](https://therapyvault-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-fr.html` | App Store `https://apps.apple.com/fr/app/id6795766557`
+- [Italiano (IT)](https://therapyvault-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-it.html` | App Store `https://apps.apple.com/it/app/id6795766557`
+- [Português (BR)](https://therapyvault-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-pt.html` | App Store `https://apps.apple.com/br/app/id6795766557`
