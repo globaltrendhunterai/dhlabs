@@ -172,3 +172,13 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
 - Naver SmartStore Official Product (`#13862599252`): https://smartstore.naver.com/dhlabs-official/products/13862599252
 - Kmong Standalone Service (`#859505`): https://kmong.com/gig/859505
 - Naver Official Release Blog Post (`logNo=224470576709`): https://blog.naver.com/dhlabs_official/224470576709
+
+### #3 FormulaVault (`id6796941530` — 100% Offline Perfumer Formula Vault & IFRA 51st Calculator)
+- [한국어 (KR)](https://formulavault-web.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-ko.html` | App Store `https://apps.apple.com/kr/app/id6796941530`
+- [English (US)](https://formulavault-web.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-en.html` | App Store `https://apps.apple.com/us/app/id6796941530`
+- [日本語 (JP)](https://formulavault-web.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-ja.html` | App Store `https://apps.apple.com/jp/app/id6796941530`
+- [Deutsch (DE)](https://formulavault-web.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-de.html` | App Store `https://apps.apple.com/de/app/id6796941530`
+- [Español (ES)](https://formulavault-web.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-es.html` | App Store `https://apps.apple.com/es/app/id6796941530`
+- [Français (FR)](https://formulavault-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-fr.html` | App Store `https://apps.apple.com/fr/app/id6796941530`
+- [Italiano (IT)](https://formulavault-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-it.html` | App Store `https://apps.apple.com/it/app/id6796941530`
+- [Português (BR)](https://formulavault-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-pt.html` | App Store `https://apps.apple.com/br/app/id6796941530`
