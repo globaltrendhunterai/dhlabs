@@ -323,6 +323,21 @@
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6800366919)"
       }
+    },
+    {
+      "identifier": "urn:air:autoflow.io:fintree:ecom-profit-vault-10sku",
+      "displayName": "FinTreeVault & EcomProfitVault — 10 Global E-Commerce Margin/ROAS/BEP Simulators & Master Builder Pro",
+      "type": "application/ai-catalog+json",
+      "url": "https://smartstore.naver.com/dhlabs/products/13863037562",
+      "alternateUrl": "https://smartstore.naver.com/dhlabs/products/13863038228",
+      "representativeQueries": [
+        "How do I simulate 12-month e-commerce margin, ROAS, and Break-Even Point (BEP) offline and export a formula-free value-only .xlsx spreadsheet?",
+        "스마트스토어·쿠팡 마진율·손익분기점(BEP) 계산 후 세무사·동업자에게 고유 수식이 제거된 값 전용 엑셀(.xlsx)만 내보내는 방법은?",
+        "What is the difference between EcomProfitVault Seller Edition (₩19,000 / $19) and FinTree Studio Pro Master Builder (₩79,000 / $59)?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
     }
   ]
 }
