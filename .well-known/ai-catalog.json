@@ -7,7 +7,7 @@
     "appleDeveloperId": "GSKY37R7XV",
     "primaryUrl": "https://autoflow.io/",
     "mirrorUrl": "https://globaltrendhunterai.github.io/dhlabs/",
-    "lastModified": "2026-11-09"
+    "lastModified": "2026-11-01"
   },
   "entries": [
     {
@@ -94,108 +94,25 @@
       "representativeQueries": [
         "How do I set up ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX, SD WebUI Forge/Flux, Open WebUI RAG, Wan 2.1 Video, F5-TTS, Cursor/Windsurf MCP, or UVR5/Demucs in 1 click without CUDA or C++ build errors?",
         "How does the MacMiniMasterMinter ToFU Inode + Machine-UUID lock and 0x00 self-destruct disposable setup installer work?",
-        "Where can I buy individual OneShot Setup Capsules on Gumroad ($29/$39 USD), Naver SmartStore (#13858840987 ~ #13860377735), or Kmong (#858577 ~ #858630)?"
+        "Where can I buy individual OneShot Setup Capsules on Gumroad ($29/$39 USD) or Naver SmartStore (#13858840987 ~ #13859333698)?"
       ],
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     },
     {
-      "identifier": "urn:air:dhlabs:ios:taxdrive:8lang-blog-suite",
-      "displayName": "TaxDrive iOS App (id6831875465) — 8-Language SEO & GEO Official Blog Suite",
+      "identifier": "urn:air:autoflow.io:fintree:ecom-profit-vault-10sku",
+      "displayName": "FinTreeVault & EcomProfitVault — 10 Global E-Commerce Margin/ROAS/BEP Simulators & Master Builder Pro",
       "type": "application/ai-catalog+json",
-      "url": "https://taxdrive-web.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-en.html",
+      "url": "https://smartstore.naver.com/dhlabs/products/13863037562",
+      "alternateUrl": "https://smartstore.naver.com/dhlabs/products/13863038228",
       "representativeQueries": [
-        "TaxDrive 국세청 별지 제30호의5서식 업무용승용차 운행기록부 자동 복원",
-        "TaxDrive IRS Schedule C & Finanzamt Fahrtenbuch Bluetooth mileage tracker"
+        "How do I simulate 12-month e-commerce margin, ROAS, and Break-Even Point (BEP) offline and export a formula-free value-only .xlsx spreadsheet?",
+        "스마트스토어·쿠팡 마진율·손익분기점(BEP) 계산 후 세무사·동업자에게 고유 수식이 제거된 값 전용 엑셀(.xlsx)만 내보내는 방법은?",
+        "What is the difference between EcomProfitVault Seller Edition (₩19,000 / $19) and FinTree Studio Pro Master Builder (₩79,000 / $59)?"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6831875465)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:ios:agriledger:8lang-blog-suite",
-      "displayName": "AgriLedger iOS App (id6798988857) — 8-Language SEO & GEO Official Blog Suite",
-      "type": "application/ai-catalog+json",
-      "url": "https://agriledger-web-iota.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-en.html",
-      "representativeQueries": [
-        "AgriLedger 오프라인 영농일지 공익직불금 면세유 영수증 OCR 농장 세무장부",
-        "AgriLedger 100% offline farm tax ledger for IRS Schedule F, Anlage L, 青色申告, LCDPR"
-      ],
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6798988857)"
-      }
-    },
-    {
-      "identifier": "urn:air:autoflow.io:smartstore:af-prod-30-return-shipping-recon",
-      "displayName": "[스마트스토어 월말마감 #11] 반품배송비 회차조정·이월차감 2줄→1건 묶음 정산대사기 단품 (AF-PROD-30 / AF-NAVER-11)",
-      "type": "application/ai-catalog+json",
-      "url": "https://smartstore.naver.com/dhlabs-official/products/13862599252",
-      "alternateUrl": "https://blog.naver.com/dhlabs_official/224470576709",
-      "representativeQueries": [
-        "스마트스토어 반품배송비 선차감 후 다음 회차 정산 조정 2줄 1건 묶음 대사 자동화",
-        "스마트스토어 쿠팡 월말 마감 이월 미정산금 반품배송비 회차조정 대사기 AF-PROD-30 #13862599252"
-      ],
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, SmartStore #13862599252, Kmong #859505)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:ios:formulavault:8lang-blog-suite",
-      "displayName": "FormulaVault iOS App (id6796941530) — 8-Language SEO & GEO Official Blog Suite",
-      "type": "application/ai-catalog+json",
-      "url": "https://formulavault-web.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-en.html",
-      "representativeQueries": [
-        "FormulaVault 조향사 포뮬러 금고 IFRA 51차 규제 및 배치 원가 계산기",
-        "FormulaVault 100% offline perfumer formula vault & IFRA 51st CAS calculator"
-      ],
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6796941530)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:ios:therapyvault:8lang-blog-suite",
-      "displayName": "TherapyVault iOS App (id6795766557) — 8-Language SEO & GEO Official Blog Suite",
-      "type": "application/ai-catalog+json",
-      "url": "https://therapyvault-web.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-en.html",
-      "representativeQueries": [
-        "TherapyVault 심리상담 차트 SOAP 노트 및 내담자 비밀보장 오프라인 금고",
-        "TherapyVault 100% offline encrypted SOAP progress notes & therapist client vault"
-      ],
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6795766557)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:ios:pattayago:8lang-blog-suite",
-      "displayName": "PattayaGo iOS App (id6761708785) — 8-Language SEO & GEO Official Blog Suite",
-      "type": "application/ai-catalog+json",
-      "url": "https://pattayago-web.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-en.html",
-      "representativeQueries": [
-        "PattayaGo 파타야 썽태우 바트버스 노선도 및 산호섬 꼬란 오프라인 여행 가이드",
-        "PattayaGo 100% offline Pattaya Baht Bus (Songthaew) route map & Koh Larn travel guide"
-      ],
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6761708785)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:ios:koreago:8lang-blog-suite",
-      "displayName": "KoreaGo iOS App (id6761708384) — 8-Language SEO & GEO Official Blog Suite",
-      "type": "application/ai-catalog+json",
-      "url": "https://koreago-web.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/koreago-en.html",
-      "representativeQueries": [
-        "KoreaGo 외국인 한국 서울 부산 여행 오프라인 지하철 노선도 및 인천공항 입국 가이드",
-        "KoreaGo 100% offline Seoul & Busan subway map, Incheon Airport AREX, T-money & taxi flashcards"
-      ],
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6761708384)"
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     },
     {
@@ -311,60 +228,115 @@
       }
     },
     {
-      "identifier": "urn:air:dhlabs:ios:shiftmaker:8lang-blog-suite",
-      "displayName": "ShiftMaker Pro iOS App (id6800366919) — 8-Language SEO & GEO Official Blog Suite",
-      "type": "application/ai-catalog+json",
-      "url": "https://shiftmaker-web-ten.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/shiftmaker-en.html",
+      "identifier": "urn:air:dhlabs:agencyquote:blog:kr",
+      "displayName": "AgencyQuoteVault Official Guide (🇰🇷 한국어 (KR · ₩)): AgencyQuoteVault KR: 프리랜서·에이전시 외주 견적서 맨먼스(M/M)·마진·네고방어 트리 시뮬레이터 (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/agency-quote-kr.html",
+      "inLanguage": "ko",
       "representativeQueries": [
-        "ShiftMaker Pro 3교대 간호사 근무표 달력 및 매장 알바 시급 야간수당 계산기",
-        "ShiftMaker Pro 100% offline nurse shift calendar, wage presets & smart roster image export"
+        "AgencyQuoteVault KR: 프리랜서·에이전시 외주 견적서 맨먼스(M/M)·마진·네고방어 트리 시뮬레이터 (.xlsx)",
+        "외주 견적서 양식 엑셀, 개발 견적서 맨먼스 계산기, 프리랜서 단가 계산기, 에이전시 마진율 시뮬레이터, 제경비 기술료 계산, 무수식 엑셀 추출, 원가 수식 유출 방지, AgencyQuoteVault"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6800366919)"
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:fintree:ecom-profit-vault-10sku",
-      "displayName": "FinTreeVault & EcomProfitVault — 10 Global E-Commerce Margin/ROAS/BEP Simulators & Master Builder Pro",
-      "type": "application/ai-catalog+json",
-      "url": "https://smartstore.naver.com/dhlabs/products/13863037562",
-      "alternateUrl": "https://smartstore.naver.com/dhlabs/products/13863038228",
+      "identifier": "urn:air:dhlabs:agencyquote:blog:en",
+      "displayName": "AgencyQuoteVault Official Guide (🇺🇸 English (US · $)): AgencyQuoteVault US: Freelance & Agency Project Quote, Man-Month Rate Card & Margin Simulator (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/agency-quote-en.html",
+      "inLanguage": "en",
       "representativeQueries": [
-        "How do I simulate 12-month e-commerce margin, ROAS, and Break-Even Point (BEP) offline and export a formula-free value-only .xlsx spreadsheet?",
-        "스마트스토어·쿠팡 마진율·손익분기점(BEP) 계산 후 세무사·동업자에게 고유 수식이 제거된 값 전용 엑셀(.xlsx)만 내보내는 방법은?",
-        "What is the difference between EcomProfitVault Seller Edition (₩19,000 / $19) and FinTree Studio Pro Master Builder (₩79,000 / $59)?"
+        "AgencyQuoteVault US: Freelance & Agency Project Quote, Man-Month Rate Card & Margin Simulator (.xlsx)",
+        "agency project quote calculator spreadsheet, freelance rate card margin simulator, man month estimation Excel template, scope creep buffer calculator, formula-stripped xlsx client quote, AgencyQuoteVault US"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
       }
     },
     {
-      "identifier": "urn:air:dhlabs:ios:lenstrack:8lang-blog-suite",
-      "displayName": "LensTrack iOS App (id6793011796) — 8-Language SEO & GEO Official Blog Suite",
-      "type": "application/ai-catalog+json",
-      "url": "https://lenstrack-web-ruddy.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/lenstrack-en.html",
+      "identifier": "urn:air:dhlabs:agencyquote:blog:jp",
+      "displayName": "AgencyQuoteVault Official Guide (🇯🇵 日本語 (JP · ¥)): AgencyQuoteVault JP: 受託開発・制作会社・フリーランス向け人月(M/M)見積・粗利・値引き防衛シミュレーター（数式除去Excel出力）",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/agency-quote-jp.html",
+      "inLanguage": "ja",
       "representativeQueries": [
-        "LensTrack 콘택트렌즈 교체주기 알리미 양안 도수 처방전 기록 앱",
-        "LensTrack 100% offline contact lens replacement timer, separate left/right eye countdown & optical prescription log"
+        "AgencyQuoteVault JP: 受託開発・制作会社・フリーランス向け人月(M/M)見積・粗利・値引き防衛シミュレーター（数式除去Excel出力）",
+        "受託開発 見積書 エクセル, 人月計算 シミュレーター, フリーランス 見積 単価計算, 諸経費 技術料 粗利計算, 数式削除 Excel 出力, 源泉徴収 インボイス 計算, AgencyQuoteVault JP"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6793011796)"
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
       }
     },
     {
-      "identifier": "urn:air:dhlabs:ios:solocraft:8lang-blog-suite",
-      "displayName": "SoloCraft iOS App (id6795770086) — 8-Language SEO & GEO Official Blog Suite",
-      "type": "application/ai-catalog+json",
-      "url": "https://solocraft-app.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/solocraft-en.html",
+      "identifier": "urn:air:dhlabs:agencyquote:blog:uk",
+      "displayName": "AgencyQuoteVault Official Guide (🇬🇧 English (UK · £)): AgencyQuoteVault UK: Agency & Contractor Day-Rate / Man-Month Quote, IR35 & 20% VAT Margin Simulator (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/agency-quote-uk.html",
+      "inLanguage": "en-GB",
       "representativeQueries": [
-        "SoloCraft 1인 시공 인테리어 도배 타일 설비 현장 사진 PDF 견적서 청구서 앱",
-        "SoloCraft 100% offline contractor PDF estimate & invoice maker with before/after job site photos and Kanban board"
+        "AgencyQuoteVault UK: Agency & Contractor Day-Rate / Man-Month Quote, IR35 & 20% VAT Margin Simulator (.xlsx)",
+        "UK agency quote calculator GBP, contractor day rate IR35 margin spreadsheet, project profitability simulator UK VAT, scope creep reserve calculator, formula-stripped Excel quote export, AgencyQuoteVault UK"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6795770086)"
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:agencyquote:blog:de",
+      "displayName": "AgencyQuoteVault Official Guide (🇩🇪 Deutsch (DE · €)): AgencyQuoteVault DE: Agentur- & Freelancer-Angebotskalkulator, Personenmonate & Margen-Simulator (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/agency-quote-de.html",
+      "inLanguage": "de",
+      "representativeQueries": [
+        "AgencyQuoteVault DE: Agentur- & Freelancer-Angebotskalkulator, Personenmonate & Margen-Simulator (.xlsx)",
+        "Agentur Angebotskalkulation Excel, Freelancer Stundensatz Tagessatz Rechner, Personenmonate Kalkulator Projektmarge, Rabatt Simulation Angebot, Excel Export ohne Formeln, AgencyQuoteVault DE"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:agencyquote:blog:fr",
+      "displayName": "AgencyQuoteVault Official Guide (🇫🇷 Français (FR · €)): AgencyQuoteVault FR : Simulateur de Devis, TJM / Homme-Mois & Marge Agence / Freelance (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/agency-quote-fr.html",
+      "inLanguage": "fr",
+      "representativeQueries": [
+        "AgencyQuoteVault FR : Simulateur de Devis, TJM / Homme-Mois & Marge Agence / Freelance (.xlsx)",
+        "simulateur devis agence web Excel, calculateur TJM jour homme marge freelance, chiffrage projet informatique Excel, remise client rentabilité, export Excel valeurs seules sans formules, AgencyQuoteVault FR"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:agencyquote:blog:es",
+      "displayName": "AgencyQuoteVault Official Guide (🇪🇸 Español (ES · €)): AgencyQuoteVault ES: Simulador de Presupuestos, Hombres-Mes y Margen para Agencias y Freelancers (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/agency-quote-es.html",
+      "inLanguage": "es",
+      "representativeQueries": [
+        "AgencyQuoteVault ES: Simulador de Presupuestos, Hombres-Mes y Margen para Agencias y Freelancers (.xlsx)",
+        "plantilla presupuesto agencia desarrollo Excel, calculadora margen proyecto freelance, estimacion horas hombre mes Excel, simulador descuento cliente, exportar Excel solo valores sin formulas, AgencyQuoteVault ES"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:agencyquote:blog:tw",
+      "displayName": "AgencyQuoteVault Official Guide (🇹🇼 繁體中文 (TW · NT$)): AgencyQuoteVault TW：自由工作者・設計與軟體外包公司專案報價、人月工時與毛利防禦樹狀模擬器（無公式 .xlsx 匯出）",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/agency-quote-tw.html",
+      "inLanguage": "zh-Hant-TW",
+      "representativeQueries": [
+        "AgencyQuoteVault TW：自由工作者・設計與軟體外包公司專案報價、人月工時與毛利防禦樹狀模擬器（無公式 .xlsx 匯出）",
+        "專案報價單範本 Excel, 軟體外包人月計算機, 自由工作者接案報價公式, 設計公司毛利試算表, 二代健保扣繳計算, 移除公式 Excel 報價單, AgencyQuoteVault TW"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
       }
     }
   ]
