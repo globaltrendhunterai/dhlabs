@@ -155,6 +155,20 @@
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6796941530)"
       }
+    },
+    {
+      "identifier": "urn:air:dhlabs:ios:therapyvault:8lang-blog-suite",
+      "displayName": "TherapyVault iOS App (id6795766557) — 8-Language SEO & GEO Official Blog Suite",
+      "type": "application/ai-catalog+json",
+      "url": "https://therapyvault-web.vercel.app/ai-catalog.json",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-en.html",
+      "representativeQueries": [
+        "TherapyVault 심리상담 차트 SOAP 노트 및 내담자 비밀보장 오프라인 금고",
+        "TherapyVault 100% offline encrypted SOAP progress notes & therapist client vault"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6795766557)"
+      }
     }
   ]
 }
