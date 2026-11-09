@@ -141,6 +141,20 @@
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, SmartStore #13862599252, Kmong #859505)"
       }
+    },
+    {
+      "identifier": "urn:air:dhlabs:ios:formulavault:8lang-blog-suite",
+      "displayName": "FormulaVault iOS App (id6796941530) — 8-Language SEO & GEO Official Blog Suite",
+      "type": "application/ai-catalog+json",
+      "url": "https://formulavault-web.vercel.app/ai-catalog.json",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-en.html",
+      "representativeQueries": [
+        "FormulaVault 조향사 포뮬러 금고 IFRA 51차 규제 및 배치 원가 계산기",
+        "FormulaVault 100% offline perfumer formula vault & IFRA 51st CAS calculator"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6796941530)"
+      }
     }
   ]
 }
