@@ -127,6 +127,20 @@
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6798988857)"
       }
+    },
+    {
+      "identifier": "urn:air:autoflow.io:smartstore:af-prod-30-return-shipping-recon",
+      "displayName": "[스마트스토어 월말마감 #11] 반품배송비 회차조정·이월차감 2줄→1건 묶음 정산대사기 단품 (AF-PROD-30 / AF-NAVER-11)",
+      "type": "application/ai-catalog+json",
+      "url": "https://smartstore.naver.com/dhlabs-official/products/13862599252",
+      "alternateUrl": "https://blog.naver.com/dhlabs_official/224470576709",
+      "representativeQueries": [
+        "스마트스토어 반품배송비 선차감 후 다음 회차 정산 조정 2줄 1건 묶음 대사 자동화",
+        "스마트스토어 쿠팡 월말 마감 이월 미정산금 반품배송비 회차조정 대사기 AF-PROD-30 #13862599252"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, SmartStore #13862599252, Kmong #859505)"
+      }
     }
   ]
 }

@@ -166,3 +166,9 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
 - [Français (FR)](https://agriledger-web-iota.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-fr.html` | App Store `https://apps.apple.com/fr/app/id6798988857`
 - [Italiano (IT)](https://agriledger-web-iota.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-it.html` | App Store `https://apps.apple.com/it/app/id6798988857`
 - [Português (BR)](https://agriledger-web-iota.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-pt.html` | App Store `https://apps.apple.com/br/app/id6798988857`
+
+### #3 Domestic SmartStore Standalone SKU #30 (`AF-PROD-30` / `AF-NAVER-11` — Cross-Cycle Return Shipping Deduction & Adjustment 2-Row Pairing Reconciler)
+- Product Title: `[스마트스토어 월말마감 #11] 반품배송비 회차조정·이월차감 2줄→1건 묶음 정산대사기 단품` (`₩39,000`, `AF_Naver_Angle11_CrossCycleReturnRecon_v3.0.zip`)
+- Naver SmartStore Official Product (`#13862599252`): https://smartstore.naver.com/dhlabs-official/products/13862599252
+- Kmong Standalone Service (`#859505`): https://kmong.com/gig/859505
+- Naver Official Release Blog Post (`logNo=224470576709`): https://blog.naver.com/dhlabs_official/224470576709

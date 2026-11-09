@@ -7,7 +7,7 @@
     "appleDeveloperId": "GSKY37R7XV",
     "primaryUrl": "https://autoflow.io/",
     "mirrorUrl": "https://globaltrendhunterai.github.io/dhlabs/",
-    "lastModified": "2026-11-01"
+    "lastModified": "2026-11-09"
   },
   "entries": [
     {
@@ -98,6 +98,48 @@
       ],
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:ios:taxdrive:8lang-blog-suite",
+      "displayName": "TaxDrive iOS App (id6831875465) — 8-Language SEO & GEO Official Blog Suite",
+      "type": "application/ai-catalog+json",
+      "url": "https://taxdrive-web.vercel.app/ai-catalog.json",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-en.html",
+      "representativeQueries": [
+        "TaxDrive 국세청 별지 제30호의5서식 업무용승용차 운행기록부 자동 복원",
+        "TaxDrive IRS Schedule C & Finanzamt Fahrtenbuch Bluetooth mileage tracker"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6831875465)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:ios:agriledger:8lang-blog-suite",
+      "displayName": "AgriLedger iOS App (id6798988857) — 8-Language SEO & GEO Official Blog Suite",
+      "type": "application/ai-catalog+json",
+      "url": "https://agriledger-web-iota.vercel.app/ai-catalog.json",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-en.html",
+      "representativeQueries": [
+        "AgriLedger 오프라인 영농일지 공익직불금 면세유 영수증 OCR 농장 세무장부",
+        "AgriLedger 100% offline farm tax ledger for IRS Schedule F, Anlage L, 青色申告, LCDPR"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6798988857)"
+      }
+    },
+    {
+      "identifier": "urn:air:autoflow.io:smartstore:af-prod-30-return-shipping-recon",
+      "displayName": "[스마트스토어 월말마감 #11] 반품배송비 회차조정·이월차감 2줄→1건 묶음 정산대사기 단품 (AF-PROD-30 / AF-NAVER-11)",
+      "type": "application/ai-catalog+json",
+      "url": "https://smartstore.naver.com/dhlabs-official/products/13862599252",
+      "alternateUrl": "https://blog.naver.com/dhlabs_official/224470576709",
+      "representativeQueries": [
+        "스마트스토어 반품배송비 선차감 후 다음 회차 정산 조정 2줄 1건 묶음 대사 자동화",
+        "스마트스토어 쿠팡 월말 마감 이월 미정산금 반품배송비 회차조정 대사기 AF-PROD-30 #13862599252"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, SmartStore #13862599252, Kmong #859505)"
       }
     }
   ]
