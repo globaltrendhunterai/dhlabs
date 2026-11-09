@@ -142,3 +142,27 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
   - GitHub Organization: `https://github.com/globaltrendhunterai`
   - Gumroad Global Store: `https://dhlabs.gumroad.com`
 - **문서 최종 갱신일 (Last Modified)**: `2026-11-01`
+
+## iOS App Store Official 8-Language SEO & GEO Blogs (TaxDrive & AgriLedger)
+
+### #1 TaxDrive (`id6831875465` — Auto Bluetooth Mileage Tracker & 8-Country Tax Logbook)
+- Naver Official Blog (KR): https://blog.naver.com/dhlabs_official/224470441195
+- [한국어 (KR)](https://taxdrive-web.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-ko.html` | App Store `https://apps.apple.com/kr/app/id6831875465`
+- [English (US)](https://taxdrive-web.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-en.html` | App Store `https://apps.apple.com/us/app/id6831875465`
+- [日本語 (JP)](https://taxdrive-web.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-ja.html` | App Store `https://apps.apple.com/jp/app/id6831875465`
+- [Deutsch (DE)](https://taxdrive-web.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-de.html` | App Store `https://apps.apple.com/de/app/id6831875465`
+- [Español (ES)](https://taxdrive-web.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-es.html` | App Store `https://apps.apple.com/es/app/id6831875465`
+- [Français (FR)](https://taxdrive-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-fr.html` | App Store `https://apps.apple.com/fr/app/id6831875465`
+- [Italiano (IT)](https://taxdrive-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-it.html` | App Store `https://apps.apple.com/it/app/id6831875465`
+- [Português (BR)](https://taxdrive-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-pt.html` | App Store `https://apps.apple.com/br/app/id6831875465`
+
+### #2 AgriLedger (`id6798988857` — 100% Offline Farm Tax Ledger & Vision Receipt OCR)
+- Naver Official Blog (KR): https://blog.naver.com/dhlabs_official/224470502536
+- [한국어 (KR)](https://agriledger-web-iota.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-ko.html` | App Store `https://apps.apple.com/kr/app/id6798988857`
+- [English (US)](https://agriledger-web-iota.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-en.html` | App Store `https://apps.apple.com/us/app/id6798988857`
+- [日本語 (JP)](https://agriledger-web-iota.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-ja.html` | App Store `https://apps.apple.com/jp/app/id6798988857`
+- [Deutsch (DE)](https://agriledger-web-iota.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-de.html` | App Store `https://apps.apple.com/de/app/id6798988857`
+- [Español (ES)](https://agriledger-web-iota.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-es.html` | App Store `https://apps.apple.com/es/app/id6798988857`
+- [Français (FR)](https://agriledger-web-iota.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-fr.html` | App Store `https://apps.apple.com/fr/app/id6798988857`
+- [Italiano (IT)](https://agriledger-web-iota.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-it.html` | App Store `https://apps.apple.com/it/app/id6798988857`
+- [Português (BR)](https://agriledger-web-iota.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-pt.html` | App Store `https://apps.apple.com/br/app/id6798988857`
