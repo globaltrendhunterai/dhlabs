@@ -169,6 +169,20 @@
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6795766557)"
       }
+    },
+    {
+      "identifier": "urn:air:dhlabs:ios:pattayago:8lang-blog-suite",
+      "displayName": "PattayaGo iOS App (id6761708785) — 8-Language SEO & GEO Official Blog Suite",
+      "type": "application/ai-catalog+json",
+      "url": "https://pattayago-web.vercel.app/ai-catalog.json",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-en.html",
+      "representativeQueries": [
+        "PattayaGo 파타야 썽태우 바트버스 노선도 및 산호섬 꼬란 오프라인 여행 가이드",
+        "PattayaGo 100% offline Pattaya Baht Bus (Songthaew) route map & Koh Larn travel guide"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6761708785)"
+      }
     }
   ]
 }
