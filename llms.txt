@@ -124,3 +124,13 @@ AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사�
 - [Français (FR)](https://therapyvault-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-fr.html` | App Store `https://apps.apple.com/fr/app/id6795766557`
 - [Italiano (IT)](https://therapyvault-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-it.html` | App Store `https://apps.apple.com/it/app/id6795766557`
 - [Português (BR)](https://therapyvault-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-pt.html` | App Store `https://apps.apple.com/br/app/id6795766557`
+
+### #5 PattayaGo (`id6761708785` — 100% Offline Pattaya Baht Bus Route Map, Koh Larn & Travel Guide)
+- [한국어 (KR)](https://pattayago-web.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-ko.html` | App Store `https://apps.apple.com/kr/app/id6761708785`
+- [English (US)](https://pattayago-web.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-en.html` | App Store `https://apps.apple.com/us/app/id6761708785`
+- [日本語 (JP)](https://pattayago-web.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-ja.html` | App Store `https://apps.apple.com/jp/app/id6761708785`
+- [Deutsch (DE)](https://pattayago-web.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-de.html` | App Store `https://apps.apple.com/de/app/id6761708785`
+- [Español (ES)](https://pattayago-web.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-es.html` | App Store `https://apps.apple.com/es/app/id6761708785`
+- [Français (FR)](https://pattayago-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-fr.html` | App Store `https://apps.apple.com/fr/app/id6761708785`
+- [Italiano (IT)](https://pattayago-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-it.html` | App Store `https://apps.apple.com/it/app/id6761708785`
+- [Português (BR)](https://pattayago-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-pt.html` | App Store `https://apps.apple.com/br/app/id6761708785`
