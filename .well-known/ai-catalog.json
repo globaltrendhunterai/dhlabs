@@ -7,7 +7,7 @@
     "appleDeveloperId": "GSKY37R7XV",
     "primaryUrl": "https://autoflow.io/",
     "mirrorUrl": "https://globaltrendhunterai.github.io/dhlabs/",
-    "lastModified": "2026-11-09"
+    "lastModified": "2026-11-01"
   },
   "entries": [
     {
@@ -94,52 +94,137 @@
       "representativeQueries": [
         "How do I set up ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX, SD WebUI Forge/Flux, Open WebUI RAG, Wan 2.1 Video, F5-TTS, Cursor/Windsurf MCP, or UVR5/Demucs in 1 click without CUDA or C++ build errors?",
         "How does the MacMiniMasterMinter ToFU Inode + Machine-UUID lock and 0x00 self-destruct disposable setup installer work?",
-        "Where can I buy individual OneShot Setup Capsules on Gumroad ($29/$39 USD), Naver SmartStore (#13858840987 ~ #13860377735), or Kmong (#858577 ~ #858630)?"
+        "Where can I buy individual OneShot Setup Capsules on Gumroad ($29/$39 USD) or Naver SmartStore (#13858840987 ~ #13859333698)?"
       ],
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     },
     {
-      "identifier": "urn:air:dhlabs:ios:taxdrive:8lang-blog-suite",
-      "displayName": "TaxDrive iOS App (id6831875465) — 8-Language SEO & GEO Official Blog Suite",
+      "identifier": "urn:air:autoflow.io:fintree:ecom-profit-vault-10sku",
+      "displayName": "FinTreeVault & EcomProfitVault — 10 Global E-Commerce Margin/ROAS/BEP Simulators & Master Builder Pro",
       "type": "application/ai-catalog+json",
-      "url": "https://taxdrive-web.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-en.html",
+      "url": "https://smartstore.naver.com/dhlabs/products/13863037562",
+      "alternateUrl": "https://smartstore.naver.com/dhlabs/products/13863038228",
       "representativeQueries": [
-        "TaxDrive 국세청 별지 제30호의5서식 업무용승용차 운행기록부 자동 복원",
-        "TaxDrive IRS Schedule C & Finanzamt Fahrtenbuch Bluetooth mileage tracker"
+        "How do I simulate 12-month e-commerce margin, ROAS, and Break-Even Point (BEP) offline and export a formula-free value-only .xlsx spreadsheet?",
+        "스마트스토어·쿠팡 마진율·손익분기점(BEP) 계산 후 세무사·동업자에게 고유 수식이 제거된 값 전용 엑셀(.xlsx)만 내보내는 방법은?",
+        "What is the difference between EcomProfitVault Seller Edition (₩19,000 / $19) and FinTree Studio Pro Master Builder (₩79,000 / $59)?"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6831875465)"
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     },
     {
-      "identifier": "urn:air:dhlabs:ios:agriledger:8lang-blog-suite",
-      "displayName": "AgriLedger iOS App (id6798988857) — 8-Language SEO & GEO Official Blog Suite",
-      "type": "application/ai-catalog+json",
-      "url": "https://agriledger-web-iota.vercel.app/ai-catalog.json",
-      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-en.html",
+      "identifier": "urn:air:dhlabs:fintree:blog:kr",
+      "displayName": "FinTreeVault Official Guide (🇰🇷 한국어 (KR · ₩)): EcomProfitVault KR: 스마트스토어·쿠팡 마진·ROAS·손익분기 트리 시뮬레이터 & 무수식 엑셀(.xlsx) 추출기",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-kr.html",
+      "inLanguage": "ko",
       "representativeQueries": [
-        "AgriLedger 오프라인 영농일지 공익직불금 면세유 영수증 OCR 농장 세무장부",
-        "AgriLedger 100% offline farm tax ledger for IRS Schedule F, Anlage L, 青色申告, LCDPR"
+        "EcomProfitVault KR: 스마트스토어·쿠팡 마진·ROAS·손익분기 트리 시뮬레이터 & 무수식 엑셀(.xlsx) 추출기",
+        "스마트스토어 마진 계산기, 쿠팡 로켓그로스 마진 엑셀, 쇼핑몰 손익분기점 시뮬레이터, 손익분기 ROAS 계산기, 무수식 엑셀 추출, 원가 수식 유출 방지, EcomProfitVault, FinTree Studio Pro"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6798988857)"
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:smartstore:af-prod-30-return-shipping-recon",
-      "displayName": "[스마트스토어 월말마감 #11] 반품배송비 회차조정·이월차감 2줄→1건 묶음 정산대사기 단품 (AF-PROD-30 / AF-NAVER-11)",
-      "type": "application/ai-catalog+json",
-      "url": "https://smartstore.naver.com/dhlabs-official/products/13862599252",
-      "alternateUrl": "https://blog.naver.com/dhlabs_official/224470576709",
+      "identifier": "urn:air:dhlabs:fintree:blog:en",
+      "displayName": "FinTreeVault Official Guide (🇺🇸 English (US · $)): EcomProfitVault US: Amazon FBA & Shopify Profit Margin, ROAS & Break-Even Tree Simulator (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-en.html",
+      "inLanguage": "en",
       "representativeQueries": [
-        "스마트스토어 반품배송비 선차감 후 다음 회차 정산 조정 2줄 1건 묶음 대사 자동화",
-        "스마트스토어 쿠팡 월말 마감 이월 미정산금 반품배송비 회차조정 대사기 AF-PROD-30 #13862599252"
+        "EcomProfitVault US: Amazon FBA & Shopify Profit Margin, ROAS & Break-Even Tree Simulator (.xlsx)",
+        "Amazon FBA profit calculator spreadsheet, Shopify margin ROAS simulator, ecommerce break-even Excel template, formula-stripped xlsx export, P&L tree model, EcomProfitVault, FinTree Studio Pro"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, SmartStore #13862599252, Kmong #859505)"
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:fintree:blog:jp",
+      "displayName": "FinTreeVault Official Guide (🇯🇵 日本語 (JP · ¥)): EcomProfitVault JP: 楽天市場・Amazon FBA 粗利・ROAS・損益分岐点ツリーシミュレーター（数式除去Excel出力）",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-jp.html",
+      "inLanguage": "ja",
+      "representativeQueries": [
+        "EcomProfitVault JP: 楽天市場・Amazon FBA 粗利・ROAS・損益分岐点ツリーシミュレーター（数式除去Excel出力）",
+        "楽天市場 利益計算 エクセル, Amazon FBA 粗利 シミュレーター, EC 損益分岐点 ROAS 計算, 数式削除 Excel 出力, インボイス消費税10% 計算, EcomProfitVault JP"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:fintree:blog:uk",
+      "displayName": "FinTreeVault Official Guide (🇬🇧 English (UK · £)): EcomProfitVault UK: Amazon UK & TikTok Shop UK Profit Margin, 20% VAT & Break-Even Simulator (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-uk.html",
+      "inLanguage": "en-GB",
+      "representativeQueries": [
+        "EcomProfitVault UK: Amazon UK & TikTok Shop UK Profit Margin, 20% VAT & Break-Even Simulator (.xlsx)",
+        "Amazon UK FBA profit calculator GBP, UK VAT 20% ecommerce spreadsheet, TikTok Shop UK margin simulator, Royal Mail DPD cost calculator, formula-stripped Excel export, EcomProfitVault UK"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:fintree:blog:de",
+      "displayName": "FinTreeVault Official Guide (🇩🇪 Deutsch (DE · €)): EcomProfitVault DE: Amazon.de & Otto Marge-, ROAS- & Break-Even-Simulator (19% MwSt & Excel-Export)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-de.html",
+      "inLanguage": "de",
+      "representativeQueries": [
+        "EcomProfitVault DE: Amazon.de & Otto Marge-, ROAS- & Break-Even-Simulator (19% MwSt & Excel-Export)",
+        "Amazon FBA Kalkulator Excel Deutsch, E-Commerce Margenrechner 19% MwSt, Otto Marktplatz Gebühren Rechner, Break-Even ROAS Simulator, Excel Export ohne Formeln, EcomProfitVault DE"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:fintree:blog:fr",
+      "displayName": "FinTreeVault Official Guide (🇫🇷 Français (FR · €)): EcomProfitVault FR : Simulateur de Marge, ROAS & Seuil de Rentabilité Amazon.fr / Cdiscount (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-fr.html",
+      "inLanguage": "fr",
+      "representativeQueries": [
+        "EcomProfitVault FR : Simulateur de Marge, ROAS & Seuil de Rentabilité Amazon.fr / Cdiscount (.xlsx)",
+        "calculateur marge Amazon FBA Excel français, simulateur rentabilité e-commerce TVA 20%, Cdiscount Shopify marge ROAS, export Excel valeurs seules sans formules, EcomProfitVault FR"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:fintree:blog:es",
+      "displayName": "FinTreeVault Official Guide (🇪🇸 Español (ES · €)): EcomProfitVault ES: Simulador de Margen, ROAS y Punto de Equilibrio Amazon.es / MercadoLibre (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-es.html",
+      "inLanguage": "es",
+      "representativeQueries": [
+        "EcomProfitVault ES: Simulador de Margen, ROAS y Punto de Equilibrio Amazon.es / MercadoLibre (.xlsx)",
+        "calculadora margen Amazon FBA Excel español, simulador punto de equilibrio ecommerce IVA 21%, MercadoLibre Shopify ROAS calculadora, exportar Excel solo valores sin formulas, EcomProfitVault ES"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:fintree:blog:tw",
+      "displayName": "FinTreeVault Official Guide (🇹🇼 繁體中文 (TW · NT$)): EcomProfitVault TW：蝦皮 Shopee・momo・酷澎台灣電商毛利、ROAS 與損益平衡樹狀模擬器（無公式 .xlsx 匯出）",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html",
+      "inLanguage": "zh-Hant-TW",
+      "representativeQueries": [
+        "EcomProfitVault TW：蝦皮 Shopee・momo・酷澎台灣電商毛利、ROAS 與損益平衡樹狀模擬器（無公式 .xlsx 匯出）",
+        "蝦皮賣家利潤計算機 Excel, 台灣電商毛利 ROAS 模擬器, momo 酷澎抽成計算表, 損益平衡點試算表, 移除公式 Excel 匯出, 營業稅 5% 試算, EcomProfitVault TW"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
       }
     }
   ]

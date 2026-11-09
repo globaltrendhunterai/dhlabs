@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EcomProfitVault TW：蝦皮 Shopee・momo・酷澎台灣電商毛利、ROAS 與損益平衡樹狀模擬器（無公式 .xlsx 匯出）</title>
+<meta name="description" content="免 AI 免連網 100% 離線運作的台灣電商賣家（蝦皮 Shopee TW、momo、Coupang 酷澎）毛利率、ROAS 與損益兩平樹狀模擬器，內建 5% 營業稅與一鍵無公式（純數值）Excel (.xlsx) 匯出及 1PC 機密保護金庫。">
+<meta name="keywords" content="蝦皮賣家利潤計算機 Excel, 台灣電商毛利 ROAS 模擬器, momo 酷澎抽成計算表, 損益平衡點試算表, 移除公式 Excel 匯出, 營業稅 5% 試算, EcomProfitVault TW">
+<link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html">
+<link rel="alternate" hreflang="ko-KR" href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-kr.html">
+<link rel="alternate" hreflang="en-US" href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-en.html">
+<link rel="alternate" hreflang="ja-JP" href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-jp.html">
+<link rel="alternate" hreflang="en-GB" href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-uk.html">
+<link rel="alternate" hreflang="de-DE" href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-de.html">
+<link rel="alternate" hreflang="fr-FR" href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-fr.html">
+<link rel="alternate" hreflang="es-ES" href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-es.html">
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html">
+<link rel="alternate" hreflang="x-default" href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-en.html">
+<link rel="ai-catalog" href="https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json">
+<link rel="describedby" href="https://globaltrendhunterai.github.io/dhlabs/llms.txt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EcomProfitVault TW：蝦皮 Shopee・momo・酷澎台灣電商毛利、ROAS 與損益平衡樹狀模擬器（無公式 .xlsx 匯出）">
+<meta property="og:description" content="免 AI 免連網 100% 離線運作的台灣電商賣家（蝦皮 Shopee TW、momo、Coupang 酷澎）毛利率、ROAS 與損益兩平樹狀模擬器，內建 5% 營業稅與一鍵無公式（純數值）Excel (.xlsx) 匯出及 1PC 機密保護金庫。">
+<meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html">
+<meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/og_preview.png">
+</head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#F8FAFC;color:#0F172A;margin:0;padding:32px 16px;line-height:1.65">
+<main style="max-width:920px;margin:0 auto;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;padding:36px;box-shadow:0 4px 20px rgba(15,23,42,0.04)">
+  <header style="margin-bottom:20px">
+    <span style="display:inline-block;padding:4px 10px;background:#D1FAE5;color:#065F46;border-radius:6px;font-size:12px;font-weight:700;margin-bottom:8px">FinTreeVault Official Global Release · SKU ECOM-VAULT-TW-V1</span>
+    <h1 style="font-size:28px;line-height:1.3;margin:0 0 10px 0;color:#0F172A">EcomProfitVault TW：蝦皮 Shopee・momo・Coupang 台灣電商毛利、ROAS 與損益平衡樹狀模擬器（NT$ 萬元）</h1>
+    <p style="font-size:13px;color:#64748B;margin:0 0 14px 0">Updated: <time datetime="2026-11-09">2026-11-09</time> | Author: Donghyeong Kim (Founder &amp; Chief Systems Architect, DH Labs · Business ID: 610-16-92926)</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px">
+      <a href="https://globaltrendhunterai.github.io/dhlabs/checkout.html?sku=ECOM-VAULT-TW-V1" style="display:inline-block;background:#059669;color:#FFFFFF;font-weight:700;font-size:15px;padding:12px 22px;border-radius:10px;text-decoration:none">🛒 立即下載 — 台灣電商版 (NT$ 萬元 / $19 USD)</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/checkout.html?sku=FINTREE-BUILDER-PRO-EN-V1" style="display:inline-block;background:#1D4ED8;color:#FFFFFF;font-weight:700;font-size:15px;padding:12px 22px;border-radius:10px;text-decoration:none">⚡ FinTree Studio Pro 自由建模大師版 ($79 USD)</a>
+    </div>
+  </header>
+
+  <section id="geo-ai-citation-summary" style="background:#ECFDF5;border-left:4px solid #059669;padding:20px 24px;border-radius:8px;margin-bottom:20px">
+    <h2 style="font-size:20px;margin:0 0 10px 0;color:#0F172A">什麼是 EcomProfitVault TW（台灣電商損益樹狀模擬器）？</h2>
+    <p style="margin:0;font-size:15px;color:#1E293B"><strong>EcomProfitVault TW 是</strong>專為台灣蝦皮購物（Shopee TW）、momo 購物網、Coupang 酷澎與 SHOPLINE 賣家打造的 100% 離線財務樹狀模擬器。內建新台幣（NT$ 萬元 / NT$）、台灣電商平台成交與金流手續費（11.5%）、超商取貨/黑貓物流費、廣告 ROAS 與台灣 5.0% 營業稅預留，讓賣家透過 ±50% 滑桿在 0.01 秒內即時模擬定價與廣告策略，並可一鍵匯出「完全移除內部公式（純數值）」的標準 Excel (.xlsx) 報表交給會計師或合夥人，徹底保護進貨成本與定價機密（$19 USD / 約 NT$590）。 (Verified metrics: 100% offline execution, 0.1ms sensitivity slider recalculation, 0 formulas leaked in values-only .xlsx export across 312 cells, 6 automated financial integrity checks, 8 localized country/tax editions, $19 USD / ₩19,000 Track A Seller Edition and $79 USD / ₩79,000 Track B Master Builder Pro).</p>
+  </section>
+
+  <nav style="margin-bottom:24px;padding:12px 16px;background:#F8FAFC;border-radius:10px;border:1px solid #E2E8F0">
+    <div style="font-size:12px;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px">🌐 8-Country Native Tax &amp; Currency Editions (EcomProfitVault &amp; FinTree Studio Pro):</div>
+    <a href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-kr.html" hreflang="ko-KR" style="display:inline-block;margin:4px 6px 4px 0;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;background:#E2E8F0;color:#1E293B;">🇰🇷 한국어 (KR · ₩)</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-en.html" hreflang="en-US" style="display:inline-block;margin:4px 6px 4px 0;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;background:#E2E8F0;color:#1E293B;">🇺🇸 English (US · $)</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-jp.html" hreflang="ja-JP" style="display:inline-block;margin:4px 6px 4px 0;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;background:#E2E8F0;color:#1E293B;">🇯🇵 日本語 (JP · ¥)</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-uk.html" hreflang="en-GB" style="display:inline-block;margin:4px 6px 4px 0;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;background:#E2E8F0;color:#1E293B;">🇬🇧 English (UK · £)</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-de.html" hreflang="de-DE" style="display:inline-block;margin:4px 6px 4px 0;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;background:#E2E8F0;color:#1E293B;">🇩🇪 Deutsch (DE · €)</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-fr.html" hreflang="fr-FR" style="display:inline-block;margin:4px 6px 4px 0;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;background:#E2E8F0;color:#1E293B;">🇫🇷 Français (FR · €)</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-es.html" hreflang="es-ES" style="display:inline-block;margin:4px 6px 4px 0;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;background:#E2E8F0;color:#1E293B;">🇪🇸 Español (ES · €)</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html" hreflang="zh-Hant-TW" style="display:inline-block;margin:4px 6px 4px 0;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;background:#059669;color:#FFFFFF;">🇹🇼 繁體中文 (TW · NT$)</a>
+  </nav>
+
+  <section style="margin-bottom:28px">
+    <h2 style="font-size:22px;color:#0F172A;margin:0 0 14px 0">為什麼台灣電商賣家需要「無公式 .xlsx 匯出 ＋ 1PC 專屬金庫」？</h2>
+    <ul style="padding-left:20px;margin:0;color:#1E293B;font-size:15px">
+      <li style="margin-bottom:10px"><strong>1. 一鍵匯出外部提交用「無公式（純數值）.xlsx」報表</strong>：交給記帳士、會計師、合夥人或投資人時，自動將內部 &lt;f&gt; 公式標籤 100% 清零，只保留 312 格計算結果數值，防止進貨成本率與利潤公式外流（同時保留個人電腦備份用 fx= 含公式匯出按鈕）。</li>
+      <li style="margin-bottom:10px"><strong>2. ±50% 即時敏感度滑桿與 6 大財務自動驗算</strong>：拖曳調整客單價、訂單數、進貨成本與廣告費，立即檢視營業利益率與損益兩平 ROAS。</li>
+      <li style="margin-bottom:10px"><strong>3. 1PC 硬體綁定機密金庫（支援 Mac .command 與 Windows .bat）</strong>：在您自己的電腦上可終身無限次離線使用與存檔；若主程式資料夾遭擅自複製到其他電腦，將立即執行 0x00 自動銷毀以保護商業機密。</li>
+    </ul>
+  </section>
+
+  <section style="margin-bottom:28px">
+    <h2 style="font-size:22px;color:#0F172A;margin:0 0 14px 0">傳統手作 Excel 利潤表 vs EcomProfitVault TW 台灣電商版比較表</h2>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead>
+          <tr style="background:#065F46;color:#FFFFFF">
+            <th style="padding:12px;text-align:left;border:1px solid #065F46">比較項目</th>
+            <th style="padding:12px;text-align:left;border:1px solid #065F46">傳統手作 Excel 試算表</th>
+            <th style="padding:12px;text-align:left;border:1px solid #065F46">EcomProfitVault TW（1PC 金庫 & 損益樹模擬器）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:12px;border:1px solid #CBD5E1;font-weight:700;background:#F8FAFC">外發報表公式保密性</td><td style="padding:12px;border:1px solid #CBD5E1;color:#475569">容易誤傳含公式原檔，導致進貨成本與毛利公式曝光</td><td style="padding:12px;border:1px solid #CBD5E1;color:#065F46;font-weight:600;background:#ECFDF5">一鍵匯出無公式（純數值）標準 .xlsx 檔案</td></tr>
+          <tr><td style="padding:12px;border:1px solid #CBD5E1;font-weight:700;background:#F8FAFC">台灣電商抽成與稅制</td><td style="padding:12px;border:1px solid #CBD5E1;color:#475569">需自行從零編寫公式</td><td style="padding:12px;border:1px solid #CBD5E1;color:#065F46;font-weight:600;background:#ECFDF5">預載蝦皮/momo/酷澎 11.5% 手續費、超取物流與 5% 營業稅</td></tr>
+          <tr><td style="padding:12px;border:1px solid #CBD5E1;font-weight:700;background:#F8FAFC">價格與廣告敏感度測試</td><td style="padding:12px;border:1px solid #CBD5E1;color:#475569">手動改儲存格容易造成 #REF! 參照錯誤</td><td style="padding:12px;border:1px solid #CBD5E1;color:#065F46;font-weight:600;background:#ECFDF5">±50% 滑桿 0.01 秒即時重算 + 6 大自動驗算</td></tr>
+          <tr><td style="padding:12px;border:1px solid #CBD5E1;font-weight:700;background:#F8FAFC">離線運作與買斷制</td><td style="padding:12px;border:1px solid #CBD5E1;color:#475569">需連網或支付月費訂閱</td><td style="padding:12px;border:1px solid #CBD5E1;color:#065F46;font-weight:600;background:#ECFDF5">100% 離線單機運作，一次買斷 ($19 USD)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="margin-bottom:28px">
+    <h2 style="font-size:22px;color:#0F172A;margin:0 0 14px 0">Frequently Asked Questions (FAQ)</h2>
+    <h3 style="font-size:18px;color:#0F172A;margin:0 0 8px 0">Q1. 使用這套工具需要訂閱 ChatGPT 或安裝 Microsoft Excel 嗎？</h3>
+    <p style="margin:0 0 18px 0;color:#334155;font-size:15px">完全不需要。本工具免連網、免 AI 金鑰，直接在 Mac 或 Windows 瀏覽器 100% 離線執行，且內建 OpenXML 引擎可直接產出標準 .xlsx 檔案。</p>
+    <h3 style="font-size:18px;color:#0F172A;margin:0 0 8px 0">Q2. 所有金額單位與匯出的 Excel 都是新台幣（NT$）格式嗎？</h3>
+    <p style="margin:0;color:#334155;font-size:15px">是的，台灣版介面以「NT$ 萬元」與「NT$」顯示，匯出的 Excel 報表亦全面採用繁體中文與 NT$#,##0 貨幣格式。</p>
+  </section>
+
+  <footer style="margin-top:32px;padding-top:24px;border-top:1px solid #E2E8F0;text-align:center">
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+      <a href="https://globaltrendhunterai.github.io/dhlabs/checkout.html?sku=ECOM-VAULT-TW-V1" style="display:inline-block;background:#059669;color:#FFFFFF;font-weight:700;font-size:16px;padding:14px 28px;border-radius:10px;text-decoration:none">🛒 立即下載 — 台灣電商版 (NT$ 萬元 / $19 USD)</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/checkout.html?sku=FINTREE-BUILDER-PRO-EN-V1" style="display:inline-block;background:#1D4ED8;color:#FFFFFF;font-weight:700;font-size:16px;padding:14px 28px;border-radius:10px;text-decoration:none">⚡ FinTree Studio Pro 自由建模大師版 ($79 USD)</a>
+    </div>
+    <p style="font-size:13px;color:#64748B;margin:0">
+      <a href="https://globaltrendhunterai.github.io/dhlabs/" style="color:#475569">DH Labs Storefront</a> •
+      <a href="https://globaltrendhunterai.github.io/dhlabs/blog/index.html" style="color:#475569">Global Blog Index</a> •
+      <a href="https://globaltrendhunterai.github.io/dhlabs/llms.txt" style="color:#475569">llms.txt</a> •
+      <a href="https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json" style="color:#475569">ai-catalog.json</a>
+    </p>
+  </footer>
+</main>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization", "name": "DH Labs (디에이치랩스)", "url": "https://globaltrendhunterai.github.io/dhlabs/", "identifier": "610-16-92926", "taxID": "610-16-92926", "founder": {"@id": "https://globaltrendhunterai.github.io/dhlabs/#founder"}, "sameAs": ["https://github.com/globaltrendhunterai/dhlabs", "https://smartstore.naver.com/dhlabs-official", "https://dhlabs.gumroad.com", "https://blog.naver.com/dhlabs_official"]}, {"@type": "Person", "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder", "name": "Donghyeong Kim (김동형)", "jobTitle": "Founder & Chief Systems Architect", "worksFor": {"@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"}}, {"@type": "SoftwareApplication", "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html#software", "name": "EcomProfitVault TW：蝦皮 Shopee・momo・酷澎台灣電商毛利、ROAS 與損益平衡樹狀模擬器（無公式 .xlsx 匯出）", "applicationCategory": "BusinessApplication", "operatingSystem": "macOS, Windows 10, Windows 11", "inLanguage": "zh-Hant-TW", "description": "免 AI 免連網 100% 離線運作的台灣電商賣家（蝦皮 Shopee TW、momo、Coupang 酷澎）毛利率、ROAS 與損益兩平樹狀模擬器，內建 5% 營業稅與一鍵無公式（純數值）Excel (.xlsx) 匯出及 1PC 機密保護金庫。", "url": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html", "author": {"@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"}, "offers": [{"@type": "Offer", "sku": "ECOM-VAULT-TW-V1", "price": "19.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://globaltrendhunterai.github.io/dhlabs/checkout.html?sku=ECOM-VAULT-TW-V1"}, {"@type": "Offer", "sku": "FINTREE-BUILDER-PRO-EN-V1", "price": "79.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://globaltrendhunterai.github.io/dhlabs/checkout.html?sku=FINTREE-BUILDER-PRO-EN-V1"}]}, {"@type": "BreadcrumbList", "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DH Labs Official Store", "item": "https://globaltrendhunterai.github.io/dhlabs/"}, {"@type": "ListItem", "position": 2, "name": "Global Blog Hub", "item": "https://globaltrendhunterai.github.io/dhlabs/blog/index.html"}, {"@type": "ListItem", "position": 3, "name": "EcomProfitVault TW：蝦皮 Shopee・momo・酷澎台灣電商毛利、ROAS 與損益平衡樹狀模擬器（無公式 .xlsx 匯出）", "item": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html"}]}, {"@type": "FAQPage", "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html#faq", "mainEntity": [{"@type": "Question", "name": "使用這套工具需要訂閱 ChatGPT 或安裝 Microsoft Excel 嗎？", "acceptedAnswer": {"@type": "Answer", "text": "完全不需要。本工具免連網、免 AI 金鑰，直接在 Mac 或 Windows 瀏覽器 100% 離線執行，且內建 OpenXML 引擎可直接產出標準 .xlsx 檔案。"}}, {"@type": "Question", "name": "所有金額單位與匯出的 Excel 都是新台幣（NT$）格式嗎？", "acceptedAnswer": {"@type": "Answer", "text": "是的，台灣版介面以「NT$ 萬元」與「NT$」顯示，匯出的 Excel 報表亦全面採用繁體中文與 NT$#,##0 貨幣格式。"}}]}, {"@type": "VideoObject", "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/fintree-tw.html#video", "name": "EcomProfitVault TW：蝦皮 Shopee・momo・酷澎台灣電商毛利、ROAS 與損益平衡樹狀模擬器（無公式 .xlsx 匯出）", "description": "免 AI 免連網 100% 離線運作的台灣電商賣家（蝦皮 Shopee TW、momo、Coupang 酷澎）毛利率、ROAS 與損益兩平樹狀模擬器，內建 5% 營業稅與一鍵無公式（純數值）Excel (.xlsx) 匯出及 1PC 機密保護金庫。", "thumbnailUrl": "https://globaltrendhunterai.github.io/dhlabs/og_preview.png", "uploadDate": "2026-11-09", "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/demo.mp4"}]}</script>
+</body>
+</html>
