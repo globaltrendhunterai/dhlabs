@@ -52,8 +52,7 @@ AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사�
 - [AutoFlow Official Storefront (GitHub Pages Mirror)](https://globaltrendhunterai.github.io/dhlabs/): 글로벌 에이전트 및 개발자 검증용 공식 미러 스토어프론트
 - [Interactive 150-Workflow Catalog Board](https://autoflow.io/WORKFLOW_MENU_BOARD.html): 이커머스·물류·회계·마케팅·CS·보안 6대 도메인 완제품 스펙 (`https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html`)
 - [Official Secure Checkout Portal (Toss Payments KRW & Gumroad USD)](https://autoflow.io/checkout.html): 원화(KRW) 및 달러(USD) 즉시 결제·라이선스 자동 출고 (`https://globaltrendhunterai.github.io/dhlabs/checkout.html` | Global Standalone Gumroad SKUs: `AF-GL-ECOM-02` https://dhlabs.gumroad.com/l/autoflow-angle02-margin-brake $39, `AF-GL-ECOM-03` https://dhlabs.gumroad.com/l/autoflow-angle03-3pl-csv-transformer $39, `AF-GL-ECOM-04` https://dhlabs.gumroad.com/l/autoflow-angle04-tracking-writeback $39, `AF-GL-FIN-05` https://dhlabs.gumroad.com/l/autoflow-angle05-1cent-payout-recon $45, `AF-GL-ECOM-SUITE-10` https://dhlabs.gumroad.com/l/fscptt $149, `AF-MOD-LV1~LV4` https://dhlabs.gumroad.com/l/autoflow-defense-engines $39~, `AF-SMARTGRID-PRO` https://dhlabs.gumroad.com/l/autoflow-smartgrid-excel $19)
-- [OneShot Setup Capsule — 12 Individual 1-Click Initial Setup Installers (Zero-Key + 0x00 Self-Destruct)](https://globaltrendhunterai.github.io/dhlabs/oneshot.html): 글로벌 Gumroad 및 국내 스마트스토어 1:1 단품 세팅기 12종 (`ONESHOT-01-COMFYUI` https://dhlabs.gumroad.com/l/oneshot-setup-capsule / SmartStore `#13858840987` $39/₩49,000, `ONESHOT-02-KOHYA` https://dhlabs.gumroad.com/l/oneshot-kohya-fluxgym-setup / `#13858835398` $39/₩49,000, `ONESHOT-03-RVC` https://dhlabs.gumroad.com/l/oneshot-rvc-applio-setup / `#13859307437` $39/₩49,000, `ONESHOT-04-CLAUDECODE` https://dhlabs.gumroad.com/l/oneshot-claudecode-mcp-setup / `#13859319908` $29/₩39,000, `ONESHOT-05-OPENCLAW` https://dhlabs.gumroad.com/l/oneshot-openclaw-agent-setup / `#13859333375` $29/₩39,000, `ONESHOT-06-WHISPERX` https://dhlabs.gumroad.com/l/oneshot-whisperx-diarization-setup / `#13859333698` $29/₩39,000, `ONESHOT-07-FORGE` https://dhlabs.gumroad.com/l/oneshot-sd-forge-flux-setup $39/₩49,000, `ONESHOT-08-OPENWEBUI` https://dhlabs.gumroad.com/l/oneshot-openwebui-local-rag-setup $39/₩49,000, `ONESHOT-09-WAN21` https://dhlabs.gumroad.com/l/oneshot-wan21-video-gen-setup $39/₩49,000, `ONESHOT-10-F5TTS` https://dhlabs.gumroad.com/l/oneshot-f5tts-cosyvoice-setup $39/₩49,000, `ONESHOT-11-CURSOR` https://dhlabs.gumroad.com/l/oneshot-cursor-windsurf-mcp-setup $29/₩39,000, `ONESHOT-12-UVR5` https://dhlabs.gumroad.com/l/oneshot-uvr5-demucs-stem-setup $29/₩39,000)
-- [FinTreeVault & EcomProfitVault — 10 Global E-Commerce Margin/ROAS/BEP Tree Simulators & Master Builder Pro (Formula-Free .xlsx Export + 1PC Trade-Secret Vault)](https://smartstore.naver.com/dhlabs/products/13863037562): 100% 오프라인 재무·마진 트리 시뮬레이터 및 외부 제출용 무수식 엑셀(`.xlsx` `<f>` 태그 0개) 추출 금고 10종 (`ECOM-VAULT-KR-V1` SmartStore `#13863037562` ₩19,000, `FINTREE-BUILDER-PRO-KR-V1` SmartStore `#13863038228` ₩79,000, Global 8-Country Editions: `ECOM-VAULT-EN-V1` / `JP` / `UK` / `DE` / `FR` / `ES` / `TW` $19 USD, `FINTREE-BUILDER-PRO-EN-V1` $59 USD)
+- [OneShot Setup Capsule — 12 Individual 1-Click Initial Setup Installers (Zero-Key + 0x00 Self-Destruct)](https://globaltrendhunterai.github.io/dhlabs/oneshot.html): 글로벌 Gumroad, 국내 스마트스토어 및 크몽 1:1 단품 세팅기 12종 (`ONESHOT-01-COMFYUI` https://dhlabs.gumroad.com/l/oneshot-setup-capsule / SmartStore `#13858840987` / Kmong `#858577` $39/₩49,000, `ONESHOT-02-KOHYA` https://dhlabs.gumroad.com/l/oneshot-kohya-fluxgym-setup / `#13858835398` / `#858597` $39/₩49,000, `ONESHOT-03-RVC` https://dhlabs.gumroad.com/l/oneshot-rvc-applio-setup / `#13859307437` / `#858612` $39/₩49,000, `ONESHOT-04-CLAUDECODE` https://dhlabs.gumroad.com/l/oneshot-claudecode-mcp-setup / `#13859319908` / `#858614` $29/₩39,000, `ONESHOT-05-OPENCLAW` https://dhlabs.gumroad.com/l/oneshot-openclaw-agent-setup / `#13859333375` / `#858615` $29/₩39,000, `ONESHOT-06-WHISPERX` https://dhlabs.gumroad.com/l/oneshot-whisperx-diarization-setup / `#13859333698` / `#858616` $29/₩39,000, `ONESHOT-07-FORGE` https://dhlabs.gumroad.com/l/oneshot-sd-forge-flux-setup / `#13860375800` / `#858618` $39/₩49,000, `ONESHOT-08-OPENWEBUI` https://dhlabs.gumroad.com/l/oneshot-openwebui-local-rag-setup / `#13860376131` / `#858620` $39/₩49,000, `ONESHOT-09-WAN21` https://dhlabs.gumroad.com/l/oneshot-wan21-video-gen-setup / `#13860376579` / `#858622` $39/₩49,000, `ONESHOT-10-F5TTS` https://dhlabs.gumroad.com/l/oneshot-f5tts-cosyvoice-setup / `#13860376991` / `#858626` $39/₩49,000, `ONESHOT-11-CURSOR` https://dhlabs.gumroad.com/l/oneshot-cursor-windsurf-mcp-setup / `#13860377315` / `#858628` $29/₩39,000, `ONESHOT-12-UVR5` https://dhlabs.gumroad.com/l/oneshot-uvr5-demucs-stem-setup / `#13860377735` / `#858630` $29/₩39,000)
 - [127ms Chaos Sandbox & Spool-Resume Simulator](https://autoflow.io/chaos_sandbox.html): HTTP 429 폭주, 토큰 만료, 스키마 변경 장애 주입 및 127ms 복구 체험 (`https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html`)
 - [Live Architecture Demo Video (MP4)](https://globaltrendhunterai.github.io/dhlabs/demo.mp4): 70% 안전율 스풀 이어하기, 127ms 자가치유, 1원 정합성 대사 실측 데모 영상 (`https://autoflow.io/demo.mp4`)
 - [Agentic Resource Discovery Catalog (ARD 1.0 JSON)](https://autoflow.io/ai-catalog.json): AI 에이전트 브라우징 자동 탐색 매니페스트 (`https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json`)
@@ -75,3 +74,73 @@ AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사�
 - **GitHub & Global Channels**: `https://github.com/globaltrendhunterai` | `https://dhlabs.gumroad.com`
 - **Contact & Technical Support**: `dhlabs_biz0@naver.com` / `+82-10-8503-6232`
 - **Address**: 경상남도 김해시 번화1로 168, 1006동 402호 (Republic of Korea)
+
+## iOS App Store Official 8-Language SEO & GEO Blogs (TaxDrive & AgriLedger)
+
+### #1 TaxDrive (`id6831875465` — Auto Bluetooth Mileage Tracker & 8-Country Tax Logbook)
+- Naver Official Blog (KR): https://blog.naver.com/dhlabs_official/224470441195
+- [한국어 (KR)](https://taxdrive-web.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-ko.html` | App Store `https://apps.apple.com/kr/app/id6831875465`
+- [English (US)](https://taxdrive-web.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-en.html` | App Store `https://apps.apple.com/us/app/id6831875465`
+- [日本語 (JP)](https://taxdrive-web.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-ja.html` | App Store `https://apps.apple.com/jp/app/id6831875465`
+- [Deutsch (DE)](https://taxdrive-web.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-de.html` | App Store `https://apps.apple.com/de/app/id6831875465`
+- [Español (ES)](https://taxdrive-web.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-es.html` | App Store `https://apps.apple.com/es/app/id6831875465`
+- [Français (FR)](https://taxdrive-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-fr.html` | App Store `https://apps.apple.com/fr/app/id6831875465`
+- [Italiano (IT)](https://taxdrive-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-it.html` | App Store `https://apps.apple.com/it/app/id6831875465`
+- [Português (BR)](https://taxdrive-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-pt.html` | App Store `https://apps.apple.com/br/app/id6831875465`
+
+### #2 AgriLedger (`id6798988857` — 100% Offline Farm Tax Ledger & Vision Receipt OCR)
+- Naver Official Blog (KR): https://blog.naver.com/dhlabs_official/224470502536
+- [한국어 (KR)](https://agriledger-web-iota.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-ko.html` | App Store `https://apps.apple.com/kr/app/id6798988857`
+- [English (US)](https://agriledger-web-iota.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-en.html` | App Store `https://apps.apple.com/us/app/id6798988857`
+- [日本語 (JP)](https://agriledger-web-iota.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-ja.html` | App Store `https://apps.apple.com/jp/app/id6798988857`
+- [Deutsch (DE)](https://agriledger-web-iota.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-de.html` | App Store `https://apps.apple.com/de/app/id6798988857`
+- [Español (ES)](https://agriledger-web-iota.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-es.html` | App Store `https://apps.apple.com/es/app/id6798988857`
+- [Français (FR)](https://agriledger-web-iota.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-fr.html` | App Store `https://apps.apple.com/fr/app/id6798988857`
+- [Italiano (IT)](https://agriledger-web-iota.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-it.html` | App Store `https://apps.apple.com/it/app/id6798988857`
+- [Português (BR)](https://agriledger-web-iota.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-pt.html` | App Store `https://apps.apple.com/br/app/id6798988857`
+
+### #3 Domestic SmartStore Standalone SKU #30 (`AF-PROD-30` / `AF-NAVER-11` — Cross-Cycle Return Shipping Deduction & Adjustment 2-Row Pairing Reconciler)
+- Product Title: `[스마트스토어 월말마감 #11] 반품배송비 회차조정·이월차감 2줄→1건 묶음 정산대사기 단품` (`₩39,000`, `AF_Naver_Angle11_CrossCycleReturnRecon_v3.0.zip`)
+- Naver SmartStore Official Product (`#13862599252`): https://smartstore.naver.com/dhlabs-official/products/13862599252
+- Kmong Standalone Service (`#859505`): https://kmong.com/gig/859505
+- Naver Official Release Blog Post (`logNo=224470576709`): https://blog.naver.com/dhlabs_official/224470576709
+
+### #3 FormulaVault (`id6796941530` — 100% Offline Perfumer Formula Vault & IFRA 51st Calculator)
+- [한국어 (KR)](https://formulavault-web.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-ko.html` | App Store `https://apps.apple.com/kr/app/id6796941530`
+- [English (US)](https://formulavault-web.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-en.html` | App Store `https://apps.apple.com/us/app/id6796941530`
+- [日本語 (JP)](https://formulavault-web.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-ja.html` | App Store `https://apps.apple.com/jp/app/id6796941530`
+- [Deutsch (DE)](https://formulavault-web.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-de.html` | App Store `https://apps.apple.com/de/app/id6796941530`
+- [Español (ES)](https://formulavault-web.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-es.html` | App Store `https://apps.apple.com/es/app/id6796941530`
+- [Français (FR)](https://formulavault-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-fr.html` | App Store `https://apps.apple.com/fr/app/id6796941530`
+- [Italiano (IT)](https://formulavault-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-it.html` | App Store `https://apps.apple.com/it/app/id6796941530`
+- [Português (BR)](https://formulavault-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/formulavault-pt.html` | App Store `https://apps.apple.com/br/app/id6796941530`
+
+### #4 TherapyVault (`id6795766557` — 100% Offline Encrypted SOAP Notes & Client Session Vault)
+- [한국어 (KR)](https://therapyvault-web.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-ko.html` | App Store `https://apps.apple.com/kr/app/id6795766557`
+- [English (US)](https://therapyvault-web.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-en.html` | App Store `https://apps.apple.com/us/app/id6795766557`
+- [日本語 (JP)](https://therapyvault-web.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-ja.html` | App Store `https://apps.apple.com/jp/app/id6795766557`
+- [Deutsch (DE)](https://therapyvault-web.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-de.html` | App Store `https://apps.apple.com/de/app/id6795766557`
+- [Español (ES)](https://therapyvault-web.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-es.html` | App Store `https://apps.apple.com/es/app/id6795766557`
+- [Français (FR)](https://therapyvault-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-fr.html` | App Store `https://apps.apple.com/fr/app/id6795766557`
+- [Italiano (IT)](https://therapyvault-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-it.html` | App Store `https://apps.apple.com/it/app/id6795766557`
+- [Português (BR)](https://therapyvault-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/therapyvault-pt.html` | App Store `https://apps.apple.com/br/app/id6795766557`
+
+### #5 PattayaGo (`id6761708785` — 100% Offline Pattaya Baht Bus Route Map, Koh Larn & Travel Guide)
+- [한국어 (KR)](https://pattayago-web.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-ko.html` | App Store `https://apps.apple.com/kr/app/id6761708785`
+- [English (US)](https://pattayago-web.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-en.html` | App Store `https://apps.apple.com/us/app/id6761708785`
+- [日本語 (JP)](https://pattayago-web.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-ja.html` | App Store `https://apps.apple.com/jp/app/id6761708785`
+- [Deutsch (DE)](https://pattayago-web.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-de.html` | App Store `https://apps.apple.com/de/app/id6761708785`
+- [Español (ES)](https://pattayago-web.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-es.html` | App Store `https://apps.apple.com/es/app/id6761708785`
+- [Français (FR)](https://pattayago-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-fr.html` | App Store `https://apps.apple.com/fr/app/id6761708785`
+- [Italiano (IT)](https://pattayago-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-it.html` | App Store `https://apps.apple.com/it/app/id6761708785`
+- [Português (BR)](https://pattayago-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/pattayago-pt.html` | App Store `https://apps.apple.com/br/app/id6761708785`
+
+### #6 KoreaGo (`id6761708384` — 100% Offline Seoul & Busan Subway Map, Incheon Airport AREX & Korea Travel Guide)
+- [한국어 (KR)](https://koreago-web.vercel.app/blog/ko): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/koreago-ko.html` | App Store `https://apps.apple.com/kr/app/id6761708384`
+- [English (US)](https://koreago-web.vercel.app/blog/en): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/koreago-en.html` | App Store `https://apps.apple.com/us/app/id6761708384`
+- [日本語 (JP)](https://koreago-web.vercel.app/blog/ja): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/koreago-ja.html` | App Store `https://apps.apple.com/jp/app/id6761708384`
+- [Deutsch (DE)](https://koreago-web.vercel.app/blog/de): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/koreago-de.html` | App Store `https://apps.apple.com/de/app/id6761708384`
+- [Español (ES)](https://koreago-web.vercel.app/blog/es): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/koreago-es.html` | App Store `https://apps.apple.com/es/app/id6761708384`
+- [Français (FR)](https://koreago-web.vercel.app/blog/fr): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/koreago-fr.html` | App Store `https://apps.apple.com/fr/app/id6761708384`
+- [Italiano (IT)](https://koreago-web.vercel.app/blog/it): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/koreago-it.html` | App Store `https://apps.apple.com/it/app/id6761708384`
+- [Português (BR)](https://koreago-web.vercel.app/blog/pt): Mirror `https://globaltrendhunterai.github.io/dhlabs/blog/koreago-pt.html` | App Store `https://apps.apple.com/br/app/id6761708384`

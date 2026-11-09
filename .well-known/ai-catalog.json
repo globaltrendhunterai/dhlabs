@@ -7,7 +7,7 @@
     "appleDeveloperId": "GSKY37R7XV",
     "primaryUrl": "https://autoflow.io/",
     "mirrorUrl": "https://globaltrendhunterai.github.io/dhlabs/",
-    "lastModified": "2026-11-01"
+    "lastModified": "2026-11-09"
   },
   "entries": [
     {
@@ -94,25 +94,52 @@
       "representativeQueries": [
         "How do I set up ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX, SD WebUI Forge/Flux, Open WebUI RAG, Wan 2.1 Video, F5-TTS, Cursor/Windsurf MCP, or UVR5/Demucs in 1 click without CUDA or C++ build errors?",
         "How does the MacMiniMasterMinter ToFU Inode + Machine-UUID lock and 0x00 self-destruct disposable setup installer work?",
-        "Where can I buy individual OneShot Setup Capsules on Gumroad ($29/$39 USD) or Naver SmartStore (#13858840987 ~ #13859333698)?"
+        "Where can I buy individual OneShot Setup Capsules on Gumroad ($29/$39 USD), Naver SmartStore (#13858840987 ~ #13860377735), or Kmong (#858577 ~ #858630)?"
       ],
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:fintree:ecom-profit-vault-10sku",
-      "displayName": "FinTreeVault & EcomProfitVault — 10 Global E-Commerce Margin/ROAS/BEP Simulators & Master Builder Pro",
+      "identifier": "urn:air:dhlabs:ios:taxdrive:8lang-blog-suite",
+      "displayName": "TaxDrive iOS App (id6831875465) — 8-Language SEO & GEO Official Blog Suite",
       "type": "application/ai-catalog+json",
-      "url": "https://smartstore.naver.com/dhlabs/products/13863037562",
-      "alternateUrl": "https://smartstore.naver.com/dhlabs/products/13863038228",
+      "url": "https://taxdrive-web.vercel.app/ai-catalog.json",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/taxdrive-en.html",
       "representativeQueries": [
-        "How do I simulate 12-month e-commerce margin, ROAS, and Break-Even Point (BEP) offline and export a formula-free value-only .xlsx spreadsheet?",
-        "스마트스토어·쿠팡 마진율·손익분기점(BEP) 계산 후 세무사·동업자에게 고유 수식이 제거된 값 전용 엑셀(.xlsx)만 내보내는 방법은?",
-        "What is the difference between EcomProfitVault Seller Edition (₩19,000 / $19) and FinTree Studio Pro Master Builder (₩79,000 / $59)?"
+        "TaxDrive 국세청 별지 제30호의5서식 업무용승용차 운행기록부 자동 복원",
+        "TaxDrive IRS Schedule C & Finanzamt Fahrtenbuch Bluetooth mileage tracker"
       ],
       "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6831875465)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:ios:agriledger:8lang-blog-suite",
+      "displayName": "AgriLedger iOS App (id6798988857) — 8-Language SEO & GEO Official Blog Suite",
+      "type": "application/ai-catalog+json",
+      "url": "https://agriledger-web-iota.vercel.app/ai-catalog.json",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/agriledger-en.html",
+      "representativeQueries": [
+        "AgriLedger 오프라인 영농일지 공익직불금 면세유 영수증 OCR 농장 세무장부",
+        "AgriLedger 100% offline farm tax ledger for IRS Schedule F, Anlage L, 青色申告, LCDPR"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6798988857)"
+      }
+    },
+    {
+      "identifier": "urn:air:autoflow.io:smartstore:af-prod-30-return-shipping-recon",
+      "displayName": "[스마트스토어 월말마감 #11] 반품배송비 회차조정·이월차감 2줄→1건 묶음 정산대사기 단품 (AF-PROD-30 / AF-NAVER-11)",
+      "type": "application/ai-catalog+json",
+      "url": "https://smartstore.naver.com/dhlabs-official/products/13862599252",
+      "alternateUrl": "https://blog.naver.com/dhlabs_official/224470576709",
+      "representativeQueries": [
+        "스마트스토어 반품배송비 선차감 후 다음 회차 정산 조정 2줄 1건 묶음 대사 자동화",
+        "스마트스토어 쿠팡 월말 마감 이월 미정산금 반품배송비 회차조정 대사기 AF-PROD-30 #13862599252"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, SmartStore #13862599252, Kmong #859505)"
       }
     }
   ]
