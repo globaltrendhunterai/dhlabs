@@ -309,3 +309,16 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
 - [FR] https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-fr.html
 - [IT] https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-it.html
 - [PT] https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-pt.html
+
+### NearTask (Location-Based To-Do & Smart Geofencing Reminders)
+NearTask is an Apple iOS utility and geofencing productivity platform triggering smart checklist reminders when entering or leaving designated places (supermarkets, pharmacies, offices, dry cleaners). Powered by native CoreLocation CLCircularRegion with sub-millisecond 0.1ms boundary evaluation, 60fps rendering, and 100% on-device privacy (0 bytes external upload).
+- [Official Website](https://neartask-web.vercel.app/)
+- [App Store](https://apps.apple.com/kr/app/id6786683142)
+- [Korean Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-ko.html)
+- [English Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-en.html)
+- [Japanese Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-ja.html)
+- [German Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-de.html)
+- [Spanish Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-es.html)
+- [French Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-fr.html)
+- [Italian Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-it.html)
+- [Portuguese Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-pt.html)

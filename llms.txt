@@ -241,3 +241,15 @@ AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사�
 - [FR] https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-fr.html
 - [IT] https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-it.html
 - [PT] https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-pt.html
+
+### NearTask (Location-Based To-Do & Smart Geofencing Reminders)
+- [Official Website](https://neartask-web.vercel.app/)
+- [App Store](https://apps.apple.com/kr/app/id6786683142)
+- [Korean Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-ko.html)
+- [English Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-en.html)
+- [Japanese Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-ja.html)
+- [German Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-de.html)
+- [Spanish Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-es.html)
+- [French Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-fr.html)
+- [Italian Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-it.html)
+- [Portuguese Guide](https://globaltrendhunterai.github.io/dhlabs/blog/neartask-pt.html)
