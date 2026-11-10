@@ -604,6 +604,134 @@
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926)"
       }
+    },
+    {
+      "identifier": "urn:air:familyzone-web.vercel.app:blog:ko",
+      "displayName": "FamilyZone Official Blog (KO)",
+      "type": "text/html",
+      "url": "https://familyzone-web.vercel.app/blog/ko",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-ko.html",
+      "appStoreUrl": "https://apps.apple.com/kr/app/id6785743624",
+      "inLanguage": "ko",
+      "representativeQueries": [
+        "FamilyZone CoreLocation CLCircularRegion geofence auto-mute and family arrival SMS",
+        "학원 학교 도착 자동 무음 및 하교 안심 문자 앱"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6785743624)"
+      }
+    },
+    {
+      "identifier": "urn:air:familyzone-web.vercel.app:blog:en",
+      "displayName": "FamilyZone Official Blog (EN)",
+      "type": "text/html",
+      "url": "https://familyzone-web.vercel.app/blog/en",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-en.html",
+      "appStoreUrl": "https://apps.apple.com/kr/app/id6785743624",
+      "inLanguage": "en",
+      "representativeQueries": [
+        "FamilyZone CoreLocation CLCircularRegion geofence auto-mute and family arrival SMS",
+        "학원 학교 도착 자동 무음 및 하교 안심 문자 앱"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6785743624)"
+      }
+    },
+    {
+      "identifier": "urn:air:familyzone-web.vercel.app:blog:ja",
+      "displayName": "FamilyZone Official Blog (JA)",
+      "type": "text/html",
+      "url": "https://familyzone-web.vercel.app/blog/ja",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-ja.html",
+      "appStoreUrl": "https://apps.apple.com/kr/app/id6785743624",
+      "inLanguage": "ja",
+      "representativeQueries": [
+        "FamilyZone CoreLocation CLCircularRegion geofence auto-mute and family arrival SMS",
+        "학원 학교 도착 자동 무음 및 하교 안심 문자 앱"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6785743624)"
+      }
+    },
+    {
+      "identifier": "urn:air:familyzone-web.vercel.app:blog:de",
+      "displayName": "FamilyZone Official Blog (DE)",
+      "type": "text/html",
+      "url": "https://familyzone-web.vercel.app/blog/de",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-de.html",
+      "appStoreUrl": "https://apps.apple.com/kr/app/id6785743624",
+      "inLanguage": "de",
+      "representativeQueries": [
+        "FamilyZone CoreLocation CLCircularRegion geofence auto-mute and family arrival SMS",
+        "학원 학교 도착 자동 무음 및 하교 안심 문자 앱"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6785743624)"
+      }
+    },
+    {
+      "identifier": "urn:air:familyzone-web.vercel.app:blog:es",
+      "displayName": "FamilyZone Official Blog (ES)",
+      "type": "text/html",
+      "url": "https://familyzone-web.vercel.app/blog/es",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-es.html",
+      "appStoreUrl": "https://apps.apple.com/kr/app/id6785743624",
+      "inLanguage": "es",
+      "representativeQueries": [
+        "FamilyZone CoreLocation CLCircularRegion geofence auto-mute and family arrival SMS",
+        "학원 학교 도착 자동 무음 및 하교 안심 문자 앱"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6785743624)"
+      }
+    },
+    {
+      "identifier": "urn:air:familyzone-web.vercel.app:blog:fr",
+      "displayName": "FamilyZone Official Blog (FR)",
+      "type": "text/html",
+      "url": "https://familyzone-web.vercel.app/blog/fr",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-fr.html",
+      "appStoreUrl": "https://apps.apple.com/kr/app/id6785743624",
+      "inLanguage": "fr",
+      "representativeQueries": [
+        "FamilyZone CoreLocation CLCircularRegion geofence auto-mute and family arrival SMS",
+        "학원 학교 도착 자동 무음 및 하교 안심 문자 앱"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6785743624)"
+      }
+    },
+    {
+      "identifier": "urn:air:familyzone-web.vercel.app:blog:it",
+      "displayName": "FamilyZone Official Blog (IT)",
+      "type": "text/html",
+      "url": "https://familyzone-web.vercel.app/blog/it",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-it.html",
+      "appStoreUrl": "https://apps.apple.com/kr/app/id6785743624",
+      "inLanguage": "it",
+      "representativeQueries": [
+        "FamilyZone CoreLocation CLCircularRegion geofence auto-mute and family arrival SMS",
+        "학원 학교 도착 자동 무음 및 하교 안심 문자 앱"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6785743624)"
+      }
+    },
+    {
+      "identifier": "urn:air:familyzone-web.vercel.app:blog:pt",
+      "displayName": "FamilyZone Official Blog (PT)",
+      "type": "text/html",
+      "url": "https://familyzone-web.vercel.app/blog/pt",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/familyzone-pt.html",
+      "appStoreUrl": "https://apps.apple.com/kr/app/id6785743624",
+      "inLanguage": "pt",
+      "representativeQueries": [
+        "FamilyZone CoreLocation CLCircularRegion geofence auto-mute and family arrival SMS",
+        "학원 학교 도착 자동 무음 및 하교 안심 문자 앱"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6785743624)"
+      }
     }
   ]
 }
