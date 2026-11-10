@@ -492,6 +492,118 @@
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926)"
       }
+    },
+    {
+      "identifier": "urn:air:dhlabs:saasrunway:blog:kr",
+      "displayName": "SaaSRunwayVault Official Guide (🇰🇷 한국어 (KR · ₩)): SaaSRunwayVault KR: 스타트업·SaaS·구독앱 MRR·LTV/CAC·런웨이 재무모델 트리 시뮬레이터 (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-kr.html",
+      "inLanguage": "ko",
+      "representativeQueries": [
+        "SaaSRunwayVault KR: 스타트업·SaaS·구독앱 MRR·LTV/CAC·런웨이 재무모델 트리 시뮬레이터 (.xlsx)",
+        "스타트업 재무모델 엑셀, SaaS MRR 런웨이 계산기, 구독앱 LTV CAC 시뮬레이터, 예창패 초창패 TIPS 사업계획서 추정재무제표, VC IR 재무추정 엑셀, 무수식 엑셀 추출, SaaSRunwayVault"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:saasrunway:blog:en",
+      "displayName": "SaaSRunwayVault Official Guide (🇺🇸 English (US · $)): SaaSRunwayVault US: Startup & SaaS MRR, Churn, LTV:CAC & Cash Runway Tree Simulator (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-en.html",
+      "inLanguage": "en",
+      "representativeQueries": [
+        "SaaSRunwayVault US: Startup & SaaS MRR, Churn, LTV:CAC & Cash Runway Tree Simulator (.xlsx)",
+        "SaaS financial model Excel template, startup cash runway calculator, MRR churn LTV CAC simulator, VC pitch deck pro forma spreadsheet, formula-stripped xlsx investor data room, SaaSRunwayVault US"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:saasrunway:blog:jp",
+      "displayName": "SaaSRunwayVault Official Guide (🇯🇵 日本語 (JP · ¥)): SaaSRunwayVault JP: スタートアップ・SaaS・サブスクアプリ向けMRR・LTV/CAC・ランウェイ事業計画シミュレーター（数式除去Excel出力）",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-jp.html",
+      "inLanguage": "ja",
+      "representativeQueries": [
+        "SaaSRunwayVault JP: スタートアップ・SaaS・サブスクアプリ向けMRR・LTV/CAC・ランウェイ事業計画シミュレーター（数式除去Excel出力）",
+        "SaaS 事業計画書 エクセル, スタートアップ 資金繰り ランウェイ計算, MRR チャーン LTV CAC シミュレーター, VC ピッチ 数値計画 Excel, 数式削除 Excel 出力, SaaSRunwayVault JP"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:saasrunway:blog:uk",
+      "displayName": "SaaSRunwayVault Official Guide (🇬🇧 English (UK · £)): SaaSRunwayVault UK: Startup & SaaS MRR, Churn, LTV:CAC & Cash Runway Simulator (£ GBP · SEIS/EIS)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-uk.html",
+      "inLanguage": "en-GB",
+      "representativeQueries": [
+        "SaaSRunwayVault UK: Startup & SaaS MRR, Churn, LTV:CAC & Cash Runway Simulator (£ GBP · SEIS/EIS)",
+        "UK SaaS financial model Excel GBP, SEIS EIS pitch deck financial projections, startup cash runway calculator UK, MRR churn LTV CAC spreadsheet, formula-stripped Excel investor export, SaaSRunwayVault UK"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:saasrunway:blog:de",
+      "displayName": "SaaSRunwayVault Official Guide (🇩🇪 Deutsch (DE · €)): SaaSRunwayVault DE: Startup- & SaaS-Finanzmodell, MRR, Churn, LTV:CAC & Runway-Simulator (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-de.html",
+      "inLanguage": "de",
+      "representativeQueries": [
+        "SaaSRunwayVault DE: Startup- & SaaS-Finanzmodell, MRR, Churn, LTV:CAC & Runway-Simulator (.xlsx)",
+        "SaaS Finanzplan Excel Vorlage, Startup Cash Runway Rechner, MRR Churn LTV CAC Simulator Deutsch, EXIST Businessplan Finanzmodell, Excel Export ohne Formeln Investor, SaaSRunwayVault DE"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:saasrunway:blog:fr",
+      "displayName": "SaaSRunwayVault Official Guide (🇫🇷 Français (FR · €)): SaaSRunwayVault FR : Simulateur Financier Startup & SaaS, MRR, Churn, LTV:CAC & Runway (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-fr.html",
+      "inLanguage": "fr",
+      "representativeQueries": [
+        "SaaSRunwayVault FR : Simulateur Financier Startup & SaaS, MRR, Churn, LTV:CAC & Runway (.xlsx)",
+        "prévisionnel financier SaaS Excel, simulateur MRR churn LTV CAC startup, calcul cash runway burn rate, dossier Bpifrance CIR JEI business plan, export Excel valeurs seules sans formules, SaaSRunwayVault FR"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:saasrunway:blog:es",
+      "displayName": "SaaSRunwayVault Official Guide (🇪🇸 Español (ES · €)): SaaSRunwayVault ES: Simulador Financiero Startup y SaaS, MRR, Churn, LTV:CAC y Runway (.xlsx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-es.html",
+      "inLanguage": "es",
+      "representativeQueries": [
+        "SaaSRunwayVault ES: Simulador Financiero Startup y SaaS, MRR, Churn, LTV:CAC y Runway (.xlsx)",
+        "modelo financiero SaaS Excel plantilla, calculadora cash runway startup, simulador MRR churn LTV CAC, plan financiero ENISA CDTI inversores, exportar Excel solo valores sin formulas, SaaSRunwayVault ES"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs:saasrunway:blog:tw",
+      "displayName": "SaaSRunwayVault Official Guide (🇹🇼 繁體中文 (TW · NT$)): SaaSRunwayVault TW：台灣新創・SaaS 與訂閱 App 之 MRR、流失率、LTV:CAC 與現金跑道樹狀模擬器（無公式 .xlsx 匯出）",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-tw.html",
+      "inLanguage": "zh-Hant-TW",
+      "representativeQueries": [
+        "SaaSRunwayVault TW：台灣新創・SaaS 與訂閱 App 之 MRR、流失率、LTV:CAC 與現金跑道樹狀模擬器（無公式 .xlsx 匯出）",
+        "新創財務模型 Excel, SaaS MRR 現金跑道計算機, LTV CAC 訂閱制試算表, SBIR SIIR 國發基金創業計畫書財務預估, 創投 Pitch 財務報表, 移除公式 Excel 匯出, SaaSRunwayVault TW"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926)"
+      }
     }
   ]
 }
