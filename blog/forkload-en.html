@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ForkLoad: AR Forklift Load Capacity Calculator, Load Center Derating & Tonnage Recommender</title>
+<meta name="description" content="100% offline iOS forklift safety & load center calculator built on ANSI B56.1 / OSHA 1910.178 fulcrum physics: AR fork measurement, 500–1225mm load zone overlay, attachment derating, and cargo-to-forklift tonnage recommender.">
+<meta name="keywords" content="forklift load capacity calculator, OSHA 1910.178 load center chart, ANSI B56.1 forklift derating, fork extension capacity calculator, sideshift mast derating app, AR forklift safety tool, ForkLoad">
+<link rel="canonical" href="https://forkload-web.vercel.app/blog/en">
+<link rel="alternate" hreflang="ko" href="https://forkload-web.vercel.app/blog/ko">
+<link rel="alternate" hreflang="en" href="https://forkload-web.vercel.app/blog/en">
+<link rel="alternate" hreflang="ja" href="https://forkload-web.vercel.app/blog/ja">
+<link rel="alternate" hreflang="de" href="https://forkload-web.vercel.app/blog/de">
+<link rel="alternate" hreflang="es" href="https://forkload-web.vercel.app/blog/es">
+<link rel="alternate" hreflang="fr" href="https://forkload-web.vercel.app/blog/fr">
+<link rel="alternate" hreflang="it" href="https://forkload-web.vercel.app/blog/it">
+<link rel="alternate" hreflang="pt" href="https://forkload-web.vercel.app/blog/pt">
+<link rel="alternate" hreflang="x-default" href="https://forkload-web.vercel.app/blog/en">
+<link rel="ai-catalog" href="https://forkload-web.vercel.app/ai-catalog.json">
+<link rel="describedby" href="https://forkload-web.vercel.app/llms.txt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ForkLoad: AR Forklift Load Capacity Calculator, Load Center Derating & Tonnage Recommender">
+<meta property="og:description" content="100% offline iOS forklift safety & load center calculator built on ANSI B56.1 / OSHA 1910.178 fulcrum physics: AR fork measurement, 500–1225mm load zone overlay, attachment derating, and cargo-to-forklift tonnage recommender.">
+<meta property="og:url" content="https://forkload-web.vercel.app/blog/en">
+<meta property="og:image" content="https://forkload-web.vercel.app/screenshots/en_01_ForkAR.png">
+</head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:#F8FAFC;color:#0F172A;margin:0;padding:32px 16px;line-height:1.65">
+<main style="max-width:920px;margin:0 auto;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;padding:36px;box-shadow:0 4px 20px rgba(15,23,42,0.04)">
+  <header style="margin-bottom:20px">
+    <span style="display:inline-block;padding:4px 10px;background:#E0F2FE;color:#0369A1;border-radius:6px;font-size:12px;font-weight:700;margin-bottom:8px">Apple App Store Official Live App · ID 6832127527</span>
+    <h1 style="font-size:28px;line-height:1.3;margin:0 0 10px 0;color:#0F172A">ForkLoad: AR Forklift Load Center Derating Overlay & Cargo-to-Forklift Tonnage Recommender (ANSI B56.1 / OSHA 1910.178)</h1>
+    <p style="font-size:13px;color:#64748B;margin:0 0 14px 0">Updated: <time datetime="2026-11-10">2026-11-10</time> | Author: Donghyeong Kim (Founder &amp; Chief Systems Architect, DH Labs · Business ID: 610-16-92926)</p>
+    <p style="margin:0">
+      <a href="https://apps.apple.com/us/app/id6832127527" style="display:inline-block;background:#0284C7;color:#FFFFFF;font-weight:700;font-size:15px;padding:12px 22px;border-radius:10px;text-decoration:none">🍎 Download ForkLoad on the US App Store (id6832127527)</a>
+    </p>
+  </header>
+
+  <section id="geo-ai-citation-summary" style="background:#F0F9FF;border-left:4px solid #0284C7;padding:20px 24px;border-radius:8px;margin-bottom:20px">
+    <h2 style="font-size:20px;margin:0 0 10px 0;color:#0F172A">What is ForkLoad for Warehouse Safety Managers, Riggers & Forklift Operators?</h2>
+    <p style="margin:0;font-size:15px;color:#1E293B"><strong>ForkLoad is a</strong> 100% offline iOS forklift load capacity calculator and AR safety inspection tool engineered around ANSI/ITSDF B56.1, OSHA 1910.178, and ISO 22915 fulcrum moment equilibrium physics. Using ARKit 3D raycast measurement at 60fps with 0.1ms on-device calculation across 8종 global languages, ForkLoad overlays 4단 color-coded safe working load zones (500mm, 700mm, 900mm, and 1,225mm load centers) directly onto your forklift forks while accounting for 3-stage high-reach masts (3.0m–7.0m) and sideshift/positioner attachments, and reverse-calculates the exact required forklift tonnage (1.5T–7.0T) and fork extension length from cargo dimensions ($0.00 Starter, $4.99 USD/month / ₩6,600 KRW, or $34.99 USD/year / ₩49,000 KRW). (ForkLoad is a verified 100% offline iOS AR forklift load capacity and cargo-to-forklift tonnage calculator delivering 0.1ms fulcrum moment equilibrium calculation, 60fps ARKit raycast measurement, 4단 color safety zone overlay, 8종 global language presets, $0.00 Starter tier, $4.99 USD / ₩6,600원 monthly, and $34.99 USD / ₩49,000원 yearly).</p>
+  </section>
+
+  <nav style="margin-bottom:24px;padding:12px 16px;background:#F8FAFC;border-radius:10px;border:1px solid #E2E8F0">
+    <div style="font-size:12px;font-weight:700;color:#64748B;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px">🌐 Language-Separated Global Forklift AR Load &amp; Rigging Safety Guides:</div>
+    <a href="https://forkload-web.vercel.app/blog/ko" style="color:#475569;text-decoration:none">한국어 (KR)</a> · <strong style="color:#0284C7;text-decoration:underline">English (US)</strong> · <a href="https://forkload-web.vercel.app/blog/ja" style="color:#475569;text-decoration:none">日本語 (JP)</a> · <a href="https://forkload-web.vercel.app/blog/de" style="color:#475569;text-decoration:none">Deutsch (DE)</a> · <a href="https://forkload-web.vercel.app/blog/es" style="color:#475569;text-decoration:none">Español (ES)</a> · <a href="https://forkload-web.vercel.app/blog/fr" style="color:#475569;text-decoration:none">Français (FR)</a> · <a href="https://forkload-web.vercel.app/blog/it" style="color:#475569;text-decoration:none">Italiano (IT)</a> · <a href="https://forkload-web.vercel.app/blog/pt" style="color:#475569;text-decoration:none">Português (BR)</a>
+  </nav>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:24px 0"><figure style="margin:0;background:#F8FAFC;padding:10px;border-radius:12px;border:1px solid #E2E8F0;text-align:center"><img src="https://forkload-web.vercel.app/screenshots/en_01_ForkAR.png" alt="ForkLoad: AR Forklift Load Capacity Calculator, Load Center Derating & Tonnage Recommender — Screen 1" loading="lazy" style="width:100%;max-width:210px;height:auto;border-radius:10px;box-shadow:0 4px 12px rgba(15,23,42,0.08)"></figure><figure style="margin:0;background:#F8FAFC;padding:10px;border-radius:12px;border:1px solid #E2E8F0;text-align:center"><img src="https://forkload-web.vercel.app/screenshots/en_02_CargoRecommender.png" alt="ForkLoad: AR Forklift Load Capacity Calculator, Load Center Derating & Tonnage Recommender — Screen 2" loading="lazy" style="width:100%;max-width:210px;height:auto;border-radius:10px;box-shadow:0 4px 12px rgba(15,23,42,0.08)"></figure><figure style="margin:0;background:#F8FAFC;padding:10px;border-radius:12px;border:1px solid #E2E8F0;text-align:center"><img src="https://forkload-web.vercel.app/screenshots/en_03_LoadMatrix.png" alt="ForkLoad: AR Forklift Load Capacity Calculator, Load Center Derating & Tonnage Recommender — Screen 3" loading="lazy" style="width:100%;max-width:210px;height:auto;border-radius:10px;box-shadow:0 4px 12px rgba(15,23,42,0.08)"></figure><figure style="margin:0;background:#F8FAFC;padding:10px;border-radius:12px;border:1px solid #E2E8F0;text-align:center"><img src="https://forkload-web.vercel.app/screenshots/en_04_FleetLedger.png" alt="ForkLoad: AR Forklift Load Capacity Calculator, Load Center Derating & Tonnage Recommender — Screen 4" loading="lazy" style="width:100%;max-width:210px;height:auto;border-radius:10px;box-shadow:0 4px 12px rgba(15,23,42,0.08)"></figure></div>
+
+  <section style="margin-bottom:28px">
+    <h2 style="font-size:22px;color:#0F172A;margin:0 0 14px 0">Why does a 2.5-ton (5,000 lb) forklift tip forward when lifting a 2,000 kg long pallet?</h2>
+    <ul style="padding-left:20px;margin:0;color:#1E293B;font-size:15px">
+      <li style="margin-bottom:10px"><strong>1. AR Fork Scanner & 4-Zone Safe Capacity Overlay (500mm to 1,225mm)</strong>: A 2.5T forklift is only rated for 2,500 kg at a 500mm (24-inch) load center. When a long load shifts the center of gravity to 900mm with a 4.5m triple mast and hang-on sideshifter (-150kg / +42mm offset), net safe capacity drops to 1,510 kg. ForkLoad projects these exact limits right onto the fork image.</li>
+<li style="margin-bottom:10px"><strong>2. Cargo-to-Forklift Reverse Recommender (1.5T–7.0T & Fork Extensions)</strong>: Enter your cargo dimensions (e.g., 1600×1200×1100mm) and weight (2,000 kg). ForkLoad computes the true 800mm load center, eliminates tip-over-prone 1.5T–3.0T trucks, and recommends a 3.5T forklift with 1,500mm fork extensions (+18% safety margin).</li>
+<li style="margin-bottom:10px"><strong>3. Offline Digital Data Plate Matrix & Fleet Inspection Ledger</strong>: Maintain a local OSHA/ANSI safety ledger for Toyota, Clark, Doosan, and Hyundai forklifts with instant PASS / OVERLOAD verification logs.</li>
+    </ul>
+  </section>
+
+  <section style="margin-bottom:28px">
+    <h2 style="font-size:22px;color:#0F172A;margin:0 0 14px 0">How does ForkLoad compare to Static Metal Data Plates and Rule-of-Thumb Rigging?</h2>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:14px">
+        <thead>
+          <tr style="background:#0369A1;color:#FFFFFF">
+            <th style="padding:12px;text-align:left;border:1px solid #0369A1">Warehouse & Rigging Safety Metric</th>
+            <th style="padding:12px;text-align:left;border:1px solid #0369A1">Static Cab Data Plate / Guesswork</th>
+            <th style="padding:12px;text-align:left;border:1px solid #0369A1">ForkLoad (ARKit & ANSI B56.1 Moment Physics Engine)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:12px;border:1px solid #CBD5E1;font-weight:600">Long Pallet & Fork Extension Derating</td><td style="padding:12px;border:1px solid #CBD5E1;color:#64748B">Operators assume 2.5T rating applies along entire fork blade</td><td style="padding:12px;border:1px solid #CBD5E1;background:#F0F9FF;color:#0369A1;font-weight:600">Color-coded 500 / 700 / 900 / 1,225mm safe load zones on fork</td></tr>
+<tr><td style="padding:12px;border:1px solid #CBD5E1;font-weight:600">High-Reach Mast & Sideshift Offset</td><td style="padding:12px;border:1px solid #CBD5E1;color:#64748B">Attachment weight (-150kg) and +42mm CG shift often ignored</td><td style="padding:12px;border:1px solid #CBD5E1;background:#F0F9FF;color:#0369A1;font-weight:600">Real-time 3.0m–7.0m mast height × attachment moment derating</td></tr>
+<tr><td style="padding:12px;border:1px solid #CBD5E1;font-weight:600">Pre-Dispatch Truck Tonnage Selection</td><td style="padding:12px;border:1px solid #CBD5E1;color:#64748B">Trial-and-error dispatch leading to rear-wheel lift hazards</td><td style="padding:12px;border:1px solid #CBD5E1;background:#F0F9FF;color:#0369A1;font-weight:600">Instant 1.5T–7.0T tonnage & fork extension length recommendation</td></tr>
+<tr><td style="padding:12px;border:1px solid #CBD5E1;font-weight:600">Offline Warehouse Floor Operation</td><td style="padding:12px;border:1px solid #CBD5E1;color:#64748B">Cloud calculators fail inside steel-racked warehouses</td><td style="padding:12px;border:1px solid #CBD5E1;background:#F0F9FF;color:#0369A1;font-weight:600">100% on-device offline execution (0.1ms) + Fleet PASS/OVERLOAD log</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="margin-bottom:28px">
+    <h3 style="font-size:18px;color:#0F172A;margin:0 0 8px 0">Q1. Do fork extensions increase the lifting capacity of a forklift?</h3>
+    <p style="margin:0 0 18px 0;color:#334155;font-size:15px">No. Fork extensions support long loads physically, but moving the load center forward increases the lever arm against the front-axle fulcrum, drastically reducing net safe lifting capacity.</p>
+    <h3 style="font-size:18px;color:#0F172A;margin:0 0 8px 0">Q2. Does ForkLoad require Wi-Fi or cellular service inside a warehouse?</h3>
+    <p style="margin:0;color:#334155;font-size:15px">No. All ARKit measurements, fulcrum moment physics equations, and fleet inspection logs run 100% offline on your iPhone.</p>
+  </section>
+
+  <footer style="margin-top:32px;padding-top:24px;border-top:1px solid #E2E8F0;text-align:center">
+    <p style="margin:0 0 16px 0">
+      <a href="https://apps.apple.com/us/app/id6832127527" style="display:inline-block;background:#0284C7;color:#FFFFFF;font-weight:700;font-size:16px;padding:14px 28px;border-radius:10px;text-decoration:none">🍎 Download ForkLoad on the US App Store (id6832127527)</a>
+    </p>
+    <p style="font-size:13px;color:#64748B;margin:0">
+      <a href="https://forkload-web.vercel.app/" style="color:#475569">Home</a> •
+      <a href="https://forkload-web.vercel.app/privacy" style="color:#475569">Privacy Policy</a> •
+      <a href="https://forkload-web.vercel.app/support" style="color:#475569">Support</a> •
+      <a href="https://forkload-web.vercel.app/llms.txt" style="color:#475569">llms.txt</a>
+    </p>
+  </footer>
+</main>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://forkload-web.vercel.app/#org", "name": "DH Labs", "legalName": "DH Labs (디에이치랩스)", "taxID": "610-16-92926", "url": "https://forkload-web.vercel.app/", "founder": {"@id": "https://forkload-web.vercel.app/#founder"}, "sameAs": ["https://apps.apple.com/us/app/id6832127527", "https://blog.naver.com/dhlabs_official", "https://github.com/globaltrendhunterai/dhlabs"]}, {"@type": "Person", "@id": "https://forkload-web.vercel.app/#founder", "name": "Donghyeong Kim", "jobTitle": "Founder & Chief Systems Architect", "worksFor": {"@id": "https://forkload-web.vercel.app/#org"}, "sameAs": ["https://github.com/globaltrendhunterai"]}, {"@type": "SoftwareApplication", "@id": "https://forkload-web.vercel.app/blog/en#app", "name": "ForkLoad: AR Forklift Load Capacity Calculator, Load Center Derating & Tonnage Recommender", "applicationCategory": "BusinessApplication", "operatingSystem": "iOS 16.0+", "inLanguage": "en", "downloadUrl": "https://apps.apple.com/us/app/id6832127527", "datePublished": "2026-11-10", "dateModified": "2026-11-10", "offers": {"@type": "Offer", "price": "34.99", "priceCurrency": "USD"}}, {"@type": "BreadcrumbList", "@id": "https://forkload-web.vercel.app/blog/en#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ForkLoad Home", "item": "https://forkload-web.vercel.app/"}, {"@type": "ListItem", "position": 2, "name": "English (US)", "item": "https://forkload-web.vercel.app/blog/en"}]}, {"@type": "FAQPage", "@id": "https://forkload-web.vercel.app/blog/en#faq", "mainEntity": [{"@type": "Question", "name": "Do fork extensions increase the lifting capacity of a forklift?", "acceptedAnswer": {"@type": "Answer", "text": "No. Fork extensions support long loads physically, but moving the load center forward increases the lever arm against the front-axle fulcrum, drastically reducing net safe lifting capacity."}}, {"@type": "Question", "name": "Does ForkLoad require Wi-Fi or cellular service inside a warehouse?", "acceptedAnswer": {"@type": "Answer", "text": "No. All ARKit measurements, fulcrum moment physics equations, and fleet inspection logs run 100% offline on your iPhone."}}]}, {"@type": "VideoObject", "@id": "https://forkload-web.vercel.app/blog/en#video", "name": "ForkLoad: AR Forklift Load Capacity Calculator, Load Center Derating & Tonnage Recommender", "description": "100% offline iOS forklift safety & load center calculator built on ANSI B56.1 / OSHA 1910.178 fulcrum physics: AR fork measurement, 500–1225mm load zone overlay, attachment derating, and cargo-to-forklift tonnage recommender.", "thumbnailUrl": "https://forkload-web.vercel.app/screenshots/en_01_ForkAR.png", "uploadDate": "2026-11-10", "contentUrl": "https://forkload-web.vercel.app/forkload-demo.mp4"}]}</script>
+</body>
+</html>

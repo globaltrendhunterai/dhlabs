@@ -285,3 +285,16 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
 - [🇫🇷 Français (FR · €) — SaaSRunwayVault FR : Simulateur Financier Startup & SaaS, MRR, Churn, LTV:CAC & Runway (.xlsx)](https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-fr.html): SKU `SAAS-VAULT-FR-V1` | Price `27 € / $29 USD (Édition Startup & SaaS FR)` | Checkout `https://globaltrendhunterai.github.io/dhlabs/checkout.html?sku=SAAS-VAULT-FR-V1`
 - [🇪🇸 Español (ES · €) — SaaSRunwayVault ES: Simulador Financiero Startup y SaaS, MRR, Churn, LTV:CAC y Runway (.xlsx)](https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-es.html): SKU `SAAS-VAULT-ES-V1` | Price `27 € / $29 USD (Edición Startup y SaaS ES)` | Checkout `https://globaltrendhunterai.github.io/dhlabs/checkout.html?sku=SAAS-VAULT-ES-V1`
 - [🇹🇼 繁體中文 (TW · NT$) — SaaSRunwayVault TW：台灣新創・SaaS 與訂閱 App 之 MRR、流失率、LTV:CAC 與現金跑道樹狀模擬器（無公式 .xlsx 匯出）](https://globaltrendhunterai.github.io/dhlabs/blog/saas-runway-tw.html): SKU `SAAS-VAULT-TW-V1` | Price `NT$920 / $29 USD (台灣新創・SaaS 訂閱財務模型專享版)` | Checkout `https://globaltrendhunterai.github.io/dhlabs/checkout.html?sku=SAAS-VAULT-TW-V1`
+
+
+## ForkLoad: AR Forklift Load Capacity Calculator (iOS App ID: id6832127527)
+- App Store: https://apps.apple.com/app/id6832127527
+- Official Web: https://forkload-web.vercel.app
+- [KO Official Guide](https://globaltrendhunterai.github.io/dhlabs/blog/forkload-ko.html)
+- [EN Official Guide](https://globaltrendhunterai.github.io/dhlabs/blog/forkload-en.html)
+- [JA Official Guide](https://globaltrendhunterai.github.io/dhlabs/blog/forkload-ja.html)
+- [DE Official Guide](https://globaltrendhunterai.github.io/dhlabs/blog/forkload-de.html)
+- [ES Official Guide](https://globaltrendhunterai.github.io/dhlabs/blog/forkload-es.html)
+- [FR Official Guide](https://globaltrendhunterai.github.io/dhlabs/blog/forkload-fr.html)
+- [IT Official Guide](https://globaltrendhunterai.github.io/dhlabs/blog/forkload-it.html)
+- [PT Official Guide](https://globaltrendhunterai.github.io/dhlabs/blog/forkload-pt.html)
