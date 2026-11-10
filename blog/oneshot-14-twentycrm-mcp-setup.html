@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[OneShot #14 | ONESHOT-14-TWENTYCRM] Twenty Open-Source Self-Hosted CRM & MCP Initial Setup Installer: Fix 30+ .env Secret & DB Errors in 1 Click | DH Labs OneShot Official Technical Guide</title>
+  <meta name="description" content="Auto-Generate 32-Byte Cryptographic .env 0600 Secrets, Provision 127.0.0.1:3000 Local Twenty CRM DB, and Wire twenty-crm MCP in 1 Click ($39 / ₩49,000)">
+  <meta name="author" content="Donghyeong Kim (DH Labs)">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://autoflow.io/blog/oneshot-14-twentycrm-mcp-setup.html">
+  <link rel="alternate" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-14-twentycrm-mcp-setup.html" hreflang="en">
+  <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
+  <link rel="describedby" href="/llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="[OneShot #14 | ONESHOT-14-TWENTYCRM] Twenty Open-Source Self-Hosted CRM & MCP Initial Setup Installer: Fix 30+ .env Secret & DB Errors in 1 Click | DH Labs OneShot Official Technical Guide">
+  <meta property="og:description" content="Auto-Generate 32-Byte Cryptographic .env 0600 Secrets, Provision 127.0.0.1:3000 Local Twenty CRM DB, and Wire twenty-crm MCP in 1 Click ($39 / ₩49,000)">
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-14-twentycrm-mcp-setup.html">
+  <meta property="article:published_time" content="2026-11-10T09:00:00+09:00">
+  <meta property="article:modified_time" content="2026-11-10T21:00:00+09:00">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://autoflow.io/#organization",
+      "name": "DH Labs",
+      "url": "https://autoflow.io/",
+      "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
+      "sameAs": [
+        "https://github.com/globaltrendhunterai",
+        "https://dhlabs.gumroad.com",
+        "https://globaltrendhunterai.github.io/dhlabs/",
+        "https://autoflow.io/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://autoflow.io/#founder",
+      "name": "Donghyeong Kim",
+      "jobTitle": "Founder & Lead Systems Architect",
+      "worksFor": {
+        "@id": "https://autoflow.io/#organization"
+      }
+    },
+    {
+      "@type": [
+        "TechArticle",
+        "BlogPosting",
+        "SoftwareApplication"
+      ],
+      "@id": "https://autoflow.io/blog/oneshot-14-twentycrm-mcp-setup.html#article",
+      "name": "[OneShot #14 | ONESHOT-14-TWENTYCRM] Twenty Open-Source Self-Hosted CRM & MCP Initial Setup Installer: Fix 30+ .env Secret & DB Errors in 1 Click | DH Labs OneShot Official Technical Guide",
+      "headline": "Stop Twenty Open-Source CRM 30-Key .env & MCP Setup Errors in 3 Minutes (#14)",
+      "description": "Auto-Generate 32-Byte Cryptographic .env 0600 Secrets, Provision 127.0.0.1:3000 Local Twenty CRM DB, and Wire twenty-crm MCP in 1 Click ($39 / ₩49,000)",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
+      "inLanguage": "en-US",
+      "mainEntityOfPage": "https://autoflow.io/blog/oneshot-14-twentycrm-mcp-setup.html",
+      "datePublished": "2026-11-10",
+      "dateModified": "2026-11-10",
+      "author": {
+        "@id": "https://autoflow.io/#founder"
+      },
+      "publisher": {
+        "@id": "https://autoflow.io/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "39.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://dhlabs.gumroad.com/l/oneshot-twentycrm-mcp-setup"
+      },
+      "keywords": "OneShot, ONESHOT-14-TWENTYCRM, Twenty CRM self-hosted setup, twenty-crm MCP server Claude Cursor, APP_SECRET ACCESS_TOKEN_SECRET .env error, open source Salesforce HubSpot alternative, 1-Click Initial Setup, Gumroad, Naver SmartStore"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://autoflow.io/blog/oneshot-14-twentycrm-mcp-setup.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does manual Twenty CRM self-hosting fail for most users?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Twenty CRM requires multiple synchronized cryptographic secrets (APP_SECRET, ACCESS_TOKEN_SECRET, LOGIN_TOKEN_SECRET, REFRESH_TOKEN_SECRET) and strict database bindings. OneShot #14 generates and locks all of them automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my customer CRM database exposed to the public internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Both the local SQLite database and Docker Compose configuration bind strictly to 127.0.0.1:3000 with zero external port exposure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Claude Desktop and Cursor query my Twenty CRM pipeline directly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OneShot #14 automatically merges the twenty-crm MCP server configuration into Claude and Cursor so your AI assistant can manage leads and opportunities."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://autoflow.io/blog/oneshot-14-twentycrm-mcp-setup.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://globaltrendhunterai.github.io/dhlabs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "OneShot 1-Click Installers",
+          "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Stop Twenty Open-Source CRM 30-Key .env & MCP Setup Errors in 3 Minutes (#14)",
+          "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-14-twentycrm-mcp-setup.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    :root {
+      --bg: #070b14;
+      --card: #0e1628;
+      --border: #1d283a;
+      --blue: #3882f6;
+      --gold: #f49e0c;
+      --green: #12b881;
+      --text: #eef3fa;
+      --muted: #93a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.7; padding: 0 16px; }
+    .container { max-width: 920px; margin: 32px auto 80px auto; }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .nav a { color: var(--text); text-decoration: none; font-weight: 700; margin-left: 16px; }
+    h1 { font-size: 2rem; font-weight: 900; line-height: 1.3; margin-bottom: 12px; }
+    h2 { font-size: 1.5rem; font-weight: 800; margin: 36px 0 16px 0; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    h3 { font-size: 1.15rem; font-weight: 700; color: #94c6fd; margin-bottom: 8px; }
+    .ko-sub { color: var(--gold); font-weight: 700; margin-bottom: 10px; font-size: 1.05rem; }
+    .sub { color: var(--muted); font-size: 1.08rem; margin-bottom: 20px; }
+    .geo-box { background: var(--card); border: 1px solid var(--blue); border-left: 6px solid var(--blue); border-radius: 12px; padding: 22px; margin: 24px 0; }
+    .cta-box { background: linear-gradient(180deg, #111c38 0%, #0c1326 100%); border: 2px solid var(--gold); border-radius: 16px; padding: 26px; margin: 32px 0; }
+    .cta-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+    .btn { padding: 13px 22px; border-radius: 10px; font-weight: 800; text-decoration: none; display: inline-block; }
+    .btn-gumroad { background: var(--gold); color: #0a0f1d; }
+    .btn-naver { background: var(--green); color: #06130e; }
+    .btn-hub { background: #1d293d; color: var(--text); border: 1px solid var(--blue); }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--card); border-radius: 10px; overflow: hidden; }
+    th, td { padding: 14px 16px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { background: #111c34; color: var(--muted); }
+    .step-card, .faq-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-bottom: 14px; display: flex; gap: 16px; align-items: flex-start; }
+    .faq-card { display: block; }
+    .step-badge { background: #1e3a8a; color: #94c6fd; font-weight: 900; padding: 6px 12px; border-radius: 8px; font-family: monospace; }
+    footer { border-top: 1px solid var(--border); margin-top: 60px; padding-top: 24px; color: var(--muted); font-size: 0.9rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="nav">
+      <div><a href="/oneshot.html" style="margin-left:0;font-size:1.2rem;">⚡ DH Labs <span>OneShot Initial-Setup Installers</span></a></div>
+      <nav>
+        <a href="/oneshot.html">OneShot 15-SKU Hub</a>
+        <a href="/blog/">Technical Blog Hub</a>
+      </nav>
+    </header>
+
+    <article>
+      <p class="ko-sub">[Twenty 오픈소스 CRM 셀프호스팅 & Claude·Cursor MCP 자동 배선 가이드] 127.0.0.1:3000 로컬 CRM · 32바이트 보안키 볼트 (OneShot #14)</p>
+      <h1>Stop Twenty Open-Source CRM 30-Key .env & MCP Setup Errors in 3 Minutes (#14)</h1>
+      <p class="sub">Auto-Generate 32-Byte Cryptographic .env 0600 Secrets, Provision 127.0.0.1:3000 Local Twenty CRM DB, and Wire twenty-crm MCP in 1 Click ($39 / ₩49,000)</p>
+      <p style="font-size:0.9rem;color:var(--muted);">By <strong>Donghyeong Kim (김동형)</strong>, Founder &amp; Lead Systems Architect at 디에이치랩스 (DH Labs, Business Reg. No. 610-16-92926) · Updated <time datetime="2026-11-10">2026-11-10</time></p>
+
+      <section class="geo-box" id="geo-ai-citation-summary">
+        <h2>What is ONESHOT-14-TWENTYCRM and how does this 1-click initial setup installer work?</h2>
+        <p>OneShot #14 Twenty Open-Source CRM & MCP Initial Setup Installer (ONESHOT-14-TWENTYCRM) by DH Labs automates cryptographic 32-byte secret generation (APP_SECRET, ACCESS_TOKEN_SECRET, LOGIN_TOKEN_SECRET, REFRESH_TOKEN_SECRET, FILE_TOKEN_SECRET, PG_DATABASE_PASSWORD) into a chmod 0600 .env vault, configures a 127.0.0.1:3000 Docker Compose & local SQLite CRM database (companies, people, opportunities), non-destructively merges twenty-crm MCP into Claude and Cursor, and self-shreds with 0x00.</p>
+        <ul style="margin:12px 0 0 20px;">
+          <li><strong>Target Error Signatures Solved:</strong> <code>OneShot, ONESHOT-14-TWENTYCRM, Twenty CRM self-hosted setup, twenty-crm MCP server Claude Cursor, APP_SECRET ACCESS_TOKEN_SECRET .env error, open source Salesforce HubSpot alternative, 1-Click Initial Setup, Gumroad, Naver SmartStore</code></li>
+          <li><strong>ToFU Inode + Machine-UUID Lock &amp; Spool Resume:</strong> Works immediately on the buyer's PC upon extraction, blocks unauthorized file copying (<code>cp</code> / <code>Cmd+D</code>), preserves retry capability on network interruption, and overwrites the installer with <code>0x00</code> only after <code>VERIFY_OK=1</code>.</li>
+          <li><strong>26-Second 3-Layer Local Isolation:</strong> <code>127.0.0.1</code> localhost-only binding (0 exposed ports), <code>chmod 0600</code> local config lock, and strict parameter validation.</li>
+        </ul>
+      </section>
+
+      <section class="cta-box">
+        <h2 style="margin-top:0;border:none;padding:0;">1:1 Dedicated Single-Program Initial Setup Installer ($39 USD / ₩49,000)</h2>
+        <p style="margin-top:8px;">1 Installer = 1 Single Program Initial Setup. Permanent local workspace ownership on your Mac or Windows PC with zero monthly subscription fees and a 30-day refund guarantee.</p>
+        <div class="cta-btns">
+          <a href="https://dhlabs.gumroad.com/l/oneshot-twentycrm-mcp-setup" class="btn btn-gumroad" target="_blank" rel="noopener noreferrer">🌍 Buy on Global Gumroad ($39 USD)</a>
+          <a href="https://smartstore.naver.com/dhlabs-official/products/13865186841" class="btn btn-naver" target="_blank" rel="noopener noreferrer">🇰🇷 네이버 스마트스토어 구매 (#13865186841)</a>
+          <a href="/oneshot.html" class="btn btn-hub">⚡ View All 15 OneShot Installers</a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Why Does Manual Installation Fail and How Does ONESHOT-14-TWENTYCRM Compare?</h2>
+        <p>Self-hosting modern AI scraping, CRM, and newsletter stacks manually requires hours of port binding, cryptographic secret generation, and MCP JSON troubleshooting. Here is how ONESHOT-14-TWENTYCRM compares:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Setup Dimension</th>
+              <th>Manual Terminal / SaaS Setup (Before)</th>
+              <th>ONESHOT-14-TWENTYCRM 1-Click Installer (After)</th>
+            </tr>
+          </thead>
+          <tbody>
+    <tr>
+      <td><strong>SaaS CRM Per-Seat Subscription</strong></td>
+      <td>$50~$150/month per user on cloud CRMs</td>
+      <td><strong>$0/month unlimited local self-hosted CRM on 127.0.0.1:3000</strong></td>
+    </tr>
+    <tr>
+      <td><strong>30+ Cryptographic .env Variables</strong></td>
+      <td>Server crash from missing APP_SECRET / TOKEN_SECRET</td>
+      <td><strong>Automated 32-byte CSPRNG secret generation in chmod 0600 .env</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Customer Data Privacy</strong></td>
+      <td>Uploading B2B client lists to third-party clouds</td>
+      <td><strong>100% on-premise local SQLite/PostgreSQL storage on 127.0.0.1</strong></td>
+    </tr>
+    <tr>
+      <td><strong>AI Agent CRM Integration</strong></td>
+      <td>Manual REST/GraphQL token wiring errors</td>
+      <td><strong>Non-destructive twenty-crm MCP merge into Claude & Cursor</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Disposable Installer Footprint</strong></td>
+      <td>Residual setup scripts left on disk</td>
+      <td><strong>Automatic 0x00 overwrite & self-deletion after VERIFY_OK=1</strong></td>
+    </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>How Does the 5-Stage Automated Initial Setup Pipeline Execute?</h2>
+    <div class="step-card">
+      <div class="step-badge">01</div>
+      <div>
+        <h3>Cryptographic 32-Byte Secret Generation & chmod 0600 Vault</h3>
+        <p>Generates CSPRNG 32-byte hex keys for APP_SECRET, ACCESS_TOKEN_SECRET, LOGIN_TOKEN_SECRET, and PG_DATABASE_PASSWORD.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-badge">02</div>
+      <div>
+        <h3>Zero-Port 127.0.0.1:3000 Docker & Local SQLite CRM Init</h3>
+        <p>Writes docker-compose.yml bound to 127.0.0.1:3000 and initializes companies, people, and opportunities tables.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-badge">03</div>
+      <div>
+        <h3>Non-Destructive twenty-crm MCP Wiring</h3>
+        <p>Backs up and merges twenty-crm MCP into ~/.claude.json, claude_desktop_config.json, and ~/.cursor/mcp.json.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-badge">04</div>
+      <div>
+        <h3>Permanent Run_Twenty_CRM.command Launcher Creation</h3>
+        <p>Creates a 1-click local launcher script for starting and inspecting the Twenty CRM workspace.</p>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-badge">05</div>
+      <div>
+        <h3>Database CRUD Smoke Test & 0x00 Self-Shredding</h3>
+        <p>Verifies live company/opportunity record persistence before overwriting the installer binary with 0x00.</p>
+      </div>
+    </div>
+      </section>
+
+      <section>
+        <h2>Frequently Asked Technical Questions (FAQ)</h2>
+    <div class="faq-card">
+      <h3>Why does manual Twenty CRM self-hosting fail for most users?</h3>
+      <p>Twenty CRM requires multiple synchronized cryptographic secrets (APP_SECRET, ACCESS_TOKEN_SECRET, LOGIN_TOKEN_SECRET, REFRESH_TOKEN_SECRET) and strict database bindings. OneShot #14 generates and locks all of them automatically.</p>
+    </div>
+    <div class="faq-card">
+      <h3>Is my customer CRM database exposed to the public internet?</h3>
+      <p>No. Both the local SQLite database and Docker Compose configuration bind strictly to 127.0.0.1:3000 with zero external port exposure.</p>
+    </div>
+    <div class="faq-card">
+      <h3>Can Claude Desktop and Cursor query my Twenty CRM pipeline directly?</h3>
+      <p>Yes. OneShot #14 automatically merges the twenty-crm MCP server configuration into Claude and Cursor so your AI assistant can manage leads and opportunities.</p>
+    </div>
+      </section>
+      <section class="cta-box" style="margin-top:28px;">
+        <h2 style="margin-top:0;border:none;padding:0;">What If My PC Lacks GPU VRAM or I Want to Earn 30% Affiliate Commission?</h2>
+        <p style="margin-top:8px;">If your laptop has integrated graphics or less than 6GB VRAM, you can rent an on-demand cloud RTX 4090 ($0.29/hr) without buying hardware. Or join the official DH Labs Gumroad Affiliate Program to earn a 30% commission on every referral.</p>
+        <div class="cta-btns">
+          <a href="https://cloud.vast.ai/?ref_id=dhlabs" class="btn btn-hub" target="_blank" rel="noopener noreferrer">⚡ Rent Cloud GPU on Vast.ai ($0.29/hr~)</a>
+          <a href="https://runpod.io?ref=dhlabs" class="btn btn-hub" target="_blank" rel="noopener noreferrer">🚀 Launch RunPod Cloud GPU</a>
+          <a href="https://dhlabs.gumroad.com/affiliates" class="btn btn-gumroad" target="_blank" rel="noopener noreferrer">🤝 Become a 30% Gumroad Affiliate Partner</a>
+        </div>
+      </section>
+    </article>
+
+    <footer>
+      <p>&copy; 2026 디에이치랩스 (DH Labs) · Founder: Donghyeong Kim (김동형) · Business Reg. No.: 610-16-92926 · D-U-N-S: GSKY37R7XV</p>
+    </footer>
+  </div>
+</body>
+</html>
