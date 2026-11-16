@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이커머스 마진·ROAS·BEP 트리 시뮬레이터 무료 웹 체험판</title>
+  <style>
+    :root { --bg:#f8fafc; --card:#fff; --ink:#0f172a; --sub:#475569; --line:#e2e8f0; --pri:#1d4ed8; --ok:#059669; --bad:#dc2626; --amber:#d97706; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:14px/1.5 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif; font-variant-numeric:tabular-nums; }
+    .topbar { background:#fff; border-bottom:1px solid var(--line); padding:12px 20px; position:sticky; top:0; z-index:10; }
+    .topbar-inner { max-width:1160px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
+    .brand { font-weight:800; font-size:15px; color:var(--ink); text-decoration:none; }
+    .badge { display:inline-block; font-size:11px; font-weight:800; padding:3px 9px; border-radius:999px; background:#ecfdf5; color:#047857; margin-left:6px; }
+    .tools { display:flex; gap:8px; flex-wrap:wrap; }
+    .btn { display:inline-block; border:1px solid #cbd5e1; background:#fff; color:var(--ink); border-radius:8px; padding:8px 13px; font-weight:700; font-size:13px; cursor:pointer; text-decoration:none; }
+    .btn-pri { background:var(--pri); color:#fff; border-color:var(--pri); }
+    .btn-ok { background:var(--ok); color:#fff; border-color:var(--ok); }
+    .btn-amber { background:#fffbeb; color:#92400e; border-color:#fcd34d; }
+    main { max-width:1160px; margin:0 auto; padding:20px; }
+    .layout { display:grid; grid-template-columns:360px 1fr; gap:18px; align-items:start; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; }
+    h1 { margin:0 0 6px; font-size:18px; font-weight:900; }
+    h2 { margin:0 0 10px; font-size:15.5px; font-weight:800; }
+    .presets { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px; }
+    .preset-btn { border:1px solid #cbd5e1; background:#f8fafc; border-radius:8px; padding:6px 10px; font-size:12px; font-weight:700; cursor:pointer; }
+    .preset-btn:hover { background:#eff6ff; border-color:var(--pri); color:var(--pri); }
+    .ctrl { margin-bottom:13px; }
+    .ctrl-head { display:flex; justify-content:space-between; font-size:13px; font-weight:700; margin-bottom:4px; }
+    .ctrl-val { color:var(--pri); font-weight:800; }
+    input[type=range] { display:block; width:99%; accent-color:var(--pri); }
+    .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:16px; }
+    .kpi { background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px; }
+    .kpi small { color:var(--sub); font-size:12px; font-weight:600; }
+    .kpi b { display:block; font-size:20px; margin-top:4px; font-weight:900; }
+    .tree { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .node { border:1px solid var(--line); border-radius:10px; padding:14px; background:#f8fafc; }
+    .node.root { grid-column:1 / -1; background:#eff6ff; border-color:#bfdbfe; }
+    .node-title { font-size:13px; font-weight:800; color:var(--sub); }
+    .node-amt { font-size:20px; font-weight:900; margin:4px 0; }
+    .node-sub { font-size:12px; color:var(--sub); }
+    table { width:99.8%; border-collapse:collapse; font-size:12.5px; margin-top:8px; }
+    th, td { border-bottom:1px solid var(--line); padding:7px 8px; text-align:right; }
+    th { background:#f8fafc; font-weight:800; color:var(--sub); }
+    td.l, th.l { text-align:left; }
+    .pos { color:var(--ok); font-weight:700; }
+    .neg { color:var(--bad); font-weight:700; }
+    .modal-back { position:fixed; inset:0; background:rgba(15,23,42,0.5); display:none; align-items:center; justify-content:center; padding:16px; z-index:50; }
+    .modal-back.open { display:flex; }
+    .modal { background:#fff; border-radius:14px; max-width:500px; width:92vw; padding:24px; border:1px solid var(--line); }
+    @media (max-width:920px) { .layout { grid-template-columns:1fr; } .kpis { grid-template-columns:repeat(2,1fr); } .tree { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="./index.html" class="brand">← 무료 웹 체험관 <span class="badge">마진·ROAS·BEP 체험판</span></a>
+      <div class="tools">
+        <button id="btnExportLock" class="btn btn-amber">🔒 무수식 외부제출용 엑셀(.xlsx) 추출 (정식판 전용)</button>
+        <a href="https://smartstore.naver.com/dhlabs-official/products/13863037562" target="_blank" rel="noopener" class="btn btn-ok">이커머스 입문형 특가 14,900원 ↗</a>
+        <a href="https://smartstore.naver.com/dhlabs-official/products/13863038228" target="_blank" rel="noopener" class="btn btn-pri">FinTree Pro 빌더 (79,000원) ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="layout">
+      <!-- Left Inputs -->
+      <section class="card">
+        <h1>가정 값 실시간 조정</h1>
+        <p style="margin:0 0 12px;color:#475569;font-size:13px;">슬라이더를 움직이면 공헌이익, 손익분기 판매량(BEP), 세후 순이익이 즉시 계산됩니다.</p>
+        <div class="presets">
+          <button class="preset-btn" data-preset="normal">스마트스토어 일반</button>
+          <button class="preset-btn" data-preset="roas_warn">광고 ROAS 역마진 경고</button>
+          <button class="preset-btn" data-preset="brand">고마진 브랜드 상품</button>
+        </div>
+
+        <div class="ctrl"><div class="ctrl-head"><span>개당 판매단가</span><span class="ctrl-val" id="vPrice"></span></div><input id="price" type="range" min="5000" max="150000" step="1000" value="39000"></div>
+        <div class="ctrl"><div class="ctrl-head"><span>개당 매입·제조 원가</span><span class="ctrl-val" id="vCost"></span></div><input id="cost" type="range" min="1000" max="90000" step="500" value="13500"></div>
+        <div class="ctrl"><div class="ctrl-head"><span>월 판매 목표 수량</span><span class="ctrl-val" id="vQty"></span></div><input id="qty" type="range" min="50" max="3000" step="50" value="900"></div>
+        <div class="ctrl"><div class="ctrl-head"><span>마켓+PG 통합 수수료율</span><span class="ctrl-val" id="vFee"></span></div><input id="fee" type="range" min="3" max="20" step="0.5" value="8.5"></div>
+        <div class="ctrl"><div class="ctrl-head"><span>건당 포장·물류비 부담</span><span class="ctrl-val" id="vShip"></span></div><input id="ship" type="range" min="0" max="6000" step="100" value="2800"></div>
+        <div class="ctrl"><div class="ctrl-head"><span>목표 광고 ROAS</span><span class="ctrl-val" id="vRoas"></span></div><input id="roas" type="range" min="150" max="1000" step="10" value="420"></div>
+        <div class="ctrl"><div class="ctrl-head"><span>월 고정비 (임대·인건비·솔루션)</span><span class="ctrl-val" id="vFixed"></span></div><input id="fixed" type="range" min="0" max="15000000" step="500000" value="4000000"></div>
+      </section>
+
+      <!-- Right Dashboard -->
+      <div>
+        <div class="kpis" id="kpis"></div>
+
+        <section class="card">
+          <h2>손익 분해 트리 (월간 기준)</h2>
+          <div class="tree" id="treeGrid"></div>
+        </section>
+
+        <section class="card">
+          <h2>단가·ROAS 민감도 시뮬레이션 표</h2>
+          <p style="margin:0 0 8px;color:#475569;font-size:13px;">현재 원가·고정비 기준으로 광고 ROAS 변화 시 월 세후 순이익 추이를 비교합니다.</p>
+          <table id="sensTable"></table>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal-back" id="upgradeModal">
+    <div class="modal">
+      <h3>정식 단품 전용 기능 (무수식 엑셀 추출 · 계정 자유 설계)</h3>
+      <p style="color:#475569;font-size:13.5px;line-height:1.65;margin:0 0 14px;">
+        무료 웹 체험판에서는 7개 핵심 변수 기반 시뮬레이션만 지원합니다.<br /><br />
+        • <b>이커머스 완성형 단품 (정가 19,000원 → 특가 14,900원)</b>: 12개월 표 편집, 6대 자동 검산, 세무사·동업자 제출용 <b>무수식 값 전용 엑셀(.xlsx)</b> 추출<br />
+        • <b>FinTree Pro 마스터 빌더 (79,000원)</b>: 업종별 하위 계정 무한 분해 및 사칙연산 수식 자유 설계
+      </p>
+      <div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;">
+        <button class="btn" id="btnCloseModal">닫기</button>
+        <a href="https://smartstore.naver.com/dhlabs-official/products/13863037562" target="_blank" rel="noopener" class="btn btn-ok">이커머스 특가 14,900원 ↗</a>
+        <a href="https://smartstore.naver.com/dhlabs-official/products/13863038228" target="_blank" rel="noopener" class="btn btn-pri">FinTree Pro (79,000원) ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const $ = id => document.getElementById(id);
+      const won = n => Math.round(n).toLocaleString("ko-KR") + "원";
+      const ids = ["price", "cost", "qty", "fee", "ship", "roas", "fixed"];
+
+      function calc(overrideRoas) {
+        const price = +$("price").value;
+        const cost = +$("cost").value;
+        const qty = +$("qty").value;
+        const feeRate = +$("fee").value / 100;
+        const ship = +$("ship").value;
+        const roas = (overrideRoas != null ? overrideRoas : +$("roas").value) / 100;
+        const fixed = +$("fixed").value;
+
+        const rev = price * qty;
+        const cogs = cost * qty;
+        const feeAmt = rev * feeRate;
+        const shipAmt = ship * qty;
+        const adAmt = rev / roas;
+        const vatAmt = Math.max(0, (rev - cogs - adAmt) / 11);
+        const varTotal = cogs + feeAmt + shipAmt + adAmt;
+        const net = rev - varTotal - fixed - vatAmt;
+        const marginPct = rev > 0 ? (net / rev) * 100 : 0;
+
+        // Break-even ROAS before fixed & after fixed
+        const unitContribPreAd = price * (1 - feeRate) - cost - ship;
+        const bepRoasPct = unitContribPreAd > 0 ? (price / unitContribPreAd) * 100 : 9999;
+        const unitContribWithAd = unitContribPreAd - (price / roas);
+        const bepQty = unitContribWithAd > 0 ? Math.ceil(fixed / unitContribWithAd) : -1;
+
+        return { price, cost, qty, feeRate, ship, roasPct: roas * 100, fixed, rev, cogs, feeAmt, shipAmt, adAmt, vatAmt, varTotal, net, marginPct, bepRoasPct, bepQty };
+      }
+
+      function render() {
+        const c = calc();
+        $("vPrice").textContent = won(c.price);
+        $("vCost").textContent = won(c.cost);
+        $("vQty").textContent = c.qty.toLocaleString("ko-KR") + "개";
+        $("vFee").textContent = (c.feeRate * 100).toFixed(1) + "%";
+        $("vShip").textContent = won(c.ship);
+        $("vRoas").textContent = Math.round(c.roasPct) + "%";
+        $("vFixed").textContent = won(c.fixed);
+
+        const netCls = c.net >= 0 ? "pos" : "neg";
+        $("kpis").innerHTML = [
+          ["월 예상 세후 순이익", `<span class="${netCls}">${won(c.net)}</span>`],
+          ["세후 순마진율", `<span class="${netCls}">${c.marginPct.toFixed(1)}%</span>`],
+          ["광고 손익분기 ROAS", `${Math.round(c.bepRoasPct)}%`],
+          ["고정비 회수 손익분기 수량", c.bepQty > 0 ? `${c.bepQty.toLocaleString("ko-KR")}개` : "개당 적자 구조"]
+        ].map(([k, v]) => `<div class="kpi"><small>${k}</small><b>${v}</b></div>`).join("");
+
+        $("treeGrid").innerHTML = `
+          <div class="node root">
+            <div class="node-title">① 월 예상 세후 순이익 (총매출 − 총변동비 − 고정비 − 부가세 충당)</div>
+            <div class="node-amt ${netCls}">${won(c.net)}</div>
+            <div class="node-sub">총매출 ${won(c.rev)} 기준</div>
+          </div>
+          <div class="node">
+            <div class="node-title">② 상품 매입원가 · 마켓수수료 · 물류비</div>
+            <div class="node-amt">${won(c.cogs + c.feeAmt + c.shipAmt)}</div>
+            <div class="node-sub">원가 ${won(c.cogs)} · 수수료 ${won(c.feeAmt)} · 물류 ${won(c.shipAmt)}</div>
+          </div>
+          <div class="node">
+            <div class="node-title">③ 퍼포먼스 광고비 + 부가세 충당 + 고정비</div>
+            <div class="node-amt">${won(c.adAmt + c.vatAmt + c.fixed)}</div>
+            <div class="node-sub">광고비 ${won(c.adAmt)} · 부가세(추정) ${won(c.vatAmt)} · 고정비 ${won(c.fixed)}</div>
+          </div>
+        `;
+
+        const roasSteps = [250, 320, 400, 500, 650];
+        $("sensTable").innerHTML = "<tr><th class=l>광고 ROAS 시나리오</th><th>월 광고비</th><th>세후 순이익</th><th>순마진율</th><th>판정</th></tr>" +
+          roasSteps.map(r => {
+            const s = calc(r);
+            const cls = s.net >= 0 ? "pos" : "neg";
+            const msg = s.net < 0 ? "적자 경고 (판매할수록 손실 위험)" : (s.marginPct >= 15 ? "양호 (확장 가능)" : "박리 구간 (단가·광고 효율 개선 필요)");
+            return `<tr><td class=l><b>ROAS ${r}%</b></td><td>${won(s.adAmt)}</td><td class="${cls}">${won(s.net)}</td><td class="${cls}">${s.marginPct.toFixed(1)}%</td><td class=l>${msg}</td></tr>`;
+          }).join("");
+      }
+
+      const PRESETS = {
+        normal: { price: 39000, cost: 13500, qty: 900, fee: 8.5, ship: 2800, roas: 420, fixed: 4000000 },
+        roas_warn: { price: 24000, cost: 11000, qty: 1200, fee: 10.5, ship: 3000, roas: 240, fixed: 4500000 },
+        brand: { price: 69000, cost: 16500, qty: 650, fee: 8.5, ship: 3000, roas: 550, fixed: 5500000 },
+      };
+
+      document.querySelectorAll(".preset-btn").forEach(btn => {
+        btn.onclick = () => {
+          const p = PRESETS[btn.dataset.preset];
+          Object.entries(p).forEach(([k, v]) => { $(k).value = v; });
+          render();
+        };
+      });
+
+      ids.forEach(id => $(id).addEventListener("input", render));
+      $("btnExportLock").onclick = () => $("upgradeModal").classList.add("open");
+      $("btnCloseModal").onclick = () => $("upgradeModal").classList.remove("open");
+      render();
+    })();
+  </script>
+</body>
+</html>
