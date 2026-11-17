@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>디에이치랩스(DH Labs) 10초 무료 웹 체험관 — 설치·가입 없이 바로 써보세요</title>
   <meta name="description" content="결제 전 브라우저에서 바로 체험해 보는 스마트스토어 정산 차이 찾기, 이커머스 마진·ROAS 트리 시뮬레이터, 유튜브 뮤직 정식음원 매칭기 무료 체험관." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="디에이치랩스 DH Labs 무료 웹 체험관" />
+  <meta property="og:title" content="디에이치랩스 10초 무료 웹 체험관 — 정산 차액 진단 · 마진 시뮬레이터 · 정식음원 매칭" />
+  <meta property="og:description" content="설치 0 · 회원가입 0. 스마트스토어 정산 누락 진단, 마진·ROAS·BEP 계산, 유튜브 뮤직 정식음원 필터링을 결제 전 브라우저에서 바로 써보세요." />
+  <meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/demo/og_demo_preview.png" />
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/demo/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="디에이치랩스 10초 무료 웹 체험관" />
+  <meta name="twitter:description" content="스마트스토어 정산 차액 진단 · 마진/ROAS 시뮬레이터 · 유튜브 뮤직 정식음원 매칭 무료 체험" />
+  <meta name="twitter:image" content="https://globaltrendhunterai.github.io/dhlabs/demo/og_demo_preview.png" />
   <style>
     :root {
       --bg: #f8fafc;
@@ -58,7 +68,7 @@
       padding: 3px 9px;
       border-radius: 999px;
     }
-    .nav-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .nav-links { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     .nav-links a {
       font-size: 13px;
       font-weight: 600;
@@ -68,6 +78,17 @@
       border-radius: 8px;
     }
     .nav-links a:hover { background: #f1f5f9; color: var(--ink); }
+    .share-btn {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 7px 12px;
+      cursor: pointer;
+    }
+    .share-btn:hover { background: #f1f5f9; }
     .wrap { max-width: 1060px; margin: 0 auto; padding: 36px 20px 64px; }
     .hero {
       background: #ffffff;
@@ -205,6 +226,7 @@
         <a href="./settlement-gap.html">정산 차이 찾기 체험</a>
         <a href="./ecom-margin-sim.html">마진·ROAS 시뮬레이터 체험</a>
         <a href="./pure-track-matcher.html">정식음원 매칭 체험</a>
+        <button id="btnShareLink" class="share-btn">🔗 동료에게 체험 링크 복사</button>
         <a href="https://smartstore.naver.com/dhlabs-official" target="_blank" rel="noopener">스마트스토어 바로가기 ↗</a>
       </nav>
     </div>
@@ -229,8 +251,8 @@
           <p>주문 엑셀과 정산 엑셀을 상품주문번호로 대조해 빠진 정산금과 원인을 찾습니다.</p>
           <ul class="spec-list">
             <li>내장 예시 주문 30건 즉시 대조 결과 확인</li>
-            <li>내 엑셀 파일 최대 <b>상위 5건</b> 무료 실측 대조</li>
-            <li>배송비·반품비·수수료 차이 &amp; 문의 문장 생성</li>
+            <li>내 엑셀 파일 <b>전체 건수 차액 합계 + 1순위 상세 1건</b> 무료 확인</li>
+            <li>원인별 금액 집계 및 정식판 문의 문장 미리보기</li>
           </ul>
         </div>
         <div>
@@ -250,11 +272,11 @@
         <div>
           <span class="badge-tag tag-green">이커머스 손익 · 네이버 쇼핑 상위권</span>
           <h2>마진·ROAS·BEP 트리 시뮬레이터 (웹 체험판)</h2>
-          <p>판매가·매입원가·수수료·광고비 변화에 따른 12개월 순이익과 손익분기점을 계산합니다.</p>
+          <p>판매가·매입원가·수수료·광고비 변화에 따른 월간 세후 순이익과 손익분기점(BEP)을 실시간 계산합니다.</p>
           <ul class="spec-list">
-            <li>실시간 가격·원가·ROAS 시나리오 슬라이더</li>
+            <li>판매가·매입원가·목표 ROAS 실시간 시뮬레이션</li>
             <li>손익분기 판매량(BEP) &amp; BEP ROAS 즉시 산출</li>
-            <li>정식판은 무수식 외부 제출용 엑셀(.xlsx) 추출</li>
+            <li>정식판은 내 매장 세부비용 입력 · 무수식 엑셀(.xlsx) 추출</li>
           </ul>
         </div>
         <div>
@@ -314,5 +336,23 @@
       <a href="https://smartstore.naver.com/dhlabs-official" target="_blank" rel="noopener">smartstore.naver.com/dhlabs-official</a>
     </footer>
   </main>
+  <script>
+    (function () {
+      const btn = document.getElementById("btnShareLink");
+      if (!btn) return;
+      const url = "https://globaltrendhunterai.github.io/dhlabs/demo/";
+      btn.onclick = async () => {
+        try { await navigator.clipboard.writeText(url); }
+        catch (_) {
+          const ta = document.createElement("textarea"); ta.value = url; document.body.appendChild(ta); ta.select();
+          try { document.execCommand("copy"); } catch (__) {}
+          document.body.removeChild(ta);
+        }
+        const orig = btn.textContent;
+        btn.textContent = "✓ 체험 링크 복사 완료 (카톡·카페 붙여넣기)";
+        setTimeout(() => { btn.textContent = orig; }, 2500);
+      };
+    })();
+  </script>
 </body>
 </html>
