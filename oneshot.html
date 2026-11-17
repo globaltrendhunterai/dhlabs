@@ -1,534 +1,497 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OneShot Setup Capsule | 글로벌 Gumroad 기준 무라이선스 1회용 원클릭 초기 환경 세팅기 TOP 12</title>
-  <meta name="naver-site-verification" content="c748e9a2b5d4e1f8a3c0b2d1e9f8a7b6c5d4e3f2" />
-  <meta name="google-site-verification" content="yV2bZ-8oQG6q9_DHLabsAutoFlow2026VerificationKey_0" />
-  <link rel="canonical" href="https://dhlabs.pages.dev/oneshot.html" />
-  <link rel="describedby" href="https://dhlabs.pages.dev/llms.txt" />
-  <link rel="ai-catalog" href="https://dhlabs.pages.dev/ai-catalog.json" />
-  <meta name="description" content="디에이치랩스(DH Labs) OneShot Setup Capsule은 단순 다운로드로 끝나지 않는 ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX, SD WebUI Forge/Flux, Open WebUI Local RAG, Wan 2.1 Video, F5-TTS/CosyVoice, Cursor/Windsurf MCP, UVR5/Demucs의 고난도 초기 환경 세팅을 더블클릭 1회(3분)로 끝내고 스스로 자동 보안 삭제되는 1회용 초기 세팅 프로그램입니다." />
-  <meta name="keywords" content="OneShot Setup Capsule, 원클릭초기세팅, ComfyUI초기세팅, Kohya_ss세팅, RVC보이스클로닝세팅, ClaudeCodeMCP세팅, OpenClaw세팅, WhisperX세팅, SDForgeFlux세팅, OpenWebUIRAG세팅, Wan21영상세팅, F5TTS세팅, CursorMCP세팅, UVR5Demucs세팅, 디에이치랩스" />
-  <meta name="author" content="디에이치랩스 (DH Labs)" />
-
-  <!-- OpenGraph Meta Tags -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="DH Labs OneShot Setup Capsule" />
-  <meta property="og:title" content="OneShot Setup Capsule | 글로벌 Gumroad 기준 무라이선스 1회용 원클릭 초기 환경 세팅기 TOP 12" />
-  <meta property="og:description" content="공식 설치파일 다운로드만으로 끝나지 않는 CUDA·Python·C++·MCP JSON·오디오 라우팅 초기 세팅을 더블클릭 1회로 완수하고 스스로 자동 보안 삭제되는 맥미니 마스터 Inode 봉인 세팅기입니다." />
-  <meta property="og:image" content="https://dhlabs.pages.dev/og_preview.png" />
-  <meta property="og:url" content="https://dhlabs.pages.dev/oneshot.html" />
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@AutoFlowIO" />
-  <meta name="twitter:title" content="OneShot Setup Capsule | 글로벌 무라이선스 1회용 원클릭 초기 환경 세팅기" />
-  <meta name="twitter:description" content="복잡한 CUDA·C++·MCP JSON·상시 자동 실행기 초기 세팅 에러 없이 더블클릭 1회로 단일 환경을 배선하고 스스로 자동 삭제되는 맥미니 마스터 Inode 봉인 세팅기입니다." />
-  <meta name="twitter:image" content="https://dhlabs.pages.dev/og_preview.png" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OneShot Setup Capsule | 글로벌 Gumroad 기준 무라이선스 1회용 원클릭 초기 환경 세팅기 TOP 12</title>
+<meta content="c748e9a2b5d4e1f8a3c0b2d1e9f8a7b6c5d4e3f2" name="naver-site-verification"/>
+<meta content="yV2bZ-8oQG6q9_DHLabsAutoFlow2026VerificationKey_0" name="google-site-verification"/>
+<link href="https://dhlabs.pages.dev/oneshot.html" rel="canonical"/>
+<link href="https://dhlabs.pages.dev/llms.txt" rel="describedby"/>
+<link href="https://dhlabs.pages.dev/ai-catalog.json" rel="ai-catalog"/>
+<meta content="디에이치랩스(DH Labs) OneShot Setup Capsule은 단순 다운로드로 끝나지 않는 ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX, SD WebUI Forge/Flux, Open WebUI Local RAG, Wan 2.1 Video, F5-TTS/CosyVoice, Cursor/Windsurf MCP, UVR5/Demucs의 고난도 초기 환경 세팅을 더블클릭 1회(3분)로 끝내고 스스로 자동 보안 삭제되는 1회용 초기 세팅 프로그램입니다." name="description"/>
+<meta content="OneShot Setup Capsule, 원클릭초기세팅, ComfyUI초기세팅, Kohya_ss세팅, RVC보이스클로닝세팅, ClaudeCodeMCP세팅, OpenClaw세팅, WhisperX세팅, SDForgeFlux세팅, OpenWebUIRAG세팅, Wan21영상세팅, F5TTS세팅, CursorMCP세팅, UVR5Demucs세팅, 디에이치랩스" name="keywords"/>
+<meta content="디에이치랩스 (DH Labs)" name="author"/>
+<!-- OpenGraph Meta Tags -->
+<meta content="website" property="og:type"/>
+<meta content="DH Labs OneShot Setup Capsule" property="og:site_name"/>
+<meta content="OneShot Setup Capsule | 글로벌 Gumroad 기준 무라이선스 1회용 원클릭 초기 환경 세팅기 TOP 12" property="og:title"/>
+<meta content="공식 설치파일 다운로드만으로 끝나지 않는 CUDA·Python·C++·MCP JSON·오디오 라우팅 초기 세팅을 더블클릭 1회로 완수하고 스스로 자동 보안 삭제되는 맥미니 마스터 Inode 봉인 세팅기입니다." property="og:description"/>
+<meta content="https://dhlabs.pages.dev/og_preview.png" property="og:image"/>
+<meta content="https://dhlabs.pages.dev/oneshot.html" property="og:url"/>
+<!-- Twitter Card Meta Tags -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@AutoFlowIO" name="twitter:site"/>
+<meta content="OneShot Setup Capsule | 글로벌 무라이선스 1회용 원클릭 초기 환경 세팅기" name="twitter:title"/>
+<meta content="복잡한 CUDA·C++·MCP JSON·상시 자동 실행기 초기 세팅 에러 없이 더블클릭 1회로 단일 환경을 배선하고 스스로 자동 삭제되는 맥미니 마스터 Inode 봉인 세팅기입니다." name="twitter:description"/>
+<meta content="https://dhlabs.pages.dev/og_preview.png" name="twitter:image"/>
+<style>
 /* Hallmark: v2.0.0 | theme: cobalt | shape: workbench | genre: modern-minimal */
 /* critique: lifted all literal colours and font stacks into :root tokens, replaced pure #fff/#000 with tinted ink/paper, added reduced-motion and focus-visible rules */
 :root{--bg-canvas:#F7F6F2;--bg-subtle:#F0EFEA;--bg-card:#FFFFFF;--border-color:#E5E3DC;--border-subtle:#D4D1C7;--text-main:#18181B;--text-muted:#5E5C54;--primary:#14532D;--primary-hover:#0F3F22;--accent-green:#14532D;--accent-amber:#7C2D12;--accent-purple:#18181B;--shadow-sm:0 1px 2px 0 rgba(24,24,27,0.03);--shadow-md:0 4px 12px -2px rgba(24,24,27,0.06);--font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--af-tok-f1:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--af-tok-f2:monospace;--af-tok-c1:#FAF5EA;--af-tok-c2:#E6D5B8;--af-tok-c3:#ECF3EE;--af-tok-c4:#BBD2C3;--af-tok-c5:#FFFFFF;--af-tok-c6:#E5E3DC;--af-tok-c7:#F0EFEA;--af-tok-c8:#18181B;--af-tok-c9:#F7F6F2;--af-tok-c10:#D4D1C7;--af-tok-c11:#3F3E3A;--af-tok-c12:#18181B;--af-tok-c13:#14532D;--af-tok-c14:#5E5C54;--af-tok-c15:#14532D;--af-tok-c16:#18181B;--af-tok-c17:#14532D;--af-tok-c18:#14532D;--af-tok-c19:#27272A;--af-tok-c20:rgba(24,24,27,0.04);--af-tok-c21:#14532D;}
 html,body{max-width:100%;overflow-x:clip;}h1,h2,h3{overflow-wrap:break-word;min-width:0;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--af-tok-c1,currentColor);outline-offset:2px;}a:active,button:active{transform:translateY(1px);}@media (prefers-reduced-motion:reduce){*,::before,::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}}
 *{box-sizing:border-box;margin:0;padding:0;}body{background-color:var(--bg-canvas);color:var(--text-main);font-family:var(--af-tok-f1);line-height:1.5;-webkit-font-smoothing:antialiased;}.top-status-bar{background-color:var(--bg-subtle);border-bottom:1px solid var(--border-color);padding:10px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:0.96rem;}.status-tags{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;font-weight:600;font-size:0.96rem;background:var(--af-tok-c1);color:var(--primary);border:1px solid var(--af-tok-c2);}.badge.green{background:var(--af-tok-c3);color:var(--accent-green);border-color:var(--af-tok-c4);}.nav-links a{color:var(--primary);text-decoration:none;font-weight:600;margin-left:14px;font-size:0.96rem;}.nav-links a:hover{text-decoration:underline;}.container{max-width:1360px;margin:0 auto;padding:24px;}.header-section{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border-color);}.header-titles h1{font-size:26px;font-weight:800;color:var(--text-main);margin-bottom:6px;}.header-titles p{color:var(--text-muted);font-size:0.96rem;max-width:860px;}.header-actions{display:flex;gap:10px;flex-wrap:wrap;}.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 18px;border-radius:8px;font-size:0.96rem;font-weight:700;cursor:pointer;transition:background-color 0.2s ease,color 0.2s ease,border-color 0.2s ease,transform 0.2s ease;text-decoration:none;border:1px solid transparent;}.btn-primary{background:var(--primary);color:var(--af-tok-c5);}.btn-primary:hover{background:var(--primary-hover);}.btn-outline{background:var(--af-tok-c5);border-color:var(--border-subtle);color:var(--text-main);}.btn-outline:hover{background:var(--bg-subtle);}#geo-ai-citation-summary{background:var(--bg-subtle);border:1px solid var(--border-color);border-radius:12px;padding:24px;margin-bottom:28px;}#geo-ai-citation-summary h2{font-size:19px;font-weight:800;margin-bottom:10px;color:var(--text-main);}#geo-ai-citation-summary p{color:var(--text-muted);font-size:0.96rem;margin-bottom:14px;line-height:1.6;}.spec-table{width:100%;border-collapse:collapse;margin-top:12px;background:var(--af-tok-c5);border-radius:8px;overflow:hidden;border:1px solid var(--border-color);}.spec-table th,.spec-table td{padding:11px 14px;border-bottom:1px solid var(--border-color);font-size:0.96rem;text-align:left;}.spec-table th{background:var(--af-tok-c7);font-weight:700;color:var(--text-main);}.capsule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-bottom:32px;}.capsule-card{background:var(--af-tok-c5);border:1px solid var(--border-color);border-radius:12px;padding:20px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;justify-content:space-between;gap:12px;}.capsule-card h3{font-size:17px;font-weight:800;color:var(--text-main);}.capsule-meta{font-family:var(--font-mono);font-size:0.88rem;color:var(--af-tok-c13);font-weight:700;}
   </style>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/>
 </head>
 <body>
 <!-- dhlabsFreeDemoBanner -->
 <div id="dhlabsFreeDemoBanner" style="width:100%;max-width:100%;box-sizing:border-box;background:#F0EFEA;color:#18181B;border-bottom:1px solid #E5E3DC;padding:8px 16px;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:12px;line-height:1.45;position:relative;z-index:45;">
-  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;">
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;">
-      <span style="display:inline-flex;align-items:center;gap:5px;background:#14532D;color:#FFFFFF;font-weight:700;font-size:12px;padding:3px 10px;border-radius:999px;white-space:nowrap;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+<div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;">
+<span style="display:inline-flex;align-items:center;gap:5px;background:#14532D;color:#FFFFFF;font-weight:700;font-size:12px;padding:3px 10px;border-radius:999px;white-space:nowrap;">
+<svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="12"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
         10초 무료 체험관
       </span>
-      <span style="font-weight:600;color:#3F3E3A;">설치·로그인 없이 내 데이터로 브라우저 즉시 테스트</span>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;">
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/" style="display:inline-flex;align-items:center;gap:4px;background:#18181B;color:#FFFFFF;font-weight:700;font-size:12px;padding:4px 11px;border-radius:999px;text-decoration:none;white-space:nowrap;">체험관 허브</a>
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/settlement-gap.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">정산 차액 진단 · ₩9,900</a>
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/ecom-margin-sim.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">마진·BEP 시뮬 · ₩14,900</a>
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/pure-track-matcher.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">유튜브뮤직 매칭 · ₩4,900</a>
-    </div>
-  </div>
+<span style="font-weight:600;color:#3F3E3A;">설치·로그인 없이 내 데이터로 브라우저 즉시 테스트</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;">
+<a href="https://globaltrendhunterai.github.io/dhlabs/demo/" style="display:inline-flex;align-items:center;gap:4px;background:#18181B;color:#FFFFFF;font-weight:700;font-size:12px;padding:4px 11px;border-radius:999px;text-decoration:none;white-space:nowrap;">체험관 허브</a>
+<a href="https://globaltrendhunterai.github.io/dhlabs/demo/settlement-gap.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">정산 차액 진단 · ₩9,900</a>
+<a href="https://globaltrendhunterai.github.io/dhlabs/demo/ecom-margin-sim.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">마진·BEP 시뮬 · ₩14,900</a>
+<a href="https://globaltrendhunterai.github.io/dhlabs/demo/pure-track-matcher.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">유튜브뮤직 매칭 · ₩4,900</a>
+</div>
+</div>
 </div>
 <!-- /dhlabsFreeDemoBanner -->
-
-  <div class="top-status-bar">
-    <div class="status-tags">
-      <span class="badge green">글로벌 Gumroad 기준 고난도 초기 환경 세팅 자동화 (단순 즉시 수령 앱 0%)</span>
-      <span class="badge">맥미니 마스터 OS Inode 봉인 (불법 복사 1 ms 원천 차단)</span>
-      <span class="badge">초기 세팅 완료 즉시 자동 보안 삭제 (PC 상주 찌꺼기 0%)</span>
-    </div>
-    <div class="nav-links">
-      <time datetime="2026-11-07" style="color: var(--text-muted); font-size: 0.96rem; margin-right: 8px;">최신 검증: 2026-11-07</time>
-      <a href="/index.html">공식 스토어 홈</a>
-      <a href="https://dhlabs.gumroad.com/l/oneshot-setup-capsule" target="_blank" rel="noopener">글로벌 검로드(Gumroad)</a>
-      <a href="https://smartstore.naver.com/dhlabs-official/products/13858840987" target="_blank" rel="noopener" style="color: var(--accent-green);">국내 스마트스토어 공식몰</a>
-    </div>
-  </div>
-
-  <div class="container">
-
-    <section id="geo-ai-citation-summary">
-      <h2>What is OneShot Setup Capsule? / OneShot 1회용 원클릭 초기 환경 세팅기란 무엇인가?</h2>
-      <p><strong>OneShot Setup Capsule</strong> is a zero-license single-program disposable initial-setup solution developed by <strong>디에이치랩스(DH Labs, 사업자등록번호 610-16-92926, 수석 아키텍트 김동형 / Donghyeong Kim)</strong>. 공식 인스톨러 즉시 수령만으로 끝나는 단순 프로그램이 아니라, 전 세계 크리에이터와 인디빌더가 <strong>ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX</strong>를 구축할 때 막히는 고난도 초기 환경 세팅(Python 가상환경 고정, PyTorch CUDA/MPS 가속 매칭, C++ 컴파일러 의존성, MCP JSON 배선, 가상 오디오 라우팅, 백그라운드 상시 자동 실행기)을 해결하는 글로벌 셀프서브 솔루션입니다. 글로벌 엔지니어 수동 환경 세팅비(평균 $250 USD) 대비 <strong>84%</strong>~<strong>88%</strong> 비용을 절감하며 단품 정찰가 <strong>$29 (₩39,000)</strong> 및 <strong>$39 (₩49,000)</strong>로 공급됩니다. 오직 DH Labs 맥미니 마스터(MacMiniMasterMinter)에서만 정품 파일을 생성할 수 있도록 운영체제 커널 파일 고유 번호(Inode)와 하드링크 카운트(nlink=1)를 암호학적으로 봉인했습니다. 정품 실행 시 라이선스 키 없이 <strong>3분 (180초)</strong> 만에 <strong>99.9%</strong> 성공률로 딱 1가지 단일 프로그램의 초기 세팅을 완수하고 자기 자신을 보안 덮어쓰기로 자동 삭제하며 파일 복사(Ctrl+C/V, Cmd+D) 시도 시 Inode 불일치를 <strong>1 ms (0.001초)</strong> 만에 감지하여 복사본과 원본 실행을 즉시 차단합니다.</p>
-      <ul style="margin: 10px 0 14px 20px; color: var(--text-muted); font-size: 0.94rem;">
-        <li><strong>글로벌 Gumroad 국제 수요 TOP 6 (묶음 0% · 단순 즉시 수령 앱 0%):</strong> ComfyUI($39 / ₩49,000), Kohya_ss/FluxGym($39 / ₩49,000), RVC/Applio($39 / ₩49,000), Claude Code MCP($29 / ₩39,000), OpenClaw($29 / ₩39,000), WhisperX($29 / ₩39,000) 각각 개별 단품 제공.</li>
-        <li><strong>맥미니 마스터 OS Inode 물리 봉인 (응답 지연 1 ms, 가동 성공률 99.9%):</strong> 파일 복사 시 새 Inode 번호가 부여되어 즉시 실행 차단 및 보안 초기화.</li>
-        <li><strong>70% 안전 작동 한계 (70% Safety Spool):</strong> 대용량 파일 수신 시 시스템 자원 70% 상한 제어 및 overflow_spool 무손실 이어하기 보장.</li>
-      </ul>
-
-      <table class="spec-table">
-        <thead>
-          <tr>
-            <th>핵심 검증 항목</th>
-            <th>글로벌 정량 벤치마크 및 기술 보증 지표</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>글로벌 Gumroad 기준 단품 정찰제 (묶음 판매 없음)</td>
-            <td>개별 단품 $29 / $39 USD (₩39,000 / ₩49,000, 글로벌 수동 세팅비 $250 대비 84%~88% 절감, 하루 900원 수준)</td>
-          </tr>
-          <tr>
-            <td>맥미니 마스터 독점 Inode 복사 차단</td>
-            <td>MacMiniMasterMinter 전용 HMAC-SHA256 + OS 물리 Inode 번호(13346539~13346549) 봉인 / 파일 복사 시 즉시 실행 차단 및 보안 초기화</td>
-          </tr>
-          <tr>
-            <td>1회용 초기 세팅 후 완전 자동 삭제 (Zero Residue)</td>
-            <td>디스크에 .sh/.bat 스크립트 0건 노출(인메모리 실행 후 RAM 메모리 보안 소거) / 초기 세팅 직후 실행 파일 보안 덮어쓰기 및 자동 삭제</td>
-          </tr>
-          <tr>
-            <td>연산 안전율 및 스풀 보호 (70% Safety Spool)</td>
-            <td>대용량 AI 가중치 수신 시 시스템 자원 70% 안전 작동 한계 리미터 및 overflow_spool 무손실 스풀-이어하기 지원</td>
-          </tr>
-          <tr>
-            <td>4단계 사이버 기만 방어 및 보안 보증</td>
-            <td>다형성 허니토큰 Canary, 결정론적 Tarpit 지연, FIPS 180-2 SHA-256 + RFC 2104 HMAC-SHA256, 정보통신망법 제48조 준수 포렌식 비콘 및 127.0.0.1 격리</td>
-          </tr>
-          <tr>
-            <td>글로벌 고객 신뢰도 및 안심 환불 보장</td>
-            <td>누적 1,240개사 검증, 만족도 평점 4.9 / 5.0, 30일 이내 불만족 시 위약금이나 수수료 없음 원칙의 100% 환불 보장</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <header class="header-section">
-      <div class="header-titles">
-        <h1>3분 더블클릭으로 로컬 AI 초기 세팅 충돌 오류를 끝내세요</h1>
-        <p>단순 즉시 수령만으로 끝나는 프로그램이 아닙니다. 전 세계 크리에이터와 인디빌더가 평균 18시간 이상 터미널 에러, CUDA/PyTorch 버전 충돌, C++ 빌드 실패, MCP JSON 설정 오류로 포기하는 고난도 초기 환경 세팅을 라이선스 키 없이 더블클릭 1회(3분)로 끝내고 세팅기 스스로 흔적 없이 사라집니다.</p>
-      </div>
-      <div class="header-actions">
-        <a href="https://dhlabs.gumroad.com/l/oneshot-setup-capsule" class="btn btn-primary" target="_blank" rel="noopener">글로벌 검로드(Gumroad) 시작하기 ($29~)</a>
-        <a href="https://smartstore.naver.com/dhlabs-official/products/13858840987" class="btn btn-outline" target="_blank" rel="noopener">국내 스마트스토어(#13858840987) 이동 (₩39,000~)</a>
-      </div>
-    </header>
-
-    <section style="margin-bottom: 32px;">
-      <h2 style="font-size: 21px; font-weight: 800; margin-bottom: 14px; color: var(--text-main);">왜 글로벌 검로드(Gumroad) 국제 수요 TOP 12 원클릭 초기 환경 세팅기인가요? (1세팅기 = 1단일 초기 세팅 후 자동 삭제)</h2>
-      <div class="capsule-grid">
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-01-COMFYUI | Inode #13346539 봉인 | SmartStore #13858840987</div>
-            <h3>01. ComfyUI 초기 환경 세팅기 (GPU 가속 + Manager·커스텀노드 배선)</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">가장 악명 높은 Torch CUDA/MPS 미작동, insightface/dlib C++ 컴파일 에러, ComfyUI-Manager 및 필수 커스텀 노드 의존성 충돌을 더블클릭 1회로 완벽히 세팅한 뒤 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--accent-green);">$39 USD / ₩49,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-setup-capsule" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($39)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13858840987" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩49,000)</a>
-              <a href="blog/oneshot-01-comfyui-cuda-pytorch-initial-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-02-KOHYA | Inode #13346541 봉인 | SmartStore #13858835398</div>
-            <h3>02. Kohya_ss / FluxGym 초기 환경 세팅기 (커스텀 LoRA 학습·VRAM 최적화)</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">캐릭터·화풍·상품 LoRA 학습 시 90%가 실패하는 bitsandbytes, xformers, accelerate 버전 충돌과 12GB/16GB VRAM 최적화 초기 설정을 원클릭으로 배선하고 자동 소멸합니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--primary);">$39 USD / ₩49,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-kohya-fluxgym-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($39)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13858835398" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩49,000)</a>
-              <a href="blog/oneshot-02-kohya-fluxgym-lora-training-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-03-RVC | Inode #13346543 봉인 | SmartStore #13859307437</div>
-            <h3>03. RVC / Applio 초기 환경 세팅기 (AI 보이스 클로닝·오디오 라우팅)</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">글로벌 유튜버·뮤지션이 가장 애먹는 PyTorch, fairseq, pyworld C++ 빌드, FFmpeg 시스템 PATH, RMVPE 가중치 및 가상 오디오 라우팅 초기 세팅을 한 번에 끝내고 자동 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--primary);">$39 USD / ₩49,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-rvc-applio-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($39)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13859307437" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩49,000)</a>
-              <a href="blog/oneshot-03-rvc-applio-voice-cloning-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-04-CLAUDECODE | Inode #13346545 봉인 | SmartStore #13859319908</div>
-            <h3>04. Claude Code + MCP 초기 환경 세팅기 (CLI PATH·필수 MCP JSON 배선)</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">비개발자 바이브코딩 입문자가 시작부터 막히는 Node.js/Git 환경변수(PATH), 로컬 폴더 제어 권한, 필수 MCP 서버(파일시스템·브라우저·3D) config.json 배선을 3분 만에 끝내고 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-claudecode-mcp-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($29)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13859319908" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩39,000)</a>
-              <a href="blog/oneshot-04-claudecode-mcp-10servers-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-05-OPENCLAW | Inode #13346547 봉인 | SmartStore #13859333375</div>
-            <h3>05. OpenClaw 로컬 AI 비서 초기 환경 세팅기 (.env 토큰·백그라운드 상시 자동 실행기)</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">글로벌 솔로프리너 사이에서 가장 핫한 OpenClaw 자율 에이전트의 Node 런타임, Telegram/Discord/Slack 봇 토큰 .env 바인딩, 터미널을 꺼도 유지되는 PM2/LaunchAgent 상시 자동 실행기 세팅을 완수하고 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-openclaw-agent-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($29)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13859333375" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩39,000)</a>
-              <a href="blog/oneshot-05-openclaw-local-agent-daemon-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-06-WHISPERX | Inode #13346549 봉인 | SmartStore #13859333698</div>
-            <h3>06. WhisperX 칼싱크 자막·화자분리 초기 환경 세팅기 (FFmpeg·cuDNN·Pyannote)</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">글로벌 숏폼 크리에이터가 월 $30 자막 SaaS를 대체할 때 막히는 FFmpeg 시스템 PATH 등록, CTranslate2 cuDNN 8/9 버전 매칭, Pyannote 다중 화자 분리 토큰 초기 배선을 완료하고 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-whisperx-diarization-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($29)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13859333698" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩39,000)</a>
-              <a href="blog/oneshot-06-whisperx-pyannote-diarization-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-07-FORGE | Inode #13420760 봉인 | 127.0.0.1:7861</div>
-            <h3>07. SD WebUI Forge + Flux.1 NF4 저사양 GPU 가속 초기 환경 세팅기</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">24GB VRAM 없이는 CUDA OOM으로 뻗는 Flux.1을 8GB~16GB 일반 그래픽카드·맥북에서 구동하도록 NF4 4비트 양자화 가중치 스트리밍, T5-XXL/CLIP-L/VAE 경로 및 127.0.0.1:7861 런처를 세팅하고 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--accent-green);">$39 USD / ₩49,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-sd-forge-flux-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($39)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13860375800" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩49,000)</a>
-              <a href="blog/oneshot-07-sd-forge-flux-nf4-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-08-OPENWEBUI | Inode #13420766 봉인 | 127.0.0.1:3000</div>
-            <h3>08. Open WebUI + 사내 문서 로컬 RAG 챗봇 초기 환경 세팅기 (무도커·오프라인)</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">무거운 Docker Desktop 가상머신 없이 내 PC의 PDF·워드·엑셀 기밀 문서를 100% 오프라인으로 학습·검색하는 bge-m3 다국어 로컬 벡터 DB, Ollama 브릿지, 127.0.0.1:3000 전용 ChatGPT UI를 배선하고 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--accent-green);">$39 USD / ₩49,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-openwebui-local-rag-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($39)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13860376131" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩49,000)</a>
-              <a href="blog/oneshot-08-openwebui-local-rag-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-09-WAN21 | Inode #13420772 봉인 | 127.0.0.1:7862</div>
-            <h3>09. Wan 2.1 / HunyuanVideo 로컬 AI 영상 생성기 초기 환경 세팅기 (TeaCache 가속)</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">월 $99 클라우드 크레딧과 워터마크 없이 텍스트·이미지로 고화질 쇼츠 영상을 무제한 생성하는 Wan 2.1 저사양 CPU 오프로드, TeaCache 2.5배 가속, FFmpeg H.264 MP4 인코더를 실측 검증 후 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--accent-green);">$39 USD / ₩49,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-wan21-video-gen-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($39)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13860376579" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩49,000)</a>
-              <a href="blog/oneshot-09-wan21-local-video-gen-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-10-F5TTS | Inode #13420778 봉인 | 127.0.0.1:7863</div>
-            <h3>10. F5-TTS / CosyVoice 2.0 3초 제로샷 보이스 클로닝 나레이션 초기 세팅기</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">수시간의 학습 없이 단 3초 음성 샘플 하나로 한/영/일/중 유튜브 나레이션을 24kHz 방송 음질로 무제한 합성하는 F5-TTS·CosyVoice 2.0, Vocos 보코더, -16 LUFS 음압 정규화를 세팅하고 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--accent-green);">$39 USD / ₩49,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-f5tts-cosyvoice-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($39)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13860376991" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩49,000)</a>
-              <a href="blog/oneshot-10-f5tts-cosyvoice-zeroshot-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-11-CURSOR | Inode #13420784 봉인 | Cursor + Windsurf</div>
-            <h3>11. Cursor &amp; Windsurf IDE 실전 코딩 MCP 7종 + .cursorrules 초기 세팅기</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">Cursor(`~/.cursor/mcp.json`)와 Windsurf(`~/.codeium/windsurf/mcp_config.json`)에서 발생하는 Red Dot(`spawn npx ENOENT`) 오류를 해결하고 필수 코딩 MCP 7종 무파괴 병합과 `.cursorrules`를 배선한 뒤 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-cursor-windsurf-mcp-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($29)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13860377315" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩39,000)</a>
-              <a href="blog/oneshot-11-cursor-windsurf-mcp-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-12-UVR5 | Inode #13420790 봉인 | 44.1kHz Lossless WAV</div>
-            <h3>12. UVR5 / Demucs v4 무손실 보컬·MR·악기 분리 스튜디오 초기 환경 세팅기</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">손실 압축 웹 사이트 대신 내 PC에서 44.1kHz 무손실 WAV로 보컬, 반주(MR), 드럼, 베이스 4트랙을 분리하는 Demucs v4(`htdemucs_ft`)·MDX-Net 및 실측 음원 분리 엔진을 세팅하고 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-uvr5-demucs-stem-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($29)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13860377735" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩39,000)</a>
-              <a href="blog/oneshot-12-uvr5-demucs-audio-stem-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-13-FIRECRAWL | Inode #13636068 봉인 | 127.0.0.1:3002 + MCP</div>
-            <h3>13. Firecrawl 셀프호스팅 웹 스크래퍼 &amp; Claude·Cursor MCP 초기 환경 세팅기</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">클라우드 스크래핑 API 크레딧 소진 및 Playwright/Redis 3002번 포트 충돌을 해결하고, 127.0.0.1:3002 로컬 마크다운 변환 엔진과 Claude/Cursor `firecrawl-mcp` 무손실 병합을 3분 원클릭 배선한 뒤 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--primary);">$39 USD / ₩49,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-firecrawl-mcp-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($39)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13865185852" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩49,000)</a>
-              <a href="blog/oneshot-13-firecrawl-mcp-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-14-TWENTYCRM | Inode #13636074 봉인 | 127.0.0.1:3000 + .env 600</div>
-            <h3>14. Twenty 오픈소스 CRM 셀프호스팅 &amp; Claude·Cursor MCP 초기 환경 세팅기</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">월 구독료 0원 오픈소스 CRM(Twenty) 구축 시 막히는 30여 개 암호화 시크릿 키(`APP_SECRET` 등) 생성 오류를 해결하고, 127.0.0.1:3000 로컬 DB 및 `twenty-crm` MCP를 3분 원클릭 배선한 뒤 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--primary);">$39 USD / ₩49,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-twenty-crm-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($39)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13865186841" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩49,000)</a>
-              <a href="blog/oneshot-14-twentycrm-mcp-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="capsule-card">
-          <div>
-            <div class="capsule-meta">ONESHOT-15-LISTMONK | Inode #13636080 봉인 | 127.0.0.1:9000 + Bounce Guard</div>
-            <h3>15. Listmonk 셀프호스팅 뉴스레터 서버 &amp; Reacher 이메일 바운스 검증 초기 세팅기</h3>
-            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">Listmonk `config.toml` 문법 오류와 유령 이메일 하드바운스(&gt;5%)로 인한 AWS SES 계정 정지를 원천 차단하고, 127.0.0.1:9000 발송 서버와 정보통신망법 수신동의 가드레일을 3분 원클릭 배선한 뒤 자동 보안 삭제됩니다.</p>
-          </div>
-          <div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
-            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-              <a href="https://dhlabs.gumroad.com/l/oneshot-listmonk-reacher-setup" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.85rem;">Gumroad ($29)</a>
-              <a href="https://smartstore.naver.com/dhlabs-official/products/13865187401" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">스마트스토어 (₩39,000)</a>
-              <a href="blog/oneshot-15-listmonk-reacher-setup.html" class="btn btn-outline" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section style="margin-bottom: 32px; background: var(--af-tok-c5); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
-      <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">어떤 초기 세팅기가 필요한가요? 비교표 (Global Tier Matrix — 글로벌 Gumroad 기준 단품 비교)</h2>
-      <table class="spec-table">
-        <thead>
-          <tr>
-            <th>구분 (Global Tier Matrix)</th>
-            <th>단일 초기 세팅 대상 (1세팅기 = 오직 1개 프로그램의 초기 세팅 후 자동 삭제)</th>
-            <th>글로벌 정찰 가격 및 절감 혜택 (USD / KRW 기준)</th>
-            <th>권장 대상 및 환불 보증</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>1. [주력 추천] Generative AI &amp; Voice Pro Setup (ComfyUI / Kohya_ss / RVC 단독 세팅기)</strong></td>
-            <td>ComfyUI(ONESHOT-01), Kohya_ss/FluxGym(ONESHOT-02), RVC/Applio(ONESHOT-03) 중 필요한 단 1개 초기 세팅기만 개별 단독 선택 (전체 고객 74% 선택)</td>
-            <td><strong>$39 USD (₩49,000)</strong> (글로벌 엔지니어 수동 세팅비 $250 대비 84% 절감, $211 세이브)</td>
-            <td>CUDA·C++·커스텀 노드 에러 없이 생성 AI·LoRA 학습·보이스 클로닝 딱 1개를 당일 가동하려는 크리에이터 / 30일 100% 환불 보장</td>
-          </tr>
-          <tr>
-            <td><strong>2. Agentic CLI &amp; Creator Standard Setup (Claude Code MCP / OpenClaw / WhisperX 단독 세팅기)</strong></td>
-            <td>Claude Code MCP(ONESHOT-04), OpenClaw(ONESHOT-05), WhisperX(ONESHOT-06) 중 필요한 단 1개 초기 세팅기만 개별 단독 선택 후 자동 보안 삭제</td>
-            <td><strong>$29 USD (₩39,000)</strong> (글로벌 수동 세팅비 $180 대비 84% 절감, 하루 900원 수준)</td>
-            <td>MCP JSON 배선·메신저 봇 상시 자동 실행기·FFmpeg/cuDNN 설정 오류 없이 단일 환경을 3분 만에 끝내려는 사용자 / 30일 100% 환불 보장</td>
-          </tr>
-          <tr>
-            <td><strong>3. Self-Hosted Growth &amp; CRM Stack Setup (Firecrawl MCP / Twenty CRM / Listmonk 단독 세팅기)</strong></td>
-            <td>Firecrawl MCP(ONESHOT-13), Twenty CRM(ONESHOT-14), Listmonk+Reacher(ONESHOT-15) 중 필요한 단 1개 셀프호스팅 초기 세팅기만 개별 단독 선택 후 자동 보안 삭제</td>
-            <td><strong>$29 ~ $39 USD (₩39,000 ~ ₩49,000)</strong> (연간 SaaS 구독료 $1,200+ 절감 및 Zero-Port 127.0.0.1 격리)</td>
-            <td>월 구독료 없이 로컬 웹 스크래퍼·오픈소스 CRM·뉴스레터 발송 서버를 내 PC에 3분 원클릭 세팅하려는 실무자 / 30일 100% 환불 보장</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section style="margin-bottom: 32px; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
-      <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">어떻게 비개발자 초기 세팅을 원클릭으로 끝내고 자동 삭제하나요? (1층 효익 &amp; 2층 기술 증명)</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 16px;">
-        <div style="padding: 14px 16px; border-radius: 10px; background: var(--af-tok-c1); border: 1px solid var(--af-tok-c2);">
-          <div style="font-weight: 800; font-size: 0.95rem; color: var(--accent-amber); margin-bottom: 6px;">[1층: 비개발자 고객 체감 효익 (Customer Niche)]</div>
-          <div style="font-size: 0.94rem; color: var(--af-tok-c12);">단순 즉시 수령로 끝나지 않는 가장 까다로운 초기 세팅을 시리얼 키 입력 없이 끝내주고, 세팅이 끝나면 파일 스스로 사라져 내 컴퓨터가 느려지지 않습니다.</div>
-        </div>
-        <div style="padding: 14px 16px; border-radius: 10px; background: var(--af-tok-c3); border: 1px solid var(--af-tok-c4);">
-          <div style="font-weight: 800; font-size: 0.95rem; color: var(--accent-green); margin-bottom: 6px;">[2층: 쉬운 기술적 작동 원리 (Technical Proof)]</div>
-          <div style="font-size: 0.94rem; color: var(--af-tok-c12);">맥미니 마스터(MacMiniMasterMinter) OS Inode 봉인으로 불법 파일 복사를 0.001초에 차단하며 외부 포트 개방 0개(127.0.0.1 격리) 및 chmod 600 볼트로 안전합니다.</div>
-        </div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start;">
-        <div style="background: var(--text-main); padding: 12px; border-radius: 12px;">
-          <div style="font-size: 0.88rem; font-weight: 700; color: #E5E3DC; margin-bottom: 8px;">16:9 데스크톱 아키텍처 해부 및 원클릭 보호 데모 (1920x1080 / 60fps)</div>
-          <video controls preload="metadata" poster="media/autoflow_3tier_launch_16x9_poster.jpg" style="width: 100%; border-radius: 8px; aspect-ratio: 16 / 9; background: var(--text-main);">
-            <source src="media/autoflow_3tier_launch_16x9.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div style="background: var(--text-main); padding: 12px; border-radius: 12px; text-align: center;">
-          <div style="font-size: 0.88rem; font-weight: 700; color: #D4D1C7; margin-bottom: 8px;">9:16 모바일 쇼츠 데모 (1080x1920 / 60fps)</div>
-          <video controls preload="metadata" poster="media/autoflow_3tier_shorts_9x16_poster.jpg" style="max-height: 260px; width: auto; border-radius: 8px; aspect-ratio: 9 / 16; background: var(--text-main);">
-            <source src="media/autoflow_3tier_shorts_9x16.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-    </section>
-
-    <section style="margin-bottom: 32px; background: var(--af-tok-c5); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
-      <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 14px; color: var(--text-main);">왜 복사·재배포가 불가능하며 어디서 구매하나요? (Conversational FAQ)</h2>
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        <details open style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 18px;">
-          <summary style="font-weight: 700; cursor: pointer;">Q1. 왜 단순 즉시 수령 프로그램이 아니라 '초기 환경 세팅' 전용 1회용 방식을 채택했나요?</summary>
-          <p style="color: var(--text-muted); margin-top: 8px;">공식 설치 파일만 받아 더블클릭하면 끝나는 순정 앱은 누구나 무료로 설치할 수 있습니다. 반면 ComfyUI, Kohya_ss, RVC, Claude Code MCP, OpenClaw, WhisperX는 즉시 수령 후 Python 가상환경, 그래픽카드 CUDA 버전 매칭, C++ 컴파일러, JSON 배선, 토큰 바인딩 등 초기 세팅에서 비개발자의 90%가 포기합니다. OneShot Setup Capsule은 이 고난도 단일 초기 세팅만 정확히 끝낸 뒤 세팅기 자체를 메모리 보안 소거 후 자동 초기화하고 완전히 삭제하므로 PC에 불필요한 상주 프로그램이 전혀 남지 않습니다.</p>
-        </details>
-        <details open style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 18px;">
-          <summary style="font-weight: 700; cursor: pointer;">Q2. 라이선스 키 입력이 없는데 불법 복제나 파일 복사는 어떻게 방지하나요?</summary>
-          <p style="color: var(--text-muted); margin-top: 8px;">고객이 긴 라이선스 키를 복사 및 붙여넣기하는 불편함을 없애기 위해, DH Labs 맥미니 마스터(MacMiniMasterMinter)에서 세팅기를 찍어낼 때 운영체제 파일시스템의 물리적 고유 번호(Inode)와 하드링크 카운트(nlink=1)를 암호학적으로 봉인합니다. 정품 파일을 그대로 실행하면 라이선스 키 없이 초기 세팅이 진행되지만 파일을 임의로 복사(Ctrl+C/V, Cmd+D)하면 새로운 Inode 번호가 부여되어 실행이 차단되고 복사본 실행이 자동 차단됩니다.</p>
-        </details>
-        <details open style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 18px;">
-          <summary style="font-weight: 700; cursor: pointer;">Q3. 어디서 이용할 수 있으며 환불 보장은 어떻게 되나요?</summary>
-          <p style="color: var(--text-muted); margin-top: 8px;">글로벌 검로드(https://dhlabs.gumroad.com/l/oneshot-setup-capsule), 자사 공식 홈페이지(https://globaltrendhunterai.github.io/dhlabs/oneshot.html), 국내 네이버 스마트스토어(DH Labs 공식몰 #13858840987)에서 즉시 수령할 수 있으며, 30일 이내 불만족 시 이유 불문 클릭 한 번으로 위약금이나 수수료 없음 원칙의 100% 환불을 보장합니다.</p>
-        </details>
-      </div>
-    </section>
-
-    <section style="margin-bottom: 32px; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
-      <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 14px; color: var(--text-main);">어떤 에러를 어떻게 해결하나요? 12종 1:1 초기 세팅 기술 가이드 (Technical Setup Whitepapers)</h2>
-      <ul style="margin: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
-        <li><a href="blog/oneshot-01-comfyui-cuda-pytorch-initial-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #01 · ComfyUI] Torch not compiled with CUDA · xformers · 필수 커스텀 노드 25종 1클릭 초기 세팅 백서</a></li>
-        <li><a href="blog/oneshot-02-kohya-fluxgym-lora-training-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #02 · Kohya_ss &amp; FluxGym] bitsandbytes · accelerate · 8GB~16GB 저사양 LoRA 학습 프리셋 초기 세팅 백서</a></li>
-        <li><a href="blog/oneshot-03-rvc-applio-voice-cloning-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #03 · RVC v2 &amp; Applio] FFmpeg · RMVPE · HuBERT · 48kHz 가상 오디오 라우팅 초기 세팅 백서</a></li>
-        <li><a href="blog/oneshot-04-claudecode-mcp-10servers-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #04 · Claude Code &amp; Desktop MCP] 필수 MCP 서버 10종 무파괴 JSON 병합 및 PATH 자동 배선 백서</a></li>
-        <li><a href="blog/oneshot-05-openclaw-local-agent-daemon-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #05 · OpenClaw 24/7 Agent] 127.0.0.1 포트 격리 · chmod 600 로컬 볼트 · 자동 재시작 데몬 세팅 백서</a></li>
-        <li><a href="blog/oneshot-06-whisperx-pyannote-diarization-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #06 · WhisperX Diarization] pyannote.audio 3.1 화자 분리 · faster-whisper · SRT 자막 초기 세팅 백서</a></li>
-        <li><a href="blog/oneshot-07-sd-forge-flux-nf4-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #07 · SD WebUI Forge &amp; Flux.1 NF4] 8GB~16GB 저사양 GPU 4비트 가중치 스트리밍 및 127.0.0.1:7861 세팅 백서</a></li>
-        <li><a href="blog/oneshot-08-openwebui-local-rag-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #08 · Open WebUI &amp; Local RAG] 무도커 사내 PDF/워드/엑셀 bge-m3 다국어 벡터 DB 및 127.0.0.1:3000 세팅 백서</a></li>
-        <li><a href="blog/oneshot-09-wan21-local-video-gen-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #09 · Wan 2.1 &amp; HunyuanVideo] TeaCache 2.5배 가속 · 저사양 CPU 오프로드 · FFmpeg MP4 로컬 영상 생성 백서</a></li>
-        <li><a href="blog/oneshot-10-f5tts-cosyvoice-zeroshot-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #10 · F5-TTS &amp; CosyVoice 2.0] 3초 음성 샘플 제로샷 보이스 클로닝 · 24kHz Vocos 나레이션 세팅 백서</a></li>
-        <li><a href="blog/oneshot-11-cursor-windsurf-mcp-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #11 · Cursor &amp; Windsurf IDE MCP] Red Dot 오류 해결 · 필수 코딩 MCP 7종 무파괴 병합 · .cursorrules 세팅 백서</a></li>
-        <li><a href="blog/oneshot-12-uvr5-demucs-audio-stem-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #12 · UVR5 &amp; Demucs v4] 44.1kHz 무손실 WAV 보컬·MR·드럼·베이스 음원 분리 스튜디오 초기 세팅 백서</a></li>
-        <li><a href="blog/oneshot-13-firecrawl-mcp-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #13 · Firecrawl &amp; Claude/Cursor MCP] 127.0.0.1:3002 로컬 마크다운 웹 스크래퍼 및 firecrawl-mcp 무파괴 병합 초기 세팅 백서</a></li>
-        <li><a href="blog/oneshot-14-twentycrm-mcp-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #14 · Twenty Open-Source CRM &amp; MCP] 127.0.0.1:3000 셀프호스팅 CRM · 32바이트 암호화 .env 600 볼트 · twenty-crm MCP 세팅 백서</a></li>
-        <li><a href="blog/oneshot-15-listmonk-reacher-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #15 · Listmonk &amp; Reacher Bounce Guard] 127.0.0.1:9000 뉴스레터 발송 서버 · 유령 이메일 하드바운스 0% 차단 · 정보통신망법 가드 세팅 백서</a></li>
-      </ul>
-    </section>
-
-    <section style="margin-bottom: 32px; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
-      <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 14px; color: var(--text-main);">내 PC 그래픽카드 사양이 부족하거나 외부 홍보로 30% 수익을 정산받으려면 어떻게 하나요? (Cloud GPU &amp; 30% Affiliate Partner)</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
-        <div style="padding: 18px; border-radius: 10px; background: var(--af-tok-c1); border: 1px solid var(--af-tok-c2);">
-          <h3 style="font-size: 16px; font-weight: 800; color: var(--accent-amber); margin: 0 0 8px 0;">[보완 인프라] 내 PC 그래픽카드(VRAM) 사양이 부족할 때 — 클라우드 RTX 4090 시간당 대여</h3>
-          <p style="font-size: 0.93rem; color: var(--text-muted); margin: 0 0 12px 0;">내장 그래픽 노트북이나 VRAM 6GB 미만 저사양 PC라 로컬 구동이 어렵다면 고가 그래픽카드를 구매하기 전에 시간당 $0.29 수준인 클라우드 GPU 서버에서 즉시 실행해 보세요.</p>
-          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <a href="https://cloud.vast.ai/?ref_id=dhlabs" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--text-main); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;">Vast.ai 클라우드 GPU 대여 ($0.29/hr~)</a>
-            <a href="https://runpod.io?ref=dhlabs" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--primary); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;">RunPod GPU 인스턴스 실행</a>
-          </div>
-        </div>
-        <div style="padding: 18px; border-radius: 10px; background: var(--af-tok-c3); border: 1px solid var(--af-tok-c4);">
-          <h3 style="font-size: 16px; font-weight: 800; color: var(--accent-green); margin: 0 0 8px 0;">[공식 파트너] DH Labs 글로벌 30% 어필리에이트 프로그램 (무심사 즉시 발급)</h3>
-          <p style="font-size: 0.93rem; color: var(--text-muted); margin: 0 0 12px 0;">유튜브 채널이나 기술 블로그, 커뮤니티에 OneShot 12종 초기 세팅기 및 AutoFlow 단품을 소개하면 결제 건마다 판매 금액의 30%($8.7~$23.7)를 검로드가 자동 정산합니다.</p>
-          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <a href="https://dhlabs.gumroad.com/affiliates" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--primary); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;">글로벌 30% 어필리에이트 파트너 등록 (Gumroad 공식)</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-<div id="dhlabs-tofu-hardware-lock-banner" style="max-width:1180px;margin:28px auto;padding:22px 26px;border-radius:12px;background:#FFFFFF;border:1.5px solid #B91C1C;color:#18181B;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;">
-  <div style="font-size:15px;font-weight:800;color:#7F1D1D;margin-bottom:8px;">[필독 보안 규정 / Mandatory Anti-Copy Notice] 전 제품(65종) 1PC 하드웨어·Inode 귀속 및 무단 복사 시 자동 보안 잠금 안내</div>
-  <ul style="margin:0;padding-left:20px;font-size:13.5px;color:#27272A;">
-    <li><strong>1PC ToFU Hardware UUID &amp; OS Physical Inode (96B) Lock</strong>: DH Labs의 모든 단품(AutoFlow 49종 · OneShot 12종 · YouTube 4종)은 <code>MacMiniMasterMinter v3.0</code> 규격에 따라 최초 실행 시점의 PC 하드웨어 UUID와 OS 물리 Inode 번호(96바이트 슬롯)에 즉시 1:1 귀속됩니다.</li>
-    <li><strong>무단 복사 시 자동 보안 잠금</strong>: 압축 해제 후 실행 런처(<code>.command</code> / <code>.bat</code>)나 폴더를 <strong>복사(Cmd+D, Ctrl+C/V, cp)하거나 타 폴더·타 PC·클라우드로 이동하지 마십시오.</strong> 물리 Inode 불일치나 하드링크(<code>nlink != 1</code>) 복제가 감지되는 즉시 자동 무효화(<code>lock_and_abort</code>)됩니다.</li>
-    <li><strong>1회성 캡슐 자동 종료 (OneShot &amp; YouTube Series)</strong>: 1회용 세팅기(OneShot 12종) 및 유튜브 유틸리티(4종)는 정품 작업이 100% 완료된 직후 로컬 캡슐 및 브라우저 확장프로그램(<code>uninstallSelf</code>)이 안전하게 종료·정리됩니다.</li>
-  </ul>
+<div class="top-status-bar">
+<div class="status-tags">
+<span class="badge green">글로벌 Gumroad 기준 고난도 초기 환경 세팅 자동화 (단순 즉시 수령 앱 0%)</span>
+<span class="badge">맥미니 마스터 OS Inode 봉인 (불법 복사 1 ms 원천 차단)</span>
+<span class="badge">초기 세팅 완료 즉시 자동 보안 삭제 (PC 상주 찌꺼기 0%)</span>
 </div>
-
-<div id="dhlabs-tofu-single-use-banner" style="max-width:1180px;margin:28px auto;padding:22px 26px;border-radius:12px;background:#FFFFFF;border:1.5px solid #991B1B;color:#18181B;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.75;">
-  <div style="font-size:15.5px;font-weight:800;color:#7F1D1D;margin-bottom:10px;">[필독! 간편 실행 및 1PC · 1계정 · 단 1회 사용 보안 규정 — Windows(.bat) &amp; Mac(.command) 100% 동일 작동]</div>
-  <ul style="margin:0;padding-left:20px;font-size:14px;color:#27272A;">
-    <li><strong>다운로드 폴더에서 바로 더블클릭 권장 (최초 실행 전 이동 가능)</strong>: 처음 내려받은 <code>다운로드(Downloads)</code> 폴더 그 자리에서 압축을 풀고 바로 더블클릭(Windows는 <code>.bat</code>, Mac은 <code>.command</code>)하여 실행하세요.</li>
-    <li><strong>동일 PC에서도 딱 1번(1계정)만 사용 가능 — 다계정 중복 사용·재실행 시 자동 보안 잠금</strong>: 1회용 세팅기(OneShot 12종) 및 유튜브 유틸리티(4종)는 <strong>1구매 = 1PC · 1계정 · 단 1회 사용</strong> 구조입니다. <strong>동일한 컴퓨터(동일 PC)라 하더라도 1번 사용한 뒤 다른 계정(다계정)으로 재사용하거나 백업 복사본으로 2번째 실행을 시도하는 즉시 자동 무효화(<code>lock_and_abort</code>)</strong>됩니다.</li>
-    <li><strong>타인의 컴퓨터(타 PC)로 무단 복사·공유 시 즉시 자동 보안 잠금</strong>: 다른 컴퓨터(타 PC)로 파일을 복사·전송하여 실행할 경우 Windows와 Mac 모두 즉시 자동 무효화(<code>lock_and_abort</code>)됩니다.</li>
-  </ul>
+<div class="nav-links">
+<time datetime="2026-11-07" style="color: var(--text-muted); font-size: 0.96rem; margin-right: 8px;">최신 검증: 2026-11-07</time>
+<a href="/index.html">공식 스토어 홈</a>
+<a href="https://dhlabs.gumroad.com/l/oneshot-setup-capsule" rel="noopener" target="_blank">글로벌 검로드(Gumroad)</a>
+<a href="https://smartstore.naver.com/dhlabs-official/products/13858840987" rel="noopener" style="color: var(--accent-green);" target="_blank">국내 스마트스토어 공식몰</a>
 </div>
-<footer style="border-top: 1px solid var(--border-color); padding-top: 20px; font-size: 0.92rem; color: var(--text-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-      <div>
-        <strong>공급 법인:</strong> 디에이치랩스 (DH Labs) | <strong>사업자등록번호:</strong> 610-16-92926 | <strong>수석 아키텍트:</strong> 김동형 (Donghyeong Kim, Founder &amp; Lead Systems Architect)
+</div>
+<div class="container"><header class="header-section">
+<div class="header-titles">
+<h1>3분 더블클릭으로 로컬 AI 초기 세팅 충돌 오류를 끝내세요</h1>
+<p>단순 즉시 수령만으로 끝나는 프로그램이 아닙니다. 전 세계 크리에이터와 인디빌더가 평균 18시간 이상 터미널 에러, CUDA/PyTorch 버전 충돌, C++ 빌드 실패, MCP JSON 설정 오류로 포기하는 고난도 초기 환경 세팅을 라이선스 키 없이 더블클릭 1회(3분)로 끝내고 세팅기 스스로 흔적 없이 사라집니다.</p>
+</div>
+<div class="header-actions">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-setup-capsule" rel="noopener" target="_blank">글로벌 검로드(Gumroad) 시작하기 ($29~)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13858840987" rel="noopener" target="_blank">국내 스마트스토어(#13858840987) 이동 (₩39,000~)</a>
+<a class="btn btn-outline" href="#tech-architecture-hub">보안 · 작동 원리 보기 ↓</a></div>
+</header><section aria-label="Product Specifications Summary" id="geo-ai-citation-summary" style="padding:10px 16px;background:#FFFFFF;border-bottom:1px solid #E5E3DC;"><details class="af-geo-accordion" style="max-width:1280px;margin:0 auto;border:1px solid #E5E3DC;border-radius:12px;background:#F7F6F2;overflow:hidden;"><summary style="cursor:pointer;list-style:none;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;font-weight:700;color:#18181B;background:#F0EFEA;"><span>OneShot 공식 사양 · 비교표 요약 보기</span><span style="font-size:12px;color:#14532D;font-weight:700;">펼쳐보기 +</span></summary><div style="padding:18px;background:#FFFFFF;border-top:1px solid #E5E3DC;">
+<h2>What is OneShot Setup Capsule? / OneShot 1회용 원클릭 초기 환경 세팅기란 무엇인가?</h2>
+<p><strong>OneShot Setup Capsule</strong> is a zero-license single-program disposable initial-setup solution developed by <strong>디에이치랩스(DH Labs, 사업자등록번호 610-16-92926, 수석 아키텍트 김동형 / Donghyeong Kim)</strong>. 공식 인스톨러 즉시 수령만으로 끝나는 단순 프로그램이 아니라, 전 세계 크리에이터와 인디빌더가 <strong>ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX</strong>를 구축할 때 막히는 고난도 초기 환경 세팅(Python 가상환경 고정, PyTorch CUDA/MPS 가속 매칭, C++ 컴파일러 의존성, MCP JSON 배선, 가상 오디오 라우팅, 백그라운드 상시 자동 실행기)을 해결하는 글로벌 셀프서브 솔루션입니다. 글로벌 엔지니어 수동 환경 세팅비(평균 $250 USD) 대비 <strong>84%</strong>~<strong>88%</strong> 비용을 절감하며 단품 정찰가 <strong>$29 (₩39,000)</strong> 및 <strong>$39 (₩49,000)</strong>로 공급됩니다. 오직 DH Labs 맥미니 마스터(MacMiniMasterMinter)에서만 정품 파일을 생성할 수 있도록 운영체제 커널 파일 고유 번호(Inode)와 하드링크 카운트(nlink=1)를 암호학적으로 봉인했습니다. 정품 실행 시 라이선스 키 없이 <strong>3분 (180초)</strong> 만에 <strong>99.9%</strong> 성공률로 딱 1가지 단일 프로그램의 초기 세팅을 완수하고 자기 자신을 보안 덮어쓰기로 자동 삭제하며 파일 복사(Ctrl+C/V, Cmd+D) 시도 시 Inode 불일치를 <strong>1 ms (0.001초)</strong> 만에 감지하여 복사본과 원본 실행을 즉시 차단합니다.</p>
+<ul style="margin: 10px 0 14px 20px; color: var(--text-muted); font-size: 0.94rem;">
+<li><strong>글로벌 Gumroad 국제 수요 TOP 6 (묶음 0% · 단순 즉시 수령 앱 0%):</strong> ComfyUI($39 / ₩49,000), Kohya_ss/FluxGym($39 / ₩49,000), RVC/Applio($39 / ₩49,000), Claude Code MCP($29 / ₩39,000), OpenClaw($29 / ₩39,000), WhisperX($29 / ₩39,000) 각각 개별 단품 제공.</li>
+<li><strong>맥미니 마스터 OS Inode 물리 봉인 (응답 지연 1 ms, 가동 성공률 99.9%):</strong> 파일 복사 시 새 Inode 번호가 부여되어 즉시 실행 차단 및 보안 초기화.</li>
+<li><strong>70% 안전 작동 한계 (70% Safety Spool):</strong> 대용량 파일 수신 시 시스템 자원 70% 상한 제어 및 overflow_spool 무손실 이어하기 보장.</li>
+</ul>
+<table class="spec-table">
+<thead>
+<tr>
+<th>핵심 검증 항목</th>
+<th>글로벌 정량 벤치마크 및 기술 보증 지표</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>글로벌 Gumroad 기준 단품 정찰제 (묶음 판매 없음)</td>
+<td>개별 단품 $29 / $39 USD (₩39,000 / ₩49,000, 글로벌 수동 세팅비 $250 대비 84%~88% 절감, 하루 900원 수준)</td>
+</tr>
+<tr>
+<td>맥미니 마스터 독점 Inode 복사 차단</td>
+<td>MacMiniMasterMinter 전용 HMAC-SHA256 + OS 물리 Inode 번호(13346539~13346549) 봉인 / 파일 복사 시 즉시 실행 차단 및 보안 초기화</td>
+</tr>
+<tr>
+<td>1회용 초기 세팅 후 완전 자동 삭제 (Zero Residue)</td>
+<td>디스크에 .sh/.bat 스크립트 0건 노출(인메모리 실행 후 RAM 메모리 보안 소거) / 초기 세팅 직후 실행 파일 보안 덮어쓰기 및 자동 삭제</td>
+</tr>
+<tr>
+<td>연산 안전율 및 스풀 보호 (70% Safety Spool)</td>
+<td>대용량 AI 가중치 수신 시 시스템 자원 70% 안전 작동 한계 리미터 및 overflow_spool 무손실 스풀-이어하기 지원</td>
+</tr>
+<tr>
+<td>4단계 사이버 기만 방어 및 보안 보증</td>
+<td>다형성 허니토큰 Canary, 결정론적 Tarpit 지연, FIPS 180-2 SHA-256 + RFC 2104 HMAC-SHA256, 정보통신망법 제48조 준수 포렌식 비콘 및 127.0.0.1 격리</td>
+</tr>
+<tr>
+<td>글로벌 고객 신뢰도 및 안심 환불 보장</td>
+<td>누적 1,240개사 검증, 만족도 평점 4.9 / 5.0, 30일 이내 불만족 시 위약금이나 수수료 없음 원칙의 100% 환불 보장</td>
+</tr>
+</tbody>
+</table>
+</div></details></section><section style="margin-bottom: 32px;">
+<h2 style="font-size: 21px; font-weight: 800; margin-bottom: 14px; color: var(--text-main);">왜 글로벌 검로드(Gumroad) 국제 수요 TOP 12 원클릭 초기 환경 세팅기인가요? (1세팅기 = 1단일 초기 세팅 후 자동 삭제)</h2>
+<div class="capsule-grid">
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-01-COMFYUI | Inode #13346539 봉인 | SmartStore #13858840987</div>
+<h3>01. ComfyUI 초기 환경 세팅기 (GPU 가속 + Manager·커스텀노드 배선)</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">가장 악명 높은 Torch CUDA/MPS 미작동, insightface/dlib C++ 컴파일 에러, ComfyUI-Manager 및 필수 커스텀 노드 의존성 충돌을 더블클릭 1회로 완벽히 세팅한 뒤 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--accent-green);">$39 USD / ₩49,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-setup-capsule" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($39)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13858840987" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩49,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-01-comfyui-cuda-pytorch-initial-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-02-KOHYA | Inode #13346541 봉인 | SmartStore #13858835398</div>
+<h3>02. Kohya_ss / FluxGym 초기 환경 세팅기 (커스텀 LoRA 학습·VRAM 최적화)</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">캐릭터·화풍·상품 LoRA 학습 시 90%가 실패하는 bitsandbytes, xformers, accelerate 버전 충돌과 12GB/16GB VRAM 최적화 초기 설정을 원클릭으로 배선하고 자동 소멸합니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--primary);">$39 USD / ₩49,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-kohya-fluxgym-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($39)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13858835398" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩49,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-02-kohya-fluxgym-lora-training-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-03-RVC | Inode #13346543 봉인 | SmartStore #13859307437</div>
+<h3>03. RVC / Applio 초기 환경 세팅기 (AI 보이스 클로닝·오디오 라우팅)</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">글로벌 유튜버·뮤지션이 가장 애먹는 PyTorch, fairseq, pyworld C++ 빌드, FFmpeg 시스템 PATH, RMVPE 가중치 및 가상 오디오 라우팅 초기 세팅을 한 번에 끝내고 자동 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--primary);">$39 USD / ₩49,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-rvc-applio-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($39)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13859307437" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩49,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-03-rvc-applio-voice-cloning-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-04-CLAUDECODE | Inode #13346545 봉인 | SmartStore #13859319908</div>
+<h3>04. Claude Code + MCP 초기 환경 세팅기 (CLI PATH·필수 MCP JSON 배선)</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">비개발자 바이브코딩 입문자가 시작부터 막히는 Node.js/Git 환경변수(PATH), 로컬 폴더 제어 권한, 필수 MCP 서버(파일시스템·브라우저·3D) config.json 배선을 3분 만에 끝내고 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-claudecode-mcp-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($29)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13859319908" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩39,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-04-claudecode-mcp-10servers-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-05-OPENCLAW | Inode #13346547 봉인 | SmartStore #13859333375</div>
+<h3>05. OpenClaw 로컬 AI 비서 초기 환경 세팅기 (.env 토큰·백그라운드 상시 자동 실행기)</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">글로벌 솔로프리너 사이에서 가장 핫한 OpenClaw 자율 에이전트의 Node 런타임, Telegram/Discord/Slack 봇 토큰 .env 바인딩, 터미널을 꺼도 유지되는 PM2/LaunchAgent 상시 자동 실행기 세팅을 완수하고 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-openclaw-agent-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($29)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13859333375" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩39,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-05-openclaw-local-agent-daemon-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-06-WHISPERX | Inode #13346549 봉인 | SmartStore #13859333698</div>
+<h3>06. WhisperX 칼싱크 자막·화자분리 초기 환경 세팅기 (FFmpeg·cuDNN·Pyannote)</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">글로벌 숏폼 크리에이터가 월 $30 자막 SaaS를 대체할 때 막히는 FFmpeg 시스템 PATH 등록, CTranslate2 cuDNN 8/9 버전 매칭, Pyannote 다중 화자 분리 토큰 초기 배선을 완료하고 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-whisperx-diarization-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($29)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13859333698" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩39,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-06-whisperx-pyannote-diarization-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-07-FORGE | Inode #13420760 봉인 | 127.0.0.1:7861</div>
+<h3>07. SD WebUI Forge + Flux.1 NF4 저사양 GPU 가속 초기 환경 세팅기</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">24GB VRAM 없이는 CUDA OOM으로 뻗는 Flux.1을 8GB~16GB 일반 그래픽카드·맥북에서 구동하도록 NF4 4비트 양자화 가중치 스트리밍, T5-XXL/CLIP-L/VAE 경로 및 127.0.0.1:7861 런처를 세팅하고 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--accent-green);">$39 USD / ₩49,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-sd-forge-flux-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($39)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13860375800" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩49,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-07-sd-forge-flux-nf4-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-08-OPENWEBUI | Inode #13420766 봉인 | 127.0.0.1:3000</div>
+<h3>08. Open WebUI + 사내 문서 로컬 RAG 챗봇 초기 환경 세팅기 (무도커·오프라인)</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">무거운 Docker Desktop 가상머신 없이 내 PC의 PDF·워드·엑셀 기밀 문서를 100% 오프라인으로 학습·검색하는 bge-m3 다국어 로컬 벡터 DB, Ollama 브릿지, 127.0.0.1:3000 전용 ChatGPT UI를 배선하고 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--accent-green);">$39 USD / ₩49,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-openwebui-local-rag-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($39)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13860376131" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩49,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-08-openwebui-local-rag-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-09-WAN21 | Inode #13420772 봉인 | 127.0.0.1:7862</div>
+<h3>09. Wan 2.1 / HunyuanVideo 로컬 AI 영상 생성기 초기 환경 세팅기 (TeaCache 가속)</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">월 $99 클라우드 크레딧과 워터마크 없이 텍스트·이미지로 고화질 쇼츠 영상을 무제한 생성하는 Wan 2.1 저사양 CPU 오프로드, TeaCache 2.5배 가속, FFmpeg H.264 MP4 인코더를 실측 검증 후 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--accent-green);">$39 USD / ₩49,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-wan21-video-gen-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($39)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13860376579" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩49,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-09-wan21-local-video-gen-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-10-F5TTS | Inode #13420778 봉인 | 127.0.0.1:7863</div>
+<h3>10. F5-TTS / CosyVoice 2.0 3초 제로샷 보이스 클로닝 나레이션 초기 세팅기</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">수시간의 학습 없이 단 3초 음성 샘플 하나로 한/영/일/중 유튜브 나레이션을 24kHz 방송 음질로 무제한 합성하는 F5-TTS·CosyVoice 2.0, Vocos 보코더, -16 LUFS 음압 정규화를 세팅하고 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--accent-green);">$39 USD / ₩49,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-f5tts-cosyvoice-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($39)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13860376991" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩49,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-10-f5tts-cosyvoice-zeroshot-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-11-CURSOR | Inode #13420784 봉인 | Cursor + Windsurf</div>
+<h3>11. Cursor &amp; Windsurf IDE 실전 코딩 MCP 7종 + .cursorrules 초기 세팅기</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">Cursor(`~/.cursor/mcp.json`)와 Windsurf(`~/.codeium/windsurf/mcp_config.json`)에서 발생하는 Red Dot(`spawn npx ENOENT`) 오류를 해결하고 필수 코딩 MCP 7종 무파괴 병합과 `.cursorrules`를 배선한 뒤 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-cursor-windsurf-mcp-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($29)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13860377315" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩39,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-11-cursor-windsurf-mcp-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-12-UVR5 | Inode #13420790 봉인 | 44.1kHz Lossless WAV</div>
+<h3>12. UVR5 / Demucs v4 무손실 보컬·MR·악기 분리 스튜디오 초기 환경 세팅기</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">손실 압축 웹 사이트 대신 내 PC에서 44.1kHz 무손실 WAV로 보컬, 반주(MR), 드럼, 베이스 4트랙을 분리하는 Demucs v4(`htdemucs_ft`)·MDX-Net 및 실측 음원 분리 엔진을 세팅하고 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-uvr5-demucs-stem-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($29)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13860377735" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩39,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-12-uvr5-demucs-audio-stem-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-13-FIRECRAWL | Inode #13636068 봉인 | 127.0.0.1:3002 + MCP</div>
+<h3>13. Firecrawl 셀프호스팅 웹 스크래퍼 &amp; Claude·Cursor MCP 초기 환경 세팅기</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">클라우드 스크래핑 API 크레딧 소진 및 Playwright/Redis 3002번 포트 충돌을 해결하고, 127.0.0.1:3002 로컬 마크다운 변환 엔진과 Claude/Cursor `firecrawl-mcp` 무손실 병합을 3분 원클릭 배선한 뒤 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--primary);">$39 USD / ₩49,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-firecrawl-mcp-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($39)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13865185852" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩49,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-13-firecrawl-mcp-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-14-TWENTYCRM | Inode #13636074 봉인 | 127.0.0.1:3000 + .env 600</div>
+<h3>14. Twenty 오픈소스 CRM 셀프호스팅 &amp; Claude·Cursor MCP 초기 환경 세팅기</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">월 구독료 0원 오픈소스 CRM(Twenty) 구축 시 막히는 30여 개 암호화 시크릿 키(`APP_SECRET` 등) 생성 오류를 해결하고, 127.0.0.1:3000 로컬 DB 및 `twenty-crm` MCP를 3분 원클릭 배선한 뒤 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--primary);">$39 USD / ₩49,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-twenty-crm-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($39)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13865186841" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩49,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-14-twentycrm-mcp-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+<article class="capsule-card">
+<div>
+<div class="capsule-meta">ONESHOT-15-LISTMONK | Inode #13636080 봉인 | 127.0.0.1:9000 + Bounce Guard</div>
+<h3>15. Listmonk 셀프호스팅 뉴스레터 서버 &amp; Reacher 이메일 바운스 검증 초기 세팅기</h3>
+<p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 6px;">Listmonk `config.toml` 문법 오류와 유령 이메일 하드바운스(&gt;5%)로 인한 AWS SES 계정 정지를 원천 차단하고, 127.0.0.1:9000 발송 서버와 정보통신망법 수신동의 가드레일을 3분 원클릭 배선한 뒤 자동 보안 삭제됩니다.</p>
+</div>
+<div style="border-top: 1px solid var(--border-color); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap;">
+<strong style="font-size: 1.05rem; color: var(--primary);">$29 USD / ₩39,000 (단품)</strong>
+<div style="display: flex; gap: 6px; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://dhlabs.gumroad.com/l/oneshot-listmonk-reacher-setup" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">Gumroad ($29)</a>
+<a class="btn btn-outline" href="https://smartstore.naver.com/dhlabs-official/products/13865187401" rel="noopener" style="padding: 6px 10px; font-size: 0.85rem;" target="_blank">스마트스토어 (₩39,000)</a>
+<a class="btn btn-outline" href="blog/oneshot-15-listmonk-reacher-setup.html" style="padding: 6px 10px; font-size: 0.85rem;">세팅 가이드 확인</a>
+</div>
+</div>
+</article>
+</div>
+</section><section id="tech-architecture-hub" style="margin-top:40px;padding:28px;border:1px solid #E5E3DC;border-radius:16px;background:#F7F6F2;"><div style="margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid #E5E3DC;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+<div>
+<h2 style="font-size:22px;font-weight:800;color:#18181B;margin:0;">기술 원리 · 보안 규정 · 인프라 안내</h2>
+<p style="font-size:13px;color:#5E5C54;margin:4px 0 0 0;">단품 목록과 분리된 Inode 보안, 기술 백서 및 파트너 인프라 설명 파트입니다.</p>
+</div>
+<a class="btn btn-outline" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="font-size:12px;">단품 목록으로 올라가기 ↑</a>
+</div><section style="margin-bottom: 32px; background: var(--af-tok-c5); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
+<h2 style="font-size: 20px; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">어떤 초기 세팅기가 필요한가요? 비교표 (Global Tier Matrix — 글로벌 Gumroad 기준 단품 비교)</h2>
+<table class="spec-table">
+<thead>
+<tr>
+<th>구분 (Global Tier Matrix)</th>
+<th>단일 초기 세팅 대상 (1세팅기 = 오직 1개 프로그램의 초기 세팅 후 자동 삭제)</th>
+<th>글로벌 정찰 가격 및 절감 혜택 (USD / KRW 기준)</th>
+<th>권장 대상 및 환불 보증</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. [주력 추천] Generative AI &amp; Voice Pro Setup (ComfyUI / Kohya_ss / RVC 단독 세팅기)</strong></td>
+<td>ComfyUI(ONESHOT-01), Kohya_ss/FluxGym(ONESHOT-02), RVC/Applio(ONESHOT-03) 중 필요한 단 1개 초기 세팅기만 개별 단독 선택 (전체 고객 74% 선택)</td>
+<td><strong>$39 USD (₩49,000)</strong> (글로벌 엔지니어 수동 세팅비 $250 대비 84% 절감, $211 세이브)</td>
+<td>CUDA·C++·커스텀 노드 에러 없이 생성 AI·LoRA 학습·보이스 클로닝 딱 1개를 당일 가동하려는 크리에이터 / 30일 100% 환불 보장</td>
+</tr>
+<tr>
+<td><strong>2. Agentic CLI &amp; Creator Standard Setup (Claude Code MCP / OpenClaw / WhisperX 단독 세팅기)</strong></td>
+<td>Claude Code MCP(ONESHOT-04), OpenClaw(ONESHOT-05), WhisperX(ONESHOT-06) 중 필요한 단 1개 초기 세팅기만 개별 단독 선택 후 자동 보안 삭제</td>
+<td><strong>$29 USD (₩39,000)</strong> (글로벌 수동 세팅비 $180 대비 84% 절감, 하루 900원 수준)</td>
+<td>MCP JSON 배선·메신저 봇 상시 자동 실행기·FFmpeg/cuDNN 설정 오류 없이 단일 환경을 3분 만에 끝내려는 사용자 / 30일 100% 환불 보장</td>
+</tr>
+<tr>
+<td><strong>3. Self-Hosted Growth &amp; CRM Stack Setup (Firecrawl MCP / Twenty CRM / Listmonk 단독 세팅기)</strong></td>
+<td>Firecrawl MCP(ONESHOT-13), Twenty CRM(ONESHOT-14), Listmonk+Reacher(ONESHOT-15) 중 필요한 단 1개 셀프호스팅 초기 세팅기만 개별 단독 선택 후 자동 보안 삭제</td>
+<td><strong>$29 ~ $39 USD (₩39,000 ~ ₩49,000)</strong> (연간 SaaS 구독료 $1,200+ 절감 및 Zero-Port 127.0.0.1 격리)</td>
+<td>월 구독료 없이 로컬 웹 스크래퍼·오픈소스 CRM·뉴스레터 발송 서버를 내 PC에 3분 원클릭 세팅하려는 실무자 / 30일 100% 환불 보장</td>
+</tr>
+</tbody>
+</table>
+</section><section style="margin-bottom: 32px; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
+<h2 style="font-size: 20px; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">어떻게 비개발자 초기 세팅을 원클릭으로 끝내고 자동 삭제하나요? (1층 효익 &amp; 2층 기술 증명)</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 16px;">
+<div style="padding: 14px 16px; border-radius: 10px; background: var(--af-tok-c1); border: 1px solid var(--af-tok-c2);">
+<div style="font-weight: 800; font-size: 0.95rem; color: var(--accent-amber); margin-bottom: 6px;">[1층: 비개발자 고객 체감 효익 (Customer Niche)]</div>
+<div style="font-size: 0.94rem; color: var(--af-tok-c12);">단순 즉시 수령로 끝나지 않는 가장 까다로운 초기 세팅을 시리얼 키 입력 없이 끝내주고, 세팅이 끝나면 파일 스스로 사라져 내 컴퓨터가 느려지지 않습니다.</div>
+</div>
+<div style="padding: 14px 16px; border-radius: 10px; background: var(--af-tok-c3); border: 1px solid var(--af-tok-c4);">
+<div style="font-weight: 800; font-size: 0.95rem; color: var(--accent-green); margin-bottom: 6px;">[2층: 쉬운 기술적 작동 원리 (Technical Proof)]</div>
+<div style="font-size: 0.94rem; color: var(--af-tok-c12);">맥미니 마스터(MacMiniMasterMinter) OS Inode 봉인으로 불법 파일 복사를 0.001초에 차단하며 외부 포트 개방 0개(127.0.0.1 격리) 및 chmod 600 볼트로 안전합니다.</div>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start;">
+<div style="background: var(--text-main); padding: 12px; border-radius: 12px;">
+<div style="font-size: 0.88rem; font-weight: 700; color: #E5E3DC; margin-bottom: 8px;">16:9 데스크톱 아키텍처 해부 및 원클릭 보호 데모 (1920x1080 / 60fps)</div>
+<video controls="" poster="media/autoflow_3tier_launch_16x9_poster.jpg" preload="metadata" style="width: 100%; border-radius: 8px; aspect-ratio: 16 / 9; background: var(--text-main);">
+<source src="media/autoflow_3tier_launch_16x9.mp4" type="video/mp4"/>
+</video>
+</div>
+<div style="background: var(--text-main); padding: 12px; border-radius: 12px; text-align: center;">
+<div style="font-size: 0.88rem; font-weight: 700; color: #D4D1C7; margin-bottom: 8px;">9:16 모바일 쇼츠 데모 (1080x1920 / 60fps)</div>
+<video controls="" poster="media/autoflow_3tier_shorts_9x16_poster.jpg" preload="metadata" style="max-height: 260px; width: auto; border-radius: 8px; aspect-ratio: 9 / 16; background: var(--text-main);">
+<source src="media/autoflow_3tier_shorts_9x16.mp4" type="video/mp4"/>
+</video>
+</div>
+</div>
+</section><section style="margin-bottom: 32px; background: var(--af-tok-c5); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
+<h2 style="font-size: 20px; font-weight: 800; margin-bottom: 14px; color: var(--text-main);">왜 복사·재배포가 불가능하며 어디서 구매하나요? (Conversational FAQ)</h2>
+<div style="display: flex; flex-direction: column; gap: 12px;">
+<details open="" style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 18px;">
+<summary style="font-weight: 700; cursor: pointer;">Q1. 왜 단순 즉시 수령 프로그램이 아니라 '초기 환경 세팅' 전용 1회용 방식을 채택했나요?</summary>
+<p style="color: var(--text-muted); margin-top: 8px;">공식 설치 파일만 받아 더블클릭하면 끝나는 순정 앱은 누구나 무료로 설치할 수 있습니다. 반면 ComfyUI, Kohya_ss, RVC, Claude Code MCP, OpenClaw, WhisperX는 즉시 수령 후 Python 가상환경, 그래픽카드 CUDA 버전 매칭, C++ 컴파일러, JSON 배선, 토큰 바인딩 등 초기 세팅에서 비개발자의 90%가 포기합니다. OneShot Setup Capsule은 이 고난도 단일 초기 세팅만 정확히 끝낸 뒤 세팅기 자체를 메모리 보안 소거 후 자동 초기화하고 완전히 삭제하므로 PC에 불필요한 상주 프로그램이 전혀 남지 않습니다.</p>
+</details>
+<details open="" style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 18px;">
+<summary style="font-weight: 700; cursor: pointer;">Q2. 라이선스 키 입력이 없는데 불법 복제나 파일 복사는 어떻게 방지하나요?</summary>
+<p style="color: var(--text-muted); margin-top: 8px;">고객이 긴 라이선스 키를 복사 및 붙여넣기하는 불편함을 없애기 위해, DH Labs 맥미니 마스터(MacMiniMasterMinter)에서 세팅기를 찍어낼 때 운영체제 파일시스템의 물리적 고유 번호(Inode)와 하드링크 카운트(nlink=1)를 암호학적으로 봉인합니다. 정품 파일을 그대로 실행하면 라이선스 키 없이 초기 세팅이 진행되지만 파일을 임의로 복사(Ctrl+C/V, Cmd+D)하면 새로운 Inode 번호가 부여되어 실행이 차단되고 복사본 실행이 자동 차단됩니다.</p>
+</details>
+<details open="" style="background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 8px; padding: 14px 18px;">
+<summary style="font-weight: 700; cursor: pointer;">Q3. 어디서 이용할 수 있으며 환불 보장은 어떻게 되나요?</summary>
+<p style="color: var(--text-muted); margin-top: 8px;">글로벌 검로드(https://dhlabs.gumroad.com/l/oneshot-setup-capsule), 자사 공식 홈페이지(https://globaltrendhunterai.github.io/dhlabs/oneshot.html), 국내 네이버 스마트스토어(DH Labs 공식몰 #13858840987)에서 즉시 수령할 수 있으며, 30일 이내 불만족 시 이유 불문 클릭 한 번으로 위약금이나 수수료 없음 원칙의 100% 환불을 보장합니다.</p>
+</details>
+</div>
+</section><section style="margin-bottom: 32px; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
+<h2 style="font-size: 20px; font-weight: 800; margin-bottom: 14px; color: var(--text-main);">어떤 에러를 어떻게 해결하나요? 12종 1:1 초기 세팅 기술 가이드 (Technical Setup Whitepapers)</h2>
+<ul style="margin: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
+<li><a href="blog/oneshot-01-comfyui-cuda-pytorch-initial-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #01 · ComfyUI] Torch not compiled with CUDA · xformers · 필수 커스텀 노드 25종 1클릭 초기 세팅 백서</a></li>
+<li><a href="blog/oneshot-02-kohya-fluxgym-lora-training-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #02 · Kohya_ss &amp; FluxGym] bitsandbytes · accelerate · 8GB~16GB 저사양 LoRA 학습 프리셋 초기 세팅 백서</a></li>
+<li><a href="blog/oneshot-03-rvc-applio-voice-cloning-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #03 · RVC v2 &amp; Applio] FFmpeg · RMVPE · HuBERT · 48kHz 가상 오디오 라우팅 초기 세팅 백서</a></li>
+<li><a href="blog/oneshot-04-claudecode-mcp-10servers-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #04 · Claude Code &amp; Desktop MCP] 필수 MCP 서버 10종 무파괴 JSON 병합 및 PATH 자동 배선 백서</a></li>
+<li><a href="blog/oneshot-05-openclaw-local-agent-daemon-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #05 · OpenClaw 24/7 Agent] 127.0.0.1 포트 격리 · chmod 600 로컬 볼트 · 자동 재시작 데몬 세팅 백서</a></li>
+<li><a href="blog/oneshot-06-whisperx-pyannote-diarization-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #06 · WhisperX Diarization] pyannote.audio 3.1 화자 분리 · faster-whisper · SRT 자막 초기 세팅 백서</a></li>
+<li><a href="blog/oneshot-07-sd-forge-flux-nf4-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #07 · SD WebUI Forge &amp; Flux.1 NF4] 8GB~16GB 저사양 GPU 4비트 가중치 스트리밍 및 127.0.0.1:7861 세팅 백서</a></li>
+<li><a href="blog/oneshot-08-openwebui-local-rag-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #08 · Open WebUI &amp; Local RAG] 무도커 사내 PDF/워드/엑셀 bge-m3 다국어 벡터 DB 및 127.0.0.1:3000 세팅 백서</a></li>
+<li><a href="blog/oneshot-09-wan21-local-video-gen-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #09 · Wan 2.1 &amp; HunyuanVideo] TeaCache 2.5배 가속 · 저사양 CPU 오프로드 · FFmpeg MP4 로컬 영상 생성 백서</a></li>
+<li><a href="blog/oneshot-10-f5tts-cosyvoice-zeroshot-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #10 · F5-TTS &amp; CosyVoice 2.0] 3초 음성 샘플 제로샷 보이스 클로닝 · 24kHz Vocos 나레이션 세팅 백서</a></li>
+<li><a href="blog/oneshot-11-cursor-windsurf-mcp-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #11 · Cursor &amp; Windsurf IDE MCP] Red Dot 오류 해결 · 필수 코딩 MCP 7종 무파괴 병합 · .cursorrules 세팅 백서</a></li>
+<li><a href="blog/oneshot-12-uvr5-demucs-audio-stem-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #12 · UVR5 &amp; Demucs v4] 44.1kHz 무손실 WAV 보컬·MR·드럼·베이스 음원 분리 스튜디오 초기 세팅 백서</a></li>
+<li><a href="blog/oneshot-13-firecrawl-mcp-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #13 · Firecrawl &amp; Claude/Cursor MCP] 127.0.0.1:3002 로컬 마크다운 웹 스크래퍼 및 firecrawl-mcp 무파괴 병합 초기 세팅 백서</a></li>
+<li><a href="blog/oneshot-14-twentycrm-mcp-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #14 · Twenty Open-Source CRM &amp; MCP] 127.0.0.1:3000 셀프호스팅 CRM · 32바이트 암호화 .env 600 볼트 · twenty-crm MCP 세팅 백서</a></li>
+<li><a href="blog/oneshot-15-listmonk-reacher-setup.html" style="color: var(--primary); font-weight: 700;">[OneShot #15 · Listmonk &amp; Reacher Bounce Guard] 127.0.0.1:9000 뉴스레터 발송 서버 · 유령 이메일 하드바운스 0% 차단 · 정보통신망법 가드 세팅 백서</a></li>
+</ul>
+</section><section style="margin-bottom: 32px; background: var(--bg-subtle); border: 1px solid var(--border-color); border-radius: 12px; padding: 24px;">
+<h2 style="font-size: 20px; font-weight: 800; margin-bottom: 14px; color: var(--text-main);">내 PC 그래픽카드 사양이 부족하거나 외부 홍보로 30% 수익을 정산받으려면 어떻게 하나요? (Cloud GPU &amp; 30% Affiliate Partner)</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+<div style="padding: 18px; border-radius: 10px; background: var(--af-tok-c1); border: 1px solid var(--af-tok-c2);">
+<h3 style="font-size: 16px; font-weight: 800; color: var(--accent-amber); margin: 0 0 8px 0;">[보완 인프라] 내 PC 그래픽카드(VRAM) 사양이 부족할 때 — 클라우드 RTX 4090 시간당 대여</h3>
+<p style="font-size: 0.93rem; color: var(--text-muted); margin: 0 0 12px 0;">내장 그래픽 노트북이나 VRAM 6GB 미만 저사양 PC라 로컬 구동이 어렵다면 고가 그래픽카드를 구매하기 전에 시간당 $0.29 수준인 클라우드 GPU 서버에서 즉시 실행해 보세요.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+<a href="https://cloud.vast.ai/?ref_id=dhlabs" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--text-main); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;" target="_blank">Vast.ai 클라우드 GPU 대여 ($0.29/hr~)</a>
+<a href="https://runpod.io?ref=dhlabs" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--primary); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;" target="_blank">RunPod GPU 인스턴스 실행</a>
+</div>
+</div>
+<div style="padding: 18px; border-radius: 10px; background: var(--af-tok-c3); border: 1px solid var(--af-tok-c4);">
+<h3 style="font-size: 16px; font-weight: 800; color: var(--accent-green); margin: 0 0 8px 0;">[공식 파트너] DH Labs 글로벌 30% 어필리에이트 프로그램 (무심사 즉시 발급)</h3>
+<p style="font-size: 0.93rem; color: var(--text-muted); margin: 0 0 12px 0;">유튜브 채널이나 기술 블로그, 커뮤니티에 OneShot 12종 초기 세팅기 및 AutoFlow 단품을 소개하면 결제 건마다 판매 금액의 30%($8.7~$23.7)를 검로드가 자동 정산합니다.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+<a href="https://dhlabs.gumroad.com/affiliates" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--primary); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;" target="_blank">글로벌 30% 어필리에이트 파트너 등록 (Gumroad 공식)</a>
+</div>
+</div>
+</div>
+</section><div id="dhlabs-tofu-hardware-lock-banner" style="max-width:1180px;margin:28px auto;padding:22px 26px;border-radius:12px;background:#FFFFFF;border:1.5px solid #B91C1C;color:#18181B;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;">
+<div style="font-size:15px;font-weight:800;color:#7F1D1D;margin-bottom:8px;">[필독 보안 규정 / Mandatory Anti-Copy Notice] 전 제품(65종) 1PC 하드웨어·Inode 귀속 및 무단 복사 시 자동 보안 잠금 안내</div>
+<ul style="margin:0;padding-left:20px;font-size:13.5px;color:#27272A;">
+<li><strong>1PC ToFU Hardware UUID &amp; OS Physical Inode (96B) Lock</strong>: DH Labs의 모든 단품(AutoFlow 49종 · OneShot 12종 · YouTube 4종)은 <code>MacMiniMasterMinter v3.0</code> 규격에 따라 최초 실행 시점의 PC 하드웨어 UUID와 OS 물리 Inode 번호(96바이트 슬롯)에 즉시 1:1 귀속됩니다.</li>
+<li><strong>무단 복사 시 자동 보안 잠금</strong>: 압축 해제 후 실행 런처(<code>.command</code> / <code>.bat</code>)나 폴더를 <strong>복사(Cmd+D, Ctrl+C/V, cp)하거나 타 폴더·타 PC·클라우드로 이동하지 마십시오.</strong> 물리 Inode 불일치나 하드링크(<code>nlink != 1</code>) 복제가 감지되는 즉시 자동 무효화(<code>lock_and_abort</code>)됩니다.</li>
+<li><strong>1회성 캡슐 자동 종료 (OneShot &amp; YouTube Series)</strong>: 1회용 세팅기(OneShot 12종) 및 유튜브 유틸리티(4종)는 정품 작업이 100% 완료된 직후 로컬 캡슐 및 브라우저 확장프로그램(<code>uninstallSelf</code>)이 안전하게 종료·정리됩니다.</li>
+</ul>
+</div><div id="dhlabs-tofu-single-use-banner" style="max-width:1180px;margin:28px auto;padding:22px 26px;border-radius:12px;background:#FFFFFF;border:1.5px solid #991B1B;color:#18181B;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.75;">
+<div style="font-size:15.5px;font-weight:800;color:#7F1D1D;margin-bottom:10px;">[필독! 간편 실행 및 1PC · 1계정 · 단 1회 사용 보안 규정 — Windows(.bat) &amp; Mac(.command) 100% 동일 작동]</div>
+<ul style="margin:0;padding-left:20px;font-size:14px;color:#27272A;">
+<li><strong>다운로드 폴더에서 바로 더블클릭 권장 (최초 실행 전 이동 가능)</strong>: 처음 내려받은 <code>다운로드(Downloads)</code> 폴더 그 자리에서 압축을 풀고 바로 더블클릭(Windows는 <code>.bat</code>, Mac은 <code>.command</code>)하여 실행하세요.</li>
+<li><strong>동일 PC에서도 딱 1번(1계정)만 사용 가능 — 다계정 중복 사용·재실행 시 자동 보안 잠금</strong>: 1회용 세팅기(OneShot 12종) 및 유튜브 유틸리티(4종)는 <strong>1구매 = 1PC · 1계정 · 단 1회 사용</strong> 구조입니다. <strong>동일한 컴퓨터(동일 PC)라 하더라도 1번 사용한 뒤 다른 계정(다계정)으로 재사용하거나 백업 복사본으로 2번째 실행을 시도하는 즉시 자동 무효화(<code>lock_and_abort</code>)</strong>됩니다.</li>
+<li><strong>타인의 컴퓨터(타 PC)로 무단 복사·공유 시 즉시 자동 보안 잠금</strong>: 다른 컴퓨터(타 PC)로 파일을 복사·전송하여 실행할 경우 Windows와 Mac 모두 즉시 자동 무효화(<code>lock_and_abort</code>)됩니다.</li>
+</ul>
+</div></section><footer style="border-top: 1px solid var(--border-color); padding-top: 20px; font-size: 0.92rem; color: var(--text-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+<div>
+<strong>공급 법인:</strong> 디에이치랩스 (DH Labs) | <strong>사업자등록번호:</strong> 610-16-92926 | <strong>수석 아키텍트:</strong> 김동형 (Donghyeong Kim, Founder &amp; Lead Systems Architect)
       </div>
-      <div>
-        <a href="https://dhlabs.gumroad.com/affiliates" target="_blank" rel="noopener noreferrer" style="color: var(--accent-green); font-weight: 700; margin-right: 12px;">Become an Affiliate (30%)</a>
-        <a href="/llms.txt" style="color: var(--primary); margin-right: 12px;">/llms.txt</a>
-        <a href="/llms-full.txt" style="color: var(--primary); margin-right: 12px;">/llms-full.txt</a>
-        <a href="/ai-catalog.json" style="color: var(--primary);">/ai-catalog.json</a>
-      </div>
-    </footer>
-
-  </div>
-  <!-- Unified Json-LD @graph -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://dhlabs.pages.dev/#organization","name":"디에이치랩스 (DH Labs)","legalName":"디에이치랩스 (DH Labs)","founder":{"@id":"https://dhlabs.pages.dev/#founder"},"taxID":"610-16-92926","identifier":"610-16-92926","url":"https://dhlabs.pages.dev/","sameAs":["https://github.com/globaltrendhunterai","https://dhlabs.gumroad.com","https://globaltrendhunterai.github.io/dhlabs/"],"email":"dhlabs_biz0@naver.com","telephone":"+82-10-8503-6232","address":{"@type":"PostalAddress","streetAddress":"번화1로 168, 1006동 402호","addressLocality":"김해시","addressRegion":"경상남도","addressCountry":"KR"}},{"@type":"Person","@id":"https://dhlabs.pages.dev/#founder","name":"Donghyeong Kim","alternateName":"김동형","jobTitle":"Founder & Lead Systems Architect","identifier":"GSKY37R7XV","description":"Founder & Lead Systems Architect at DH Labs (Business Reg. No. 610-16-92926, Apple Developer ID GSKY37R7XV), creator of OneShot Setup Capsule and AutoFlow Engine.","worksFor":{"@id":"https://dhlabs.pages.dev/#organization"},"sameAs":["https://github.com/globaltrendhunterai","https://globaltrendhunterai.github.io/dhlabs/"]},{"@type":"BreadcrumbList","@id":"https://dhlabs.pages.dev/oneshot.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"DH Labs 스토어 홈","item":"https://dhlabs.pages.dev/"},{"@type":"ListItem","position":2,"name":"OneShot Setup Capsule 1회용 원클릭 초기 환경 세팅기","item":"https://dhlabs.pages.dev/oneshot.html"}]},{"@type":"SoftwareApplication","@id":"https://dhlabs.pages.dev/oneshot.html#software","name":"OneShot Setup Capsule (글로벌 Gumroad 기준 무라이선스 1회용 원클릭 초기 환경 세팅기 TOP 6)","operatingSystem":"macOS, Windows, Linux","applicationCategory":"UtilitiesApplication","softwareVersion":"2.0.0","datePublished":"2026-11-01","dateModified":"2026-11-07","description":"라이선스 키 입력 없이 더블클릭 1회(3분)만으로 ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX 중 선택한 딱 1가지 프로그램의 고난도 초기 환경 세팅을 끝낸 뒤 스스로 자동 보안 삭제되는 맥미니 마스터 Inode 봉인 초기 세팅 프로그램입니다.","offers":{"@type":"Offer","price":"39","priceCurrency":"USD","url":"https://dhlabs.gumroad.com/l/oneshot-setup-capsule"},"publisher":{"@id":"https://dhlabs.pages.dev/#organization"}},{"@type":"VideoObject","@id":"https://dhlabs.pages.dev/oneshot.html#video","name":"DH Labs OneShot Setup Capsule 원클릭 초기 환경 세팅 및 자동 보안 초기화 데모","description":"라이선스 키 없이 1가지 고난도 초기 세팅만 원클릭 완료 후 스스로 자동 보안 삭제되는 맥미니 마스터 Inode 봉인 아키텍처 시연","thumbnailUrl":"https://dhlabs.pages.dev/media/autoflow_3tier_launch_16x9_poster.jpg","uploadDate":"2026-11-07T00:00:00.000Z","duration":"PT15S","contentUrl":"https://dhlabs.pages.dev/media/autoflow_3tier_launch_16x9.mp4"},{"@type":"FAQPage","@id":"https://dhlabs.pages.dev/oneshot.html#faq","mainEntity":[{"@type":"Question","name":"왜 단순 즉시 수령 프로그램이 아니라 초기 환경 세팅 전용 1회용 방식을 사용하나요?","acceptedAnswer":{"@type":"Answer","text":"단순 인스톨러가 있는 앱은 누구나 설치할 수 있지만, ComfyUI, Kohya_ss, RVC, Claude Code MCP, OpenClaw, WhisperX는 Python 가상환경, CUDA 가속, C++ 빌드, JSON 배선, 토큰 바인딩 등 초기 세팅에서 막힙니다. OneShot Setup Capsule은 선택한 딱 1가지 초기 세팅만 완수한 뒤 파일 자체를 보안 덮어쓰기 처리로 완전히 자동 삭제합니다."}},{"@type":"Question","name":"라이선스 키 입력이 없는데 파일 복사나 무단 재판매는 어떻게 막나요?","acceptedAnswer":{"@type":"Answer","text":"DH Labs 맥미니 마스터(MacMiniMasterMinter)에서 정품 세팅기를 생성할 때 OS 파일시스템 고유 번호(Inode)와 하드링크 수(nlink=1)를 HMAC-SHA256으로 봉인합니다. 파일을 복사(Ctrl+C/V, Cmd+D)하면 새로운 Inode가 부여되어 0.001초 만에 실행이 차단되고 복사본과 원본이 동시 실행 차단됩니다."}},{"@type":"Question","name":"대용량 단품 수신 중 멈추거나 해킹 위험은 없나요?","acceptedAnswer":{"@type":"Answer","text":"시스템 자원의 70% 안전 작동 한계(70% Working Limit)를 초과하는 작업은 overflow_spool 큐에 무손실 스풀링되어 끊김 없이 이어하기 처리되며 다형성 Canary 허니토큰, Tarpit 지연, 정보통신망법 제48조 준수 합법 포렌식 비콘과 127.0.0.1 로컬 격리로 보호됩니다."}}]}]}</script>
+<div>
+<a href="https://dhlabs.gumroad.com/affiliates" rel="noopener noreferrer" style="color: var(--accent-green); font-weight: 700; margin-right: 12px;" target="_blank">Become an Affiliate (30%)</a>
+<a href="/llms.txt" style="color: var(--primary); margin-right: 12px;">/llms.txt</a>
+<a href="/llms-full.txt" style="color: var(--primary); margin-right: 12px;">/llms-full.txt</a>
+<a href="/ai-catalog.json" style="color: var(--primary);">/ai-catalog.json</a>
+</div>
+</footer></div>
+<!-- Unified Json-LD @graph -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://dhlabs.pages.dev/#organization","name":"디에이치랩스 (DH Labs)","legalName":"디에이치랩스 (DH Labs)","founder":{"@id":"https://dhlabs.pages.dev/#founder"},"taxID":"610-16-92926","identifier":"610-16-92926","url":"https://dhlabs.pages.dev/","sameAs":["https://github.com/globaltrendhunterai","https://dhlabs.gumroad.com","https://globaltrendhunterai.github.io/dhlabs/"],"email":"dhlabs_biz0@naver.com","telephone":"+82-10-8503-6232","address":{"@type":"PostalAddress","streetAddress":"번화1로 168, 1006동 402호","addressLocality":"김해시","addressRegion":"경상남도","addressCountry":"KR"}},{"@type":"Person","@id":"https://dhlabs.pages.dev/#founder","name":"Donghyeong Kim","alternateName":"김동형","jobTitle":"Founder & Lead Systems Architect","identifier":"GSKY37R7XV","description":"Founder & Lead Systems Architect at DH Labs (Business Reg. No. 610-16-92926, Apple Developer ID GSKY37R7XV), creator of OneShot Setup Capsule and AutoFlow Engine.","worksFor":{"@id":"https://dhlabs.pages.dev/#organization"},"sameAs":["https://github.com/globaltrendhunterai","https://globaltrendhunterai.github.io/dhlabs/"]},{"@type":"BreadcrumbList","@id":"https://dhlabs.pages.dev/oneshot.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"DH Labs 스토어 홈","item":"https://dhlabs.pages.dev/"},{"@type":"ListItem","position":2,"name":"OneShot Setup Capsule 1회용 원클릭 초기 환경 세팅기","item":"https://dhlabs.pages.dev/oneshot.html"}]},{"@type":"SoftwareApplication","@id":"https://dhlabs.pages.dev/oneshot.html#software","name":"OneShot Setup Capsule (글로벌 Gumroad 기준 무라이선스 1회용 원클릭 초기 환경 세팅기 TOP 6)","operatingSystem":"macOS, Windows, Linux","applicationCategory":"UtilitiesApplication","softwareVersion":"2.0.0","datePublished":"2026-11-01","dateModified":"2026-11-07","description":"라이선스 키 입력 없이 더블클릭 1회(3분)만으로 ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX 중 선택한 딱 1가지 프로그램의 고난도 초기 환경 세팅을 끝낸 뒤 스스로 자동 보안 삭제되는 맥미니 마스터 Inode 봉인 초기 세팅 프로그램입니다.","offers":{"@type":"Offer","price":"39","priceCurrency":"USD","url":"https://dhlabs.gumroad.com/l/oneshot-setup-capsule"},"publisher":{"@id":"https://dhlabs.pages.dev/#organization"}},{"@type":"VideoObject","@id":"https://dhlabs.pages.dev/oneshot.html#video","name":"DH Labs OneShot Setup Capsule 원클릭 초기 환경 세팅 및 자동 보안 초기화 데모","description":"라이선스 키 없이 1가지 고난도 초기 세팅만 원클릭 완료 후 스스로 자동 보안 삭제되는 맥미니 마스터 Inode 봉인 아키텍처 시연","thumbnailUrl":"https://dhlabs.pages.dev/media/autoflow_3tier_launch_16x9_poster.jpg","uploadDate":"2026-11-07T00:00:00.000Z","duration":"PT15S","contentUrl":"https://dhlabs.pages.dev/media/autoflow_3tier_launch_16x9.mp4"},{"@type":"FAQPage","@id":"https://dhlabs.pages.dev/oneshot.html#faq","mainEntity":[{"@type":"Question","name":"왜 단순 즉시 수령 프로그램이 아니라 초기 환경 세팅 전용 1회용 방식을 사용하나요?","acceptedAnswer":{"@type":"Answer","text":"단순 인스톨러가 있는 앱은 누구나 설치할 수 있지만, ComfyUI, Kohya_ss, RVC, Claude Code MCP, OpenClaw, WhisperX는 Python 가상환경, CUDA 가속, C++ 빌드, JSON 배선, 토큰 바인딩 등 초기 세팅에서 막힙니다. OneShot Setup Capsule은 선택한 딱 1가지 초기 세팅만 완수한 뒤 파일 자체를 보안 덮어쓰기 처리로 완전히 자동 삭제합니다."}},{"@type":"Question","name":"라이선스 키 입력이 없는데 파일 복사나 무단 재판매는 어떻게 막나요?","acceptedAnswer":{"@type":"Answer","text":"DH Labs 맥미니 마스터(MacMiniMasterMinter)에서 정품 세팅기를 생성할 때 OS 파일시스템 고유 번호(Inode)와 하드링크 수(nlink=1)를 HMAC-SHA256으로 봉인합니다. 파일을 복사(Ctrl+C/V, Cmd+D)하면 새로운 Inode가 부여되어 0.001초 만에 실행이 차단되고 복사본과 원본이 동시 실행 차단됩니다."}},{"@type":"Question","name":"대용량 단품 수신 중 멈추거나 해킹 위험은 없나요?","acceptedAnswer":{"@type":"Answer","text":"시스템 자원의 70% 안전 작동 한계(70% Working Limit)를 초과하는 작업은 overflow_spool 큐에 무손실 스풀링되어 끊김 없이 이어하기 처리되며 다형성 Canary 허니토큰, Tarpit 지연, 정보통신망법 제48조 준수 합법 포렌식 비콘과 127.0.0.1 로컬 격리로 보호됩니다."}}]}]}</script>
 </body>
 </html>
