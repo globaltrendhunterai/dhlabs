@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>스마트스토어 정산 차이 찾기 무료 웹 체험판 — 주문·정산 엑셀 대조</title>
+  <meta name="description" content="주문 내역과 정산 내역 엑셀을 브라우저에서 바로 대조해 누락된 정산금과 원인별 차액을 1원 단위까지 확인해 보세요." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="스마트스토어 정산 차이 찾기 무료 웹 체험판 — DH Labs" />
+  <meta property="og:description" content="설치·로그인 없이 주문/정산 엑셀만 넣으면 내 매장에서 얼마가 빠졌는지 무료로 진단합니다. (데이터 외부 전송 없음)" />
+  <meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/demo/og_demo_preview.png" />
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/demo/settlement-gap.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="스마트스토어 정산 차이 찾기 무료 웹 체험판" />
+  <meta name="twitter:image" content="https://globaltrendhunterai.github.io/dhlabs/demo/og_demo_preview.png" />
   <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
   <style>
     :root { --bg:#f8fafc; --card:#fff; --ink:#0f172a; --sub:#475569; --line:#e2e8f0; --pri:#1d4ed8; --ok:#059669; --warn:#b45309; --bad:#b91c1c; }
@@ -71,6 +80,7 @@
     <div class="topbar-inner">
       <a href="./index.html" class="brand">← 무료 웹 체험관 <span class="badge">정산 차이 찾기 체험판</span></a>
       <div class="tools">
+        <button id="btnShareLink" class="btn">🔗 동료에게 체험 링크 복사</button>
         <button id="btnDemo" class="btn btn-pri">예시 주문 30건 불러오기</button>
         <button id="btnExportLock" class="btn btn-amber">🔒 결과 엑셀 저장 (정식 단품 전용)</button>
         <a href="https://smartstore.naver.com/dhlabs-official/products/13874251201" target="_blank" rel="noopener" class="btn btn-ok">정식판 특가 9,900원 ↗</a>
@@ -81,11 +91,11 @@
   <main>
     <div class="banner">
       <b>안심 체험 안내:</b> 모든 계산은 브라우저 안에서만 처리되며 업로드한 엑셀 파일은 서버로 전송되지 않습니다.
-      내장 예시 데이터 <b>30건</b>을 바로 보거나, 내 엑셀/CSV 파일을 넣으면 <b>상위 5건</b>까지 실제 차액과 원인을 무료로 대조해 드립니다.
+      내장 예시 데이터 <b>30건</b> 전체를 바로 체험하거나, 내 엑셀/CSV 파일(10건 이상 권장)을 넣으면 <b>전체 건수 총 차액 합계 · 원인별 집계 + 1순위 상세 1건</b>을 무료로 확인하실 수 있습니다.
     </div>
 
     <section class="card">
-      <h1>1. 스마트스토어 주문 · 정산 엑셀 넣기 (내 파일은 상위 5건 체험)</h1>
+      <h1>1. 스마트스토어 주문 · 정산 엑셀 넣기 (내 파일 전체 합계 + 1건 상세 체험)</h1>
       <p class="muted">스마트스토어센터에서 내려받은 <code>.xlsx / .xls / .csv</code> 파일을 넣거나 위 [예시 주문 30건 불러오기]를 누르세요.</p>
       <div class="drops">
         <label class="drop" id="dropOrders"><input type="file" id="fileOrders" accept=".xlsx,.xls,.csv"><b>주문 내역</b><small>판매관리 › 주문 통합검색 › 엑셀 다운</small><em id="nameOrders">파일 선택 또는 끌어놓기</em></label>
@@ -289,7 +299,7 @@
 
         const orders = new Map();
         TOTAL_USER_ROWS = ORD.rows.length;
-        const rowsToProcess = IS_USER_FILE ? ORD.rows.slice(0, 5) : ORD.rows;
+        const rowsToProcess = ORD.rows;
         for (const r of rowsToProcess) {
           const id = String(get(r, MO, "id")).trim();
           if (!id) continue;
@@ -364,9 +374,18 @@
         const out = RESULT, issues = out.filter(r => r.tag !== "ok");
         const sum = k => out.reduce((a, r) => a + (r[k] || 0), 0);
         const missing = issues.reduce((a, r) => a + Math.min(0, r.diff || 0), 0);
+        const maskId = id => String(id || "").slice(0, 5) + "*******";
+        const sortedIssues = [...issues].sort((a, b) => Math.abs(b.diff || 0) - Math.abs(a.diff || 0));
+        const topIssueRow = (IS_USER_FILE && TOTAL_USER_ROWS >= 10 && sortedIssues.length) ? sortedIssues[0] : null;
+        const topIssueId = topIssueRow ? topIssueRow.id : null;
+        const isLockedRow = r => IS_USER_FILE && (!topIssueId || r.id !== topIssueId);
 
         if (IS_USER_FILE) {
-          $("#capText").textContent = `업로드된 전체 ${TOTAL_USER_ROWS}건 중 웹 체험판 기준 상위 ${Math.min(5, TOTAL_USER_ROWS)}건을 대조했습니다. 전체 주문 일괄 대조와 결과 엑셀 저장은 정식 단품에서 바로 이용하실 수 있습니다.`;
+          if (TOTAL_USER_ROWS < 10) {
+            $("#capText").textContent = `10건 미만 분할 파일(${TOTAL_USER_ROWS}건)은 쪼개기 방지를 위해 총 차액 합계(${issues.length}건 · ${won(missing)})만 공개되며 상세 주문번호는 마스킹됩니다. (10건 이상 원본 파일 업로드 시 1건 상세 공개 · 전체 공개는 9,900원 정식 단품)`;
+          } else {
+            $("#capText").textContent = `업로드된 전체 ${TOTAL_USER_ROWS}건에서 차이 ${issues.length}건(${won(missing)})이 감지되었습니다. 체험판에서는 가장 큰 차이 1순위 1건만 주문번호·원인을 공개하고 2건째부터는 잠금 표시됩니다.`;
+          }
           $("#capBanner").classList.remove("hidden");
         } else {
           $("#capBanner").classList.add("hidden");
@@ -385,16 +404,43 @@
           Object.entries(by).sort((a, b) => a[1].amt - b[1].amt).map(([c, v]) => `<tr><td class=l>${c}</td><td>${v.n}</td><td class="${v.amt < 0 ? "neg" : "pos"}">${won(v.amt)}</td></tr>`).join("")
           || "<tr><td class=l colspan=3>차이가 발견된 주문이 없습니다</td></tr>"
         );
-        const top = [...issues].sort((a, b) => (a.diff || 0) - (b.diff || 0)).slice(0, 10);
+        const top = sortedIssues.slice(0, 10);
         $("#tblTop").innerHTML = "<tr><th class=l>상품주문번호</th><th class=l>원인</th><th>차이</th></tr>" + (
-          top.map(r => `<tr><td class=l>${r.id}</td><td class=l>${r.cause}</td><td class="${(r.diff || 0) < 0 ? "neg" : "pos"}">${won(r.diff)}</td></tr>`).join("")
+          top.map(r => {
+            const locked = isLockedRow(r);
+            const idCell = locked ? (TOTAL_USER_ROWS < 10 ? maskId(r.id) + " (10건 미만 분할파일 마스킹)" : maskId(r.id)) : r.id;
+            const diffCell = locked ? "🔒 잠금" : won(r.diff);
+            const cls = locked ? "" : ((r.diff || 0) < 0 ? "neg" : "pos");
+            return `<tr><td class=l>${idCell}</td><td class=l>${r.cause}</td><td class="${cls}">${diffCell}</td></tr>`;
+          }).join("")
           || "<tr><td class=l colspan=3>우선 확인 대상 없음</td></tr>"
         );
         const rows = $("#onlyIssues").checked ? issues : out;
         $("#tblDetail").innerHTML = "<tr><th class=l>상품주문번호</th><th class=l>날짜</th><th class=l>상품명</th><th>결제</th><th>예상 정산</th><th>실제 정산</th><th>차이</th><th class=l>판정</th><th class=l>상세 근거</th></tr>" +
-          rows.map(r => `<tr><td class=l>${r.id}</td><td class=l>${r.date || ""}</td><td class=l>${(r.name || "").slice(0, 22)}</td><td>${won(r.pay)}</td><td>${won(r.expected)}</td><td>${r.actual == null ? "-" : won(r.actual)}</td><td class="${(r.diff || 0) < 0 ? "neg" : "pos"}">${won(r.diff)}</td><td class=l><span class="tag ${r.tag}">${r.cause}</span></td><td class=l>${r.detail || ""}</td></tr>`).join("");
-        const lines = top.filter(r => r.diff < 0).slice(0, 5).map(r => `- 상품주문번호 ${r.id}: 예상 ${won(r.expected)} / 실제 ${r.actual == null ? "정산 없음" : won(r.actual)} (차이 ${won(r.diff)})`);
-        $("#inquiry").value = lines.length ? `안녕하세요. 정산 내역 확인 중 아래 주문의 정산 금액에 차이가 있어 확인 부탁드립니다.\n${lines.join("\n")}\n수수료·배송비·반품비 등 차감 내역 안내 부탁드립니다.` : "큰 차이가 발견된 주문이 없습니다.";
+          rows.map(r => {
+            const locked = isLockedRow(r);
+            const idCell = locked ? (TOTAL_USER_ROWS < 10 ? maskId(r.id) + " (10건 미만 분할파일 마스킹)" : maskId(r.id)) : r.id;
+            const diffCell = locked ? (r.tag !== "ok" ? "🔒 잠금" : "-") : won(r.diff);
+            const diffCls = locked ? "" : ((r.diff || 0) < 0 ? "neg" : "pos");
+            const detailCell = locked
+              ? (TOTAL_USER_ROWS < 10 ? "🔒 10건 이상 원본 파일 업로드 시 샘플 1건 상세 공개 (전체 공개는 9,900원 정식 단품)" : "🔒 정식 단품(9,900원)에서 전체 주문번호·원인 잠금 해제")
+              : (r.detail || "");
+            return `<tr><td class=l>${idCell}</td><td class=l>${r.date || ""}</td><td class=l>${(r.name || "").slice(0, 22)}</td><td>${won(r.pay)}</td><td>${won(r.expected)}</td><td>${r.actual == null ? "-" : won(r.actual)}</td><td class="${diffCls}">${diffCell}</td><td class=l><span class="tag ${r.tag}">${r.cause}</span></td><td class=l>${detailCell}</td></tr>`;
+          }).join("");
+
+        if (IS_USER_FILE) {
+          if (!issues.length) {
+            $("#inquiry").value = "차이가 발견된 주문이 없습니다.";
+          } else if (topIssueRow) {
+            const sampleLine = `- 상품주문번호 ${topIssueRow.id}: 예상 ${won(topIssueRow.expected)} / 실제 ${topIssueRow.actual == null ? "정산 없음" : won(topIssueRow.actual)} (차이 ${won(topIssueRow.diff)})`;
+            $("#inquiry").value = `안녕하세요. 정산 내역 확인 중 아래 주문의 정산 금액에 차이가 있어 확인 부탁드립니다.\n${sampleLine}\n\n[🔒 나머지 차이 발생 주문(총 ${issues.length}건)의 상품주문번호별 차액 명세와 고객센터 복붙용 문의 문장 전체본은 정식 단품(런칭 특가 9,900원)에서 즉시 생성됩니다]`;
+          } else {
+            $("#inquiry").value = `[🔒 ${TOTAL_USER_ROWS < 10 ? "10건 미만 분할 파일은 상세 문의 문장이 잠금 처리됩니다. " : ""}차이 발생 주문(총 ${issues.length}건)의 상품주문번호별 차액 명세와 고객센터 복붙용 문의 문장 전체본은 정식 단품(런칭 특가 9,900원)에서 즉시 생성됩니다]`;
+          }
+        } else {
+          const lines = top.filter(r => r.diff < 0).slice(0, 5).map(r => `- 상품주문번호 ${r.id}: 예상 ${won(r.expected)} / 실제 ${r.actual == null ? "정산 없음" : won(r.actual)} (차이 ${won(r.diff)})`);
+          $("#inquiry").value = lines.length ? `안녕하세요. 정산 내역 확인 중 아래 주문의 정산 금액에 차이가 있어 확인 부탁드립니다.\n${lines.join("\n")}\n수수료·배송비·반품비 등 차감 내역 안내 부탁드립니다.` : "큰 차이가 발견된 주문이 없습니다.";
+        }
         $("#result").classList.remove("hidden");
       }
 
@@ -436,6 +482,16 @@
       $("#onlyIssues").onchange = () => RESULT && render();
       $("#btnExportLock").onclick = () => $("#upgradeModal").classList.add("open");
       $("#btnCloseModal").onclick = () => $("#upgradeModal").classList.remove("open");
+      const shareBtn = $("#btnShareLink");
+      if (shareBtn) {
+        const shareUrl = "https://globaltrendhunterai.github.io/dhlabs/demo/settlement-gap.html";
+        shareBtn.onclick = async () => {
+          try { await navigator.clipboard.writeText(shareUrl); } catch (_) {}
+          const orig = shareBtn.textContent;
+          shareBtn.textContent = "✓ 체험 링크 복사 완료 (카톡·카페 붙여넣기)";
+          setTimeout(() => { shareBtn.textContent = orig; }, 2500);
+        };
+      }
       loadDemo();
     })();
   </script>
