@@ -47,11 +47,11 @@ const AUTHORITATIVE_ENGINE_MATRIX = {
 };
 
 const AUTHORITATIVE_WORKFLOW_TIERS = {
-  39000: { krw: 39000, usd_cents: 2900, name: 'AutoFlow 워크플로우 완제품 + 무인 방어 엔진 7일 패키지 (₩39,000)' },
-  49000: { krw: 49000, usd_cents: 3900, name: 'AutoFlow 워크플로우 완제품 + 무인 방어 엔진 7일 패키지 (₩49,000)' },
-  59000: { krw: 59000, usd_cents: 4500, name: 'AutoFlow 워크플로우 완제품 + 무인 방어 엔진 7일 패키지 (₩59,000)' },
-  69000: { krw: 69000, usd_cents: 5200, name: 'AutoFlow 워크플로우 완제품 + 무인 방어 엔진 7일 패키지 (₩69,000)' },
-  79000: { krw: 79000, usd_cents: 5900, name: 'AutoFlow 워크플로우 완제품 + 무인 방어 엔진 7일 패키지 (₩79,000)' },
+  39000: { krw: 39000, usd_cents: 2900, name: 'AutoFlow 워크플로우 완제품 + 무인 방어 엔진 7일 체험 포함 단품 (₩39,000)' },
+  49000: { krw: 49000, usd_cents: 3900, name: 'AutoFlow 워크플로우 완제품 + 무인 방어 엔진 7일 체험 포함 단품 (₩49,000)' },
+  59000: { krw: 59000, usd_cents: 4500, name: 'AutoFlow 워크플로우 완제품 + 무인 방어 엔진 7일 체험 포함 단품 (₩59,000)' },
+  69000: { krw: 69000, usd_cents: 5200, name: 'AutoFlow 워크플로우 완제품 + 무인 방어 엔진 7일 체험 포함 단품 (₩69,000)' },
+  79000: { krw: 79000, usd_cents: 5900, name: 'AutoFlow 워크플로우 완제품 + 무인 방어 엔진 7일 체험 포함 단품 (₩79,000)' },
 };
 
 const CORS_HEADERS = {
@@ -90,7 +90,7 @@ export function resolveAuthoritativeCheckoutSpec(body = {}) {
     krw: wf.krw,
     usd_cents: wf.usd_cents,
     name: body.productName ? String(body.productName).slice(0, 120) : wf.name,
-    description: '1제품=1사이트 영구 소장 워크플로우 본체 + 7일 상주형 무인 방어 엔진(자가치유·정합성) 기본 탑재 패키지',
+    description: '1제품=1사이트 영구 소장 워크플로우 본체 + 7일 상주형 무인 방어 엔진(자가치유·정합성) 기본 탑재 단품',
   };
 }
 

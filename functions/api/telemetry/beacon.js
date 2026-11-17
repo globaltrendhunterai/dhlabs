@@ -61,6 +61,25 @@ export async function onRequestPost(context) {
     const traceId = sanitizeEdgeString(String(payload.trace_id || `TRACE-EDGE-${Date.now()}`));
     const errorMessage = sanitizeEdgeString(String(payload.error_message || payload.message || ''));
 
+    // v1.2.8 - optional forward to Mac Mini HQ (AUTOFLOW_HQ_ORIGIN env on Pages)
+    const hqOrigin = (context.env && context.env.AUTOFLOW_HQ_ORIGIN) ? String(context.env.AUTOFLOW_HQ_ORIGIN).replace(/\/$/, '') : '';
+    if (hqOrigin) {
+      try {
+        const upstream = await fetch(hqOrigin + '/api/telemetry/beacon', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ ...payload, hwid, trace_id: traceId, edge_forwarded: true })
+        });
+        const text = await upstream.text();
+        return new Response(text || JSON.stringify({ status: 'PONG', hwid, server_time: new Date().toISOString() }), {
+          status: upstream.status,
+          headers: { 'Content-Type': 'application/json;charset=UTF-8', 'Cache-Control': 'no-store' }
+        });
+      } catch (fwdErr) {
+        // fall through to edge ACK if HQ unreachable
+      }
+    }
+
     // Optional Cloudflare KV persistence if bound in dashboard as AUTOFLOW_TELEMETRY_KV
     if (context.env && context.env.AUTOFLOW_TELEMETRY_KV && typeof context.env.AUTOFLOW_TELEMETRY_KV.put === 'function') {
       await context.env.AUTOFLOW_TELEMETRY_KV.put(
@@ -78,13 +97,14 @@ export async function onRequestPost(context) {
 
     return new Response(
       JSON.stringify({
-        status: 'ok',
+        status: 'PONG',
         ack: true,
         trace_id: traceId,
         hwid,
         pii_scrubbed: !/01[016789]-\d{3,4}-\d{4}/.test(errorMessage),
         server_time: new Date().toISOString(),
-        commands: []
+        commands: [],
+        message: 'AutoFlow edge beacon ACK (HQ forward unavailable or unset)'
       }),
       {
         status: 200,

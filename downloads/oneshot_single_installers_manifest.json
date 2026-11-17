@@ -11,7 +11,7 @@
     "total_single_installers": 6,
     "license_key_required": false,
     "copy_protection": "MacMiniMasterMinter HMAC + ToFU (Trust-On-First-Use) Hardware UUID & OS Inode Lock-on-Start",
-    "self_destruction": "0x00 overwrite + unlink ONLY after 100% setup & smoke verification pass (safe spool resume on network drop)"
+    "self_destruction": "Automatic security cleanup ONLY after 100% setup & smoke verification pass (safe spool resume on network drop)"
   },
   "installers": [
     {

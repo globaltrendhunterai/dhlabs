@@ -93,7 +93,7 @@
       "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html",
       "representativeQueries": [
         "How do I set up ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX, SD WebUI Forge/Flux, Open WebUI RAG, Wan 2.1 Video, F5-TTS, Cursor/Windsurf MCP, UVR5/Demucs, Firecrawl MCP, Twenty CRM, or Listmonk + Reacher in 1 click without CUDA or C++ build errors?",
-        "How does the MacMiniMasterMinter ToFU Inode + Machine-UUID lock and 0x00 self-destruct disposable setup installer work?",
+        "How does the MacMiniMasterMinter ToFU Inode + Machine-UUID lock and hardware-locked single-use post-verify auto-cleanup setup installer work?",
         "Where can I buy individual OneShot Setup Capsules on Gumroad ($29/$39 USD), Naver SmartStore (#13858840987 ~ #13865187401), or Kmong (#858577 ~ #860668)?"
       ],
       "trustManifest": {
@@ -342,8 +342,8 @@
       "identifier": "urn:air:autoflow.io:fintree:ecom-profit-vault-10sku",
       "displayName": "FinTreeVault & EcomProfitVault — 10 Global E-Commerce Margin/ROAS/BEP Simulators & Master Builder Pro",
       "type": "application/ai-catalog+json",
-      "url": "https://smartstore.naver.com/dhlabs/products/13863037562",
-      "alternateUrl": "https://smartstore.naver.com/dhlabs/products/13863038228",
+      "url": "https://smartstore.naver.com/dhlabs-official/products/13863037562",
+      "alternateUrl": "https://smartstore.naver.com/dhlabs-official/products/13863038228",
       "representativeQueries": [
         "How do I simulate 12-month e-commerce margin, ROAS, and Break-Even Point (BEP) offline and export a formula-free value-only .xlsx spreadsheet?",
         "스마트스토어·쿠팡 마진율·손익분기점(BEP) 계산 후 세무사·동업자에게 고유 수식이 제거된 값 전용 엑셀(.xlsx)만 내보내는 방법은?",
@@ -731,94 +731,6 @@
       ],
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6785743624)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:blog:neartask:ko",
-      "displayName": "NearTask Official Guide (ko): Location-Based To-Do & Geofencing Reminder",
-      "type": "text/html",
-      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/neartask-ko.html",
-      "appStoreUrl": "https://apps.apple.com/kr/app/id6786683142",
-      "inLanguage": "ko",
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6786683142)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:blog:neartask:en",
-      "displayName": "NearTask Official Guide (en): Location-Based To-Do & Geofencing Reminder",
-      "type": "text/html",
-      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/neartask-en.html",
-      "appStoreUrl": "https://apps.apple.com/kr/app/id6786683142",
-      "inLanguage": "en",
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6786683142)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:blog:neartask:ja",
-      "displayName": "NearTask Official Guide (ja): Location-Based To-Do & Geofencing Reminder",
-      "type": "text/html",
-      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/neartask-ja.html",
-      "appStoreUrl": "https://apps.apple.com/kr/app/id6786683142",
-      "inLanguage": "ja",
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6786683142)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:blog:neartask:de",
-      "displayName": "NearTask Official Guide (de): Location-Based To-Do & Geofencing Reminder",
-      "type": "text/html",
-      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/neartask-de.html",
-      "appStoreUrl": "https://apps.apple.com/kr/app/id6786683142",
-      "inLanguage": "de",
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6786683142)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:blog:neartask:es",
-      "displayName": "NearTask Official Guide (es): Location-Based To-Do & Geofencing Reminder",
-      "type": "text/html",
-      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/neartask-es.html",
-      "appStoreUrl": "https://apps.apple.com/kr/app/id6786683142",
-      "inLanguage": "es",
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6786683142)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:blog:neartask:fr",
-      "displayName": "NearTask Official Guide (fr): Location-Based To-Do & Geofencing Reminder",
-      "type": "text/html",
-      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/neartask-fr.html",
-      "appStoreUrl": "https://apps.apple.com/kr/app/id6786683142",
-      "inLanguage": "fr",
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6786683142)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:blog:neartask:it",
-      "displayName": "NearTask Official Guide (it): Location-Based To-Do & Geofencing Reminder",
-      "type": "text/html",
-      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/neartask-it.html",
-      "appStoreUrl": "https://apps.apple.com/kr/app/id6786683142",
-      "inLanguage": "it",
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6786683142)"
-      }
-    },
-    {
-      "identifier": "urn:air:dhlabs:blog:neartask:pt",
-      "displayName": "NearTask Official Guide (pt): Location-Based To-Do & Geofencing Reminder",
-      "type": "text/html",
-      "url": "https://globaltrendhunterai.github.io/dhlabs/blog/neartask-pt.html",
-      "appStoreUrl": "https://apps.apple.com/kr/app/id6786683142",
-      "inLanguage": "pt",
-      "trustManifest": {
-        "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6786683142)"
       }
     }
   ]
