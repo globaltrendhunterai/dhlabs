@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PureTrackMatcher 무료 웹 체험판 — 직캠·쇼츠 없는 정식음원(ATV) 필터링 미리보기</title>
+  <meta name="description" content="멜론·스포티파이 곡 목록을 최대 5곡까지 넣어 직캠·커버·쇼츠 배제 및 유튜브 뮤직 공식음원(ATV) 필터링 조건을 미리 체험해 보세요." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="유튜브 뮤직 정식음원(ATV) 필터링 무료 웹 체험판 — PureTrackMatcher" />
+  <meta property="og:description" content="직캠·라이브·쇼츠를 걸러내고 공식 앨범 음원(ATV)만 찾아내는 필터링 규칙을 브라우저에서 10초 만에 확인하세요." />
+  <meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/demo/og_demo_preview.png" />
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/demo/pure-track-matcher.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="유튜브 뮤직 정식음원(ATV) 필터링 무료 웹 체험판" />
+  <meta name="twitter:image" content="https://globaltrendhunterai.github.io/dhlabs/demo/og_demo_preview.png" />
   <style>
     :root { --bg: #f8fafc; --card: #ffffff; --ink: #0f172a; --sub: #475569; --line: #e2e8f0; --pri: #4f46e5; --ok: #059669; }
     * { box-sizing: border-box; }
@@ -41,6 +50,7 @@
     <div class="topbar-inner">
       <a href="./index.html" class="brand">← 무료 웹 체험관 <span class="badge">PureTrackMatcher 체험판</span></a>
       <div class="nav-actions">
+        <button id="btnShareLink" class="btn">🔗 동료에게 체험 링크 복사</button>
         <a href="https://smartstore.naver.com/dhlabs-official/products/13861679190" target="_blank" rel="noopener" class="btn">국가/언어 1초 복구기 (1,500원)</a>
         <a href="https://smartstore.naver.com/dhlabs-official/products/13861678664" target="_blank" rel="noopener" class="btn btn-ok">정식판 구매 (특가 4,900원) ↗</a>
       </div>
@@ -145,6 +155,16 @@
         runPreview();
       };
       document.getElementById("btnMatch").onclick = runPreview;
+      const shareBtn = document.getElementById("btnShareLink");
+      if (shareBtn) {
+        const shareUrl = "https://globaltrendhunterai.github.io/dhlabs/demo/pure-track-matcher.html";
+        shareBtn.onclick = async () => {
+          try { await navigator.clipboard.writeText(shareUrl); } catch (_) {}
+          const orig = shareBtn.textContent;
+          shareBtn.textContent = "✓ 체험 링크 복사 완료 (카톡·카페 붙여넣기)";
+          setTimeout(() => { shareBtn.textContent = orig; }, 2500);
+        };
+      }
       inputEl.value = SAMPLE;
       runPreview();
     })();
