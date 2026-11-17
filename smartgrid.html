@@ -512,7 +512,7 @@ button:disabled {
     const INITIAL_DATA = {
       Dept_01_Mkt: [
         { rowKey: 'ROW-MKT-101', workflowId: '#Mkt-001', targetName: '(주)스타트업그로스', summaryData: 'AI 인스타그램 릴스 자동 배포 솔루션 제안서 초안', amountKrw: 3500000, status: 'READY_TO_DISPATCH', actionCode: 'DISPATCH_PROPOSAL', actionLabelKo: '[맞춤 제안서·캠페인 승인 발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 1 },
-        { rowKey: 'ROW-MKT-102', workflowId: '#Mkt-003', targetName: '넥스트커머스 코리아', summaryData: '스마트스토어 상위노출 키워드 CRM 패키지 제안', amountKrw: 1800000, status: 'READY_TO_DISPATCH', actionCode: 'DISPATCH_PROPOSAL', actionLabelKo: '[맞춤 제안서·캠페인 승인 발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 2 },
+        { rowKey: 'ROW-MKT-102', workflowId: '#Mkt-003', targetName: '넥스트커머스 코리아', summaryData: '스마트스토어 상위노출 키워드 CRM 단품 제안', amountKrw: 1800000, status: 'READY_TO_DISPATCH', actionCode: 'DISPATCH_PROPOSAL', actionLabelKo: '[맞춤 제안서·캠페인 승인 발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 2 },
         { rowKey: 'ROW-MKT-103', workflowId: '#Mkt-012', targetName: '글로벌트레이딩(주)', summaryData: '유튜브 쇼츠 다채널 동시 송고 파이프라인 견적', amountKrw: 4200000, status: 'READY_TO_DISPATCH', actionCode: 'DISPATCH_PROPOSAL', actionLabelKo: '[맞춤 제안서·캠페인 승인 발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 3 },
         { rowKey: 'ROW-MKT-104', workflowId: '#Mkt-025', targetName: '(주)인바운드마케팅', summaryData: 'B2B 콜드메일 초개인화 타겟팅 캠페인 기획', amountKrw: 2400000, status: 'READY_TO_DISPATCH', actionCode: 'DISPATCH_PROPOSAL', actionLabelKo: '[맞춤 제안서·캠페인 승인 발송]', actionStatus: 'PENDING_ACTION', sequenceNo: 4 }
       ],
@@ -542,7 +542,7 @@ button:disabled {
 
     const currentLocalState = {
       activeSheet: 'Dept_01_Mkt',
-      data: Json.parse(Json.stringify(INITIAL_DATA)),
+      data: JSON.parse(JSON.stringify(INITIAL_DATA)),
       seqCounter: 18
     };
 
@@ -595,7 +595,7 @@ button:disabled {
         const resp = await fetch('/api/smartgrid/action', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: Json.stringify({ sheetId, rowKey, actionCode, operatorNote: '원장 UI 즉시 승인' })
+          body: JSON.stringify({ sheetId, rowKey, actionCode, operatorNote: '원장 UI 즉시 승인' })
         });
         if (resp.ok) {
           const resJson = await resp.json();
@@ -671,7 +671,7 @@ button:disabled {
           fetch('/api/smartgrid/import', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: Json.stringify({ sheetId: currentLocalState.activeSheet, csvText: text })
+            body: JSON.stringify({ sheetId: currentLocalState.activeSheet, csvText: text })
           });
         } catch (_) {}
         showToast(`📥 엑셀 Csv 파일 (${file.name}) 1초 가져오기 완료`);

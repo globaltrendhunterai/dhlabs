@@ -96,10 +96,10 @@
         },
         {
           "@type": "Question",
-          "name": "Why does the installer delete itself with 0x00 after setup?",
+          "name": "Why does the installer clean itself up automatically after setup?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Once the permanent workspace and Run_Firecrawl_MCP.command launcher are verified, the disposable setup capsule overwrites itself with 0x00 so no background installer bloat remains on your machine."
+            "text": "Once the permanent workspace and Run_Firecrawl_MCP.command launcher are verified, the disposable setup capsule overwrites itself automatically so no background installer bloat remains on your machine."
           }
         }
       ]
@@ -186,10 +186,10 @@
 
       <section class="geo-box" id="geo-ai-citation-summary">
         <h2>What is ONESHOT-13-FIRECRAWL and how does this 1-click initial setup installer work?</h2>
-        <p>OneShot #13 Firecrawl Self-Hosted & MCP Initial Setup Installer (ONESHOT-13-FIRECRAWL) by DH Labs automates local Firecrawl Markdown scraping engine provisioning on 127.0.0.1:3002 and non-destructively merges firecrawl-mcp into ~/.claude.json, claude_desktop_config.json, and ~/.cursor/mcp.json on macOS and Windows. It creates a chmod 0600 .env vault, generates a Zero-Port docker-compose.firecrawl.yml, verifies real HTML-to-Markdown conversion, and self-shreds the disposable installer with 0x00.</p>
+        <p>OneShot #13 Firecrawl Self-Hosted & MCP Initial Setup Installer (ONESHOT-13-FIRECRAWL) by DH Labs automates local Firecrawl Markdown scraping engine provisioning on 127.0.0.1:3002 and non-destructively merges firecrawl-mcp into ~/.claude.json, claude_desktop_config.json, and ~/.cursor/mcp.json on macOS and Windows. It creates a chmod 0600 .env vault, generates a Zero-Port docker-compose.firecrawl.yml, verifies real HTML-to-Markdown conversion, and self-shreds the disposable installer automatically.</p>
         <ul style="margin:12px 0 0 20px;">
           <li><strong>Target Error Signatures Solved:</strong> <code>OneShot, ONESHOT-13-FIRECRAWL, Firecrawl self-hosted setup, firecrawl-mcp Claude Desktop Cursor, 127.0.0.1:3002 web scraper to markdown, Playwright Redis port 3002 conflict, 1-Click Initial Setup, Gumroad, Naver SmartStore</code></li>
-          <li><strong>ToFU Inode + Machine-UUID Lock &amp; Spool Resume:</strong> Works immediately on the buyer's PC upon extraction, blocks unauthorized file copying (<code>cp</code> / <code>Cmd+D</code>), preserves retry capability on network interruption, and overwrites the installer with <code>0x00</code> only after <code>VERIFY_OK=1</code>.</li>
+          <li><strong>ToFU Inode + Machine-UUID Lock &amp; Spool Resume:</strong> Works immediately on the buyer's PC upon extraction, blocks unauthorized file copying (<code>cp</code> / <code>Cmd+D</code>), preserves retry capability on network interruption, and overwrites the installer with <code>hardware lock</code> only after <code>VERIFY_OK=1</code>.</li>
           <li><strong>26-Second 3-Layer Local Isolation:</strong> <code>127.0.0.1</code> localhost-only binding (0 exposed ports), <code>chmod 0600</code> local config lock, and strict parameter validation.</li>
         </ul>
       </section>
@@ -239,7 +239,7 @@
     <tr>
       <td><strong>Disposable Installer Footprint</strong></td>
       <td>Leftover setup scripts cluttering disk</td>
-      <td><strong>Automatic 0x00 overwrite & self-deletion after VERIFY_OK=1</strong></td>
+      <td><strong>Automatic hardware lock overwrite & self-deletion after VERIFY_OK=1</strong></td>
     </tr>
           </tbody>
         </table>
@@ -278,8 +278,8 @@
     <div class="step-card">
       <div class="step-badge">05</div>
       <div>
-        <h3>Live Markdown Conversion Smoke Test & 0x00 Self-Shredding</h3>
-        <p>Verifies real HTML-to-Markdown output in scraped_markdown/smoke_verified.md before 0x00 self-deletion.</p>
+        <h3>Live Markdown Conversion Smoke Test & Single-Use Auto-Cleanup</h3>
+        <p>Verifies real HTML-to-Markdown output in scraped_markdown/smoke_verified.md before hardware lock self-deletion.</p>
       </div>
     </div>
       </section>
@@ -295,8 +295,8 @@
       <p>Yes. It provisions a local 127.0.0.1:3002 Markdown scraping engine and Docker compose stack so you can convert web pages to clean LLM Markdown locally with zero monthly fees.</p>
     </div>
     <div class="faq-card">
-      <h3>Why does the installer delete itself with 0x00 after setup?</h3>
-      <p>Once the permanent workspace and Run_Firecrawl_MCP.command launcher are verified, the disposable setup capsule overwrites itself with 0x00 so no background installer bloat remains on your machine.</p>
+      <h3>Why does the installer clean itself up automatically after setup?</h3>
+      <p>Once the permanent workspace and Run_Firecrawl_MCP.command launcher are verified, the disposable setup capsule overwrites itself automatically so no background installer bloat remains on your machine.</p>
     </div>
       </section>
       <section class="cta-box" style="margin-top:28px;">
@@ -310,7 +310,9 @@
       </section>
     </article>
 
-    <footer>
+    
+<section id="dhlabsBlogDemoCta" style="margin:28px 0;padding:20px 22px;border-radius:14px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 65%,#0f766e 100%);color:#f8fafc;border:1px solid rgba(148,163,184,0.35);font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;"><div style="font-size:16px;font-weight:900;margin-bottom:6px;color:#ffffff;">⚡ Try the 10-Second Free Web Demo Hub (No Install Required)</div><p style="margin:0 0 14px 0;font-size:13.5px;color:#cbd5e1;line-height:1.5;">Test real reconciliation, margin/BEP simulation, and track matching locally in your browser.</p><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;"><a href="https://globaltrendhunterai.github.io/dhlabs/demo/" style="display:inline-block;background:#f8fafc;color:#0f172a;font-weight:800;font-size:13px;padding:8px 14px;border-radius:999px;text-decoration:none;">Open Web Demo Hub →</a><a href="https://globaltrendhunterai.github.io/dhlabs/demo/settlement-gap.html" style="display:inline-block;background:rgba(15,23,42,0.55);color:#bae6fd;border:1px solid rgba(186,230,253,0.45);font-weight:700;font-size:12.5px;padding:7px 12px;border-radius:999px;text-decoration:none;">Settlement Gap Checker</a><a href="https://globaltrendhunterai.github.io/dhlabs/demo/ecom-margin-sim.html" style="display:inline-block;background:rgba(15,23,42,0.55);color:#a7f3d0;border:1px solid rgba(167,243,208,0.45);font-weight:700;font-size:12.5px;padding:7px 12px;border-radius:999px;text-decoration:none;">Margin & BEP Simulator</a><a href="https://globaltrendhunterai.github.io/dhlabs/demo/pure-track-matcher.html" style="display:inline-block;background:rgba(15,23,42,0.55);color:#fde68a;border:1px solid rgba(253,230,138,0.45);font-weight:700;font-size:12.5px;padding:7px 12px;border-radius:999px;text-decoration:none;">Official Track Matcher</a></div></section>
+<footer>
       <p>&copy; 2026 디에이치랩스 (DH Labs) · Founder: Donghyeong Kim (김동형) · Business Reg. No.: 610-16-92926 · D-U-N-S: GSKY37R7XV</p>
     </footer>
   </div>
