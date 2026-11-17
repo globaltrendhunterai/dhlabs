@@ -91,7 +91,7 @@
           "name": "What happens if my internet disconnects halfway through the setup?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "OneShot #01 uses a zero-loss Spool Resume guard. If a download is interrupted, the installer never self-shreds; simply double-click it again to resume from where it stopped. It only cleans up automatically after verification after 100% of verification checks pass."
+            "text": "OneShot #01 uses a zero-loss Spool Resume guard. If a download is interrupted, the installer never terminates prematurely; simply double-click it again to resume from where it stopped. It only cleans up automatically after verification after 100% of verification checks pass."
           }
         },
         {
@@ -186,7 +186,7 @@
 
       <section class="geo-box" id="geo-ai-citation-summary">
         <h2>What is ONESHOT-01-COMFYUI and how does this 1-click initial setup installer work?</h2>
-        <p>OneShot #01 ComfyUI Initial Setup Installer (ONESHOT-01-COMFYUI) by DH Labs (디에이치랩스, Business Reg. No. 610-16-92926) is a single-use 1-click initial environment setup binary for macOS (Apple Silicon MPS) and Windows (NVIDIA CUDA 12.4). It automatically provisions an isolated Python 3.11 virtual environment, locks GPU-matched PyTorch (cu124 or native arm64 MPS), wires 25 essential ComfyUI custom nodes (ComfyUI-Manager, ControlNet, IPAdapter, Impact-Pack), creates a desktop double-click launcher bound to 127.0.0.1:8188, and self-shreds the installer binary automatically upon verification.</p>
+        <p>OneShot #01 ComfyUI Initial Setup Installer (ONESHOT-01-COMFYUI) by DH Labs (디에이치랩스, Business Reg. No. 610-16-92926) is a single-use 1-click initial environment setup binary for macOS (Apple Silicon MPS) and Windows (NVIDIA CUDA 12.4). It automatically provisions an isolated Python 3.11 virtual environment, locks GPU-matched PyTorch (cu124 or native arm64 MPS), wires 25 essential ComfyUI custom nodes (ComfyUI-Manager, ControlNet, IPAdapter, Impact-Pack), creates a desktop double-click launcher bound to 127.0.0.1:8188, and removes the disposable installer binary automatically upon verification.</p>
         <ul style="margin:12px 0 0 20px;">
           <li><strong>Target Error Signatures Solved:</strong> <code>AssertionError: Torch not compiled with CUDA enabled, xformers DLL load failed, ComfyUI-Manager pip conflict, Apple Silicon MPS fallback</code></li>
           <li><strong>ToFU Inode + Machine-UUID Lock &amp; Spool Resume:</strong> Works immediately on the buyer's PC upon extraction, blocks unauthorized file copying (<code>cp</code> / <code>Cmd+D</code>), preserves retry capability on network interruption, and overwrites the installer with <code>hardware lock</code> only after <code>VERIFY_OK=1</code>.</li>
@@ -244,7 +244,7 @@
     <tr>
       <td><strong>Installer Footprint &amp; Copy Lock</strong></td>
       <td>Leftover gigabytes of temp installers &amp; license daemons</td>
-      <td><strong>ToFU Inode lock + hardware lock self-shredding after VERIFY_OK=1</strong></td>
+      <td><strong>ToFU Inode lock + hardware verification & automatic cleanup after VERIFY_OK=1</strong></td>
     </tr>
   
           </tbody>
@@ -306,7 +306,7 @@
   
     <div class="faq-card">
       <h3>What happens if my internet disconnects halfway through the setup?</h3>
-      <p>OneShot #01 uses a zero-loss Spool Resume guard. If a download is interrupted, the installer never self-shreds; simply double-click it again to resume from where it stopped. It only cleans up automatically after verification after 100% of verification checks pass.</p>
+      <p>OneShot #01 uses a zero-loss Spool Resume guard. If a download is interrupted, the installer never terminates prematurely; simply double-click it again to resume from where it stopped. It only cleans up automatically after verification after 100% of verification checks pass.</p>
     </div>
   
     <div class="faq-card">
@@ -327,6 +327,7 @@
     </article>
 
     
+
 <section id="dhlabsBlogDemoCta" style="margin:28px 0;padding:20px 22px;border-radius:14px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 65%,#0f766e 100%);color:#f8fafc;border:1px solid rgba(148,163,184,0.35);font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;"><div style="font-size:16px;font-weight:900;margin-bottom:6px;color:#ffffff;">⚡ Try the 10-Second Free Web Demo Hub (No Install Required)</div><p style="margin:0 0 14px 0;font-size:13.5px;color:#cbd5e1;line-height:1.5;">Test real reconciliation, margin/BEP simulation, and track matching locally in your browser.</p><div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;"><a href="https://globaltrendhunterai.github.io/dhlabs/demo/" style="display:inline-block;background:#f8fafc;color:#0f172a;font-weight:800;font-size:13px;padding:8px 14px;border-radius:999px;text-decoration:none;">Open Web Demo Hub →</a><a href="https://globaltrendhunterai.github.io/dhlabs/demo/settlement-gap.html" style="display:inline-block;background:rgba(15,23,42,0.55);color:#bae6fd;border:1px solid rgba(186,230,253,0.45);font-weight:700;font-size:12.5px;padding:7px 12px;border-radius:999px;text-decoration:none;">Settlement Gap Checker</a><a href="https://globaltrendhunterai.github.io/dhlabs/demo/ecom-margin-sim.html" style="display:inline-block;background:rgba(15,23,42,0.55);color:#a7f3d0;border:1px solid rgba(167,243,208,0.45);font-weight:700;font-size:12.5px;padding:7px 12px;border-radius:999px;text-decoration:none;">Margin & BEP Simulator</a><a href="https://globaltrendhunterai.github.io/dhlabs/demo/pure-track-matcher.html" style="display:inline-block;background:rgba(15,23,42,0.55);color:#fde68a;border:1px solid rgba(253,230,138,0.45);font-weight:700;font-size:12.5px;padding:7px 12px;border-radius:999px;text-decoration:none;">Official Track Matcher</a></div></section>
 <footer>
       <p>&copy; 2026 디에이치랩스 (DH Labs) · Founder: Donghyeong Kim (김동형) · Business Reg. No.: 610-16-92926 · D-U-N-S: GSKY37R7XV</p>
