@@ -35,44 +35,44 @@
 /* Hallmark: v2.0.0 | theme: cobalt | shape: workbench | genre: modern-minimal */
 /* critique: lifted all literal colours and font stacks into :root tokens, replaced pure #fff/#000 with tinted ink/paper, added reduced-motion and focus-visible rules */
 :root {
-  --bg-canvas: #f4f7fc;
-  --bg-subtle: #f8fafc;
-  --bg-card: #f4f7fc;
-  --border-color: #e2e8f0;
-  --border-subtle: #cbd5e1;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --accent-green: #059669;
-  --accent-amber: #d97706;
-  --accent-purple: #7c3aed;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --font-mono: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
-  --af-tok-f1: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --bg-canvas: #F7F6F2;
+  --bg-subtle: #F0EFEA;
+  --bg-card: #FFFFFF;
+  --border-color: #E5E3DC;
+  --border-subtle: #D4D1C7;
+  --text-main: #18181B;
+  --text-muted: #5E5C54;
+  --primary: #14532D;
+  --primary-hover: #0F3F22;
+  --accent-green: #14532D;
+  --accent-amber: #7C2D12;
+  --accent-purple: #18181B;
+  --shadow-sm: 0 1px 2px 0 rgba(24,24,27,0.03);
+  --shadow-md: 0 4px 12px -2px rgba(24,24,27,0.06);
+  --font-mono: 'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  --af-tok-f1: 'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
   --af-tok-f2: monospace;
-  --af-tok-c1: #eff6ff;
-  --af-tok-c2: #bfdbfe;
-  --af-tok-c3: #ecfdf5;
-  --af-tok-c4: #a7f3d0;
-  --af-tok-c5: #f4f7fc;
-  --af-tok-c6: #e2e8f0;
-  --af-tok-c7: #f1f5f9;
-  --af-tok-c8: #1e293b;
-  --af-tok-c9: #f8fafc;
-  --af-tok-c10: #cbd5e1;
-  --af-tok-c11: #334155;
-  --af-tok-c12: #0f172a;
-  --af-tok-c13: #0284c7;
-  --af-tok-c14: #64748b;
-  --af-tok-c15: #059669;
-  --af-tok-c16: #4f46e5;
-  --af-tok-c17: #7c3aed;
-  --af-tok-c18: #065f46;
-  --af-tok-c19: #047857;
-  --af-tok-c20: rgba(0,0,0,0.05);
-  --af-tok-c21: #2563eb;
+  --af-tok-c1: #FAF5EA;
+  --af-tok-c2: #E6D5B8;
+  --af-tok-c3: #ECF3EE;
+  --af-tok-c4: #BBD2C3;
+  --af-tok-c5: #FFFFFF;
+  --af-tok-c6: #E5E3DC;
+  --af-tok-c7: #F0EFEA;
+  --af-tok-c8: #18181B;
+  --af-tok-c9: #F7F6F2;
+  --af-tok-c10: #D4D1C7;
+  --af-tok-c11: #3F3E3A;
+  --af-tok-c12: #18181B;
+  --af-tok-c13: #14532D;
+  --af-tok-c14: #5E5C54;
+  --af-tok-c15: #14532D;
+  --af-tok-c16: #18181B;
+  --af-tok-c17: #14532D;
+  --af-tok-c18: #14532D;
+  --af-tok-c19: #27272A;
+  --af-tok-c20: rgba(24,24,27,0.04);
+  --af-tok-c21: #14532D;
 }
 html, body {
   max-width: 100%;
@@ -107,17 +107,20 @@ button:disabled {
 </head>
 <body>
 <!-- dhlabsFreeDemoBanner -->
-<div id="dhlabsFreeDemoBanner" style="width:100%;max-width:100%;box-sizing:border-box;background:linear-gradient(90deg,#0f172a 0%,#1e3a8a 65%,#0f766e 100%);color:#f8fafc;border-bottom:1px solid rgba(148,163,184,0.35);padding:10px 16px;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:13px;line-height:1.45;position:relative;z-index:45;">
-  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;">
+<div id="dhlabsFreeDemoBanner" style="width:100%;max-width:100%;box-sizing:border-box;background:#F0EFEA;color:#18181B;border-bottom:1px solid #E5E3DC;padding:8px 16px;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:12px;line-height:1.45;position:relative;z-index:45;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;">
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;">
-      <span style="display:inline-block;background:#10b981;color:#052e16;font-weight:900;font-size:11.5px;padding:3px 9px;border-radius:999px;white-space:nowrap;">10초 무료 웹 체험관</span>
-      <span style="font-weight:700;color:#f8fafc;">설치·로그인 없이 내 데이터로 먼저 결과 확인 (브라우저 100% 로컬 연산)</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;background:#14532D;color:#FFFFFF;font-weight:700;font-size:12px;padding:3px 10px;border-radius:999px;white-space:nowrap;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        10초 무료 체험관
+      </span>
+      <span style="font-weight:600;color:#3F3E3A;">설치·로그인 없이 내 데이터로 브라우저 즉시 테스트</span>
     </div>
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;">
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/" style="display:inline-flex;align-items:center;gap:4px;background:#f8fafc;color:#0f172a;font-weight:800;font-size:12px;padding:5px 11px;border-radius:999px;text-decoration:none;white-space:nowrap;">⚡ 10초 무료 웹 체험관 허브</a>
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/settlement-gap.html" style="display:inline-flex;align-items:center;gap:4px;background:rgba(15,23,42,0.55);color:#bae6fd;border:1px solid rgba(186,230,253,0.45);font-weight:700;font-size:12px;padding:5px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">정산 차액 1원 진단기 · 특가 ₩9,900</a>
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/ecom-margin-sim.html" style="display:inline-flex;align-items:center;gap:4px;background:rgba(15,23,42,0.55);color:#a7f3d0;border:1px solid rgba(167,243,208,0.45);font-weight:700;font-size:12px;padding:5px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">마진·BEP 시뮬레이터 · 특가 ₩14,900</a>
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/pure-track-matcher.html" style="display:inline-flex;align-items:center;gap:4px;background:rgba(15,23,42,0.55);color:#fde68a;border:1px solid rgba(253,230,138,0.45);font-weight:700;font-size:12px;padding:5px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">유튜브뮤직 정식음원 매칭 · 특가 ₩4,900</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/" style="display:inline-flex;align-items:center;gap:4px;background:#18181B;color:#FFFFFF;font-weight:700;font-size:12px;padding:4px 11px;border-radius:999px;text-decoration:none;white-space:nowrap;">체험관 허브</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/settlement-gap.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">정산 차액 진단 · ₩9,900</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/ecom-margin-sim.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">마진·BEP 시뮬 · ₩14,900</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/pure-track-matcher.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">유튜브뮤직 매칭 · ₩4,900</a>
     </div>
   </div>
 </div>
@@ -203,22 +206,22 @@ button:disabled {
         <div style="background: var(--af-tok-c5); border: 1px solid var(--af-tok-c6); border-radius: 8px; padding: 12px;">
           <div style="font-weight: 800; font-size: 0.96rem; color: var(--af-tok-c12);">Lv.1 기본 자가치유</div>
           <div style="font-size: 0.96rem; color: var(--af-tok-c14); margin-top: 2px;">127ms 무인 복구 / 서킷브레이커</div>
-          <div style="font-family: var(--font-mono); font-size: 0.96rem; font-weight: 800; color: var(--af-tok-c13); margin-top: 6px;">월 ₩29,000 / $22 <span style="color: var(--af-tok-c15); font-size: 10px;">(BYOK ₩19,000)</span></div>
+          <div style="font-family: var(--font-mono); font-size: 0.96rem; font-weight: 800; color: var(--af-tok-c13); margin-top: 6px;">월 ₩29,000 / $22 <span style="color: var(--af-tok-c15); font-size: 12px;">(BYOK ₩19,000)</span></div>
         </div>
         <div style="background: var(--af-tok-c5); border: 1px solid var(--af-tok-c6); border-radius: 8px; padding: 12px;">
           <div style="font-weight: 800; font-size: 0.96rem; color: var(--af-tok-c12);">Lv.2 데이터/노드 적응</div>
           <div style="font-size: 0.96rem; color: var(--af-tok-c14); margin-top: 2px;">Lv.1 포함 + 스키마/드리프트 방어</div>
-          <div style="font-family: var(--font-mono); font-size: 0.96rem; font-weight: 800; color: var(--af-tok-c16); margin-top: 6px;">월 ₩45,000 / $35 <span style="color: var(--af-tok-c15); font-size: 10px;">(BYOK ₩29,000)</span></div>
+          <div style="font-family: var(--font-mono); font-size: 0.96rem; font-weight: 800; color: var(--af-tok-c16); margin-top: 6px;">월 ₩45,000 / $35 <span style="color: var(--af-tok-c15); font-size: 12px;">(BYOK ₩29,000)</span></div>
         </div>
         <div style="background: var(--af-tok-c5); border: 1px solid var(--af-tok-c6); border-radius: 8px; padding: 12px;">
           <div style="font-weight: 800; font-size: 0.96rem; color: var(--af-tok-c12);">Lv.3 정산/무결성 방어</div>
           <div style="font-size: 0.96rem; color: var(--af-tok-c14); margin-top: 2px;">Lv.1~2 포함 + 1원 대사/오과금 차단</div>
-          <div style="font-family: var(--font-mono); font-size: 0.96rem; font-weight: 800; color: var(--af-tok-c17); margin-top: 6px;">월 ₩69,000 / $52 <span style="color: var(--af-tok-c15); font-size: 10px;">(BYOK ₩45,000)</span></div>
+          <div style="font-family: var(--font-mono); font-size: 0.96rem; font-weight: 800; color: var(--af-tok-c17); margin-top: 6px;">월 ₩69,000 / $52 <span style="color: var(--af-tok-c15); font-size: 12px;">(BYOK ₩45,000)</span></div>
         </div>
         <div style="background: var(--af-tok-c3); border: 1px solid var(--af-tok-c4); border-radius: 8px; padding: 12px;">
           <div style="font-weight: 800; font-size: 0.96rem; color: var(--af-tok-c18);">Lv.4 마스터 자율방어 (BEST)</div>
           <div style="font-size: 0.96rem; color: var(--af-tok-c19); margin-top: 2px;">Lv.1~3 전 기능 + 4단계 사이버 기만 미궁</div>
-          <div style="font-family: var(--font-mono); font-size: 0.96rem; font-weight: 800; color: var(--af-tok-c15); margin-top: 6px;">월 ₩99,000 / $75 <span style="color: var(--af-tok-c19); font-size: 10px;">(BYOK ₩65,000)</span></div>
+          <div style="font-family: var(--font-mono); font-size: 0.96rem; font-weight: 800; color: var(--af-tok-c15); margin-top: 6px;">월 ₩99,000 / $75 <span style="color: var(--af-tok-c19); font-size: 12px;">(BYOK ₩65,000)</span></div>
         </div>
       </div>
 
@@ -327,13 +330,13 @@ button:disabled {
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start;">
           <div style="background: var(--text-main); padding: 12px; border-radius: 12px;">
-            <div style="font-size: 12px; font-weight: 700; color: var(--af-tok-c2); margin-bottom: 8px;">Storyline B v2.0 / 16:9 데스크톱 3D 해부 &amp; 커서 데모 (1920×1080 / 60fps)</div>
+            <div style="font-size: 12px; font-weight: 700; color: #E5E3DC; margin-bottom: 8px;">Storyline B v2.0 / 16:9 데스크톱 3D 해부 &amp; 커서 데모 (1920×1080 / 60fps)</div>
             <video controls preload="metadata" poster="media/autoflow_3tier_launch_16x9_poster.jpg" style="width: 100%; border-radius: 8px; aspect-ratio: 16 / 9; background: var(--text-main);">
               <source src="media/autoflow_3tier_launch_16x9.mp4" type="video/mp4" />
             </video>
           </div>
           <div style="background: var(--text-main); padding: 12px; border-radius: 12px; text-align: center;">
-            <div style="font-size: 12px; font-weight: 700; color: var(--af-tok-c4); margin-bottom: 8px;">Storyline B v2.0 / 9:16 모바일 쇼츠 데모 (1080×1920 / 60fps)</div>
+            <div style="font-size: 12px; font-weight: 700; color: #D4D1C7; margin-bottom: 8px;">Storyline B v2.0 / 9:16 모바일 쇼츠 데모 (1080×1920 / 60fps)</div>
             <video controls preload="metadata" poster="media/autoflow_3tier_shorts_9x16_poster.jpg" style="max-height: 280px; width: auto; border-radius: 8px; aspect-ratio: 9 / 16; background: var(--text-main);">
               <source src="media/autoflow_3tier_shorts_9x16.mp4" type="video/mp4" />
             </video>
@@ -479,7 +482,7 @@ button:disabled {
       </div>
 
       <h3 style="font-size: 17px; font-weight: 700; color: var(--af-tok-c12); margin-bottom: 12px;">사내 데이터 유실 방어 4대 기술 원칙</h3>
-      <div style="background: var(--af-tok-c9); padding: 20px; border-radius: 10px; border-left: 4px solid var(--af-tok-c21); margin-bottom: 24px;">
+      <div style="background: var(--af-tok-c9); padding: 20px; border-radius: 10px; border: 1px solid var(--border-color); margin-bottom: 24px;">
         <ol style="font-size: 0.96rem; color: var(--af-tok-c11); line-height: 1.9; padding-left: 20px;">
           <li><strong>0초 무설정 직결 파이프 (Zero-Config Direct Pipe):</strong> 워크플로우 실행 즉시 사내 로컬 원장 메모리 버퍼와 Json 원장에 동시 반영되어 외부 클라우드 연동 대기 지연이 발생하지 않습니다.</li>
           <li><strong>무충돌 동시성 정렬 (Non-Destructive Deep Merge):</strong> 541개 이상의 n8n 블루프린트가 동일 시트에 동시 쓰기를 요청해도 order_dedup_sentinel 뮤텍스가 단조 증가 시퀀스 락을 발급하여 데이터 유실을 방지합니다.</li>
@@ -567,15 +570,15 @@ button:disabled {
           <td><span class="row-id">${r.rowKey}</span></td>
           <td><span class="wf-badge">${r.workflowId}</span></td>
           <td ${"style"}="font-weight: 600;">${r.targetName}</td>
-          <td ${"style"}="color: #475569;">${r.summaryData}</td>
+          <td ${"style"}="color: #3F3E3A;">${r.summaryData}</td>
           <td class="amount-cell">${Number(r.amountKrw || 0).toLocaleString()}원</td>
           <td ${"style"}="text-align: center;"><span class="badge ${isExecuted ? 'green' : ''}">${isExecuted ? '완료·잠금' : r.status}</span></td>
           <td ${"style"}="text-align: center;">
             <button class="action-btn ${isExecuted ? 'executed' : ''}" onclick="handleActionClick('${r.sheetId || currentLocalState.activeSheet}', '${r.rowKey}', '${r.actionCode}', this)">
-              ${isExecuted ? '✅ 실행·잠금 완료' : r.actionLabelKo}
+              ${isExecuted ? '실행·잠금 완료' : r.actionLabelKo}
             </button>
           </td>
-          <td ${"style"}="text-align: center; font-family: var(--font-mono); color: #64748b;">#${r.sequenceNo}</td>
+          <td ${"style"}="text-align: center; font-family: var(--font-mono); color: #5E5C54;">#${r.sequenceNo}</td>
         `;
         tbody.appendChild(tr);
       });
@@ -590,7 +593,7 @@ button:disabled {
     async function handleActionClick(sheetId, rowKey, actionCode, btnEl) {
       if (btnEl.classList.contains('executed')) return;
 
-      btnEl.innerText = '⏳ 집행 중...';
+      btnEl.innerText = '집행 중...';
 
       try {
         const resp = await fetch('/api/smartgrid/action', {

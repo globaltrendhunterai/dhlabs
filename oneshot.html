@@ -31,7 +31,7 @@
   <style>
 /* Hallmark: v2.0.0 | theme: cobalt | shape: workbench | genre: modern-minimal */
 /* critique: lifted all literal colours and font stacks into :root tokens, replaced pure #fff/#000 with tinted ink/paper, added reduced-motion and focus-visible rules */
-:root{--bg-canvas:#f4f7fc;--bg-subtle:#f8fafc;--bg-card:#f4f7fc;--border-color:#e2e8f0;--border-subtle:#cbd5e1;--text-main:#0f172a;--text-muted:#64748b;--primary:#2563eb;--primary-hover:#1d4ed8;--accent-green:#059669;--accent-amber:#d97706;--accent-purple:#7c3aed;--shadow-sm:0 1px 2px 0 rgb(0 0 0 / 0.05);--shadow-md:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--font-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--af-tok-f1:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--af-tok-f2:monospace;--af-tok-c1:#eff6ff;--af-tok-c2:#bfdbfe;--af-tok-c3:#ecfdf5;--af-tok-c4:#a7f3d0;--af-tok-c5:#f4f7fc;--af-tok-c6:#e2e8f0;--af-tok-c7:#f1f5f9;--af-tok-c8:#1e293b;--af-tok-c9:#f8fafc;--af-tok-c10:#cbd5e1;--af-tok-c11:#334155;--af-tok-c12:#0f172a;--af-tok-c13:#0284c7;--af-tok-c14:#64748b;--af-tok-c15:#059669;--af-tok-c16:#4f46e5;--af-tok-c17:#7c3aed;--af-tok-c18:#065f46;--af-tok-c19:#047857;--af-tok-c20:rgba(0,0,0,0.05);--af-tok-c21:#2563eb;}
+:root{--bg-canvas:#F7F6F2;--bg-subtle:#F0EFEA;--bg-card:#FFFFFF;--border-color:#E5E3DC;--border-subtle:#D4D1C7;--text-main:#18181B;--text-muted:#5E5C54;--primary:#14532D;--primary-hover:#0F3F22;--accent-green:#14532D;--accent-amber:#7C2D12;--accent-purple:#18181B;--shadow-sm:0 1px 2px 0 rgba(24,24,27,0.03);--shadow-md:0 4px 12px -2px rgba(24,24,27,0.06);--font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--af-tok-f1:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;--af-tok-f2:monospace;--af-tok-c1:#FAF5EA;--af-tok-c2:#E6D5B8;--af-tok-c3:#ECF3EE;--af-tok-c4:#BBD2C3;--af-tok-c5:#FFFFFF;--af-tok-c6:#E5E3DC;--af-tok-c7:#F0EFEA;--af-tok-c8:#18181B;--af-tok-c9:#F7F6F2;--af-tok-c10:#D4D1C7;--af-tok-c11:#3F3E3A;--af-tok-c12:#18181B;--af-tok-c13:#14532D;--af-tok-c14:#5E5C54;--af-tok-c15:#14532D;--af-tok-c16:#18181B;--af-tok-c17:#14532D;--af-tok-c18:#14532D;--af-tok-c19:#27272A;--af-tok-c20:rgba(24,24,27,0.04);--af-tok-c21:#14532D;}
 html,body{max-width:100%;overflow-x:clip;}h1,h2,h3{overflow-wrap:break-word;min-width:0;}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--af-tok-c1,currentColor);outline-offset:2px;}a:active,button:active{transform:translateY(1px);}@media (prefers-reduced-motion:reduce){*,::before,::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important;}}
 *{box-sizing:border-box;margin:0;padding:0;}body{background-color:var(--bg-canvas);color:var(--text-main);font-family:var(--af-tok-f1);line-height:1.5;-webkit-font-smoothing:antialiased;}.top-status-bar{background-color:var(--bg-subtle);border-bottom:1px solid var(--border-color);padding:10px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-size:0.96rem;}.status-tags{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:9999px;font-weight:600;font-size:0.96rem;background:var(--af-tok-c1);color:var(--primary);border:1px solid var(--af-tok-c2);}.badge.green{background:var(--af-tok-c3);color:var(--accent-green);border-color:var(--af-tok-c4);}.nav-links a{color:var(--primary);text-decoration:none;font-weight:600;margin-left:14px;font-size:0.96rem;}.nav-links a:hover{text-decoration:underline;}.container{max-width:1360px;margin:0 auto;padding:24px;}.header-section{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border-color);}.header-titles h1{font-size:26px;font-weight:800;color:var(--text-main);margin-bottom:6px;}.header-titles p{color:var(--text-muted);font-size:0.96rem;max-width:860px;}.header-actions{display:flex;gap:10px;flex-wrap:wrap;}.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 18px;border-radius:8px;font-size:0.96rem;font-weight:700;cursor:pointer;transition:background-color 0.2s ease,color 0.2s ease,border-color 0.2s ease,transform 0.2s ease;text-decoration:none;border:1px solid transparent;}.btn-primary{background:var(--primary);color:var(--af-tok-c5);}.btn-primary:hover{background:var(--primary-hover);}.btn-outline{background:var(--af-tok-c5);border-color:var(--border-subtle);color:var(--text-main);}.btn-outline:hover{background:var(--bg-subtle);}#geo-ai-citation-summary{background:var(--bg-subtle);border:1px solid var(--border-color);border-radius:12px;padding:24px;margin-bottom:28px;}#geo-ai-citation-summary h2{font-size:19px;font-weight:800;margin-bottom:10px;color:var(--text-main);}#geo-ai-citation-summary p{color:var(--text-muted);font-size:0.96rem;margin-bottom:14px;line-height:1.6;}.spec-table{width:100%;border-collapse:collapse;margin-top:12px;background:var(--af-tok-c5);border-radius:8px;overflow:hidden;border:1px solid var(--border-color);}.spec-table th,.spec-table td{padding:11px 14px;border-bottom:1px solid var(--border-color);font-size:0.96rem;text-align:left;}.spec-table th{background:var(--af-tok-c7);font-weight:700;color:var(--text-main);}.capsule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;margin-bottom:32px;}.capsule-card{background:var(--af-tok-c5);border:1px solid var(--border-color);border-radius:12px;padding:20px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;justify-content:space-between;gap:12px;}.capsule-card h3{font-size:17px;font-weight:800;color:var(--text-main);}.capsule-meta{font-family:var(--font-mono);font-size:0.88rem;color:var(--af-tok-c13);font-weight:700;}
   </style>
@@ -39,17 +39,20 @@ html,body{max-width:100%;overflow-x:clip;}h1,h2,h3{overflow-wrap:break-word;min-
 </head>
 <body>
 <!-- dhlabsFreeDemoBanner -->
-<div id="dhlabsFreeDemoBanner" style="width:100%;max-width:100%;box-sizing:border-box;background:linear-gradient(90deg,#0f172a 0%,#1e3a8a 65%,#0f766e 100%);color:#f8fafc;border-bottom:1px solid rgba(148,163,184,0.35);padding:10px 16px;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:13px;line-height:1.45;position:relative;z-index:45;">
-  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;">
+<div id="dhlabsFreeDemoBanner" style="width:100%;max-width:100%;box-sizing:border-box;background:#F0EFEA;color:#18181B;border-bottom:1px solid #E5E3DC;padding:8px 16px;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:12px;line-height:1.45;position:relative;z-index:45;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;">
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;">
-      <span style="display:inline-block;background:#10b981;color:#052e16;font-weight:900;font-size:11.5px;padding:3px 9px;border-radius:999px;white-space:nowrap;">10초 무료 웹 체험관</span>
-      <span style="font-weight:700;color:#f8fafc;">설치·로그인 없이 내 데이터로 먼저 결과 확인 (브라우저 100% 로컬 연산)</span>
+      <span style="display:inline-flex;align-items:center;gap:5px;background:#14532D;color:#FFFFFF;font-weight:700;font-size:12px;padding:3px 10px;border-radius:999px;white-space:nowrap;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        10초 무료 체험관
+      </span>
+      <span style="font-weight:600;color:#3F3E3A;">설치·로그인 없이 내 데이터로 브라우저 즉시 테스트</span>
     </div>
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;">
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/" style="display:inline-flex;align-items:center;gap:4px;background:#f8fafc;color:#0f172a;font-weight:800;font-size:12px;padding:5px 11px;border-radius:999px;text-decoration:none;white-space:nowrap;">⚡ 10초 무료 웹 체험관 허브</a>
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/settlement-gap.html" style="display:inline-flex;align-items:center;gap:4px;background:rgba(15,23,42,0.55);color:#bae6fd;border:1px solid rgba(186,230,253,0.45);font-weight:700;font-size:12px;padding:5px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">정산 차액 1원 진단기 · 특가 ₩9,900</a>
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/ecom-margin-sim.html" style="display:inline-flex;align-items:center;gap:4px;background:rgba(15,23,42,0.55);color:#a7f3d0;border:1px solid rgba(167,243,208,0.45);font-weight:700;font-size:12px;padding:5px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">마진·BEP 시뮬레이터 · 특가 ₩14,900</a>
-      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/pure-track-matcher.html" style="display:inline-flex;align-items:center;gap:4px;background:rgba(15,23,42,0.55);color:#fde68a;border:1px solid rgba(253,230,138,0.45);font-weight:700;font-size:12px;padding:5px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">유튜브뮤직 정식음원 매칭 · 특가 ₩4,900</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/" style="display:inline-flex;align-items:center;gap:4px;background:#18181B;color:#FFFFFF;font-weight:700;font-size:12px;padding:4px 11px;border-radius:999px;text-decoration:none;white-space:nowrap;">체험관 허브</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/settlement-gap.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">정산 차액 진단 · ₩9,900</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/ecom-margin-sim.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">마진·BEP 시뮬 · ₩14,900</a>
+      <a href="https://globaltrendhunterai.github.io/dhlabs/demo/pure-track-matcher.html" style="display:inline-flex;align-items:center;gap:4px;background:#FFFFFF;color:#18181B;border:1px solid #D4D1C7;font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px;text-decoration:none;white-space:nowrap;">유튜브뮤직 매칭 · ₩4,900</a>
     </div>
   </div>
 </div>
@@ -420,13 +423,13 @@ html,body{max-width:100%;overflow-x:clip;}h1,h2,h3{overflow-wrap:break-word;min-
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; align-items: start;">
         <div style="background: var(--text-main); padding: 12px; border-radius: 12px;">
-          <div style="font-size: 0.88rem; font-weight: 700; color: var(--af-tok-c2); margin-bottom: 8px;">16:9 데스크톱 아키텍처 해부 및 원클릭 보호 데모 (1920x1080 / 60fps)</div>
+          <div style="font-size: 0.88rem; font-weight: 700; color: #E5E3DC; margin-bottom: 8px;">16:9 데스크톱 아키텍처 해부 및 원클릭 보호 데모 (1920x1080 / 60fps)</div>
           <video controls preload="metadata" poster="media/autoflow_3tier_launch_16x9_poster.jpg" style="width: 100%; border-radius: 8px; aspect-ratio: 16 / 9; background: var(--text-main);">
             <source src="media/autoflow_3tier_launch_16x9.mp4" type="video/mp4" />
           </video>
         </div>
         <div style="background: var(--text-main); padding: 12px; border-radius: 12px; text-align: center;">
-          <div style="font-size: 0.88rem; font-weight: 700; color: var(--af-tok-c4); margin-bottom: 8px;">9:16 모바일 쇼츠 데모 (1080x1920 / 60fps)</div>
+          <div style="font-size: 0.88rem; font-weight: 700; color: #D4D1C7; margin-bottom: 8px;">9:16 모바일 쇼츠 데모 (1080x1920 / 60fps)</div>
           <video controls preload="metadata" poster="media/autoflow_3tier_shorts_9x16_poster.jpg" style="max-height: 260px; width: auto; border-radius: 8px; aspect-ratio: 9 / 16; background: var(--text-main);">
             <source src="media/autoflow_3tier_shorts_9x16.mp4" type="video/mp4" />
           </video>
@@ -480,36 +483,36 @@ html,body{max-width:100%;overflow-x:clip;}h1,h2,h3{overflow-wrap:break-word;min-
           <h3 style="font-size: 16px; font-weight: 800; color: var(--accent-amber); margin: 0 0 8px 0;">[보완 인프라] 내 PC 그래픽카드(VRAM) 사양이 부족할 때 — 클라우드 RTX 4090 시간당 대여</h3>
           <p style="font-size: 0.93rem; color: var(--text-muted); margin: 0 0 12px 0;">내장 그래픽 노트북이나 VRAM 6GB 미만 저사양 PC라 로컬 구동이 어렵다면 고가 그래픽카드를 구매하기 전에 시간당 $0.29 수준인 클라우드 GPU 서버에서 즉시 실행해 보세요.</p>
           <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <a href="https://cloud.vast.ai/?ref_id=dhlabs" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--text-main); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;">⚡ Vast.ai 클라우드 GPU 대여 ($0.29/hr~)</a>
-            <a href="https://runpod.io?ref=dhlabs" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--primary); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;">🚀 RunPod GPU 인스턴스 실행</a>
+            <a href="https://cloud.vast.ai/?ref_id=dhlabs" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--text-main); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;">Vast.ai 클라우드 GPU 대여 ($0.29/hr~)</a>
+            <a href="https://runpod.io?ref=dhlabs" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--primary); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;">RunPod GPU 인스턴스 실행</a>
           </div>
         </div>
         <div style="padding: 18px; border-radius: 10px; background: var(--af-tok-c3); border: 1px solid var(--af-tok-c4);">
           <h3 style="font-size: 16px; font-weight: 800; color: var(--accent-green); margin: 0 0 8px 0;">[공식 파트너] DH Labs 글로벌 30% 어필리에이트 프로그램 (무심사 즉시 발급)</h3>
           <p style="font-size: 0.93rem; color: var(--text-muted); margin: 0 0 12px 0;">유튜브 채널이나 기술 블로그, 커뮤니티에 OneShot 12종 초기 세팅기 및 AutoFlow 단품을 소개하면 결제 건마다 판매 금액의 30%($8.7~$23.7)를 검로드가 자동 정산합니다.</p>
           <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <a href="https://dhlabs.gumroad.com/affiliates" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: #059669; color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;">🤝 글로벌 30% 어필리에이트 파트너 등록 (Gumroad 공식)</a>
+            <a href="https://dhlabs.gumroad.com/affiliates" target="_blank" rel="noopener noreferrer" style="padding: 8px 14px; border-radius: 8px; background: var(--primary); color: #ffffff; font-weight: 700; font-size: 0.88rem; text-decoration: none;">글로벌 30% 어필리에이트 파트너 등록 (Gumroad 공식)</a>
           </div>
         </div>
       </div>
     </section>
 
     
-<div id="dhlabs-tofu-hardware-lock-banner" style="max-width:1180px;margin:28px auto;padding:22px 26px;border-radius:14px;background:rgba(127,29,29,0.18);border:1.5px solid #ef4444;color:#fecaca;font-family:-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;">
-  <div style="font-size:15px;font-weight:800;color:#f87171;margin-bottom:8px;">🔒 [필독 보안 규정 / Mandatory Anti-Copy Notice] 전 제품(65종) 1PC 하드웨어·Inode 귀속 및 무단 복사 시 자동 보안 잠금 및 데이터 소거 안내</div>
-  <ul style="margin:0;padding-left:20px;font-size:13.5px;color:#fca5a5;">
-    <li><strong>1PC ToFU Hardware UUID &amp; OS Physical Inode (96B) Lock</strong>: DH Labs의 모든 단품(AutoFlow 49종 · OneShot 12종 · YouTube 4종)는 <code>MacMiniMasterMinter v3.0</code> 규격에 따라 최초 실행 시점의 PC 하드웨어 UUID와 OS 물리 Inode 번호(96바이트 슬롯)에 즉시 1:1 귀속됩니다.</li>
-    <li><strong>무단 복사 시 자동 보안 잠금 및 데이터 소거</strong>: 압축 해제 후 실행 런처(<code>.command</code> / <code>.bat</code>)나 폴더를 <strong>절대 복사(Cmd+D, Ctrl+C/V, cp)하거나 타 폴더·타 PC·클라우드로 이동하지 마십시오.</strong> 물리 Inode 불일치나 하드링크(<code>nlink != 1</code>) 복제가 감지되는 즉시 파일 전체가 보안 덮어쓰기 처리되어 즉시 무효화(<code>lock_and_abort</code>)됩니다.</li>
-    <li><strong>1회성 캡슐 자동 소멸 (OneShot &amp; YouTube Series)</strong>: 1회용 세팅기(OneShot 12종) 및 유튜브 유틸리티(4종)는 정품 작업이 100% 완료된 직후 로컬 캡슐 및 브라우저 확장프로그램(<code>uninstallSelf</code>)이 자동으로 안전하게 소멸됩니다.</li>
+<div id="dhlabs-tofu-hardware-lock-banner" style="max-width:1180px;margin:28px auto;padding:22px 26px;border-radius:12px;background:#FFFFFF;border:1.5px solid #B91C1C;color:#18181B;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;">
+  <div style="font-size:15px;font-weight:800;color:#7F1D1D;margin-bottom:8px;">[필독 보안 규정 / Mandatory Anti-Copy Notice] 전 제품(65종) 1PC 하드웨어·Inode 귀속 및 무단 복사 시 자동 보안 잠금 안내</div>
+  <ul style="margin:0;padding-left:20px;font-size:13.5px;color:#27272A;">
+    <li><strong>1PC ToFU Hardware UUID &amp; OS Physical Inode (96B) Lock</strong>: DH Labs의 모든 단품(AutoFlow 49종 · OneShot 12종 · YouTube 4종)은 <code>MacMiniMasterMinter v3.0</code> 규격에 따라 최초 실행 시점의 PC 하드웨어 UUID와 OS 물리 Inode 번호(96바이트 슬롯)에 즉시 1:1 귀속됩니다.</li>
+    <li><strong>무단 복사 시 자동 보안 잠금</strong>: 압축 해제 후 실행 런처(<code>.command</code> / <code>.bat</code>)나 폴더를 <strong>복사(Cmd+D, Ctrl+C/V, cp)하거나 타 폴더·타 PC·클라우드로 이동하지 마십시오.</strong> 물리 Inode 불일치나 하드링크(<code>nlink != 1</code>) 복제가 감지되는 즉시 자동 무효화(<code>lock_and_abort</code>)됩니다.</li>
+    <li><strong>1회성 캡슐 자동 종료 (OneShot &amp; YouTube Series)</strong>: 1회용 세팅기(OneShot 12종) 및 유튜브 유틸리티(4종)는 정품 작업이 100% 완료된 직후 로컬 캡슐 및 브라우저 확장프로그램(<code>uninstallSelf</code>)이 안전하게 종료·정리됩니다.</li>
   </ul>
 </div>
 
-<div id="dhlabs-tofu-single-use-banner" style="max-width:1180px;margin:28px auto;padding:24px 28px;border-radius:14px;background:rgba(127,29,29,0.22);border:2px solid #ef4444;color:#fecaca;font-family:-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.75;">
-  <div style="font-size:16px;font-weight:800;color:#f87171;margin-bottom:10px;">🔒 [필독! 간편 실행 및 1PC · 1계정 · 단 1회 사용 보안 규정 — Windows(.bat) &amp; Mac(.command) 100% 동일 작동]</div>
-  <ul style="margin:0;padding-left:20px;font-size:14px;color:#fca5a5;">
-    <li><strong>다운로드 폴더에서 바로 더블클릭 권장 (최초 실행 전 이동 가능)</strong>: 처음 내려받은 <code>다운로드(Downloads)</code> 폴더 그 자리에서 압축을 풀고 바로 더블클릭(Windows는 <code>.bat</code>, Mac은 <code>.command</code>)하여 실행하세요! (최초 1회 실행 전이라면 내 PC 안에서 바탕화면 등으로 옮긴 뒤 실행하셔도 정상 작동합니다.)</li>
-    <li><strong>동일 PC에서도 딱 1번(1계정)만 사용 가능 — 다계정 중복 사용·재실행 시 자동 보안 잠금</strong>: 1회용 세팅기(OneShot 12종) 및 유튜브 유틸리티(4종)는 <strong>1구매 = 1PC · 1계정 · 단 1회 사용</strong> 소모성 캡슐입니다. 최초 1회 실행 시 원본 압축파일(<code>.zip</code>)이 자동 소거되고 작업 완료 즉시 자가 삭제(<code>uninstallSelf</code>)되며, <strong>동일한 컴퓨터(동일 PC)라 하더라도 1번 사용한 뒤 다른 계정(다계정)으로 재사용하거나 백업 복사본으로 2번째 실행을 시도하는 즉시 보안 덮어쓰기 처리되어 자동 무효화(<code>lock_and_abort</code>)</strong>됩니다.</li>
-    <li><strong>타인의 컴퓨터(타 PC)로 무단 복사·공유 시 즉시 자동 보안 잠금</strong>: 다른 컴퓨터(타 PC)로 파일을 복사·전송하여 실행할 경우 Windows와 Mac 모두 즉시 파일 전체를 보안 덮어쓰기 처리되어 즉시 무효화(<code>lock_and_abort</code>)합니다.</li>
+<div id="dhlabs-tofu-single-use-banner" style="max-width:1180px;margin:28px auto;padding:22px 26px;border-radius:12px;background:#FFFFFF;border:1.5px solid #991B1B;color:#18181B;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.75;">
+  <div style="font-size:15.5px;font-weight:800;color:#7F1D1D;margin-bottom:10px;">[필독! 간편 실행 및 1PC · 1계정 · 단 1회 사용 보안 규정 — Windows(.bat) &amp; Mac(.command) 100% 동일 작동]</div>
+  <ul style="margin:0;padding-left:20px;font-size:14px;color:#27272A;">
+    <li><strong>다운로드 폴더에서 바로 더블클릭 권장 (최초 실행 전 이동 가능)</strong>: 처음 내려받은 <code>다운로드(Downloads)</code> 폴더 그 자리에서 압축을 풀고 바로 더블클릭(Windows는 <code>.bat</code>, Mac은 <code>.command</code>)하여 실행하세요.</li>
+    <li><strong>동일 PC에서도 딱 1번(1계정)만 사용 가능 — 다계정 중복 사용·재실행 시 자동 보안 잠금</strong>: 1회용 세팅기(OneShot 12종) 및 유튜브 유틸리티(4종)는 <strong>1구매 = 1PC · 1계정 · 단 1회 사용</strong> 구조입니다. <strong>동일한 컴퓨터(동일 PC)라 하더라도 1번 사용한 뒤 다른 계정(다계정)으로 재사용하거나 백업 복사본으로 2번째 실행을 시도하는 즉시 자동 무효화(<code>lock_and_abort</code>)</strong>됩니다.</li>
+    <li><strong>타인의 컴퓨터(타 PC)로 무단 복사·공유 시 즉시 자동 보안 잠금</strong>: 다른 컴퓨터(타 PC)로 파일을 복사·전송하여 실행할 경우 Windows와 Mac 모두 즉시 자동 무효화(<code>lock_and_abort</code>)됩니다.</li>
   </ul>
 </div>
 <footer style="border-top: 1px solid var(--border-color); padding-top: 20px; font-size: 0.92rem; color: var(--text-muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
