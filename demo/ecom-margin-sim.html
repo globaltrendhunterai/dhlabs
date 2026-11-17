@@ -4,6 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>이커머스 마진·ROAS·BEP 트리 시뮬레이터 무료 웹 체험판</title>
+  <meta name="description" content="판매가·매입원가·목표 ROAS 변화에 따른 월간 세후 순이익과 손익분기 ROAS·판매량을 브라우저에서 바로 시뮬레이션해 보세요." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="이커머스 마진·ROAS·BEP 시뮬레이터 무료 웹 체험판" />
+  <meta property="og:description" content="단가·원가·목표 ROAS별 세후 순이익과 역마진 경고 구간을 설치 없이 10초 만에 확인해 보세요." />
+  <meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/demo/og_demo_preview.png" />
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/demo/ecom-margin-sim.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="이커머스 마진·ROAS·BEP 시뮬레이터 무료 웹 체험판" />
+  <meta name="twitter:image" content="https://globaltrendhunterai.github.io/dhlabs/demo/og_demo_preview.png" />
   <style>
     :root { --bg:#f8fafc; --card:#fff; --ink:#0f172a; --sub:#475569; --line:#e2e8f0; --pri:#1d4ed8; --ok:#059669; --bad:#dc2626; --amber:#d97706; }
     * { box-sizing:border-box; }
@@ -26,7 +35,10 @@
     .preset-btn { border:1px solid #cbd5e1; background:#f8fafc; border-radius:8px; padding:6px 10px; font-size:12px; font-weight:700; cursor:pointer; }
     .preset-btn:hover { background:#eff6ff; border-color:var(--pri); color:var(--pri); }
     .ctrl { margin-bottom:13px; }
-    .ctrl-head { display:flex; justify-content:space-between; font-size:13px; font-weight:700; margin-bottom:4px; }
+    .ctrl.locked { background:#f8fafc; border:1px dashed #cbd5e1; border-radius:10px; padding:8px 10px; cursor:pointer; }
+    .ctrl.locked input[type=range] { pointer-events:none; opacity:0.45; }
+    .lock-tag { display:inline-block; margin-left:6px; font-size:11px; font-weight:800; color:#92400e; background:#fef3c7; border:1px solid #fcd34d; padding:1px 6px; border-radius:999px; }
+    .ctrl-head { display:flex; justify-content:space-between; font-size:13px; font-weight:700; margin-bottom:4px; align-items:center; gap:6px; }
     .ctrl-val { color:var(--pri); font-weight:800; }
     input[type=range] { display:block; width:99%; accent-color:var(--pri); }
     .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:16px; }
@@ -56,6 +68,7 @@
     <div class="topbar-inner">
       <a href="./index.html" class="brand">← 무료 웹 체험관 <span class="badge">마진·ROAS·BEP 체험판</span></a>
       <div class="tools">
+        <button id="btnShareLink" class="btn">🔗 동료에게 체험 링크 복사</button>
         <button id="btnExportLock" class="btn btn-amber">🔒 무수식 외부제출용 엑셀(.xlsx) 추출 (정식판 전용)</button>
         <a href="https://smartstore.naver.com/dhlabs-official/products/13863037562" target="_blank" rel="noopener" class="btn btn-ok">이커머스 입문형 특가 14,900원 ↗</a>
         <a href="https://smartstore.naver.com/dhlabs-official/products/13863038228" target="_blank" rel="noopener" class="btn btn-pri">FinTree Pro 빌더 (79,000원) ↗</a>
@@ -68,7 +81,7 @@
       <!-- Left Inputs -->
       <section class="card">
         <h1>가정 값 실시간 조정</h1>
-        <p style="margin:0 0 12px;color:#475569;font-size:13px;">슬라이더를 움직이면 공헌이익, 손익분기 판매량(BEP), 세후 순이익이 즉시 계산됩니다.</p>
+        <p style="margin:0 0 12px;color:#475569;font-size:13px;">핵심 3대 변수(단가·매입원가·목표 ROAS)와 프리셋 3종을 움직여 즉시 마진 변화를 확인해 보세요. 매장별 세부 수수료·물류·고정비 입력은 정식판에서 열립니다.</p>
         <div class="presets">
           <button class="preset-btn" data-preset="normal">스마트스토어 일반</button>
           <button class="preset-btn" data-preset="roas_warn">광고 ROAS 역마진 경고</button>
@@ -77,11 +90,12 @@
 
         <div class="ctrl"><div class="ctrl-head"><span>개당 판매단가</span><span class="ctrl-val" id="vPrice"></span></div><input id="price" type="range" min="5000" max="150000" step="1000" value="39000"></div>
         <div class="ctrl"><div class="ctrl-head"><span>개당 매입·제조 원가</span><span class="ctrl-val" id="vCost"></span></div><input id="cost" type="range" min="1000" max="90000" step="500" value="13500"></div>
-        <div class="ctrl"><div class="ctrl-head"><span>월 판매 목표 수량</span><span class="ctrl-val" id="vQty"></span></div><input id="qty" type="range" min="50" max="3000" step="50" value="900"></div>
-        <div class="ctrl"><div class="ctrl-head"><span>마켓+PG 통합 수수료율</span><span class="ctrl-val" id="vFee"></span></div><input id="fee" type="range" min="3" max="20" step="0.5" value="8.5"></div>
-        <div class="ctrl"><div class="ctrl-head"><span>건당 포장·물류비 부담</span><span class="ctrl-val" id="vShip"></span></div><input id="ship" type="range" min="0" max="6000" step="100" value="2800"></div>
         <div class="ctrl"><div class="ctrl-head"><span>목표 광고 ROAS</span><span class="ctrl-val" id="vRoas"></span></div><input id="roas" type="range" min="150" max="1000" step="10" value="420"></div>
-        <div class="ctrl"><div class="ctrl-head"><span>월 고정비 (임대·인건비·솔루션)</span><span class="ctrl-val" id="vFixed"></span></div><input id="fixed" type="range" min="0" max="15000000" step="500000" value="4000000"></div>
+
+        <div class="ctrl locked" title="정식 단품 전용 기능"><div class="ctrl-head"><span>월 판매 목표 수량 <span class="lock-tag">🔒 정식판 전용(예시값)</span></span><span class="ctrl-val" id="vQty"></span></div><input id="qty" type="range" min="50" max="3000" step="50" value="900" disabled></div>
+        <div class="ctrl locked" title="정식 단품 전용 기능"><div class="ctrl-head"><span>마켓+PG 통합 수수료율 <span class="lock-tag">🔒 정식판 전용(예시값)</span></span><span class="ctrl-val" id="vFee"></span></div><input id="fee" type="range" min="3" max="20" step="0.5" value="8.5" disabled></div>
+        <div class="ctrl locked" title="정식 단품 전용 기능"><div class="ctrl-head"><span>건당 포장·물류비 부담 <span class="lock-tag">🔒 정식판 전용(예시값)</span></span><span class="ctrl-val" id="vShip"></span></div><input id="ship" type="range" min="0" max="6000" step="100" value="2800" disabled></div>
+        <div class="ctrl locked" title="정식 단품 전용 기능"><div class="ctrl-head"><span>월 고정비(임대·인건비) <span class="lock-tag">🔒 정식판 전용(예시값)</span></span><span class="ctrl-val" id="vFixed"></span></div><input id="fixed" type="range" min="0" max="15000000" step="500000" value="4000000" disabled></div>
       </section>
 
       <!-- Right Dashboard -->
@@ -104,10 +118,10 @@
 
   <div class="modal-back" id="upgradeModal">
     <div class="modal">
-      <h3>정식 단품 전용 기능 (무수식 엑셀 추출 · 계정 자유 설계)</h3>
+      <h3>정식 단품 전용 기능 안내</h3>
       <p style="color:#475569;font-size:13.5px;line-height:1.65;margin:0 0 14px;">
-        무료 웹 체험판에서는 7개 핵심 변수 기반 시뮬레이션만 지원합니다.<br /><br />
-        • <b>이커머스 완성형 단품 (정가 19,000원 → 특가 14,900원)</b>: 12개월 표 편집, 6대 자동 검산, 세무사·동업자 제출용 <b>무수식 값 전용 엑셀(.xlsx)</b> 추출<br />
+        내 매장 실제 <b>수수료율 · 물류비 · 월 고정비 · 판매량 직접 입력</b> 및 <b>무수식 엑셀(.xlsx) 추출</b>은 정식 단품 전용 기능입니다.<br /><br />
+        • <b>이커머스 완성형 단품 (정가 19,000원 → 특가 14,900원)</b>: 내 매장 12개월 전체 비용·표 편집, 6대 자동 검산, 세무사·동업자 제출용 <b>무수식 값 전용 엑셀(.xlsx)</b> 추출<br />
         • <b>FinTree Pro 마스터 빌더 (79,000원)</b>: 업종별 하위 계정 무한 분해 및 사칙연산 수식 자유 설계
       </p>
       <div style="display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;">
@@ -212,9 +226,22 @@
         };
       });
 
-      ids.forEach(id => $(id).addEventListener("input", render));
+      ["price", "cost", "roas"].forEach(id => $(id).addEventListener("input", render));
+      document.querySelectorAll(".ctrl.locked").forEach(el => {
+        el.onclick = () => $("upgradeModal").classList.add("open");
+      });
       $("btnExportLock").onclick = () => $("upgradeModal").classList.add("open");
       $("btnCloseModal").onclick = () => $("upgradeModal").classList.remove("open");
+      const shareBtn = $("btnShareLink");
+      if (shareBtn) {
+        const shareUrl = "https://globaltrendhunterai.github.io/dhlabs/demo/ecom-margin-sim.html";
+        shareBtn.onclick = async () => {
+          try { await navigator.clipboard.writeText(shareUrl); } catch (_) {}
+          const orig = shareBtn.textContent;
+          shareBtn.textContent = "✓ 체험 링크 복사 완료 (카톡·카페 붙여넣기)";
+          setTimeout(() => { shareBtn.textContent = orig; }, 2500);
+        };
+      }
       render();
     })();
   </script>
