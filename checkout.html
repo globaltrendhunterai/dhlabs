@@ -440,8 +440,8 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 <i class="fa-solid fa-lock"></i>
 </a>
 <div>
-<h1 class="text-lg sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white leading-snug">256-bit 보안 결제로 0.1초 만에 라이선스 발급 누락을 차단하세요</h1>
-<p class="text-xs sm:text-xs text-slate-500 dark:text-slate-400" data-i18n="header_desc">토스페이먼츠(KRW) &amp; Lemon Squeezy(USD) 공식 연동 · 결제 즉시 라이선스 자동 출고</p>
+<h1 class="text-lg sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white leading-snug" data-i18n="header_h1">256-bit 보안 결제로 0.1초 만에 라이선스 발급 누락을 차단하세요</h1>
+<p class="text-xs sm:text-xs text-slate-500 dark:text-slate-400" data-i18n="header_desc">토스페이먼츠(KRW) &amp; Gumroad 글로벌 USD 공식 연동 · 결제 즉시 라이선스 자동 출고</p>
 </div>
 </div>
 <div class="flex items-center justify-end gap-2 shrink-0 self-end sm:self-auto">
@@ -456,7 +456,7 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 <i class="fa-solid fa-arrow-left text-sky-600"></i> <span data-i18n="btn_back_catalog">스토어 홈</span>
 </a>
 </div>
-</header><section aria-label="AutoFlow Commerce Engine AI Citation &amp; Technical Architecture Summary" id="geo-ai-citation-summary" style="padding:10px 16px;background:#FFFFFF;border-bottom:1px solid #E5E3DC;"><details class="af-geo-accordion" style="max-width:1280px;margin:0 auto;border:1px solid #E5E3DC;border-radius:12px;background:#F7F6F2;overflow:hidden;"><summary style="cursor:pointer;list-style:none;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;font-weight:700;color:#18181B;background:#F0EFEA;"><span>결제 시스템 보안 · 단품/엔진 사양 요약 보기</span><span style="font-size:12px;color:#14532D;font-weight:700;">펼쳐보기 +</span></summary><div style="padding:18px;background:#FFFFFF;border-top:1px solid #E5E3DC;">
+</header><section aria-label="AutoFlow Commerce Engine AI Citation &amp; Technical Architecture Summary" id="geo-ai-citation-summary" style="padding:10px 16px;background:#FFFFFF;border-bottom:1px solid #E5E3DC;"><details class="af-geo-accordion" style="max-width:1280px;margin:0 auto;border:1px solid #E5E3DC;border-radius:12px;background:#F7F6F2;overflow:hidden;"><summary style="cursor:pointer;list-style:none;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;font-weight:700;color:#18181B;background:#F0EFEA;"><span data-i18n="geo_summary_title">결제 시스템 보안 · 단품/엔진 사양 요약 보기</span><span data-i18n="geo_summary_expand" style="font-size:12px;color:#14532D;font-weight:700;">펼쳐보기 +</span></summary><div style="padding:18px;background:#FFFFFF;border-top:1px solid #E5E3DC;">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-xs">
 <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
@@ -539,17 +539,17 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 <li>
 <a class="hover:text-sky-600 font-bold flex items-center gap-1" href="index.html">
 <i class="fa-solid fa-house text-xs text-sky-600"></i>
-<span>AutoFlow 공식 스토어</span>
+<span data-i18n="bread_home">AutoFlow 공식 스토어</span>
 </a>
 </li>
 <li class="text-slate-500 dark:text-slate-400">/</li>
 <li>
-<span class="font-bold text-slate-900 dark:text-white" id="checkoutBreadcrumbCurrent">보안 결제 및 즉시 라이선스 출고</span>
+<span class="font-bold text-slate-900 dark:text-white" data-i18n="bread_current" id="checkoutBreadcrumbCurrent">보안 결제 및 즉시 라이선스 출고</span>
 </li>
 </ol>
 <div class="text-xs text-emerald-700 dark:text-emerald-400 font-bold flex items-center gap-1">
 <i class="fa-solid fa-user-shield"></i>
-<span>사내 PC 로컬 개인정보 100% 마스킹 기본 탑재</span>
+<span data-i18n="bread_privacy">사내 PC 로컬 개인정보 100% 마스킹 기본 탑재</span>
 </div>
 </div>
 </nav>
@@ -568,7 +568,7 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
           </span>
 </div>
 <!-- 2-Track Primary Switcher: Track 1 (Workflow Single) vs Track 2 (Resident Engine Pass) -->
-<div class="mb-4">
+<div class="mb-4" id="checkout-tier-switcher">
 <label class="block text-xs font-bold text-slate-600 dark:text-slate-400 mb-2" data-i18n="label_tier_select">구매 카테고리 선택 (단품 영구소장 vs 상주형 무인 엔진 기간권):</label>
 <div class="grid grid-cols-2 gap-2">
 <button class="p-3 rounded-2xl border-2 border-sky-600 bg-sky-50/80 dark:bg-sky-950/50 text-left transition cursor-pointer" id="btn-track-workflow" onclick="selectCheckoutTrack('workflow')" type="button">
@@ -603,6 +603,11 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 <option value="AF-TIER3-AI-PIPE|59000|[5단계 정찰 3티어] 1원 정산 대사·관세청 검증·AI 결합 파이프라인 (14~18개 노드)">⚡ [AF-TIER3-AI-PIPE] 1원 정산 대사·AI 결합형 (14~18개 노드) — ₩59,000 ($45)</option>
 <option value="AF-TIER4-ERP-CORE|69000|[5단계 정찰 4티어] 크로스-시스템 엔터프라이즈 복합 파이프라인 (19~30개 노드)">⚡ [AF-TIER4-ERP-CORE] 크로스-시스템 복합 파이프라인 (19~30개 노드) — ₩69,000 ($52)</option>
 <option value="AF-TIER5-FULL-ORCH|79000|[5단계 정찰 5티어] 전사 ERP·재무·기간망 고밀도 풀스택 오케스트레이터 (31~65개 노드)">⚡ [AF-TIER5-FULL-ORCH] 고밀도 풀스택 오케스트레이터 (31~65개 노드) — ₩79,000 ($59)</option>
+</optgroup>
+<optgroup label="💹 FinTreeVault · E-Commerce Margin &amp; P&amp;L Tree Workbooks">
+<option value="ECOM-VAULT-EN-V1|19000|EcomProfitVault US — Amazon FBA &amp; Shopify Margin, ROAS &amp; BEP Simulator ($19)">🇺🇸 [ECOM-VAULT-EN-V1] EcomProfitVault US Seller Edition — $19 USD (₩19,000)</option>
+<option value="FINTREE-BUILDER-PRO-EN-V1|79000|FinTree Studio Pro — Custom Financial Tree &amp; Formula Builder (EN · $79)">🇺🇸 [FINTREE-BUILDER-PRO-EN-V1] FinTree Studio Pro Master Builder — $79 USD (₩79,000)</option>
+<option value="ECOM-VAULT-KR-V1|19000|[이커머스 단품] EcomProfitVault KR — 스마트스토어·쿠팡 마진·ROAS 시뮬레이터">🇰🇷 [ECOM-VAULT-KR-V1] EcomProfitVault KR 셀러 단품 — ₩19,000 ($19)</option>
 </optgroup>
 <optgroup label="🏢 도메인별 대표 워크플로우 완제품">
 <option value="AF-BO-01|59000|[경영·백오피스] 매일 아침 전사 매출·재고·CS 통합 AI 경영 요약 브리핑">📊 [AF-BO-01] 매일 아침 AI 경영 요약 브리핑 — ₩59,000 ($45)</option>
@@ -798,19 +803,19 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
           </p><div class="mt-3 p-3.5 rounded-xl bg-[#F7F6F2] border border-[#E5E3DC] space-y-1.5 text-xs hidden" id="order-sku-spec-card">
 <div class="text-[#18181B] font-semibold leading-relaxed" id="oss-desc"></div>
 <div class="flex items-start justify-between gap-2 pt-1.5 border-t border-[#E5E3DC]">
-<span class="text-[#5E5C54] shrink-0">실행 방식</span>
+<span class="text-[#5E5C54] shrink-0" data-i18n="spec_trigger">실행 방식</span>
 <span class="font-bold text-[#14532D] text-right" id="oss-trigger"></span>
 </div>
 <div class="flex items-start justify-between gap-2">
-<span class="text-[#5E5C54] shrink-0">작동 흐름</span>
+<span class="text-[#5E5C54] shrink-0" data-i18n="spec_flow">작동 흐름</span>
 <span class="font-medium text-[#18181B] text-right" id="oss-flow"></span>
 </div>
 <div class="flex items-start justify-between gap-2">
-<span class="text-[#5E5C54] shrink-0">준비 항목</span>
+<span class="text-[#5E5C54] shrink-0" data-i18n="spec_prep">준비 항목</span>
 <span class="text-[#3F3E3A] text-right" id="oss-prep"></span>
 </div>
 <div class="flex items-start justify-between gap-2">
-<span class="text-[#5E5C54] shrink-0">기대 결과</span>
+<span class="text-[#5E5C54] shrink-0" data-i18n="spec_outcome">기대 결과</span>
 <span class="text-[#14532D] font-bold text-right" id="oss-outcome"></span>
 </div>
 </div>
@@ -900,10 +905,10 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-5">
 <button class="py-3 px-3 rounded-2xl text-xs font-extrabold border-2 transition flex items-center justify-center gap-2 border-sky-600 bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 shadow-xs cursor-pointer" id="tab-gateway-toss" onclick="switchGateway('toss')" type="button">
-<span>🇰🇷</span> <span class="whitespace-nowrap">국내 원화 (토스 · 카드/간편결제)</span>
+<span>🇰🇷</span> <span class="whitespace-nowrap" data-i18n="tab_krw_toss">국내 원화 (토스 · 카드/간편결제)</span>
 </button>
 <button class="py-3 px-3 rounded-2xl text-xs font-bold border transition flex items-center justify-center gap-2 border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500 cursor-pointer" id="tab-gateway-global" onclick="switchGateway('global')" type="button">
-<span>🌐</span> <span class="whitespace-nowrap">Global USD (Lemon Squeezy)</span>
+<span>🌐</span> <span class="whitespace-nowrap">Global USD (Gumroad)</span>
 </button>
 </div>
 <!-- Toss Payments Container -->
@@ -911,25 +916,25 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 <div class="min-h-[260px]" id="payment-method"></div>
 <div class="mt-4" id="agreement"></div>
 </div>
-<!-- Global Lemon Squeezy Container -->
+<!-- Global Gumroad USD Container -->
 <div class="hidden space-y-4" id="container-gateway-global">
 <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 space-y-3">
 <div class="flex items-center justify-between">
 <div class="flex items-center gap-2">
-<span class="text-xl">🍋</span>
+<span class="text-xl">💳</span>
 <div>
-<div class="font-bold text-slate-900 dark:text-white text-xs">Lemon Squeezy Global Merchant of Record</div>
-<div class="text-xs text-slate-500">Global Credit Cards / PayPal / Apple Pay / Google Pay Supported</div>
+<div class="font-bold text-slate-900 dark:text-white text-xs" data-i18n="global_mor_title">Gumroad 공식 글로벌 USD 결제창</div>
+<div class="text-xs text-slate-500">Visa / Mastercard / PayPal / Apple Pay / Google Pay</div>
 </div>
 </div>
-<span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-mono font-bold">Instant License</span>
+<span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full font-mono font-bold">Instant ZIP</span>
 </div>
-<p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              해외 법인 및 글로벌 카드 결제를 위해 USD 정찰제 결제 및 글로벌 Tax Invoice 발행을 공식 지원합니다. 아래 4대 필수 약관 및 오류 로그 수집 동의 체크 시 글로벌 결제창이 활성화됩니다.
+<p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="global_pay_desc">
+              해외 카드·페이팔 결제를 위한 USD 정찰제 결제 및 영수증 발행을 지원합니다. 아래 4대 필수 확인 항목에 체크하시면 Gumroad 공식 결제 버튼이 활성화됩니다.
             </p>
 <div class="p-3 rounded-xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-xs flex justify-between items-center">
-<span class="text-slate-800 dark:text-slate-200 font-bold">선택 품목 글로벌 정찰가:</span>
-<span class="font-black text-amber-700 dark:text-amber-400 font-mono text-sm" id="global-plan-usd-price">$29.00 USD</span>
+<span class="text-slate-800 dark:text-slate-200 font-bold" data-i18n="global_price_label">선택 품목 글로벌 정찰가:</span>
+<span class="font-black text-amber-700 dark:text-amber-400 font-mono text-sm" id="global-plan-usd-price">$19.00 USD</span>
 </div>
 </div>
 </div>
@@ -938,28 +943,28 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 <div class="bg-amber-50/90 dark:bg-amber-950/20 border-2 border-amber-300 dark:border-amber-700/60 rounded-2xl p-4 sm:p-5 text-xs space-y-3">
 <div class="flex items-center gap-2 text-amber-900 dark:text-amber-300 font-extrabold text-sm">
 <i class="fa-solid fa-scale-balanced"></i>
-<span>[필수 동의] 구매 전 4대 라이선스·환불·로컬 개인정보 마스킹 및 오류 로그 수집 확인</span>
+<span data-i18n="consent_header">[필수 동의] 구매 전 4대 라이선스·환불·로컬 개인정보 마스킹 및 오류 로그 수집 확인</span>
 </div>
 <div class="space-y-2.5 pt-1">
 <!-- Checkbox 1: Fair Prorated Refund Policy -->
 <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 cursor-pointer font-semibold select-none text-xs">
 <input class="mt-0.5 h-4 w-4 rounded border-slate-400 text-sky-600 focus:ring-0 mandatory-legal-chk" id="chk-digital-refund-agree" type="checkbox"/>
-<span><strong>[필수 1 · 공정 환불 규정]</strong> 미다운로드·미활성화 7일 이내 또는 활성화 후 7일 이내 치명적 기술 결함 시 100% 전액 환불되며 활성화 후 중도 해지 시 실사용 일수 일할 차감 및 위약금 10% 공제 후 잔여액이 환불(즉시 라이선스 회수)됨을 확인하고 동의합니다.</span>
+<span data-i18n="consent_1"><strong>[필수 1 · 공정 환불 규정]</strong> 미다운로드·미활성화 7일 이내 또는 활성화 후 7일 이내 치명적 기술 결함 시 100% 전액 환불되며 활성화 후 중도 해지 시 실사용 일수 일할 차감 및 위약금 10% 공제 후 잔여액이 환불(즉시 라이선스 회수)됨을 확인하고 동의합니다.</span>
 </label>
 <!-- Checkbox 2: External Marketplace API Disclaimer -->
 <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 cursor-pointer font-semibold select-none text-xs">
 <input class="mt-0.5 h-4 w-4 rounded border-slate-400 text-sky-600 focus:ring-0 mandatory-legal-chk" id="chk-api-disclaimer-agree" type="checkbox"/>
-<span><strong>[필수 2 · 외부 플랫폼 정책 면책]</strong> 네이버 스마트스토어, 쿠팡 등 외부 플랫폼 자체의 서버 점검, 계정 제재, 약관 변경으로 인한 간접 손해에 대해 소프트웨어 공급사는 법적 책임을 지지 않음에 동의합니다.</span>
+<span data-i18n="consent_2"><strong>[필수 2 · 외부 플랫폼 정책 면책]</strong> 네이버 스마트스토어, 쿠팡 등 외부 플랫폼 자체의 서버 점검, 계정 제재, 약관 변경으로 인한 간접 손해에 대해 소프트웨어 공급사는 법적 책임을 지지 않음에 동의합니다.</span>
 </label>
 <!-- Checkbox 3: 1 Product = 1 Site Single-Edition Principle -->
 <label class="flex items-start gap-2.5 p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 cursor-pointer font-semibold select-none text-xs">
 <input class="mt-0.5 h-4 w-4 rounded border-slate-400 text-sky-600 focus:ring-0 mandatory-legal-chk" id="chk-clean-swap-agree" type="checkbox"/>
-<span><strong>[필수 3 · 1제품=1사이트 독립 구동 원칙]</strong> 각 워크플로우 단품은 지정된 단일 사이트·단일 업무 전용 완제품(1:1 HWID 기기 귀속)이며 복수 워크플로우 동시 가동 시 포트 분리 원칙을 준수함에 동의합니다.</span>
+<span data-i18n="consent_3"><strong>[필수 3 · 1제품=1사이트 독립 구동 원칙]</strong> 각 워크플로우 단품은 지정된 단일 사이트·단일 업무 전용 완제품(1:1 HWID 기기 귀속)이며 복수 워크플로우 동시 가동 시 포트 분리 원칙을 준수함에 동의합니다.</span>
 </label>
 <!-- Checkbox 4: Mandatory Local PII 100% Masking & Anonymous Error-Log Collection Consent -->
 <label class="flex items-start gap-2.5 p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border-2 border-emerald-400 dark:border-emerald-700 text-slate-900 dark:text-slate-100 cursor-pointer font-bold select-none text-xs">
 <input class="mt-0.5 h-4 w-4 rounded border-emerald-600 text-emerald-600 focus:ring-0 mandatory-legal-chk" id="chk-error-log-masking-agree" type="checkbox"/>
-<span>
+<span data-i18n="consent_4">
 <strong class="text-emerald-800 dark:text-emerald-300">[필수 4 · 사내 PC 로컬 개인정보 100% 마스킹 및 익명 오류 로그 수집 동의]</strong><br/>
               고객사의 모든 주문 개인정보(이름·연락처·주소·계좌·API 키)는 <strong>사내 PC(127.0.0.1) 내부에서 100% 마스킹(살균) 처리되어 외부로 절대 전송되지 않으며</strong>, 외부 API 변경 대응 및 상주형 무인 엔진(자가치유·정합성) 원격 패치를 위해 <strong>개인정보가 제거된 익명 에러코드 및 해결 로그만 본사로 전송됨에 동의</strong>합니다. <span class="text-rose-600 dark:text-rose-400 font-extrabold">(※ 미동의 시 본사 원격 패치 및 미해결 에러 대응 지원이 불가합니다.)</span>
 </span>
@@ -971,10 +976,10 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 <i class="fa-solid fa-lock"></i>
 <span id="btn-pay-text" translate="no">₩39,000 결제하고 즉시 라이선스 발급받기</span>
 </button>
-<!-- Global Lemon Squeezy Button -->
+<!-- Global Gumroad USD Button -->
 <button class="hidden w-full py-4 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-amber-500/20 transition items-center justify-center gap-2 opacity-60 cursor-not-allowed" disabled="" id="global-payment-button" onclick="handleGlobalCheckout()">
-<i class="fa-solid fa-lemon"></i>
-<span id="btn-global-pay-text" translate="no">Lemon Squeezy 글로벌 결제창 열기 ($29.00 USD)</span>
+<i class="fa-solid fa-globe"></i>
+<span id="btn-global-pay-text" translate="no">Open Official Gumroad Checkout ($19.00 USD)</span>
 </button>
 <!-- Direct B2B Tax Invoice & Instant Channel Fallback Bar -->
 <div class="p-3.5 rounded-2xl bg-slate-100/90 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs" id="direct-order-fallback-box">
@@ -1011,6 +1016,8 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
     const rawPresetParam = urlParams.get('preset') || '';
     const rawBitmaskParam = parseInt(urlParams.get('bitmask') || '0', 10);
     const rawCartridgeParam = urlParams.get('cartridge') || '';
+    const rawLangParam = urlParams.get('lang') || '';
+    const rawGwParam = urlParams.get('gw') || '';
     const targetHwid = urlParams.get('hwid') || urlParams.get('custom[hwid]') || '';
 
     const INDUSTRY_MODULE_PRESETS = {
@@ -1117,6 +1124,16 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
     };
 
     const WORKFLOW_PRODUCT_MAP = {
+      'ECOM-VAULT-EN-V1': { sku: 'ECOM-VAULT-EN-V1', price: 19000, usd: 19, exactPrice: true, lang: 'en', gw: 'global', isVault: true, name: 'EcomProfitVault US — Amazon FBA & Shopify Margin, ROAS & BEP Simulator ($19)' },
+      'FINTREE-BUILDER-PRO-EN-V1': { sku: 'FINTREE-BUILDER-PRO-EN-V1', price: 79000, usd: 79, exactPrice: true, lang: 'en', gw: 'global', isVault: true, name: 'FinTree Studio Pro — Custom Financial Tree & Formula Builder (English · $79)' },
+      'ECOM-VAULT-KR-V1': { sku: 'ECOM-VAULT-KR-V1', price: 19000, usd: 19, exactPrice: true, isVault: true, name: '[이커머스 단품] EcomProfitVault KR — 스마트스토어·쿠팡 마진·ROAS·손익분기 시뮬레이터 (1PC 금고)' },
+      'FINTREE-BUILDER-PRO-KR-V1': { sku: 'FINTREE-BUILDER-PRO-KR-V1', price: 79000, usd: 79, exactPrice: true, isVault: true, name: '[Track B 마스터 빌더] FinTree Studio Pro — 자유설계 재무모델 빌더 (KR · 1PC 금고)' },
+      'ECOM-VAULT-UK-V1': { sku: 'ECOM-VAULT-UK-V1', price: 19000, usd: 19, exactPrice: true, lang: 'en', gw: 'global', isVault: true, name: 'EcomProfitVault UK — Amazon UK & TikTok Shop Profit Margin & 20% VAT Simulator ($19)' },
+      'ECOM-VAULT-DE-V1': { sku: 'ECOM-VAULT-DE-V1', price: 19000, usd: 19, exactPrice: true, lang: 'en', gw: 'global', isVault: true, name: 'EcomProfitVault DE — Amazon.de & Otto Marge, 19% MwSt & ROAS Simulator ($19)' },
+      'ECOM-VAULT-FR-V1': { sku: 'ECOM-VAULT-FR-V1', price: 19000, usd: 19, exactPrice: true, lang: 'en', gw: 'global', isVault: true, name: 'EcomProfitVault FR — Amazon.fr & Cdiscount Simulateur Marge & TVA ($19)' },
+      'ECOM-VAULT-ES-V1': { sku: 'ECOM-VAULT-ES-V1', price: 19000, usd: 19, exactPrice: true, lang: 'en', gw: 'global', isVault: true, name: 'EcomProfitVault ES — Amazon.es & MercadoLibre Simulador Margen & ROAS ($19)' },
+      'ECOM-VAULT-JP-V1': { sku: 'ECOM-VAULT-JP-V1', price: 19000, usd: 19, exactPrice: true, lang: 'en', gw: 'global', isVault: true, name: 'EcomProfitVault JP — Rakuten & Amazon.co.jp Profit Margin & ROAS Simulator ($19)' },
+      'ECOM-VAULT-TW-V1': { sku: 'ECOM-VAULT-TW-V1', price: 19000, usd: 19, exactPrice: true, lang: 'en', gw: 'global', isVault: true, name: 'EcomProfitVault TW — Shopee & momo Margin & Break-Even ROAS Simulator ($19)' },
       'AF-TIER1-SINGLE': { sku: 'AF-TIER1-SINGLE', price: 39000, usd: 29, name: '[5단계 정찰 1티어] 단일 연결·알림형 워크플로우 (8~10개 노드 직결)' },
       'AF-TIER2-GUARD': { sku: 'AF-TIER2-GUARD', price: 49000, usd: 39, name: '[5단계 정찰 2티어] 도메인 규칙·역마진 브레이크·택배 송장 변환 가드형 (11~13개 노드)' },
       'AF-TIER3-AI-PIPE': { sku: 'AF-TIER3-AI-PIPE', price: 59000, usd: 45, name: '[5단계 정찰 3티어] 1원 정산 대사·관세청 검증·AI 결합 파이프라인 (14~18개 노드)' },
@@ -1133,6 +1150,7 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
     };
 
     function workflowKrwToUsd(krw) {
+      if (krw <= 19000) return 19;
       if (krw <= 39000) return 29;
       if (krw <= 49000) return 39;
       if (krw <= 59000) return 45;
@@ -1171,18 +1189,28 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
     let currentWorkflowSku = rawSkuParam || 'AF-NAVER-01';
     let currentWorkflowName = rawNameParam || '';
     let currentWorkflowPrice = rawPriceParam || 0;
+    let currentWorkflowFixedUsd = 0;
+    let currentWorkflowExactPrice = false;
+    let autoDetectedLang = '';
+    let autoDetectedGateway = '';
 
     if (WORKFLOW_PRODUCT_MAP[rawSkuParam]) {
       const mapped = WORKFLOW_PRODUCT_MAP[rawSkuParam];
       currentWorkflowSku = mapped.sku;
       if (!currentWorkflowName) currentWorkflowName = mapped.name;
       if (!currentWorkflowPrice) currentWorkflowPrice = mapped.price;
+      if (mapped.exactPrice) currentWorkflowExactPrice = true;
+      if (mapped.usd) currentWorkflowFixedUsd = mapped.usd;
+      if (mapped.lang) autoDetectedLang = mapped.lang;
+      if (mapped.gw) autoDetectedGateway = mapped.gw;
     }
 
     if (!currentWorkflowName) {
       currentWorkflowName = '[스마트스토어 전용] 신규 주문 실시간 수집 ➔ 카카오 알림톡(SMS 폴백) & 구글시트 원장';
     }
-    currentWorkflowPrice = clampWorkflowPrice(currentWorkflowPrice || 39000);
+    if (!currentWorkflowExactPrice) {
+      currentWorkflowPrice = clampWorkflowPrice(currentWorkflowPrice || 39000);
+    }
 
     const normalizedEngineParam = LEGACY_ENGINE_REDIRECT_MAP[rawEngineParam] || rawEngineParam;
     let currentEngineCode = ['ENGINE_HEAL', 'ENGINE_RECON', 'ENGINE_DUAL'].includes(normalizedEngineParam) ? normalizedEngineParam : 'ENGINE_DUAL';
@@ -1237,13 +1265,24 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
       const parts = val.split('|');
       if (parts.length >= 3) {
         currentWorkflowSku = parts[0];
-        currentWorkflowPrice = clampWorkflowPrice(parseInt(parts[1], 10));
+        const mapped = WORKFLOW_PRODUCT_MAP[currentWorkflowSku];
+        if (mapped && mapped.exactPrice) {
+          currentWorkflowPrice = mapped.price;
+          currentWorkflowFixedUsd = mapped.usd || 0;
+          currentWorkflowExactPrice = true;
+        } else {
+          currentWorkflowPrice = clampWorkflowPrice(parseInt(parts[1], 10));
+          currentWorkflowFixedUsd = 0;
+          currentWorkflowExactPrice = false;
+        }
         currentWorkflowName = parts.slice(2).join('|');
         selectCheckoutTrack('workflow');
       }
     }
 
     function setWorkflowPriceBand(price) {
+      currentWorkflowFixedUsd = 0;
+      currentWorkflowExactPrice = false;
       currentWorkflowPrice = clampWorkflowPrice(price);
       const sel = document.getElementById('workflowQuickSelect');
       if (sel && sel.value && sel.value !== 'CUSTOM') {
@@ -1341,7 +1380,7 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 
       if (currentTrack === 'workflow') {
         let baseKrw = currentWorkflowPrice;
-        let baseUsd = workflowKrwToUsd(baseKrw);
+        let baseUsd = currentWorkflowFixedUsd > 0 ? currentWorkflowFixedUsd : workflowKrwToUsd(baseKrw);
         let bumpKrw = 0;
         let bumpUsd = 0;
         if (bumpSmartGridChecked) {
@@ -1363,12 +1402,42 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
         if (bumpSmartGridChecked) activeTitle += ' + SmartGrid 원장';
         if (bumpExcelChecked) activeTitle += ' + 5대부서 엑셀팩';
 
-        if (badge) badge.textContent = '📦 워크플로우 단품 영구소장';
-        if (cycleEl) cycleEl.textContent = 'VAT 포함 · 1회 구매 영구 소장 (+7일 상주형 무인 엔진 무료 체험 포함)';
-        if (feat1) feat1.textContent = '1제품 = 1사이트 단일 완제품 영구 소장 (실행 건수 자유 실행)';
-        if (feat2) feat2.textContent = '전 구간 필수 방어 에어백 + 1초 원클릭 로컬 런처(Mac/Win) 기본 동봉';
-        if (feat3) feat3.textContent = '사내 PC(127.0.0.1) 로컬 개인정보 전수 자동 마스킹 방패 기본 내장';
-        if (feat4) feat4.textContent = '7일 상주형 무인 엔진(자가치유 + 70% 안전율 리미터·스풀 이어하기 + 정합성 대사) 무료 체험 기본 포함';
+        const lang = localStorage.getItem('autoflow_checkout_lang') || 'ko';
+        const isVaultSku = WORKFLOW_PRODUCT_MAP[currentWorkflowSku]?.isVault || currentWorkflowSku.startsWith('ECOM-') || currentWorkflowSku.startsWith('FINTREE-');
+        const tierSwitchEl = document.getElementById('checkout-tier-switcher');
+        const wfPanelEl = document.getElementById('panel-track-workflow');
+        const fallbackBoxEl = document.getElementById('direct-order-fallback-box');
+        if (lang === 'en' && isVaultSku) {
+          if (tierSwitchEl) tierSwitchEl.classList.add('hidden');
+          if (wfPanelEl) wfPanelEl.classList.add('hidden');
+          if (fallbackBoxEl) fallbackBoxEl.classList.add('hidden');
+        } else {
+          if (tierSwitchEl) tierSwitchEl.classList.remove('hidden');
+          if (wfPanelEl) wfPanelEl.classList.remove('hidden');
+          if (fallbackBoxEl) fallbackBoxEl.classList.remove('hidden');
+        }
+        if (lang === 'en') {
+          if (badge) badge.textContent = isVaultSku ? '🔒 1-PC Offline Workbook' : '📦 Perpetual Single Workflow';
+          if (cycleEl) cycleEl.textContent = isVaultSku ? 'One-Time Payment · Lifetime 1-PC License (No Subscription)' : 'One-Time Purchase · Perpetual 1-PC License';
+          if (isVaultSku) {
+            if (feat1) feat1.textContent = '100% offline browser workbook (macOS & Windows · no Excel or AI key needed)';
+            if (feat2) feat2.textContent = '6 automated financial integrity gates catch deficit months & below-BEP ad spend';
+            if (feat3) feat3.textContent = 'Values-only External Excel (.xlsx) export strips 100% of formulas before sharing';
+            if (feat4) feat4.textContent = '1-PC Hardware UUID lock protects your landed unit economics & pricing logic';
+          } else {
+            if (feat1) feat1.textContent = '1 Product = 1 Site perpetual license (unlimited local executions)';
+            if (feat2) feat2.textContent = '1-click Mac/Windows local launcher included in ZIP package';
+            if (feat3) feat3.textContent = '100% local PII masking on your machine (127.0.0.1)';
+            if (feat4) feat4.textContent = '7-day autonomous self-healing & reconciliation engine trial included';
+          }
+        } else {
+          if (badge) badge.textContent = isVaultSku ? '🔒 1PC 고유수식 보호 금고 단품' : '📦 워크플로우 단품 영구소장';
+          if (cycleEl) cycleEl.textContent = isVaultSku ? 'VAT 포함 · 1회 구매 영구 소장 (무수식 엑셀 추출 내장)' : 'VAT 포함 · 1회 구매 영구 소장 (+7일 상주형 무인 엔진 무료 체험 포함)';
+          if (feat1) feat1.textContent = '1제품 = 1사이트 단일 완제품 영구 소장 (실행 건수 자유 실행)';
+          if (feat2) feat2.textContent = '전 구간 필수 방어 에어백 + 1초 원클릭 로컬 런처(Mac/Win) 기본 동봉';
+          if (feat3) feat3.textContent = '사내 PC(127.0.0.1) 로컬 개인정보 전수 자동 마스킹 방패 기본 내장';
+          if (feat4) feat4.textContent = '7일 상주형 무인 엔진(자가치유 + 70% 안전율 리미터·스풀 이어하기 + 정합성 대사) 무료 체험 기본 포함';
+        }
 
         // [F118] Populate exact per-SKU workflow summary on checkout
         const specCard = document.getElementById('order-sku-spec-card');
@@ -1459,8 +1528,13 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
       if (skuTitleEl) skuTitleEl.textContent = activeTitle;
       if (skuIdEl) skuIdEl.textContent = 'SKU: ' + activeSku;
 
-      document.getElementById('order-subtotal').textContent = '₩' + subtotal.toLocaleString();
-      document.getElementById('order-vat').textContent = '₩' + vat.toLocaleString();
+      const checkoutLang = localStorage.getItem('autoflow_checkout_lang') || 'ko';
+      document.getElementById('order-subtotal').textContent = currentGateway === 'global'
+        ? ('$' + usdAmount + '.00 USD')
+        : ('₩' + subtotal.toLocaleString());
+      document.getElementById('order-vat').textContent = currentGateway === 'global'
+        ? (checkoutLang === 'en' ? 'Included / Region-dependent' : '결제 시 해외지역별 적용')
+        : ('₩' + vat.toLocaleString());
       document.getElementById('order-total').textContent = currentGateway === 'global' ? ('$' + usdAmount + '.00 USD') : ('₩' + priceAmount.toLocaleString());
       const usdEquivEl = document.getElementById('order-usd-equiv');
       if (usdEquivEl) usdEquivEl.textContent = '($' + usdAmount + '.00 USD / ₩' + priceAmount.toLocaleString() + ')';
@@ -1470,14 +1544,20 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 
       const payTextEl = document.getElementById('btn-pay-text');
       if (payTextEl) {
-        const lang = localStorage.getItem('autoflow_checkout_lang') || 'ko';
-        payTextEl.textContent = lang === 'en'
+        payTextEl.textContent = checkoutLang === 'en'
           ? ('Pay ₩' + priceAmount.toLocaleString() + ' & Instant License Delivery')
           : ('₩' + priceAmount.toLocaleString() + ' 결제하고 즉시 라이선스 발급받기');
       }
       const globalPayTextEl = document.getElementById('btn-global-pay-text');
       if (globalPayTextEl) {
-        globalPayTextEl.textContent = 'Gumroad 글로벌 공식 결제창 열기 ($' + usdAmount + '.00 USD)';
+        const hasGumroadSku = (activeSku === 'ECOM-VAULT-EN-V1' || !activeSku.startsWith('FINTREE-BUILDER-PRO'));
+        globalPayTextEl.textContent = checkoutLang === 'en'
+          ? (hasGumroadSku
+            ? ('Open Official Gumroad Checkout ($' + usdAmount + '.00 USD)')
+            : ('Request Direct Invoice Order ($' + usdAmount + '.00 USD)'))
+          : (hasGumroadSku
+            ? ('Gumroad 글로벌 공식 결제창 열기 ($' + usdAmount + '.00 USD)')
+            : ('직접 인보이스·라이선스 주문 신청 ($' + usdAmount + '.00 USD)'));
       }
 
       if (paymentWidget) {
@@ -1511,6 +1591,9 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
         btnGlobal.classList.remove('flex');
         btnToss.classList.remove('hidden');
         btnToss.classList.add('flex');
+        if (!paymentWidget) {
+          initTossPaymentsWidget();
+        }
       }
       refreshCheckoutSummary();
       updateLegalCheckboxesState();
@@ -1553,8 +1636,11 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
     });
 
     function handleGlobalCheckout() {
+      const checkoutLang = localStorage.getItem('autoflow_checkout_lang') || 'ko';
       if (!isAllMandatoryConsentsChecked()) {
-        alert('구매 전 4대 필수 약관 및 로컬 개인정보 마스킹·오류 로그 수집 동의 항목에 모두 체크해 주세요.');
+        alert(checkoutLang === 'en'
+          ? 'Please check all 4 mandatory terms & license consent checkboxes before continuing.'
+          : '구매 전 4대 필수 약관 및 로컬 개인정보 마스킹·오류 로그 수집 동의 항목에 모두 체크해 주세요.');
         return;
       }
       const companyName = document.getElementById('input-company-name').value.trim() || 'AutoFlow Customer';
@@ -1562,13 +1648,35 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
       const customerName = document.getElementById('input-customer-name').value.trim() || 'Representative';
 
       if (!customerEmail || !customerEmail.includes('@')) {
-        alert('라이선스키와 설치 파일를 수령하실 유효한 이메일 주소를 입력해 주세요.');
+        alert(checkoutLang === 'en'
+          ? 'Please enter a valid email address to receive your license & downloadable ZIP.'
+          : '라이선스키와 설치 파일를 수령하실 유효한 이메일 주소를 입력해 주세요.');
         document.getElementById('input-customer-email').focus();
+        return;
+      }
+
+      if (activeSku === 'FINTREE-BUILDER-PRO-EN-V1' || activeSku === 'FINTREE-BUILDER-PRO-KR-V1') {
+        const msg = checkoutLang === 'en'
+          ? ('[' + activeTitle + ' ($' + usdAmount + '.00 USD)]\n\nThis unlocked Track B Master Builder is currently fulfilled directly via DH Labs invoice & email delivery (' + customerEmail + '). Click OK to compose your instant invoice order.')
+          : ('[' + activeTitle + ' ($' + usdAmount + '.00 USD)]\n\nFinTree Studio Pro 마스터 빌더는 현재 직접 인보이스·이메일 수동 발급으로 진행됩니다. 확인을 누르면 주문 이메일이 열립니다.');
+        if (confirm(msg)) {
+          const subj = encodeURIComponent('[DH Labs Order] ' + activeSku + ' ($' + usdAmount + ' USD)');
+          const body = encodeURIComponent('SKU: ' + activeSku + '\nEmail: ' + customerEmail + '\nName: ' + customerName + '\nCompany: ' + companyName + '\nConsents: Accepted');
+          window.location.href = 'mailto:dhlabs_biz0@naver.com?subject=' + subj + '&body=' + body;
+        }
         return;
       }
 
       const engineShort = currentEngineCode.replace('ENGINE_', '').toLowerCase();
       const STANDALONE_GUMROAD_SKU_MAP = {
+        'ECOM-VAULT-EN-V1': 'https://dhlabs.gumroad.com/l/ecomprofitvault-en',
+        'ECOM-VAULT-KR-V1': 'https://dhlabs.gumroad.com/l/ecomprofitvault-kr',
+        'ECOM-VAULT-UK-V1': 'https://dhlabs.gumroad.com/l/ecomprofitvault-uk',
+        'ECOM-VAULT-DE-V1': 'https://dhlabs.gumroad.com/l/ecomprofitvault-de',
+        'ECOM-VAULT-FR-V1': 'https://dhlabs.gumroad.com/l/ecomprofitvault-fr',
+        'ECOM-VAULT-ES-V1': 'https://dhlabs.gumroad.com/l/ecomprofitvault-es',
+        'ECOM-VAULT-JP-V1': 'https://dhlabs.gumroad.com/l/ecomprofitvault-jp',
+        'ECOM-VAULT-TW-V1': 'https://dhlabs.gumroad.com/l/ecomprofitvault-tw',
         'AF-GL-ECOM-02': 'https://dhlabs.gumroad.com/l/autoflow-angle02-margin-brake',
         'AF-PROD-02': 'https://dhlabs.gumroad.com/l/autoflow-angle02-margin-brake',
         'AF-GL-ECOM-03': 'https://dhlabs.gumroad.com/l/autoflow-angle03-3pl-csv-transformer',
@@ -1589,36 +1697,17 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
         : ((currentTrack === 'engine' || currentTrack === 'modular_engine')
           ? 'https://dhlabs.gumroad.com/l/autoflow-defense-engines'
           : (STANDALONE_GUMROAD_SKU_MAP[activeSku] || 'https://dhlabs.gumroad.com/l/fscptt'));
-      const customMatrix = window.AUTOFLOW_LEMON_VARIANT_MATRIX || null;
-      const resolvedBaseUrl = (
-        currentTrack === 'engine' &&
-        customMatrix &&
-        customMatrix[currentEngineMode] &&
-        customMatrix[currentEngineMode][currentEngineCode] &&
-        customMatrix[currentEngineMode][currentEngineCode][currentEngineDays]
-      )
-        ? customMatrix[currentEngineMode][currentEngineCode][currentEngineDays]
-        : defaultGumroadPath;
+      const resolvedBaseUrl = defaultGumroadPath;
 
       const checkoutUrl = new URL(resolvedBaseUrl);
-      if (resolvedBaseUrl.includes('gumroad.com')) {
-        checkoutUrl.searchParams.set('wanted', 'true');
-        checkoutUrl.searchParams.set('email', customerEmail);
-        checkoutUrl.searchParams.set('sku', activeSku);
-        if (targetHwid) checkoutUrl.searchParams.set('hwid', targetHwid);
-      } else {
-        checkoutUrl.searchParams.set('checkout[email]', customerEmail);
-        checkoutUrl.searchParams.set('checkout[name]', companyName + ' (' + customerName + ')');
-        checkoutUrl.searchParams.set('checkout[custom][sku]', activeSku);
-        checkoutUrl.searchParams.set('checkout[custom][engine]', currentTrack === 'engine' ? currentEngineCode : 'WORKFLOW_SINGLE');
-        checkoutUrl.searchParams.set('checkout[custom][mode]', currentTrack === 'engine' ? currentEngineMode : 'managed');
-        checkoutUrl.searchParams.set('checkout[custom][days]', String(currentTrack === 'engine' ? currentEngineDays : 7));
-        if (targetHwid) checkoutUrl.searchParams.set('checkout[custom][hwid]', targetHwid);
-        checkoutUrl.searchParams.set('checkout[custom][error_log_consent]', 'true');
-        checkoutUrl.searchParams.set('checkout[custom][refund_consent]', 'true');
-      }
+      checkoutUrl.searchParams.set('wanted', 'true');
+      checkoutUrl.searchParams.set('email', customerEmail);
+      checkoutUrl.searchParams.set('sku', activeSku);
+      if (targetHwid) checkoutUrl.searchParams.set('hwid', targetHwid);
 
-      const confirmMsg = '[Gumroad Global USD Official Checkout]\n\n수령 이메일: ' + customerEmail + '\n선택 품목: ' + activeTitle + '\n결제 금액: $' + usdAmount + '.00 USD\n\n확인을 누르시면 공식 Gumroad 글로벌 결제창(' + resolvedBaseUrl + ')으로 이동합니다.';
+      const confirmMsg = checkoutLang === 'en'
+        ? ('[Gumroad Global USD Official Checkout]\n\nDelivery Email: ' + customerEmail + '\nItem: ' + activeTitle + '\nTotal: $' + usdAmount + '.00 USD\n\nClick OK to proceed to Gumroad (' + resolvedBaseUrl + ').')
+        : ('[Gumroad Global USD Official Checkout]\n\n수령 이메일: ' + customerEmail + '\n선택 품목: ' + activeTitle + '\n결제 금액: $' + usdAmount + '.00 USD\n\n확인을 누르시면 공식 Gumroad 글로벌 결제창(' + resolvedBaseUrl + ')으로 이동합니다.');
       if (confirm(confirmMsg)) {
         window.open(checkoutUrl.toString(), '_blank');
       }
@@ -1626,11 +1715,22 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 
     const i18nCheckout = {
       ko: {
+        header_h1: "256-bit 보안 결제로 0.1초 만에 라이선스 발급 누락을 차단하세요",
         header_title: "공식 스토어 보안 결제",
-        header_desc: "토스페이먼츠(KRW) & Gumroad / Lemon Squeezy(USD) 공식 연동 · 결제 즉시 라이선스 자동 출고",
+        header_desc: "토스페이먼츠(KRW) &amp; Gumroad 글로벌 USD 공식 연동 · 결제 즉시 라이선스 자동 출고",
+        geo_summary_title: "결제 시스템 보안 · 단품/엔진 사양 요약 보기",
+        geo_summary_expand: "펼쳐보기 +",
+        bread_home: "AutoFlow 공식 스토어",
+        bread_current: "보안 결제 및 즉시 라이선스 출고",
+        bread_privacy: "사내 PC 로컬 개인정보 100% 마스킹 기본 탑재",
+        tab_krw_toss: "국내 원화 (토스 · 카드/간편결제)",
         btn_back_catalog: "스토어 홈",
         label_order_summary: "주문 품목 선택 및 명세",
         label_tier_select: "구매 카테고리 선택 (단품 영구소장 vs 상주형 무인 엔진 기간권):",
+        spec_trigger: "실행 방식",
+        spec_flow: "작동 흐름",
+        spec_prep: "준비 항목",
+        spec_outcome: "기대 결과",
         label_subtotal: "공급가액:",
         label_vat: "부가가치세 (10%):",
         label_total: "총 결제금액:",
@@ -1642,36 +1742,76 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
         input_email: "라이선스 및 설치 파일(ZIP) 수령 이메일 *",
         input_email_desc: "결제 완료 즉시 사내 원클릭 설치 파일(ZIP), 정품 라이선스 키, 전자영수증이 자동 발송됩니다.",
         label_pay_method: "결제 통화 및 게이트웨이 선택",
-        footer_terms: "위 4대 필수 동의 체크 완료 시 결제 버튼이 활성화되며 결제 즉시 정품 라이선스 및 사내 설치 파일가 발급됩니다."
+        global_mor_title: "Gumroad 공식 글로벌 USD 결제창",
+        global_pay_desc: "해외 카드·페이팔 결제를 위한 USD 정찰제 결제 및 영수증 발행을 지원합니다. 아래 4대 필수 확인 항목에 체크하시면 Gumroad 공식 결제 버튼이 활성화됩니다.",
+        global_price_label: "선택 품목 글로벌 정찰가:",
+        consent_header: "[필수 동의] 구매 전 4대 라이선스·환불·로컬 개인정보 마스킹 및 오류 로그 수집 확인",
+        consent_1: "<strong>[필수 1 · 공정 환불 규정]</strong> 미다운로드·미활성화 7일 이내 또는 활성화 후 7일 이내 치명적 기술 결함 시 100% 전액 환불되며 활성화 후 중도 해지 시 실사용 일수 일할 차감 및 위약금 10% 공제 후 잔여액이 환불(즉시 라이선스 회수)됨을 확인하고 동의합니다.",
+        consent_2: "<strong>[필수 2 · 외부 플랫폼 정책 면책]</strong> 네이버 스마트스토어, 쿠팡 등 외부 플랫폼 자체의 서버 점검, 계정 제재, 약관 변경으로 인한 간접 손해에 대해 소프트웨어 공급사는 법적 책임을 지지 않음에 동의합니다.",
+        consent_3: "<strong>[필수 3 · 1제품=1사이트 독립 구동 원칙]</strong> 각 워크플로우 단품은 지정된 단일 사이트·단일 업무 전용 완제품(1:1 HWID 기기 귀속)이며 복수 워크플로우 동시 가동 시 포트 분리 원칙을 준수함에 동의합니다.",
+        consent_4: "<strong class=\"text-emerald-800 dark:text-emerald-300\">[필수 4 · 사내 PC 로컬 개인정보 100% 마스킹 및 익명 오류 로그 수집 동의]</strong><br/>고객사의 모든 주문 개인정보(이름·연락처·주소·계좌·API 키)는 <strong>사내 PC(127.0.0.1) 내부에서 100% 마스킹(살균) 처리되어 외부로 절대 전송되지 않으며</strong>, 외부 API 변경 대응 및 상주형 무인 엔진(자가치유·정합성) 원격 패치를 위해 <strong>개인정보가 제거된 익명 에러코드 및 해결 로그만 본사로 전송됨에 동의</strong>합니다. <span class=\"text-rose-600 dark:text-rose-400 font-extrabold\">(※ 미동의 시 본사 원격 패치 및 미해결 에러 대응 지원이 불가합니다.)</span>",
+        footer_terms: "위 4대 필수 동의 체크 완료 시 결제 버튼이 활성화되며 결제 즉시 정품 라이선스 및 사내 설치 파일가 발급됩니다.",
+        footer_eula: "이용약관 (EULA)",
+        footer_privacy: "개인정보처리방침",
+        footer_refund: "환불 및 교환정책",
+        footer_company: "상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 610-16-92926 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 고객센터: 010-8503-6232 | 이메일: dhlabs_biz0@naver.com"
       },
       en: {
+        header_h1: "Official DH Labs Checkout — Instant Offline ZIP &amp; License Delivery",
         header_title: "Official Secure Checkout",
-        header_desc: "Toss Payments (KRW) & Gumroad / Lemon Squeezy (USD) · Instant License & Package Dispatch",
+        header_desc: "Gumroad Global (USD) &amp; Toss Payments (KRW) · Instant Package &amp; License Delivery",
+        geo_summary_title: "Security Architecture &amp; Package Specifications",
+        geo_summary_expand: "Expand +",
+        bread_home: "DH Labs Storefront",
+        bread_current: "Official USD Checkout",
+        bread_privacy: "100% Offline Local Data Execution",
+        tab_krw_toss: "KRW Domestic (Toss)",
         btn_back_catalog: "Store Home",
-        label_order_summary: "Product Selection & Order Summary",
-        label_tier_select: "Select Category (Single Perpetual Workflow vs Resident Engine Pass):",
-        label_subtotal: "Net Amount:",
-        label_vat: "VAT (10%):",
+        label_order_summary: "Product Selection &amp; Order Summary",
+        label_tier_select: "Select Category (Standalone Perpetual Package vs Resident Engine):",
+        spec_trigger: "Runtime",
+        spec_flow: "Workflow",
+        spec_prep: "Inputs",
+        spec_outcome: "Output",
+        label_subtotal: "Price (USD):",
+        label_vat: "Tax / Region:",
         label_total: "Total Amount:",
-        badge_guarantee: "3-Stage Fair Prorated Refund Policy (PRORATED_FAIR_REFUND)",
-        badge_desc: "Unactivated 7d 100% refund | Defect 7d 100% refund | Prorated daily refund on cancellation",
-        label_buyer_info: "Buyer & License Recipient Information",
+        badge_guarantee: "Fair Refund &amp; Consumer Protection Policy",
+        badge_desc: "Fulfilled under Gumroad buyer refund policy and local consumer protection regulations",
+        label_buyer_info: "Buyer &amp; Download Recipient Information",
         input_company: "Company / Store Name (Optional)",
         input_name: "Contact Person Name *",
-        input_email: "License & ZIP Package Recipient Email *",
-        input_email_desc: "One-click local installer ZIP, license key, and tax receipt are dispatched immediately.",
-        label_pay_method: "Select Currency & Payment Gateway",
-        footer_terms: "Check all 4 mandatory consent boxes above to activate the secure payment button."
+        input_email: "ZIP Download &amp; License Delivery Email *",
+        input_email_desc: "Your offline package ZIP and receipt are delivered immediately after checkout.",
+        label_pay_method: "Select Currency &amp; Payment Gateway",
+        global_mor_title: "Gumroad Official USD Checkout",
+        global_pay_desc: "Supports Visa, Mastercard, PayPal, Apple Pay, and Google Pay in USD. Check all 4 confirmation boxes below to unlock checkout.",
+        global_price_label: "Selected Item USD Price:",
+        consent_header: "[Required Confirmation] License, Single-PC Policy &amp; Offline Terms",
+        consent_1: "<strong>[1 · Refund Policy]</strong> Refunds follow Gumroad's policy and consumer protection rules in your country (contact dhlabs_biz0@naver.com first if anything fails to launch).",
+        consent_2: "<strong>[2 · Platform Disclaimer]</strong> DH Labs is not liable for indirect losses caused by third-party marketplace API outages, fee schedule changes, or ad account actions.",
+        consent_3: "<strong>[3 · Single-PC / Single-Site Policy]</strong> Standalone offline workbooks and single-site workflows bind to 1 registered computer (no unauthorized redistribution or multi-PC cloning).",
+        consent_4: "<strong class=\"text-emerald-800 dark:text-emerald-300\">[4 · 100% Offline Local Data Privacy]</strong><br/>Your unit costs, COGS, ROAS numbers, and customer records stay locally on your own device during execution.",
+        footer_terms: "Check all 4 confirmation boxes above to activate checkout.",
+        footer_eula: "Terms of Use (EULA)",
+        footer_privacy: "Privacy Policy",
+        footer_refund: "Refund Policy",
+        footer_company: "Operator: DH Labs | Founder: Donghyeong Kim | Business Reg: 610-16-92926 (South Korea) | Support: dhlabs_biz0@naver.com"
       }
     };
 
     function setCheckoutLang(lang) {
       localStorage.setItem('autoflow_checkout_lang', lang);
+      document.documentElement.lang = (lang === 'en') ? 'en' : 'ko';
       const dict = i18nCheckout[lang] || i18nCheckout.ko;
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) el.innerHTML = dict[key];
       });
+      const coIn = document.getElementById('input-company-name');
+      const nmIn = document.getElementById('input-customer-name');
+      if (coIn) coIn.placeholder = (lang === 'en') ? 'Acme Commerce LLC' : '(주)오토플로우커머스';
+      if (nmIn) nmIn.placeholder = (lang === 'en') ? 'Alex Rivera' : '홍길동 대표';
       const btnKo = document.getElementById('btnCheckoutLangKo');
       const btnEn = document.getElementById('btnCheckoutLangEn');
       if (btnKo && btnEn) {
@@ -1811,7 +1951,9 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
     });
 
     document.addEventListener('DOMContentLoaded', () => {
-      const savedLang = localStorage.getItem('autoflow_checkout_lang') || 'ko';
+      const savedLang = (rawLangParam === 'en' || rawLangParam === 'ko')
+        ? rawLangParam
+        : (autoDetectedLang || localStorage.getItem('autoflow_checkout_lang') || 'ko');
       setCheckoutLang(savedLang);
       syncWorkflowQuickSelect();
       if (rawPresetParam && INDUSTRY_MODULE_PRESETS[rawPresetParam]) {
@@ -1825,23 +1967,30 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
         });
       }
       selectCheckoutTrack(currentTrack);
-      initTossPaymentsWidget();
+      const initialGateway = (rawGwParam === 'global' || rawGwParam === 'toss')
+        ? rawGwParam
+        : (autoDetectedGateway || (savedLang === 'en' ? 'global' : 'toss'));
+      if (initialGateway === 'global') {
+        switchGateway('global');
+      } else {
+        initTossPaymentsWidget();
+      }
     });
   </script>
 <!-- Footer -->
 <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 py-8 text-center text-xs text-slate-500 mt-12">
 <div class="max-w-5xl mx-auto px-4 space-y-3">
 <div class="flex items-center justify-center space-x-6 text-xs text-slate-600 dark:text-slate-400 font-semibold">
-<a class="hover:text-sky-600 underline transition" href="terms.html">이용약관 (EULA)</a>
+<a class="hover:text-sky-600 underline transition" data-i18n="footer_eula" href="terms.html">이용약관 (EULA)</a>
 <span>•</span>
-<a class="hover:text-sky-600 underline transition font-bold" href="privacy.html">개인정보처리방침</a>
+<a class="hover:text-sky-600 underline transition font-bold" data-i18n="footer_privacy" href="privacy.html">개인정보처리방침</a>
 <span>•</span>
-<a class="hover:text-sky-600 underline transition" href="refund.html">환불 및 교환정책</a>
+<a class="hover:text-sky-600 underline transition" data-i18n="footer_refund" href="refund.html">환불 및 교환정책</a>
 </div>
-<p class="max-w-4xl mx-auto leading-relaxed text-xs text-slate-500 dark:text-slate-400">
+<p class="max-w-4xl mx-auto leading-relaxed text-xs text-slate-500 dark:text-slate-400" data-i18n="footer_company">
         상호: 디에이치랩스 (DH Labs) | 대표자: 김동형 | 사업자등록번호: 610-16-92926 | 소재지: 경상남도 김해시 번화1로 168, 1006동 402호 | 고객센터: 010-8503-6232 | 이메일: dhlabs_biz0@naver.com
       </p>
-<p class="text-slate-400 text-xs">© 2026 디에이치랩스 (DH Labs). All rights reserved.</p>
+<p class="text-slate-400 text-xs">© 2026 DH Labs. All rights reserved.</p>
 </div>
 </footer>
 </body>
