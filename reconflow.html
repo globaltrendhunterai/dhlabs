@@ -636,6 +636,7 @@ html:not(.dark) #modular-engine-and-connectivity-spectrum .bg-\[\#FAF5EA\] {
 }
 /* Dark-mode light-surface fallback (prevents light-on-light when dark:bg-* was omitted) */
 html.dark .bg-white:not([class*="dark:bg-"]),
+html.dark .bg-white\/90:not([class*="dark:bg-"]),
 html.dark .bg-\[\#FFFFFF\]:not([class*="dark:bg-"]) {
   background-color: #0F172A !important;
   border-color: #334155 !important;
@@ -678,8 +679,12 @@ html.dark .af-geo-accordion > div {
   background: #0F172A !important;
   border-color: #334155 !important;
 }
-html.dark .bg-stone-100:not([class*="dark:bg-"]) {
-  background-color: #1E293B !important;
+html.dark .bg-stone-100,
+html.dark .dark\:from-stone-900 {
+  background-color: #1C1917 !important;
+}
+html.dark .dark\:bg-rose-950\/40 {
+  background-color: #4C0519 !important;
 }
 html.dark .text-slate-900:not([class*="dark:text-"]),
 html.dark .text-\[\#18181B\]:not([class*="dark:text-"]),
@@ -696,18 +701,31 @@ html.dark header nav,
 html.dark header nav a {
   color: #E2E8F0 !important;
 }
-html.dark .text-slate-500 {
-  color: #94A3B8 !important;
+html.dark .text-slate-500,
+html.dark .dark\:text-slate-500,
+html.dark .dark\:text-slate-600 {
+  color: #CBD5E1 !important;
 }
 html.dark .text-slate-400 {
   color: #CBD5E1 !important;
 }
 html.dark .bg-sky-500,
-html.dark .bg-sky-600 {
+html.dark .bg-sky-600,
+html.dark button[class*="bg-gradient-to-r"][class*="from-sky-500 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-sky-500 "],
+html.dark button[class*="bg-gradient-to-r"][class*="from-sky-600 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-sky-600 "] {
+  background-image: none !important;
   background-color: #0369A1 !important;
 }
 html.dark .bg-emerald-500,
-html.dark .bg-emerald-600 {
+html.dark .bg-emerald-500\/90,
+html.dark .bg-emerald-600,
+html.dark button[class*="bg-gradient-to-r"][class*="from-emerald-500 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-emerald-500 "],
+html.dark button[class*="bg-gradient-to-r"][class*="from-emerald-600 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-emerald-600 "] {
+  background-image: none !important;
   background-color: #047857 !important;
 }
 html.dark .bg-amber-600 {
@@ -1020,7 +1038,7 @@ html.dark .bg-amber-600 {
 <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
 </span>
 <span class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300">AUDIT ENGINE: <span class="text-emerald-600 dark:text-emerald-400" id="auditEngineStatus">ONLINE (STANDBY)</span></span>
-<span class="hidden sm:inline text-xs text-slate-400 dark:text-slate-500">|</span>
+<span class="hidden sm:inline text-xs text-slate-400 dark:text-slate-400">|</span>
 <span class="text-xs text-slate-500 dark:text-slate-400 font-mono hidden sm:inline">DATASET: sample_settlement_202609.xlsx (32,840건)</span>
 </div>
 <div class="flex items-center gap-3">
@@ -1091,7 +1109,7 @@ html.dark .bg-amber-600 {
                   </td>
 <td class="py-3.5 px-4 font-medium text-slate-800 dark:text-slate-200">로켓그로스 입고 중 물류센터 파손 미보상</td>
 <td class="py-3.5 px-4 font-mono">2,180,000원</td>
-<td class="py-3.5 px-4 font-mono text-slate-400 dark:text-slate-500">0원</td>
+<td class="py-3.5 px-4 font-mono text-slate-400 dark:text-slate-400">0원</td>
 <td class="py-3.5 px-4 font-mono font-bold text-rose-600 dark:text-red-400">+2,180,000원</td>
 <td class="py-3.5 px-4 text-center"><span class="px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-700 dark:bg-red-500/20 dark:text-red-300 font-bold text-xs border border-rose-500/20">미지급</span></td>
 </tr>
@@ -1102,7 +1120,7 @@ html.dark .bg-amber-600 {
                   </td>
 <td class="py-3.5 px-4 font-medium text-slate-800 dark:text-slate-200">단순변심 반품 배송비 중복 차감 및 수수료 오계산</td>
 <td class="py-3.5 px-4 font-mono">1,340,000원</td>
-<td class="py-3.5 px-4 font-mono text-slate-400 dark:text-slate-500">0원</td>
+<td class="py-3.5 px-4 font-mono text-slate-400 dark:text-slate-400">0원</td>
 <td class="py-3.5 px-4 font-mono font-bold text-rose-600 dark:text-red-400">+1,340,000원</td>
 <td class="py-3.5 px-4 text-center"><span class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-700 dark:bg-amber-500/20 dark:text-amber-300 font-bold text-xs border border-amber-500/20">과오납</span></td>
 </tr>
@@ -1113,7 +1131,7 @@ html.dark .bg-amber-600 {
                   </td>
 <td class="py-3.5 px-4 font-medium text-slate-800 dark:text-slate-200">타임딜 프로모션 할인 플랫폼 분담금 과다 공제</td>
 <td class="py-3.5 px-4 font-mono">760,000원</td>
-<td class="py-3.5 px-4 font-mono text-slate-400 dark:text-slate-500">0원</td>
+<td class="py-3.5 px-4 font-mono text-slate-400 dark:text-slate-400">0원</td>
 <td class="py-3.5 px-4 font-mono font-bold text-rose-600 dark:text-red-400">+760,000원</td>
 <td class="py-3.5 px-4 text-center"><span class="px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-700 dark:bg-red-500/20 dark:text-red-300 font-bold text-xs border border-rose-500/20">불일치</span></td>
 </tr>
@@ -1616,7 +1634,7 @@ html.dark .bg-amber-600 {
 <!-- 실시간 키워드 검색창 -->
 <div class="mb-8 max-w-md">
 <div class="relative">
-<i class="fa-solid fa-magnifying-glass absolute left-4 top-3 text-slate-400 dark:text-slate-500 text-xs"></i>
+<i class="fa-solid fa-magnifying-glass absolute left-4 top-3 text-slate-400 dark:text-slate-400 text-xs"></i>
 <input class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pl-10 pr-4 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition shadow-sm font-medium" id="catalogSearchInput" oninput="handleCatalogSearch(this.value)" placeholder="키워드 검색 (예: 스마트스토어, 정산, 세금계산서, 1000px...)" type="text"/>
 </div>
 </div>

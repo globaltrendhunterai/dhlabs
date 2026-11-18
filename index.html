@@ -760,6 +760,7 @@ html:not(.dark) #modular-engine-and-connectivity-spectrum .bg-\[\#FAF5EA\] {
 }
 /* Dark-mode light-surface fallback (prevents light-on-light when dark:bg-* was omitted) */
 html.dark .bg-white:not([class*="dark:bg-"]),
+html.dark .bg-white\/90:not([class*="dark:bg-"]),
 html.dark .bg-\[\#FFFFFF\]:not([class*="dark:bg-"]) {
   background-color: #0F172A !important;
   border-color: #334155 !important;
@@ -802,8 +803,12 @@ html.dark .af-geo-accordion > div {
   background: #0F172A !important;
   border-color: #334155 !important;
 }
-html.dark .bg-stone-100:not([class*="dark:bg-"]) {
-  background-color: #1E293B !important;
+html.dark .bg-stone-100,
+html.dark .dark\:from-stone-900 {
+  background-color: #1C1917 !important;
+}
+html.dark .dark\:bg-rose-950\/40 {
+  background-color: #4C0519 !important;
 }
 html.dark .text-slate-900:not([class*="dark:text-"]),
 html.dark .text-\[\#18181B\]:not([class*="dark:text-"]),
@@ -820,18 +825,31 @@ html.dark header nav,
 html.dark header nav a {
   color: #E2E8F0 !important;
 }
-html.dark .text-slate-500 {
-  color: #94A3B8 !important;
+html.dark .text-slate-500,
+html.dark .dark\:text-slate-500,
+html.dark .dark\:text-slate-600 {
+  color: #CBD5E1 !important;
 }
 html.dark .text-slate-400 {
   color: #CBD5E1 !important;
 }
 html.dark .bg-sky-500,
-html.dark .bg-sky-600 {
+html.dark .bg-sky-600,
+html.dark button[class*="bg-gradient-to-r"][class*="from-sky-500 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-sky-500 "],
+html.dark button[class*="bg-gradient-to-r"][class*="from-sky-600 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-sky-600 "] {
+  background-image: none !important;
   background-color: #0369A1 !important;
 }
 html.dark .bg-emerald-500,
-html.dark .bg-emerald-600 {
+html.dark .bg-emerald-500\/90,
+html.dark .bg-emerald-600,
+html.dark button[class*="bg-gradient-to-r"][class*="from-emerald-500 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-emerald-500 "],
+html.dark button[class*="bg-gradient-to-r"][class*="from-emerald-600 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-emerald-600 "] {
+  background-image: none !important;
   background-color: #047857 !important;
 }
 html.dark .bg-amber-600 {
@@ -1053,7 +1071,7 @@ html.dark .bg-amber-600 {
                     </div>
 </div>
 <!-- Focal Row 1: SmartStore Order Collection & AlimTalk -->
-<div class="p-3.5 bg-sky-500/5 dark:bg-sky-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg">
+<div class="p-3.5 bg-sky-500/5 dark:bg-sky-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg">
 <div class="space-y-1">
 <div class="flex items-center gap-2">
 <span class="whitespace-nowrap shrink-0 px-2 py-0.5 rounded bg-sky-600 text-white text-xs font-bold">AF-PROD-01</span>
@@ -1069,7 +1087,7 @@ html.dark .bg-amber-600 {
 </div>
 </div>
 <!-- Focal Row 2: Coupang Wing Negative Margin Brake -->
-<div class="p-3.5 bg-amber-500/5 dark:bg-amber-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg">
+<div class="p-3.5 bg-amber-500/5 dark:bg-amber-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg">
 <div class="space-y-1">
 <div class="flex items-center gap-2">
 <span class="whitespace-nowrap shrink-0 px-2 py-0.5 rounded bg-amber-600 text-white text-xs font-bold">AF-PROD-02</span>
@@ -3157,7 +3175,7 @@ html.dark .bg-amber-600 {
 </div>
 </div>
 <!-- Footer -->
-<footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950 py-12 text-center text-xs text-slate-600 dark:text-slate-500">
+<footer class="border-t border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950 py-12 text-center text-xs text-slate-600 dark:text-slate-400">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
 <div class="flex flex-wrap items-center justify-center gap-4 text-slate-600 dark:text-slate-400 text-sm">
 <button class="text-sky-600 dark:text-sky-400 font-bold hover:underline" onclick="switchTab('tab-overview')"> 개요</button>

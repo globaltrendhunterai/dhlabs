@@ -618,6 +618,7 @@ html:not(.dark) #modular-engine-and-connectivity-spectrum .bg-\[\#FAF5EA\] {
 }
 /* Dark-mode light-surface fallback (prevents light-on-light when dark:bg-* was omitted) */
 html.dark .bg-white:not([class*="dark:bg-"]),
+html.dark .bg-white\/90:not([class*="dark:bg-"]),
 html.dark .bg-\[\#FFFFFF\]:not([class*="dark:bg-"]) {
   background-color: #0F172A !important;
   border-color: #334155 !important;
@@ -660,8 +661,12 @@ html.dark .af-geo-accordion > div {
   background: #0F172A !important;
   border-color: #334155 !important;
 }
-html.dark .bg-stone-100:not([class*="dark:bg-"]) {
-  background-color: #1E293B !important;
+html.dark .bg-stone-100,
+html.dark .dark\:from-stone-900 {
+  background-color: #1C1917 !important;
+}
+html.dark .dark\:bg-rose-950\/40 {
+  background-color: #4C0519 !important;
 }
 html.dark .text-slate-900:not([class*="dark:text-"]),
 html.dark .text-\[\#18181B\]:not([class*="dark:text-"]),
@@ -678,18 +683,31 @@ html.dark header nav,
 html.dark header nav a {
   color: #E2E8F0 !important;
 }
-html.dark .text-slate-500 {
-  color: #94A3B8 !important;
+html.dark .text-slate-500,
+html.dark .dark\:text-slate-500,
+html.dark .dark\:text-slate-600 {
+  color: #CBD5E1 !important;
 }
 html.dark .text-slate-400 {
   color: #CBD5E1 !important;
 }
 html.dark .bg-sky-500,
-html.dark .bg-sky-600 {
+html.dark .bg-sky-600,
+html.dark button[class*="bg-gradient-to-r"][class*="from-sky-500 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-sky-500 "],
+html.dark button[class*="bg-gradient-to-r"][class*="from-sky-600 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-sky-600 "] {
+  background-image: none !important;
   background-color: #0369A1 !important;
 }
 html.dark .bg-emerald-500,
-html.dark .bg-emerald-600 {
+html.dark .bg-emerald-500\/90,
+html.dark .bg-emerald-600,
+html.dark button[class*="bg-gradient-to-r"][class*="from-emerald-500 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-emerald-500 "],
+html.dark button[class*="bg-gradient-to-r"][class*="from-emerald-600 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-emerald-600 "] {
+  background-image: none !important;
   background-color: #047857 !important;
 }
 html.dark .bg-amber-600 {
@@ -997,7 +1015,7 @@ html.dark .bg-amber-600 {
 <span class="w-2.5 h-2.5 rounded-full bg-[#14532D]"></span>
 <span>SAM-2 &amp; BiRefNet 누끼 엔진 가동 중</span>
 </span>
-<span class="text-xs text-slate-300 dark:text-slate-500 hidden sm:inline">|</span>
+<span class="text-xs text-slate-300 dark:text-slate-400 hidden sm:inline">|</span>
 <span class="text-xs text-slate-500 dark:text-slate-400 font-mono hidden sm:inline">OUTPUT: 1000 x 1000 px (#FFFFFF)</span>
 </div>
 <!-- 빠른 프리셋 버튼 3종 -->
@@ -1031,7 +1049,7 @@ html.dark .bg-amber-600 {
 <i class="fa-solid fa-check"></i>
 <span>AFTER (순백색 #FFFFFF / 1000px)</span>
 </div>
-<div class="absolute bottom-4 right-4 text-xs font-mono text-slate-500 bg-white/90 px-2 py-0.5 rounded border border-slate-200 shadow-sm">
+<div class="absolute bottom-4 right-4 text-xs font-mono text-slate-600 dark:text-slate-300 bg-white/90 dark:bg-slate-900/90 dark:border-slate-700 px-2 py-0.5 rounded border border-slate-200 shadow-sm">
               여백 8% 중앙정렬 | 썸네일 심사 프리패스
             </div>
 </div>
@@ -1075,7 +1093,7 @@ html.dark .bg-amber-600 {
 <i class="fa-solid fa-hand-pointer text-[#14532D] dark:text-emerald-400"></i>
 <span>슬라이더를 좌우로 드래그하면 원본과 누끼 완성본이 실시간으로 교차됩니다.</span>
 </div>
-<div class="font-mono text-slate-400 dark:text-slate-500">
+<div class="font-mono text-slate-400 dark:text-slate-400">
             Current Split: <span class="text-[#14532D] dark:text-emerald-400 font-bold" id="currentSplitText">50%</span>
 </div>
 </div>
@@ -1156,15 +1174,15 @@ html.dark .bg-amber-600 {
 <span class="text-xs">스니커즈</span>
 </button>
 <button class="sample-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800 dark:text-slate-300 font-bold text-left transition flex items-center gap-2" id="sample-bag" onclick="selectSample('bag')">
-<i class="fa-solid fa-bag-shopping text-slate-400 dark:text-slate-500"></i>
+<i class="fa-solid fa-bag-shopping text-slate-400 dark:text-slate-400"></i>
 <span class="text-xs">토트백</span>
 </button>
 <button class="sample-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800 dark:text-slate-300 font-bold text-left transition flex items-center gap-2" id="sample-bottle" onclick="selectSample('bottle')">
-<i class="fa-solid fa-wine-bottle text-slate-400 dark:text-slate-500"></i>
+<i class="fa-solid fa-wine-bottle text-slate-400 dark:text-slate-400"></i>
 <span class="text-xs">텀블러</span>
 </button>
 <button class="sample-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800 dark:text-slate-300 font-bold text-left transition flex items-center gap-2" id="sample-watch" onclick="selectSample('watch')">
-<i class="fa-solid fa-clock text-slate-400 dark:text-slate-500"></i>
+<i class="fa-solid fa-clock text-slate-400 dark:text-slate-400"></i>
 <span class="text-xs">스마트워치</span>
 </button>
 </div>
@@ -1199,7 +1217,7 @@ html.dark .bg-amber-600 {
 <span class="w-2 h-2 rounded-full bg-[#14532D]"></span>
 <span id="canvasModeLabel">촬영 원본 상태 (Before)</span>
 </span>
-<span class="font-mono text-slate-400 dark:text-slate-500" id="canvasStatus">대기 중</span>
+<span class="font-mono text-slate-400 dark:text-slate-400" id="canvasStatus">대기 중</span>
 </div>
 <!-- 캔버스 프레임 -->
 <div class="w-64 h-64 sm:w-72 sm:h-72 mx-auto rounded-2xl bg-stone-100 dark:bg-stone-900 flex flex-col items-center justify-center relative transition-colors duration-500 bg-[#F0EFEA]" id="canvasBox">
@@ -1399,7 +1417,7 @@ html.dark .bg-amber-600 {
 <!-- 실시간 키워드 검색창 -->
 <div class="mb-8 max-w-md">
 <div class="relative">
-<i class="fa-solid fa-magnifying-glass absolute left-4 top-3 text-slate-400 dark:text-slate-500 text-xs"></i>
+<i class="fa-solid fa-magnifying-glass absolute left-4 top-3 text-slate-400 dark:text-slate-400 text-xs"></i>
 <input class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pl-10 pr-4 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition shadow-sm font-medium" id="catalogSearchInput" oninput="handleCatalogSearch(this.value)" placeholder="키워드 검색 (예: 스마트스토어, 정산, 세금계산서, 1000px...)" type="text"/>
 </div>
 </div>

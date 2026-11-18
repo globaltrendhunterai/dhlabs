@@ -640,6 +640,7 @@ html:not(.dark) #modular-engine-and-connectivity-spectrum .bg-\[\#FAF5EA\] {
 }
 /* Dark-mode light-surface fallback (prevents light-on-light when dark:bg-* was omitted) */
 html.dark .bg-white:not([class*="dark:bg-"]),
+html.dark .bg-white\/90:not([class*="dark:bg-"]),
 html.dark .bg-\[\#FFFFFF\]:not([class*="dark:bg-"]) {
   background-color: #0F172A !important;
   border-color: #334155 !important;
@@ -682,8 +683,12 @@ html.dark .af-geo-accordion > div {
   background: #0F172A !important;
   border-color: #334155 !important;
 }
-html.dark .bg-stone-100:not([class*="dark:bg-"]) {
-  background-color: #1E293B !important;
+html.dark .bg-stone-100,
+html.dark .dark\:from-stone-900 {
+  background-color: #1C1917 !important;
+}
+html.dark .dark\:bg-rose-950\/40 {
+  background-color: #4C0519 !important;
 }
 html.dark .text-slate-900:not([class*="dark:text-"]),
 html.dark .text-\[\#18181B\]:not([class*="dark:text-"]),
@@ -700,18 +705,31 @@ html.dark header nav,
 html.dark header nav a {
   color: #E2E8F0 !important;
 }
-html.dark .text-slate-500 {
-  color: #94A3B8 !important;
+html.dark .text-slate-500,
+html.dark .dark\:text-slate-500,
+html.dark .dark\:text-slate-600 {
+  color: #CBD5E1 !important;
 }
 html.dark .text-slate-400 {
   color: #CBD5E1 !important;
 }
 html.dark .bg-sky-500,
-html.dark .bg-sky-600 {
+html.dark .bg-sky-600,
+html.dark button[class*="bg-gradient-to-r"][class*="from-sky-500 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-sky-500 "],
+html.dark button[class*="bg-gradient-to-r"][class*="from-sky-600 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-sky-600 "] {
+  background-image: none !important;
   background-color: #0369A1 !important;
 }
 html.dark .bg-emerald-500,
-html.dark .bg-emerald-600 {
+html.dark .bg-emerald-500\/90,
+html.dark .bg-emerald-600,
+html.dark button[class*="bg-gradient-to-r"][class*="from-emerald-500 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-emerald-500 "],
+html.dark button[class*="bg-gradient-to-r"][class*="from-emerald-600 "],
+html.dark a[class*="bg-gradient-to-r"][class*="from-emerald-600 "] {
+  background-image: none !important;
   background-color: #047857 !important;
 }
 html.dark .bg-amber-600 {
@@ -1021,7 +1039,7 @@ html.dark .bg-amber-600 {
 <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
 </span>
 <span class="text-xs font-mono font-bold text-slate-700 dark:text-slate-300">ENGINE STATUS: <span class="text-emerald-600 dark:text-emerald-400" id="pipelineEngineStatus">ONLINE (STANDBY)</span></span>
-<span class="hidden sm:inline text-xs text-slate-400 dark:text-slate-500">|</span>
+<span class="hidden sm:inline text-xs text-slate-400 dark:text-slate-400">|</span>
 <span class="text-xs text-slate-500 dark:text-slate-400 font-mono hidden sm:inline">FLOW_ID: AF-LIVE-SIMULATOR-v2</span>
 </div>
 <div class="flex items-center gap-3">
@@ -1051,7 +1069,7 @@ html.dark .bg-amber-600 {
 <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">네이버 커머스 API 웹훅 수신 &amp; 주문 결제 원장 파싱 (0.1초)</div>
 </div>
 </div>
-<div class="text-xs font-mono text-slate-400 dark:text-slate-500" id="simNode1Time">-- ms</div>
+<div class="text-xs font-mono text-slate-400 dark:text-slate-400" id="simNode1Time">-- ms</div>
 </div>
 <!-- Arrow 1 -->
 <div class="flex justify-center text-slate-300 dark:text-slate-700 -my-2">
@@ -1071,7 +1089,7 @@ html.dark .bg-amber-600 {
 <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">429 Rate Limit 백오프, 주문 금액 변조 대사, SQL Injection 방어</div>
 </div>
 </div>
-<div class="text-xs font-mono text-slate-400 dark:text-slate-500" id="simNode2Time">-- ms</div>
+<div class="text-xs font-mono text-slate-400 dark:text-slate-400" id="simNode2Time">-- ms</div>
 </div>
 <!-- Arrow 2 -->
 <div class="flex justify-center text-slate-300 dark:text-slate-700 -my-2">
@@ -1091,7 +1109,7 @@ html.dark .bg-amber-600 {
 <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">카카오 비즈니스 채널 인증 &amp; 구매자 배송 안내 알림톡 즉시 발송</div>
 </div>
 </div>
-<div class="text-xs font-mono text-slate-400 dark:text-slate-500" id="simNode3Time">-- ms</div>
+<div class="text-xs font-mono text-slate-400 dark:text-slate-400" id="simNode3Time">-- ms</div>
 </div>
 <!-- Arrow 3 -->
 <div class="flex justify-center text-slate-300 dark:text-slate-700 -my-2">
@@ -1111,7 +1129,7 @@ html.dark .bg-amber-600 {
 <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">일일 매출 원장 동기화, 옵션 분류, 재고 수량 1원 오차 없이 기록</div>
 </div>
 </div>
-<div class="text-xs font-mono text-slate-400 dark:text-slate-500" id="simNode4Time">-- ms</div>
+<div class="text-xs font-mono text-slate-400 dark:text-slate-400" id="simNode4Time">-- ms</div>
 </div>
 <!-- Arrow 4 -->
 <div class="flex justify-center text-slate-300 dark:text-slate-700 -my-2">
@@ -1131,7 +1149,7 @@ html.dark .bg-amber-600 {
 <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">L0 로컬 무중단 지수 재시도 &amp; L1 본사 오라클 핫패치 상시 대기</div>
 </div>
 </div>
-<div class="text-xs font-mono text-slate-400 dark:text-slate-500" id="simNode5Time">-- ms</div>
+<div class="text-xs font-mono text-slate-400 dark:text-slate-400" id="simNode5Time">-- ms</div>
 </div>
 </div>
 <!-- 우측 실시간 터미널 창 -->
@@ -1217,7 +1235,7 @@ html.dark .bg-amber-600 {
 <!-- 실시간 키워드 검색창 -->
 <div class="mb-8 max-w-md">
 <div class="relative">
-<i class="fa-solid fa-magnifying-glass absolute left-4 top-3 text-slate-400 dark:text-slate-500 text-xs"></i>
+<i class="fa-solid fa-magnifying-glass absolute left-4 top-3 text-slate-400 dark:text-slate-400 text-xs"></i>
 <input class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl pl-10 pr-4 py-2 text-xs text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition shadow-sm font-medium" id="catalogSearchInput" oninput="handleCatalogSearch(this.value)" placeholder="키워드 검색 (예: 스마트스토어, 정산, 세금계산서, 1000px...)" type="text"/>
 </div>
 </div>
@@ -1298,7 +1316,7 @@ html.dark .bg-amber-600 {
 </div>
 <!-- 퀵 샘플 질의 태그 -->
 <div class="flex flex-wrap items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
-<span class="text-slate-600 dark:text-slate-500 font-medium">추천 질의:</span>
+<span class="text-slate-600 dark:text-slate-400 font-medium">추천 질의:</span>
 <button class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition text-xs" onclick="setRagSample('스마트스토어 주문 카카오 알림톡')">#스마트스토어 알림톡</button>
 <button class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition text-xs" onclick="setRagSample('쿠팡 윙 송장 엑셀 자동 업로드')">#쿠팡 송장 업로드</button>
 <button class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition text-xs" onclick="setRagSample('매출 정산 누락 차액 계산')">#정산 누락 대사</button>
@@ -1918,7 +1936,7 @@ html.dark .bg-amber-600 {
 <div class="p-4 rounded-xl space-y-2 text-xs font-mono bg-[#F0EFEA]">
 <div class="flex items-center text-slate-700 dark:text-slate-300 gap-2"><i class="fa-solid fa-circle-check text-[#14532D] dark:text-emerald-400"></i> 주문 내역 100건 수집 완료 (엑셀 요약 팝업)</div>
 <div class="flex items-center text-slate-700 dark:text-slate-300 gap-2"><i class="fa-solid fa-hand-pointer text-[#14532D] dark:text-emerald-400"></i> [대표님 승인 대기] "전체 알림톡 100건을 발송할까요?"</div>
-<div class="flex items-center text-slate-600 dark:text-slate-400 gap-2"><i class="fa-solid fa-lock text-slate-400 dark:text-slate-500"></i> 사람이 [확인] 버튼을 누르기 전까지 실발송 0건 차단</div>
+<div class="flex items-center text-slate-600 dark:text-slate-400 gap-2"><i class="fa-solid fa-lock text-slate-400 dark:text-slate-400"></i> 사람이 [확인] 버튼을 누르기 전까지 실발송 0건 차단</div>
 </div>
 </div>
 <div class="mt-6 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 flex items-center justify-between">
