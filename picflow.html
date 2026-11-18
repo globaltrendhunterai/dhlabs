@@ -596,7 +596,7 @@ html:not(.dark) .border-purple-500,
 html:not(.dark) .border-purple-600 {
   border-color: var(--ql-pine, #14532D) !important;
 }
-/* Dark-card contrast preservation (explicit simulator/dark panels only; excludes modals & dark: prefixes) */
+/* Dark-card contrast preservation (explicit IDs & classes only; offline-safe) */
 html:not(.dark) #interactive-proof-widget .text-slate-300,
 html:not(.dark) #interactive-proof-widget .text-slate-400,
 html:not(.dark) #interactive-proof-widget .text-slate-500,
@@ -615,6 +615,44 @@ html:not(.dark) #tab-engine .bg-\[\#ECF3EE\] {
 html:not(.dark) #modular-engine-and-connectivity-spectrum .bg-\[\#FAF5EA\] {
   background-color: #FAF5EA !important;
   color: #7C2D12 !important;
+}
+/* Light-mode subpage console/terminal, gradient spans & WCAG AA semantic text contrast */
+#incidentOutputBox {
+  background-color: #18181B !important;
+  color: #E2E8F0 !important;
+  border-radius: 12px !important;
+  border: 1px solid #334155 !important;
+}
+.bg-black\/90 {
+  background-color: #09090B !important;
+}
+html:not(.dark) .bg-black\/90 .text-slate-500,
+html:not(.dark) .bg-black\/90 .text-slate-900 {
+  color: #CBD5E1 !important;
+}
+html:not(.dark) .bg-emerald-500.text-white,
+html:not(.dark) .bg-emerald-500\/90.text-white,
+html:not(.dark) span[class*="bg-gradient-to-r"],
+html:not(.dark) div[class*="bg-gradient-to-r"].text-white {
+  background-image: none !important;
+  background-color: var(--ql-pine, #14532D) !important;
+  color: #FFFFFF !important;
+}
+html:not(.dark) .bg-amber-600.text-white {
+  background-color: #9A3412 !important;
+  color: #FFFFFF !important;
+}
+html:not(.dark) .text-rose-500,
+html:not(.dark) .text-rose-600 {
+  color: #B91C1C !important;
+}
+html:not(.dark) .text-teal-600,
+html:not(.dark) .text-cyan-600,
+html:not(.dark) .text-emerald-600 {
+  color: #14532D !important;
+}
+html:not(.dark) .text-orange-600 {
+  color: #9A3412 !important;
 }
 /* Dark-mode light-surface fallback (prevents light-on-light when dark:bg-* was omitted) */
 html.dark .bg-white:not([class*="dark:bg-"]),
@@ -673,6 +711,10 @@ html.dark .text-\[\#18181B\]:not([class*="dark:text-"]),
 html.dark .text-\[\#3F3E3A\]:not([class*="dark:text-"]),
 html.dark .text-\[\#5E5C54\]:not([class*="dark:text-"]) {
   color: #E2E8F0 !important;
+}
+html.dark body {
+  background-color: #020617 !important;
+  transition: none !important;
 }
 html.dark header.sticky,
 html.dark header {
@@ -1015,7 +1057,7 @@ html.dark .bg-amber-600 {
 <span class="w-2.5 h-2.5 rounded-full bg-[#14532D]"></span>
 <span>SAM-2 &amp; BiRefNet 누끼 엔진 가동 중</span>
 </span>
-<span class="text-xs text-slate-300 dark:text-slate-400 hidden sm:inline">|</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 hidden sm:inline">|</span>
 <span class="text-xs text-slate-500 dark:text-slate-400 font-mono hidden sm:inline">OUTPUT: 1000 x 1000 px (#FFFFFF)</span>
 </div>
 <!-- 빠른 프리셋 버튼 3종 -->

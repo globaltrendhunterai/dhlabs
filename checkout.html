@@ -265,13 +265,14 @@
     function updateThemeIcon(isDark) {
       const icon = document.getElementById('themeToggleIcon');
       if (icon) {
-        icon.className = isDark ? 'fa-solid fa-sun text-amber-400 text-sm' : 'fa-solid fa-moon text-slate-600 text-sm';
+        icon.className = isDark ? 'fa-solid fa-sun text-amber-400 text-sm' : 'fa-solid fa-moon text-slate-600 dark:text-slate-300 text-sm';
       }
     }
     (function() {
       const saved = localStorage.getItem('autoflow_theme');
       if (saved === 'dark') {
         document.documentElement.classList.add('dark');
+        updateThemeIcon(true);
       } else {
         document.documentElement.classList.remove('dark');
       }
@@ -368,6 +369,18 @@ html.dark .text-slate-500,
 html.dark .dark\:text-slate-500 {
   color: #CBD5E1 !important;
 }
+html:not(.dark) .text-slate-400 {
+  color: #5E5C54 !important;
+}
+html:not(.dark) .text-slate-500 {
+  color: #52525B !important;
+}
+html:not(.dark) .text-emerald-600 {
+  color: #14532D !important;
+}
+html:not(.dark) .text-rose-600 {
+  color: #991B1B !important;
+}
 html.dark .bg-sky-600,
 html.dark [class*="bg-gradient-to-r"][class*="from-sky-"] {
   background-image: none !important;
@@ -375,6 +388,45 @@ html.dark [class*="bg-gradient-to-r"][class*="from-sky-"] {
 }
 html.dark .bg-emerald-600 {
   background-color: #047857 !important;
+}
+html.dark #themeToggleIcon {
+  color: #FBBF24 !important;
+}
+html.dark #geo-ai-citation-summary {
+  background: #020617 !important;
+  border-color: #1E293B !important;
+}
+html.dark .af-geo-accordion {
+  background: #0F172A !important;
+  border-color: #334155 !important;
+}
+html.dark .af-geo-accordion > summary {
+  background: #1E293B !important;
+  color: #F8FAFC !important;
+}
+html.dark .af-geo-accordion > summary > span:last-child {
+  color: #6EE7B7 !important;
+}
+html.dark .af-geo-accordion > div {
+  background: #0F172A !important;
+  border-color: #334155 !important;
+}
+html.dark .bg-\[\#F7F6F2\]:not([class*="dark:bg-"]),
+html.dark .bg-\[\#F0EFEA\]:not([class*="dark:bg-"]) {
+  background-color: #1E293B !important;
+  border-color: #334155 !important;
+}
+html.dark .bg-\[\#FFFFFF\]:not([class*="dark:bg-"]) {
+  background-color: #0F172A !important;
+  border-color: #334155 !important;
+}
+html.dark .text-\[\#18181B\]:not([class*="dark:text-"]),
+html.dark .text-\[\#3F3E3A\]:not([class*="dark:text-"]),
+html.dark .text-\[\#5E5C54\]:not([class*="dark:text-"]) {
+  color: #E2E8F0 !important;
+}
+html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
+  color: #6EE7B7 !important;
 }</style></head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col font-sans selection:bg-sky-500 selection:text-white transition-colors duration-200">
 <!-- ==================================================================== -->
@@ -393,7 +445,7 @@ html.dark .bg-emerald-600 {
 </div>
 <div class="flex items-center justify-end gap-2 shrink-0 self-end sm:self-auto">
 <button aria-label="테마 전환" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition" onclick="toggleTheme()">
-<i class="fa-solid fa-moon text-slate-600 text-sm" id="themeToggleIcon"></i>
+<i class="fa-solid fa-moon text-slate-600 dark:text-slate-300 text-sm" id="themeToggleIcon"></i>
 </button>
 <div class="inline-flex rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 p-0.5 text-xs font-bold">
 <button class="px-2 py-1 rounded-md bg-sky-600 text-white transition" id="btnCheckoutLangKo" onclick="setCheckoutLang('ko')">KO</button>
@@ -489,7 +541,7 @@ html.dark .bg-emerald-600 {
 <span>AutoFlow 공식 스토어</span>
 </a>
 </li>
-<li class="text-slate-300 dark:text-slate-700">/</li>
+<li class="text-slate-500 dark:text-slate-400">/</li>
 <li>
 <span class="font-bold text-slate-900 dark:text-white" id="checkoutBreadcrumbCurrent">보안 결제 및 즉시 라이선스 출고</span>
 </li>
