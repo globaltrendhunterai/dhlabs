@@ -7,7 +7,7 @@
     "appleDeveloperId": "GSKY37R7XV",
     "primaryUrl": "https://globaltrendhunterai.github.io/dhlabs/",
     "mirrorUrl": "https://github.com/globaltrendhunterai/dhlabs",
-    "lastModified": "2026-11-18"
+    "lastModified": "2026-11-19"
   },
   "entries": [
     {
@@ -336,6 +336,36 @@
       ],
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6800366919)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs.github.io:fintree:ecom-profit-vault-us-showcase",
+      "displayName": "EcomProfitVault US ($19) — Dedicated 1-Page Product Showcase",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/ecomprofitvault.html",
+      "alternateUrl": "https://dhlabs.gumroad.com/l/ecomprofitvault-en",
+      "inLanguage": "en-US",
+      "representativeQueries": [
+        "What does EcomProfitVault US catch offline for Amazon FBA and Shopify sellers ($19 USD)?",
+        "How does EcomProfitVault US export 312 values into Excel with zero formulas leaked?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs.github.io:fintree:fintree-studio-pro-showcase",
+      "displayName": "FinTree Studio Pro ($59) — Custom Financial Formula Builder Showcase",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/fintreestudio.html",
+      "alternateUrl": "https://dhlabs.gumroad.com/l/fintreestudio-en",
+      "inLanguage": "en-US",
+      "representativeQueries": [
+        "What does FinTree Studio Pro ($59 USD) open for custom financial tree decomposition and formula authoring?",
+        "How does FinTree Studio Pro differ from EcomProfitVault US Seller Edition?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
       }
     },
     {

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+  <filter id="cotton-cloud">
+    <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="3" seed="7" result="c"/>
+    <feColorMatrix in="c" type="matrix" values="0 0 0 0 0.72  0 0 0 0 0.67  0 0 0 0 0.59  0 0 0 0.035 0"/>
+  </filter>
+  <filter id="cotton-grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.92" numOctaves="2" seed="19" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 0.45  0 0 0 0 0.40  0 0 0 0 0.34  0 0 0 0.032 0"/>
+  </filter>
+  <rect width="360" height="360" filter="url(#cotton-cloud)"/>
+  <rect width="360" height="360" filter="url(#cotton-grain)"/>
+  <g stroke="rgba(120,108,92,0.045)" stroke-width="0.6" fill="none">
+    <path d="M24 38q8-3 14 2"/><path d="M112 74q6 5 15 1"/><path d="M246 42q9-2 13 4"/>
+    <path d="M68 164q10 2 16-3"/><path d="M198 142q7 6 14 2"/><path d="M304 188q9-4 17 2"/>
+    <path d="M44 268q11-3 16 3"/><path d="M158 292q8 4 18-1"/><path d="M272 318q10 3 15-3"/>
+  </g>
+</svg>
