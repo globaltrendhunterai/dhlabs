@@ -187,12 +187,21 @@
     ]
 }
 </script>
-<!-- GA4 Telemetry -->
+<!-- Guarded GA4 Telemetry (activates only when window.DH_GA4_MEASUREMENT_ID is set to a live G-XXXXXXXXXX ID) -->
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-AUTOFLOW2026', { 'anonymize_ip': true });
+    (function() {
+      var gaId = window.DH_GA4_MEASUREMENT_ID || '';
+      if (/^G-[A-Z0-9]{8,}$/.test(gaId) && gaId !== 'G-AUTOFLOW2026') {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){ window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', gaId, { 'anonymize_ip': true });
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(gaId);
+        document.head.appendChild(s);
+      }
+    })();
   </script>
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- 토스페이먼츠 공식 결제위젯 v2 SDK -->
@@ -503,7 +512,7 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
 <tr>
 <td class="p-2.5 font-bold">비용 및 소유권 (Ownership)</td>
 <td class="p-2.5">건당 과금 &amp; 영구 월 임대료 지출</td>
-<td class="p-2.5 font-bold text-slate-900 dark:text-white">₩39,000~$79,000 ($29~$59) 1회 영구 소장 (무제한 실행)</td>
+<td class="p-2.5 font-bold text-slate-900 dark:text-white">₩39,000~₩79,000 ($29~$59) 1회 영구 소장 (무제한 실행)</td>
 </tr>
 <tr>
 <td class="p-2.5 font-bold">주문 폭주 방어 (Rate-Limit)</td>
@@ -1863,6 +1872,13 @@ html.dark .text-\[\#14532D\]:not([class*="dark:text-"]) {
         ? ('[Gumroad Global USD Official Checkout]\n\nDelivery Email: ' + customerEmail + '\nItem: ' + activeTitle + '\nTotal: $' + usdAmount + '.00 USD\n\nClick OK to proceed to Gumroad (' + resolvedBaseUrl + ').')
         : ('[Gumroad Global USD Official Checkout]\n\n수령 이메일: ' + customerEmail + '\n선택 품목: ' + activeTitle + '\n결제 금액: $' + usdAmount + '.00 USD\n\n확인을 누르시면 공식 Gumroad 글로벌 결제창(' + resolvedBaseUrl + ')으로 이동합니다.');
       if (confirm(confirmMsg)) {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'begin_checkout', {
+            currency: 'USD',
+            value: usdAmount,
+            items: [{ item_id: activeSku, item_name: activeTitle }]
+          });
+        }
         window.open(checkoutUrl.toString(), '_blank');
       }
     }
