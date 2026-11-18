@@ -602,7 +602,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
   }
 }
 </style>
-<script src="assets/product_specs.js"></script><style id="f118-typo-polish">h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }</style><style id="f119-aesthetic-polish">p, li, dd, dt, h1, h2, h3, h4, td, th {
+<script src="assets/product_specs.js"></script><style id="f118-typo-polish">h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }</style><style id="f119-aesthetic-polish">p, li, dd, dt, h1, h2, h3, h4, td, th, span {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -614,6 +614,16 @@ html:not(.dark) .border-indigo-600,
 html:not(.dark) .border-purple-500,
 html:not(.dark) .border-purple-600 {
   border-color: var(--ql-pine, #14532D) !important;
+}
+/* Dark-card contrast preservation (explicit simulator/dark panels only; excludes modals & dark: prefixes) */
+html:not(.dark) #interactive-proof-widget .text-slate-300,
+html:not(.dark) #interactive-proof-widget .text-slate-400,
+html:not(.dark) #interactive-proof-widget .text-slate-500,
+html:not(.dark) [class*="via-slate-900"] .text-slate-300,
+html:not(.dark) [class*="via-slate-900"] .text-slate-400,
+html:not(.dark) #modular-engine-and-connectivity-spectrum [class*=" bg-slate-800"] .text-slate-300,
+html:not(.dark) #modular-engine-and-connectivity-spectrum [class*=" bg-slate-800"] .text-slate-400 {
+  color: #CBD5E1 !important;
 }
 .af-bot-launcher {
   width: 48px !important;
@@ -1176,7 +1186,7 @@ html:not(.dark) .border-purple-600 {
 <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
           0.0001초 워크플로우 <span class="text-[#14532D] dark:text-emerald-400">시맨틱 검색</span>
 </h2>
-<div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#ECF3EE] dark:bg-[#ECF3EE] border border-[#BBD2C3] dark:border-[#BBD2C3] text-[#14532D] dark:text-emerald-300 text-xs font-semibold mb-3">
+<div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#ECF3EE] dark:bg-emerald-950/60 border border-[#BBD2C3] dark:border-[#BBD2C3] text-[#14532D] dark:text-emerald-300 text-xs font-semibold mb-3">
 <i class="fa-solid fa-bolt"></i>
 <span>초고속 실시간 자연어 시맨틱 검색 엔진</span>
 </div>
@@ -1789,7 +1799,7 @@ html:not(.dark) .border-purple-600 {
           불안할 땐 수동 검토, 바쁠 땐 전자동<br/>
 <span class="text-[#14532D] dark:text-emerald-400">듀얼 모드 (Dual Execution Engine)</span>
 </h2>
-<div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#ECF3EE] dark:bg-[#ECF3EE] border border-[#BBD2C3] dark:border-[#BBD2C3] text-[#14532D] dark:text-emerald-300 text-xs font-semibold mb-3">
+<div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#ECF3EE] dark:bg-emerald-950/60 border border-[#BBD2C3] dark:border-[#BBD2C3] text-[#14532D] dark:text-emerald-300 text-xs font-semibold mb-3">
 <i class="fa-solid fa-sliders"></i>
 <span>운영 제어권 100% 보장 | 완벽한 하이브리드 워크플로우</span>
 </div>

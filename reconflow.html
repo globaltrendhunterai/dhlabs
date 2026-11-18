@@ -598,7 +598,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
   }
 }
 </style>
-<script src="assets/product_specs.js"></script><style id="f118-typo-polish">h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }</style><style id="f119-aesthetic-polish">p, li, dd, dt, h1, h2, h3, h4, td, th {
+<script src="assets/product_specs.js"></script><style id="f118-typo-polish">h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }</style><style id="f119-aesthetic-polish">p, li, dd, dt, h1, h2, h3, h4, td, th, span {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -610,6 +610,16 @@ html:not(.dark) .border-indigo-600,
 html:not(.dark) .border-purple-500,
 html:not(.dark) .border-purple-600 {
   border-color: var(--ql-pine, #14532D) !important;
+}
+/* Dark-card contrast preservation (explicit simulator/dark panels only; excludes modals & dark: prefixes) */
+html:not(.dark) #interactive-proof-widget .text-slate-300,
+html:not(.dark) #interactive-proof-widget .text-slate-400,
+html:not(.dark) #interactive-proof-widget .text-slate-500,
+html:not(.dark) [class*="via-slate-900"] .text-slate-300,
+html:not(.dark) [class*="via-slate-900"] .text-slate-400,
+html:not(.dark) #modular-engine-and-connectivity-spectrum [class*=" bg-slate-800"] .text-slate-300,
+html:not(.dark) #modular-engine-and-connectivity-spectrum [class*=" bg-slate-800"] .text-slate-400 {
+  color: #CBD5E1 !important;
 }
 .af-bot-launcher {
   width: 48px !important;

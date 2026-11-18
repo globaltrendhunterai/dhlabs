@@ -722,7 +722,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
   }
 }
 </style>
-<script src="assets/product_specs.js"></script><style id="f118-typo-polish">h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }</style><style id="f119-aesthetic-polish">p, li, dd, dt, h1, h2, h3, h4, td, th {
+<script src="assets/product_specs.js"></script><style id="f118-typo-polish">h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }</style><style id="f119-aesthetic-polish">p, li, dd, dt, h1, h2, h3, h4, td, th, span {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -734,6 +734,16 @@ html:not(.dark) .border-indigo-600,
 html:not(.dark) .border-purple-500,
 html:not(.dark) .border-purple-600 {
   border-color: var(--ql-pine, #14532D) !important;
+}
+/* Dark-card contrast preservation (explicit simulator/dark panels only; excludes modals & dark: prefixes) */
+html:not(.dark) #interactive-proof-widget .text-slate-300,
+html:not(.dark) #interactive-proof-widget .text-slate-400,
+html:not(.dark) #interactive-proof-widget .text-slate-500,
+html:not(.dark) [class*="via-slate-900"] .text-slate-300,
+html:not(.dark) [class*="via-slate-900"] .text-slate-400,
+html:not(.dark) #modular-engine-and-connectivity-spectrum [class*=" bg-slate-800"] .text-slate-300,
+html:not(.dark) #modular-engine-and-connectivity-spectrum [class*=" bg-slate-800"] .text-slate-400 {
+  color: #CBD5E1 !important;
 }
 .af-bot-launcher {
   width: 48px !important;
@@ -860,8 +870,8 @@ html:not(.dark) .border-purple-600 {
 <button class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold border border-slate-200 dark:border-slate-700" onclick="switchTab('tab-overview'); toggleMobileMenu();"> <i class="fa-solid fa-house text-sky-500"></i> <span data-i18n="tab_overview"> 1. 개요 (Overview)</span> </button>
 <button class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-amber-700 dark:text-amber-300 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/30 font-bold" onclick="switchTab('tab-catalog'); toggleMobileMenu();"> <i class="fa-solid fa-boxes-stacked text-amber-500"></i> <span data-i18n="tab_catalog"> 2. 기성 완제품 160종</span> </button>
 <button class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 font-bold" onclick="switchTab('tab-engine'); toggleMobileMenu();"> <i class="fa-solid fa-shield-halved text-emerald-500"></i> <span data-i18n="tab_engine"> 3. 자가치유 &amp; 장부정합성</span> </button>
-<button class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#14532D] dark:text-emerald-300 bg-[#ECF3EE] dark:bg-[#ECF3EE] border border-[#BBD2C3] dark:border-[#BBD2C3] font-bold" onclick="switchTab('tab-pricing'); toggleMobileMenu();"> <i class="fa-solid fa-wallet text-[#14532D]"></i> <span data-i18n="tab_pricing"> 4. 요금제 &amp; 멤버십</span> </button>
-<button class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#14532D] dark:text-emerald-400 bg-[#ECF3EE] dark:bg-[#ECF3EE] border border-[#BBD2C3] dark:border-[#BBD2C3] font-bold" onclick="switchTab('tab-support'); toggleMobileMenu();"> <i class="fa-solid fa-headset text-[#14532D]"></i> <span data-i18n="tab_support"> 5. 1:1 상담봇 &amp; FAQ</span> </button>
+<button class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#14532D] dark:text-emerald-300 bg-[#ECF3EE] dark:bg-emerald-950/60 border border-[#BBD2C3] dark:border-[#BBD2C3] font-bold" onclick="switchTab('tab-pricing'); toggleMobileMenu();"> <i class="fa-solid fa-wallet text-[#14532D]"></i> <span data-i18n="tab_pricing"> 4. 요금제 &amp; 멤버십</span> </button>
+<button class="w-full text-left flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[#14532D] dark:text-emerald-400 bg-[#ECF3EE] dark:bg-emerald-950/60 border border-[#BBD2C3] dark:border-[#BBD2C3] font-bold" onclick="switchTab('tab-support'); toggleMobileMenu();"> <i class="fa-solid fa-headset text-[#14532D]"></i> <span data-i18n="tab_support"> 5. 1:1 상담봇 &amp; FAQ</span> </button>
 <div class="pt-3 border-t border-slate-200 dark:border-slate-800 space-y-2">
 <a class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-xs text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="setup_wizard.html"> <i class="fa-solid fa-sliders text-emerald-500"></i> <span>1분 설정 위저드</span> </a>
 <a class="flex items-center gap-3 px-3.5 py-2 rounded-xl text-xs text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" href="chaos_sandbox.html"> <i class="fa-solid fa-flask-vial text-cyan-500"></i> <span>127 ms 카오스 샌드박스</span> </a>
@@ -951,7 +961,7 @@ html:not(.dark) .border-purple-600 {
                     </div>
 </div>
 <!-- Focal Row 1: SmartStore Order Collection & AlimTalk -->
-<div class="p-3.5 bg-sky-500/5 dark:bg-sky-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg">
+<div class="p-3.5 bg-sky-500/5 dark:bg-sky-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg">
 <div class="space-y-1">
 <div class="flex items-center gap-2">
 <span class="whitespace-nowrap shrink-0 px-2 py-0.5 rounded bg-sky-600 text-white text-xs font-bold">AF-PROD-01</span>
@@ -967,7 +977,7 @@ html:not(.dark) .border-purple-600 {
 </div>
 </div>
 <!-- Focal Row 2: Coupang Wing Negative Margin Brake -->
-<div class="p-3.5 bg-amber-500/5 dark:bg-amber-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg">
+<div class="p-3.5 bg-amber-500/5 dark:bg-amber-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg">
 <div class="space-y-1">
 <div class="flex items-center gap-2">
 <span class="whitespace-nowrap shrink-0 px-2 py-0.5 rounded bg-amber-600 text-white text-xs font-bold">AF-PROD-02</span>
@@ -1879,7 +1889,7 @@ html:not(.dark) .border-purple-600 {
 <div class="bg-slate-800/80 border border-[#BBD2C3] rounded-xl p-4 flex flex-col justify-between hover:border-indigo-400 transition">
 <div>
 <div class="flex justify-between items-center mb-2">
-<span class="text-xs font-extrabold px-2 py-0.5 rounded bg-[#ECF3EE] text-emerald-300 border border-[#BBD2C3]">1원 정산·통관·CS 방어</span>
+<span class="text-xs font-extrabold px-2 py-0.5 rounded bg-[#ECF3EE] text-[#14532D] border border-[#BBD2C3]">1원 정산·통관·CS 방어</span>
 <span class="text-xs font-bold text-slate-300">14~18개 노드</span>
 </div>
 <div aria-level="4" class="text-sm font-bold text-white mb-1.5" role="heading">"카드·PG 수수료 덜 들어온 돈과 통관 오류를 잡아주세요"</div>
@@ -1900,7 +1910,7 @@ html:not(.dark) .border-purple-600 {
 <div class="bg-slate-800/80 border border-[#BBD2C3] rounded-xl p-4 flex flex-col justify-between hover:border-purple-400 transition">
 <div>
 <div class="flex justify-between items-center mb-2">
-<span class="text-xs font-extrabold px-2 py-0.5 rounded bg-[#ECF3EE] text-emerald-300 border border-[#BBD2C3]">전사 회계·다채널 통합</span>
+<span class="text-xs font-extrabold px-2 py-0.5 rounded bg-[#ECF3EE] text-[#14532D] border border-[#BBD2C3]">전사 회계·다채널 통합</span>
 <span class="text-xs font-bold text-slate-300">19~30개 노드</span>
 </div>
 <div aria-level="4" class="text-sm font-bold text-white mb-1.5" role="heading">"여러 쇼핑몰 매출·택배비·회계 전표를 하나로 묶어주세요"</div>
@@ -2084,7 +2094,7 @@ html:not(.dark) .border-purple-600 {
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <!-- Header -->
 <div class="text-center max-w-3xl mx-auto mb-10">
-<div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#ECF3EE] dark:bg-[#ECF3EE] border border-[#BBD2C3] dark:border-[#BBD2C3] text-[#14532D] dark:text-emerald-300 text-xs font-extrabold mb-3">
+<div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#ECF3EE] dark:bg-emerald-950/60 border border-[#BBD2C3] dark:border-[#BBD2C3] text-[#14532D] dark:text-emerald-300 text-xs font-extrabold mb-3">
 <i class="fa-solid fa-shield-halved"></i>
 <span data-i18n="pricing_badge">투명한 순수 기술가 단품(₩39,000~) &amp; 상주형 무인 엔진 기간권(₩29,000~)</span>
 </div>
@@ -2452,7 +2462,7 @@ html:not(.dark) .border-purple-600 {
 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 <!-- Header -->
 <div class="text-center max-w-3xl mx-auto mb-16">
-<div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#ECF3EE] dark:bg-[#ECF3EE] border border-[#BBD2C3] dark:border-[#BBD2C3] text-[#14532D] dark:text-emerald-400 text-xs font-bold mb-3 shadow-sm">
+<div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#ECF3EE] dark:bg-emerald-950/60 border border-[#BBD2C3] dark:border-[#BBD2C3] text-[#14532D] dark:text-emerald-400 text-xs font-bold mb-3 shadow-sm">
 <i class="fa-solid fa-comments"></i>
 <span data-i18n="support_badge">24/7 무인 상담봇 &amp; 실전 기술 문서</span>
 </div>
