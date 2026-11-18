@@ -722,7 +722,31 @@ html:not(.dark) [class*="shadow-indigo-"] {
   }
 }
 </style>
-<script src="assets/product_specs.js"></script><style id="f118-typo-polish">h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }</style></head>
+<script src="assets/product_specs.js"></script><style id="f118-typo-polish">h1, h2, h3 { word-break: keep-all; overflow-wrap: break-word; }</style><style id="f119-aesthetic-polish">p, li, dd, dt, h1, h2, h3, h4, td, th {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+footer {
+  padding-bottom: 5rem !important;
+}
+html:not(.dark) .border-indigo-500,
+html:not(.dark) .border-indigo-600,
+html:not(.dark) .border-purple-500,
+html:not(.dark) .border-purple-600 {
+  border-color: var(--ql-pine, #14532D) !important;
+}
+.af-bot-launcher {
+  width: 48px !important;
+  height: 48px !important;
+  bottom: 18px !important;
+  right: 18px !important;
+}
+@media (max-width: 1023px) {
+  .af-bot-launcher {
+    bottom: 74px !important;
+    right: 14px !important;
+  }
+}</style></head>
 <body class="bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100 min-h-screen antialiased selection:bg-stone-800 selection:text-white">
 <!-- dhlabsFreeDemoBanner -->
 <div id="dhlabsFreeDemoBanner" style="width:100%;max-width:100%;box-sizing:border-box;background:#F0EFEA;color:#18181B;border-bottom:1px solid #E5E3DC;padding:8px 16px;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:12px;line-height:1.45;position:relative;z-index:45;">
@@ -880,7 +904,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
 </div>
 <!-- STAGESHOW LIVE PRODUCT SHOWCASE (Faux UI Window + Overlapping Satellite Card) -->
 <div class="mt-8 max-w-5xl mx-auto p-3 sm:p-6 relative text-left af-band-surface">
-<div class="overflow-hidden af-band-surface p-4">
+<div class="overflow-hidden p-4">
 <!-- Mac/Browser Window Chrome -->
 <div class="px-4 py-2.5 bg-slate-100 dark:bg-slate-900 border-b border-slate-200/80 dark:border-slate-800 flex items-center justify-between gap-3">
 <div class="flex items-center gap-2">
@@ -927,7 +951,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
                     </div>
 </div>
 <!-- Focal Row 1: SmartStore Order Collection & AlimTalk -->
-<div class="p-3.5 rounded-xl bg-sky-500/5 dark:bg-sky-500/10 border border-sky-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="p-3.5 bg-sky-500/5 dark:bg-sky-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg border-l-2 border-[#14532D] rounded-r-lg">
 <div class="space-y-1">
 <div class="flex items-center gap-2">
 <span class="whitespace-nowrap shrink-0 px-2 py-0.5 rounded bg-sky-600 text-white text-xs font-bold">AF-PROD-01</span>
@@ -943,7 +967,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
 </div>
 </div>
 <!-- Focal Row 2: Coupang Wing Negative Margin Brake -->
-<div class="p-3.5 rounded-xl bg-amber-500/5 dark:bg-amber-500/10 border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="p-3.5 bg-amber-500/5 dark:bg-amber-500/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg border-l-2 border-[#92400E] rounded-r-lg">
 <div class="space-y-1">
 <div class="flex items-center gap-2">
 <span class="whitespace-nowrap shrink-0 px-2 py-0.5 rounded bg-amber-600 text-white text-xs font-bold">AF-PROD-02</span>
@@ -972,7 +996,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
 </div>
 </div>
 <!-- Overlapping Satellite Card (Stageshow Overlap Rule: Resident Engine Status) -->
-<div class="mt-3 sm:mt-0 sm:absolute sm:bottom-4 sm:right-4 rounded-2xl bg-slate-900 text-white p-4 border border-emerald-500/40 shadow-2xl sm:max-w-xs">
+<div class="mt-3 rounded-xl bg-[#18181B] text-white px-4 py-3 border border-emerald-900/50 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
 <div class="flex items-center justify-between gap-2 mb-1">
 <span class="text-xs font-extrabold text-emerald-400 flex items-center gap-1.5">
 <i class="fa-solid fa-shield-halved"></i> 상주형 무인 엔진 가동 중
@@ -1375,10 +1399,6 @@ html:not(.dark) [class*="shadow-indigo-"] {
 <!-- 상단 헤더 & 카운터 -->
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
 <div>
-<div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-50 dark:bg-sky-500/10 border border-sky-200 dark:border-sky-500/30 text-sky-700 dark:text-sky-400 text-xs font-extrabold mb-3">
-<i class="fa-solid fa-boxes-stacked"></i>
-<span>Single-Edition Complete Workflow Store | 1제품 = 1사이트/1업무</span>
-</div>
 <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight"> 도메인별 <span class="text-sky-600 dark:text-sky-400">워크플로우 단일 완제품 스토어</span> </h2>
 <p class="mt-2 text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
                 인건비 거품 없는 순수 기술가(₩39,000 ~ ₩79,000) | 전 품목 필수 방어 에어백 &amp; 1초 원클릭 로컬 런처 기본 내장 | 1:1 기기(HWID) 영구 소장
@@ -1469,10 +1489,6 @@ html:not(.dark) [class*="shadow-indigo-"] {
 <div class="tab-pane hidden py-14 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800" id="tab-engine">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center max-w-3xl mx-auto mb-12">
-<div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-300 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold mb-3">
-<i class="fa-solid fa-microchip"></i>
-<span data-i18n="engine_badge">에러코드 1:1 정밀 매칭 (환각 없음 | 미해결률 5% 미만)</span>
-</div>
 <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight" data-i18n="engine_main_title"> 상주형 무인 엔진: 자가치유 &amp; 노드 간 정합성 대사 </h2>
 <p class="mt-3 text-xs sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="engine_main_desc">
             생성형 AI처럼 임의로 코드를 지어내지(Hallucination) 않습니다.<br class="hidden sm:inline"/>
@@ -1501,9 +1517,9 @@ html:not(.dark) [class*="shadow-indigo-"] {
 </div>
 <div class="px-5 py-3 bg-slate-950/40 border-b border-slate-800/80 flex flex-wrap items-center justify-between gap-3 text-xs">
 <div class="flex items-center gap-2">
-<button class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-extrabold flex items-center gap-2 shadow transition cursor-pointer" id="btn-chaos-inject" onclick="triggerChaosInjection()"> <i class="fa-solid fa-bolt-lightning text-yellow-300"></i> <span> 장애 / 오차 주입 시뮬레이션</span> </button>
+<button class="px-4 py-2 rounded-xl bg-[#991B1B] hover:bg-[#7F1D1D] text-white font-extrabold flex items-center gap-2 shadow transition cursor-pointer" id="btn-chaos-inject" onclick="triggerChaosInjection()"> <i class="fa-solid fa-bolt-lightning text-yellow-300"></i> <span> 장애 / 오차 주입 시뮬레이션</span> </button>
 <button class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold transition flex items-center gap-1.5 cursor-pointer" onclick="playNormalSimulation()"> <i class="fa-solid fa-play text-emerald-400 text-xs"></i> <span>정상 패킷 송신</span> </button>
-<button class="px-3 py-2 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-slate-400 hover:text-slate-200 transition flex items-center gap-1 cursor-pointer" onclick="resetSimulation()"> <i class="fa-solid fa-rotate-right text-xs"></i> <span>초기화</span> </button>
+<button class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition flex items-center gap-1 cursor-pointer" onclick="resetSimulation()"> <i class="fa-solid fa-rotate-right text-xs"></i> <span>초기화</span> </button>
 </div>
 <div class="flex items-center gap-3 font-mono text-xs">
 <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-800/80 border border-slate-700">
@@ -1542,7 +1558,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
 </div>
 </div>
 <div class="w-full hidden" id="sim-view-scenario-b">
-<div class="grid grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto relative p-4 af-band-surface">
+<div class="grid grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto relative p-4">
 <div class="sim-node p-4 rounded-2xl bg-slate-800/90 border-2 border-sky-500/50 flex flex-col items-center text-center" id="node-b-1">
 <span class="text-xs font-bold text-white">① 앞단: 쇼핑몰 실주문</span>
 <span class="text-xs font-mono text-sky-300 font-bold mt-1" id="node-b-1-amount">₩100,000</span>
@@ -1612,7 +1628,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
 </div>
 </div>
 <!-- 3rd Core Pillar: 70% Safety Factor Limiter & Overflow Spool-Resume Dam -->
-<div class="mt-8 p-6 sm:p-8 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 text-white af-band-surface">
+<div class="mt-8 p-6 sm:p-8 rounded-2xl bg-[#18181B] text-white border border-slate-800">
 <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
 <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-emerald-900/10 text-emerald-300 border border-[#BBD2C3] font-mono">
               70% SAFETY GOVERNOR &amp; OVERFLOW SPOOL DAM
@@ -2091,8 +2107,8 @@ html:not(.dark) [class*="shadow-indigo-"] {
               </p>
 </div>
 <div class="inline-flex p-1 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-<button class="px-4 py-2 rounded-xl text-xs font-extrabold transition bg-sky-600 text-white shadow-xs cursor-pointer" id="engine-mode-btn-managed" onclick="setEnginePricingMode('managed')" type="button"> 기본형 (본사 파인튜닝 AI 포함) </button>
-<button class="px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer" id="engine-mode-btn-mcp" onclick="setEnginePricingMode('mcp')" type="button"> 개발자 MCP 외부 AI 연동 특가 (-1~2만 할인) </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl text-xs font-extrabold transition bg-[#14532D] text-white shadow-xs cursor-pointer" id="engine-mode-btn-managed" onclick="setEnginePricingMode('managed')" type="button"> 기본형 (본사 AI 포함) </button>
+<button class="whitespace-nowrap whitespace-nowrap whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer" id="engine-mode-btn-mcp" onclick="setEnginePricingMode('mcp')" type="button"> 개발자 MCP 특가 (-1~2만 할인) </button>
 </div>
 </div>
 <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-3 border-t border-slate-100 dark:border-slate-800">
@@ -2106,9 +2122,9 @@ html:not(.dark) [class*="shadow-indigo-"] {
               </p>
 </div>
 <div class="inline-flex p-1 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-<button class="px-4 py-2 rounded-xl text-xs font-extrabold transition bg-emerald-600 text-white shadow-xs cursor-pointer" id="engine-dur-btn-30" onclick="setEngineDuration(30)" type="button"> 30일권 (1개월) </button>
-<button class="px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer" id="engine-dur-btn-90" onclick="setEngineDuration(90)" type="button"> 90일권 (분기 할인) </button>
-<button class="px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer" id="engine-dur-btn-365" onclick="setEngineDuration(365)" type="button"> 365일권 (연간 특가) </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl text-xs font-extrabold transition bg-[#14532D] text-white shadow-xs cursor-pointer" id="engine-dur-btn-30" onclick="setEngineDuration(30)" type="button"> 30일권 (1개월) </button>
+<button class="whitespace-nowrap whitespace-nowrap whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer" id="engine-dur-btn-90" onclick="setEngineDuration(90)" type="button"> 90일권 (분기 할인) </button>
+<button class="whitespace-nowrap whitespace-nowrap whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer" id="engine-dur-btn-365" onclick="setEngineDuration(365)" type="button"> 365일권 (연간 특가) </button>
 </div>
 </div>
 </div>
@@ -2139,7 +2155,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-sky-600 mt-0.5"></i> <span><strong>사내 PC(127.0.0.1) 개인정보 100% 마스킹 기본 내장</strong></span></li>
 </ul>
 </div>
-<a class="w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-extrabold text-xs text-center shadow-sm transition block" href="checkout.html?engine=ENGINE_HEAL&amp;mode=managed&amp;days=30" id="btn-heal-checkout"> 자가치유 엔진 30일권 시작 (₩39,000) </a>
+<a class="w-full py-3 rounded-xl bg-[#F0EFEA] hover:bg-[#E5E3DC] text-[#18181B] border border-[#D4D1C7] font-extrabold text-xs text-center transition block" href="checkout.html?engine=ENGINE_HEAL&amp;mode=managed&amp;days=30" id="btn-heal-checkout"> 자가치유 엔진 30일권 시작 (₩39,000) </a>
 </div>
 <!-- Card 2: Reconciliation Engine -->
 <div class="rounded-3xl p-6 sm:p-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm hover:border-emerald-500/60 transition">
@@ -2166,10 +2182,10 @@ html:not(.dark) [class*="shadow-indigo-"] {
 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-600 mt-0.5"></i> <span><strong>사내 PC(127.0.0.1) 개인정보 100% 마스킹 기본 내장</strong></span></li>
 </ul>
 </div>
-<a class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs text-center shadow-sm transition block" href="checkout.html?engine=ENGINE_RECON&amp;mode=managed&amp;days=30" id="btn-recon-checkout"> 정합성 엔진 30일권 시작 (₩49,000) </a>
+<a class="w-full py-3 rounded-xl bg-[#F0EFEA] hover:bg-[#E5E3DC] text-[#18181B] border border-[#D4D1C7] font-extrabold text-xs text-center transition block" href="checkout.html?engine=ENGINE_RECON&amp;mode=managed&amp;days=30" id="btn-recon-checkout"> 정합성 엔진 30일권 시작 (₩49,000) </a>
 </div>
 <!-- Card 3: Dual Integrated Engine (BEST) -->
-<div class="rounded-3xl p-6 sm:p-7 bg-gradient-to-b from-[#F0EFEA] to-white dark:from-indigo-950/30 dark:to-slate-900 border-2 border-indigo-600 dark:border-indigo-500 flex flex-col justify-between shadow-lg relative">
+<div class="rounded-3xl p-6 sm:p-7 bg-white dark:bg-slate-900 border-2 border-[#14532D] dark:border-emerald-500 flex flex-col justify-between shadow-sm relative">
 <div class="absolute -top-3 left-6 px-3 py-0.5 rounded-full bg-[#14532D] text-white font-black text-xs shadow">
               가장 추천 BEST | 통합 할인
             </div>
@@ -2218,28 +2234,28 @@ html:not(.dark) [class*="shadow-indigo-"] {
 </div>
 </div>
 <!-- 4단계 상위 합본 모듈 & BYOK 35% 즉시 할인 요금 체계 -->
-<div class="p-4 dark:bg-[#F0EFEA] af-band-surface">
+<div class="pt-4 border-t border-[#E5E3DC] dark:border-slate-800">
 <div class="text-xs font-extrabold text-[#18181B] dark:text-emerald-300 mb-2 flex items-center justify-between">
 <span>2층 Lv.1~Lv.4 단계별 상위 합본 모듈 (하위 기능 100% 누적 포함 &amp; 고객 AI 모델 BYOK 연결 시 ~35% 즉시 할인)</span>
 <span class="font-mono text-xs text-[#14532D] dark:text-emerald-300">선택 피로도 0% 구조</span>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs">
-<div class="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-[#E5E3DC] dark:border-indigo-900/50">
+<div class="p-2.5 bg-white dark:bg-slate-900 dark:border-indigo-900/50 border-l-2 border-[#D4D1C7] dark:border-slate-700 pl-3 py-1 bg-transparent">
 <div class="font-bold text-slate-900 dark:text-white">Lv.1 기본 자가치유</div>
 <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">127 ms 무인 복구 · 서킷브레이커</div>
 <div class="mt-1.5 font-mono text-xs font-extrabold text-sky-600 dark:text-sky-400">월 ₩29,000 <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold">(BYOK 월 ₩19,000)</span></div>
 </div>
-<div class="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-[#E5E3DC] dark:border-indigo-900/50">
+<div class="p-2.5 bg-white dark:bg-slate-900 dark:border-indigo-900/50 border-l-2 border-[#D4D1C7] dark:border-slate-700 pl-3 py-1 bg-transparent">
 <div class="font-bold text-slate-900 dark:text-white">Lv.2 데이터·노드 적응</div>
 <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Lv.1 포함 + 스키마·드리프트 방어</div>
 <div class="mt-1.5 font-mono text-xs font-extrabold text-[#14532D] dark:text-emerald-300">월 ₩45,000 <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold">(BYOK 월 ₩29,000)</span></div>
 </div>
-<div class="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-[#E5E3DC] dark:border-indigo-900/50">
+<div class="p-2.5 bg-white dark:bg-slate-900 dark:border-indigo-900/50 border-l-2 border-[#D4D1C7] dark:border-slate-700 pl-3 py-1 bg-transparent">
 <div class="font-bold text-slate-900 dark:text-white">Lv.3 정산·무결성 방어</div>
 <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Lv.1~2 포함 + 1원 대사·오과금 차단</div>
 <div class="mt-1.5 font-mono text-xs font-extrabold text-[#14532D] dark:text-emerald-400">월 ₩69,000 <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold">(BYOK 월 ₩45,000)</span></div>
 </div>
-<div class="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-emerald-300 dark:border-emerald-700/60 shadow-xs">
+<div class="p-2.5 bg-white dark:bg-slate-900 dark:border-emerald-700/60 shadow-xs border-l-2 border-[#D4D1C7] dark:border-slate-700 pl-3 py-1 bg-transparent">
 <div class="font-bold text-emerald-700 dark:text-emerald-300">Lv.4 마스터 자율방어 (BEST)</div>
 <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Lv.1~3 전 기능 + 사이버 기만 미궁</div>
 <div class="mt-1.5 font-mono text-xs font-extrabold text-emerald-600 dark:text-emerald-400">월 ₩99,000 <span class="text-xs text-emerald-600 dark:text-emerald-400 font-bold">(BYOK 월 ₩65,000)</span></div>
@@ -2462,7 +2478,7 @@ html:not(.dark) [class*="shadow-indigo-"] {
 <span class="text-xs px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono">v2.0 Native Bot</span>
 </div>
 <!-- Chat Messages Area -->
-<div class="space-y-4 mb-6 max-h-80 overflow-y-auto p-4 text-xs af-band-surface" id="inlineChatMessages">
+<div class="space-y-4 mb-6 max-h-80 overflow-y-auto p-4 text-xs" id="inlineChatMessages">
 <div class="flex items-start gap-2.5">
 <div class="w-7 h-7 rounded-lg bg-sky-500 text-white flex items-center justify-center shrink-0 text-xs">
 <i class="fa-solid fa-headset"></i>
@@ -2558,7 +2574,6 @@ html:not(.dark) [class*="shadow-indigo-"] {
 <!-- ============================================================================== -->
 <!-- GLOBAL OFFICIAL BUSINESS & LEGAL FOOTER (Always visible across all tabs) -->
 <!-- ============================================================================== -->
-
 <div aria-labelledby="pdm-title" aria-modal="true" class="fixed inset-0 z-[60] hidden overflow-y-auto bg-black/60 backdrop-blur-xs p-3 sm:p-6 flex items-center justify-center" id="productDetailModal" role="dialog">
 <div class="relative w-full max-w-3xl bg-white rounded-2xl border border-[#E5E3DC] shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
 <div class="px-6 py-4 bg-[#F7F6F2] border-b border-[#E5E3DC] flex items-start justify-between gap-4">
@@ -3065,10 +3080,6 @@ html:not(.dark) [class*="shadow-indigo-"] {
 <p class="text-slate-500 dark:text-slate-600 text-xs">© 2026 디에이치랩스 (DH Labs). All rights reserved. High-Speed Rust Native Engine.</p>
 </div>
 </footer>
-<!-- Floating 1:1 CS Consultation Bot Button (Mobile Non-Obtrusive Layout: bottom-20 md:bottom-6, z-40) -->
-<aside aria-label="1:1 실시간 CS 상담봇">
-<button class="hidden md:inline-flex fixed bottom-24 right-6 z-40 px-4 py-3 rounded-2xl bg-[#14532D] hover:bg-[#0F3F22] text-white font-bold text-xs shadow-sm transition-colors items-center gap-2 group cursor-pointer" id="floatingCsBotBtn" onclick="switchTabAndScroll('tab-support', 'tab-support')"> <span class="relative flex h-2.5 w-2.5"> <span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span> <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span> </span> <i class="fa-solid fa-headset text-base sm:text-sm group-hover:rotate-12 transition-transform"></i> <span class="hidden sm:inline"> 1:1 무인 상담봇 &amp; FAQ</span> <span class="sm:hidden text-xs font-bold">상담</span> </button>
-</aside>
 <!-- Mobile Sticky Bottom CTA Bar (Responsive Conversion Bar) -->
 <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-3 py-2 shadow-2xl" id="mobileStickyCtaBar">
 <div class="grid grid-cols-2 gap-2 max-w-md mx-auto">
@@ -3210,11 +3221,11 @@ html:not(.dark) [class*="shadow-indigo-"] {
       const btnMcp = document.getElementById('engine-mode-btn-mcp');
       if (btnManaged && btnMcp) {
         if (currentEngineMode === 'managed') {
-          btnManaged.className = 'px-4 py-2 rounded-xl text-xs font-extrabold transition bg-sky-600 text-white shadow-xs cursor-pointer';
-          btnMcp.className = 'px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer';
+          btnManaged.className = 'whitespace-nowrap px-4 py-2 rounded-xl text-xs font-extrabold transition bg-[#14532D] text-white shadow-xs cursor-pointer';
+          btnMcp.className = 'whitespace-nowrap whitespace-nowrap whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer';
         } else {
-          btnMcp.className = 'px-4 py-2 rounded-xl text-xs font-extrabold transition bg-indigo-600 text-white shadow-xs cursor-pointer';
-          btnManaged.className = 'px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer';
+          btnMcp.className = 'whitespace-nowrap px-4 py-2 rounded-xl text-xs font-extrabold transition bg-[#14532D] text-white shadow-xs cursor-pointer';
+          btnManaged.className = 'whitespace-nowrap whitespace-nowrap whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer';
         }
       }
 
@@ -3222,9 +3233,9 @@ html:not(.dark) [class*="shadow-indigo-"] {
         const b = document.getElementById('engine-dur-btn-' + d);
         if (!b) return;
         if (d === currentEngineDays) {
-          b.className = 'px-4 py-2 rounded-xl text-xs font-extrabold transition bg-emerald-600 text-white shadow-xs cursor-pointer';
+          b.className = 'whitespace-nowrap px-4 py-2 rounded-xl text-xs font-extrabold transition bg-[#14532D] text-white shadow-xs cursor-pointer';
         } else {
-          b.className = 'px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer';
+          b.className = 'whitespace-nowrap whitespace-nowrap whitespace-nowrap px-4 py-2 rounded-xl text-xs font-bold transition text-slate-700 dark:text-slate-300 hover:text-slate-900 cursor-pointer';
         }
       });
 
@@ -8289,6 +8300,5 @@ html:not(.dark) [class*="shadow-indigo-"] {
 <script data-bot-id="AF_BOT_COMMERCE_STANDARD" data-theme="#14532D" src="widget/autoflow_bot.js"></script>
 <!-- [AutoFlow Official Storefront v4.0] Single-Edition Workflows (₩39,000~₩79,000) + Resident Autonomous Engines (₩29,000~₩69,000) -->
 <!-- [F118] 단일 완제품 상세 사양 모달 (#productDetailModal) -->
-
 </body>
 </html>

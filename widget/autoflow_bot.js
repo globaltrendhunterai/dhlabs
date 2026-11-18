@@ -143,45 +143,47 @@
   styleEl.textContent = `
     .af-bot-launcher {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
-      width: 60px;
-      height: 60px;
-      border-radius: 30px;
+      bottom: 18px;
+      right: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 9999px;
       background: ${themeColor};
-      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 2px 10px rgba(24,24,27,0.16);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 999990;
-      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .af-bot-launcher:hover {
-      transform: scale(1.08);
+      transform: scale(1.05);
+      box-shadow: 0 4px 14px rgba(24,24,27,0.22);
     }
     .af-bot-launcher svg {
-      width: 30px;
-      height: 30px;
+      width: 22px;
+      height: 22px;
       fill: #ffffff;
     }
     .af-bot-container {
       position: fixed;
-      bottom: 96px;
-      right: 24px;
+      bottom: 78px;
+      right: 18px;
       width: 380px;
       max-width: calc(100vw - 32px);
       height: 590px;
-      max-height: calc(100vh - 120px);
+      max-height: calc(100vh - 108px);
       background: #ffffff;
       border-radius: 16px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+      box-shadow: 0 12px 36px rgba(24,24,27,0.16);
       display: none;
       flex-direction: column;
       overflow: hidden;
       z-index: 999991;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      border: 1px solid #E5E7EB;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      border: 1px solid #E5E3DC;
     }
     .af-bot-container.af-open {
       display: flex;
