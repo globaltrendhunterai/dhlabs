@@ -103,14 +103,15 @@
     h1 { margin: 0 0 8px; font-size: 22px; font-weight: 700; letter-spacing: -0.022em; line-height: 1.3; }
     h2 { margin: 0 0 12px; font-size: 16.5px; font-weight: 600; letter-spacing: -0.015em; }
     .desc { margin: 0 0 18px; color: var(--sub); font-size: 13.5px; line-height: 1.6; }
-    .presets { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-bottom: 20px; }
+    .presets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
     .preset-btn {
+      flex: 1 1 auto;
       font-family: inherit;
       border: 1px solid var(--line-strong);
       background: var(--bg);
       color: var(--sub);
       border-radius: 8px;
-      padding: 7px 6px;
+      padding: 7px 8px;
       font-size: 12px;
       font-weight: 600;
       text-align: center;
@@ -187,11 +188,12 @@
     .kpi small { display: block; color: var(--muted); font-size: 12.5px; font-weight: 500; }
     .kpi b {
       display: block;
-      font-size: 23px;
+      font-size: clamp(16px, 1.4vw, 22px);
       margin-top: 6px;
       font-weight: 700;
       letter-spacing: -0.02em;
-      white-space: nowrap;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
       color: var(--ink);
     }
     .tree { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
@@ -237,6 +239,9 @@
     @media (max-width: 960px) { .layout { grid-template-columns: minmax(0, 1fr); } .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tree { grid-template-columns: minmax(0, 1fr); } }
     @media (max-width: 540px) { main { padding: 18px 14px 48px; } .card { padding: 18px 16px; } .kpis { grid-template-columns: minmax(0, 1fr); } .kpi b { font-size: 20px; } }
   </style>
+
+<script src="../assets/af_i18n_dom_en.js"></script>
+<script src="../assets/af_i18n.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -331,7 +336,10 @@
   <script>
     (function () {
       const $ = id => document.getElementById(id);
-      const won = n => Math.round(n).toLocaleString("ko-KR") + "원";
+      const isEn = () => typeof afGetLang === "function" && afGetLang() === "en";
+      const won = n => isEn()
+        ? ((n < 0 ? "-" : "") + "KRW ₩" + Math.abs(Math.round(n)).toLocaleString("en-US"))
+        : (Math.round(n).toLocaleString("ko-KR") + "원");
       const ids = ["price", "cost", "qty", "fee", "ship", "roas", "fixed"];
 
       function calc(overrideRoas) {
@@ -366,21 +374,43 @@
         const c = calc();
         $("vPrice").textContent = won(c.price);
         $("vCost").textContent = won(c.cost);
-        $("vQty").textContent = c.qty.toLocaleString("ko-KR") + "개";
+        $("vQty").textContent = c.qty.toLocaleString(isEn() ? "en-US" : "ko-KR") + (isEn() ? " units" : "개");
         $("vFee").textContent = (c.feeRate * 100).toFixed(1) + "%";
         $("vShip").textContent = won(c.ship);
         $("vRoas").textContent = Math.round(c.roasPct) + "%";
         $("vFixed").textContent = won(c.fixed);
 
+        const en = isEn();
         const netCls = c.net >= 0 ? "pos" : "neg";
-        $("kpis").innerHTML = [
+        $("kpis").innerHTML = (en ? [
+          ["Projected Net Profit", `<span class="${netCls}">${won(c.net)}</span>`],
+          ["After-Tax Net Margin", `<span class="${netCls}">${c.marginPct.toFixed(1)}%</span>`],
+          ["Break-Even Ad ROAS", `${Math.round(c.bepRoasPct)}%`],
+          ["Fixed-Cost BEP Volume", c.bepQty > 0 ? `${c.bepQty.toLocaleString("en-US")} units` : "Unit Deficit"]
+        ] : [
           ["월 예상 세후 순이익", `<span class="${netCls}">${won(c.net)}</span>`],
           ["세후 순마진율", `<span class="${netCls}">${c.marginPct.toFixed(1)}%</span>`],
           ["광고 손익분기 ROAS", `${Math.round(c.bepRoasPct)}%`],
           ["고정비 회수 판매량", c.bepQty > 0 ? `${c.bepQty.toLocaleString("ko-KR")}개` : "개당 적자 구조"]
-        ].map(([k, v]) => `<div class="kpi"><small>${k}</small><b>${v}</b></div>`).join("");
+        ]).map(([k, v]) => `<div class="kpi"><small>${k}</small><b>${v}</b></div>`).join("");
 
-        $("treeGrid").innerHTML = `
+        $("treeGrid").innerHTML = en ? `
+          <div class="node root">
+            <div class="node-title">01 · Projected Net Profit (Revenue − Var Costs − Fixed − VAT Provision)</div>
+            <div class="node-amt ${netCls}">${won(c.net)}</div>
+            <div class="node-sub">On Gross Revenue ${won(c.rev)}</div>
+          </div>
+          <div class="node">
+            <div class="node-title">02 · Landed COGS · Marketplace Fees · 3PL/Shipping</div>
+            <div class="node-amt">${won(c.cogs + c.feeAmt + c.shipAmt)}</div>
+            <div class="node-sub">COGS ${won(c.cogs)} · Fees ${won(c.feeAmt)} · Shipping ${won(c.shipAmt)}</div>
+          </div>
+          <div class="node">
+            <div class="node-title">03 · Ad Spend + Est. VAT + Monthly Overhead</div>
+            <div class="node-amt">${won(c.adAmt + c.vatAmt + c.fixed)}</div>
+            <div class="node-sub">Ads ${won(c.adAmt)} · Est. VAT ${won(c.vatAmt)} · Fixed ${won(c.fixed)}</div>
+          </div>
+        ` : `
           <div class="node root">
             <div class="node-title">01 · 월 예상 세후 순이익 (총매출 − 변동비 − 고정비 − 부가세 충당)</div>
             <div class="node-amt ${netCls}">${won(c.net)}</div>
@@ -399,11 +429,15 @@
         `;
 
         const roasSteps = [250, 320, 400, 500, 650];
-        $("sensTable").innerHTML = "<tr><th class=l>광고 ROAS 시나리오</th><th>월 광고비</th><th>세후 순이익</th><th>순마진율</th><th class=l>판정</th></tr>" +
+        $("sensTable").innerHTML = (en
+          ? "<tr><th class=l>ROAS Scenario</th><th>Monthly Ad Spend</th><th>Net Profit</th><th>Net Margin</th><th class=l>Verdict</th></tr>"
+          : "<tr><th class=l>광고 ROAS 시나리오</th><th>월 광고비</th><th>세후 순이익</th><th>순마진율</th><th class=l>판정</th></tr>") +
           roasSteps.map(r => {
             const s = calc(r);
             const cls = s.net >= 0 ? "pos" : "neg";
-            const msg = s.net < 0 ? "적자 경고 (판매할수록 손실)" : (s.marginPct >= 15 ? "안정권 (확장 가능)" : "박리 구간 (단가·광고 개선 권장)");
+            const msg = en
+              ? (s.net < 0 ? "Deficit Warning (Loss per unit sold)" : (s.marginPct >= 15 ? "Healthy Zone (Scale Ready)" : "Thin Margin (Improve pricing/ROAS)"))
+              : (s.net < 0 ? "적자 경고 (판매할수록 손실)" : (s.marginPct >= 15 ? "안정권 (확장 가능)" : "박리 구간 (단가·광고 개선 권장)"));
             return `<tr><td class=l><b>ROAS ${r}%</b></td><td>${won(s.adAmt)}</td><td class="${cls}">${won(s.net)}</td><td class="${cls}">${s.marginPct.toFixed(1)}%</td><td class=l>${msg}</td></tr>`;
           }).join("");
       }
@@ -437,11 +471,12 @@
         shareBtn.onclick = async () => {
           try { await navigator.clipboard.writeText(shareUrl); } catch (_) {}
           const orig = shareLabel.textContent;
-          shareLabel.textContent = "링크 복사 완료";
+          shareLabel.textContent = isEn() ? "Link Copied" : "링크 복사 완료";
           setTimeout(() => { shareLabel.textContent = orig; }, 2200);
         };
       }
       render();
+      window.addEventListener("af-lang-change", render);
     })();
   </script>
 </body>

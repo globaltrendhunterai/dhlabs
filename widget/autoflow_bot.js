@@ -138,6 +138,56 @@
 
   const preset = DOMAIN_PRESETS[botId] || DOMAIN_PRESETS['AF_BOT_COMMERCE_STANDARD'];
 
+  function isWidgetEn() {
+    if (typeof window.afGetLang === 'function') return window.afGetLang() === 'en';
+    return String(document.documentElement.lang || '').toLowerCase().startsWith('en');
+  }
+
+  const PLAN_EN_OVERRIDES = {
+    'one-time': {
+      label: 'Perpetual Single Edition ($29~$59 · 7-Day Engine Trial Included)',
+      badge: '📦 Perpetual Edition',
+      subtitleSuffix: ' | Local PC Perpetual Mode'
+    },
+    'self-healing': {
+      label: 'Self-Healing Resident Engine (30d $29 / MCP $22)',
+      badge: '🛡️ Self-Healing Active',
+      subtitleSuffix: ' | 127 ms Self-Healing & Head-Office Hotfix'
+    },
+    'all-in-one': {
+      label: 'Dual Integrated Engine (30d $49 / MCP $37)',
+      badge: '⚡ Dual Engine Active',
+      subtitleSuffix: ' | 24/7 Self-Healing + 1-Won Recon'
+    }
+  };
+
+  const EN_PRESET = {
+    title: 'AutoFlow Official Store & CS Assistant',
+    subtitle: 'Single Workflows $29~$59 Perpetual · Resident Engine Passes | Live',
+    welcome: 'Welcome! I am the AutoFlow Store & Architecture Assistant. Select a quick topic or ask about single-workflow pricing, Resident Engine passes, instant ZIP setup, or Gumroad USD checkout.',
+    chips: [
+      { code: 'BR-INST-CP', label: '🚀 1-Click Launch & Verify' },
+      { code: 'BR-DIFF-PLAN', label: '⚖️ Workflow vs Engine Pricing' },
+      { code: 'BR-ERR-401', label: '🛠️ 127ms Self-Healing Flow' },
+      { code: 'BR-LAW-REFUND', label: '🔑 Checkout & Instant ZIP' },
+      { code: 'BR-18', label: '👨‍💼 Contact Support' }
+    ],
+    responses: {
+      'BR-INST-CP': '[1-Click Launch & Engine Verification]\n1. Double-click AutoFlow_Start_Mac.command (macOS) or AutoFlow_Start_Windows.bat (Windows) inside the downloaded ZIP.\n2. Four lightweight local daemons (Workflow 5678, Resident Engine 8080, 60s Beacon, Watchdog) start within 1 second.\n3. Open setup_wizard.html locally to check your D-Day badge and live status lights. Even if an engine pass expires later, your perpetual standalone workflows keep running indefinitely.',
+      'BR-ERR-401': '[How 127 ms Self-Healing & Safe Quarantine Work]\n• Transient errors (429/502/token expiry, retries 1–4): Repaired locally in 127 ms using deterministic 1:1 error-code matching.\n• Persistent / schema errors (retry 5): Failed items are safely isolated in local DLQ storage (dlq_quarantine.jsonl) with zero data loss, all PII is masked locally on 127.0.0.1, and only anonymized error codes request a hotfix patch.',
+      'BR-DIFF-PLAN': '[Single Workflows vs Resident Engine Passes]\n1. Standalone Workflows (One-Time Perpetual · 7-Day Engine Trial Included):\n   • Five flat transparent tiers: $29 / $39 / $45 / $52 / $59 (KRW ₩39,000 ~ ₩79,000).\n2. Resident Autonomous Engine Passes (30d / 90d / 365d):\n   • Self-Healing Only: $29 / $75 / $249 (MCP $22 / $55 / $189)\n   • Recon Only: $39 / $99 / $319 (MCP $29 / $75 / $249)\n   • Dual Integrated (BEST): $49 / $129 / $449 (MCP $37 / $95 / $329)',
+      'BR-LAW-REFUND': '[Checkout & Instant ZIP License Delivery]\nGlobal orders in USD check out securely via Gumroad Merchant of Record with immediate downloadable ZIP archives (includes workflow blueprint, macOS/Windows launchers, and 1-PC activation checklist). For support, email dhlabs_biz@naver.com.',
+      'BR-18': '[Support Contact]\nFor enterprise quotations, multi-PC licensing, or custom connector questions, email dhlabs_biz@naver.com or open B2B Quote from the top header.'
+    }
+  };
+
+  function getActiveCopy() {
+    const en = isWidgetEn();
+    const p = en ? EN_PRESET : preset;
+    const planMeta = en ? Object.assign({}, activePlan, PLAN_EN_OVERRIDES[planMode] || PLAN_EN_OVERRIDES['all-in-one']) : activePlan;
+    return { en, p, planMeta };
+  }
+
   // Inject Stylesheet
   const styleEl = document.createElement('style');
   styleEl.textContent = `
@@ -502,6 +552,12 @@
 
   // Build DOM Structure
   function initWidget() {
+    const existingLauncher = document.querySelector('.af-bot-launcher');
+    const existingContainer = document.querySelector('.af-bot-container');
+    if (existingLauncher) existingLauncher.remove();
+    if (existingContainer) existingContainer.remove();
+
+    const copy = getActiveCopy();
     const launcher = document.createElement('div');
     launcher.className = 'af-bot-launcher';
     launcher.setAttribute('aria-label', 'Open Chatbot');
@@ -513,15 +569,16 @@
 
     const container = document.createElement('div');
     container.className = 'af-bot-container';
+    container.setAttribute('data-af-no-i18n', '1');
     container.innerHTML = `
       <div class="af-bot-header">
         <div class="af-bot-header-info">
-          <h4><span class="af-bot-status-dot"></span> ${preset.title} <span class="af-bot-plan-badge" id="afBotPlanBadge" style="background:${activePlan.badgeColor}">${activePlan.badge}</span></h4>
-          <p id="afBotSubtitle">${preset.subtitle.split('|')[0].trim()} ${activePlan.subtitleSuffix}</p>
+          <h4><span class="af-bot-status-dot"></span> ${copy.p.title} <span class="af-bot-plan-badge" id="afBotPlanBadge" style="background:${copy.planMeta.badgeColor}">${copy.planMeta.badge}</span></h4>
+          <p id="afBotSubtitle">${copy.p.subtitle.split('|')[0].trim()} ${copy.planMeta.subtitleSuffix}</p>
         </div>
         <button class="af-bot-close-btn" aria-label="Close Chatbot">&times;</button>
       </div>
-      <div class="af-bot-checkout-bar" id="afBotCheckoutBar">
+      <div class="af-bot-checkout-bar" id="afBotCheckoutBar"${copy.en ? ' style="display:none"' : ''}>
         <button class="af-bot-pay-btn" id="afPayBtnSelfHealing" title="월 19,000원에 무인 에러 복구 자가치유 에어백 구독">
           💳 자가치유 구독 (월 19,000원)
         </button>
@@ -530,12 +587,12 @@
         </button>
       </div>
       <div class="af-bot-messages" id="afBotMessages">
-        <div class="af-msg af-msg-bot">${preset.welcome}</div>
+        <div class="af-msg af-msg-bot">${copy.p.welcome}</div>
       </div>
       <div class="af-bot-chips-wrap" id="afBotChips"></div>
       <div class="af-bot-input-bar">
-        <input type="text" class="af-bot-input" id="afBotInput" placeholder="문의 사항을 입력해주세요..." />
-        <button class="af-bot-send" id="afBotSend">전송</button>
+        <input type="text" class="af-bot-input" id="afBotInput" placeholder="${copy.en ? 'Ask about pricing, ZIP setup, or engines...' : '문의 사항을 입력해주세요...'}" />
+        <button class="af-bot-send" id="afBotSend">${copy.en ? 'Send' : '전송'}</button>
       </div>
     `;
 
@@ -565,25 +622,27 @@
       };
     }
 
-    // Render Action Chips (Including Checkout Shortcut Chips)
-    const payChip1 = document.createElement('button');
-    payChip1.className = 'af-bot-chip af-bot-chip-pay';
-    payChip1.textContent = '💳 자가치유 구독 결제 (월 19,000원)';
-    payChip1.onclick = function () {
-      openTossPaymentsModal('self-healing', 19000, '자가치유 순수구독 (월 19,000원)');
-    };
-    chipsEl.appendChild(payChip1);
+    // Render Action Chips (Including Checkout Shortcut Chips in KO mode)
+    if (!copy.en) {
+      const payChip1 = document.createElement('button');
+      payChip1.className = 'af-bot-chip af-bot-chip-pay';
+      payChip1.textContent = '💳 자가치유 구독 결제 (월 19,000원)';
+      payChip1.onclick = function () {
+        openTossPaymentsModal('self-healing', 19000, '자가치유 순수구독 (월 19,000원)');
+      };
+      chipsEl.appendChild(payChip1);
 
-    const payChip2 = document.createElement('button');
-    payChip2.className = 'af-bot-chip af-bot-chip-pay';
-    payChip2.textContent = '⚡ 올인원 풀케어 결제 (월 29,000원)';
-    payChip2.onclick = function () {
-      openTossPaymentsModal('all-in-one', 29000, '올인원 풀케어 구독 (월 29,000원)');
-    };
-    chipsEl.appendChild(payChip2);
+      const payChip2 = document.createElement('button');
+      payChip2.className = 'af-bot-chip af-bot-chip-pay';
+      payChip2.textContent = '⚡ 올인원 풀케어 결제 (월 29,000원)';
+      payChip2.onclick = function () {
+        openTossPaymentsModal('all-in-one', 29000, '올인원 풀케어 구독 (월 29,000원)');
+      };
+      chipsEl.appendChild(payChip2);
+    }
 
-    // Render 5 Core Domain Branch Chips
-    preset.chips.forEach(function (c) {
+    // Render Core Domain Branch Chips
+    copy.p.chips.forEach(function (c) {
       const chip = document.createElement('button');
       chip.className = 'af-bot-chip';
       chip.textContent = c.label;
@@ -633,34 +692,49 @@
       } else {
         // Instant simulated response via embedded SSoT copybook
         setTimeout(function () {
+          const cNow = getActiveCopy();
           let resolvedCode = branchCode;
           if (!resolvedCode) {
-            if (/결제|토스|구매|구독|라이선스|카드/.test(displayText)) {
-              appendMessage('bot', '[토스페이먼츠 간편 결제 안내]\n상단의 [💳 자가치유 구독 결제] 또는 [⚡ 올인원 풀케어 결제] 버튼을 누르시면 토스 공식 원클릭 결제창이 팝업됩니다.\n결제 즉시 라이선스가 승격되어 무인 자가치유가 가동됩니다.');
-              return;
-            }
-            if (/가격|비용|플랜|얼마|단품|구독/.test(displayText)) {
-              let planReply = '';
-              if (planMode === 'one-time') {
-                planReply = '[AutoFlow 온프레미스 1회 결제 플랜 안내]\n• 스탠다드 팩: 69,000원 (영구 소장)\n• 프로 팩: 149,000원 (10대 분기 영구 소장)\n• 100% 무설치 JSON 다운로드로 추가 외주비용이 없습니다.';
-              } else if (planMode === 'self-healing') {
-                planReply = '[AutoFlow 자가치유 엔진 순수 구독 플랜 안내]\n• 월간 구독: 월 19,000원\n• 연간 구독: 월 15,000원 (21% 할인)\n• 기존 챗봇에 24시간 실시간 무인 에러 복구 API 키를 즉시 연동합니다.';
+            if (cNow.en) {
+              if (/pay|checkout|gumroad|usd|card|license|zip/.test(displayText.toLowerCase())) {
+                resolvedCode = 'BR-LAW-REFUND';
+              } else if (/price|cost|plan|how much|tier|engine|pass/.test(displayText.toLowerCase())) {
+                resolvedCode = 'BR-DIFF-PLAN';
+              } else if (/heal|error|quarantine|127ms|recon/.test(displayText.toLowerCase())) {
+                resolvedCode = 'BR-ERR-401';
+              } else if (/install|launch|run|start|mac|windows/.test(displayText.toLowerCase())) {
+                resolvedCode = 'BR-INST-CP';
               } else {
-                planReply = '[AutoFlow 챗봇 + 자가치유 올인원 풀케어 구독 안내]\n• 올인원 스탠다드: 월 29,000원\n• 올인원 프로: 월 49,000원\n• HTML 1줄 스크립트 무설치 호스팅 + 24시간 자가치유 에어백 전담 풀케어가 제공됩니다.';
+                resolvedCode = 'BR-18';
               }
-              appendMessage('bot', planReply);
-              return;
+            } else {
+              if (/결제|토스|구매|구독|라이선스|카드/.test(displayText)) {
+                appendMessage('bot', '[토스페이먼츠 간편 결제 안내]\n상단의 [💳 자가치유 구독 결제] 또는 [⚡ 올인원 풀케어 결제] 버튼을 누르시면 토스 공식 원클릭 결제창이 팝업됩니다.\n결제 즉시 라이선스가 승격되어 무인 자가치유가 가동됩니다.');
+                return;
+              }
+              if (/가격|비용|플랜|얼마|단품|구독/.test(displayText)) {
+                let planReply = '';
+                if (planMode === 'one-time') {
+                  planReply = '[AutoFlow 온프레미스 1회 결제 플랜 안내]\n• 스탠다드 팩: 69,000원 (영구 소장)\n• 프로 팩: 149,000원 (10대 분기 영구 소장)\n• 100% 무설치 JSON 다운로드로 추가 외주비용이 없습니다.';
+                } else if (planMode === 'self-healing') {
+                  planReply = '[AutoFlow 자가치유 엔진 순수 구독 플랜 안내]\n• 월간 구독: 월 19,000원\n• 연간 구독: 월 15,000원 (21% 할인)\n• 기존 챗봇에 24시간 실시간 무인 에러 복구 API 키를 즉시 연동합니다.';
+                } else {
+                  planReply = '[AutoFlow 챗봇 + 자가치유 올인원 풀케어 구독 안내]\n• 올인원 스탠다드: 월 29,000원\n• 올인원 프로: 월 49,000원\n• HTML 1줄 스크립트 무설치 호스팅 + 24시간 자가치유 에어백 전담 풀케어가 제공됩니다.';
+                }
+                appendMessage('bot', planReply);
+                return;
+              }
+              if (/배송|송장|택배/.test(displayText)) resolvedCode = 'BR-03';
+              else if (/가상계좌|입금/.test(displayText)) resolvedCode = 'BR-01';
+              else if (/취소|환불|중복/.test(displayText)) resolvedCode = 'BR-10';
+              else if (/세금계산서|영수증/.test(displayText)) resolvedCode = 'BR-12';
+              else if (/견적/.test(displayText)) resolvedCode = 'BR-02';
+              else if (/VPN|비밀번호/.test(displayText)) resolvedCode = 'BR-02';
+              else if (/티켓|장애/.test(displayText)) resolvedCode = 'BR-01';
+              else resolvedCode = 'BR-18';
             }
-            if (/배송|송장|택배/.test(displayText)) resolvedCode = 'BR-03';
-            else if (/가상계좌|입금/.test(displayText)) resolvedCode = 'BR-01';
-            else if (/취소|환불|중복/.test(displayText)) resolvedCode = 'BR-10';
-            else if (/세금계산서|영수증/.test(displayText)) resolvedCode = 'BR-12';
-            else if (/견적/.test(displayText)) resolvedCode = 'BR-02';
-            else if (/VPN|비밀번호/.test(displayText)) resolvedCode = 'BR-02';
-            else if (/티켓|장애/.test(displayText)) resolvedCode = 'BR-01';
-            else resolvedCode = 'BR-18';
           }
-          const reply = preset.responses[resolvedCode] || preset.responses['BR-18'] || '상담 요청이 접수되었습니다.';
+          const reply = cNow.p.responses[resolvedCode] || cNow.p.responses['BR-18'] || (cNow.en ? 'Request received.' : '상담 요청이 접수되었습니다.');
           appendMessage('bot', reply);
         }, 300);
       }
@@ -865,4 +939,5 @@
   } else {
     initWidget();
   }
+  window.addEventListener('af-lang-change', initWidget);
 })();

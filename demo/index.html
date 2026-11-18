@@ -277,6 +277,9 @@
       h1 { font-size: 26px; }
     }
   </style>
+
+<script src="../assets/af_i18n_dom_en.js"></script>
+<script src="../assets/af_i18n.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -413,7 +416,7 @@
           document.body.removeChild(ta);
         }
         const orig = label.textContent;
-        label.textContent = "링크 복사 완료";
+        label.textContent = (typeof afGetLang==="function"&&afGetLang()==="en") ? "Link Copied" : "링크 복사 완료";
         setTimeout(() => { label.textContent = orig; }, 2200);
       };
     })();

@@ -155,6 +155,9 @@
     code { background: var(--rail); padding: 2px 7px; border-radius: 5px; font-size: 12px; color: var(--ink); border: 1px solid var(--line); }
     td code { background: transparent; border: none; padding: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--sub); }
   </style>
+
+<script src="../assets/af_i18n_dom_en.js"></script>
+<script src="../assets/af_i18n.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -229,6 +232,14 @@
       ].join("\n");
 
       const BAN_WORDS = ["직캠", "fancam", "콘서트", "커버", "cover", "live", "쇼츠", "shorts", "1시간", "가사", "slowed", "reverb"];
+      const SAMPLE_EN = [
+        "NewJeans - Hype Boy",
+        "IU - Through the Night",
+        "DAY6 - Time of Our Life",
+        "Taeyeon - Four Seasons (exclude fancam version)",
+        "fromis_9 - Supersonic"
+      ].join("\n");
+      const isEn = () => typeof afGetLang === "function" && afGetLang() === "en";
       const inputEl = document.getElementById("songInput");
       const limitEl = document.getElementById("limitNote");
       const resCard = document.getElementById("resultCard");
@@ -236,15 +247,17 @@
       const summaryEl = document.getElementById("summaryText");
 
       function runPreview() {
+        const en = isEn();
+        const curSample = en ? SAMPLE_EN : SAMPLE;
         const rawLines = inputEl.value.split(/\r?\n/).map(s => s.trim()).filter(Boolean);
         if (!rawLines.length) {
-          inputEl.value = SAMPLE;
+          inputEl.value = curSample;
           return runPreview();
         }
         const capped = rawLines.slice(0, 5);
-        limitEl.textContent = rawLines.length > 5
-          ? `총 ${rawLines.length}곡 입력됨 — 웹 체험판에서는 상위 5곡만 미리보기로 분석합니다.`
-          : `${capped.length}곡 분석 완료`;
+        limitEl.textContent = en
+          ? (rawLines.length > 5 ? `${rawLines.length} tracks entered — web preview inspects top 5 tracks.` : `${capped.length} tracks analyzed`)
+          : (rawLines.length > 5 ? `총 ${rawLines.length}곡 입력됨 — 웹 체험판에서는 상위 5곡만 미리보기로 분석합니다.` : `${capped.length}곡 분석 완료`);
 
         resBody.innerHTML = capped.map((line, idx) => {
           const clean = line.replace(/\([^)]*\)/g, "").trim();
@@ -252,25 +265,27 @@
           const parts = clean.split(/\s*-\s*/);
           const artist = parts[0] || clean;
           const title = parts.slice(1).join(" - ") || clean;
-          const excludeMsg = hasNoise.length
-            ? `입력 내 노이즈('${hasNoise.join(", ")}') 제거됨`
-            : "직캠·커버·라이브·쇼츠·1시간 반복 자동 배제";
-          const atvQuery = `Songs 전용 필터 · "${artist} ${title}" · MUSIC_VIDEO_TYPE_ATV`;
+          const excludeMsg = en
+            ? (hasNoise.length ? `Stripped noisy keywords (${hasNoise.join(", ")})` : "Auto-exclude fancams, covers, live clips, Shorts & 1-hr loops")
+            : (hasNoise.length ? `입력 내 노이즈('${hasNoise.join(", ")}') 제거됨` : "직캠·커버·라이브·쇼츠·1시간 반복 자동 배제");
+          const atvQuery = (en ? "Songs Filter" : "Songs 전용 필터") + ` · "${artist} ${title}" · MUSIC_VIDEO_TYPE_ATV`;
           return `<tr>
             <td>${idx + 1}</td>
             <td><b>${clean}</b></td>
             <td>${excludeMsg}</td>
             <td><code>${atvQuery}</code></td>
-            <td><span class="pill-ok">공식 음원 매칭 가능</span></td>
+            <td><span class="pill-ok">${en ? "Official Audio Matchable" : "공식 음원 매칭 가능"}</span></td>
           </tr>`;
         }).join("");
 
-        summaryEl.textContent = `상위 ${capped.length}곡에 대해 유튜브 일반 동영상(UGC/라이브/직캠) 제외 및 공식 스튜디오 음원(MUSIC_VIDEO_TYPE_ATV) 탐색 필터 검증을 마쳤습니다.`;
+        summaryEl.textContent = en
+          ? `Verified official studio audio filtering (MUSIC_VIDEO_TYPE_ATV) across top ${capped.length} tracks while stripping UGC/live/fancam uploads.`
+          : `상위 ${capped.length}곡에 대해 유튜브 일반 동영상(UGC/라이브/직캠) 제외 및 공식 스튜디오 음원(MUSIC_VIDEO_TYPE_ATV) 탐색 필터 검증을 마쳤습니다.`;
         resCard.classList.remove("hidden");
       }
 
       document.getElementById("btnSample").onclick = () => {
-        inputEl.value = SAMPLE;
+        inputEl.value = isEn() ? SAMPLE_EN : SAMPLE;
         runPreview();
       };
       document.getElementById("btnMatch").onclick = runPreview;
@@ -281,12 +296,18 @@
         shareBtn.onclick = async () => {
           try { await navigator.clipboard.writeText(shareUrl); } catch (_) {}
           const orig = shareLabel.textContent;
-          shareLabel.textContent = "링크 복사 완료";
+          shareLabel.textContent = isEn() ? "Link Copied" : "링크 복사 완료";
           setTimeout(() => { shareLabel.textContent = orig; }, 2200);
         };
       }
-      inputEl.value = SAMPLE;
+      inputEl.value = isEn() ? SAMPLE_EN : SAMPLE;
       runPreview();
+      window.addEventListener("af-lang-change", () => {
+        const v = inputEl.value.trim();
+        if (isEn() && v === SAMPLE) inputEl.value = SAMPLE_EN;
+        else if (!isEn() && v === SAMPLE_EN) inputEl.value = SAMPLE;
+        runPreview();
+      });
     })();
   </script>
 </body>

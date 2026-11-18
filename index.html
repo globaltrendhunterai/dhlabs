@@ -917,7 +917,11 @@ html.dark .bg-amber-600 {
     bottom: 74px !important;
     right: 14px !important;
   }
-}</style></head>
+}</style>
+<script>window.__AF_MANUAL_I18N_INIT__ = true;</script>
+<script src="assets/af_i18n_dom_en.js"></script>
+<script src="assets/af_i18n.js"></script>
+</head>
 <body class="bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-100 min-h-screen antialiased selection:bg-stone-800 selection:text-white">
 <!-- dhlabsFreeDemoBanner -->
 <div id="dhlabsFreeDemoBanner" style="width:100%;max-width:100%;box-sizing:border-box;background:#F0EFEA;color:#18181B;border-bottom:1px solid #E5E3DC;padding:8px 16px;font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:12px;line-height:1.45;position:relative;z-index:45;">
@@ -2745,7 +2749,7 @@ html.dark .bg-amber-600 {
 <!-- ============================================================================== -->
 <!-- GLOBAL OFFICIAL BUSINESS & LEGAL FOOTER (Always visible across all tabs) -->
 <!-- ============================================================================== -->
-<div aria-labelledby="pdm-title" aria-modal="true" class="fixed inset-0 z-[60] hidden overflow-y-auto bg-black/60 backdrop-blur-xs p-3 sm:p-6 flex items-center justify-center" id="productDetailModal" role="dialog">
+<div aria-labelledby="pdm-title" aria-modal="true" class="fixed inset-0 z-[60] hidden overflow-y-auto bg-black/60 backdrop-blur-xs p-3 sm:p-6 flex items-start justify-center pt-6 pb-8" id="productDetailModal" role="dialog">
 <div class="relative w-full max-w-3xl bg-white rounded-2xl border border-[#E5E3DC] shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
 <div class="px-6 py-4 bg-[#F7F6F2] border-b border-[#E5E3DC] flex items-start justify-between gap-4">
 <div class="min-w-0">
@@ -2810,7 +2814,7 @@ html.dark .bg-amber-600 {
       </a>
 </div>
 </div>
-</div><div aria-label="공식 전자 품질보증서 및 SLA 인증서" aria-modal="true" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-950/70 backdrop-blur-sm p-4 flex items-center justify-center" id="warrantyModal" role="dialog">
+</div><div aria-label="공식 전자 품질보증서 및 SLA 인증서" aria-modal="true" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-950/70 backdrop-blur-sm p-4 flex items-start justify-center pt-6 pb-8" id="warrantyModal" role="dialog">
 <div class="relative w-full max-w-4xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-[#E5E3DC] dark:border-slate-800 overflow-hidden flex flex-col max-h-[92vh]">
 <div class="px-6 py-4 border-b border-[#E5E3DC] dark:border-slate-800 flex items-center justify-between bg-[#F7F6F2] dark:bg-slate-950">
 <div>
@@ -2901,7 +2905,7 @@ html.dark .bg-amber-600 {
 <!-- ========================================== -->
 <!--  B2B 견적서 모달 (#quotationModal) -->
 <!-- ========================================== -->
-<div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden overflow-y-auto flex items-center justify-center p-3 sm:p-6 print:p-0 print:bg-white print:static" id="quotationModal">
+<div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden overflow-y-auto flex items-start justify-center pt-6 pb-8 p-3 sm:p-6 print:p-0 print:bg-white print:static" id="quotationModal">
 <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full p-6 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-2xl relative print:shadow-none print:border-none print:p-0 print:max-w-none print:w-full print:bg-white text-slate-800 dark:text-slate-100">
 <!-- 상단 인쇄 / 닫기 컨트롤 (인쇄 시 숨김) -->
 <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-200 dark:border-slate-800 no-print">
@@ -3323,14 +3327,21 @@ html.dark .bg-amber-600 {
 
       // 4.5 Update Breadcrumb Bar
       const bcTab = document.getElementById('breadcrumbCurrentTab');
-      const tabLabelMap = {
+      const isEn = typeof afGetLang === 'function' && afGetLang() === 'en';
+      const tabLabelMap = isEn ? {
+        'tab-overview': 'Store Home (Resident Engine & Catalog)',
+        'tab-catalog': 'Single Workflow Store ($29 ~ $59)',
+        'tab-engine': 'Resident Engine Architecture (Self-Healing & Recon)',
+        'tab-pricing': 'Resident Engine Passes & Workflow Pricing',
+        'tab-support': '1:1 CS Chatbot & FAQ'
+      } : {
         'tab-overview': '스토어 홈 (상주형 엔진 & 단품 카탈로그)',
         'tab-catalog': '워크플로우 단품 스토어 (₩39,000 ~ ₩79,000)',
         'tab-engine': '상주형 무인 엔진 원리 (자가치유 & 정합성)',
         'tab-pricing': '상주형 무인 엔진 기간권 & 단품 가격표',
         'tab-support': '1:1 무인 상담봇 & FAQ'
       };
-      if (bcTab) bcTab.textContent = tabLabelMap[tabId] || '스토어 홈';
+      if (bcTab) bcTab.textContent = tabLabelMap[tabId] || (isEn ? 'Store Home' : '스토어 홈');
 
       // 5. If catalog is activated, ensure items are rendered
       if (tabId === 'tab-catalog') {
@@ -3411,8 +3422,12 @@ html.dark .bg-amber-600 {
       });
 
       const row = ENGINE_PRICING_MATRIX[currentEngineMode][currentEngineDays];
-      const modeLabel = currentEngineMode === 'mcp' ? '개발자 MCP 연동 특가' : '기본형 (본사 AI 포함)';
-      const durLabel = currentEngineDays + '일 기간권';
+      const isEn = typeof afGetLang === 'function' && afGetLang() === 'en';
+      const modeLabel = isEn
+        ? (currentEngineMode === 'mcp' ? 'Developer MCP Special' : 'Standard (Managed AI Included)')
+        : (currentEngineMode === 'mcp' ? '개발자 MCP 연동 특가' : '기본형 (본사 AI 포함)');
+      const durLabel = isEn ? (currentEngineDays + '-Day Pass') : (currentEngineDays + '일 기간권');
+      const langQ = isEn ? '&lang=en' : '&lang=ko';
 
       // Heal card
       const healBadge = document.getElementById('card-heal-mode-badge');
@@ -3423,12 +3438,16 @@ html.dark .bg-amber-600 {
       const healBtn = document.getElementById('btn-heal-checkout');
       if (healBadge) healBadge.textContent = modeLabel;
       if (healDur) healDur.textContent = durLabel;
-      if (healPrice) healPrice.textContent = '₩' + row.heal.krw.toLocaleString();
-      if (healUsd) healUsd.textContent = '($' + row.heal.usd + ' / ' + currentEngineDays + '일)';
-      if (healSub) healSub.textContent = currentEngineMode === 'mcp' ? '고객 외부 AI(MCP) 연동 + 익명 해결로그 본사 공유 할인가' : '본사 파인튜닝 AI 포함 | 설정 0초 즉시 가동';
+      if (healPrice) healPrice.textContent = isEn ? ('$' + row.heal.usd) : ('₩' + row.heal.krw.toLocaleString());
+      if (healUsd) healUsd.textContent = isEn ? ('(KRW ₩' + row.heal.krw.toLocaleString() + ' / ' + currentEngineDays + 'd)') : ('($' + row.heal.usd + ' / ' + currentEngineDays + '일)');
+      if (healSub) healSub.textContent = isEn
+        ? (currentEngineMode === 'mcp' ? 'External BYOK AI (MCP) + Anonymized Log Sync Discount' : 'Head-Office Fine-Tuned AI Included | Zero-Config Start')
+        : (currentEngineMode === 'mcp' ? '고객 외부 AI(MCP) 연동 + 익명 해결로그 본사 공유 할인가' : '본사 파인튜닝 AI 포함 | 설정 0초 즉시 가동');
       if (healBtn) {
-        healBtn.textContent = '자가치유 엔진 ' + currentEngineDays + '일권 시작 (₩' + row.heal.krw.toLocaleString() + ') ➔';
-        healBtn.href = 'checkout.html?engine=ENGINE_HEAL&mode=' + currentEngineMode + '&days=' + currentEngineDays;
+        healBtn.textContent = isEn
+          ? ('Start Self-Healing Engine (' + currentEngineDays + 'd, $' + row.heal.usd + ') ➔')
+          : ('자가치유 엔진 ' + currentEngineDays + '일권 시작 (₩' + row.heal.krw.toLocaleString() + ') ➔');
+        healBtn.href = 'checkout.html?engine=ENGINE_HEAL&mode=' + currentEngineMode + '&days=' + currentEngineDays + langQ;
       }
 
       // Recon card
@@ -3440,12 +3459,16 @@ html.dark .bg-amber-600 {
       const reconBtn = document.getElementById('btn-recon-checkout');
       if (reconBadge) reconBadge.textContent = modeLabel;
       if (reconDur) reconDur.textContent = durLabel;
-      if (reconPrice) reconPrice.textContent = '₩' + row.recon.krw.toLocaleString();
-      if (reconUsd) reconUsd.textContent = '($' + row.recon.usd + ' / ' + currentEngineDays + '일)';
-      if (reconSub) reconSub.textContent = currentEngineMode === 'mcp' ? '고객 외부 AI(MCP) 연동 + 익명 해결로그 본사 공유 할인가' : '본사 파인튜닝 AI 포함 | 노드 간 1원 오차 실시간 감시';
+      if (reconPrice) reconPrice.textContent = isEn ? ('$' + row.recon.usd) : ('₩' + row.recon.krw.toLocaleString());
+      if (reconUsd) reconUsd.textContent = isEn ? ('(KRW ₩' + row.recon.krw.toLocaleString() + ' / ' + currentEngineDays + 'd)') : ('($' + row.recon.usd + ' / ' + currentEngineDays + '일)');
+      if (reconSub) reconSub.textContent = isEn
+        ? (currentEngineMode === 'mcp' ? 'External BYOK AI (MCP) + Anonymized Log Sync Discount' : 'Managed AI Included | 1-Won Inter-Node Discrepancy Monitor')
+        : (currentEngineMode === 'mcp' ? '고객 외부 AI(MCP) 연동 + 익명 해결로그 본사 공유 할인가' : '본사 파인튜닝 AI 포함 | 노드 간 1원 오차 실시간 감시');
       if (reconBtn) {
-        reconBtn.textContent = '정합성 엔진 ' + currentEngineDays + '일권 시작 (₩' + row.recon.krw.toLocaleString() + ') ➔';
-        reconBtn.href = 'checkout.html?engine=ENGINE_RECON&mode=' + currentEngineMode + '&days=' + currentEngineDays;
+        reconBtn.textContent = isEn
+          ? ('Start Reconciliation Engine (' + currentEngineDays + 'd, $' + row.recon.usd + ') ➔')
+          : ('정합성 엔진 ' + currentEngineDays + '일권 시작 (₩' + row.recon.krw.toLocaleString() + ') ➔');
+        reconBtn.href = 'checkout.html?engine=ENGINE_RECON&mode=' + currentEngineMode + '&days=' + currentEngineDays + langQ;
       }
 
       // Dual card
@@ -3456,14 +3479,19 @@ html.dark .bg-amber-600 {
       const dualSub = document.getElementById('card-dual-sub');
       const dualBtn = document.getElementById('btn-dual-checkout');
       const savedKrw = (row.heal.krw + row.recon.krw) - row.dual.krw;
+      const savedUsd = (row.heal.usd + row.recon.usd) - row.dual.usd;
       if (dualBadge) dualBadge.textContent = modeLabel;
       if (dualDur) dualDur.textContent = durLabel;
-      if (dualPrice) dualPrice.textContent = '₩' + row.dual.krw.toLocaleString();
-      if (dualUsd) dualUsd.textContent = '($' + row.dual.usd + ' / ' + currentEngineDays + '일)';
-      if (dualSub) dualSub.textContent = '개별 합산 대비 ₩' + savedKrw.toLocaleString() + ' 즉시 절감 | 자가치유+정합성 통합';
+      if (dualPrice) dualPrice.textContent = isEn ? ('$' + row.dual.usd) : ('₩' + row.dual.krw.toLocaleString());
+      if (dualUsd) dualUsd.textContent = isEn ? ('(KRW ₩' + row.dual.krw.toLocaleString() + ' / ' + currentEngineDays + 'd)') : ('($' + row.dual.usd + ' / ' + currentEngineDays + '일)');
+      if (dualSub) dualSub.textContent = isEn
+        ? ('Save $' + savedUsd + ' vs separate passes | Self-Healing + Recon')
+        : ('개별 합산 대비 ₩' + savedKrw.toLocaleString() + ' 즉시 절감 | 자가치유+정합성 통합');
       if (dualBtn) {
-        dualBtn.textContent = '듀얼 통합 엔진 ' + currentEngineDays + '일권 시작 (₩' + row.dual.krw.toLocaleString() + ') ➔';
-        dualBtn.href = 'checkout.html?engine=ENGINE_DUAL&mode=' + currentEngineMode + '&days=' + currentEngineDays;
+        dualBtn.textContent = isEn
+          ? ('Start Dual Engine (' + currentEngineDays + 'd, $' + row.dual.usd + ') ➔')
+          : ('듀얼 통합 엔진 ' + currentEngineDays + '일권 시작 (₩' + row.dual.krw.toLocaleString() + ') ➔');
+        dualBtn.href = 'checkout.html?engine=ENGINE_DUAL&mode=' + currentEngineMode + '&days=' + currentEngineDays + langQ;
       }
     }
 
@@ -3637,7 +3665,7 @@ html.dark .bg-amber-600 {
         const progressBar = document.getElementById('sim-progress-bar');
 
         if (nodeB2Amount) {
-          nodeB2Amount.innerText = '₩99,999 (-1원 오차)';
+          nodeB2Amount.innerText = (typeof afGetLang==='function'&&afGetLang()==='en') ? 'KRW ₩99,999 (-1₩ gap)' : '₩99,999 (-1원 오차)';
           nodeB2Amount.className = 'text-xs font-mono text-rose-400 font-bold mt-1';
         }
         if (nodeB2) {
@@ -3664,7 +3692,7 @@ html.dark .bg-amber-600 {
           appendSimLog('🔒 [SHA-256 SEAL] Tamper-proof hash ledger locked: 0x9f82...a41b. Audit trail verified.', 'info');
 
           if (nodeB2Amount) {
-            nodeB2Amount.innerText = '₩100,000 (보정 완료)';
+            nodeB2Amount.innerText = (typeof afGetLang==='function'&&afGetLang()==='en') ? 'KRW ₩100,000 (Reconciled)' : '₩100,000 (보정 완료)';
             nodeB2Amount.className = 'text-xs font-mono text-emerald-400 font-bold mt-1';
           }
           if (nodeB2) {
@@ -3789,10 +3817,10 @@ html.dark .bg-amber-600 {
       en: {
         header_sub: "Single-Task Workflow Store & Resident Autonomous Engine",
         tab_overview: "Store Home",
-        tab_catalog: "160 Workflow Store",
-        tab_engine: "Tech & Engine Arch",
-        tab_pricing: "Engine Passes & Pricing",
-        tab_support: "CS Bot & FAQ",
+        tab_catalog: "Catalog (160)",
+        tab_engine: "Engine Arch",
+        tab_pricing: "Passes & Pricing",
+        tab_support: "Support & FAQ",
         btn_quotation: "B2B Quote",
         btn_view_catalog: "Explore Workflow Store ($29~)",
         btn_view_engine: "Resident Engine Architecture",
@@ -3811,8 +3839,7 @@ html.dark .bg-amber-600 {
       }
     };
 
-    function setLandingLang(lang) {
-      localStorage.setItem('autoflow_landing_lang', lang);
+    function setLandingLangCore(lang) {
       const dict = i18nLanding[lang] || i18nLanding.ko;
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
@@ -3820,16 +3847,39 @@ html.dark .bg-amber-600 {
           el.innerHTML = dict[key];
         }
       });
-      const btnKo = document.getElementById('btnLangKo');
-      const btnEn = document.getElementById('btnLangEn');
-      if (btnKo && btnEn) {
-        if (lang === 'en') {
-          btnEn.className = 'px-2 py-1 rounded-md bg-sky-600 text-white transition';
-          btnKo.className = 'px-2 py-1 rounded-md text-slate-600 dark:text-slate-400 hover:text-sky-600 transition';
-        } else {
-          btnKo.className = 'px-2 py-1 rounded-md bg-sky-600 text-white transition';
-          btnEn.className = 'px-2 py-1 rounded-md text-slate-600 dark:text-slate-400 hover:text-sky-600 transition';
-        }
+      if (typeof updateEnginePricingCards === 'function') updateEnginePricingCards();
+      if (typeof applyCombinedCatalogFilter === 'function') applyCombinedCatalogFilter();
+      if (typeof renderQuoteItems === 'function') renderQuoteItems();
+      if (typeof recalcQuoteTotal === 'function') recalcQuoteTotal();
+      const activeSection = Array.from(document.querySelectorAll('.tab-content')).find(el => !el.classList.contains('hidden'));
+      if (activeSection) {
+        const bcTab = document.getElementById('breadcrumbCurrentTab');
+        const map = lang === 'en' ? {
+          'tab-overview': 'Store Home (Resident Engine & Catalog)',
+          'tab-catalog': 'Single Workflow Store ($29 ~ $59)',
+          'tab-engine': 'Resident Engine Architecture (Self-Healing & Recon)',
+          'tab-pricing': 'Resident Engine Passes & Workflow Pricing',
+          'tab-support': '1:1 CS Chatbot & FAQ'
+        } : {
+          'tab-overview': '스토어 홈 (상주형 엔진 & 단품 카탈로그)',
+          'tab-catalog': '워크플로우 단품 스토어 (₩39,000 ~ ₩79,000)',
+          'tab-engine': '상주형 무인 엔진 원리 (자가치유 & 정합성)',
+          'tab-pricing': '상주형 무인 엔진 기간권 & 단품 가격표',
+          'tab-support': '1:1 무인 상담봇 & FAQ'
+        };
+        if (bcTab && map[activeSection.id]) bcTab.textContent = map[activeSection.id];
+      }
+    }
+
+    window.onAfLangChanged = function(lang) {
+      setLandingLangCore(lang);
+    };
+
+    function setLandingLang(lang) {
+      if (typeof afSetLang === 'function') {
+        afSetLang(lang, true);
+      } else {
+        setLandingLangCore(lang);
       }
     }
 
@@ -3860,9 +3910,26 @@ html.dark .bg-amber-600 {
       '코딩 없이 더블클릭 설치 가능한가요?': '네, 100% 가능합니다! 모든 단일 완제품에 1초 원클릭 로컬 런처(AutoFlow_Start_Mac.command / AutoFlow_Start_Windows.bat)가 기본 내장되어 있어 더블클릭 한 번으로 사내 브라우저에서 즉시 가동됩니다.'
     };
 
+    const botQuestionsEn = {
+      '우리 회사에 맞는 완제품 추천': 'Recommend a standalone workflow for our team',
+      'Make.com에서 n8n으로 옮기는 법': 'How to migrate from Make.com to local n8n?',
+      '1원 오차 정합성 엔진 도입 견적': '1-Won Reconciliation Engine pricing & quote',
+      '코딩 없이 더블클릭 설치 가능한가요?': 'Can we install and launch without coding?'
+    };
+    const botResponsesEn = {
+      '우리 회사에 맞는 완제품 추천': 'AutoFlow supplies [1 Product = 1 Site / 1 Job] standalone editions at flat perpetual pricing:\n| SmartStore Order Alimtalk & Google Sheets -> [AF-NAVER-01] ($29 perpetual)\n| SmartStore Real-Time Margin Brake -> [AF-NAVER-02] ($39 perpetual)\n| SmartStore Daily 1-Won Settlement Recon -> [AF-NAVER-05] ($45 perpetual)\n| 24/7 Resident Dual Autonomous Engine -> 30d $49 (Developer MCP $37)',
+      'Make.com에서 n8n으로 옮기는 법': 'Make.com bills monthly per operation. AutoFlow standalone workflows ($29~$59 one-time) run perpetually on your own machine with unlimited operations and include 1-click Mac/Windows launchers.',
+      '1원 오차 정합성 엔진 도입 견적': 'Our Reconciliation Engine isolates data or amount discrepancies between upstream orders and downstream settlements with 1-click ledger approval: 30d $39 (MCP $29), or Dual Integrated Engine at 30d $49 (MCP $37).',
+      '코딩 없이 더블클릭 설치 가능한가요?': 'Yes, 100% turnkey. Every standalone edition includes 1-click local launchers (AutoFlow_Start_Mac.command / AutoFlow_Start_Windows.bat) so it launches right in your local browser with a double-click.'
+    };
+
     function askBotQuestion(q) {
       const input = document.getElementById('inlineChatInput');
-      if (input) input.value = q;
+      const isEn = typeof afGetLang === 'function' && afGetLang() === 'en';
+      if (input) {
+        input.value = isEn ? (botQuestionsEn[q] || q) : q;
+        input.dataset.origKey = q;
+      }
       sendInlineChat();
     }
 
@@ -3872,6 +3939,9 @@ html.dark .bg-amber-600 {
       if (!input || !box) return;
       const text = input.value.trim();
       if (!text) return;
+      const origKey = input.dataset.origKey || '';
+      delete input.dataset.origKey;
+      const isEn = typeof afGetLang === 'function' && afGetLang() === 'en';
 
       // Add user message
       const userMsg = document.createElement('div');
@@ -3885,16 +3955,31 @@ html.dark .bg-amber-600 {
       input.value = '';
 
       // Find answer
-      let reply = botResponses[text];
+      let reply = isEn
+        ? (botResponsesEn[origKey] || botResponsesEn[text])
+        : (botResponses[text] || botResponses[origKey]);
       if (!reply) {
-        if (text.includes('쿠팡') || text.includes('스마트스토어') || text.includes('알림톡')) {
-          reply = '스마트스토어·쿠팡·카페24 등 각 사이트별 단일 완제품은 ₩39,000 ~ ₩59,000(1회 구매 영구 소장)으로 제공되며 필수 방어 에어백과 원클릭 로컬 런처가 기본 내장되어 있습니다.';
-        } else if (text.includes('정합성') || text.includes('대사') || text.includes('자가치유') || text.includes('엔진')) {
-          reply = '상주형 무인 엔진은 [자가치유 단독 30일 ₩39,000(MCP 특가 ₩29,000)], [정합성 대사 단독 30일 ₩49,000(MCP 특가 ₩39,000)], [듀얼 통합 30일 ₩69,000(MCP 특가 ₩49,000)] 기간권으로 제공됩니다.';
-        } else if (text.includes('견적') || text.includes('가격') || text.includes('비용')) {
-          reply = '워크플로우 단품은 ₩39,000~₩79,000(영구 소장), 상주형 무인 엔진 기간권은 월 ₩29,000~₩69,000입니다. 상단 [📄 B2B 견적서] 버튼으로 공식 견적서를 즉시 출력하실 수 있습니다.';
+        const lower = text.toLowerCase();
+        if (isEn) {
+          if (lower.includes('shopify') || lower.includes('coupang') || lower.includes('smartstore') || lower.includes('order')) {
+            reply = 'Each e-commerce site-specific standalone workflow is $29 ~ $45 (one-time perpetual) with built-in guardrails and 1-click Mac/Windows local launchers.';
+          } else if (lower.includes('recon') || lower.includes('heal') || lower.includes('engine') || lower.includes('127')) {
+            reply = 'Resident Autonomous Engine passes: Self-Healing 30d $29 (MCP $22), Reconciliation 30d $39 (MCP $29), Dual Integrated 30d $49 (MCP $37).';
+          } else if (lower.includes('quote') || lower.includes('price') || lower.includes('cost') || lower.includes('billing')) {
+            reply = 'Standalone workflows range $29~$59 (perpetual), and Resident Engine passes range $22~$49/30d. Click B2B Quote in the top bar for an instant official quotation.';
+          } else {
+            reply = 'Thanks for reaching out! AutoFlow offers 160 turnkey standalone workflows ($29~$59 perpetual) plus optional 24/7 Resident Autonomous Engine passes ($22~$49/30d).';
+          }
         } else {
-          reply = '문의해 주셔서 감사합니다! AutoFlow는 160종 단일 완제품 워크플로우(₩39,000~₩79,000 영구 소장)와 시스템을 24시간 멈추지 않게 지키는 상주형 무인 엔진 기간권(₩29,000~₩69,000)을 제공합니다.';
+          if (text.includes('쿠팡') || text.includes('스마트스토어') || text.includes('알림톡')) {
+            reply = '스마트스토어·쿠팡·카페24 등 각 사이트별 단일 완제품은 ₩39,000 ~ ₩59,000(1회 구매 영구 소장)으로 제공되며 필수 방어 에어백과 원클릭 로컬 런처가 기본 내장되어 있습니다.';
+          } else if (text.includes('정합성') || text.includes('대사') || text.includes('자가치유') || text.includes('엔진')) {
+            reply = '상주형 무인 엔진은 [자가치유 단독 30일 ₩39,000(MCP 특가 ₩29,000)], [정합성 대사 단독 30일 ₩49,000(MCP 특가 ₩39,000)], [듀얼 통합 30일 ₩69,000(MCP 특가 ₩49,000)] 기간권으로 제공됩니다.';
+          } else if (text.includes('견적') || text.includes('가격') || text.includes('비용')) {
+            reply = '워크플로우 단품은 ₩39,000~₩79,000(영구 소장), 상주형 무인 엔진 기간권은 월 ₩29,000~₩69,000입니다. 상단 [📄 B2B 견적서] 버튼으로 공식 견적서를 즉시 출력하실 수 있습니다.';
+          } else {
+            reply = '문의해 주셔서 감사합니다! AutoFlow는 160종 단일 완제품 워크플로우(₩39,000~₩79,000 영구 소장)와 시스템을 24시간 멈추지 않게 지키는 상주형 무인 엔진 기간권(₩29,000~₩69,000)을 제공합니다.';
+          }
         }
       }
 
@@ -3979,10 +4064,13 @@ html.dark .bg-amber-600 {
       if (!item) return;
       currentModalItem = item;
 
-      document.getElementById('modalWorkflowTitle').innerText = item.name;
-      document.getElementById('modalOriginalPrice').innerText = `${item.price.toLocaleString()}원`;
-      document.getElementById('modalFinalPrice').innerText = `${item.price.toLocaleString()}원`;
-      document.getElementById('modalDiscountPrice').innerText = '-0원';
+      const isEnHook = typeof afGetLang === 'function' && afGetLang() === 'en';
+      const hookUsd = item.price <= 39000 ? 29 : item.price <= 49000 ? 39 : 45;
+      const hookSpecEn = window.AF_PRODUCT_SPECS && window.AF_PRODUCT_SPECS[String(item.id || '').toUpperCase()];
+      document.getElementById('modalWorkflowTitle').innerText = isEnHook && hookSpecEn ? hookSpecEn.name_en : item.name;
+      document.getElementById('modalOriginalPrice').innerText = isEnHook ? `$${hookUsd}.00` : `${item.price.toLocaleString()}원`;
+      document.getElementById('modalFinalPrice').innerText = isEnHook ? `$${hookUsd}.00` : `${item.price.toLocaleString()}원`;
+      document.getElementById('modalDiscountPrice').innerText = isEnHook ? '-$0.00' : '-0원';
       document.getElementById('dispatchResultBox').classList.add('hidden');
       document.getElementById('orderModal').classList.remove('hidden');
     }
@@ -7916,8 +8004,11 @@ html.dark .bg-amber-600 {
       const modal = document.getElementById('quotationModal');
       if (!modal) return;
       
+      const isEn = typeof afGetLang === 'function' && afGetLang() === 'en';
       const now = new Date();
-      const dateStr = `${now.getFullYear()}년 ${String(now.getMonth() + 1).padStart(2, '0')}월 ${String(now.getDate()).padStart(2, '0')}일`;
+      const dateStr = isEn
+        ? now.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' })
+        : `${now.getFullYear()}년 ${String(now.getMonth() + 1).padStart(2, '0')}월 ${String(now.getDate()).padStart(2, '0')}일`;
       const quoteNo = `QT-${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}-${String(Math.floor(1000 + Math.random() * 9000))}`;
       
       const dateEl = document.getElementById('quoteDateText');
@@ -7935,12 +8026,36 @@ html.dark .bg-amber-600 {
       if (modal) modal.classList.add('hidden');
     }
 
+    const ENGINE_QUOTE_EN = {
+      q_ENGINE_DUAL_30D_MANAGED: { name: '[Resident Engine · Standard] Dual Integrated Engine (Self-Healing + Recon · Managed AI) 30d', spec: '127 ms crash guard + deterministic error repair + inter-node gap isolation & 1-click ledger approval', usd: 49 },
+      q_ENGINE_DUAL_30D_MCP: { name: '[Resident Engine · Developer MCP Special] Dual Integrated Engine (BYOK AI + Log Sync) 30d', spec: 'External LLM (OpenAI/Claude/Local) MCP connection with anonymized fix-log sync discount', usd: 37 },
+      q_ENGINE_HEAL_30D_MANAGED: { name: '[Resident Engine · Standard] Self-Healing Engine (Managed AI) 30d', spec: '127 ms process watchdog and 1:1 error-code autonomous repair + local DLQ quarantine', usd: 29 },
+      q_ENGINE_HEAL_30D_MCP: { name: '[Resident Engine · Developer MCP Special] Self-Healing Engine (BYOK MCP) 30d', spec: 'BYOK LLM MCP integration + anonymized fix-log sync discount (127 ms autonomous repair)', usd: 22 },
+      q_ENGINE_RECON_30D_MANAGED: { name: '[Resident Engine · Standard] Reconciliation Engine (Managed AI) 30d', spec: 'Real-time mismatch quarantine between orders and payouts with 1-click ledger sync', usd: 39 },
+      q_ENGINE_RECON_30D_MCP: { name: '[Resident Engine · Developer MCP Special] Reconciliation Engine (BYOK MCP) 30d', spec: 'BYOK LLM MCP integration + anonymized log sync discount (inter-node 1-won recon)', usd: 29 }
+    };
+    function afQuoteUsd(it) {
+      if (ENGINE_QUOTE_EN[it.id]) return ENGINE_QUOTE_EN[it.id].usd;
+      const p = it.price || 39000;
+      return p <= 19000 ? 19 : p <= 39000 ? 29 : p <= 49000 ? 39 : p <= 59000 ? 45 : p <= 69000 ? 52 : 59;
+    }
+
     function renderQuoteItems() {
       const tbody = document.getElementById('quoteItemsTbody');
       if (!tbody || typeof quoteItemsData === 'undefined') return;
-      
+      const isEn = typeof afGetLang === 'function' && afGetLang() === 'en';
+      const specs = window.AF_PRODUCT_SPECS || {};
+
       tbody.innerHTML = '';
       quoteItemsData.forEach((it, idx) => {
+        const cleanId = String(it.id || '').replace(/^q_/, '');
+        const eq = ENGINE_QUOTE_EN[it.id];
+        const sp = specs[cleanId];
+        const dispName = isEn ? (eq ? eq.name : (sp && sp.name_en ? sp.name_en : it.name)) : it.name;
+        const dispSpec = isEn ? (eq ? eq.spec : (sp && sp.desc_en ? sp.desc_en : it.spec)) : it.spec;
+        const u = afQuoteUsd(it);
+        const unitLabel = isEn ? `$${u}.00` : `${it.price.toLocaleString()}원`;
+        const subLabel = isEn ? `$${(u * it.defaultQty).toLocaleString()}.00` : `${(it.price * it.defaultQty).toLocaleString()}원`;
         const tr = document.createElement('tr');
         tr.className = 'hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition border-b border-slate-200 dark:border-slate-800' + (it.checked ? '' : ' no-print');
         tr.innerHTML = `
@@ -7948,17 +8063,17 @@ html.dark .bg-amber-600 {
             <input type="checkbox" ${it.checked ? 'checked' : ''} onchange="toggleQuoteItem(${idx}, this.checked)" class="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 cursor-pointer" />
           </td>
           <td class="p-2.5">
-            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">${it.name}</div>
-            <div class="text-xs text-slate-500 font-mono mt-0.5">${it.spec}</div>
+            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">${dispName}</div>
+            <div class="text-xs text-slate-500 font-mono mt-0.5">${dispSpec}</div>
           </td>
           <td class="p-2.5 text-center">
             <input type="number" min="1" max="99" value="${it.defaultQty}" onchange="updateQuoteQty(${idx}, this.value)" class="w-12 text-center text-xs py-1 border border-slate-300 dark:border-slate-700 rounded-lg bg-white dark:bg-slate-900" />
           </td>
           <td class="p-2.5 text-right font-mono text-xs text-slate-700 dark:text-slate-300">
-            ${it.price.toLocaleString()}원
+            ${unitLabel}
           </td>
           <td class="p-2.5 text-right font-mono font-bold text-xs text-slate-900 dark:text-white">
-            ${(it.price * it.defaultQty).toLocaleString()}원
+            ${subLabel}
           </td>
         `;
         tbody.appendChild(tr);
@@ -8013,9 +8128,14 @@ html.dark .bg-amber-600 {
 
     function recalcQuoteTotal() {
       if (typeof quoteItemsData === 'undefined') return;
+      const isEn = typeof afGetLang === 'function' && afGetLang() === 'en';
       let sum = 0;
+      let sumUsd = 0;
       quoteItemsData.forEach(it => {
-        if (it.checked) sum += it.price * it.defaultQty;
+        if (it.checked) {
+          sum += it.price * it.defaultQty;
+          sumUsd += afQuoteUsd(it) * it.defaultQty;
+        }
       });
 
       const total = sum;
@@ -8027,10 +8147,17 @@ html.dark .bg-amber-600 {
       const totalEl = document.getElementById('quoteTotalPrice');
       const koreanEl = document.getElementById('quoteKoreanPrice');
 
-      if (subTotalEl) subTotalEl.innerText = `${supply.toLocaleString()}원`;
-      if (vatEl) vatEl.innerText = `${vat.toLocaleString()}원`;
-      if (totalEl) totalEl.innerText = `${total.toLocaleString()}원`;
-      if (koreanEl) koreanEl.innerText = `일금 ${numberToKorean(total)} (₩${total.toLocaleString()})`;
+      if (isEn) {
+        if (subTotalEl) subTotalEl.innerText = `$${sumUsd.toLocaleString()}.00 USD`;
+        if (vatEl) vatEl.innerText = 'Region-dependent (Gumroad)';
+        if (totalEl) totalEl.innerText = `$${sumUsd.toLocaleString()}.00 USD`;
+        if (koreanEl) koreanEl.innerText = `Total Quotation: $${sumUsd.toLocaleString()}.00 USD (KRW ₩${total.toLocaleString()})`;
+      } else {
+        if (subTotalEl) subTotalEl.innerText = `${supply.toLocaleString()}원`;
+        if (vatEl) vatEl.innerText = `${vat.toLocaleString()}원`;
+        if (totalEl) totalEl.innerText = `${total.toLocaleString()}원`;
+        if (koreanEl) koreanEl.innerText = `일금 ${numberToKorean(total)} (₩${total.toLocaleString()})`;
+      }
     }
 
     function printQuotation() {
@@ -8102,11 +8229,16 @@ html.dark .bg-amber-600 {
 
       if (currentSearchQuery) {
         const q = currentSearchQuery.toLowerCase();
-        filtered = filtered.filter(x => 
-          x.name.toLowerCase().includes(q) ||
-          x.id.toLowerCase().includes(q) ||
-          (x.description && x.description.toLowerCase().includes(q))
-        );
+        const specs = (typeof window !== 'undefined' && window.AF_PRODUCT_SPECS) ? window.AF_PRODUCT_SPECS : {};
+        filtered = filtered.filter(x => {
+          const sp = specs[x.id] || {};
+          return x.name.toLowerCase().includes(q) ||
+            x.id.toLowerCase().includes(q) ||
+            (x.description && x.description.toLowerCase().includes(q)) ||
+            (sp.name_en && sp.name_en.toLowerCase().includes(q)) ||
+            (sp.desc_en && sp.desc_en.toLowerCase().includes(q)) ||
+            (sp.apps_en && sp.apps_en.join(' ').toLowerCase().includes(q));
+        });
       }
 
       renderCatalogItems(filtered);
@@ -8149,8 +8281,16 @@ html.dark .bg-amber-600 {
       const item = catalogIndex.find(x => x.id === itemId) || catalogIndex[0];
       if (!item) return;
       const spec = getProductSpecForItem(item);
+      const lang = typeof afGetLang === 'function' ? afGetLang() : 'ko';
+      const isEn = lang === 'en';
       const price = item.final_price || item.price || spec.price || 39000;
       const usd = item.usd_price || (price <= 39000 ? 29 : price <= 49000 ? 39 : price <= 59000 ? 45 : price <= 69000 ? 52 : 59);
+      const dispName = isEn ? (spec.name_en || item.name) : item.name;
+      const dispDesc = isEn ? (spec.desc_en || item.description || '') : (spec.desc || item.description || '');
+      const dispApps = isEn ? (spec.apps_en || spec.apps || []) : (spec.apps || []);
+      const dispSteps = isEn ? (spec.steps_en || spec.steps || []) : (spec.steps || []);
+      const dispPrep = isEn ? (spec.prep_en || spec.prep || []) : (spec.prep || []);
+      const dispZips = isEn ? (spec.zipContents_en || spec.zipContents || []) : (spec.zipContents || []);
 
       const elCat = document.getElementById('pdm-category');
       const elSku = document.getElementById('pdm-sku');
@@ -8168,37 +8308,37 @@ html.dark .bg-amber-600 {
       const elWar = document.getElementById('pdm-warranty-btn');
       const elQuote = document.getElementById('pdm-quote-btn');
 
-      if (elCat) elCat.textContent = (item.category || '단일 완제품').split(',')[0].trim();
+      if (elCat) elCat.textContent = (isEn ? (spec.category_en || item.category || 'Standalone Product') : (item.category || '단일 완제품')).split(',')[0].trim();
       if (elSku) elSku.textContent = item.id;
-      if (elTitle) elTitle.textContent = item.name;
-      if (elPrice) elPrice.textContent = '₩' + Number(price).toLocaleString() + ' ($' + usd + ')';
-      if (elDesc) elDesc.textContent = spec.desc || item.description || '';
-      if (elTrig) elTrig.textContent = spec.trigger || '자동 실행';
+      if (elTitle) elTitle.textContent = dispName;
+      if (elPrice) elPrice.textContent = isEn ? ('$' + usd + ' USD (₩' + Number(price).toLocaleString() + ')') : ('₩' + Number(price).toLocaleString() + ' ($' + usd + ')');
+      if (elDesc) elDesc.textContent = dispDesc;
+      if (elTrig) elTrig.textContent = isEn ? (spec.trigger_en || spec.trigger || 'Auto-Run') : (spec.trigger || '자동 실행');
 
       if (elApps) {
-        elApps.innerHTML = (spec.apps || []).map(a =>
+        elApps.innerHTML = dispApps.map(a =>
           `<span class="px-2 py-0.5 rounded bg-white border border-[#E5E3DC] text-[#3F3E3A] font-medium">${a}</span>`
         ).join('');
       }
       if (elSteps) {
-        elSteps.innerHTML = (spec.steps || []).map((s, idx) =>
+        elSteps.innerHTML = dispSteps.map((s, idx) =>
           `<li class="flex items-start gap-2.5"><span class="w-5 h-5 rounded-full bg-[#14532D] text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span><span>${s}</span></li>`
         ).join('');
       }
       if (elPrep) {
-        elPrep.innerHTML = (spec.prep || []).map(p =>
+        elPrep.innerHTML = dispPrep.map(p =>
           `<li class="flex items-start gap-2"><span class="text-[#14532D] font-bold">·</span><span>${p}</span></li>`
         ).join('');
       }
-      if (elOut) elOut.textContent = spec.outcome || '';
-      if (elDef) elDef.textContent = spec.defense || '';
+      if (elOut) elOut.textContent = isEn ? (spec.outcome_en || spec.outcome || '') : (spec.outcome || '');
+      if (elDef) elDef.textContent = isEn ? (spec.defense_en || spec.defense || '') : (spec.defense || '');
       if (elZip) {
-        elZip.innerHTML = (spec.zipContents || []).map(z =>
+        elZip.innerHTML = dispZips.map(z =>
           `<li class="flex items-start gap-2"><span class="text-[#14532D] font-bold">✓</span><span>${z}</span></li>`
         ).join('');
       }
       if (elBuy) {
-        elBuy.href = `checkout.html?sku=${encodeURIComponent(item.id)}&price=${price}&name=${encodeURIComponent(item.name)}`;
+        elBuy.href = `checkout.html?sku=${encodeURIComponent(item.id)}&price=${price}&name=${encodeURIComponent(dispName)}&lang=${lang}`;
       }
       if (elWar) {
         elWar.onclick = function () {
@@ -8226,11 +8366,19 @@ html.dark .bg-amber-600 {
     function renderCatalogItems(items) {
       const grid = document.getElementById('catalogGrid');
       const countBadge = document.getElementById('catalogCountBadge');
-      if (countBadge) countBadge.innerText = items.length + '개 단품';
+      const lang = typeof afGetLang === 'function' ? afGetLang() : 'ko';
+      const isEn = lang === 'en';
+      if (countBadge) countBadge.innerText = isEn ? (items.length + ' Workflows') : (items.length + '개 단품');
       if (!grid) return;
 
       if (items.length === 0) {
-        grid.innerHTML = `
+        grid.innerHTML = isEn ? `
+          <div class="col-span-full py-16 text-center text-[#5E5C54] bg-white rounded-2xl border border-[#E5E3DC]">
+            <p class="text-sm font-bold text-[#18181B]">No standalone workflows matched your filters.</p>
+            <p class="text-xs text-[#5E5C54] mt-1 mb-4">Try another keyword or reset category &amp; tier filters.</p>
+            <button onclick="setLevelFilter(0); setCategoryFilter(''); document.getElementById('catalogSearchInput').value=''; handleCatalogSearch('');" class="px-4 py-2 rounded-xl bg-[#14532D] text-white text-xs font-bold cursor-pointer">View All 160 Workflows</button>
+          </div>
+        ` : `
           <div class="col-span-full py-16 text-center text-[#5E5C54] bg-white rounded-2xl border border-[#E5E3DC]">
             <p class="text-sm font-bold text-[#18181B]">조건에 맞는 단일 완제품을 찾지 못했습니다.</p>
             <p class="text-xs text-[#5E5C54] mt-1 mb-4">검색어를 변경하시거나 필터를 초기화해 보세요.</p>
@@ -8246,50 +8394,57 @@ html.dark .bg-amber-600 {
         const badgeColor = isNaver
           ? 'bg-[#ECF3EE] text-[#14532D] border-[#BBD2C3]'
           : 'bg-[#F0EFEA] text-[#3F3E3A] border-[#E5E3DC]';
-        const badgeLabel = isNaver ? '스마트스토어 전용 단품' : (it.category || '단일 완제품').split(',')[0].trim();
+        const badgeLabel = isNaver
+          ? (isEn ? 'SmartStore Dedicated' : '스마트스토어 전용 단품')
+          : ((isEn ? (spec.category_en || it.category || 'Standalone Edition') : (it.category || '단일 완제품')).split(',')[0].trim());
         const usd = it.usd_price || (it.price <= 39000 ? 29 : it.price <= 49000 ? 39 : it.price <= 59000 ? 45 : it.price <= 69000 ? 52 : 59);
+        const title = isEn ? (spec.name_en || it.name) : it.name;
+        const desc = isEn ? (spec.desc_en || it.description || '') : (spec.desc || it.description || '');
+        const trig = isEn ? (spec.trigger_en || spec.trigger) : spec.trigger;
+        const flow = isEn ? (spec.shortFlow_en || spec.shortFlow) : spec.shortFlow;
+        const prep = isEn ? (spec.prepSummary_en || spec.prepSummary) : spec.prepSummary;
 
         return `
-          <div class="rounded-2xl p-5 bg-white border border-[#E5E3DC] flex flex-col justify-between shadow-xs hover:border-[#14532D]/50 transition">
-            <div>
-              <div class="flex items-center justify-between gap-2 mb-2.5">
-                <span class="text-xs px-2.5 py-0.5 rounded-full font-bold border ${badgeColor}">${badgeLabel}</span>
-                <span class="text-xs font-mono text-[#5E5C54]">${it.id}</span>
+          <div class="rounded-2xl p-5 bg-white border border-[#E5E3DC] flex flex-col justify-between shadow-xs hover:border-[#14532D]/50 transition min-w-0">
+            <div class="min-w-0">
+              <div class="flex items-center justify-between gap-2 mb-2.5 min-w-0">
+                <span class="text-xs px-2.5 py-0.5 rounded-full font-bold border truncate ${badgeColor}">${badgeLabel}</span>
+                <span class="text-xs font-mono text-[#5E5C54] shrink-0">${it.id}</span>
               </div>
-              <h3 class="text-sm font-extrabold text-[#18181B] mb-2 leading-snug">${it.name}</h3>
-              <p class="text-xs text-[#3F3E3A] mb-3.5 leading-relaxed">${spec.desc || it.description}</p>
+              <h3 class="text-sm font-extrabold text-[#18181B] mb-2 leading-snug break-words">${title}</h3>
+              <p class="text-xs text-[#3F3E3A] mb-3.5 leading-relaxed break-words">${desc}</p>
               <div class="space-y-1.5 text-xs pt-3 border-t border-[#E5E3DC] mb-4">
-                <div class="flex items-start justify-between gap-2">
-                  <span class="text-[#5E5C54] shrink-0">실행 주기</span>
-                  <span class="font-bold text-[#14532D] text-right">${spec.trigger}</span>
+                <div class="flex items-start justify-between gap-2 min-w-0">
+                  <span class="text-[#5E5C54] shrink-0">${isEn ? 'Trigger' : '실행 주기'}</span>
+                  <span class="font-bold text-[#14532D] text-right break-words min-w-0">${trig}</span>
                 </div>
-                <div class="flex items-start justify-between gap-2">
-                  <span class="text-[#5E5C54] shrink-0">작동 흐름</span>
-                  <span class="font-semibold text-[#18181B] text-right">${spec.shortFlow}</span>
+                <div class="flex items-start justify-between gap-2 min-w-0">
+                  <span class="text-[#5E5C54] shrink-0">${isEn ? 'Flow' : '작동 흐름'}</span>
+                  <span class="font-semibold text-[#18181B] text-right break-words min-w-0">${flow}</span>
                 </div>
-                <div class="flex items-start justify-between gap-2">
-                  <span class="text-[#5E5C54] shrink-0">준비 항목</span>
-                  <span class="text-[#3F3E3A] text-right">${spec.prepSummary}</span>
+                <div class="flex items-start justify-between gap-2 min-w-0">
+                  <span class="text-[#5E5C54] shrink-0">${isEn ? 'Inputs' : '준비 항목'}</span>
+                  <span class="text-[#3F3E3A] text-right break-words min-w-0">${prep}</span>
                 </div>
               </div>
             </div>
             <div>
-              <div class="flex items-baseline justify-between mb-3 pt-3 border-t border-[#E5E3DC]">
-                <div>
-                  <span class="text-xs text-[#5E5C54] block">단품 영구 소장</span>
-                  <span class="text-xs text-[#14532D] font-bold">사내 PC 실행 · 7일 엔진 체험 포함</span>
+              <div class="flex items-baseline justify-between mb-3 pt-3 border-t border-[#E5E3DC] gap-2">
+                <div class="min-w-0">
+                  <span class="text-xs text-[#5E5C54] block">${isEn ? 'Perpetual Single License' : '단품 영구 소장'}</span>
+                  <span class="text-xs text-[#14532D] font-bold">${isEn ? 'Local PC · 7-Day Engine Trial' : '사내 PC 실행 · 7일 엔진 체험 포함'}</span>
                 </div>
-                <div class="text-right">
-                  <span class="text-lg font-black text-[#18181B] font-mono tabular-nums">₩${it.price.toLocaleString()}</span>
-                  <span class="text-xs text-[#5E5C54] font-mono block tabular-nums">($${usd} USD)</span>
+                <div class="text-right shrink-0">
+                  <span class="text-lg font-black text-[#18181B] font-mono tabular-nums">${isEn ? ('$' + usd + ' USD') : ('₩' + it.price.toLocaleString())}</span>
+                  <span class="text-xs text-[#5E5C54] font-mono block tabular-nums">${isEn ? ('(₩' + it.price.toLocaleString() + ' KRW)') : ('($' + usd + ' USD)')}</span>
                 </div>
               </div>
               <div class="grid grid-cols-2 gap-2">
                 <button type="button" onclick="openProductDetailModal('${it.id}')" class="py-2.5 px-3 rounded-xl bg-[#F0EFEA] hover:bg-[#E5E3DC] text-[#18181B] border border-[#E5E3DC] font-bold text-xs text-center transition cursor-pointer">
-                  상세 사양 보기
+                  ${isEn ? 'View Specs' : '상세 사양 보기'}
                 </button>
-                <a href="checkout.html?sku=${encodeURIComponent(it.id)}&price=${it.price}&name=${encodeURIComponent(it.name)}" class="py-2.5 px-3 rounded-xl bg-[#14532D] hover:bg-[#0F3F22] text-white font-extrabold text-xs text-center transition flex items-center justify-center">
-                  단품 구매
+                <a href="checkout.html?sku=${encodeURIComponent(it.id)}&price=${it.price}&name=${encodeURIComponent(title)}&lang=${lang}" class="py-2.5 px-3 rounded-xl bg-[#14532D] hover:bg-[#0F3F22] text-white font-extrabold text-xs text-center transition flex items-center justify-center">
+                  ${isEn ? 'Buy Single' : '단품 구매'}
                 </a>
               </div>
             </div>
@@ -8325,9 +8480,20 @@ html.dark .bg-amber-600 {
     }
 
     function generateWarrantyPreviewHtml(item) {
+      const isEn = typeof afGetLang === 'function' && afGetLang() === 'en';
+      const spec = getProductSpecForItem(item);
       const today = new Date();
-      const dateStr = `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
-      const featuresStr = (item.features || ['1제품 = 1사이트 단일 완제품', '전 구간 방어 에어백 내장']).join(' | ');
+      const dateStr = isEn
+        ? today.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' })
+        : `${today.getFullYear()}년 ${today.getMonth() + 1}월 ${today.getDate()}일`;
+      const itemTitle = isEn ? (spec.name_en || item.name) : item.name;
+      const usd = item.price <= 39000 ? 29 : item.price <= 49000 ? 39 : item.price <= 59000 ? 45 : item.price <= 69000 ? 52 : 59;
+      const featuresStr = isEn
+        ? (spec.apps_en && spec.apps_en.length ? spec.apps_en.join(' | ') : '1 Product = 1 Site Standalone Edition | Built-in Guardrails')
+        : (item.features || ['1제품 = 1사이트 단일 완제품', '전 구간 방어 에어백 내장']).join(' | ');
+      if (isEn) {
+        return `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>AutoFlow Official Quality Warranty &amp; SLA Certificate - DH Labs</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;color:#18181b;background:#fff;margin:0;padding:18px;}.cert-container{max-width:740px;margin:0 auto;border:2px solid #18181b;padding:24px;}.border-inner{border:1px solid #d4d1c7;padding:20px;background:#fafaf8;}.cert-header{text-align:center;border-bottom:2px solid #18181b;padding-bottom:12px;margin-bottom:16px;}.cert-title-sub{font-size:10px;letter-spacing:2px;color:#5e5c54;font-weight:700;}.cert-title-main{font-size:19px;font-weight:900;margin:4px 0;}.cert-meta-row{display:flex;justify-content:space-between;font-size:10.5px;color:#3f3e3a;margin-top:8px;gap:8px;flex-wrap:wrap;}.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}.info-card{background:#fff;border:1px solid #d4d1c7;padding:10px 12px;font-size:10.5px;}.info-card-title{font-size:11px;font-weight:800;border-bottom:1px solid #e5e3dc;padding-bottom:4px;margin-bottom:6px;}.info-row{display:flex;justify-content:space-between;gap:8px;margin-bottom:3px;}.info-label{color:#5e5c54;font-weight:600;}.info-value{font-weight:700;text-align:right;}.warranty-table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:10.5px;}.warranty-table th{background:#18181b;color:#fff;padding:7px;text-align:left;}.warranty-table td{border:1px solid #d4d1c7;padding:8px;background:#fff;}.articles-box{background:#f0efea;border:1px solid #d4d1c7;padding:12px 14px;font-size:9.8px;line-height:1.55;margin-bottom:16px;}.articles-box h2{font-size:11px;font-weight:800;margin:0 0 6px;}.articles-box div{margin-bottom:4px;}.cert-footer{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid #d4d1c7;padding-top:10px;font-size:11px;font-weight:800;gap:12px;}</style></head><body><div class="cert-container"><div class="border-inner"><div class="cert-header"><div class="cert-title-sub">DH LABS SOFTWARE QUALITY ASSURANCE &amp; PRODUCT CERTIFICATE</div><h1 class="cert-title-main">Official Product Warranty &amp; SLA Certificate</h1><div class="cert-meta-row"><span>Certificate ID: <strong>DH-QC-2026-${item.id}-SINGLE</strong></span><span>Issue Date: <strong>${dateStr}</strong></span></div></div><div class="cert-grid"><div class="info-card"><div class="info-card-title">Licensee Registration</div><div class="info-row"><span class="info-label">License Type:</span><span class="info-value">1 Product = 1 Site Perpetual License</span></div><div class="info-row"><span class="info-label">Device Binding:</span><span class="info-value">1:1 Local PC HWID Binding</span></div><div class="info-row"><span class="info-label">Flat Price:</span><span class="info-value">$${usd}.00 USD (KRW ₩${item.price.toLocaleString()})</span></div></div><div class="info-card"><div class="info-card-title">Software Issuer</div><div class="info-row"><span class="info-label">Company / Brand:</span><span class="info-value">DH Labs / AutoFlow</span></div><div class="info-row"><span class="info-label">Founder:</span><span class="info-value">Donghyeong Kim</span></div><div class="info-row"><span class="info-label">Business Reg:</span><span class="info-value">610-16-92926 (Republic of Korea)</span></div></div></div><table class="warranty-table"><thead><tr><th style="width:22%;">SKU Code</th><th style="width:38%;">Standalone Workflow Title</th><th style="width:25%;">Built-In Guardrails</th><th style="width:15%;">Engine Trial</th></tr></thead><tbody><tr><td style="font-weight:800;">${item.id}</td><td><div style="font-weight:800;">${itemTitle}</div><div style="font-size:9.5px;color:#5e5c54;margin-top:2px;">${featuresStr}</div></td><td style="font-weight:700;color:#14532D;">Full Safety Guardrails + 1-Click Local Launchers + Local PII Masking</td><td style="font-weight:800;color:#14532D;">7-Day Trial Included</td></tr></tbody></table><div class="articles-box"><h2>[Official Quality Assurance &amp; Local Privacy Terms]</h2><div><strong>Article 1 (Complete Standalone Guarantee):</strong> This software is a complete standalone edition with built-in guardrails (phone normalization, dedup lock, HTTP 429 exponential backoff, quarantine DLQ) and 1-click Mac/Windows launchers.</div><div><strong>Article 2 (100% Local PII Masking):</strong> Sensitive customer records (names, phone numbers, addresses, API tokens) remain masked inside 127.0.0.1 locally and are never exposed unmasked externally.</div><div><strong>Article 3 (Resident Autonomous Engine Compatibility):</strong> When using the optional 127 ms Resident Engine, anonymized error telemetry enables automated hotfix recovery without cloud migration.</div></div><div class="cert-footer"><span>Issued with full technical verification by DH Labs.</span><span>DH Labs · CEO Donghyeong Kim</span></div></div></div></body></html>`;
+      }
 
       return `<!DOCTYPE html>
 <html lang="ko">
@@ -8450,9 +8616,12 @@ html.dark .bg-amber-600 {
       // 1. Check Master Key
       checkMasterKeyOnLoad();
 
-      // 2. Restore Language
-      const savedLang = localStorage.getItem('autoflow_landing_lang') || 'ko';
-      setLandingLang(savedLang);
+      // 2. Restore Language (URL ?lang= > stored > navigator.language)
+      const savedLang = typeof afResolveLang === 'function'
+        ? afResolveLang()
+        : (localStorage.getItem('autoflow_landing_lang') || 'ko');
+      if (typeof afSetLang === 'function') afSetLang(savedLang, false);
+      else setLandingLang(savedLang);
 
       // 3. Routing: Hash or default
       const hash = window.location.hash ? window.location.hash.replace('#', '') : 'overview';
