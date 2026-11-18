@@ -262,6 +262,7 @@
       localStorage.setItem('autoflow_theme', isDark ? 'dark' : 'light');
       updateThemeIcon(isDark);
     }
+    document.addEventListener('DOMContentLoaded', function() { if (document.documentElement.classList.contains('dark') && typeof updateThemeIcon === 'function') updateThemeIcon(true); });
     function updateThemeIcon(isDark) {
       const icon = document.getElementById('themeToggleIcon');
       if (icon) {
