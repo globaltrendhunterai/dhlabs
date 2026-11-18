@@ -90,9 +90,9 @@
       ],
       responses: {
         'BR-10': '[중복 결제 자동 승인 취소 완료]\n동일 주문 건에 대한 중복 결제가 감지되어 PG사 원거래 승인 자동 취소 API가 실행되었습니다.\n취소금액: 69,000원\n카드사 한도 복구는 영업일 기준 1~3일 소요됩니다.',
-        'BR-11': '[원클릭 재결제 링크 발행]\n가상계좌 유효기간이 만료되었습니다. 기존 장바구니 품목과 할인이 유지된 1분 재결제 링크가 생성되었습니다.\n결제창 링크: https://pay.autoflow.io/checkout/reorder?key=toss_pay_20261006_9941',
+        'BR-11': '[원클릭 재결제 링크 발행]\n가상계좌 유효기간이 만료되었습니다. 기존 장바구니 품목과 할인이 유지된 1분 재결제 링크가 생성되었습니다.\n결제창 링크: https://globaltrendhunterai.github.io/dhlabs/checkout.html?key=toss_pay_20261006_9941',
         'BR-12': '[국세청 전자세금계산서 즉시 발행 완료]\n국세청 홈택스 표준 전자세금계산서가 발행되었습니다.\n공급가액: 62,727원 (부가세: 6,273원)\n승인번호: 20261006-41000088-78291048',
-        'BR-06': '[결제 영수증 PDF 다운로드]\n전자 매출전표 PDF 다운로드 링크입니다.\n다운로드: https://pay.autoflow.io/receipts/download?payment_key=toss_pay_20261006_9941',
+        'BR-06': '[결제 영수증 PDF 다운로드]\n전자 매출전표 PDF 다운로드 링크입니다.\n다운로드: https://globaltrendhunterai.github.io/dhlabs/checkout.html?payment_key=toss_pay_20261006_9941',
         'BR-18': '[재무팀 핫라인 에스컬레이션]\n결제 분쟁 사안이 감지되어 AutoFlow 재무정산팀 전담 회계사 핫라인으로 즉각 인계되었습니다. (직통: 02-555-8921)'
       }
     },
@@ -110,7 +110,7 @@
       responses: {
         'BR-01': '[AutoFlow 도입 환영]\n고객사 임직원 규모 및 자동화 목표 도메인(커머스, 재무, DevOps, 마케팅)에 맞춘 최적 도입 로드맵을 제안해드립니다.',
         'BR-02': '[실시간 맞춤 견적서]\n기준 유저 수: 10인\n월간 구독료: 150,000원/월 (유저당 15,000원)\n연간 일괄 결제 시(15% 할인): 1,530,000원/년 (월 127,500원 효과)',
-        'BR-03': '[AutoFlow B2B 솔루션 소개서 & 비교표]\n타사 대비 토큰 소모량 90% 절감, 온프레미스 폐쇄망 설치 보장 비교자료입니다.\n다운로드: https://autoflow.io/assets/docs/AutoFlow_Enterprise_Feature_Matrix_2026.pdf',
+        'BR-03': '[AutoFlow B2B 솔루션 소개서 & 비교표]\n타사 대비 토큰 소모량 90% 절감, 온프레미스 폐쇄망 설치 보장 비교자료입니다.\n다운로드: https://globaltrendhunterai.github.io/dhlabs/assets/docs/AutoFlow_Enterprise_Feature_Matrix_2026.pdf',
         'BR-14': '[24/7 자가치유 데몬 무인 복구 안내]\nAutoFlow 엔진에 내장된 자가치유 데몬이 127ms 내 무인 복구 및 암호화 무인 원격 자동 패치를 수행합니다. 시스템 문의는 온라인 기술 문서를 통해 즉시 해결하실 수 있습니다.',
         'BR-18': '[1:1 라이브 데모 시연 예약]\n전문 솔루션 아키텍트와 30분간 실제 구동 화면을 검토하실 수 있습니다.\n예약 링크: https://calendly.com/autoflow-sales/b2b-demo'
       }
@@ -128,8 +128,8 @@
       ],
       responses: {
         'BR-01': '[IT 서비스 티켓 정식 접수]\n티켓번호: IT-892014\n자동분류 등급: [P2] (SLA 응답목표: 1시간)\n지라(Jira) 및 젠데스크(Zendesk) 헬프데스크 대시보드에 실시간 인계되었습니다.',
-        'BR-02': '[자주 묻는 IT FAQ 셀프 해결]\n1. VPN: WireGuard 실행 -> vpn-seoul-01 선택 -> 2FA 6자리 입력\n2. 비밀번호: 사내 Okta 포털(https://sso.autoflow.io)에서 카카오톡 본인인증으로 1분 초기화 가능',
-        'BR-03': '[전사 시스템 가동 현황 (100% OPERATIONAL)]\n• 프로덕션 API: 정상 (응답시간 38ms)\n• 데이터베이스: 정상 (복제 지연 0초)\n• 상태 대시보드: https://status.autoflow.io',
+        'BR-02': '[자주 묻는 IT FAQ 셀프 해결]\n1. VPN: WireGuard 실행 -> vpn-seoul-01 선택 -> 2FA 6자리 입력\n2. 비밀번호: 사내 Okta 포털(https://globaltrendhunterai.github.io/dhlabs/)에서 카카오톡 본인인증으로 1분 초기화 가능',
+        'BR-03': '[전사 시스템 가동 현황 (100% OPERATIONAL)]\n• 프로덕션 API: 정상 (응답시간 38ms)\n• 데이터베이스: 정상 (복제 지연 0초)\n• 상태 대시보드: https://globaltrendhunterai.github.io/dhlabs/',
         'BR-15': '[보안 정책 위반 경고 및 세션 격리 조치]\n비정상적인 쿼리 패턴(SQL 인젝션, 토큰 탈취 시도)이 감지되어 세션이 DLQ 격리 샌드박스로 자동 전환되었습니다.',
         'BR-20': '[🚨 긴급 P0 전사 비상 소집 발령]\n시스템 다운 및 대규모 장애 징후가 감지되어 당직 SRE 엔지니어 비상 온콜 전화/SMS 발송 및 비상 워룸(War-Room)이 가동되었습니다.'
       }

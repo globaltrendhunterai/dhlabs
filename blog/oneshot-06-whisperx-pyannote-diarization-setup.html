@@ -7,7 +7,7 @@
   <meta name="description" content="Set Up Offline Multi-Speaker Meeting Transcription &amp; SRT Subtitle Generation with Word-Level Timestamps on Mac &amp; Windows ($29 / ₩39,000)">
   <meta name="author" content="Donghyeong Kim (DH Labs)">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <link rel="canonical" href="https://autoflow.io/blog/oneshot-06-whisperx-pyannote-diarization-setup.html">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-06-whisperx-pyannote-diarization-setup.html">
   <link rel="alternate" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-06-whisperx-pyannote-diarization-setup.html" hreflang="en">
   <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
   <link rel="describedby" href="/llms.txt">
@@ -19,118 +19,118 @@
   <meta property="article:modified_time" content="2026-11-01T09:00:00+09:00">
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://autoflow.io/#organization",
-      "name": "DH Labs",
-      "url": "https://autoflow.io/",
-      "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
-      "sameAs": [
-        "https://github.com/globaltrendhunterai",
-        "https://dhlabs.gumroad.com",
-        "https://globaltrendhunterai.github.io/dhlabs/",
-        "https://autoflow.io/"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://autoflow.io/#founder",
-      "name": "Donghyeong Kim",
-      "jobTitle": "Founder & Lead Systems Architect",
-      "worksFor": {
-        "@id": "https://autoflow.io/#organization"
-      }
-    },
-    {
-      "@type": [
-        "TechArticle",
-        "BlogPosting",
-        "SoftwareApplication"
-      ],
-      "@id": "https://autoflow.io/blog/oneshot-06-whisperx-pyannote-diarization-setup.html#article",
-      "name": "[OneShot #06 | ONESHOT-06-WHISPERX] WhisperX & Pyannote Speaker Diarization Initial Setup Installer: Fix CTranslate2, faster-whisper & HF Token Wiring in 1 Click",
-      "headline": "[OneShot #06 | ONESHOT-06-WHISPERX] WhisperX & Pyannote Speaker Diarization Initial Setup Installer: Fix CTranslate2, faster-whisper & HF Token Wiring in 1 Click",
-      "description": "Set Up Offline Multi-Speaker Meeting Transcription & SRT Subtitle Generation with Word-Level Timestamps on Mac & Windows ($29 / ₩39,000)",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
-      "inLanguage": "en-US",
-      "mainEntityOfPage": "https://autoflow.io/blog/oneshot-06-whisperx-pyannote-diarization-setup.html",
-      "datePublished": "2026-01-15",
-      "dateModified": "2026-11-01",
-      "author": {
-        "@id": "https://autoflow.io/#founder"
-      },
-      "publisher": {
-        "@id": "https://autoflow.io/#organization"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "29.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://dhlabs.gumroad.com/l/oneshot-whisperx-diarization-setup"
-      },
-      "keywords": "OneShot, ONESHOT-06-WHISPERX, WhisperX pyannote speaker-diarization-3.1 401 GateError, CTranslate2 faster-whisper float16 int8 error, WhisperX FFmpeg missing, 1-Click Initial Setup, Gumroad, Naver SmartStore"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://autoflow.io/blog/oneshot-06-whisperx-pyannote-diarization-setup.html#faq",
-      "mainEntity": [
+    "@context": "https://schema.org",
+    "@graph": [
         {
-          "@type": "Question",
-          "name": "Why does WhisperX fail with \"float16 compute type not supported\" or pyannote 401 errors?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "CTranslate2 requires specific compute_type settings (float16 on CUDA vs int8 on CPU/Mac), and pyannote/speaker-diarization-3.1 requires a properly wired Hugging Face Read Token. OneShot #06 configures both automatically."
-          }
+            "@type": "Organization",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+            "name": "DH Labs",
+            "url": "https://globaltrendhunterai.github.io/dhlabs/",
+            "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
+            "sameAs": [
+                "https://github.com/globaltrendhunterai",
+                "https://dhlabs.gumroad.com",
+                "https://globaltrendhunterai.github.io/dhlabs/",
+                "https://smartstore.naver.com/dhlabs-official"
+            ]
         },
         {
-          "@type": "Question",
-          "name": "Can I transcribe confidential company meetings 100% offline?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Once the WhisperX and pyannote models are cached on your disk, 100% of speech-to-text transcription and speaker diarization (Speaker 01, Speaker 02) runs locally on your machine with zero cloud uploads."
-          }
+            "@type": "Person",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+            "name": "Donghyeong Kim",
+            "jobTitle": "Founder & Lead Systems Architect",
+            "worksFor": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            }
         },
         {
-          "@type": "Question",
-          "name": "What output formats does the pre-configured WhisperX launcher generate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It outputs speaker-labeled Markdown/TXT meeting transcripts, JSON word-level timestamps, and broadcast-ready .srt / .vtt subtitle files."
-          }
+            "@type": [
+                "TechArticle",
+                "BlogPosting",
+                "SoftwareApplication"
+            ],
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-06-whisperx-pyannote-diarization-setup.html#article",
+            "name": "[OneShot #06 | ONESHOT-06-WHISPERX] WhisperX & Pyannote Speaker Diarization Initial Setup Installer: Fix CTranslate2, faster-whisper & HF Token Wiring in 1 Click",
+            "headline": "[OneShot #06 | ONESHOT-06-WHISPERX] WhisperX & Pyannote Speaker Diarization Initial Setup Installer: Fix CTranslate2, faster-whisper & HF Token Wiring in 1 Click",
+            "description": "Set Up Offline Multi-Speaker Meeting Transcription & SRT Subtitle Generation with Word-Level Timestamps on Mac & Windows ($29 / ₩39,000)",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
+            "inLanguage": "en-US",
+            "mainEntityOfPage": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-06-whisperx-pyannote-diarization-setup.html",
+            "datePublished": "2026-01-15",
+            "dateModified": "2026-11-01",
+            "author": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder"
+            },
+            "publisher": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "29.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://dhlabs.gumroad.com/l/oneshot-whisperx-diarization-setup"
+            },
+            "keywords": "OneShot, ONESHOT-06-WHISPERX, WhisperX pyannote speaker-diarization-3.1 401 GateError, CTranslate2 faster-whisper float16 int8 error, WhisperX FFmpeg missing, 1-Click Initial Setup, Gumroad, Naver SmartStore"
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-06-whisperx-pyannote-diarization-setup.html#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Why does WhisperX fail with \"float16 compute type not supported\" or pyannote 401 errors?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "CTranslate2 requires specific compute_type settings (float16 on CUDA vs int8 on CPU/Mac), and pyannote/speaker-diarization-3.1 requires a properly wired Hugging Face Read Token. OneShot #06 configures both automatically."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I transcribe confidential company meetings 100% offline?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Once the WhisperX and pyannote models are cached on your disk, 100% of speech-to-text transcription and speaker diarization (Speaker 01, Speaker 02) runs locally on your machine with zero cloud uploads."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What output formats does the pre-configured WhisperX launcher generate?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "It outputs speaker-labeled Markdown/TXT meeting transcripts, JSON word-level timestamps, and broadcast-ready .srt / .vtt subtitle files."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-06-whisperx-pyannote-diarization-setup.html#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "OneShot 1-Click Installers",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "[OneShot #06 | ONESHOT-06-WHISPERX] WhisperX & Pyannote Speaker Diarization Initial Setup Installer: Fix CTranslate2, faster-whisper & HF Token Wiring in 1 Click",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-06-whisperx-pyannote-diarization-setup.html"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://autoflow.io/blog/oneshot-06-whisperx-pyannote-diarization-setup.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "OneShot 1-Click Installers",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "[OneShot #06 | ONESHOT-06-WHISPERX] WhisperX & Pyannote Speaker Diarization Initial Setup Installer: Fix CTranslate2, faster-whisper & HF Token Wiring in 1 Click",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-06-whisperx-pyannote-diarization-setup.html"
-        }
-      ]
-    }
-  ]
+    ]
 }
-  </script>
+</script>
   <style>
     :root {
       --bg: #070b14;

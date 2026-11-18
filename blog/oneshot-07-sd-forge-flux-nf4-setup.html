@@ -7,7 +7,7 @@
   <meta name="description" content="Eliminate Flux.1 CUDA Out-Of-Memory (OOM) Crashes, bitsandbytes NF4 Errors &amp; CLIP/T5 Encoder Mismatches with a Single-Use Auto-Cleanup Installer ($39 / ₩49,000)">
   <meta name="author" content="Donghyeong Kim (DH Labs)">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <link rel="canonical" href="https://autoflow.io/blog/oneshot-07-sd-forge-flux-nf4-setup.html">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-07-sd-forge-flux-nf4-setup.html">
   <link rel="alternate" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-07-sd-forge-flux-nf4-setup.html" hreflang="en">
   <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
   <link rel="describedby" href="/llms.txt">
@@ -19,118 +19,118 @@
   <meta property="article:modified_time" content="2026-11-01T09:00:00+09:00">
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://autoflow.io/#organization",
-      "name": "DH Labs",
-      "url": "https://autoflow.io/",
-      "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
-      "sameAs": [
-        "https://github.com/globaltrendhunterai",
-        "https://dhlabs.gumroad.com",
-        "https://globaltrendhunterai.github.io/dhlabs/",
-        "https://autoflow.io/"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://autoflow.io/#founder",
-      "name": "Donghyeong Kim",
-      "jobTitle": "Founder & Lead Systems Architect",
-      "worksFor": {
-        "@id": "https://autoflow.io/#organization"
-      }
-    },
-    {
-      "@type": [
-        "TechArticle",
-        "BlogPosting",
-        "SoftwareApplication"
-      ],
-      "@id": "https://autoflow.io/blog/oneshot-07-sd-forge-flux-nf4-setup.html#article",
-      "name": "[OneShot #07 | ONESHOT-07-FORGE] SD WebUI Forge & Flux.1 NF4 Initial Setup Installer: Run Flux.1 on 8GB~16GB Low-VRAM GPUs in 1 Click",
-      "headline": "[OneShot #07 | ONESHOT-07-FORGE] SD WebUI Forge & Flux.1 NF4 Initial Setup Installer: Run Flux.1 on 8GB~16GB Low-VRAM GPUs in 1 Click",
-      "description": "Eliminate Flux.1 CUDA Out-Of-Memory (OOM) Crashes, bitsandbytes NF4 Errors & CLIP/T5 Encoder Mismatches with a Single-Use Auto-Cleanup Installer ($39 / ₩49,000)",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
-      "inLanguage": "en-US",
-      "mainEntityOfPage": "https://autoflow.io/blog/oneshot-07-sd-forge-flux-nf4-setup.html",
-      "datePublished": "2026-01-15",
-      "dateModified": "2026-11-01",
-      "author": {
-        "@id": "https://autoflow.io/#founder"
-      },
-      "publisher": {
-        "@id": "https://autoflow.io/#organization"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "39.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://dhlabs.gumroad.com/l/oneshot-sd-forge-flux-setup"
-      },
-      "keywords": "OneShot, ONESHOT-07-FORGE, Flux.1 CUDA out of memory 8GB 12GB VRAM, SD WebUI Forge bitsandbytes NF4 error, T5XXL CLIP-L state dict mismatch, 1-Click Initial Setup, Gumroad, Naver SmartStore"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://autoflow.io/blog/oneshot-07-sd-forge-flux-nf4-setup.html#faq",
-      "mainEntity": [
+    "@context": "https://schema.org",
+    "@graph": [
         {
-          "@type": "Question",
-          "name": "Can I really generate Flux.1 images on an 8GB or 12GB GPU with OneShot #07?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. By pre-configuring SD WebUI Forge with 4-bit Normalized Float (NF4) quantization and Dynamic VRAM Weight Streaming, Flux.1 fits comfortably inside 8GB to 12GB consumer GPUs and 16GB Apple Silicon Macs."
-          }
+            "@type": "Organization",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+            "name": "DH Labs",
+            "url": "https://globaltrendhunterai.github.io/dhlabs/",
+            "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
+            "sameAs": [
+                "https://github.com/globaltrendhunterai",
+                "https://dhlabs.gumroad.com",
+                "https://globaltrendhunterai.github.io/dhlabs/",
+                "https://smartstore.naver.com/dhlabs-official"
+            ]
         },
         {
-          "@type": "Question",
-          "name": "Why does SD WebUI Forge run on port 7861 instead of 7860?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "OneShot #07 binds SD WebUI Forge to 127.0.0.1:7861 so it never conflicts with Kohya_ss / FluxGym (port 7860) or ComfyUI (port 8188), letting you run both side by side."
-          }
+            "@type": "Person",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+            "name": "Donghyeong Kim",
+            "jobTitle": "Founder & Lead Systems Architect",
+            "worksFor": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            }
         },
         {
-          "@type": "Question",
-          "name": "Does the installer delete my Flux models when it cleans up automatically?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Never. Only the 1-time setup installer binary overwrites itself automatically after VERIFY_OK=1. Your SD_Forge_Flux_Studio folder and desktop launcher stay permanently on your PC."
-          }
+            "@type": [
+                "TechArticle",
+                "BlogPosting",
+                "SoftwareApplication"
+            ],
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-07-sd-forge-flux-nf4-setup.html#article",
+            "name": "[OneShot #07 | ONESHOT-07-FORGE] SD WebUI Forge & Flux.1 NF4 Initial Setup Installer: Run Flux.1 on 8GB~16GB Low-VRAM GPUs in 1 Click",
+            "headline": "[OneShot #07 | ONESHOT-07-FORGE] SD WebUI Forge & Flux.1 NF4 Initial Setup Installer: Run Flux.1 on 8GB~16GB Low-VRAM GPUs in 1 Click",
+            "description": "Eliminate Flux.1 CUDA Out-Of-Memory (OOM) Crashes, bitsandbytes NF4 Errors & CLIP/T5 Encoder Mismatches with a Single-Use Auto-Cleanup Installer ($39 / ₩49,000)",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
+            "inLanguage": "en-US",
+            "mainEntityOfPage": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-07-sd-forge-flux-nf4-setup.html",
+            "datePublished": "2026-01-15",
+            "dateModified": "2026-11-01",
+            "author": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder"
+            },
+            "publisher": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "39.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://dhlabs.gumroad.com/l/oneshot-sd-forge-flux-setup"
+            },
+            "keywords": "OneShot, ONESHOT-07-FORGE, Flux.1 CUDA out of memory 8GB 12GB VRAM, SD WebUI Forge bitsandbytes NF4 error, T5XXL CLIP-L state dict mismatch, 1-Click Initial Setup, Gumroad, Naver SmartStore"
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-07-sd-forge-flux-nf4-setup.html#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Can I really generate Flux.1 images on an 8GB or 12GB GPU with OneShot #07?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. By pre-configuring SD WebUI Forge with 4-bit Normalized Float (NF4) quantization and Dynamic VRAM Weight Streaming, Flux.1 fits comfortably inside 8GB to 12GB consumer GPUs and 16GB Apple Silicon Macs."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Why does SD WebUI Forge run on port 7861 instead of 7860?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "OneShot #07 binds SD WebUI Forge to 127.0.0.1:7861 so it never conflicts with Kohya_ss / FluxGym (port 7860) or ComfyUI (port 8188), letting you run both side by side."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does the installer delete my Flux models when it cleans up automatically?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Never. Only the 1-time setup installer binary overwrites itself automatically after VERIFY_OK=1. Your SD_Forge_Flux_Studio folder and desktop launcher stay permanently on your PC."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-07-sd-forge-flux-nf4-setup.html#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "OneShot 1-Click Installers",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "[OneShot #07 | ONESHOT-07-FORGE] SD WebUI Forge & Flux.1 NF4 Initial Setup Installer: Run Flux.1 on 8GB~16GB Low-VRAM GPUs in 1 Click",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-07-sd-forge-flux-nf4-setup.html"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://autoflow.io/blog/oneshot-07-sd-forge-flux-nf4-setup.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "OneShot 1-Click Installers",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "[OneShot #07 | ONESHOT-07-FORGE] SD WebUI Forge & Flux.1 NF4 Initial Setup Installer: Run Flux.1 on 8GB~16GB Low-VRAM GPUs in 1 Click",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-07-sd-forge-flux-nf4-setup.html"
-        }
-      ]
-    }
-  ]
+    ]
 }
-  </script>
+</script>
   <style>
     :root {
       --bg: #070b14;

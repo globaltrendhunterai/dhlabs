@@ -325,7 +325,7 @@ AutoFlow Enterprise Edition은 단일 장애점(SPOF, Single Point of Failure)�
   4. 다국가 통화(USD/JPY/EUR/KRW) 대사 구글 시트 연동 템플릿
   5. 1년 후 갱신 시에도 50% 할인 평생 유지 권한 보장
 
-👉 **신청 및 즉시 다운로드**: [https://autoflow.io](https://autoflow.io)  
+👉 **신청 및 즉시 다운로드**: [https://globaltrendhunterai.github.io/dhlabs](https://globaltrendhunterai.github.io/dhlabs)  
 *(선착순 10개사 슬롯 소진 시 예고 없이 정상가로 자동 전환됩니다.)*
 
 ---

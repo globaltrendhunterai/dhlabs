@@ -5,16 +5,16 @@
     "founder": "Donghyeong Kim (김동형)",
     "businessRegistrationNumber": "610-16-92926",
     "appleDeveloperId": "GSKY37R7XV",
-    "primaryUrl": "https://autoflow.io/",
-    "mirrorUrl": "https://globaltrendhunterai.github.io/dhlabs/",
-    "lastModified": "2026-11-09"
+    "primaryUrl": "https://globaltrendhunterai.github.io/dhlabs/",
+    "mirrorUrl": "https://github.com/globaltrendhunterai/dhlabs",
+    "lastModified": "2026-11-18"
   },
   "entries": [
     {
-      "identifier": "urn:air:autoflow.io:llms:summary",
+      "identifier": "urn:air:dhlabs.github.io:llms:summary",
       "displayName": "AutoFlow AI Context Summary (llms.txt)",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
-      "url": "https://autoflow.io/llms.txt",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/llms.txt",
       "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/llms.txt",
       "representativeQueries": [
         "What is AutoFlow Commerce Engine AF-ENG-CORE 3-tier architecture and how does its Lv.1~Lv.4 cumulative modules with 35% BYOK AI discount work?",
@@ -26,10 +26,10 @@
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:llms:full-knowledge-base",
+      "identifier": "urn:air:dhlabs.github.io:llms:full-knowledge-base",
       "displayName": "AutoFlow Full Bilingual Technical & Pricing Knowledge Base (llms-full.txt)",
       "type": "text/markdown; profile=\"urn:air:agent-skills\"",
-      "url": "https://autoflow.io/llms-full.txt",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/llms-full.txt",
       "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/llms-full.txt",
       "representativeQueries": [
         "How does the 70% Safety Factor Rate Governor & Local Disk Overflow Spool-Resume Dam prevent HTTP 429 bans?",
@@ -41,10 +41,10 @@
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:catalog:workflow-menu-board",
+      "identifier": "urn:air:dhlabs.github.io:catalog:workflow-menu-board",
       "displayName": "AutoFlow 150 Single-Edition Workflow Catalog (WORKFLOW_MENU_BOARD.html)",
       "type": "application/ai-catalog+json",
-      "url": "https://autoflow.io/WORKFLOW_MENU_BOARD.html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html",
       "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html",
       "representativeQueries": [
         "Which single-edition e-commerce workflows are available for Naver SmartStore, Coupang Wing, Cafe24, and Shopify?",
@@ -56,10 +56,10 @@
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:simulator:chaos-sandbox",
+      "identifier": "urn:air:dhlabs.github.io:simulator:chaos-sandbox",
       "displayName": "AutoFlow 127ms Self-Healing & 70% Spool-Resume Chaos Sandbox (chaos_sandbox.html)",
       "type": "application/agent-card+json",
-      "url": "https://autoflow.io/chaos_sandbox.html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html",
       "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html",
       "representativeQueries": [
         "How can I test 127ms self-healing against HTTP 429 rate limits and 504 gateway timeouts?",
@@ -71,10 +71,10 @@
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:commerce:checkout-portal",
+      "identifier": "urn:air:dhlabs.github.io:commerce:checkout-portal",
       "displayName": "AutoFlow Official Dual-Gateway Checkout Portal (checkout.html)",
       "type": "application/mcp-server-card+json",
-      "url": "https://autoflow.io/checkout.html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/checkout.html",
       "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/checkout.html",
       "representativeQueries": [
         "How do I purchase an AutoFlow single workflow or 30/90/365-day Resident Autonomous Defense Engine pass in KRW or USD?",
@@ -86,10 +86,10 @@
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:oneshot:setup-capsules-15sku",
+      "identifier": "urn:air:dhlabs.github.io:oneshot:setup-capsules-15sku",
       "displayName": "OneShot Setup Capsule — 15 Individual 1-Click Initial Setup Installers (oneshot.html)",
       "type": "application/ai-catalog+json",
-      "url": "https://autoflow.io/oneshot.html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html",
       "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html",
       "representativeQueries": [
         "How do I set up ComfyUI, Kohya_ss/FluxGym, RVC/Applio, Claude Code MCP, OpenClaw, WhisperX, SD WebUI Forge/Flux, Open WebUI RAG, Wan 2.1 Video, F5-TTS, Cursor/Windsurf MCP, UVR5/Demucs, Firecrawl MCP, Twenty CRM, or Listmonk + Reacher in 1 click without CUDA or C++ build errors?",
@@ -129,7 +129,7 @@
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:smartstore:af-prod-30-return-shipping-recon",
+      "identifier": "urn:air:dhlabs.github.io:smartstore:af-prod-30-return-shipping-recon",
       "displayName": "[스마트스토어 월말마감 #11 v3.1] 3,000원 이월 반품배송비 누락·다회차 3단분리 2줄묶음 대사기 단품 (AF-PROD-30 / AF-NAVER-11, ₩49,000)",
       "type": "application/ai-catalog+json",
       "url": "https://smartstore.naver.com/dhlabs-official/products/13862599252",
@@ -143,7 +143,7 @@
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:smartstore:af-prod-31-partial-return-freeship-recon",
+      "identifier": "urn:air:dhlabs.github.io:smartstore:af-prod-31-partial-return-freeship-recon",
       "displayName": "[스마트스토어 부분반품 #12] 6,000원 조건부 무료배송 깨짐 다회차 부분반품 왕복·초도배송비 누락 대사기 단품 (AF-PROD-31 / AF-NAVER-12, ₩59,000)",
       "type": "application/ai-catalog+json",
       "url": "https://smartstore.naver.com/dhlabs-official/products/13863908145",
@@ -339,7 +339,7 @@
       }
     },
     {
-      "identifier": "urn:air:autoflow.io:fintree:ecom-profit-vault-10sku",
+      "identifier": "urn:air:dhlabs.github.io:fintree:ecom-profit-vault-10sku",
       "displayName": "FinTreeVault & EcomProfitVault — 10 Global E-Commerce Margin/ROAS/BEP Simulators & Master Builder Pro",
       "type": "application/ai-catalog+json",
       "url": "https://smartstore.naver.com/dhlabs-official/products/13863037562",

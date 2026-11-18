@@ -122,7 +122,7 @@ Disallow: /recon_quarantine_viewer.html
 Disallow: /api/
 
 Agentmap: https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json
-Agentmap: https://autoflow.io/ai-catalog.json
+Agentmap: https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json
 Sitemap: https://globaltrendhunterai.github.io/dhlabs/sitemap.xml
-Sitemap: https://autoflow.io/sitemap.xml
-# AI / LLM Context Map (llmstxt.org standard): https://autoflow.io/llms.txt | https://globaltrendhunterai.github.io/dhlabs/llms.txt
+Sitemap: https://globaltrendhunterai.github.io/dhlabs/sitemap.xml
+# AI / LLM Context Map (llmstxt.org standard): https://globaltrendhunterai.github.io/dhlabs/llms.txt | https://globaltrendhunterai.github.io/dhlabs/llms.txt

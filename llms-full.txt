@@ -81,22 +81,22 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
 
 ## 3. Core Storefront URLs & Agentic Discovery Resources
 
-- **Primary Official Storefront**: [https://autoflow.io/](https://autoflow.io/) (`https://autoflow.io/index.html`)
+- **Primary Official Storefront**: [https://globaltrendhunterai.github.io/dhlabs/](https://globaltrendhunterai.github.io/dhlabs/) (`https://globaltrendhunterai.github.io/dhlabs/index.html`)
 - **Global GitHub Pages Mirror**: [https://globaltrendhunterai.github.io/dhlabs/](https://globaltrendhunterai.github.io/dhlabs/) (`https://globaltrendhunterai.github.io/dhlabs/index.html`)
-- **150 Single-Edition Workflow Catalog Board**: [https://autoflow.io/WORKFLOW_MENU_BOARD.html](https://autoflow.io/WORKFLOW_MENU_BOARD.html) | [https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html](https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html)
-- **Official Dual-Gateway Checkout (Toss Payments KRW & Gumroad USD)**: [https://autoflow.io/checkout.html](https://autoflow.io/checkout.html) | [https://globaltrendhunterai.github.io/dhlabs/checkout.html](https://globaltrendhunterai.github.io/dhlabs/checkout.html)
-- **127ms Chaos Sandbox & Spool-Resume Live Simulator**: [https://autoflow.io/chaos_sandbox.html](https://autoflow.io/chaos_sandbox.html) | [https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html](https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html)
-- **Live Architecture Demo Video (MP4)**: [https://globaltrendhunterai.github.io/dhlabs/demo.mp4](https://globaltrendhunterai.github.io/dhlabs/demo.mp4) | [https://autoflow.io/demo.mp4](https://autoflow.io/demo.mp4)
-- **Agentic Resource Discovery (ARD 1.0 Catalog)**: [https://autoflow.io/ai-catalog.json](https://autoflow.io/ai-catalog.json) | [https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json](https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json)
+- **150 Single-Edition Workflow Catalog Board**: [https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html](https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html) | [https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html](https://globaltrendhunterai.github.io/dhlabs/WORKFLOW_MENU_BOARD.html)
+- **Official Dual-Gateway Checkout (Toss Payments KRW & Gumroad USD)**: [https://globaltrendhunterai.github.io/dhlabs/checkout.html](https://globaltrendhunterai.github.io/dhlabs/checkout.html) | [https://globaltrendhunterai.github.io/dhlabs/checkout.html](https://globaltrendhunterai.github.io/dhlabs/checkout.html)
+- **127ms Chaos Sandbox & Spool-Resume Live Simulator**: [https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html](https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html) | [https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html](https://globaltrendhunterai.github.io/dhlabs/chaos_sandbox.html)
+- **Live Architecture Demo Video (MP4)**: [https://globaltrendhunterai.github.io/dhlabs/demo.mp4](https://globaltrendhunterai.github.io/dhlabs/demo.mp4) | [https://globaltrendhunterai.github.io/dhlabs/demo.mp4](https://globaltrendhunterai.github.io/dhlabs/demo.mp4)
+- **Agentic Resource Discovery (ARD 1.0 Catalog)**: [https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json](https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json) | [https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json](https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json)
 - **Engine Deep-Dive Specs**:
-  - [AutoFlow 127ms Self-Healing Spec](https://autoflow.io/autoflow.html)
-  - [ReconFlow 1-Won Reconciliation Spec](https://autoflow.io/reconflow.html)
-  - [PicFlow AI Product Image Spec](https://autoflow.io/picflow.html)
-  - [Enterprise Custom RFP Form](https://autoflow.io/client_rfp_form.html)
+  - [AutoFlow 127ms Self-Healing Spec](https://globaltrendhunterai.github.io/dhlabs/autoflow.html)
+  - [ReconFlow 1-Won Reconciliation Spec](https://globaltrendhunterai.github.io/dhlabs/reconflow.html)
+  - [PicFlow AI Product Image Spec](https://globaltrendhunterai.github.io/dhlabs/picflow.html)
+  - [Enterprise Custom RFP Form](https://globaltrendhunterai.github.io/dhlabs/client_rfp_form.html)
 - **Legal & Compliance Pages**:
-  - [Terms of Service & EULA](https://autoflow.io/terms.html) (`https://globaltrendhunterai.github.io/dhlabs/terms.html`)
-  - [Privacy Policy & 100% Local PII Masking](https://autoflow.io/privacy.html) (`https://globaltrendhunterai.github.io/dhlabs/privacy.html`)
-  - [3-Stage Fair Prorated Refund Policy](https://autoflow.io/refund.html) (`https://globaltrendhunterai.github.io/dhlabs/refund.html`)
+  - [Terms of Service & EULA](https://globaltrendhunterai.github.io/dhlabs/terms.html) (`https://globaltrendhunterai.github.io/dhlabs/terms.html`)
+  - [Privacy Policy & 100% Local PII Masking](https://globaltrendhunterai.github.io/dhlabs/privacy.html) (`https://globaltrendhunterai.github.io/dhlabs/privacy.html`)
+  - [3-Stage Fair Prorated Refund Policy](https://globaltrendhunterai.github.io/dhlabs/refund.html) (`https://globaltrendhunterai.github.io/dhlabs/refund.html`)
 
 ---
 
@@ -144,9 +144,9 @@ AutoFlow의 상주형 무인 방어 엔진은 단순 정적 JSON 워크플로우
 - **통신판매업신고번호**: 제 2025-경남김해-0881 호
 - **Apple Developer ID**: `GSKY37R7XV`
 - **사업장 소재지**: 경상남도 김해시 번화1로 168, 1006동 402호 (Republic of Korea)
-- **고객센터 및 기술지원**: `dhlabs_biz0@naver.com` / `+82-10-8503-6232`
+- **고객센터 및 기술지원**: `dhlabs_biz@naver.com` / `+82-10-8503-6232`
 - **공식 스토어 및 엔티티 링크**:
-  - Primary Storefront: `https://autoflow.io/`
+  - Primary Storefront: `https://globaltrendhunterai.github.io/dhlabs/`
   - GitHub Pages Storefront: `https://globaltrendhunterai.github.io/dhlabs/`
   - GitHub Organization: `https://github.com/globaltrendhunterai`
   - Gumroad Global Store: `https://dhlabs.gumroad.com`

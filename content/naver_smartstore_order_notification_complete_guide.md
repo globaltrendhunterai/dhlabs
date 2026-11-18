@@ -274,7 +274,7 @@ AutoFlow는 단일 서버에 모든 것을 맡기지 않습니다. 대표님의 
   2. 127ms 무인 자가치유 데몬(AutoFlow Guardian) 풀가동
   3. 스마트스토어 + 쿠팡 멀티 채널 통합 관제 지원
   4. 계약 기간 종료 후에도 동일한 50% 할인가로 영구 갱신 보장
-- **신청 방법**: 자사몰 직결 웹사이트 ([https://autoflow.io](https://autoflow.io)) 또는 공식 지원 채널 문의
+- **신청 방법**: 자사몰 직결 웹사이트 ([https://globaltrendhunterai.github.io/dhlabs](https://globaltrendhunterai.github.io/dhlabs)) 또는 공식 지원 채널 문의
 
 ---
 
@@ -322,5 +322,5 @@ AutoFlow는 단일 서버에 모든 것을 맡기지 않습니다. 대표님의 
 </script>
 
 ---
-**기술 지원 및 문의**: AutoFlow Enterprise SRE Research Group (support@autoflow.io)  
+**기술 지원 및 문의**: AutoFlow Enterprise SRE Research Group (dhlabs_biz@naver.com)  
 *Copyright © 2026 AutoFlow. All rights reserved.*

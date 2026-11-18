@@ -5,14 +5,14 @@ set -e
 # AutoFlow Enterprise 1-Click Instant Installer (macOS)
 # Fast Web-to-Desktop Zero-Config Deployment
 # Usage:
-#   Remote: curl -fsSL https://get.autoflow.io/mac | bash
+#   Remote: curl -fsSL https://globaltrendhunterai.github.io/dhlabs/install_mac.sh | bash
 #   Local:  bash scripts/install_mac.sh
 # ==============================================================================
 
 export LC_ALL=en_US.UTF-8 2>/dev/null || true
 
 INSTALL_DIR="${AUTOFLOW_INSTALL_DIR:-$HOME/AutoFlow}"
-DOWNLOAD_URL="${AUTOFLOW_DOWNLOAD_URL:-https://autoflow.io/downloads/AutoFlow_Coupang_STANDARD_v2.0.zip}"
+DOWNLOAD_URL="${AUTOFLOW_DOWNLOAD_URL:-https://globaltrendhunterai.github.io/dhlabs/downloads/AutoFlow_Coupang_STANDARD_v2.0.zip}"
 PACKAGE_NAME="AutoFlow_Coupang_STANDARD_v2.0.zip"
 
 echo "================================================================================"
@@ -51,7 +51,7 @@ else
     TEMP_ZIP="$(mktemp /tmp/autoflow_pkg_XXXXXX.zip)"
     if ! curl -fsSL --retry 3 --connect-timeout 10 "$DOWNLOAD_URL" -o "$TEMP_ZIP"; then
         echo "[WARN] Primary download failed. Attempting fallback bundle..."
-        FALLBACK_URL="https://autoflow.io/downloads/AF_STARTER_PACK_v1.0.zip"
+        FALLBACK_URL="https://globaltrendhunterai.github.io/dhlabs/downloads/AF_STARTER_PACK_v1.0.zip"
         if ! curl -fsSL --retry 2 "$FALLBACK_URL" -o "$TEMP_ZIP"; then
             echo "[FATAL] Unable to retrieve AutoFlow package. Please check network connection."
             [ -f "$TEMP_ZIP" ] && rm -f "$TEMP_ZIP"

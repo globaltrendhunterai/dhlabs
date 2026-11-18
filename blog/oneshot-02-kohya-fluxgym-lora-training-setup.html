@@ -7,7 +7,7 @@
   <meta name="description" content="Solve bitsandbytes CUDA DLL Errors, MSVC C++ Build Failures &amp; Accelerate Config Prompts with Pre-Tuned 8GB/12GB/16GB VRAM Presets ($39 / ₩49,000)">
   <meta name="author" content="Donghyeong Kim (DH Labs)">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <link rel="canonical" href="https://autoflow.io/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html">
   <link rel="alternate" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html" hreflang="en">
   <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
   <link rel="describedby" href="/llms.txt">
@@ -19,118 +19,118 @@
   <meta property="article:modified_time" content="2026-11-01T09:00:00+09:00">
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://autoflow.io/#organization",
-      "name": "DH Labs",
-      "url": "https://autoflow.io/",
-      "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
-      "sameAs": [
-        "https://github.com/globaltrendhunterai",
-        "https://dhlabs.gumroad.com",
-        "https://globaltrendhunterai.github.io/dhlabs/",
-        "https://autoflow.io/"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://autoflow.io/#founder",
-      "name": "Donghyeong Kim",
-      "jobTitle": "Founder & Lead Systems Architect",
-      "worksFor": {
-        "@id": "https://autoflow.io/#organization"
-      }
-    },
-    {
-      "@type": [
-        "TechArticle",
-        "BlogPosting",
-        "SoftwareApplication"
-      ],
-      "@id": "https://autoflow.io/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html#article",
-      "name": "[OneShot #02 | ONESHOT-02-KOHYA-FLUXGYM] Kohya_ss & FluxGym LoRA Training Initial Setup Installer: Fix bitsandbytes, Accelerate & Low-VRAM Presets in 1 Click",
-      "headline": "[OneShot #02 | ONESHOT-02-KOHYA-FLUXGYM] Kohya_ss & FluxGym LoRA Training Initial Setup Installer: Fix bitsandbytes, Accelerate & Low-VRAM Presets in 1 Click",
-      "description": "Solve bitsandbytes CUDA DLL Errors, MSVC C++ Build Failures & Accelerate Config Prompts with Pre-Tuned 8GB/12GB/16GB VRAM Presets ($39 / ₩49,000)",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
-      "inLanguage": "en-US",
-      "mainEntityOfPage": "https://autoflow.io/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html",
-      "datePublished": "2026-01-15",
-      "dateModified": "2026-11-01",
-      "author": {
-        "@id": "https://autoflow.io/#founder"
-      },
-      "publisher": {
-        "@id": "https://autoflow.io/#organization"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "39.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://dhlabs.gumroad.com/l/oneshot-kohya-fluxgym-setup"
-      },
-      "keywords": "OneShot, ONESHOT-02-KOHYA-FLUXGYM, bitsandbytes CUDA Setup failed, accelerate config interactive prompt hang, FluxGym CUDA out of memory, Kohya_ss bfloat16 fp16 mismatch, 1-Click Initial Setup, Gumroad, Naver SmartStore"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://autoflow.io/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html#faq",
-      "mainEntity": [
+    "@context": "https://schema.org",
+    "@graph": [
         {
-          "@type": "Question",
-          "name": "How does OneShot #02 prevent CUDA Out-Of-Memory (OOM) errors on 8GB or 12GB GPUs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "OneShot #02 pre-generates hardware-matched JSON presets with gradient_checkpointing=true, cache_latents_to_disk=true, and Adafactor/8-bit AdamW optimizers so Flux.1 and SDXL LoRA training runs smoothly within 8GB to 16GB VRAM limits."
-          }
+            "@type": "Organization",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+            "name": "DH Labs",
+            "url": "https://globaltrendhunterai.github.io/dhlabs/",
+            "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
+            "sameAs": [
+                "https://github.com/globaltrendhunterai",
+                "https://dhlabs.gumroad.com",
+                "https://globaltrendhunterai.github.io/dhlabs/",
+                "https://smartstore.naver.com/dhlabs-official"
+            ]
         },
         {
-          "@type": "Question",
-          "name": "Does it configure Hugging Face accelerate automatically?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. It directly writes the verified ~/.cache/huggingface/accelerate/default_config.yaml file on your OS so you never get stuck in terminal prompts."
-          }
+            "@type": "Person",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+            "name": "Donghyeong Kim",
+            "jobTitle": "Founder & Lead Systems Architect",
+            "worksFor": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            }
         },
         {
-          "@type": "Question",
-          "name": "Are my training images ever uploaded to an external cloud?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Never. The Gradio interface is strictly locked to 127.0.0.1:7860 with public sharing disabled, keeping all training datasets 100% on your local disk."
-          }
+            "@type": [
+                "TechArticle",
+                "BlogPosting",
+                "SoftwareApplication"
+            ],
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html#article",
+            "name": "[OneShot #02 | ONESHOT-02-KOHYA-FLUXGYM] Kohya_ss & FluxGym LoRA Training Initial Setup Installer: Fix bitsandbytes, Accelerate & Low-VRAM Presets in 1 Click",
+            "headline": "[OneShot #02 | ONESHOT-02-KOHYA-FLUXGYM] Kohya_ss & FluxGym LoRA Training Initial Setup Installer: Fix bitsandbytes, Accelerate & Low-VRAM Presets in 1 Click",
+            "description": "Solve bitsandbytes CUDA DLL Errors, MSVC C++ Build Failures & Accelerate Config Prompts with Pre-Tuned 8GB/12GB/16GB VRAM Presets ($39 / ₩49,000)",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
+            "inLanguage": "en-US",
+            "mainEntityOfPage": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html",
+            "datePublished": "2026-01-15",
+            "dateModified": "2026-11-01",
+            "author": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder"
+            },
+            "publisher": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "39.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://dhlabs.gumroad.com/l/oneshot-kohya-fluxgym-setup"
+            },
+            "keywords": "OneShot, ONESHOT-02-KOHYA-FLUXGYM, bitsandbytes CUDA Setup failed, accelerate config interactive prompt hang, FluxGym CUDA out of memory, Kohya_ss bfloat16 fp16 mismatch, 1-Click Initial Setup, Gumroad, Naver SmartStore"
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How does OneShot #02 prevent CUDA Out-Of-Memory (OOM) errors on 8GB or 12GB GPUs?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "OneShot #02 pre-generates hardware-matched JSON presets with gradient_checkpointing=true, cache_latents_to_disk=true, and Adafactor/8-bit AdamW optimizers so Flux.1 and SDXL LoRA training runs smoothly within 8GB to 16GB VRAM limits."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does it configure Hugging Face accelerate automatically?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. It directly writes the verified ~/.cache/huggingface/accelerate/default_config.yaml file on your OS so you never get stuck in terminal prompts."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are my training images ever uploaded to an external cloud?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Never. The Gradio interface is strictly locked to 127.0.0.1:7860 with public sharing disabled, keeping all training datasets 100% on your local disk."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "OneShot 1-Click Installers",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "[OneShot #02 | ONESHOT-02-KOHYA-FLUXGYM] Kohya_ss & FluxGym LoRA Training Initial Setup Installer: Fix bitsandbytes, Accelerate & Low-VRAM Presets in 1 Click",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://autoflow.io/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "OneShot 1-Click Installers",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "[OneShot #02 | ONESHOT-02-KOHYA-FLUXGYM] Kohya_ss & FluxGym LoRA Training Initial Setup Installer: Fix bitsandbytes, Accelerate & Low-VRAM Presets in 1 Click",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-02-kohya-fluxgym-lora-training-setup.html"
-        }
-      ]
-    }
-  ]
+    ]
 }
-  </script>
+</script>
   <style>
     :root {
       --bg: #070b14;

@@ -7,7 +7,7 @@
   <meta name="description" content="Deploy a Private 127.0.0.1:3000 ChatGPT Interface with Multilingual bge-m3 Document RAG, SQLite Vector Index &amp; Zero Docker Bloat ($39 / ₩49,000)">
   <meta name="author" content="Donghyeong Kim (DH Labs)">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <link rel="canonical" href="https://autoflow.io/blog/oneshot-08-openwebui-local-rag-setup.html">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-08-openwebui-local-rag-setup.html">
   <link rel="alternate" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-08-openwebui-local-rag-setup.html" hreflang="en">
   <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
   <link rel="describedby" href="/llms.txt">
@@ -19,118 +19,118 @@
   <meta property="article:modified_time" content="2026-11-01T09:00:00+09:00">
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://autoflow.io/#organization",
-      "name": "DH Labs",
-      "url": "https://autoflow.io/",
-      "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
-      "sameAs": [
-        "https://github.com/globaltrendhunterai",
-        "https://dhlabs.gumroad.com",
-        "https://globaltrendhunterai.github.io/dhlabs/",
-        "https://autoflow.io/"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://autoflow.io/#founder",
-      "name": "Donghyeong Kim",
-      "jobTitle": "Founder & Lead Systems Architect",
-      "worksFor": {
-        "@id": "https://autoflow.io/#organization"
-      }
-    },
-    {
-      "@type": [
-        "TechArticle",
-        "BlogPosting",
-        "SoftwareApplication"
-      ],
-      "@id": "https://autoflow.io/blog/oneshot-08-openwebui-local-rag-setup.html#article",
-      "name": "[OneShot #08 | ONESHOT-08-OPENWEBUI] Open WebUI & Local Document RAG Initial Setup Installer: Offline ChatGPT UI + PDF/Word/Excel Vector DB in 1 Click",
-      "headline": "[OneShot #08 | ONESHOT-08-OPENWEBUI] Open WebUI & Local Document RAG Initial Setup Installer: Offline ChatGPT UI + PDF/Word/Excel Vector DB in 1 Click",
-      "description": "Deploy a Private 127.0.0.1:3000 ChatGPT Interface with Multilingual bge-m3 Document RAG, SQLite Vector Index & Zero Docker Bloat ($39 / ₩49,000)",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
-      "inLanguage": "en-US",
-      "mainEntityOfPage": "https://autoflow.io/blog/oneshot-08-openwebui-local-rag-setup.html",
-      "datePublished": "2026-01-15",
-      "dateModified": "2026-11-01",
-      "author": {
-        "@id": "https://autoflow.io/#founder"
-      },
-      "publisher": {
-        "@id": "https://autoflow.io/#organization"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "39.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://dhlabs.gumroad.com/l/oneshot-openwebui-local-rag-setup"
-      },
-      "keywords": "OneShot, ONESHOT-08-OPENWEBUI, Open WebUI Docker Desktop memory bloat, Ollama connection refused 11434, ChromaDB SQLite3 version error, Korean PDF RAG chunking, 1-Click Initial Setup, Gumroad, Naver SmartStore"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://autoflow.io/blog/oneshot-08-openwebui-local-rag-setup.html#faq",
-      "mainEntity": [
+    "@context": "https://schema.org",
+    "@graph": [
         {
-          "@type": "Question",
-          "name": "Do I need Docker Desktop installed to use OneShot #08 Open WebUI?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. OneShot #08 configures a lightweight, native local environment without Docker Desktop, saving 8GB+ of system RAM while connecting directly to local Ollama on 127.0.0.1:11434."
-          }
+            "@type": "Organization",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+            "name": "DH Labs",
+            "url": "https://globaltrendhunterai.github.io/dhlabs/",
+            "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
+            "sameAs": [
+                "https://github.com/globaltrendhunterai",
+                "https://dhlabs.gumroad.com",
+                "https://globaltrendhunterai.github.io/dhlabs/",
+                "https://smartstore.naver.com/dhlabs-official"
+            ]
         },
         {
-          "@type": "Question",
-          "name": "Can I query confidential company PDFs, Word contracts, and Excel sheets offline?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. All document chunking, embedding (bge-m3), and vector indexing happen 100% locally inside your ~/OneShot_Workspace/OpenWebUI_RAG_Studio/vector_db directory with zero external telemetry."
-          }
+            "@type": "Person",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+            "name": "Donghyeong Kim",
+            "jobTitle": "Founder & Lead Systems Architect",
+            "worksFor": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            }
         },
         {
-          "@type": "Question",
-          "name": "Does it support both local Ollama models and external APIs if I choose?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. It pre-wires 127.0.0.1:11434 for 100% offline local LLMs and also includes an optional chmod 0600 BYOK slot if you ever wish to connect OpenAI or Claude APIs."
-          }
+            "@type": [
+                "TechArticle",
+                "BlogPosting",
+                "SoftwareApplication"
+            ],
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-08-openwebui-local-rag-setup.html#article",
+            "name": "[OneShot #08 | ONESHOT-08-OPENWEBUI] Open WebUI & Local Document RAG Initial Setup Installer: Offline ChatGPT UI + PDF/Word/Excel Vector DB in 1 Click",
+            "headline": "[OneShot #08 | ONESHOT-08-OPENWEBUI] Open WebUI & Local Document RAG Initial Setup Installer: Offline ChatGPT UI + PDF/Word/Excel Vector DB in 1 Click",
+            "description": "Deploy a Private 127.0.0.1:3000 ChatGPT Interface with Multilingual bge-m3 Document RAG, SQLite Vector Index & Zero Docker Bloat ($39 / ₩49,000)",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
+            "inLanguage": "en-US",
+            "mainEntityOfPage": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-08-openwebui-local-rag-setup.html",
+            "datePublished": "2026-01-15",
+            "dateModified": "2026-11-01",
+            "author": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder"
+            },
+            "publisher": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "39.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://dhlabs.gumroad.com/l/oneshot-openwebui-local-rag-setup"
+            },
+            "keywords": "OneShot, ONESHOT-08-OPENWEBUI, Open WebUI Docker Desktop memory bloat, Ollama connection refused 11434, ChromaDB SQLite3 version error, Korean PDF RAG chunking, 1-Click Initial Setup, Gumroad, Naver SmartStore"
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-08-openwebui-local-rag-setup.html#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Do I need Docker Desktop installed to use OneShot #08 Open WebUI?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. OneShot #08 configures a lightweight, native local environment without Docker Desktop, saving 8GB+ of system RAM while connecting directly to local Ollama on 127.0.0.1:11434."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I query confidential company PDFs, Word contracts, and Excel sheets offline?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. All document chunking, embedding (bge-m3), and vector indexing happen 100% locally inside your ~/OneShot_Workspace/OpenWebUI_RAG_Studio/vector_db directory with zero external telemetry."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does it support both local Ollama models and external APIs if I choose?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. It pre-wires 127.0.0.1:11434 for 100% offline local LLMs and also includes an optional chmod 0600 BYOK slot if you ever wish to connect OpenAI or Claude APIs."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-08-openwebui-local-rag-setup.html#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "OneShot 1-Click Installers",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "[OneShot #08 | ONESHOT-08-OPENWEBUI] Open WebUI & Local Document RAG Initial Setup Installer: Offline ChatGPT UI + PDF/Word/Excel Vector DB in 1 Click",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-08-openwebui-local-rag-setup.html"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://autoflow.io/blog/oneshot-08-openwebui-local-rag-setup.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "OneShot 1-Click Installers",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "[OneShot #08 | ONESHOT-08-OPENWEBUI] Open WebUI & Local Document RAG Initial Setup Installer: Offline ChatGPT UI + PDF/Word/Excel Vector DB in 1 Click",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-08-openwebui-local-rag-setup.html"
-        }
-      ]
-    }
-  ]
+    ]
 }
-  </script>
+</script>
   <style>
     :root {
       --bg: #070b14;

@@ -7,7 +7,7 @@
   <meta name="description" content="Automatically Wire 10 Official MCP Servers into ~/.claude.json and claude_desktop_config.json with Automatic Backup &amp; Rollback ($29 / ₩39,000)">
   <meta name="author" content="Donghyeong Kim (DH Labs)">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <link rel="canonical" href="https://autoflow.io/blog/oneshot-04-claudecode-mcp-10servers-setup.html">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-04-claudecode-mcp-10servers-setup.html">
   <link rel="alternate" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-04-claudecode-mcp-10servers-setup.html" hreflang="en">
   <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
   <link rel="describedby" href="/llms.txt">
@@ -19,118 +19,118 @@
   <meta property="article:modified_time" content="2026-11-01T09:00:00+09:00">
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://autoflow.io/#organization",
-      "name": "DH Labs",
-      "url": "https://autoflow.io/",
-      "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
-      "sameAs": [
-        "https://github.com/globaltrendhunterai",
-        "https://dhlabs.gumroad.com",
-        "https://globaltrendhunterai.github.io/dhlabs/",
-        "https://autoflow.io/"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://autoflow.io/#founder",
-      "name": "Donghyeong Kim",
-      "jobTitle": "Founder & Lead Systems Architect",
-      "worksFor": {
-        "@id": "https://autoflow.io/#organization"
-      }
-    },
-    {
-      "@type": [
-        "TechArticle",
-        "BlogPosting",
-        "SoftwareApplication"
-      ],
-      "@id": "https://autoflow.io/blog/oneshot-04-claudecode-mcp-10servers-setup.html#article",
-      "name": "[OneShot #04 | ONESHOT-04-CLAUDE-MCP] Claude Code & Claude Desktop 10 Core MCP Servers Initial Setup Installer: Fix JSON Syntax & PATH Errors in 1 Click",
-      "headline": "[OneShot #04 | ONESHOT-04-CLAUDE-MCP] Claude Code & Claude Desktop 10 Core MCP Servers Initial Setup Installer: Fix JSON Syntax & PATH Errors in 1 Click",
-      "description": "Automatically Wire 10 Official MCP Servers into ~/.claude.json and claude_desktop_config.json with Automatic Backup & Rollback ($29 / ₩39,000)",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
-      "inLanguage": "en-US",
-      "mainEntityOfPage": "https://autoflow.io/blog/oneshot-04-claudecode-mcp-10servers-setup.html",
-      "datePublished": "2026-01-15",
-      "dateModified": "2026-11-01",
-      "author": {
-        "@id": "https://autoflow.io/#founder"
-      },
-      "publisher": {
-        "@id": "https://autoflow.io/#organization"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "29.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://dhlabs.gumroad.com/l/oneshot-claudecode-mcp-setup"
-      },
-      "keywords": "OneShot, ONESHOT-04-CLAUDE-MCP, MCP server disconnected Claude Desktop, spawn npx ENOENT Claude MCP, ~/.claude.json syntax error, Model Context Protocol setup, 1-Click Initial Setup, Gumroad, Naver SmartStore"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://autoflow.io/blog/oneshot-04-claudecode-mcp-10servers-setup.html#faq",
-      "mainEntity": [
+    "@context": "https://schema.org",
+    "@graph": [
         {
-          "@type": "Question",
-          "name": "Will OneShot #04 overwrite MCP servers I already configured in Claude?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. OneShot #04 performs a non-destructive JSON merge: it first creates a timestamped .bak backup and then adds or updates the 10 core MCP entries while preserving your existing custom keys."
-          }
+            "@type": "Organization",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+            "name": "DH Labs",
+            "url": "https://globaltrendhunterai.github.io/dhlabs/",
+            "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
+            "sameAs": [
+                "https://github.com/globaltrendhunterai",
+                "https://dhlabs.gumroad.com",
+                "https://globaltrendhunterai.github.io/dhlabs/",
+                "https://smartstore.naver.com/dhlabs-official"
+            ]
         },
         {
-          "@type": "Question",
-          "name": "Why does Claude Desktop show \"spawn npx ENOENT\" on macOS and how does this fix it?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "macOS GUI apps do not inherit your terminal shell PATH (/opt/homebrew/bin or nvm paths). OneShot #04 resolves and injects the exact runtime binary paths so Claude Desktop connects on the first try."
-          }
+            "@type": "Person",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+            "name": "Donghyeong Kim",
+            "jobTitle": "Founder & Lead Systems Architect",
+            "worksFor": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            }
         },
         {
-          "@type": "Question",
-          "name": "Does this configure both Claude Desktop and Claude Code CLI?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Both ~/Library/Application Support/Claude/claude_desktop_config.json (or %APPDATA%\\Claude on Windows) and ~/.claude.json are configured simultaneously."
-          }
+            "@type": [
+                "TechArticle",
+                "BlogPosting",
+                "SoftwareApplication"
+            ],
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-04-claudecode-mcp-10servers-setup.html#article",
+            "name": "[OneShot #04 | ONESHOT-04-CLAUDE-MCP] Claude Code & Claude Desktop 10 Core MCP Servers Initial Setup Installer: Fix JSON Syntax & PATH Errors in 1 Click",
+            "headline": "[OneShot #04 | ONESHOT-04-CLAUDE-MCP] Claude Code & Claude Desktop 10 Core MCP Servers Initial Setup Installer: Fix JSON Syntax & PATH Errors in 1 Click",
+            "description": "Automatically Wire 10 Official MCP Servers into ~/.claude.json and claude_desktop_config.json with Automatic Backup & Rollback ($29 / ₩39,000)",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
+            "inLanguage": "en-US",
+            "mainEntityOfPage": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-04-claudecode-mcp-10servers-setup.html",
+            "datePublished": "2026-01-15",
+            "dateModified": "2026-11-01",
+            "author": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder"
+            },
+            "publisher": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "29.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://dhlabs.gumroad.com/l/oneshot-claudecode-mcp-setup"
+            },
+            "keywords": "OneShot, ONESHOT-04-CLAUDE-MCP, MCP server disconnected Claude Desktop, spawn npx ENOENT Claude MCP, ~/.claude.json syntax error, Model Context Protocol setup, 1-Click Initial Setup, Gumroad, Naver SmartStore"
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-04-claudecode-mcp-10servers-setup.html#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Will OneShot #04 overwrite MCP servers I already configured in Claude?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. OneShot #04 performs a non-destructive JSON merge: it first creates a timestamped .bak backup and then adds or updates the 10 core MCP entries while preserving your existing custom keys."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Why does Claude Desktop show \"spawn npx ENOENT\" on macOS and how does this fix it?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "macOS GUI apps do not inherit your terminal shell PATH (/opt/homebrew/bin or nvm paths). OneShot #04 resolves and injects the exact runtime binary paths so Claude Desktop connects on the first try."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does this configure both Claude Desktop and Claude Code CLI?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Both ~/Library/Application Support/Claude/claude_desktop_config.json (or %APPDATA%\\Claude on Windows) and ~/.claude.json are configured simultaneously."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-04-claudecode-mcp-10servers-setup.html#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "OneShot 1-Click Installers",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "[OneShot #04 | ONESHOT-04-CLAUDE-MCP] Claude Code & Claude Desktop 10 Core MCP Servers Initial Setup Installer: Fix JSON Syntax & PATH Errors in 1 Click",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-04-claudecode-mcp-10servers-setup.html"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://autoflow.io/blog/oneshot-04-claudecode-mcp-10servers-setup.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "OneShot 1-Click Installers",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "[OneShot #04 | ONESHOT-04-CLAUDE-MCP] Claude Code & Claude Desktop 10 Core MCP Servers Initial Setup Installer: Fix JSON Syntax & PATH Errors in 1 Click",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-04-claudecode-mcp-10servers-setup.html"
-        }
-      ]
-    }
-  ]
+    ]
 }
-  </script>
+</script>
   <style>
     :root {
       --bg: #070b14;

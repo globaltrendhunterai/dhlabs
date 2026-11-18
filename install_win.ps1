@@ -2,7 +2,7 @@
 # AutoFlow Enterprise 1-Click Instant Installer (Windows)
 # Fast Web-to-Desktop Zero-Config Deployment
 # Usage:
-#   Remote: powershell -c "irm https://get.autoflow.io/win | iex"
+#   Remote: powershell -c "irm https://globaltrendhunterai.github.io/dhlabs/install_win.ps1 | iex"
 #   Local:  powershell -ExecutionPolicy Bypass -File scripts\install_win.ps1
 # ==============================================================================
 
@@ -10,7 +10,7 @@
 $ErrorActionPreference = "Stop"
 
 $InstallDir = if ($env:AUTOFLOW_INSTALL_DIR) { $env:AUTOFLOW_INSTALL_DIR } else { Join-Path $HOME "AutoFlow" }
-$DownloadUrl = if ($env:AUTOFLOW_DOWNLOAD_URL) { $env:AUTOFLOW_DOWNLOAD_URL } else { "https://autoflow.io/downloads/AutoFlow_Coupang_STANDARD_v2.0.zip" }
+$DownloadUrl = if ($env:AUTOFLOW_DOWNLOAD_URL) { $env:AUTOFLOW_DOWNLOAD_URL } else { "https://globaltrendhunterai.github.io/dhlabs/downloads/AutoFlow_Coupang_STANDARD_v2.0.zip" }
 $PackageName = "AutoFlow_Coupang_STANDARD_v2.0.zip"
 
 Write-Host "================================================================================" -ForegroundColor Cyan
@@ -53,7 +53,7 @@ if ($LocalPackage) {
         Invoke-WebRequest -Uri $DownloadUrl -OutFile $TempZip -UseBasicParsing
     } catch {
         Write-Host "[WARN] Primary download failed. Attempting fallback..." -ForegroundColor Yellow
-        $FallbackUrl = "https://autoflow.io/downloads/AF_STARTER_PACK_v1.0.zip"
+        $FallbackUrl = "https://globaltrendhunterai.github.io/dhlabs/downloads/AF_STARTER_PACK_v1.0.zip"
         Invoke-WebRequest -Uri $FallbackUrl -OutFile $TempZip -UseBasicParsing
     }
     $SourceZip = $TempZip

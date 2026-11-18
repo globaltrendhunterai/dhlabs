@@ -245,7 +245,7 @@ AutoFlow Level 3 Premium 구독 기업에게는 기업 전용의 **엔터프라�
   * 오라클 24GB 클라우드 독립 인스턴스 셋업 무상 지원
   * 전담 SRE 엔지니어의 원격 1:1 세팅 및 카카오 채널 핫라인 지원
   * 차년도 갱신 시에도 평생 50% 할인 보장권 부여
-- **신청 및 즉시 도입**: [autoflow.io](https://autoflow.io)
+- **신청 및 즉시 도입**: [globaltrendhunterai.github.io/dhlabs](https://globaltrendhunterai.github.io/dhlabs)
 
 ---
 

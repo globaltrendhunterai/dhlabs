@@ -73,7 +73,7 @@ if (error.statusCode === 429 && attempt < maxRetries) {
 - **글로벌 오라클 클라우드 24GB 전용 인프라 가동 + 본사 HQ 핫스탠바이 이중화**
 - **150종 B2B 완제품 블루프린트 기본 내장**
 
-👉 **[⚡ AutoFlow 공식 자사몰에서 선착순 1년 50% 파운딩 멤버 특가 확인하기](https://autoflow.io/checkout.html?tier=tier_3&deal=founding_50)**
+👉 **[⚡ AutoFlow 공식 자사몰에서 선착순 1년 50% 파운딩 멤버 특가 확인하기](https://globaltrendhunterai.github.io/dhlabs/checkout.html?tier=tier_3&deal=founding_50)**
 
 ---
 

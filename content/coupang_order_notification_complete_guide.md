@@ -193,7 +193,7 @@ AutoFlow의 모든 클라우드 구독 제품은 다음과 같은 **3중 안전 
 - **파운딩 멤버 50% 특가**: **1년 일괄 ₩295,000 (월 24,500원 꼴!)**
 - **특전**: 오라클 24GB 전용 인프라 1년 무제한 가동 + 평생 50% 할인 갱신 보장권 부여.
 
-👉 **[⚡ AutoFlow 공식몰에서 파운딩 멤버 50% 반값 결제창 바로가기 (토스페이먼츠 직결)](https://autoflow.io/checkout.html?tier=tier_3&deal=founding_50)**
+👉 **[⚡ AutoFlow 공식몰에서 파운딩 멤버 50% 반값 결제창 바로가기 (토스페이먼츠 직결)](https://globaltrendhunterai.github.io/dhlabs/checkout.html?tier=tier_3&deal=founding_50)**
 
 ---
 

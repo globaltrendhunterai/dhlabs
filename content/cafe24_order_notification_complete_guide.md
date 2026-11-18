@@ -280,7 +280,7 @@ AutoFlow Enterprise는 소프트웨어 스크립트만 던져주고 끝나는 �
 5. **카페24 + 네이버 스마트스토어 + 쿠팡 멀티 채널 통합 연동 무상 지원**
 
 > **신청 안내**: 선착순 10개사 마감 시 사전 예고 없이 정상가로 자동 전환됩니다.  
-> **공식 접수처**: [https://autoflow.io/founding-pass](https://autoflow.io)
+> **공식 접수처**: [https://globaltrendhunterai.github.io/dhlabs/founding-pass](https://globaltrendhunterai.github.io/dhlabs)
 
 ---
 
@@ -342,6 +342,6 @@ AutoFlow Enterprise는 소프트웨어 스크립트만 던져주고 끝나는 �
 이커머스 비즈니스에서 고객의 신뢰는 주문이 완료된 바로 그 순간부터 시작됩니다.  
 새벽 3시의 침묵, 2시간마다 꺼지는 불안정한 토큰, 배송 지연 클레임의 공포에서 벗어나 **검증된 3대 무중단 에어백 아키텍처**로 귀사의 D2C 자사몰을 완벽하게 보호하십시오.
 
-- **AutoFlow 엔지니어링 문의**: `contact@autoflow.io`
-- **실전 블루프린트 패키지 다운로드**: [https://autoflow.io/products/cafe24-suite](https://autoflow.io)
+- **AutoFlow 엔지니어링 문의**: `dhlabs_biz@naver.com`
+- **실전 블루프린트 패키지 다운로드**: [https://globaltrendhunterai.github.io/dhlabs/products/cafe24-suite](https://globaltrendhunterai.github.io/dhlabs)
 - **저작권 및 라이선스**: Copyright © 2026 AutoFlow Enterprise SRE Research Group. All Rights Reserved.

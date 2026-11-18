@@ -7,7 +7,7 @@
   <meta name="description" content="Generate Unlimited Watermark-Free 480p/720p AI Videos Locally from Text or Images with TeaCache Speedup &amp; FFmpeg H.264 Encoding ($39 / ₩49,000)">
   <meta name="author" content="Donghyeong Kim (DH Labs)">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-  <link rel="canonical" href="https://autoflow.io/blog/oneshot-09-wan21-local-video-gen-setup.html">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-09-wan21-local-video-gen-setup.html">
   <link rel="alternate" href="https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-09-wan21-local-video-gen-setup.html" hreflang="en">
   <link rel="ai-catalog" href="/.well-known/ai-catalog.json">
   <link rel="describedby" href="/llms.txt">
@@ -19,118 +19,118 @@
   <meta property="article:modified_time" content="2026-11-01T09:00:00+09:00">
   <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://autoflow.io/#organization",
-      "name": "DH Labs",
-      "url": "https://autoflow.io/",
-      "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
-      "sameAs": [
-        "https://github.com/globaltrendhunterai",
-        "https://dhlabs.gumroad.com",
-        "https://globaltrendhunterai.github.io/dhlabs/",
-        "https://autoflow.io/"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://autoflow.io/#founder",
-      "name": "Donghyeong Kim",
-      "jobTitle": "Founder & Lead Systems Architect",
-      "worksFor": {
-        "@id": "https://autoflow.io/#organization"
-      }
-    },
-    {
-      "@type": [
-        "TechArticle",
-        "BlogPosting",
-        "SoftwareApplication"
-      ],
-      "@id": "https://autoflow.io/blog/oneshot-09-wan21-local-video-gen-setup.html#article",
-      "name": "[OneShot #09 | ONESHOT-09-WAN21] Wan 2.1 & HunyuanVideo Local AI Video Generator Initial Setup Installer: TeaCache Acceleration & Low-VRAM Offload in 1 Click",
-      "headline": "[OneShot #09 | ONESHOT-09-WAN21] Wan 2.1 & HunyuanVideo Local AI Video Generator Initial Setup Installer: TeaCache Acceleration & Low-VRAM Offload in 1 Click",
-      "description": "Generate Unlimited Watermark-Free 480p/720p AI Videos Locally from Text or Images with TeaCache Speedup & FFmpeg H.264 Encoding ($39 / ₩49,000)",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
-      "inLanguage": "en-US",
-      "mainEntityOfPage": "https://autoflow.io/blog/oneshot-09-wan21-local-video-gen-setup.html",
-      "datePublished": "2026-01-15",
-      "dateModified": "2026-11-01",
-      "author": {
-        "@id": "https://autoflow.io/#founder"
-      },
-      "publisher": {
-        "@id": "https://autoflow.io/#organization"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "39.00",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://dhlabs.gumroad.com/l/oneshot-wan21-video-gen-setup"
-      },
-      "keywords": "OneShot, ONESHOT-09-WAN21, Wan 2.1 CUDA out of memory 12GB, HunyuanVideo FlashAttention build error, TeaCache video speedup config, Wan2.1 FFmpeg libx264 missing, 1-Click Initial Setup, Gumroad, Naver SmartStore"
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://autoflow.io/blog/oneshot-09-wan21-local-video-gen-setup.html#faq",
-      "mainEntity": [
+    "@context": "https://schema.org",
+    "@graph": [
         {
-          "@type": "Question",
-          "name": "How does Wan 2.1 run on a 12GB GPU or Apple Silicon Mac without running out of memory?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "OneShot #09 pre-configures Wan2.1-T2V-1.3B-LowVRAM with sequential CPU offload, tiled VAE decoding, and TeaCache step acceleration, reducing peak VRAM usage to under 8.5GB."
-          }
+            "@type": "Organization",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+            "name": "DH Labs",
+            "url": "https://globaltrendhunterai.github.io/dhlabs/",
+            "logo": "https://globaltrendhunterai.github.io/dhlabs/logo.png",
+            "sameAs": [
+                "https://github.com/globaltrendhunterai",
+                "https://dhlabs.gumroad.com",
+                "https://globaltrendhunterai.github.io/dhlabs/",
+                "https://smartstore.naver.com/dhlabs-official"
+            ]
         },
         {
-          "@type": "Question",
-          "name": "Does the installer verify that MP4 video export actually works on my machine?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Before the installer marks VERIFY_OK=1, it runs a real FFmpeg H.264 MP4 encoding smoke test inside your output_videos folder."
-          }
+            "@type": "Person",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+            "name": "Donghyeong Kim",
+            "jobTitle": "Founder & Lead Systems Architect",
+            "worksFor": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            }
         },
         {
-          "@type": "Question",
-          "name": "Can I generate both Text-to-Video (T2V) and Image-to-Video (I2V) clips?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The workspace includes dedicated input_images and output_videos folders alongside pre-configured T2V and I2V model directories."
-          }
+            "@type": [
+                "TechArticle",
+                "BlogPosting",
+                "SoftwareApplication"
+            ],
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-09-wan21-local-video-gen-setup.html#article",
+            "name": "[OneShot #09 | ONESHOT-09-WAN21] Wan 2.1 & HunyuanVideo Local AI Video Generator Initial Setup Installer: TeaCache Acceleration & Low-VRAM Offload in 1 Click",
+            "headline": "[OneShot #09 | ONESHOT-09-WAN21] Wan 2.1 & HunyuanVideo Local AI Video Generator Initial Setup Installer: TeaCache Acceleration & Low-VRAM Offload in 1 Click",
+            "description": "Generate Unlimited Watermark-Free 480p/720p AI Videos Locally from Text or Images with TeaCache Speedup & FFmpeg H.264 Encoding ($39 / ₩49,000)",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "macOS (Apple Silicon M1/M2/M3/M4), Windows 10/11 (64-bit)",
+            "inLanguage": "en-US",
+            "mainEntityOfPage": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-09-wan21-local-video-gen-setup.html",
+            "datePublished": "2026-01-15",
+            "dateModified": "2026-11-01",
+            "author": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder"
+            },
+            "publisher": {
+                "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "39.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://dhlabs.gumroad.com/l/oneshot-wan21-video-gen-setup"
+            },
+            "keywords": "OneShot, ONESHOT-09-WAN21, Wan 2.1 CUDA out of memory 12GB, HunyuanVideo FlashAttention build error, TeaCache video speedup config, Wan2.1 FFmpeg libx264 missing, 1-Click Initial Setup, Gumroad, Naver SmartStore"
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-09-wan21-local-video-gen-setup.html#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How does Wan 2.1 run on a 12GB GPU or Apple Silicon Mac without running out of memory?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "OneShot #09 pre-configures Wan2.1-T2V-1.3B-LowVRAM with sequential CPU offload, tiled VAE decoding, and TeaCache step acceleration, reducing peak VRAM usage to under 8.5GB."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does the installer verify that MP4 video export actually works on my machine?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Before the installer marks VERIFY_OK=1, it runs a real FFmpeg H.264 MP4 encoding smoke test inside your output_videos folder."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I generate both Text-to-Video (T2V) and Image-to-Video (I2V) clips?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. The workspace includes dedicated input_images and output_videos folders alongside pre-configured T2V and I2V model directories."
+                    }
+                }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-09-wan21-local-video-gen-setup.html#breadcrumb",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "OneShot 1-Click Installers",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "[OneShot #09 | ONESHOT-09-WAN21] Wan 2.1 & HunyuanVideo Local AI Video Generator Initial Setup Installer: TeaCache Acceleration & Low-VRAM Offload in 1 Click",
+                    "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-09-wan21-local-video-gen-setup.html"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://autoflow.io/blog/oneshot-09-wan21-local-video-gen-setup.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "OneShot 1-Click Installers",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/oneshot.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "[OneShot #09 | ONESHOT-09-WAN21] Wan 2.1 & HunyuanVideo Local AI Video Generator Initial Setup Installer: TeaCache Acceleration & Low-VRAM Offload in 1 Click",
-          "item": "https://globaltrendhunterai.github.io/dhlabs/blog/oneshot-09-wan21-local-video-gen-setup.html"
-        }
-      ]
-    }
-  ]
+    ]
 }
-  </script>
+</script>
   <style>
     :root {
       --bg: #070b14;
