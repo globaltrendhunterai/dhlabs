@@ -1,0 +1,38 @@
+{
+  "specVersion": "1.0",
+  "publisher": {
+    "name": "DH Labs (디에이치랩스)",
+    "primaryUrl": "https://globaltrendhunterai.github.io/dhlabs/korecad.html",
+    "lastModified": "2026-11-19"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:globaltrendhunterai.github.io:korecad:llms:summary",
+      "displayName": "KoreCAD Studio AI Context Summary (llms.txt)",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/korecad/llms.txt",
+      "representativeQueries": [
+        "What is KoreCAD Studio and what is included in the $19 base pack?",
+        "How does KoreCAD Studio calculate DXF/STEP takeoff and B2B manufacturing quotes offline?",
+        "How does offline ECDSA P-256 module activation work without reinstalling the app?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (디에이치랩스, Business Reg: 610-16-92926, dhlabs_biz@naver.com, https://globaltrendhunterai.github.io/dhlabs/korecad.html)"
+      }
+    },
+    {
+      "identifier": "urn:air:globaltrendhunterai.github.io:korecad:llms:full-knowledge-base",
+      "displayName": "KoreCAD Studio Full Knowledge Base (llms-full.txt)",
+      "type": "text/markdown; profile=\"urn:air:agent-skills\"",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/korecad/llms-full.txt",
+      "representativeQueries": [
+        "What are the 18 storefront engineering modules and pricing tiers in KoreCAD Studio?",
+        "Why does KoreCAD Studio block PDF files from precision takeoff quoting?",
+        "What file formats does KoreCAD Studio export natively on macOS?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (디에이치랩스, Business Reg: 610-16-92926, dhlabs_biz@naver.com, https://globaltrendhunterai.github.io/dhlabs/korecad.html)"
+      }
+    }
+  ]
+}

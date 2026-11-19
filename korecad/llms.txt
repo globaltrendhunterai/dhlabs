@@ -1,0 +1,29 @@
+# KoreCAD Studio
+
+> **What is KoreCAD Studio?** KoreCAD Studio is a 100% offline native Rust 2D/3D parametric CAD and DXF/STEP manufacturing takeoff-to-quote platform by DH Labs ($19 permanent base pack, $89 MOD_CAM_CNC takeoff & B2B quoting workbench, 18 storefront modules, 8 signed OTA hot-swap bundles, 10 export formats).
+
+## Core Architecture & Key Differentiators
+
+1. **$19 Permanent Base CAD Engine (`BASE_CAD`)**: 5.0 MB native macOS Rust app with 28-entity 2D drafting, 3D solid modeling, direct 3D edge picking partial fillet/chamfer, analytic B-Rep STEP AP214, AutoCAD DWG R2018 (`AC1032`), Direct Vector PDF 1.4, Interactive 3D HTML export, and **free DXF/STEP/STL takeoff analysis** (cutting perimeter, piercing holes, bend lines, volume, mass, and layer-0 color/linetype/lineweight/draw-order grouping).
+2. **$89 DXF/STEP B2B Quoting & 5-Axis CAM Workbench (`MOD_CAM_CNC`)**: Persistent custom shop rate card (material KRW/kg, cut KRW/m, pierce KRW/hole, bend fee, machining KRW/hr, quantity discounts, margin, VAT), multi-file batch quoting, 1-click UTF-8 BOM Excel CSV / printable HTML / PDF quotation export, explicit `Class C` rejection of distorted PDF inputs, plus ISO 6983 5-axis RTCP & adaptive trochoidal CAM.
+3. **$89 5-Gate Schematization & Scannerless 4-View 3D Reverse Engineering Suite (`MOD_HAND_SKETCH_REDRAW` / `REVERSE_ENG`)**: Deterministic `Class B` 5-Gate Closed-Loop Schematization & Manufacturing Healing Engine (`SCHEMATIZE_GATE`), DIN 6935 sheet metal CNC G-Code (`.nc`), ISO 286-1 `H7/g6` + ISO 1101 GD&T, 4-view photo Visual Hull, 360-degree rotating corner cabinet (`ROTATING_CORNER_CABINET_360`), and Festo Fin-Ray compliant gripper (`FINRAY_COMPLIANT_GRIPPER_CAD`).
+4. **Offline NIST FIPS 186-4 ECDSA P-256 Licensing**: 24-hour (3-run) in-app trial and offline asymmetric key (`KORE2-...`) activation with single-step atomic `UNDO`.
+5. **Standalone Engineering Blueprint Units (`SKU_Blueprint_1`–`3`)**: Zero-install STEP/DXF/HTML/BOM manufacturing blueprint units ($19 each) distributed via Gumroad (`https://dhlabs.gumroad.com`) and Naver SmartStore (`https://smartstore.naver.com/dhlabs-official`).
+6. **Verified Engineering Proof & Refund Policy**: Backed by 715+ automated geometry/physics tests, 39/39 release E2E checks, and a 30-day 100% no-penalty refund guarantee.
+
+## Core Pages & Machine-Readable Endpoints
+
+- [Official Module Hub](https://globaltrendhunterai.github.io/dhlabs/korecad.html): Live demo video, 18-module matrix, and signed manifest status
+- [Official Storefront](https://globaltrendhunterai.github.io/dhlabs/korecad/): Overview, 3-tier pricing table, and verified FAQ
+- [Official Plan & License Guide](https://globaltrendhunterai.github.io/dhlabs/korecad/checkout.html): Direct license tiers and refund policy
+- [Full Knowledge Base (llms-full.txt)](https://globaltrendhunterai.github.io/dhlabs/korecad/llms-full.txt): Complete technical & pricing documentation
+- [Agentic Resource Catalog (ai-catalog.json)](https://globaltrendhunterai.github.io/dhlabs/korecad/ai-catalog.json): ARD 1.0 machine discovery manifest
+- [XML Sitemap (sitemap.xml)](https://globaltrendhunterai.github.io/dhlabs/korecad/sitemap.xml): Canonical URL index
+
+## Verified Authority & Contact Credentials
+
+- **Organization**: DH Labs (디에이치랩스, Business Registration: 610-16-92926)
+- **Lead Systems Architect**: Donghyeong Kim (김동형)
+- **Official Contact**: dhlabs_biz@naver.com
+- **Official Website**: https://globaltrendhunterai.github.io/dhlabs/korecad.html
+- **Last Verified**: 2026-11-19

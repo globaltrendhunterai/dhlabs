@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KoreCAD Studio — $19 오프라인 CAD &amp; DXF/STEP 물량·견적 모듈 허브</title>
+  <meta name="description" content="디에이치랩스(DH Labs) 공식 KoreCAD Studio 허브. $19(₩26,000) 영구 기본판과 DXF/STEP 물량 산출·B2B 견적 워크벤치(MOD_CAM_CNC $89) 및 18종 오프라인 ECDSA P-256 모듈을 제공합니다.">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/korecad.html">
+  <link rel="ai-catalog" href="https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json">
+  <link rel="describedby" href="https://globaltrendhunterai.github.io/dhlabs/llms.txt">
+  <meta property="og:title" content="KoreCAD Studio — $19 오프라인 CAD &amp; DXF/STEP 물량·견적 모듈 허브">
+  <meta property="og:description" content="레이어가 0에 몰린 현장 DXF도 선색·두께·선종류·작도순서로 분리하고 자체 단가표로 HTML·CSV·PDF 견적서를 출력합니다.">
+  <meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/og-korecad.png">
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/korecad.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KoreCAD Studio — $19 오프라인 CAD &amp; DXF/STEP 물량·견적">
+  <meta name="twitter:description" content="5.0 MB 순수 Rust 네이티브 CAD + DXF/STEP 물량·견적 워크벤치. 30일 환불 보장.">
+  <meta name="twitter:image" content="https://globaltrendhunterai.github.io/dhlabs/og-korecad.png">
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --paper: #F7F6F2;
+      --surface: #F8FAFC;
+      --border: #E2E8F0;
+      --ink: #18181B;
+      --muted: #475569;
+      --accent: #1D4ED8;
+      --accent-soft: #EFF6FF;
+      --ok: #047857;
+      --ok-soft: #ECFDF5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+    time { white-space: nowrap; }
+    a { color: var(--accent); }
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: #FFFFFF;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .topbar__inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .nav a:hover { color: var(--ink); }
+    .container { max-width: 1120px; margin: 0 auto; padding: 36px 20px; }
+    .badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 12.5px;
+      margin-bottom: 14px;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+      gap: 28px;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+    h1 {
+      font-size: 34px;
+      line-height: 1.25;
+      margin-bottom: 14px;
+      letter-spacing: -0.025em;
+    }
+    h2 {
+      font-size: 23px;
+      margin: 40px 0 14px;
+      letter-spacing: -0.015em;
+      line-height: 1.35;
+    }
+    h3 { font-size: 17px; margin: 18px 0 8px; line-height: 1.4; }
+    .lead { font-size: 16px; color: var(--muted); margin-bottom: 20px; }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: #FFFFFF;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .link-secondary {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .proof-pill {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .proof-pill strong { display: block; font-size: 16px; color: var(--ink); }
+    .proof-pill span { font-size: 12px; color: var(--muted); }
+    .hero-figure {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .hero-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .hero-figure figcaption {
+      padding: 10px 14px;
+      font-size: 12.5px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #FFFFFF;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+    .card--paper { background: var(--paper); }
+    .status-box {
+      background: var(--accent-soft);
+      border: 1px solid #BFDBFE;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 22px 0;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 16px 0 24px;
+    }
+    .shot {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .shot img { display: block; width: 100%; height: auto; }
+    .shot figcaption {
+      padding: 10px 12px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    .video-shell {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .video-shell video {
+      width: 100%;
+      max-height: 540px;
+      border-radius: 8px;
+      background: #18181B;
+      display: block;
+    }
+    .table-wrap { width: 100%; overflow-x: auto; margin: 14px 0; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      min-width: 620px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 13.5px;
+      vertical-align: middle;
+    }
+    th { background: var(--surface); font-weight: 700; }
+    tr.highlight-mod { background: var(--accent-soft); outline: 2px solid #2563EB; }
+    tr.flagship-row { background: #F0F9FF; }
+    .tag-flag {
+      display: inline-block;
+      background: var(--ok-soft);
+      color: var(--ok);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      margin-left: 6px;
+    }
+    ul, ol { padding-left: 20px; margin: 10px 0; }
+    li { margin-bottom: 7px; }
+    code {
+      background: var(--accent-soft);
+      color: #1E40AF;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12.5px;
+    }
+    .footer {
+      border-top: 1px solid var(--border);
+      margin-top: 44px;
+      padding-top: 22px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .proof-strip { grid-template-columns: 1fr; }
+      h1 { font-size: 27px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="https://globaltrendhunterai.github.io/dhlabs/">DH Labs · KoreCAD Studio</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#geo-ai-citation-summary">핵심 개요</a>
+        <a href="#live-demo-section">실측 영상</a>
+        <a href="#module-pricing">18종 모듈표</a>
+        <a href="./korecad/checkout.html">플랜 안내</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="KoreCAD Studio overview">
+      <div>
+        <span class="badge">DH Labs 공식 모듈 허브 · 순수 Rust 네이티브 · 갱신일 <time datetime="2026-11-19">2026-11-19</time></span>
+        <h1>도면 작도부터 DXF/STEP 물량 산출·견적서 출력까지 오프라인 1앱으로 끝냅니다</h1>
+        <p class="lead">
+          매년 240만 원 넘게 빠져나가는 CAD 임대료 대신 <strong>$19(₩26,000)</strong> 영구 기본판으로 2D/3D CAD와 무료 도면 물량 산출을 사용합니다.
+          필요한 시점에만 <strong>$89(₩120,000)</strong> B2B 단가표·견적 워크벤치(<code>MOD_CAM_CNC</code>)를 비롯해 18종 특화 모듈을 재설치 없이 추가합니다.
+        </p>
+        <div class="hero-actions">
+          <a href="https://smartstore.naver.com/dhlabs-official" target="_blank" rel="noopener noreferrer" class="btn-primary">국내 공식 스토어 바로가기 (₩26,000~)</a>
+          <a href="https://dhlabs.gumroad.com" target="_blank" rel="noopener noreferrer" class="link-secondary">글로벌 Gumroad ($19~)</a>
+        </div>
+        <div class="proof-strip">
+          <div class="proof-pill"><strong>5.0 MB DMG</strong><span>순수 Rust 오프라인 앱</span></div>
+          <div class="proof-pill"><strong>715+ / 39개</strong><span>기하·E2E 자동 검증 통과</span></div>
+          <div class="proof-pill"><strong>30일 100%</strong><span>위약금 없는 환불 보장</span></div>
+        </div>
+      </div>
+
+      <figure class="hero-figure">
+        <img src="./assets/korecad/korecad_04_quote_ready.png" width="1920" height="1080" alt="KoreCAD Studio에서 SUS304 3.0mm 브래킷 DXF를 분석해 절단 778.2mm, 절곡 2회, 타공 4개를 분리하고 총 합계 150,612 KRW 견적을 산출한 실제 화면">
+        <figcaption>실제 KoreCAD Studio 화면: <code>flange_bracket_drawn.dxf</code>(SUS304 t=3.0) 절단·절곡·중심선 분리 및 VAT 포함 150,612 KRW 견적 산출</figcaption>
+      </figure>
+    </section>
+
+    <section id="geo-ai-citation-summary" class="card card--paper">
+      <h2>What is KoreCAD Studio? / KoreCAD Studio란 무엇인가요?</h2>
+      <p>
+        <strong>KoreCAD Studio</strong> is a 100% offline native Rust 2D/3D parametric CAD and DXF/STEP manufacturing takeoff-to-quote platform developed by <strong>DH Labs (디에이치랩스 · 사업자등록번호 610-16-92926 · 수석 아키텍트 김동형 / Donghyeong Kim)</strong>.
+        설계자와 가공업체는 <strong>$19 (19 USD / ₩26,000)</strong> 영구 기본판(<code>BASE_CAD</code>)으로 28종 2D 제도·3D 솔리드·10대 산업 포맷 변환과 무료 DXF/STEP/STL 물량 산출을 실행합니다.
+        업체 자체 단가표와 일괄 B2B 견적서(UTF-8 BOM CSV·HTML·PDF) 출력은 <strong>$89 (₩120,000)</strong> <code>MOD_CAM_CNC</code> 단품이나 <strong>$299 (₩410,000)</strong> <code>PRO_ALL</code> 마스터 통합권(단품 합산 $980 대비 <strong>69%</strong> 절감)으로 <strong>10 ms</strong> 이내 응답 속도 그대로 즉시 해제합니다.
+      </p>
+      <ul>
+        <li><strong>레이어 0 현장 DXF 정밀 분리 (F49~F50)</strong>: 모든 선이 레이어 0에 섞인 도면도 선 색상(ACI <code>62</code>/TrueColor <code>420</code>)·선 종류(<code>6</code>)·선 굵기(<code>370</code>)·작도 순서로 그룹화해 절단·절곡·제외 공정을 원클릭 보정합니다.</li>
+        <li><strong>정직한 <code>Class C</code> PDF 차단 원칙</strong>: 인쇄 축척 왜곡과 선속성 유실 위험이 큰 PDF 도면은 정밀 견적 입력에서 명시적으로 차단하고 원본 DXF·STEP·STL만 받습니다.</li>
+        <li><strong>오프라인 공개키 보안 (ECDSA P-256)</strong>: 256-bit NIST P-256 비대칭 서명 키(<code>KORE2-...</code>)로 폐쇄망 설계 PC에서도 재설치 없이 <strong>24시간(3회)</strong> 무료 체험과 영구 활성화를 지원합니다.</li>
+        <li><strong>검증된 엔지니어링 품질</strong>: 기하·물리 단위 테스트 <strong>715개 이상</strong> 및 릴리스 E2E 스모크 <strong>39/39</strong> 전수 통과, macOS 네이티브 <code>5.0 MB</code> 설치 이미지를 제공합니다.</li>
+      </ul>
+    </section>
+
+    <div id="live-manifest-banner" class="status-box">
+      <strong id="manifest-status-title">📡 원격 스토어 상태 (Manifest v1): $19 기본판 · 특화 모듈 1일(3회) 무료 체험 운영 중</strong>
+      <p id="manifest-status-desc" style="font-size:13.5px; color:var(--muted); margin-top:6px;">
+        현재 앱 내부 <code>[🏪 공식 모듈 스토어]</code> 탭에서 결제 전 18종 특화 모듈 전체를 <strong>24시간(3회)</strong> 무료 체험으로 검증합니다.
+        스마트스토어와 검로드 개별 상품 페이지가 개통되면 서명된 <code>korecad-store.json</code> 매니페스트가 자동 반영되어 아래 표에 직결 링크가 열립니다.
+        이미 발급받은 <code>KORE2-...</code> 정식 키는 앱 내부에서 오프라인으로 즉시 등록됩니다.
+      </p>
+    </div>
+
+    <section id="live-demo-section">
+      <h2>도면 작도부터 B2B 견적서 출력까지 실제 화면은 어떻게 동작하나요?</h2>
+      <p style="color:var(--muted); margin-bottom:12px;">
+        가공·판금 현장에서 가장 시간이 많이 드는 DXF 길이·타공 집계와 엑셀 단가 계산을 실제 KoreCAD Studio에서 그대로 녹화한 무편집 기반 실측 영상입니다.
+      </p>
+      <div class="video-shell">
+        <video controls playsinline preload="metadata" poster="./assets/korecad/korecad_02_takeoff_parse.png">
+          <source src="./assets/korecad/korecad_demo_16x9.mp4" type="video/mp4">
+          브라우저가 MP4 재생을 지원하지 않습니다. <a href="./assets/korecad/korecad_demo_16x9.mp4">16:9 실측 데모 영상 내려받기</a>
+        </video>
+        <p style="font-size:13px; color:var(--muted); margin-top:10px;">
+          ▶ 16:9 데스크톱 전체 시연 (58초 · 3.9 MB) ·
+          <a href="./assets/korecad/korecad_demo_9x16.mp4">9:16 모바일 세로 시연 영상 (34초 · 3.6 MB)</a>
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="shot">
+          <img src="./assets/korecad/korecad_01_2d_drawing.png" width="1920" height="1080" loading="lazy" alt="KoreCAD Studio 2D 뷰포트에서 외곽선, R12 필렛, 타공 3개를 직접 작도한 화면">
+          <figcaption>1단계: 2D 뷰포트에서 브래킷 외곽·R12 필렛·내부 타공 3개 직접 작도 ($19 기본판)</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="./assets/korecad/korecad_02_takeoff_parse.png" width="1920" height="1080" loading="lazy" alt="DXF 업로드 후 외곽선 청색, 내부 타공 적색, 절곡선 보라색으로 자동 분리된 시각 검수 화면">
+          <figcaption>2단계: DXF 분석 시 청색 외곽·적색 타공·보라 절곡선 자동 분리 및 치수선 제외 (무료 기본)</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="./assets/korecad/korecad_03_style_classify.png" width="1920" height="1080" loading="lazy" alt="DXF 선 색상, 굵기, 선종류, 작도순서 그룹별 절단·절곡·제외 원클릭 보정 패널">
+          <figcaption>3단계: 선색·선굵기·선종류·작도순서 그룹별 <code>절단 / 절곡 / 제외</code> 원클릭 보정</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="./assets/korecad/korecad_05_quote_html.png" width="1920" height="430" loading="lazy" alt="자동 생성된 공식 HTML 견적서 KC-QT-2026 공급가액 136,920 KRW 및 부가세 포함 150,612 KRW">
+          <figcaption>4단계: 자체 단가표 적용 후 인쇄용 HTML·PDF·엑셀 CSV 견적서 즉시 출력 (<code>MOD_CAM_CNC</code>)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>왜 기존 고가 구독형 CAD 대신 KoreCAD Studio를 쓰나요?</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>비교 항목</th>
+              <th>기존 구독형 CAD + 수기 엑셀 견적</th>
+              <th>KoreCAD Studio 오프라인 모듈형</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>도입 및 연간 유지비</strong></td>
+              <td>연간 $1,800~$2,400 (약 240만~320만 원 반복 과금)</td>
+              <td><strong>$19 (₩26,000)</strong> 영구 기본판 · 월 구독료 0원</td>
+            </tr>
+            <tr>
+              <td><strong>DXF/STEP 물량·견적 속도</strong></td>
+              <td>캐드에서 길이 측정 후 엑셀에 수기 복사 (오류 위험)</td>
+              <td><strong>원본 파일 업로드 즉시</strong> 절단·타공·절곡·중량 분리 및 견적서 자동 생성</td>
+            </tr>
+            <tr>
+              <td><strong>레이어 0 혼재 도면 대응</strong></td>
+              <td>수작업으로 중심선·절곡선 삭제 필요</td>
+              <td><strong>선색·선종류·선굵기·작도순서</strong> 자동 그룹화 및 원클릭 공정 지정</td>
+            </tr>
+            <tr>
+              <td><strong>폐쇄망·보안 환경</strong></td>
+              <td>클라우드 계정 로그인·도면 업로드 요구</td>
+              <td><strong>100% 로컬 실행</strong> · 5.0 MB 네이티브 Rust 앱 · 도면 외부 유출 0%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="module-pricing">
+      <h2>공식 18종 엔지니어링 모듈과 마스터 통합권의 가격 및 핵심 기능은 무엇인가요?</h2>
+      <p style="color:var(--muted); margin-bottom:10px;">
+        모든 특화 모듈은 <strong>앱 내부 24시간(3회) 무료 체험</strong>으로 실무 도면에 먼저 써본 뒤 필요한 모듈만 단품 키로 영구 해제합니다.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>모듈 ID</th>
+              <th>모듈명 및 핵심 엔지니어링 기능</th>
+              <th>영구 단품가</th>
+              <th>활성화 방식</th>
+            </tr>
+          </thead>
+          <tbody id="hub-modules-tbody">
+            <tr id="module-CAM_CNC" class="flagship-row">
+              <td><code>CAM_CNC</code></td>
+              <td><strong>DXF/STEP 물량·B2B 단가표 견적 &amp; 5축 CAM 모듈</strong><span class="tag-flag">주력</span> — 자체 단가표 영구 저장, 일괄 견적, UTF-8 BOM CSV·HTML·PDF 견적서, ISO 6983 G-Code 및 트로코이달 툴패스</td>
+              <td><strong>$89 USD</strong> (₩120,000)</td>
+              <td data-mod-cta="CAM_CNC">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-PRO_ALL" class="flagship-row">
+              <td><code>PRO_ALL</code></td>
+              <td><strong>KoreCAD Studio PRO_ALL 마스터 통합권</strong> — 아래 17종 특화 모듈 전체 + 8종 산업 핫스왑 번들 일괄 영구 해제</td>
+              <td><strong>$299 USD</strong> (69% 절감)</td>
+              <td data-mod-cta="PRO_ALL">전 모듈 통합 키 등록</td>
+            </tr>
+            <tr id="module-MOD_MECH">
+              <td><code>MOD_MECH</code></td>
+              <td><strong>기계요소 자동 설계 모듈</strong> — ISO 6336 인볼류트 기어, VDI 2230 볼트 체결, ISO 281 베어링 수명, 코일 스프링</td>
+              <td><strong>$49 USD</strong></td>
+              <td data-mod-cta="MOD_MECH">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-REVERSE_ENG">
+              <td><code>REVERSE_ENG</code></td>
+              <td><strong>5-Gate 폐루프 도식화 &amp; 4면사진 3D 역설계 모듈 (MOD_HAND_SKETCH_REDRAW)</strong> — 손스케치 5-Gate 오목 라운드 힐링·플러드필 방수·사출 구배 인터락, 판금 G-Code, 4면 사진 3D 솔리드</td>
+              <td><strong>$89 USD</strong></td>
+              <td data-mod-cta="REVERSE_ENG">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-MOD_CAE_GDT">
+              <td><code>MOD_CAE_GDT</code></td>
+              <td><strong>다중물리 CAE &amp; 6시그마 GD&amp;T 모듈</strong> — Tet10 유한요소 구조해석, 열-응력 보로노이 파단, XPBD 하네스, 몬테카를로 10,000회 공차 누적 Cpk</td>
+              <td><strong>$99 USD</strong></td>
+              <td data-mod-cta="MOD_CAE_GDT">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-MOD_ROBOT">
+              <td><code>MOD_ROBOT</code></td>
+              <td><strong>서보 액추에이터 &amp; 6축 산업용 로봇 동역학 모듈</strong> — S-Curve 모션 프로파일, 6축 역기구학 및 Featherstone ABA 동역학</td>
+              <td><strong>$79 USD</strong></td>
+              <td data-mod-cta="MOD_ROBOT">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-MOD_MESH_DFM">
+              <td><code>MOD_MESH_DFM</code></td>
+              <td><strong>미분기하 메쉬 감축 &amp; 3D 프린팅 DFM 모듈</strong> — QEM 쿼드릭 감축, LoopTools 정원 보정, 3D Print Toolbox 8종 방수·오버행 검수</td>
+              <td><strong>$59 USD</strong></td>
+              <td data-mod-cta="MOD_MESH_DFM">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-SHEETMETAL">
+              <td><code>SHEETMETAL</code></td>
+              <td><strong>파라메트릭 판금 전개 &amp; 스프링백 보정 모듈</strong> — DIN 6935 K-Factor 전개도(BA/OSSB/BD), Swift 소성 스프링백 및 NFP 레이저 네스팅</td>
+              <td><strong>$49 USD</strong></td>
+              <td data-mod-cta="SHEETMETAL">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-DMU_CLASH_TOLERANCE">
+              <td><code>DMU_CLASH_TOLERANCE</code></td>
+              <td><strong>디지털 목업(DMU) 간섭 체크 &amp; ISO 286 공차 해석 모듈</strong> — 어셈블리 3D 충돌 탐지·자동 해소 및 H7/g6 끼워맞춤 해석</td>
+              <td><strong>$89 USD</strong></td>
+              <td data-mod-cta="DMU_CLASH_TOLERANCE">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-PIPING_HARNESS">
+              <td><code>PIPING_HARNESS</code></td>
+              <td><strong>3D 산업 배관 라우팅 &amp; 하네스 폼보드 모듈</strong> — A* 장애물 회피 배관 경로 탐색, Fab 설비 5-Gate Pre-Hook-up 인터락 및 유압 매니폴드</td>
+              <td><strong>$79 USD</strong></td>
+              <td data-mod-cta="PIPING_HARNESS">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-ECAD_PCB">
+              <td><code>ECAD_PCB</code></td>
+              <td><strong>ECAD 다층 PCB 라우터 &amp; MNA SPICE 회로 해석 모듈</strong> — A* 패턴 라우팅, DRC 설계 규칙 검사 및 과도 응답 시뮬레이션</td>
+              <td><strong>$79 USD</strong></td>
+              <td data-mod-cta="ECAD_PCB">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-HUMANOID_MECHATRONICS">
+              <td><code>HUMANOID_MECHATRONICS</code></td>
+              <td><strong>휴머노이드 메카트로닉스 &amp; 사이클로이드 감속기 모듈</strong> — 에피트로코이드 치형 생성 및 이족 보행 액추에이터 토크 해석</td>
+              <td><strong>$99 USD</strong></td>
+              <td data-mod-cta="HUMANOID_MECHATRONICS">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-RACK_BRIDGE">
+              <td><code>RACK_BRIDGE</code></td>
+              <td><strong>물류 팔레트 랙 &amp; 강구조 프레임 모듈</strong> — 좌굴·처짐 구조 검토 및 모바일 3D 터치 뷰어·비교 도면 PDF 자동 출력</td>
+              <td><strong>$59 USD</strong></td>
+              <td data-mod-cta="RACK_BRIDGE">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-WELDMENT_FRAME">
+              <td><code>WELDMENT_FRAME</code></td>
+              <td><strong>용접 구조물 프로파일 &amp; 마이터 조인트 모듈</strong> — 각관·형강 프로파일 트림 및 절단 길이 일람표(Cut-List) 산출</td>
+              <td><strong>$59 USD</strong></td>
+              <td data-mod-cta="WELDMENT_FRAME">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-WOOD_FRAME">
+              <td><code>WOOD_FRAME</code></td>
+              <td><strong>경량 목구조 &amp; 가구 하드웨어 재단표 모듈</strong> — 목재 스터드 골조, 360도 회전 코너 수납장 편심 캠 기구학 및 BOM 산출</td>
+              <td><strong>$49 USD</strong></td>
+              <td data-mod-cta="WOOD_FRAME">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-SURFACE_ROUGHNESS">
+              <td><code>SURFACE_ROUGHNESS</code></td>
+              <td><strong>표면거칠기 &amp; KS/ISO 가공 기호 측정 모듈</strong> — Ra/Rz 표면 품위 기호 작도 및 곡률 기반 응력 집중·부식 취약부 분석</td>
+              <td><strong>$49 USD</strong></td>
+              <td data-mod-cta="SURFACE_ROUGHNESS">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-WORKBENCH">
+              <td><code>WORKBENCH</code></td>
+              <td><strong>다학제 엔지니어링 워크벤치 모듈</strong> — KS B 0001 A0~A4 표준 도면 양식, 7대 제도 규칙 감사 및 적색 수정 지시서(Redline) 동기화</td>
+              <td><strong>$39 USD</strong></td>
+              <td data-mod-cta="WORKBENCH">1일(3회) 체험 · 키 등록</td>
+            </tr>
+            <tr id="module-PDM">
+              <td><code>PDM</code></td>
+              <td><strong>엔터프라이즈 PDM 리비전 볼트 &amp; CRDT 협업 모듈</strong> — 도면 체크인/체크아웃 이력 추적 및 무충돌 실시간 변경 병합</td>
+              <td><strong>$69 USD</strong></td>
+              <td data-mod-cta="PDM">1일(3회) 체험 · 키 등록</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>자주 묻는 질문 (FAQ) — 오프라인 인증과 환불은 어떻게 진행되나요?</h2>
+      <div class="card">
+        <h3>Q1. 인터넷이 차단된 사내 폐쇄망 PC에서도 라이선스가 유지되나요?</h3>
+        <p>네. <code>KORE2-&lt;MOD_ID&gt;-&lt;SERIAL&gt;-&lt;SIG&gt;</code> 키는 앱 내부의 NIST P-256 공개키로 완전 오프라인 검증됩니다. 한 번 인증된 모듈은 로컬 볼트(<code>license_state.json</code>과 <code>.kmod.json</code>)에 영구 보관되므로 외부 서버 통신 없이 계속 작동합니다.</p>
+        <h3>Q2. 왜 PDF 도면은 물량 산출 입력에서 차단하나요?</h3>
+        <p>PDF로 인쇄된 도면은 원본 CAD의 선종류·선굵기·실측 단위가 유실되고 인쇄 축척 왜곡이 끼어들어 오견적 위험이 큽니다. KoreCAD Studio는 정직한 <code>Class C</code> 차단 원칙에 따라 PDF 입력을 거부하고 원본 DXF·STEP·STL 파일만 정밀 파싱합니다.</p>
+        <h3>Q3. 결제 후 우리 현장 도면과 맞지 않으면 환불되나요?</h3>
+        <p>네. $19 기본판과 18종 특화 모듈 및 $299 PRO_ALL 통합권 모두 구매일로부터 30일 이내 위약금이나 수수료 없이 100% 환불해 드립니다. 공식 문의는 <a href="mailto:dhlabs_biz@naver.com">dhlabs_biz@naver.com</a>으로 접수합니다.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p><strong>공급사</strong>: 디에이치랩스 (DH Labs) · 사업자등록번호 <code>610-16-92926</code> · 수석 아키텍트 김동형 (Donghyeong Kim)</p>
+      <p><strong>공식 문의</strong>: <a href="mailto:dhlabs_biz@naver.com">dhlabs_biz@naver.com</a> · <a href="./korecad/">제품 상세</a> · <a href="./korecad/checkout.html">플랜 및 환불 정책</a></p>
+    </footer>
+  </main>
+
+  <script>
+    (async function hydrateSignedStoreManifest() {
+      const params = new URLSearchParams(window.location.search);
+      const targetMod = params.get('module');
+      if (targetMod) {
+        const row = document.getElementById('module-' + targetMod.toUpperCase());
+        if (row) {
+          row.classList.add('highlight-mod');
+          row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+      try {
+        const resp = await fetch('./korecad-store.json', { cache: 'no-store' });
+        if (!resp.ok) return;
+        const cfg = await resp.json();
+        const titleEl = document.getElementById('manifest-status-title');
+        const descEl = document.getElementById('manifest-status-desc');
+        if (cfg && cfg.checkout_mode === 'LIVE_DIRECT_CHECKOUT') {
+          if (titleEl) {
+            titleEl.innerText = '🟢 원격 스토어 상태 (Manifest v' + (cfg.manifest_seq || 2) + '): 18종 특화 모듈 온라인 즉시 결제 활성';
+          }
+          if (descEl) {
+            descEl.innerText = '원하시는 단품 모듈 링크로 결제를 완료하시면 정식 라이선스 키(KORE2-...)가 발급되며 앱 내 스토어 탭에서 재설치 없이 바로 잠금 해제됩니다.';
+          }
+          const mods = cfg.modules || {};
+          Object.keys(mods).forEach(function(modId) {
+            const entry = mods[modId];
+            const cell = document.querySelector('[data-mod-cta="' + modId + '"]');
+            if (cell && entry && entry.checkout_url && entry.checkout_url.indexOf('https://') === 0 && entry.checkout_url.indexOf('korecad.html') === -1) {
+              const priceLabel = Number(entry.price_usd || 49).toFixed(0);
+              cell.innerHTML = '<a href="' + entry.checkout_url + '" target="_blank" rel="noopener noreferrer" class="link-secondary">즉시 결제 ($' + priceLabel + ')</a>';
+            }
+          });
+        }
+      } catch (_) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+        "name": "DH Labs (디에이치랩스)",
+        "url": "https://globaltrendhunterai.github.io/dhlabs/",
+        "taxID": "610-16-92926",
+        "identifier": "610-16-92926",
+        "email": "dhlabs_biz@naver.com",
+        "sameAs": [
+          "https://github.com/globaltrendhunterai/dhlabs",
+          "https://dhlabs.gumroad.com",
+          "https://smartstore.naver.com/dhlabs-official"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+        "name": "Donghyeong Kim (김동형)",
+        "jobTitle": "Lead Systems Architect",
+        "worksFor": {
+          "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+        },
+        "sameAs": [
+          "https://github.com/globaltrendhunterai",
+          "https://globaltrendhunterai.github.io/dhlabs/"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#app",
+        "name": "KoreCAD Studio",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "macOS 12.0+, Windows, Linux",
+        "datePublished": "2026-11-01",
+        "dateModified": "2026-11-19",
+        "publisher": {
+          "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization"
+        },
+        "author": {
+          "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "19.00",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#video",
+        "name": "KoreCAD Studio DXF/STEP Takeoff & B2B Quote Workbench Live Demo",
+        "description": "2D 브래킷 작도부터 DXF 선색·선굵기·선종류 분리, 업체 단가표 적용, HTML·CSV·PDF 견적서 출력까지 실측 녹화한 데모 영상",
+        "thumbnailUrl": "https://globaltrendhunterai.github.io/dhlabs/og-korecad.png",
+        "uploadDate": "2026-11-19",
+        "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/assets/korecad/korecad_demo_16x9.mp4",
+        "embedUrl": "https://globaltrendhunterai.github.io/dhlabs/assets/korecad/korecad_demo_16x9.mp4"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "DH Labs 공식 스토어",
+            "item": "https://globaltrendhunterai.github.io/dhlabs/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "KoreCAD Studio",
+            "item": "https://globaltrendhunterai.github.io/dhlabs/korecad/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "공식 모듈 허브",
+            "item": "https://globaltrendhunterai.github.io/dhlabs/korecad.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "KoreCAD Studio 기본판($19)과 MOD_CAM_CNC($89)의 차이는 무엇인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "$19 기본판(BASE_CAD)에는 2D/3D CAD 작도, STEP/DWG/PDF 변환, 무료 DXF/STEP/STL 도면 물량 산출(절단 길이·타공·절곡·선색 분리)이 영구 포함됩니다. $89 MOD_CAM_CNC 단품은 업체 자체 단가표 영구 저장, 일괄 배치 견적, UTF-8 BOM CSV·HTML·PDF 공식 견적서 출력과 5축 CAM 기능을 추가합니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "사내 오프라인 폐쇄망 환경에서도 모듈 인증이 유지되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네. KORE2 공개키 서명 라이선스 키와 .kmod.json 볼트 파일은 외부 서버 통신 없이 내장 NIST P-256 공개키로 검증되며 로컬 볼트에 영구 보존됩니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

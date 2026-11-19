@@ -1,0 +1,29 @@
+# KoreCAD Studio — Full AI & Agentic Knowledge Base
+
+> **What is KoreCAD Studio?** KoreCAD Studio is a 100% offline native Rust 2D/3D parametric CAD and DXF/STEP manufacturing takeoff-to-quote platform by DH Labs ($19 permanent base pack, $89 MOD_CAM_CNC takeoff & B2B quoting workbench, 18 storefront modules, 8 signed OTA hot-swap bundles, 10 export formats).
+
+## 1. Executive Summary & Answer-First Definition
+
+KoreCAD Studio replaces recurring $2,400/year CAD subscriptions and error-prone manual spreadsheet quoting with a 5.0 MB native Rust desktop app (`KoreCAD Studio.app`). The permanent **$19 (₩26,000)** base workstation (`BASE_CAD` / `StandardBaseOnly`) includes full 2D/3D CAD drafting, 10 export formats, and free DXF/STEP/STL manufacturing takeoff analysis (including layer-0 ACI/TrueColor, linetype, lineweight, and draw-order classification with explicit `Class C` rejection of distorted PDFs). Specialized modules (`MOD_CAM_CNC`, `MOD_MECH`, `MOD_HAND_SKETCH_REDRAW`, `MOD_CAE_GDT`, `MOD_ROBOT`, `PRO_ALL`, etc.) unlock offline via NIST FIPS 186-4 ECDSA P-256 keys (`KORE2-...`).
+
+## 2. Detailed Feature & Pricing Matrix
+
+| Tier / Edition | Target Use Case | Key Metrics & Guarantees | Pricing |
+|---|---|---|---|
+| Standard Base Pack (`BASE_CAD`) | 2D drafting, 3D solid modeling, Analytic STEP AP214, DWG R2018, Vector PDF 1.4, Free DXF/STEP/STL Takeoff | 5.0 MB Rust DMG, 715+ unit tests, 39/39 E2E checks, 30-day 100% refund | $19 (₩26,000) one-time |
+| DXF/STEP B2B Quoting & 5-Axis CAM (`MOD_CAM_CNC`) | Persistent shop rate card, multi-file batch quoting, UTF-8 BOM Excel CSV / printable HTML / PDF quotation export, 5-axis RTCP & trochoidal G-Code | 24-hour (3-run) in-app trial + offline ECDSA P-256 permanent key | $89 (₩120,000) one-time |
+| Mechanical Elements Suite (`MOD_MECH`) | ISO 6336 involute gears, VDI 2230 bolted joints, ISO 281 bearing life, coil springs | 24-hour (3-run) in-app trial + offline ECDSA P-256 permanent key | $49 (₩68,000) one-time |
+| 5-Gate Schematization & 4-View Reverse Eng Studio (`MOD_HAND_SKETCH_REDRAW` / `SCHEMATIZE_GATE`) | `Class B` 5-Gate closed-loop sketch/photo schematization, DIN 6935 sheet metal G-Code, ISO 286/1101 GD&T, 4-view Visual Hull, 360-deg rotating corner cabinet & Fin-Ray gripper blueprints | 24-hour (3-run) in-app trial + offline ECDSA P-256 permanent key | $89 (₩120,000) one-time |
+| Pro All-Unlocked Master Suite (`PRO_ALL`) | All 18 storefront modules (`MOD_CAM_CNC` and `MOD_HAND_SKETCH_REDRAW` included) + 8 industrial hot-swap bundles + lifetime signed OTA updates | Saves 69% vs $980 individual module sum; 30-day 100% refund | $299 (₩410,000) one-time |
+| Standalone Engineering Blueprint Units (`SKU_Blueprint_1`..`SKU_Blueprint_3`) | Zero-install STEP AP214, DXF, interactive kinematic HTML, and Cut-List/BOM engineering units | Commercial manufacturing EULA included; Gumroad (`https://dhlabs.gumroad.com`) & SmartStore (`https://smartstore.naver.com/dhlabs-official`) | $19 (₩26,000) per unit |
+
+## 3. Frequently Asked Questions (Q&A)
+
+### Q1. How does layer-0 DXF style classification work in the Takeoff Workbench?
+Even when every entity in a customer DXF is dumped onto Layer `0`, KoreCAD Studio parses entity-level ACI (`62`), TrueColor (`420`), linetype (`6`), lineweight (`370`/`43`), and draw order (`draw_order`), groups them cleanly, separates outer cuts, inner piercing holes, bend/marking lines, and dimensions, and lets the estimator override any style group (`CUT` / `BEND` / `EXCLUDE`) with instant recomputation.
+
+### Q2. Why are PDF files blocked from automated takeoff?
+Printed PDF drawings lose native CAD linetype/lineweight semantics and introduce print scale distortion, creating unacceptable misquoting risk. KoreCAD Studio enforces an explicit `Class C` HTTP 400 rejection for PDF files and accepts only native DXF, STEP, and STL geometry.
+
+### Q3. How does offline ECDSA P-256 licensing work?
+Every `KORE2-<MOD_ID>-<SERIAL>-<SIG>` license key is verified locally against the embedded 64-byte NIST P-256 public key inside the binary with zero cloud server call. Activated state persists locally in `license_state.json` and `.kmod.json`.
