@@ -1,137 +1,137 @@
 {
   "schema_version": 1,
-  "manifest_seq": 1,
-  "checkout_mode": "PRE_APPROVAL_TRIAL_ONLY",
+  "manifest_seq": 2,
+  "checkout_mode": "LIVE_DIRECT_CHECKOUT",
   "official_hub_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html",
-  "provider_store_id": null,
-  "updated_at_iso": "2026-11-11T05:31:44Z",
+  "provider_store_id": 1,
+  "updated_at_iso": "2026-11-19T11:09:02Z",
   "modules": {
-    "MOD_MECH": {
-      "module_id": "MOD_MECH",
-      "title": "Mechanical Elements & Machine Design Suite",
-      "price_usd": 49.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-MOD_MECH"
-    },
-    "MOD_ROBOT": {
-      "module_id": "MOD_ROBOT",
-      "title": "Servo Actuator & 6-DoF Industrial Robot Dynamics",
-      "price_usd": 79.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-MOD_ROBOT"
-    },
-    "MOD_MESH_DFM": {
-      "module_id": "MOD_MESH_DFM",
-      "title": "Differential Geometry, QEM Decimation & DFM Inspection",
-      "price_usd": 59.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-MOD_MESH_DFM"
-    },
-    "MOD_CAE_GDT": {
-      "module_id": "MOD_CAE_GDT",
-      "title": "Multiphysics CAE, XPBD Harness, Voronoi Fracture & 6-Sigma GD&T",
-      "price_usd": 99.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-MOD_CAE_GDT"
-    },
-    "SURFACE_ROUGHNESS": {
-      "module_id": "SURFACE_ROUGHNESS",
-      "title": "Surface Finish & Roughness Metrology Suite",
-      "price_usd": 49.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-SURFACE_ROUGHNESS"
-    },
-    "SHEETMETAL": {
-      "module_id": "SHEETMETAL",
-      "title": "Parametric Sheet Metal Modeling & Unfold Engine",
-      "price_usd": 49.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-SHEETMETAL"
-    },
-    "WORKBENCH": {
-      "module_id": "WORKBENCH",
-      "title": "Multi-Disciplinary Engineering Workbench",
-      "price_usd": 39.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-WORKBENCH"
-    },
-    "RACK_BRIDGE": {
-      "module_id": "RACK_BRIDGE",
-      "title": "Rack Bridge & Structural Framing Suite",
-      "price_usd": 59.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-RACK_BRIDGE"
+    "CAM_CNC": {
+      "module_id": "CAM_CNC",
+      "title": "CAM & CNC 5-Axis RTCP & Adaptive Trochoidal Suite",
+      "price_usd": 89.0,
+      "provider_variant_id": 1001,
+      "checkout_url": "https://dhlabs.gumroad.com/l/korecad-takeoff-quote"
     },
     "DMU_CLASH_TOLERANCE": {
       "module_id": "DMU_CLASH_TOLERANCE",
       "title": "Digital Mockup, Clash Detection & ISO 286 Tolerance Stackup",
       "price_usd": 89.0,
       "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-DMU_CLASH_TOLERANCE"
-    },
-    "HUMANOID_MECHATRONICS": {
-      "module_id": "HUMANOID_MECHATRONICS",
-      "title": "Humanoid Mechatronics, Cycloidal Drive & Biped Actuator Suite",
-      "price_usd": 99.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-HUMANOID_MECHATRONICS"
-    },
-    "WELDMENT_FRAME": {
-      "module_id": "WELDMENT_FRAME",
-      "title": "Parametric Structural Weldment & Frame Generator Suite",
-      "price_usd": 59.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-WELDMENT_FRAME"
-    },
-    "WOOD_FRAME": {
-      "module_id": "WOOD_FRAME",
-      "title": "Lightweight Wood Framing & Lumber Cutlist Suite",
-      "price_usd": 49.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-WOOD_FRAME"
-    },
-    "CAM_CNC": {
-      "module_id": "CAM_CNC",
-      "title": "CAM & CNC 5-Axis RTCP & Adaptive Trochoidal Suite",
-      "price_usd": 89.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-CAM_CNC"
-    },
-    "PIPING_HARNESS": {
-      "module_id": "PIPING_HARNESS",
-      "title": "3D Industrial Piping, Harness Formboard & Hydraulic Manifold Suite",
-      "price_usd": 79.0,
-      "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-PIPING_HARNESS"
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=DMU_CLASH_TOLERANCE"
     },
     "ECAD_PCB": {
       "module_id": "ECAD_PCB",
       "title": "Nanometer ECAD, A* Grid Router, DRC & MNA SPICE Simulator Suite",
       "price_usd": 79.0,
       "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-ECAD_PCB"
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=ECAD_PCB"
     },
-    "REVERSE_ENG": {
-      "module_id": "REVERSE_ENG",
-      "title": "2D Orthographic 3-View to 3D B-Rep Reverse Engineering Suite",
-      "price_usd": 89.0,
+    "HUMANOID_MECHATRONICS": {
+      "module_id": "HUMANOID_MECHATRONICS",
+      "title": "Humanoid Mechatronics, Cycloidal Drive & Biped Actuator Suite",
+      "price_usd": 99.0,
       "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-REVERSE_ENG"
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=HUMANOID_MECHATRONICS"
+    },
+    "MOD_CAE_GDT": {
+      "module_id": "MOD_CAE_GDT",
+      "title": "Multiphysics CAE, XPBD Harness, Voronoi Fracture & 6-Sigma GD&T",
+      "price_usd": 99.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=MOD_CAE_GDT"
+    },
+    "MOD_MECH": {
+      "module_id": "MOD_MECH",
+      "title": "Mechanical Elements & Machine Design Suite",
+      "price_usd": 49.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=MOD_MECH"
+    },
+    "MOD_MESH_DFM": {
+      "module_id": "MOD_MESH_DFM",
+      "title": "Differential Geometry, QEM Decimation & DFM Inspection",
+      "price_usd": 59.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=MOD_MESH_DFM"
+    },
+    "MOD_ROBOT": {
+      "module_id": "MOD_ROBOT",
+      "title": "Servo Actuator & 6-DoF Industrial Robot Dynamics",
+      "price_usd": 79.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=MOD_ROBOT"
     },
     "PDM": {
       "module_id": "PDM",
       "title": "Enterprise PDM Revision Vault & Real-Time CRDT Collab Suite",
       "price_usd": 69.0,
       "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-PDM"
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=PDM"
+    },
+    "PIPING_HARNESS": {
+      "module_id": "PIPING_HARNESS",
+      "title": "3D Industrial Piping, Harness Formboard & Hydraulic Manifold Suite",
+      "price_usd": 79.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=PIPING_HARNESS"
     },
     "PRO_ALL": {
       "module_id": "PRO_ALL",
       "title": "KoreCAD Studio PRO_ALL Master Suite (All Modules)",
       "price_usd": 299.0,
       "provider_variant_id": null,
-      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html#module-PRO_ALL"
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=PRO_ALL"
+    },
+    "RACK_BRIDGE": {
+      "module_id": "RACK_BRIDGE",
+      "title": "Rack Bridge & Structural Framing Suite",
+      "price_usd": 59.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=RACK_BRIDGE"
+    },
+    "REVERSE_ENG": {
+      "module_id": "REVERSE_ENG",
+      "title": "2D Orthographic 3-View to 3D B-Rep Reverse Engineering Suite",
+      "price_usd": 89.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=REVERSE_ENG"
+    },
+    "SHEETMETAL": {
+      "module_id": "SHEETMETAL",
+      "title": "Parametric Sheet Metal Modeling & Unfold Engine",
+      "price_usd": 49.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=SHEETMETAL"
+    },
+    "SURFACE_ROUGHNESS": {
+      "module_id": "SURFACE_ROUGHNESS",
+      "title": "Surface Finish & Roughness Metrology Suite",
+      "price_usd": 49.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=SURFACE_ROUGHNESS"
+    },
+    "WELDMENT_FRAME": {
+      "module_id": "WELDMENT_FRAME",
+      "title": "Parametric Structural Weldment & Frame Generator Suite",
+      "price_usd": 59.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=WELDMENT_FRAME"
+    },
+    "WOOD_FRAME": {
+      "module_id": "WOOD_FRAME",
+      "title": "Lightweight Wood Framing & Lumber Cutlist Suite",
+      "price_usd": 49.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=WOOD_FRAME"
+    },
+    "WORKBENCH": {
+      "module_id": "WORKBENCH",
+      "title": "Multi-Disciplinary Engineering Workbench",
+      "price_usd": 39.0,
+      "provider_variant_id": null,
+      "checkout_url": "https://globaltrendhunterai.github.io/dhlabs/korecad.html?module=WORKBENCH"
     }
   },
-  "ecdsa_p256_signature_hex": "1EF2723AF31F4CF3266516EEB6F389F444B45C8C61B89990CB8864EFAA0DDB53094E848C3F4EC402BB0EFBB56901A1889DF1B39562F4DF564DC4910B5C98ACCD"
+  "ecdsa_p256_signature_hex": "F02BDCA9799EAFCA03222CA20F8C6F18699CB3ADA82AD430F49AAA9614345F91B6EE74179853D57F038B6DA5A9C08A850165B50C9B2ECA23DC0971516E3C6CE7"
 }
