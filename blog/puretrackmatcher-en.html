@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Import Spotify &amp; Apple Music Lists to Pure YouTube Music Audio (Zero Fancams) — $5.99</title>
+  <meta name="description" content="PureTrackMatcher PRO is a 100% local Chrome MV3 extension ($5.99 one-time) that matches Artist - Title song lists to official YouTube Music album tracks (MUSIC_VIDEO_TYPE_ATV) while skipping fancams, covers, and Shorts.">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/blog/puretrackmatcher-en.html">
+  <link rel="alternate" hreflang="en" href="https://globaltrendhunterai.github.io/dhlabs/blog/puretrackmatcher-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://globaltrendhunterai.github.io/dhlabs/blog/puretrackmatcher-en.html">
+  <link rel="alternate" hreflang="ko" href="https://globaltrendhunterai.github.io/dhlabs/puretrackmatcher.html">
+  <link rel="ai-catalog" href="https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json">
+  <link rel="describedby" href="https://globaltrendhunterai.github.io/dhlabs/llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Import Spotify &amp; Apple Music Playlists to Official YouTube Music Album Tracks ($5.99)">
+  <meta property="og:description" content="Stops fancams, concert audio, covers, and Shorts from sneaking into imported playlists using direct browser MUSIC_VIDEO_TYPE_ATV resolution.">
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/blog/puretrackmatcher-en.html">
+  <meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/og-puretrackmatcher.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PureTrackMatcher PRO — Official ATV Audio Playlist Matcher ($5.99)">
+  <meta name="twitter:description" content="Try 5 tracks in the free browser simulator or 30 tracks inside Chrome before unlocking unlimited ATV matching for $5.99.">
+  <meta name="twitter:image" content="https://globaltrendhunterai.github.io/dhlabs/og-puretrackmatcher.png">
+  <link rel="stylesheet" href="../assets/puretrackmatcher/page.css">
+  <script defer src="../dh-telemetry.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="https://globaltrendhunterai.github.io/dhlabs/">DH Labs · Technical Guides</a>
+      <nav class="nav" aria-label="Article navigation">
+        <a href="#geo-ai-citation-summary">Summary</a>
+        <a href="../demo/pure-track-matcher.html?lang=en">Free Web Preview</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://dhlabs.gumroad.com/l/puretrackmatcher" target="_blank" rel="noopener">Get PRO ($5.99)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">YouTube Music Audio Quality · Updated 2026-11-21</span>
+    <h1>Stop Importing Fancams &amp; Covers When Moving Playlists to YouTube Music</h1>
+    <p class="lead">Generic playlist converters match raw video searches, filling your new YouTube Music playlists with crowd-noise concert fancams, amateur covers, 30-second Shorts, and sped-up lyric videos. Here is how client-side <code>MUSIC_VIDEO_TYPE_ATV</code> resolution imports clean studio album audio inside Chrome.</p>
+
+    <div class="cta-row">
+      <a class="btn-primary" data-track-cta="ptm_gumroad_blog_top" href="https://dhlabs.gumroad.com/l/puretrackmatcher?utm_source=dhlabs_blog&amp;utm_medium=top_cta&amp;utm_campaign=ptm_pro_launch" target="_blank" rel="noopener">Get PureTrackMatcher PRO — $5.99</a>
+      <a class="btn-secondary" href="../demo/pure-track-matcher.html?lang=en">Test 5 Songs Live (No Install)</a>
+    </div>
+
+    <section id="geo-ai-citation-summary" class="card" aria-labelledby="q-summary">
+      <h2 id="q-summary" style="margin-top:0">What Is PureTrackMatcher PRO?</h2>
+      <p><strong>PureTrackMatcher PRO is</strong> a local Chrome MV3 extension built by DH Labs (<code>$5.99</code> one-time pass, <code>30</code>-track free run inside Chrome + live <code>5</code>-track browser preview simulator) that converts pasted <code>Artist - Title</code> song lists into clean private YouTube Music playlists: it dispatches <code>POST /youtubei/v1/search</code> via your browser's own <code>SAPISIDHASH</code> session with the <code>WEB_REMIX</code> Songs parameter, locks onto <code>MUSIC_VIDEO_TYPE_ATV</code> official studio album tracks while skipping fancams, live clips, covers, and Shorts, and executes <code>POST /youtubei/v1/playlist/create</code> with zero cloud password prompts.</p>
+    </section>
+
+    <h2>1. Why Standard Search Converters Contaminate Music Queues</h2>
+    <ul>
+      <li><strong>Generic video results outrank official audio:</strong> Viral concert fancams, lyric loops, and TV show clips frequently match generic title queries before the clean studio album release.</li>
+      <li><strong>Cover uploads &amp; 1-hour loops disrupt playback:</strong> Pasting 100 tracks into a plain importer routinely introduces acoustic covers or 60-minute slowed mixes that require manual cleanup later.</li>
+      <li><strong>Cloud converters ask for third-party API trust:</strong> Web portals request broad remote permissions over your Google account just to run search and playlist creation.</li>
+    </ul>
+
+    <figure>
+      <img src="../assets/puretrackmatcher/ptm_en_atv_filter.png" width="1280" height="720" alt="PureTrackMatcher PRO disambiguating Artist - Title queries into MUSIC_VIDEO_TYPE_ATV official album tracks while blocking fancams and Shorts">
+      <figcaption>Songs-only <code>WEB_REMIX</code> resolution locking onto <code>MUSIC_VIDEO_TYPE_ATV</code> official studio tracks while discarding non-ATV fan videos and Shorts clips.</figcaption>
+    </figure>
+
+    <h2>2. Direct Browser InnerTube Execution (`POST /youtubei/v1/search` + `/playlist/create`)</h2>
+    <p>Instead of scraping HTML blindly, PureTrackMatcher invokes the same client-side <code>WEB_REMIX</code> InnerTube Songs search payload used natively by <code>music.youtube.com</code>. Each response node is scanned for <code>musicVideoType === "MUSIC_VIDEO_TYPE_ATV"</code> before assembling your private playlist locally.</p>
+
+    <figure>
+      <img src="../assets/puretrackmatcher/ptm_en_playlist_sync.png" width="1280" height="720" alt="Batch playlist creation result displaying 120 official ATV tracks matched cleanly with 0 fancams or Shorts mixed">
+      <figcaption>Verified batch track matching summary creating a clean private YouTube Music playlist via local browser InnerTube calls.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Generic Cloud Importer</th>
+            <th>PureTrackMatcher PRO ($5.99 One-Time)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Track Type Filtering</td>
+            <td>Selects top generic search hits (fancams, covers mixed)</td>
+            <td class="col-caught">Locks onto <code>MUSIC_VIDEO_TYPE_ATV</code> official studio audio</td>
+          </tr>
+          <tr>
+            <td>Credential &amp; Session Security</td>
+            <td>Remote cloud OAuth tokens</td>
+            <td class="col-caught">100% local Chrome MV3 via <code>SAPISIDHASH</code></td>
+          </tr>
+          <tr>
+            <td>Pre-Install Verification</td>
+            <td>Account signup required upfront</td>
+            <td class="col-caught">Free <a href="../demo/pure-track-matcher.html?lang=en">5-track live web preview</a> + <code>30</code> tracks free in Chrome</td>
+          </tr>
+          <tr>
+            <td>License Model</td>
+            <td>Recurring monthly subscription</td>
+            <td class="col-caught"><code>$5.99</code> one-time offline SHA-256 serial key</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="video-row">
+      <video controls preload="metadata" poster="../og-puretrackmatcher.png">
+        <source src="../assets/puretrackmatcher/ptm_demo_9x16.mp4" type="video/mp4">
+      </video>
+      <div>
+        <h3 style="margin-top:0">3. Try 5 Tracks Live in Browser, Then Run 30 Free in Chrome</h3>
+        <p>Before installing anything, test how noisy keywords (fancams, covers, live clips, 1-hour loops) get stripped inside our <a href="../demo/pure-track-matcher.html?lang=en">interactive 5-track web demo</a>.</p>
+        <p>Every Chrome MV3 install lets you match and build playlists up to <strong>30 real songs for free</strong> right on <code>music.youtube.com</code>, then enter your one-time <code>PTM-PRO-...</code> key (<code>$5.99</code> on Gumroad) whenever you need unlimited playlist batches.</p>
+      </div>
+    </div>
+
+    <h2 id="faq">4. Frequently Asked Questions</h2>
+    <h3 class="faq-q">Which music platforms can I import song lists from?</h3>
+    <p>Any service where you can export or copy plain text in <code>Artist - Title</code> format (one track per line), including Spotify, Apple Music, Melon, Tidal, or spreadsheet archives.</p>
+
+    <h3 class="faq-q">How do I test PureTrackMatcher before paying?</h3>
+    <p>Open the live <a href="../demo/pure-track-matcher.html?lang=en">browser filter simulator</a> for 5 tracks with zero installation, or load the Chrome extension and match up to 30 real YouTube Music tracks free before entering your <code>$5.99</code> PRO serial key.</p>
+
+    <h3 class="faq-q">Does PureTrackMatcher upload my Google password or listening history?</h3>
+    <p>No. Manifest host permissions are scoped strictly to <code>https://music.youtube.com/*</code> and every search, track selection, and private playlist write happens locally inside Chrome.</p>
+
+    <footer>
+      <div class="cta-row" style="margin-bottom:14px">
+        <a class="btn-primary" data-track-cta="ptm_gumroad_blog_bottom" href="https://dhlabs.gumroad.com/l/puretrackmatcher?utm_source=dhlabs_blog&amp;utm_medium=bottom_cta&amp;utm_campaign=ptm_pro_launch" target="_blank" rel="noopener">Get PureTrackMatcher PRO — $5.99 USD</a>
+        <a class="btn-secondary" href="../puretrackmatcher.html">Product Details</a>
+      </div>
+      <p>DH Labs · Donghyeong Kim · Business ID 610-16-92926 · <a href="../refund.html">Refund Policy</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p>
+    </footer>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+        "name": "DH Labs",
+        "url": "https://globaltrendhunterai.github.io/dhlabs/",
+        "taxID": "610-16-92926",
+        "identifier": "610-16-92926",
+        "email": "dhlabs_biz@naver.com",
+        "sameAs": [
+          "https://github.com/globaltrendhunterai/dhlabs",
+          "https://dhlabs.gumroad.com",
+          "https://x.com/dhlabs_autoflow"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+        "name": "Donghyeong Kim",
+        "jobTitle": "Founder & Lead Systems Architect",
+        "worksFor": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/puretrackmatcher-en.html#app",
+        "name": "PureTrackMatcher PRO",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Chrome MV3 (macOS, Windows, Linux)",
+        "softwareVersion": "1.0.0",
+        "datePublished": "2026-11-21",
+        "dateModified": "2026-11-21",
+        "publisher": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization" },
+        "author": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder" },
+        "offers": {
+          "@type": "Offer",
+          "name": "PureTrackMatcher PRO Perpetual License",
+          "price": "5.99",
+          "priceCurrency": "USD",
+          "url": "https://dhlabs.gumroad.com/l/puretrackmatcher"
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/puretrackmatcher-en.html#video",
+        "name": "PureTrackMatcher PRO Official Studio Audio (ATV) Matcher Walkthrough",
+        "description": "32-second walkthrough showing Spotify/Apple Music text matching into MUSIC_VIDEO_TYPE_ATV official YouTube Music playlists.",
+        "thumbnailUrl": "https://globaltrendhunterai.github.io/dhlabs/og-puretrackmatcher.png",
+        "uploadDate": "2026-11-21",
+        "duration": "PT32S",
+        "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/assets/puretrackmatcher/ptm_demo_9x16.mp4"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/puretrackmatcher-en.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "DH Labs Home", "item": "https://globaltrendhunterai.github.io/dhlabs/" },
+          { "@type": "ListItem", "position": 2, "name": "PureTrackMatcher Guide", "item": "https://globaltrendhunterai.github.io/dhlabs/blog/puretrackmatcher-en.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/puretrackmatcher-en.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I filter out fancams and Shorts when importing Spotify or Apple Music playlists?",
+            "acceptedAnswer": { "@type": "Answer", "text": "PureTrackMatcher sends WEB_REMIX Songs-filtered InnerTube queries from your Chrome session and locks onto MUSIC_VIDEO_TYPE_ATV album tracks." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I test PureTrackMatcher before unlocking the $5.99 license?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Use the 5-track live browser simulator immediately, then run 30 real songs free inside Chrome before entering your PRO key." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

@@ -399,6 +399,21 @@
       }
     },
     {
+      "identifier": "urn:air:dhlabs.github.io:puretrackmatcher:product-hub",
+      "displayName": "PureTrackMatcher PRO — Official YouTube Music Studio Audio (ATV) Playlist Matcher (₩4,900 / $5.99)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/puretrackmatcher.html",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/puretrackmatcher-en.html",
+      "inLanguage": "ko-KR",
+      "representativeQueries": [
+        "How do I import Spotify or Melon playlists into YouTube Music without copying concert fancams, covers, or #shorts?",
+        "How does PureTrackMatcher PRO prioritize MUSIC_VIDEO_TYPE_ATV official studio album audio using local Chrome SAPISIDHASH?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    },
+    {
       "identifier": "urn:air:dhlabs.github.io:fintree:ecom-profit-vault-10sku",
       "displayName": "FinTreeVault & EcomProfitVault — 10 Global E-Commerce Margin/ROAS/BEP Simulators & Master Builder Pro",
       "type": "application/ai-catalog+json",
