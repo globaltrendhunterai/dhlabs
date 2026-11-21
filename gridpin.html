@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GridPin Studio — AI 바이브코딩 UI 드래그 교정 · 4대 프레임워크 즉시 변환 도구</title>
+  <meta name="description" content="디에이치랩스(DH Labs) 공식 GridPin v1.0 허브. Cursor·Claude Code·v0 개발 시 채팅 대신 localhost 화면에서 12단 그리드+8pt 자석 스냅으로 드래그하고 번호 핀을 꽂아 0.01초 만에 React·SwiftUI·Flutter·CSS 패치로 변환합니다. 국내 ₩99,000 / 글로벌 $79·$12/mo.">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/gridpin.html">
+  <link rel="alternate" hreflang="ko-KR" href="https://globaltrendhunterai.github.io/dhlabs/gridpin.html">
+  <link rel="alternate" hreflang="en-US" href="https://globaltrendhunterai.github.io/dhlabs/blog/gridpin-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://globaltrendhunterai.github.io/dhlabs/blog/gridpin-en.html">
+  <link rel="ai-catalog" href="https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json">
+  <link rel="describedby" href="https://globaltrendhunterai.github.io/dhlabs/llms.txt">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="GridPin Studio — AI 코딩 UI 드래그 교정 · 4대 코드 변환 도구">
+  <meta property="og:description" content="채팅 프롬프트 5번 대신 마우스 드래그+도면 핀 한 번으로 CSS 셀렉터, 30줄 로컬 컨텍스트, .bak 백업 원자 패치까지 0.01초에 생성합니다.">
+  <meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/og-gridpin.png">
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/gridpin.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GridPin — Visual UI Drag &amp; Pinpoint Diff Finisher ($12/mo · $79)">
+  <meta name="twitter:description" content="12-Col + 8pt Magnetic Snap overlay on localhost. Drop numbered pins and compile React, SwiftUI, Flutter, or CSS diffs with auto .bak backup.">
+  <meta name="twitter:image" content="https://globaltrendhunterai.github.io/dhlabs/og-gridpin.png">
+  <style>:root { --bg: #FFFFFF; --paper: #F7F6F2; --surface: #F8FAFC; --border: #E2E8F0; --ink: #18181B; --muted: #475569; --accent: #1D4ED8; --accent-soft: #EFF6FF; --ok: #14532D; --ok-soft: #ECF3EE; } * { box-sizing: border-box; margin: 0; padding: 0; } html { scroll-behavior: smooth; } body { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", sans-serif; background: var(--bg); color: var(--ink); line-height: 1.68; overflow-x: hidden; word-break: keep-all; overflow-wrap: break-word; } time { white-space: nowrap; } a { color: var(--accent); } .topbar { border-bottom: 1px solid var(--border); background: #FFFFFF; position: sticky; top: 0; z-index: 20; } .topbar__inner { max-width: 1120px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; } .brand { font-weight: 800; font-size: 16px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; } .nav { display: flex; gap: 18px; font-size: 14px; flex-wrap: wrap; } .nav a { color: var(--muted); text-decoration: none; font-weight: 600; } .nav a:hover { color: var(--ink); } .container { max-width: 1120px; margin: 0 auto; padding: 36px 20px; } .badge { display: inline-block; padding: 5px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 12.5px; margin-bottom: 14px; } .hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr); gap: 28px; align-items: center; margin-bottom: 32px; } h1 { font-size: 34px; line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.025em; } h2 { font-size: 23px; margin: 40px 0 14px; letter-spacing: -0.015em; line-height: 1.35; } h3 { font-size: 17px; margin: 18px 0 8px; line-height: 1.4; } .lead { font-size: 16px; color: var(--muted); margin-bottom: 20px; } .hero-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; } .btn-primary { display: inline-block; background: var(--ok); color: #FFFFFF; font-weight: 700; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-size: 15px; } .btn-secondary { display: inline-block; background: var(--accent); color: #FFFFFF; font-weight: 700; padding: 13px 22px; border-radius: 10px; text-decoration: none; font-size: 15px; } .link-secondary { font-size: 14px; font-weight: 700; color: var(--ink); text-decoration: underline; text-underline-offset: 4px; } .proof-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; } .proof-pill { background: var(--paper); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; } .proof-pill strong { display: block; font-size: 16px; color: var(--ink); } .proof-pill span { font-size: 12px; color: var(--muted); } .hero-figure { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; } .hero-figure img { display: block; width: 100%; height: auto; } .hero-figure figcaption { padding: 10px 14px; font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--border); background: #FFFFFF; } .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; margin-bottom: 18px; } .card--paper { background: var(--paper); } .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 16px 0 24px; } .shot { background: #FFFFFF; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; } .shot img { display: block; width: 100%; height: auto; } .shot figcaption { padding: 10px 12px; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); } .table-wrap { width: 100%; overflow-x: auto; margin: 14px 0; } table { width: 100%; border-collapse: collapse; background: #FFFFFF; border: 1px solid var(--border); min-width: 620px; } th, td { border: 1px solid var(--border); padding: 11px 13px; text-align: left; font-size: 13.5px; vertical-align: middle; } th { background: var(--surface); font-weight: 700; } .highlight-row { background: var(--ok-soft); font-weight: 600; } ul, ol { padding-left: 20px; margin: 10px 0; } li { margin-bottom: 7px; } code { background: var(--accent-soft); color: #1E40AF; padding: 2px 6px; border-radius: 4px; font-size: 12.5px; } .footer { border-top: 1px solid var(--border); margin-top: 44px; padding-top: 22px; font-size: 13px; color: var(--muted); } @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .proof-strip, .gallery-grid { grid-template-columns: 1fr; } h1 { font-size: 27px; } }</style>
+  <script src="/dhlabs/dh-telemetry.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a href="https://globaltrendhunterai.github.io/dhlabs/" class="brand">DH Labs · GridPin v1.0</a>
+      <nav class="nav">
+        <a href="#geo-ai-citation-summary">핵심 기능</a>
+        <a href="#gallery">실제 작동 화면</a>
+        <a href="#pricing">채널별 구매 안내</a>
+        <a href="#faq">FAQ</a>
+        <a href="blog/gridpin-en.html">English Guide</a>
+        <a href="index.html">DH Labs 홈</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="geo-ai-citation-summary" class="card card--paper" style="margin-bottom:24px;">
+      <h1>AI 채팅과 20px 여백 실랑이 대신 마우스로 끌고 핀만 꽂으세요</h1>
+      <p style="margin-bottom:12px;">
+        <strong>GridPin(그리드핀)은 무엇인가요?</strong> 디에이치랩스(DH Labs)가 제작한 AI 바이브코딩 전용 시각 레이아웃 교정 도구(Chrome MV3 + 로컬 브리지 <code>127.0.0.1:3741</code> + VS Code 확장)입니다.
+        Cursor, Claude Code, v0 개발 시 실행 중인 <code>localhost</code> 화면 위에 12단 가이드(<code>G</code>)와 8pt 자석 스냅을 띄워 마우스 드래그(<code>dx, dy, dw, dh</code>)와 번호 핀(<code>C</code>) 메모를 0.01초 만에 React/Tailwind · SwiftUI · Flutter · CSS 패치로 변환합니다. 국내 ₩99,000(스마트스토어 `#13888020698`), 크몽 `#872785`(₩49k/₩99k/₩149k), 글로벌 $79 영구 / $12 월간 패스로 즉시 공급됩니다.
+      </p>
+      <ul>
+        <li><strong>즉시 0.01초 로컬 변환</strong>: Tier 1 무료 내장 합성기로 React+Tailwind, SwiftUI, Flutter, CSS 패치 동시 생성</li>
+        <li><strong>자동 <code>.bak</code> 백업 방어</strong>: 원본 파일 덮어쓰기 직전 <code>.gridpin_backups/</code> 스냅샷 보관 · 외부 경로 403 차단</li>
+        <li><strong>최대 3대 기기 인증</strong>: <code>DH-</code> / <code>KMONG-</code> / Gumroad 고유 키 검증 및 30일 환불 보장</li>
+      </ul>
+    </section>
+
+    <section class="hero">
+      <div>
+        <span class="badge">Chrome MV3 + VS Code + Local Bridge (127.0.0.1:3741) · 최대 3대 기기 인증</span>
+        <p class="lead">
+          Cursor, Claude Code, Bolt.new, v0로 만든 로컬 웹 화면(<code>localhost</code>) 위에서
+          12단 매크로 그리드(<code>G</code>)와 8pt 자석 스냅으로 요소를 이동하고 번호 핀(<code>C</code>)만 꽂으세요.
+          30줄 국소 컨텍스트로 원본 훼손 없이 정밀 수정합니다.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" data-track-cta="gridpin_smartstore_hero" href="https://smartstore.naver.com/dhlabs-official/products/13888020698" target="_blank" rel="noopener">스마트스토어 단품 구매 (₩99,000)</a>
+          <a class="btn-secondary" data-track-cta="gridpin_gumroad_hero" href="https://dhlabs.gumroad.com/l/gridpin-pro" target="_blank" rel="noopener">Global Perpetual ($79)</a>
+          <a class="link-secondary" data-track-cta="gridpin_gumroad_monthly_hero" href="https://dhlabs.gumroad.com/l/gridpin-monthly" target="_blank" rel="noopener">Monthly Pass ($12/mo)</a>
+        </div>
+        <p style="font-size:12.5px; color:var(--muted);">
+          업데이트: <time datetime="2026-11-21">2026-11-21</time> · 제작: 디에이치랩스(DH Labs, 610-16-92926) · 크몽 서비스 <code>#872785</code> 등록 완료
+        </p>
+        <div class="proof-strip">
+          <div class="proof-pill"><strong>0.01초</strong><span>Tier 1 무과금 4대 언어 합성</span></div>
+          <div class="proof-pill"><strong>12단 + 8pt</strong><span>자석 스냅 · w-1/2 자동 판별</span></div>
+          <div class="proof-pill"><strong>30줄</strong><span>원본 훼손 없는 핀포인트 컨텍스트</span></div>
+        </div>
+      </div>
+
+      <figure class="hero-figure">
+        <img src="assets/gridpin/gridpin_kr_02_live_demo.png" alt="GridPin localhost 12단 그리드와 8pt 자석 스냅, 번호 핀 1번 리뷰 오버레이 실측 화면" width="1304" height="976">
+        <figcaption>로컬 실행 화면 위에 12단 가이드, 8pt 스냅 선, 1번 핀포인트 리뷰 메모가 실시간 중첩된 상태</figcaption>
+      </figure>
+    </section>
+
+    <section id="gallery">
+      <h2>실제 작동 데모 영상 및 3단계 구조 — 드래그 ➔ 핀 고정 ➔ 4대 프레임워크 출력</h2>
+      <div class="card" style="display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;align-items:center;">
+        <video controls playsinline preload="metadata" poster="og-gridpin.png" style="width:100%;max-height:420px;border-radius:10px;background:#0F172A;">
+          <source src="assets/gridpin/gridpin_demo_9x16.mp4" type="video/mp4">
+        </video>
+        <div>
+          <h3>30초 시연 영상으로 보는 GridPin 시각 교정 흐름</h3>
+          <p style="font-size:14.5px;color:var(--muted);">채팅 프롬프트 5번을 반복하는 대신, 크롬 화면에서 8pt 스냅으로 드래그하고 번호 핀을 꽂아 4대 코드와 <code>.bak</code> 스냅샷까지 생성하는 전체 흐름을 확인할 수 있습니다.</p>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <figure class="shot">
+          <img src="assets/gridpin/gridpin_kr_01_overview.png" alt="GridPin 3대 핵심 기능 요약 카드" width="1304" height="976">
+          <figcaption>1. 12단 그리드+8pt 스냅 + 핀포인트 리뷰 + 4대 언어 즉시 변환</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/gridpin/gridpin_kr_02_live_demo.png" alt="localhost:3000 위 1번 핀 고정 화면" width="1304" height="976">
+          <figcaption>2. 단축키 G/C로 브라우저 안에서 직접 이동·크기조절 및 지시 메모 고정</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/gridpin/gridpin_kr_03_arch.png" alt="React SwiftUI Flutter CSS 4대 코드 변환 아키텍처" width="1304" height="976">
+          <figcaption>3. React/Tailwind, SwiftUI, Flutter, CSS 동시 생성 + <code>.bak</code> 안전 백업</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="comparison">
+      <h2>일반 AI 코딩 채팅 vs GridPin 정량 비교표</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>비교 항목</th>
+              <th>일반 Cursor · Claude 채팅 수정</th>
+              <th>GridPin v1.0 (시각 교정 + 브리지)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>화면 위치/간격 파악 방식</strong></td>
+              <td>텍스트 추측 ("버튼을 오른쪽으로 20px 옮겨줘")</td>
+              <td class="highlight-row">브라우저 DOM 실제 드래그 + 12단·8pt 자석 스냅 실측</td>
+            </tr>
+            <tr>
+              <td><strong>AI 수정 대상 범위</strong></td>
+              <td>파일 전체를 AI에게 넘겨 부수적 레이아웃 깨짐 위험</td>
+              <td class="highlight-row">CSS 셀렉터 주변 30줄 국소 컨텍스트 + <code>.bak</code> 자동 백업</td>
+            </tr>
+            <tr>
+              <td><strong>추가 API 과금 여부</strong></td>
+              <td>매 수정 턴마다 프롬프트·토큰 소모</td>
+              <td class="highlight-row">Tier 1 로컬 합성 0.01초 무과금 (Tier 2 BYOK 선택 가능)</td>
+            </tr>
+            <tr>
+              <td><strong>지원 출력 언어/플랫폼</strong></td>
+              <td>프롬프트 지시 언어에 종속</td>
+              <td class="highlight-row">React+Tailwind · iOS SwiftUI · Flutter Dart · Pure CSS 4종</td>
+            </tr>
+            <tr>
+              <td><strong>보안 및 코드 소유권</strong></td>
+              <td>원격 호스팅 UI 툴은 외부 서버 전송 필요</td>
+              <td class="highlight-row">로컬(127.0.0.1:3741) 전용 작동 · 경로 탈출 403 차단 · 소유권 100% 고객 귀속</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2>공식 판매 채널 및 가격표 — 국내 · 글로벌 즉시 구매</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>채널 / SKU</th>
+              <th>구성 및 라이선스 범위</th>
+              <th>공식 판매가</th>
+              <th>바로가기</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td><strong>네이버 스마트스토어</strong><br><code>GRIDPIN-PRO-KR-V1</code></td>
+              <td>크롬 MV3 확장 + 로컬 브리지 CLI + VS Code 확장 + 4대 언어 합성 + 한국어 가이드 (<code>DH-</code> 키 무인 자동 발송, 최대 3대 기기)</td>
+              <td><strong>₩99,000</strong><br>(1회 영구 소장)</td>
+              <td><a href="https://smartstore.naver.com/dhlabs-official/products/13888020698" target="_blank" rel="noopener" data-track-cta="gridpin_smartstore_table">스마트스토어 구매 →</a></td>
+            </tr>
+            <tr>
+              <td><strong>국내 크몽 (Kmong)</strong><br><code>#872785</code></td>
+              <td>Standard(₩49,000) · Deluxe Pro(₩99,000) · Enterprise/Team(₩149,000) 3단계 맞춤 선택 (<code>KMONG-</code> 키 무인 발급)</td>
+              <td><strong>₩49,000 ~ ₩149,000</strong></td>
+              <td><span>크몽 서비스 #872785 (검수 심사 중)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gumroad Global Perpetual</strong><br><code>gridpin-pro</code></td>
+              <td>전 세계 개발자 영구 소장 번들(43.4 KB ZIP + Gumroad 고유 라이선스 키 자동 발급)</td>
+              <td><strong>$79 USD</strong><br>(One-time)</td>
+              <td><a href="https://dhlabs.gumroad.com/l/gridpin-pro" target="_blank" rel="noopener" data-track-cta="gridpin_gumroad_table">Gumroad Perpetual →</a></td>
+            </tr>
+            <tr>
+              <td><strong>Gumroad Monthly Pro Pass</strong><br><code>gridpin-monthly</code></td>
+              <td>유연한 월간 구독 패스(전체 기능 + 4대 프레임워크 + 브리지 CLI, 언제든 해지 가능)</td>
+              <td><strong>$12 / month</strong></td>
+              <td><a href="https://dhlabs.gumroad.com/l/gridpin-monthly" target="_blank" rel="noopener" data-track-cta="gridpin_gumroad_monthly_table">Gumroad Monthly →</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>자주 묻는 질문 (FAQ) — 설치 방법과 호환 환경이 궁금하신가요?</h2>
+      <div class="card">
+        <h3>Q1. 크롬 웹스토어를 거치지 않고도 바로 설치할 수 있나요?</h3>
+        <p>네. 구매 즉시 수령하는 <code>gridpin-customer-bundle-v1.0.0.zip</code> 압축 해제 후 크롬 <code>chrome://extensions</code>에서 '개발자 모드'를 켜고 '압축해제된 확장 프로그램을 로드합니다'로 <code>extension/</code> 폴더를 선택하면 60초 안에 활성화됩니다.</p>
+        <h3>Q2. 로컬 코드 파일에 직접 덮어쓰다가 원본이 손상되지 않나요?</h3>
+        <p>로컬 브리지(<code>node cli/bridge-server.mjs</code>, <code>127.0.0.1:3741</code>)는 패치를 반영하기 직전에 반드시 <code>.gridpin_backups/</code> 폴더에 <code>*.bak</code> 스냅샷을 생성합니다. 또한 작업 프로젝트 폴더 바깥 경로(<code>.env</code>, <code>../</code> 등) 접근은 HTTP 403으로 원천 차단됩니다.</p>
+        <h3>Q3. GridPin으로 수정·생성한 UI 코드의 저작권은 누구에게 있나요?</h3>
+        <p>100% 구매 고객 소유입니다. 생성한 React, SwiftUI, Flutter, CSS 코드는 상용 SaaS 및 외주 프로젝트에 제한 없이 배포할 수 있습니다.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p><strong>공급사</strong>: 디에이치랩스 (DH Labs) · 사업자등록번호 <code>610-16-92926</code> · 수석 아키텍트 김동형 (Donghyeong Kim)</p>
+      <p><strong>공식 문의</strong>: <a href="mailto:dhlabs_biz@naver.com">dhlabs_biz@naver.com</a> · <a href="blog/gridpin-en.html">English Blog Guide</a> · <a href="index.html">DH Labs 공식 스토어 홈</a></p>
+    </footer>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+        "name": "DH Labs (디에이치랩스)",
+        "url": "https://globaltrendhunterai.github.io/dhlabs/",
+        "taxID": "610-16-92926",
+        "identifier": "610-16-92926",
+        "email": "dhlabs_biz@naver.com",
+        "sameAs": [
+          "https://github.com/globaltrendhunterai/dhlabs",
+          "https://dhlabs.gumroad.com",
+          "https://smartstore.naver.com/dhlabs-official"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+        "name": "Donghyeong Kim (김동형)",
+        "jobTitle": "Founder & Lead Systems Architect",
+        "worksFor": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization" },
+        "sameAs": ["https://github.com/globaltrendhunterai", "https://globaltrendhunterai.github.io/dhlabs/"]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/gridpin.html#app",
+        "name": "GridPin — AI Vibe-Coding Visual Finisher",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Chrome MV3 (macOS, Windows, Linux)",
+        "softwareVersion": "1.0.0",
+        "datePublished": "2026-11-21",
+        "dateModified": "2026-11-21",
+        "publisher": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization" },
+        "author": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder" },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "GridPin SmartStore Domestic Perpetual (GRIDPIN-PRO-KR-V1)",
+            "price": "99000",
+            "priceCurrency": "KRW",
+            "url": "https://smartstore.naver.com/dhlabs-official/products/13888020698"
+          },
+          {
+            "@type": "Offer",
+            "name": "GridPin Perpetual License (gridpin-pro)",
+            "price": "79.00",
+            "priceCurrency": "USD",
+            "url": "https://dhlabs.gumroad.com/l/gridpin-pro"
+          },
+          {
+            "@type": "Offer",
+            "name": "GridPin Pro Monthly Pass (gridpin-monthly)",
+            "price": "12.00",
+            "priceCurrency": "USD",
+            "url": "https://dhlabs.gumroad.com/l/gridpin-monthly"
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/gridpin.html#video",
+        "name": "GridPin v1.0 Live 12-Col + 8pt Magnetic Snap & 4-Framework Diff Demo",
+        "description": "30-second vertical workflow walkthrough demonstrating 8pt grid snapping, numbered pinpoint review, 4-framework diff synthesis, and automatic .bak local backup.",
+        "thumbnailUrl": "https://globaltrendhunterai.github.io/dhlabs/og-gridpin.png",
+        "uploadDate": "2026-11-21",
+        "duration": "PT31S",
+        "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/assets/gridpin/gridpin_demo_9x16.mp4",
+        "embedUrl": "https://globaltrendhunterai.github.io/dhlabs/assets/gridpin/gridpin_demo_9x16.mp4"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/gridpin.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "DH Labs 공식 스토어", "item": "https://globaltrendhunterai.github.io/dhlabs/" },
+          { "@type": "ListItem", "position": 2, "name": "GridPin Studio", "item": "https://globaltrendhunterai.github.io/dhlabs/gridpin.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/gridpin.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "크롬 웹스토어를 거치지 않고도 바로 설치할 수 있나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "네. 구매 즉시 제공되는 gridpin-customer-bundle-v1.0.0.zip 압축 해제 후 chrome://extensions 개발자 모드에서 extension/ 폴더를 로드하면 60초 안에 작동합니다." }
+          },
+          {
+            "@type": "Question",
+            "name": "로컬 코드 파일 패치 중 원본 손상 위험은 없나요?",
+            "acceptedAnswer": { "@type": "Answer", "text": "로컬 브리지(127.0.0.1:3741)는 패치 반영 직전 .gridpin_backups/ 폴더에 *.bak 백업을 자동 생성하고 프로젝트 외부 경로 접근을 403으로 차단합니다." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
