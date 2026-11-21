@@ -190,7 +190,8 @@
 <!-- Guarded GA4 Telemetry (activates only when window.DH_GA4_MEASUREMENT_ID is set to a live G-XXXXXXXXXX ID) -->
 <script>
     (function() {
-      var gaId = window.DH_GA4_MEASUREMENT_ID || '';
+      window.DH_GA4_MEASUREMENT_ID = window.DH_GA4_MEASUREMENT_ID || 'G-GX291MMNNT';
+      var gaId = window.DH_GA4_MEASUREMENT_ID;
       if (/^G-[A-Z0-9]{8,}$/.test(gaId) && gaId !== 'G-AUTOFLOW2026') {
         window.dataLayer = window.dataLayer || [];
         window.gtag = function(){ window.dataLayer.push(arguments); };

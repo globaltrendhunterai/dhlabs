@@ -365,7 +365,8 @@ document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && 
         } catch(_){}
       });
     }
-    var gaId = window.DH_GA4_MEASUREMENT_ID || '';
+    window.DH_GA4_MEASUREMENT_ID = window.DH_GA4_MEASUREMENT_ID || 'G-GX291MMNNT';
+    var gaId = window.DH_GA4_MEASUREMENT_ID;
     if (/^G-[A-Z0-9]{8,}$/.test(gaId) && gaId !== 'G-AUTOFLOW2026') {
       window.dataLayer = window.dataLayer || [];
       window.gtag = function(){ window.dataLayer.push(arguments); };
