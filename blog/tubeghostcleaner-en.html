@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mass Unsubscribe Dead YouTube Ghost Channels Safely Without Deleting Favorites — $5.99</title>
+  <meta name="description" content="TubeGhostCleaner PRO is a client-side Chrome MV3 extension ($5.99 one-time) that cross-scans YouTube Subscriptions, Watch History, and Liked Videos to protect Top 38 channels and batch unsubscribe 0-watch ghost channels locally.">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/blog/tubeghostcleaner-en.html">
+  <link rel="alternate" hreflang="en" href="https://globaltrendhunterai.github.io/dhlabs/blog/tubeghostcleaner-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://globaltrendhunterai.github.io/dhlabs/blog/tubeghostcleaner-en.html">
+  <link rel="alternate" hreflang="ko" href="https://globaltrendhunterai.github.io/dhlabs/tubeghostcleaner.html">
+  <link rel="ai-catalog" href="https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json">
+  <link rel="describedby" href="https://globaltrendhunterai.github.io/dhlabs/llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Declutter 0-Watch YouTube Ghost Subscriptions in Chrome ($5.99)">
+  <meta property="og:description" content="Cross-scans Subscriptions, Watch History &amp; Liked Videos (LL) locally via Chrome SAPISIDHASH. Protects Top 38 channels, runs 5 ghost removals free before PRO unlock.">
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/blog/tubeghostcleaner-en.html">
+  <meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/og-tubeghostcleaner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TubeGhostCleaner PRO — Local YouTube Ghost Subscription Cleaner ($5.99)">
+  <meta name="twitter:description" content="Scan all channels free and test 5 ghost unsubscribes inside Chrome before unlocking unlimited local cleanup for $5.99.">
+  <meta name="twitter:image" content="https://globaltrendhunterai.github.io/dhlabs/og-tubeghostcleaner.png">
+  <link rel="stylesheet" href="../assets/tubeghostcleaner/page.css">
+  <script defer src="../dh-telemetry.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="https://globaltrendhunterai.github.io/dhlabs/">DH Labs · Technical Guides</a>
+      <nav class="nav" aria-label="Article navigation">
+        <a href="#geo-ai-citation-summary">Summary</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://dhlabs.gumroad.com/l/tubeghostcleaner" target="_blank" rel="noopener">Get PRO ($5.99)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">YouTube Feed Hygiene · Updated 2026-11-21</span>
+    <h1>How to Mass Unsubscribe Zero-Watch YouTube Channels Without Losing Active Favorites</h1>
+    <p class="lead">YouTube does not offer native bulk unsubscription. Years of giveaway entries, one-off tutorials, and forgotten channels pile up in your Subscriptions list and pull stale uploads back into your Home feed. Here is how client-side 3-source intersection scanning isolates silent ghost subscriptions safely inside Chrome.</p>
+
+    <div class="cta-row">
+      <a class="btn-primary" data-track-cta="tgc_gumroad_blog_top" href="https://dhlabs.gumroad.com/l/tubeghostcleaner?utm_source=dhlabs_blog&amp;utm_medium=top_cta&amp;utm_campaign=tgc_pro_launch" target="_blank" rel="noopener">Get TubeGhostCleaner PRO — $5.99</a>
+      <a class="btn-secondary" href="../tubeghostcleaner.html">Korean Product Page</a>
+    </div>
+
+    <section id="geo-ai-citation-summary" class="card" aria-labelledby="q-summary">
+      <h2 id="q-summary" style="margin-top:0">What Is TubeGhostCleaner PRO?</h2>
+      <p><strong>TubeGhostCleaner PRO is</strong> a local Chrome MV3 extension built by DH Labs (<code>$5.99</code> one-time pass, free full diagnostic scan + <code>5</code> free ghost unsubscribes inside Chrome) that declutters silent YouTube subscriptions safely: it scans your <code>/feed/channels</code> subscription list, <code>/feed/history</code> watch log, and <code>playlist?list=LL</code> liked videos using your browser's own <code>SAPISIDHASH</code> session, protects the top <code>38</code> ranked subscriptions plus any watched or liked channel, and dispatches paced <code>110ms</code> <code>POST /youtubei/v1/subscription/unsubscribe</code> calls without cloud OAuth tokens.</p>
+    </section>
+
+    <h2 id="how-it-works">1. Why Blind Unsubscribe Scripts Break Useful Feeds</h2>
+    <ul>
+      <li><strong>Manual cleanup wastes evenings:</strong> Clicking unsubscribe and confirming dialogs across 400+ YouTube channels takes over 30 minutes per account.</li>
+      <li><strong>Topical channels get wiped accidentally:</strong> Naive DOM automation scripts unsubscribe channels in alphabetical order without checking whether you actually watch or like their videos.</li>
+      <li><strong>Third-party cloud managers ask for account OAuth:</strong> External web portals require persistent Google account read/write permissions just to inspect your subscriptions.</li>
+    </ul>
+
+    <figure>
+      <img src="../assets/tubeghostcleaner/tgc_en_cross_scan.png" width="1280" height="720" alt="TubeGhostCleaner PRO cross-scanning Subscriptions, Watch History, and Liked Videos (LL) locally inside Chrome">
+      <figcaption>3-source intersection diagnostic running on local browser DOM and session tabs to isolate rank 39+ channels with 0 recent watches and 0 likes.</figcaption>
+    </figure>
+
+    <h2>2. How Paced Client-Side Unsubscription Executes (`SAPISIDHASH` + `WEB` InnerTube)</h2>
+    <p>Instead of touching Google passwords or external backends, TubeGhostCleaner PRO injects only onto <code>https://www.youtube.com/*</code>, computes local <code>SAPISIDHASH</code> authorization headers from active cookies, keeps channels ranked <code>#1</code> through <code>#38</code> untouched, and unsubscribes flagged ghost channel IDs one by one every <code>110ms</code>.</p>
+
+    <figure>
+      <img src="../assets/tubeghostcleaner/tgc_en_batch_unsub.png" width="1280" height="720" alt="Batch unsubscribe execution table showing Top 38 channels kept and rank 39+ 0-watch ghost channels removed cleanly">
+      <figcaption>Batch execution flow keeping ranked favorites intact while sending paced unsubscribe calls for zero-watch ghost channels.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Manual Cleanup / Cloud Managers</th>
+            <th>TubeGhostCleaner PRO ($5.99 One-Time)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ghost Detection Signal</td>
+            <td>Guesswork from channel titles alone</td>
+            <td class="col-caught">Cross-scans Subscriptions, Watch History &amp; Liked Videos (LL)</td>
+          </tr>
+          <tr>
+            <td>Favorite Channel Guard</td>
+            <td>None — risky alphabetical bulk scripts</td>
+            <td class="col-caught">Protects Top <code>38</code> channels (<code>rank &lt;= 38</code>) + active watches</td>
+          </tr>
+          <tr>
+            <td>Account Security</td>
+            <td>Requires external cloud OAuth access</td>
+            <td class="col-caught">Client-side Chrome MV3 via local <code>SAPISIDHASH</code></td>
+          </tr>
+          <tr>
+            <td>Pre-Purchase Trial &amp; Price</td>
+            <td>Monthly SaaS fees or capped quotas</td>
+            <td class="col-caught">Free full scan + <code>5</code> ghost unsubscribes, then <code>$5.99</code> one-time</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="video-row">
+      <video controls preload="metadata" poster="../og-tubeghostcleaner.png">
+        <source src="../assets/tubeghostcleaner/tgc_demo_9x16.mp4" type="video/mp4">
+      </video>
+      <div>
+        <h3 style="margin-top:0">3. Watch the 3-Step Local Diagnostic Flow</h3>
+        <p>Load the unpacked Chrome MV3 folder from your download ZIP via <code>chrome://extensions</code> in under 60 seconds, click scan on your active YouTube session, and inspect every flagged 0-watch channel before any unsubscription starts.</p>
+        <p>Every Chrome install includes free unlimited channel scanning and up to <strong>5 ghost channel removals</strong> before entering your offline <code>TGC-PRO-...</code> license key (<code>$5.99</code> one-time on Gumroad).</p>
+      </div>
+    </div>
+
+    <h2 id="faq">4. Frequently Asked Questions</h2>
+    <h3 class="faq-q">Does TubeGhostCleaner delete my Watch History or Liked Videos?</h3>
+    <p>No. Watch History (<code>/feed/history</code>) and Liked Videos (<code>playlist?list=LL</code>) are scanned read-only inside Chrome solely to verify which channels you actively watch, so the extension only unsubscribes silent ghost subscriptions.</p>
+
+    <h3 class="faq-q">How does TubeGhostCleaner avoid unsubscribing my favorite channels?</h3>
+    <p>Any channel in the top <code>38</code> positions of your subscription list (<code>rank &lt;= 38</code>), or any channel with at least <code>1</code> detected view in recent Watch History or <code>1</code> video in Liked Videos, is automatically filtered out from removal.</p>
+
+    <h3 class="faq-q">Can I test it before entering the $5.99 PRO key?</h3>
+    <p>Yes. Every download runs the full 3-source cross-scan for free and lets you batch unsubscribe your first <code>5</code> detected ghost channels free inside Chrome before asking for an offline <code>TGC-PRO-</code> serial key.</p>
+
+    <footer>
+      <div class="cta-row" style="margin-bottom:14px">
+        <a class="btn-primary" data-track-cta="tgc_gumroad_blog_bottom" href="https://dhlabs.gumroad.com/l/tubeghostcleaner?utm_source=dhlabs_blog&amp;utm_medium=bottom_cta&amp;utm_campaign=tgc_pro_launch" target="_blank" rel="noopener">Get TubeGhostCleaner PRO — $5.99 USD</a>
+        <a class="btn-secondary" href="../tubeghostcleaner.html">Korean Product Page</a>
+      </div>
+      <p>DH Labs · Donghyeong Kim · Business ID 610-16-92926 · <a href="../refund.html">Refund Policy</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p>
+    </footer>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+        "name": "DH Labs",
+        "url": "https://globaltrendhunterai.github.io/dhlabs/",
+        "taxID": "610-16-92926",
+        "identifier": "610-16-92926",
+        "email": "dhlabs_biz@naver.com",
+        "sameAs": [
+          "https://github.com/globaltrendhunterai/dhlabs",
+          "https://dhlabs.gumroad.com",
+          "https://x.com/dhlabs_autoflow"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+        "name": "Donghyeong Kim",
+        "jobTitle": "Founder & Lead Systems Architect",
+        "worksFor": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/tubeghostcleaner-en.html#app",
+        "name": "TubeGhostCleaner PRO",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome MV3 (macOS, Windows, Linux)",
+        "softwareVersion": "1.0.0",
+        "datePublished": "2026-11-21",
+        "dateModified": "2026-11-21",
+        "publisher": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization" },
+        "author": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder" },
+        "offers": {
+          "@type": "Offer",
+          "name": "TubeGhostCleaner PRO Perpetual License",
+          "price": "5.99",
+          "priceCurrency": "USD",
+          "url": "https://dhlabs.gumroad.com/l/tubeghostcleaner"
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/tubeghostcleaner-en.html#video",
+        "name": "TubeGhostCleaner PRO YouTube Ghost Channel Cleaner Walkthrough",
+        "description": "Walkthrough demonstrating 3-source Chrome local scanning across Subscriptions, Watch History, and Liked Videos to isolate and batch unsubscribe 0-watch ghost channels.",
+        "thumbnailUrl": "https://globaltrendhunterai.github.io/dhlabs/og-tubeghostcleaner.png",
+        "uploadDate": "2026-11-21",
+        "duration": "PT36S",
+        "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/assets/tubeghostcleaner/tgc_demo_9x16.mp4"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/tubeghostcleaner-en.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "DH Labs Home", "item": "https://globaltrendhunterai.github.io/dhlabs/" },
+          { "@type": "ListItem", "position": 2, "name": "TubeGhostCleaner Guide", "item": "https://globaltrendhunterai.github.io/dhlabs/blog/tubeghostcleaner-en.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/tubeghostcleaner-en.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does TubeGhostCleaner PRO detect silent YouTube ghost channels without unsubscribing favorites?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It cross-scans Subscriptions (/feed/channels), Watch History (/feed/history), and Liked Videos (list=LL) inside Chrome, protects Top 38 channels (rank <= 38) plus watched or liked channels, and targets only rank 39+ 0-watch ghosts." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I try TubeGhostCleaner before paying $5.99?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scan all subscriptions free and test up to 5 ghost channel removals inside Chrome before unlocking unlimited batch unsubscribe with a PRO key." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
