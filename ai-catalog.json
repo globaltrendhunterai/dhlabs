@@ -384,6 +384,21 @@
       }
     },
     {
+      "identifier": "urn:air:dhlabs.github.io:tubecleanmover:product-hub",
+      "displayName": "TubeCleanMover PRO — Clean YouTube Music & Active Channel Migrator (₩8,200 / $5.99)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/tubecleanmover.html",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/tubecleanmover-en.html",
+      "inLanguage": "ko-KR",
+      "representativeQueries": [
+        "How do I migrate YouTube Music liked songs without copying random #shorts or 61-second clips?",
+        "How does TubeCleanMover PRO avoid the 50/day Google OAuth quota limit and exclude 0-watch dormant channels?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    },
+    {
       "identifier": "urn:air:dhlabs.github.io:fintree:ecom-profit-vault-10sku",
       "displayName": "FinTreeVault & EcomProfitVault — 10 Global E-Commerce Margin/ROAS/BEP Simulators & Master Builder Pro",
       "type": "application/ai-catalog+json",
