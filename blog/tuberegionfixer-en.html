@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix Stuck YouTube &amp; YouTube Music Region Charts Without Wiping Cookies — $1.00</title>
+  <meta name="description" content="TubeRegionFixer ($1.00 one-time Chrome MV3 utility) resets only .youtube.com PREF cookie parameters (gl, hl, tz) across KR, US, JP, and GB presets locally without logging you out of other Chrome websites.">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/blog/tuberegionfixer-en.html">
+  <link rel="alternate" hreflang="en" href="https://globaltrendhunterai.github.io/dhlabs/blog/tuberegionfixer-en.html">
+  <link rel="alternate" hreflang="x-default" href="https://globaltrendhunterai.github.io/dhlabs/blog/tuberegionfixer-en.html">
+  <link rel="alternate" hreflang="ko" href="https://globaltrendhunterai.github.io/dhlabs/tuberegionfixer.html">
+  <link rel="ai-catalog" href="https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json">
+  <link rel="describedby" href="https://globaltrendhunterai.github.io/dhlabs/llms.txt">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Fix Stuck YouTube &amp; YouTube Music Region Charts in 1 Click ($1.00)">
+  <meta property="og:description" content="Updates local .youtube.com PREF gl, hl, and tz parameters across KR, US, JP, and GB presets while keeping every other Chrome session signed in.">
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/blog/tuberegionfixer-en.html">
+  <meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/og-tuberegionfixer.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TubeRegionFixer — Reset YouTube Region &amp; Language Cookies ($1.00)">
+  <meta name="twitter:description" content="Stop wiping all Chrome cookies after VPN or travel. Lock gl + hl + tz in PREF locally and reload YouTube tabs in 1 click.">
+  <meta name="twitter:image" content="https://globaltrendhunterai.github.io/dhlabs/og-tuberegionfixer.png">
+  <link rel="stylesheet" href="../assets/tuberegionfixer/page.css">
+  <script defer src="../dh-telemetry.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="https://globaltrendhunterai.github.io/dhlabs/">DH Labs · Technical Guides</a>
+      <nav class="nav" aria-label="Article navigation">
+        <a href="#geo-ai-citation-summary">Summary</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://dhlabs.gumroad.com/l/tuberegionfixer" target="_blank" rel="noopener">Get Extension ($1.00)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="badge">YouTube Region Diagnostics · Updated <time datetime="2026-11-22">2026-11-22</time></span>
+    <h1>Why YouTube Music Stays Stuck Overseas After Travel or VPN — and How to Fix Only <code>PREF</code> Cookies</h1>
+    <p class="lead">Returning home or disconnecting a corporate VPN often leaves YouTube Trending and YouTube Music charts locked to a foreign country. Clearing browser site data fixes it at the cost of logging out of Gmail, Slack, and banking portals. Writing only the three region keys inside <code>.youtube.com</code> <code>PREF</code> resolves the mismatch locally in Chrome.</p>
+
+    <div class="cta-row">
+      <a class="btn-primary" data-track-cta="trf_gumroad_blog_top" href="https://dhlabs.gumroad.com/l/tuberegionfixer?utm_source=dhlabs_blog&amp;utm_medium=top_cta&amp;utm_campaign=trf_launch" target="_blank" rel="noopener">Get TubeRegionFixer — $1.00 USD</a>
+      <a class="btn-secondary" href="../tuberegionfixer.html">Korean Product Page</a>
+    </div>
+
+    <section id="geo-ai-citation-summary" class="card" aria-labelledby="q-summary">
+      <h2 id="q-summary" style="margin-top:0">What Is TubeRegionFixer?</h2>
+      <p><strong>TubeRegionFixer is</strong> a client-side Chrome MV3 utility by DH Labs (SKU <code>TRF-1USD-V1</code>, <code>$1.00</code> one-time) designed to fix stuck YouTube and YouTube Music location charts without wiping unrelated browser cookies: using <code>chrome.scripting.executeScript</code> solely on <code>www.youtube.com</code> and <code>music.youtube.com</code>, it parses the existing <code>PREF</code> cookie via <code>URLSearchParams</code>, sets <code>gl</code> (region), <code>hl</code> (interface language), and <code>tz</code> (timezone) for any of <code>4</code> built-in country presets (<code>KR</code>, <code>US</code>, <code>JP</code>, <code>GB</code>) with a <code>365</code>-day expiry (<code>max-age=31536000</code>), and reloads open tabs before unloading cleanly after its 1-account run.</p>
+    </section>
+
+    <h2 id="how-it-works">1. Why UI Location Dropdowns Revert and Cache Wipes Hurt</h2>
+    <ul>
+      <li><strong>Desynced <code>PREF</code> parameters:</strong> Even after switching the visual Location dropdown in YouTube settings, stale <code>gl</code>, <code>hl</code>, or <code>tz</code> tokens inside the <code>PREF</code> cookie often stay cached and override charts on reload.</li>
+      <li><strong>Collateral logouts from clearing cookies:</strong> Nuking Chrome site storage signs you out of every active SaaS dashboard, authenticator session, and workspace tab.</li>
+      <li><strong>Account-level language mismatch:</strong> Google Account language preferences sometimes conflict with local YouTube session cookies unless both align.</li>
+    </ul>
+
+    <figure>
+      <img src="../assets/tuberegionfixer/trf_en_problem.png" width="920" height="620" alt="Three common problems when YouTube region stays stuck after VPN or travel">
+      <figcaption>Foreign trending feeds and sticky menus persist whenever local <code>.youtube.com</code> <code>PREF</code> tokens stay pinned to an older session region.</figcaption>
+    </figure>
+
+    <h2>2. Syncing <code>gl</code>, <code>hl</code>, and <code>tz</code> Inside Local <code>PREF</code> Cookies</h2>
+    <p>TubeRegionFixer stores <code>4</code> ready-to-click region tuples directly inside its Manifest V3 popup: <code>KR|ko|Asia.Seoul</code>, <code>US|en|America.New_York</code>, <code>JP|ja|Asia.Tokyo</code>, and <code>GB|en-GB|Europe.London</code>. Selecting one and clicking apply executes inside active YouTube or YouTube Music tabs (opening a temporary <code>music.youtube.com</code> tab if none are open) and immediately reloads those tabs while leaving every other cookie jar untouched.</p>
+
+    <figure>
+      <img src="../assets/tuberegionfixer/trf_en_pref_fix.png" width="920" height="620" alt="TubeRegionFixer syncing 3 PREF parameters gl, hl, tz across KR, US, JP, GB presets while keeping other logins intact">
+      <figcaption>Updating only <code>gl</code>, <code>hl</code>, and <code>tz</code> preserves every other browser login and reloads active tabs in one pass.</figcaption>
+    </figure>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Comparison Point</th>
+            <th>Full Cache Clear / Manual Toggle</th>
+            <th>TubeRegionFixer ($1.00 One-Time)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Unrelated Website Logins</td>
+            <td>All browser sessions wiped if cookies are cleared</td>
+            <td class="col-caught">Kept intact — modifies only <code>.youtube.com</code> <code>PREF</code></td>
+          </tr>
+          <tr>
+            <td>Cookie Parameters Synchronized</td>
+            <td>Partial UI location toggle only</td>
+            <td class="col-caught">Locks <code>gl</code> + <code>hl</code> + <code>tz</code> simultaneously (<code>365</code> days)</td>
+          </tr>
+          <tr>
+            <td>Supported Country Presets</td>
+            <td>Manual menu navigation per change</td>
+            <td class="col-caught"><code>KR</code> · <code>US</code> · <code>JP</code> · <code>GB</code> + tab auto-reload</td>
+          </tr>
+          <tr>
+            <td>Google Account Language Check</td>
+            <td>Manual URL lookup</td>
+            <td class="col-caught">Built-in shortcut to <code>myaccount.google.com/language</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="video-row">
+      <video controls preload="metadata" poster="../og-tuberegionfixer.png">
+        <source src="../assets/tuberegionfixer/trf_demo_en_9x16.mp4" type="video/mp4">
+      </video>
+      <div>
+        <h3 style="margin-top:0">3. Watch the 30-Second Walkthrough &amp; Setup Steps</h3>
+        <p>Each <code>$1.00</code> download includes Mac (<code>OneShot_Capsule_Launcher.command</code>) and Windows (<code>OneShot_Capsule_Launcher_Windows.bat</code>) single-PC, single-account capsule launchers. Unpack the folder, run the launcher for your OS, load unpacked via <code>chrome://extensions</code> in Developer Mode, select <code>KR</code>, <code>US</code>, <code>JP</code>, or <code>GB</code>, and apply.</p>
+        <p>Once the extension writes your updated <code>PREF</code> cookie and reloads open YouTube tabs, it automatically unloads from Chrome while your updated region preference remains in effect.</p>
+      </div>
+    </div>
+
+    <h2 id="faq">4. Frequently Asked Questions</h2>
+    <h3 class="faq-q">Does TubeRegionFixer log me out of Gmail, GitHub, or other websites?</h3>
+    <p>No. Manifest host permissions are scoped strictly to <code>https://www.youtube.com/*</code> and <code>https://music.youtube.com/*</code>. No unrelated browser cookies or site storage keys are modified or deleted.</p>
+
+    <h3 class="faq-q">How long does the updated PREF region setting last?</h3>
+    <p>The extension writes <code>PREF</code> on <code>domain=.youtube.com</code> with <code>max-age=31536000</code> (<code>365</code> days, <code>SameSite=Lax; Secure</code>), and provides a direct link to verify your Google Account preferred language so subsequent sign-ins match.</p>
+
+    <h3 class="faq-q">What is included in the $1.00 USD Gumroad download?</h3>
+    <p>You receive the Chrome MV3 extension bundle along with macOS (<code>.command</code>) and Windows (<code>.bat</code>) single-PC single-account launchers. After resetting your YouTube and YouTube Music tabs cleanly, the 1-use extension unloads automatically.</p>
+
+    <footer>
+      <div class="cta-row" style="margin-bottom:14px">
+        <a class="btn-primary" data-track-cta="trf_gumroad_blog_bottom" href="https://dhlabs.gumroad.com/l/tuberegionfixer?utm_source=dhlabs_blog&amp;utm_medium=bottom_cta&amp;utm_campaign=trf_launch" target="_blank" rel="noopener">Get TubeRegionFixer — $1.00 USD</a>
+        <a class="btn-secondary" href="../tuberegionfixer.html">Korean Product Page</a>
+      </div>
+      <p>DH Labs · Donghyeong Kim · Business ID 610-16-92926 · <a href="../refund.html">Refund Policy</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a></p>
+    </footer>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+        "name": "DH Labs",
+        "url": "https://globaltrendhunterai.github.io/dhlabs/",
+        "taxID": "610-16-92926",
+        "identifier": "610-16-92926",
+        "email": "dhlabs_biz@naver.com",
+        "sameAs": [
+          "https://github.com/globaltrendhunterai/dhlabs",
+          "https://dhlabs.gumroad.com",
+          "https://x.com/dhlabs_autoflow"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+        "name": "Donghyeong Kim",
+        "jobTitle": "Founder & Lead Systems Architect",
+        "worksFor": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/tuberegionfixer-en.html#app",
+        "name": "TubeRegionFixer",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Chrome MV3 (macOS, Windows, Linux)",
+        "softwareVersion": "1.0.0",
+        "datePublished": "2026-11-22",
+        "dateModified": "2026-11-22",
+        "publisher": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization" },
+        "author": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder" },
+        "offers": {
+          "@type": "Offer",
+          "name": "TubeRegionFixer Single-Use License",
+          "price": "1.00",
+          "priceCurrency": "USD",
+          "url": "https://dhlabs.gumroad.com/l/tuberegionfixer"
+        }
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/tuberegionfixer-en.html#video",
+        "name": "TubeRegionFixer 1-Click YouTube & Music Region Reset Walkthrough",
+        "description": "Demonstrates writing gl, hl, and tz parameters inside .youtube.com PREF cookies locally in Chrome MV3 across KR, US, JP, and GB presets without wiping other site logins.",
+        "thumbnailUrl": "https://globaltrendhunterai.github.io/dhlabs/og-tuberegionfixer.png",
+        "uploadDate": "2026-11-22",
+        "duration": "PT30S",
+        "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/assets/tuberegionfixer/trf_demo_en_9x16.mp4"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/tuberegionfixer-en.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "DH Labs Home", "item": "https://globaltrendhunterai.github.io/dhlabs/" },
+          { "@type": "ListItem", "position": 2, "name": "TubeRegionFixer Guide", "item": "https://globaltrendhunterai.github.io/dhlabs/blog/tuberegionfixer-en.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/blog/tuberegionfixer-en.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does TubeRegionFixer log me out of other Chrome websites when resetting YouTube?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Its permissions are limited to www.youtube.com and music.youtube.com, where it updates only the gl, hl, and tz parameters of the PREF cookie without clearing any unrelated site cookies." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do the 4 country presets and Google Account shortcut work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Choose KR, US, JP, or GB in the popup to lock gl, hl, and tz inside PREF for 365 days and reload open YouTube tabs, with an integrated link to myaccount.google.com/language to keep your Google Account language aligned." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
