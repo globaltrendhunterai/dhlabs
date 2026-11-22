@@ -26,6 +26,12 @@ a { color: var(--accent); }
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
+.topbar .nav {
+  position: static;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
+}
 .nav-inner, .topbar-inner {
   max-width: 1080px; margin: 0 auto; padding: 14px 20px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
