@@ -7,7 +7,7 @@
     "appleDeveloperId": "GSKY37R7XV",
     "primaryUrl": "https://globaltrendhunterai.github.io/dhlabs/",
     "mirrorUrl": "https://github.com/globaltrendhunterai/dhlabs",
-    "lastModified": "2026-11-22"
+    "lastModified": "2026-11-26"
   },
   "entries": [
     {
@@ -836,6 +836,37 @@
       ],
       "trustManifest": {
         "identity": "DH Labs (Business Reg. 610-16-92926, Apple ID 6785743624)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs.github.io:docsync:v020",
+      "displayName": "DocSync IDE v0.2.0 — Local-First Multi-Document Consistency Sandbox (.xlsx, .hwpx, .pptx, .docx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/docsync.html",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/docsync-en.html",
+      "inLanguage": "en",
+      "representativeQueries": [
+        "How do I cross-check numbers across Excel, Word, PowerPoint, and Hangul quotes offline without breaking charts or VBA macros?",
+        "Does DocSync IDE v0.2.0 support Pure Rust XLOOKUP/INDEX/MATCH formulas and coordinate-exact table cell edits in .hwpx and .docx?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    },
+    {
+      "identifier": "urn:air:dhlabs.github.io:free:roas-starter",
+      "displayName": "Free Amazon FBA & Shopify Break-Even ROAS Calculator (Offline Starter)",
+      "type": "text/html",
+      "url": "https://dhlabs.gumroad.com/l/free-roas-starter",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/ecomprofitvault.html",
+      "inLanguage": "en",
+      "representativeQueries": [
+        "Free offline Amazon FBA break-even ROAS calculator",
+        "Free Shopify unit contribution margin and max CPA calculator offline HTML",
+        "EcomProfitVault free starter calculator download Gumroad"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim)"
       }
     }
   ]

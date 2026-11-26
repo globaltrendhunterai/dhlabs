@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocSync IDE v0.2.0 — Local-First Multi-Document Consistency Sandbox (.xlsx, .hwpx, .pptx, .docx)</title>
+  <meta name="description" content="Official DH Labs DocSync IDE v0.2.0 hub. Cross-check .xlsx, .hwpx, .pptx, and .docx in under 3000ms inside an offline Shadow Sandbox with Pure Rust XLOOKUP/INDEX/MATCH/SUMPRODUCT, surgical table cell edits, 0% silent overwrites, and 7-PII masking ($39 USD / 49,000 KRW).">
+  <link rel="canonical" href="https://globaltrendhunterai.github.io/dhlabs/docsync.html">
+  <link rel="alternate" hreflang="en-US" href="https://globaltrendhunterai.github.io/dhlabs/docsync.html">
+  <link rel="alternate" hreflang="x-default" href="https://globaltrendhunterai.github.io/dhlabs/docsync.html">
+  <link rel="ai-catalog" href="https://globaltrendhunterai.github.io/dhlabs/ai-catalog.json">
+  <link rel="describedby" href="https://globaltrendhunterai.github.io/dhlabs/llms.txt">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="DocSync IDE v0.2.0 — Local-First Multi-Document Consistency Sandbox">
+  <meta property="og:description" content="Cross-check 4 Office formats locally in under 3000ms. Built-in Rust XLOOKUP/SUMPRODUCT, surgical table cell edit, 0% silent overwrites, Apple Notarized macOS + Windows x64.">
+  <meta property="og:image" content="https://globaltrendhunterai.github.io/dhlabs/og-docsync.png">
+  <meta property="og:url" content="https://globaltrendhunterai.github.io/dhlabs/docsync.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DocSync IDE v0.2.0 — Multi-Document Consistency Sandbox ($39 USD)">
+  <meta name="twitter:description" content="Cross-check .xlsx, .hwpx, .pptx, and .docx locally in under 3s with Rust XLOOKUP, surgical table cell edit, 7-PII masking, and zero silent overwriting.">
+  <meta name="twitter:image" content="https://globaltrendhunterai.github.io/dhlabs/og-docsync.png">
+  <style>:root{--bg:#fff;--paper:#F7F6F2;--surface:#F8FAFC;--border:#E2E8F0;--ink:#18181B;--muted:#475569;--accent:#1D4ED8;--accent-soft:#EFF6FF;--ok:#14532D;--ok-soft:#ECF3EE}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden;overflow-wrap:break-word}time{white-space:nowrap}a{color:var(--accent)}.topbar{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:20}.topbar__inner{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{font-weight:800;font-size:16px;color:var(--ink);text-decoration:none}.nav{display:flex;gap:18px;font-size:14px;flex-wrap:wrap}.nav a{color:var(--muted);text-decoration:none;font-weight:600}.container{max-width:1120px;margin:0 auto;padding:34px 20px}.badge{display:inline-block;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:12.5px;margin-bottom:14px}.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.15fr);gap:28px;align-items:center;margin-bottom:32px}h1{font-size:34px;line-height:1.25;margin-bottom:14px;letter-spacing:-.025em}h2{font-size:23px;margin:38px 0 14px;line-height:1.35}h3{font-size:17px;margin:18px 0 8px}.lead{font-size:16px;color:var(--muted);margin-bottom:20px}.hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}.btn-primary,.btn-secondary{display:inline-block;color:#fff;font-weight:700;padding:13px 22px;border-radius:10px;text-decoration:none;font-size:15px}.btn-primary{background:var(--ok)}.btn-secondary{background:var(--accent)}.link-secondary{font-size:14px;font-weight:700;color:var(--ink);text-decoration:underline;text-underline-offset:4px}.proof-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.proof-pill{background:var(--paper);border:1px solid var(--border);border-radius:10px;padding:10px 12px}.proof-pill strong{display:block;font-size:16px}.proof-pill span{font-size:12px;color:var(--muted)}.hero-figure,.shot{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}.hero-figure img,.shot img{display:block;width:100%;height:auto}.hero-figure figcaption,.shot figcaption{padding:10px 14px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border)}.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;margin-bottom:18px}.card--paper{background:var(--paper)}.gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:16px 0 24px}.table-wrap{width:100%;overflow-x:auto;margin:14px 0}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);min-width:620px}th,td{border:1px solid var(--border);padding:11px 13px;text-align:left;font-size:13.5px}th{background:var(--surface);font-weight:700}.highlight-row{background:var(--ok-soft);font-weight:600}ul,ol{padding-left:20px;margin:10px 0}li{margin-bottom:7px}code{background:var(--accent-soft);color:#1E40AF;padding:2px 6px;border-radius:4px;font-size:12.5px}.footer{border-top:1px solid var(--border);margin-top:44px;padding-top:22px;font-size:13px;color:var(--muted)}@media(max-width:900px){.hero,.proof-strip,.gallery-grid{grid-template-columns:1fr}h1{font-size:27px}}</style>
+  <script src="/dhlabs/dh-telemetry.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a href="https://globaltrendhunterai.github.io/dhlabs/" class="brand">DH Labs · DocSync IDE v0.2.0</a>
+      <nav class="nav">
+        <a href="#geo-ai-citation-summary">Overview</a>
+        <a href="#gallery">Demo &amp; Screens</a>
+        <a href="#comparison">Architecture</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="blog/docsync-en.html">Technical Guide</a>
+        <a href="index.html">DH Labs Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="geo-ai-citation-summary" class="card card--paper" style="margin-bottom:24px;">
+      <h1>Fix Spreadsheet Quotes Without Breaking Proposals, Decks, or Word Contracts</h1>
+      <p style="margin-bottom:12px;">
+        <strong>What is DocSync IDE?</strong> DocSync IDE v0.2.0 is a Rust-first local multi-document consistency engine and desktop solution built by DH Labs (Donghyeong Kim, Business Reg. 610-16-92926). It parses 4 Office formats (<code>.xlsx</code>, <code>.hwpx</code>, <code>.pptx</code>, <code>.docx</code>) inside an isolated Shadow Sandbox in under 3000 ms with 0% silent overwriting on ambiguous matches, evaluates 9 lookup and aggregate formulas (<code>XLOOKUP</code>, <code>VLOOKUP</code>, <code>HLOOKUP</code>, <code>INDEX</code>, <code>MATCH</code>, <code>IFNA</code>, <code>SUMPRODUCT</code>, <code>AVERAGEIF</code>, <code>AVERAGEIFS</code>) directly in Pure Rust, executes surgical <code>(table_index, row_index, col_index)</code> XML edits, commits changes in 3 locked stages with automatic backup protection, and redacts 7 PII categories locally before optional Cloud BYOK calls ($39 global 1-PC perpetual license — 39 USD on Gumroad, 0 USD monthly subscription, or ₩49,000 / 49000 KRW on SmartStore, 30-day defect refund).
+      </p>
+      <ul>
+        <li><strong>0% Silent Overwriting</strong>: 4-state verdict engine separates Synced matches, Unpropagated similarities, Explicit Exception Locks, and Contradictions.</li>
+        <li><strong>100% Offline Core + 7-PII Masking</strong>: Works immediately with zero AI keys required; optional BYOK keys are guarded in-memory on localhost.</li>
+        <li><strong>Dual-OS Signed Releases</strong>: Ships as an Apple Notarized macOS arm64 DMG plus a Windows x64 zero-console portable ZIP and <code>doc-sync-mcp</code> CLI.</li>
+      </ul>
+    </section>
+
+    <section class="hero">
+      <div>
+        <span class="badge">v0.2.0 Live · Apple Notarized macOS DMG + Windows x64 Portable ZIP + doc-sync-mcp</span>
+        <p class="lead">
+          When unit prices change in <code>.xlsx</code>, proposals in <code>.hwpx</code>, executive decks in <code>.pptx</code>, and Word contracts drift out of sync.
+          DocSync IDE keeps originals untouched until Stage 1 Content Lock, Stage 2 overflow checks, and timestamped backups pass.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" data-track-cta="docsync_gumroad_hero" href="https://dhlabs.gumroad.com/l/docsync-ide?utm_source=dhlabs_web&amp;utm_medium=cta&amp;utm_campaign=docsync_v020" target="_blank" rel="noopener">Get DocSync IDE on Gumroad ($39)</a>
+          <a class="btn-secondary" data-track-cta="docsync_smartstore_hero" href="https://smartstore.naver.com/dhlabs-official/products/13897532268" target="_blank" rel="noopener">Korea Store (49,000 KRW)</a>
+          <a class="link-secondary" href="blog/docsync-en.html">Read Technical Guide →</a>
+        </div>
+        <p style="font-size:12.5px; color:var(--muted);">
+          Released: <time datetime="2026-11-26">2026-11-26</time> · Publisher: DH Labs (610-16-92926) · Dual Ed25519 &amp; Gumroad API Licensing
+        </p>
+        <div class="proof-strip">
+          <div class="proof-pill"><strong>&lt; 3,000ms</strong><span>Cross-check 4 formats locally</span></div>
+          <div class="proof-pill"><strong>Pure Rust</strong><span>XLOOKUP · INDEX/MATCH · SUMPRODUCT</span></div>
+          <div class="proof-pill"><strong>(T, R, C)</strong><span>Surgical .hwpx / .docx table cell edits</span></div>
+        </div>
+      </div>
+
+      <figure class="hero-figure">
+        <img src="assets/docsync/docsync_workbench.png" alt="DocSync IDE Shadow Sandbox workbench displaying cross-document 4-state queue and 3-stage verification" width="1280" height="800">
+        <figcaption>DocSync IDE Shadow Sandbox: 4-state contradiction queue alongside live preview and 3-stage commit gate</figcaption>
+      </figure>
+    </section>
+
+    <section id="gallery">
+      <h2>Live Demo Video, Workbench &amp; 7-PII Local Redaction</h2>
+      <div class="card" style="display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:20px;align-items:center;">
+        <video controls playsinline preload="metadata" poster="og-docsync.png" style="width:100%;max-height:360px;border-radius:10px;background:#0F172A;">
+          <source src="assets/docsync/demo.mp4" type="video/mp4">
+        </video>
+        <div>
+          <h3>Shadow Sandbox Walkthrough — Scan, Patch &amp; Protect Originals</h3>
+          <p style="font-size:14.5px;color:var(--muted);">Watch DocSync IDE detect cross-document pricing mismatches, recalculate dependent Excel formulas in Rust, and write surgical deltas without touching originals until Stage 1-3 commit.</p>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <figure class="shot">
+          <img src="og-docsync.png" alt="DocSync IDE v0.2.0 feature summary showing Pure Rust formula engine, surgical table cell edit, and dual-OS builds" width="1280" height="720">
+          <figcaption>1. Dual-OS v0.2.0 release: Pure Rust XLOOKUP/SUMPRODUCT engine, surgical table cell edits, and zero silent overwrites</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/docsync/docsync_ai_privacy.png" alt="DocSync IDE deterministic 7-PII masking gate prior to Cloud BYOK calls" width="1280" height="800">
+          <figcaption>2. Optional AI assistant stays behind deterministic 7-PII + custom confidential term redaction on localhost</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="comparison">
+      <h2>How Does DocSync IDE v0.2.0 Compare to Manual Editing?</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Workflow Dimension</th>
+              <th>Manual Checking &amp; Web Converters</th>
+              <th>DocSync IDE v0.2.0 (Rust Sandbox)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Original File Protection</strong></td>
+              <td>Direct overwrite on save; broken XML or lost styles</td>
+              <td class="highlight-row">Isolated Shadow Sandbox + automatic <code>.docsync/backups/</code> &amp; <code>*_synced</code></td>
+            </tr>
+            <tr>
+              <td><strong>Excel Formulas &amp; VBA</strong></td>
+              <td>Web exports drop charts or break <code>vbaProject.bin</code></td>
+              <td class="highlight-row">Pure Rust XLOOKUP, VLOOKUP, HLOOKUP, INDEX/MATCH, SUMPRODUCT + VBA preserved</td>
+            </tr>
+            <tr>
+              <td><strong>Table Cell Editing</strong></td>
+              <td>Find-and-replace corrupts matching values in wrong rows</td>
+              <td class="highlight-row">Click exact <code>(table, row, col)</code> coordinate in <code>.hwpx</code> / <code>.docx</code> preview</td>
+            </tr>
+            <tr>
+              <td><strong>Ambiguous Matches</strong></td>
+              <td>Blind replacement alters separate option pricing</td>
+              <td class="highlight-row">Flags unpropagated items for explicit Co-Edit or Exception Lock with reason</td>
+            </tr>
+            <tr>
+              <td><strong>Data Privacy &amp; AI Gate</strong></td>
+              <td>Uploads unredacted client quotes to remote servers</td>
+              <td class="highlight-row">100% offline core engine; optional Cloud BYOK redacts 7 PII categories locally</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Honest Platform &amp; Scope Notes (Class B / Class C)</h3>
+        <ul>
+          <li><strong>Hangul (<code>.hwpx</code>) Page Layout Preview (Class B)</strong>: Systems without native Hancom Office engines strip stale <code>&lt;hp:linesegarray&gt;</code> metrics cleanly and flag layout previews as <code>Class B</code> approximations.</li>
+          <li><strong>Unsupported Formulas &amp; Protected Files (Class C)</strong>: 3D cross-sheet ranges (<code>Sheet1:Sheet3!A1</code>), VBA UDFs, external links, encrypted files, and legacy binary <code>.hwp</code> files keep cached values intact with explicit warnings.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2>What Pricing &amp; Official Channels Are Available?</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Channel / Plan</th>
+              <th>Included Package &amp; License Model</th>
+              <th>Price</th>
+              <th>Direct Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td><strong>Gumroad Global Pro (1-PC)</strong><br><code>docsync-ide</code></td>
+              <td>Apple Notarized macOS <code>.dmg</code> + Windows x64 Portable <code>.zip</code> + <code>doc-sync-mcp</code> CLI + 3-doc Free Evaluation mode &amp; Gumroad/Ed25519 key</td>
+              <td><strong>$39 USD</strong><br>(One-time)</td>
+              <td><a href="https://dhlabs.gumroad.com/l/docsync-ide?utm_source=dhlabs_web&amp;utm_medium=table&amp;utm_campaign=docsync_v020" target="_blank" rel="noopener" data-track-cta="docsync_gumroad_table">Buy on Gumroad →</a></td>
+            </tr>
+            <tr>
+              <td><strong>Naver SmartStore (Korea Pro 1-PC)</strong><br><code>DOCSYNC-IDE-PRO-V2</code></td>
+              <td>Automated email dispatch with Korean bundle ZIP (<code>17.7 MB</code>) and unique <code>DSYNC1-</code> offline Ed25519 key (<code>#13897532268</code>)</td>
+              <td><strong>49,000 KRW</strong><br>(One-time)</td>
+              <td><a href="https://smartstore.naver.com/dhlabs-official/products/13897532268" target="_blank" rel="noopener" data-track-cta="docsync_smartstore_table">Buy on SmartStore →</a></td>
+            </tr>
+            <tr>
+              <td><strong>Kmong (Korea Multi-Seat Options)</strong><br><code>#879567</code></td>
+              <td>Standard Pro 1-PC (49,000 KRW) · Deluxe Team 5-PC (149,000 KRW) · Premium Team 10-PC (249,000 KRW) — Review pending</td>
+              <td><strong>49,000 ~ 249,000 KRW</strong></td>
+              <td><span>Kmong Gig #879567 (In Review)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <div class="card">
+        <h3>Does DocSync IDE work completely offline without any OpenAI, Claude, or Gemini key?</h3>
+        <p>Yes. All file parsing, formula evaluation, contradiction detection, surgical table cell patching, and backup commits run 100% locally in Rust with zero internet connection or AI API keys required.</p>
+        <h3>How does surgical table editing avoid overwriting duplicate prices elsewhere in a document?</h3>
+        <p>DocSync IDE v0.2.0 indexes every visual cell by exact XML coordinates <code>(table_index, row_index, col_index)</code> across <code>.hwpx</code> and <code>.docx</code> tables, replacing only the targeted cell and leaving matching text in other rows untouched.</p>
+        <h3>What is the refund policy?</h3>
+        <p>DH Labs offers a 100% refund within 30 days for verifiable software defects or platform incompatibilities via <code>dhlabs_biz@naver.com</code>.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p><strong>Publisher</strong>: DH Labs · Business Reg. <code>610-16-92926</code> · Founder &amp; Architect Donghyeong Kim</p>
+      <p><strong>Support &amp; Docs</strong>: <a href="mailto:dhlabs_biz@naver.com">dhlabs_biz@naver.com</a> · <a href="blog/docsync-en.html">Technical Deep-Dive</a> · <a href="refund.html">Refund Policy</a> · <a href="index.html">DH Labs Store Home</a></p>
+    </footer>
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization",
+        "name": "DH Labs",
+        "url": "https://globaltrendhunterai.github.io/dhlabs/",
+        "taxID": "610-16-92926",
+        "identifier": "610-16-92926",
+        "email": "dhlabs_biz@naver.com",
+        "sameAs": [
+          "https://github.com/globaltrendhunterai/dhlabs",
+          "https://dhlabs.gumroad.com",
+          "https://smartstore.naver.com/dhlabs-official",
+          "https://x.com/dhlabs_autoflow",
+          "https://www.pinterest.com/dhlabs_autoflow/"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder",
+        "name": "Donghyeong Kim",
+        "jobTitle": "Founder & Lead Systems Architect",
+        "worksFor": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization" },
+        "sameAs": ["https://github.com/globaltrendhunterai", "https://globaltrendhunterai.github.io/dhlabs/"]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/docsync.html#app",
+        "name": "DocSync IDE — Local-First Multi-Document Consistency Sandbox",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "macOS 13+ Apple Silicon, Windows 10/11 x64",
+        "softwareVersion": "0.2.0",
+        "datePublished": "2026-11-26",
+        "dateModified": "2026-11-26",
+        "publisher": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#organization" },
+        "author": { "@id": "https://globaltrendhunterai.github.io/dhlabs/#founder" },
+        "offers": [
+          { "@type": "Offer", "name": "DocSync IDE Pro 1-PC Perpetual (Gumroad)", "price": "39.00", "priceCurrency": "USD", "url": "https://dhlabs.gumroad.com/l/docsync-ide" },
+          { "@type": "Offer", "name": "DocSync IDE Pro 1-PC Perpetual (SmartStore DOCSYNC-IDE-PRO-V2)", "price": "49000", "priceCurrency": "KRW", "url": "https://smartstore.naver.com/dhlabs-official/products/13897532268" }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/docsync.html#video",
+        "name": "DocSync IDE Shadow Sandbox & 3-Stage Verification Demo",
+        "description": "Walkthrough showing cross-document contradiction detection, Pure Rust formula evaluation, surgical XML table patching, and safe shadow backups.",
+        "thumbnailUrl": "https://globaltrendhunterai.github.io/dhlabs/og-docsync.png",
+        "uploadDate": "2026-11-26",
+        "duration": "PT25S",
+        "contentUrl": "https://globaltrendhunterai.github.io/dhlabs/assets/docsync/demo.mp4",
+        "embedUrl": "https://globaltrendhunterai.github.io/dhlabs/assets/docsync/demo.mp4"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/docsync.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "DH Labs Store Home", "item": "https://globaltrendhunterai.github.io/dhlabs/" },
+          { "@type": "ListItem", "position": 2, "name": "DocSync IDE v0.2.0", "item": "https://globaltrendhunterai.github.io/dhlabs/docsync.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://globaltrendhunterai.github.io/dhlabs/docsync.html#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does DocSync IDE work completely offline without any OpenAI, Claude, or Gemini key?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All file parsing, formula evaluation, contradiction detection, surgical table cell patching, and backup commits run 100% locally in Rust with zero internet connection or AI API keys required." } },
+          { "@type": "Question", "name": "How does surgical table editing avoid overwriting duplicate prices elsewhere in a document?", "acceptedAnswer": { "@type": "Answer", "text": "DocSync IDE v0.2.0 indexes every visual cell by exact XML coordinates (table_index, row_index, col_index) across .hwpx and .docx tables, replacing only the targeted cell." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

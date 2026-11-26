@@ -839,6 +839,21 @@
       }
     },
     {
+      "identifier": "urn:air:dhlabs.github.io:docsync:v020",
+      "displayName": "DocSync IDE v0.2.0 — Local-First Multi-Document Consistency Sandbox (.xlsx, .hwpx, .pptx, .docx)",
+      "type": "text/html",
+      "url": "https://globaltrendhunterai.github.io/dhlabs/docsync.html",
+      "alternateUrl": "https://globaltrendhunterai.github.io/dhlabs/blog/docsync-en.html",
+      "inLanguage": "en",
+      "representativeQueries": [
+        "How do I cross-check numbers across Excel, Word, PowerPoint, and Hangul quotes offline without breaking charts or VBA macros?",
+        "Does DocSync IDE v0.2.0 support Pure Rust XLOOKUP/INDEX/MATCH formulas and coordinate-exact table cell edits in .hwpx and .docx?"
+      ],
+      "trustManifest": {
+        "identity": "DH Labs (Business Reg. 610-16-92926, Founder Donghyeong Kim, Apple Developer ID GSKY37R7XV)"
+      }
+    },
+    {
       "identifier": "urn:air:dhlabs.github.io:free:roas-starter",
       "displayName": "Free Amazon FBA & Shopify Break-Even ROAS Calculator (Offline Starter)",
       "type": "text/html",
