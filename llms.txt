@@ -18,6 +18,9 @@ AutoFlow(오토플로우)는 디에이치랩스(DH Labs, 대표 김동형, 사�
 
 ## 2-Track Product Lineup & Transparent Pricing (KRW / USD 정찰제 요금 체계)
 
+- **[Free Starter Lead Magnet ($0+)] Free Amazon FBA & Shopify Break-Even ROAS Calculator (Offline Starter)**:
+  - Standalone offline HTML calculator (`BreakEven_ROAS_QuickCheck.html`, 0 tracking) for Amazon FBA & Shopify unit margin, Break-Even ROAS, and max CPA checks: `https://dhlabs.gumroad.com/l/free-roas-starter` (full 12-month stress test & `.xlsx` export upgrade: `https://dhlabs.gumroad.com/l/ecomprofitvault-en`).
+
 - **[Track 1] 비즈니스 워크플로우 단품 스토어 (Perpetual Single-Edition Workflows — 1회 구매 영구 소장)**:
   - `1제품 = 1사이트/1업무` 완제품 정찰제 (번들 강매·등급 쪼개기 없음, Mac/Windows 1초 원클릭 런처 및 상주형 무인 방어 엔진 **7일 무료 체험** 기본 포함).
   - 기능·노드 복잡도별 5단계 정찰가: **₩39,000 ($29 USD)** / **₩49,000 ($39 USD)** / **₩59,000 ($45 USD)** / **₩69,000 ($52 USD)** / **₩79,000 ($59 USD)**.
